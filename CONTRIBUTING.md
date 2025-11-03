@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing to Evidentia! 🎉
 
+**Created by**: Aditya Kanbargi & Sanjana Kadambe Muralidhar
+
 ## 🤝 How to Contribute
 
 ### Reporting Bugs
