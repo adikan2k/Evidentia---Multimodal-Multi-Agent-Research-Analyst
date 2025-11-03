@@ -1,18 +1,19 @@
 from fastapi import APIRouter
-from settings import settings
+from app.settings import settings
 import asyncpg
 import httpx
 
 PG_URL = "postgresql://postgres:postgres@postgres:5432/research"
 QDRANT_URL = "http://qdrant:6333"
 
-health_router = APIRouter()
+router = APIRouter()
 
-@health_router.get("/health")
+@router.get("/health")
 async def health():
-    return {"status": "ok"}
+    return {"status": "ok",
+    }
 
-@health_router.get("/health/db")
+@router.get("/health/db")
 async def check_db():
     try:
         conn = await asyncpg.connect(settings.pg_url)
@@ -22,7 +23,7 @@ async def check_db():
     except Exception as e:
         return {"postgres": "error", "detail": str(e)}
 
-@health_router.get("/health/qdrant")
+@router.get("/health/qdrant")
 async def check_qdrant():
     try:
         async with httpx.AsyncClient() as client:

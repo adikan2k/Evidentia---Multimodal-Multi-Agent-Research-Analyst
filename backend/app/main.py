@@ -1,8 +1,22 @@
-from typing import Dict
+from typing import Dict, Any
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
-from health import health_router
+from app.health import router as health_router
+import app.health as health_module
 import os
+import time
+import uuid
+import asyncio
+from app.monitoring.metrics import MetricsMiddleware
+from fastapi.responses import Response
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
+from app.ingest.factory import ingest_url
+from app.api.routes.maintenance import router as maintenance_router
+from app.api.routes.features import router as features_router
+from io import BytesIO
+from fastapi.responses import StreamingResponse
+from fastapi import Body
+from app.export.pdf import render_report_to_pdf_async
 
 app = FastAPI(title="Evidentia – Multimodal Multi-Agent Research Analyst")
 
@@ -10,24 +24,62 @@ VERCEL_ORIGIN = os.getenv("VERCEL_ORIGIN")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"] + ([VERCEL_ORIGIN] if VERCEL_ORIGIN else []),
+    allow_origins=["http://localhost:3000", "http://localhost:3001"] + ([VERCEL_ORIGIN] if VERCEL_ORIGIN else []),
     allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 app.include_router(health_router)
+app.add_middleware(MetricsMiddleware)
+app.include_router(maintenance_router)
+app.include_router(features_router)
 
-# ------------------ Day 5: simple in-memory job store ------------------
-from typing import Dict, Any
-import time
-import uuid
+# Initialize stores for maintenance router
+from app.api.routes.maintenance import set_stores
 
-# phases in order
-PHASES = ["planning", "ingesting", "embedding", "reranking", "drafting", "finalizing", "done"]
+@app.on_event("startup")
+async def _debug_routes():
+    print("HEALTH MODULE FILE:", health_module.__file__)
+    for r in app.routes:
+        try:
+            print("ROUTE:", r.path, getattr(r, "methods", None))
+        except Exception:
+            pass
+
+@app.get("/metrics")
+def metrics():
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
+@app.get("/ingest")
+async def ingest_endpoint(url: str):
+    try:
+        content = await ingest_url(url)
+        return {"ok": True, "length": len(content)}
+    except PermissionError as e:
+        return {"ok": False, "msg": str(e)}
+    
+@app.post("/export/pdf")
+async def export_pdf_post(payload: dict = Body(...)):
+    html  = payload.get("body", "<h1>Empty</h1>")
+    title = payload.get("title", "Evidentia Report")
+    pdf_bytes = await render_report_to_pdf_async(html, title)  # ✅ await async
+    return StreamingResponse(
+        BytesIO(pdf_bytes),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{title}.pdf"'}
+    )
+
+# ------------------ Real research pipeline ------------------
+from app.graph.pipeline import run_research_pipeline
+from app.robots import is_allowed
+from app.http_client import fetch_text
 
 _jobs: Dict[str, Dict[str, Any]] = {}
 _reports: Dict[str, Dict[str, Any]] = {}
+
+# Set stores for maintenance router
+set_stores(_jobs, _reports)
 
 def _new_job(payload: Dict[str, Any]) -> Dict[str, Any]:
     job_id = str(uuid.uuid4())[:8]
@@ -42,36 +94,74 @@ def _new_job(payload: Dict[str, Any]) -> Dict[str, Any]:
     }
     return _jobs[job_id]
 
-def _advance_job(job: Dict[str, Any]) -> None:
-    """Naive auto-advance for demo: each call bumps percent/phase."""
-    i = PHASES.index(job["phase"])
-    job["percent"] = min(100, job["percent"] + 17)
-    if i < len(PHASES) - 1:
-        threshold = (i + 1) * (100 // (len(PHASES) - 1))
-        if job["percent"] >= threshold:
-            job["phase"] = PHASES[i + 1]
-            job["msg"] = f"{job['phase'].capitalize()}..."
-            if job["phase"] == "done":
-                # synthesize a simple placeholder report
-                _reports[job["id"]] = {
-                    "html": f"""
-                      <h1>Sample Report</h1>
-                      <p>Query: <strong>{job['query']}</strong></p>
-                      <p>This is a placeholder. The real writer will produce structured HTML with citations.</p>
-                    """,
-                    "citations": [
-                        {
-                            "claim_span": "Claim example",
-                            "quote_span": "Quoted evidence snippet",
-                            "url": "https://example.com",
-                        }
-                    ],
-                    "sources": [{"title": "Example Source", "url": "https://example.com"}],
-                }
+async def _run_pipeline(job: Dict[str, Any]) -> None:
+    job_id = job["id"]
+    try:
+        print(f"[Pipeline] Starting for job {job_id}, query: {job['query']}")
+        
+        # Step 1: Initializing
+        job["phase"] = "initializing"
+        job["percent"] = 5
+        job["msg"] = "Setting up research pipeline"
+        await asyncio.sleep(0.5)
+        
+        # Step 2: Source Discovery
+        job["phase"] = "discovering_sources"
+        job["percent"] = 15
+        job["msg"] = "Searching multiple data sources"
+        await asyncio.sleep(0.5)
+        
+        # Step 3: Content Ingestion
+        job["phase"] = "ingesting_content"
+        job["percent"] = 25
+        job["msg"] = "Extracting content from sources"
+        
+        # Run the actual pipeline (which will update progress internally)
+        result = await run_research_pipeline(job_id, job["query"], job["options"])
+        print(f"[Pipeline] Result: {len(result.get('report', {}).get('citations', []))} citations")
+        
+        # Step 4: Text Processing (45%)
+        job["phase"] = "processing_text"
+        job["percent"] = 45
+        job["msg"] = "Processing and cleaning extracted text"
+        await asyncio.sleep(0.5)
+        
+        # Step 5: Semantic Analysis (60%)
+        job["phase"] = "analyzing_semantics"
+        job["percent"] = 60
+        job["msg"] = "Generating embeddings and vectors"
+        await asyncio.sleep(0.5)
+        
+        # Step 6: Content Ranking (75%)
+        job["phase"] = "ranking_content"
+        job["percent"] = 75
+        job["msg"] = "Ranking sources by relevance"
+        await asyncio.sleep(0.5)
+        
+        # Step 7: Report Generation (85%)
+        job["phase"] = "generating_report"
+        job["percent"] = 85
+        job["msg"] = "Creating comprehensive research report"
+        _reports[job_id] = result["report"]
+        print(f"[Pipeline] Stored report for {job_id}")
+        await asyncio.sleep(0.5)
+        
+        # Complete
+        job["phase"] = "done"
+        job["percent"] = 100
+        job["msg"] = "Research completed successfully"
+    except Exception as e:
+        print(f"[Pipeline] Error: {e}")
+        import traceback
+        traceback.print_exc()
+        job["phase"] = "error"
+        job["msg"] = str(e)
 
 @app.post("/research/start")
 async def start_research(payload: Dict[str, Any]):
     job = _new_job(payload)
+    # Run pipeline in background without blocking
+    asyncio.create_task(_run_pipeline(job))
     return {"job_id": job["id"]}
 
 @app.get("/status")
@@ -79,7 +169,6 @@ async def status(jobId: str):
     job = _jobs.get(jobId)
     if not job:
         return {"phase": "planning", "percent": 0, "msg": "Unknown job"}
-    _advance_job(job)
     return {"phase": job["phase"], "percent": job["percent"], "msg": job["msg"]}
 
 @app.get("/report")
