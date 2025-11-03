@@ -2,6 +2,8 @@
 
 Complete technical documentation for developers working on Evidentia.
 
+**Created by**: Aditya Kanbargi & Sanjana Kadambe Muralidhar
+
 ---
 
 ## 📋 Table of Contents
