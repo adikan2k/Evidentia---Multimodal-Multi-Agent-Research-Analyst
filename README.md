@@ -11,6 +11,8 @@
 
 **[Features](#-features) • [Quick Start](#-quick-start) • [Demo](#-demo) • [Documentation](#-architecture) • [Contributing](#-contributing)**
 
+**Created by**: [Aditya Kanbargi](https://github.com/adikan2k) & [Sanjana Kadambe Muralidhar](https://github.com/sanjanakadambe)
+
 </div>
 
 ---
@@ -560,10 +562,16 @@ If you find Evidentia useful, please consider starring the repo! ⭐
 
 <div align="center">
 
+### 👥 Created By
+
+**Aditya Kanbargi** & **Sanjana Kadambe Muralidhar**
+
+---
+
 ### Built with ❤️ for researchers, students, and knowledge seekers everywhere
 
 **[⬆ Back to Top](#-evidentia)**
 
-© 2024 Evidentia. All rights reserved.
+© 2024 Evidentia by Aditya Kanbargi & Sanjana Kadambe Muralidhar. All rights reserved.
 
 </div>
