@@ -77,6 +77,12 @@ Each one ends with something you can run and show.
 ### M4. Live site
 - FastAPI endpoints with server-sent events. Per-IP and per-day caps. Per-run cost in the response.
 - Frontend restyled: question box, live graph steps, report where clicking a claim opens its evidence.
+- Design bar (set by Aditya on 2026-11-24): the site should look and move like the best work in
+  these galleries, with rich animation and a top-tier finish:
+  https://minimal.gallery/tag/ai/ , https://www.framer.com/community/gallery/categories/ai/ ,
+  https://www.awwwards.com/websites/ .
+  Study them at the start of M4 and write the chosen direction into `docs/DECISIONS.md` before
+  building. Everything shown on screen must still be real: no invented numbers, no fake statuses.
 - Deploy: API on Cloud Run, frontend on Vercel.
 - Done when: a stranger can run a question from the public URL.
 
