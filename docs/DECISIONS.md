@@ -1628,3 +1628,24 @@ once. The result is reported whether it passes or not.
 
 Codex's AI labels say "not supported" on 33 of 40 partial cases. They are mentioned only as an
 AI's view (`labels_partial_codex.jsonl`) and not used for any decision.
+
+### The confirming run: not passed
+
+Run once on the `test2` sample, 550 test rows never used before, for $0.37
+(`aggrefact_test2_q-haiku_p-haiku.json`). The setup and the bars are as fixed above.
+
+| Two judges, partial its own verdict | Measured | Bar | Met? |
+|---|---|---|---|
+| Flags right | 0.774 (0.720 to 0.828) | 0.80 | no |
+| "Supported" right | 0.910 (0.867 to 0.948) | 0.93 | no |
+| Coverage | 0.816 | 0.70 | yes |
+
+- **What failed.** Two of the three bars. The practice rows had given 0.810 and 0.940, so part of
+  that was luck in the practice sample; the bar upper bounds still overlap the measured
+  intervals.
+- **What held.** Two judges beat either alone on the same unseen rows. Flags right: 0.774, against
+  0.660 for the page judge and 0.543 for the quote judge. "Supported" right: 0.910, against
+  0.892 and 0.904.
+- **Reported as is.** The README states it with these numbers.
+- **Next.** Aditya decides whether the real-world audit goes ahead with these measured rates
+  shown next to its results, or whether the auditor is improved first.

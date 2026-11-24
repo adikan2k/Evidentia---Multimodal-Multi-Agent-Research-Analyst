@@ -297,6 +297,37 @@ Best thresholds on these rows (most coverage that meets the bars):
 | partial counted as a flag | none meets the bars |  |  |  |
 | partial as its own verdict | none meets the bars |  |  |  |
 
+### test2: quote judge claude-haiku-5-5, page judge claude-haiku-5-5 (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.737 (0.700 to 0.783) | 0.676 (0.625 to 0.728) | 0.910 (0.867 to 0.948) | 0.816 (0.785 to 0.846) |
+| Quote judge alone | 0.677 (0.642 to 0.712) | 0.543 (0.497 to 0.590) | 0.904 (0.861 to 0.943) | 1.000 |
+| Page judge alone | 0.763 (0.725 to 0.800) | 0.660 (0.609 to 0.710) | 0.892 (0.853 to 0.927) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.634 (0.595 to 0.673). Labels: 177 supported, 154 not_found, 100 needs_human, 91 partial, 27 contradicted, 1 unchecked. Cost per claim, both judges: $0.00068. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.782 | 0.760 | 0.625 | 0.812 |
+| AggreFact-XSum | 0.708 | 0.860 | 0.683 | 0.725 |
+| ClaimVerify | 0.775 | 0.860 | 0.760 | 0.708 |
+| ExpertQA | 0.571 | 0.840 | 0.556 | 0.577 |
+| FactCheck-GPT | 0.577 | 0.920 | 0.571 | 0.566 |
+| Lfqa | 0.931 | 0.920 | 0.909 | 0.909 |
+| RAGTruth | 0.914 | 0.660 | 0.783 | 0.924 |
+| Reveal | 0.860 | 0.940 | 0.802 | 0.859 |
+| TofuEval-MediaS | 0.664 | 0.700 | 0.548 | 0.705 |
+| TofuEval-MeetB | 0.824 | 0.680 | 0.711 | 0.774 |
+| Wice | 0.500 | 0.840 | 0.500 | 0.838 |
+
+Best thresholds on these rows (most coverage that meets the bars):
+
+| Partial | Thresholds (supported / flag) | Flags right | Supported right | Coverage |
+|---|---|---|---|---|
+| partial counted as a flag | none meets the bars |  |  |  |
+| partial as its own verdict | none meets the bars |  |  |  |
+
 ## What failed
 
 - Retrieval, lowest recall with hybrid + rerank: q34 (0.33), q25 (0.50), q16 (0.67), q21 (0.67), q26 (0.67), q33 (0.67).

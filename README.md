@@ -80,18 +80,31 @@ sub-datasets), with Claude Haiku:
 That version agreed with people less than a plain yes/no did (difference −0.080, from −0.120 to
 −0.038). It was stricter, not looser: it turned down about half the claims people accept.
 
-**Current version (D-038, D-039): two judges.** It is measured so far only on 550 practice rows
-from the benchmark's dev split (`evals/results/aggrefact_dev550_q-haiku_p-haiku.json`):
+**Current version (D-038, D-039): two judges.** It was tuned on 550 practice rows from the
+benchmark's dev split, then run once on 550 test rows it had never seen
+(`evals/results/aggrefact_test2_q-haiku_p-haiku.json`). Partial is counted as its own verdict,
+not as a failure. The finish line was set before the run.
 
-- **When it gives a verdict.** For the 80% of claims that get one, "supported" is right 0.940
-  of the time.
-- **Flags.** They are right 0.695 of the time when "partial" counts as a flag, and 0.810 when
-  partial is its own verdict.
-- **Why partial matters.** On those claims both judges agree a detail is not stated, yet the
-  benchmark's labellers accepted about half of them. A person's labels will decide how partial
-  is counted.
-- **Not done yet.** The finish line fixed in advance has not been tested on unseen rows. That
-  run comes next.
+| On 550 unseen test rows | Flags right | When it says supported, right | Claims with a verdict |
+|---|---|---|---|
+| Two judges | 0.774 (0.720 to 0.828) | 0.910 (0.867 to 0.948) | 0.816 |
+| Quote judge alone | 0.543 | 0.904 | 1.000 |
+| Page judge alone | 0.660 | 0.892 | 1.000 |
+| Finish line set in advance | at least 0.80 | at least 0.93 | at least 0.70 |
+
+**It did not reach the finish line.** Flags right came in at 0.774 against 0.80, and "supported"
+right at 0.910 against 0.93. On the practice rows the same setup had scored 0.810 and 0.940.
+
+**Two judges still beat either one alone on flags.** About 77 of every 100 flags are right,
+against 66 for the page judge alone and 54 for the quote judge alone. The price is that 18% of
+claims get "needs a human" instead of a verdict.
+
+**About partial.** On 17% of claims both judges agree a detail is not stated. The benchmark's
+labellers accepted about half of those. No person checked them for this project, so partial is
+reported apart and never counted as a failed citation. That way a count of failures is a lower
+bound either way.
+
+Cost: $0.00068 per claim for both judges together.
 
 Full tables: `evals/results/REPORT.md`.
 
