@@ -1884,3 +1884,125 @@ research runs, so a busy day for one leaves less for the other.
 - **One recording replaced.** One answer cited only journal pages (doi.org, bmj.com) that refuse
   automated fetches (HTTP 403). It is replaced by a different question. Pages like these are a
   real limit of auditing, and the real-world audit will count them as "could not check".
+
+## D-042. The real-world audit: how often do AI tools' citations hold up? (D-034, step 4)
+
+**What.** Ask two AI tools the same 100 questions, with web search on, through their APIs.
+Audit every answer with the auditor as shipped. Publish the results on the site and in the
+repository, next to the auditor's own measured error rates.
+
+**Why.** This is the project's headline: a finding about real AI products, made with a tool
+that has been measured against people's labels (D-038 to D-040). The audit page (D-041) lets
+anyone check one answer; this checks many, in the same way, under a plan fixed in advance.
+
+### The tools
+
+| Tool | How | Price tier |
+|---|---|---|
+| OpenAI | `gpt-6.2-sol` with the Responses API's `web_search` tool, as in D-041 | $2 / $10 per million tokens, plus $10 per 1,000 searches |
+| Anthropic | Claude Sonnet 5.5 with the Messages API's web search tool | $2 / $10 per million tokens, plus $10 per 1,000 searches |
+
+- **Same price tier, same treatment.** Both get the question exactly as written, with no extra
+  instructions, and up to 2,000 output tokens. Each question is asked once per tool.
+- **Turning answers into the auditor's input.** Each tool's citations are turned into links or
+  numbered markers, as D-041's collector does for OpenAI. The Claude version is new: its current
+  docs are checked first, and it gets tests.
+- **More tools only with Aditya's keys and a yes.** Perplexity's Sonar API and Gemini with Google
+  Search grounding are left out unless Aditya provides keys. Each would get its own docs check
+  and cost estimate.
+- **Not the consumer apps.** API answers are not the same as the ChatGPT or Claude apps, which add
+  their own instructions. The results page says "the API with web search", never "ChatGPT" or
+  "Claude.ai".
+
+### The questions, fixed before any answer is made
+
+They are committed to the repository before the first answer is requested.
+
+1. **50 from Natural Questions.** These are real anonymised Google searches, from the dev split,
+   CC BY-SA 3.0, with attribution. They are drawn with a fixed seed from questions where
+   annotators marked a paragraph-length answer, so a one-word answer is unlikely. Only one dev
+   file is downloaded, about 190 MB, to the git-ignored cache.
+2. **50 about 2025 and 2026.** 10 in each of science, health, technology, economy, and sport and
+   culture. Written so that answering needs several checkable facts and a current web search.
+
+**Why both.** The first half cannot be picked to suit the result. The second half tests the
+case where tools most need the web and are most likely to slip, and its questions were written
+before seeing any answer.
+
+### What is measured, fixed now
+
+For each tool:
+
+- **Headline.** Of the claims that get a verdict, the share whose citation fails outright: not
+  on the cited page, or contradicted. With a 95% interval, bootstrapped over questions, since
+  claims from one answer are not independent.
+- **Also reported:**
+  - partly backed, needs a human, could not check (robots.txt, refused, paywalled), dead links,
+    and uncited claims, each as a share;
+  - claims and cited pages per answer;
+  - cost per answer.
+- **Between the tools.** The difference on the headline, paired by question, with its interval.
+  Also each measure split by question source (Natural Questions against 2025 and 2026).
+- **Shown with the auditor's own rates.** Flags right 81%, "supported" right 93%, 18% sent to a
+  human (D-040). No correction is applied to the tools' figures: rates measured on the benchmark
+  may not hold for these answers, and the page says so.
+
+**Self-preference check.** Our judges are Claude models, and one tool is Claude. So every answer
+is also audited with OpenAI's `gpt-6-luna` as the page judge instead of Haiku. That costs about
+$0.002 an answer, and both results are reported. If the comparison between the tools changes
+with the judge's maker, the page says so.
+
+### Where it is published
+
+- **`evals/results/realworld.json`.** Every number, written by code.
+- **`evals/realworld/`.** The questions, every answer, and every audit. Quotes are kept with their
+  surrounding context only, never whole pages.
+- **A Findings page on the site.**
+  - Each tool's headline and other measures, with intervals.
+  - Example audits chosen by a rule fixed now: every contradicted claim, then 5 "not on the cited
+    page" claims drawn with a fixed seed. Each opens like a recorded audit.
+  - A link to the data and the method.
+- **The README** gets a section with the headline, its interval and the limits below.
+
+### Order and cost
+
+| Step | About |
+|---|---|
+| Pilot: 10 questions × 2 tools, to measure the real cost and catch problems | $2 |
+| Full run: the other 90 questions × 2 tools (answers) | $13 to $18 |
+| Audits, about $0.01 each, plus the GPT page-judge re-audit | $2.50 |
+| **Total** | **about $17 to $23** |
+
+- **Answer cost.** OpenAI's three recorded answers cost $0.074 on average. Claude's is unmeasured
+  and is measured in the pilot.
+- **Approvals.** The full run needs a separate yes after the pilot, with the measured cost. Every
+  command has a cap.
+- **Fetching.** About 1,500 page fetches, with robots.txt obeyed and a wait between requests to
+  the same site.
+- **Tracing.** About 6,000 Langfuse units. The free tier is already used up this month, so traces
+  may be dropped until 1 December unless Aditya moves to the paid plan ($29 a month). That is his
+  call. The README will say if any part of the run went untraced.
+
+**Considered.**
+
+- **Answers pasted by hand from the consumer apps.** Truer to what people see, but Aditya has no
+  time for it, and it cannot be repeated.
+- **More tools now.** They need keys Aditya has not given.
+- **More questions.** Twice the cost, for intervals about a third narrower.
+- **A person checking a sample of flags.** No time. The benchmark rates stand in for it, and the
+  page says so.
+
+**Trade-off.** One answer per question per tool, so run-to-run variation is not measured. Half
+the questions were written by this project; they are fixed and published before any answer
+exists. The auditor is right about 81% of the time on flags, so a tool's failure share is an
+estimate with that error in it, and the page shows both numbers side by side.
+
+### Done when
+
+- The questions are committed before any answer exists.
+- The pilot is run and its cost reported.
+- The full run is done on Aditya's yes.
+- `evals/results/realworld.json` is written by code.
+- The Findings page is built and checked in the browser.
+- The README section is written.
+- The tests pass, including those for the Claude answer collector.
