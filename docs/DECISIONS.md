@@ -2324,3 +2324,106 @@ two hours of Aditya's time, and nothing in this plan removes that.
   contradicted in one run and "needs a human" in the next. The auditor treats rounding as a
   mismatch, and its verdict on such a claim can differ between runs. This goes on the list for
   the hand check in phase 1.
+
+### Phase 1a done: what the saved audits say when read every way (D-043)
+
+No new model calls. `evals/results/realworld.json` now holds both readings, every label, bounds
+and the pages that were not read. With the page judge as shipped (Haiku):
+
+| | OpenAI `gpt-6.2-sol` | Claude Sonnet 5.5 | Difference |
+|---|---|---|---|
+| Own-cited claims with a verdict that fail outright | 38.0% (29.1 to 46.4) | 7.9% (4.5 to 11.9) | 30.1 points (21.1 to 38.3) |
+| Share of all claims verified against a cited page | 18.5% (13.5 to 24.4) | 24.6% (19.0 to 30.4) | −6.1 points (−12.8 to +0.6) |
+| Share of all claims that fail outright | 17.4% | 2.6% | |
+| Share of all claims with no citation | 13.0% | 44.0% | |
+| Cited pages not read | 66 of 156 | 108 of 288 | |
+
+- **The two readings disagree about how big the gap is.** Among claims that could be checked,
+  OpenAI's citations fail far more often. As a share of everything each tool said, the amount
+  verified is close, and the interval on that difference includes zero. Both go on the findings
+  page's first screen.
+- **The bounds are wide.** If every unread page had backed its claim, OpenAI's failure rate would
+  be 21% and Claude's 5%. If none had, 65% and 45%. The worst case for one tool overlaps the best
+  case for the other, so the unread pages alone could not rule out a much smaller gap. The size of
+  the gap rests on the pages that were read.
+- **Why pages were not read.**
+  - Too little text, on pages built in the browser by scripts: 18 pages for OpenAI and 34 for
+    Claude. This is the largest single reason for each tool, and the one a second reader can fix
+    (phase 1d).
+  - robots.txt: 16 and 24.
+  - Refused with 403: 6 and 29.
+  - robots.txt itself unreadable: 10 and 2.
+- **No one kind of site dominates.** The most any site accounts for is 4 pages.
+
+## D-044. A person checks a sample of the real-world verdicts (D-043, phase 1b)
+
+**What.** A small tool with which Aditya, by hand, checks 100 of the auditor's verdicts on real
+answers. It measures how often the auditor's flags and its "supported" verdicts are right on
+this data, not on the benchmark. New module: `evals/hand_check.py`.
+
+**Why.** The review's first point. The auditor was built by Claude and judged by Claude, and the
+result favours Claude. The only check so far was ten claims read by a model. Nothing replaces a
+person reading the pages.
+
+### The sample, fixed before any label exists
+
+- **Drawn from** the audits with the page judge as shipped (Haiku), own-cited claims only.
+- **100 claims**, with a fixed seed: from each tool, 25 that failed outright (not on the cited
+  page, or contradicted) and 25 called supported.
+- **Order.** Blocks of four, one claim from each of the four groups, shuffled within the block.
+  If Aditya stops early, what he has done is still balanced.
+- **Committed first.** The list of items goes into the repository before the first label.
+
+### What Aditya sees and does
+
+`uv run python -m evals hand-check` shows one item at a time:
+
+- **Shown:** the claim, and the address of the cited page, which the tool opens in his browser.
+  Tracking parameters such as `utm_source=openai` are stripped, because they would give the tool
+  away.
+- **Not shown:** which tool wrote the answer, the auditor's verdict, the quotes, or the judges'
+  reasons.
+- **He answers** one of four:
+  - yes: the page states everything the claim says;
+  - no: a part of the claim is missing from the page, or the page says otherwise;
+  - unsure;
+  - the page would not open.
+- **Saved after every answer**, so he can stop and resume. Each label records the item, the
+  answer, the time, and how many seconds the item took.
+- **Only a person.** The labels file is written only by this interactive command. No model fills
+  it, and model-made labels are never merged into it.
+
+### What is reported, fixed now
+
+`uv run python -m evals hand-check-score` writes `evals/results/realworld_hand_check.json`:
+
+- **Flags upheld.** Of the failed claims he answered yes or no, the share he answered no. For each
+  tool and for both together, with 95% intervals.
+- **"Supported" upheld.** Of the supported claims, the share he answered yes. The same way.
+- **Also:** how many items he labelled, how many were unsure or would not open, and the median
+  time per item.
+
+**What the result changes, decided now:**
+
+- The headline is not adjusted by these numbers. They are shown beside it: "N flags checked by
+  hand, X% upheld."
+- If fewer than 70% of either tool's checked flags are upheld, the findings page says so in its
+  first screen and makes no comparison between the tools.
+- Every item where Aditya and the auditor disagree is listed in the result file by its id, so it
+  can be looked at.
+
+**Considered.**
+
+- **Showing the page text the auditor read, in the terminal.** Pages run to tens of thousands of
+  characters. And a person reading the live page also catches text the fetcher missed, which is
+  an auditor error worth counting.
+- **Showing the auditor's quote to save time.** It would give away the verdict.
+- **A web page for labelling.** More to build, and no better for this.
+- **All 154 failed claims.** Twice the time. 50 give an interval of about ±13 points.
+
+**Trade-off.**
+
+- With 25 flags per tool, the interval for one tool is about ±18 points. This check can show that
+  the flags are mostly right or mostly wrong, not measure a small difference between the tools.
+- Pages can change between the audit and the check, so the labelling should not wait long.
+- It costs about two hours of Aditya's time and no money.

@@ -28,6 +28,7 @@ from evidentia.audit.graph import AuditDeps, run_audit
 from evidentia.config import Settings, load_settings
 from evidentia.cost import BudgetExceeded, Ledger
 from evidentia.embed import Embedder
+from evidentia.events import host_of
 from evidentia.fetch import Fetcher
 from evidentia.llm import LLM
 from evidentia.tracing import LangfuseTracer, Tracer
@@ -153,6 +154,11 @@ def counts(report: dict) -> dict[str, int]:
         "failed_own": sum(own[label] for label in FAILED),
         "verdict_paragraph": sum(para[label] for label in VERDICT),
         "failed_paragraph": sum(para[label] for label in FAILED),
+        # For the bounds (D-043): own-cited claims left without a verdict.
+        "unread_own": own["unchecked"],
+        "needs_human_own": own["needs_human"],
+        "supported": labels["supported"],
+        "not_found": labels["not_found"],
         "claims": len(report["claims"]),
         "with_verdict": sum(labels[label] for label in VERDICT),
         "failed": sum(labels[label] for label in FAILED),
@@ -190,9 +196,51 @@ def interval(rows: list[dict], stat: Callable[[list[dict]], float | None]) -> di
     return {"value": rnd(value), "ci_low": rnd(lo), "ci_high": rnd(hi)}
 
 
+ALL_LABELS = (
+    "supported",
+    "partial",
+    "contradicted",
+    "not_found",
+    "needs_human",
+    "unchecked",
+    "dead_link",
+    "citation_unread",
+    "uncited",
+)
+
+
+def bounds(rows: list[dict], undecided: tuple[str, ...]) -> dict[str, Any]:
+    """The headline if every own-cited claim left undecided had been supported, and if none had."""
+    failed = sum(r["failed_own"] for r in rows)
+    decided = sum(r["verdict_own"] for r in rows)
+    open_ = sum(r[key] for r in rows for key in undecided)
+    total = decided + open_
+    return {
+        "undecided_claims": open_,
+        "if_all_supported": round(failed / total, 4) if total else None,
+        "if_none_supported": round((failed + open_) / total, 4) if total else None,
+    }
+
+
 def measures(rows: list[dict]) -> dict[str, Any]:
     total = lambda key: sum(r[key] for r in rows)  # noqa: E731
     return {
+        # D-043: the two readings of the result, side by side. The headline is the failure rate
+        # among own-cited claims with a verdict. The other is the share of everything the tool
+        # said that was verified against a page it cited.
+        "verified_share_of_all_claims": interval(rows, lambda rs: ratio(rs, "supported", "claims")),
+        "failed_share_of_all_claims": interval(rows, lambda rs: ratio(rs, "failed", "claims")),
+        "labels": {
+            label: {
+                "claims": total(label),
+                "share": round(total(label) / total("claims"), 4) if total("claims") else None,
+            }
+            for label in ALL_LABELS
+        },
+        "headline_bounds": {
+            "unread_pages": bounds(rows, ("unread_own",)),
+            "unread_pages_and_needs_human": bounds(rows, ("unread_own", "needs_human_own")),
+        },
         "questions": len(rows),
         "claims": total("claims"),
         "with_verdict": total("with_verdict"),
@@ -223,17 +271,48 @@ def measures(rows: list[dict]) -> dict[str, Any]:
     }
 
 
-def difference(a: list[dict], b: list[dict]) -> dict:
-    """First tool's headline failed share minus the second's, resampling the same questions."""
+def difference(
+    a: list[dict], b: list[dict], top: str = "failed_own", bottom: str = "verdict_own"
+) -> dict:
+    """First tool's share minus the second's, resampling the same questions for both.
+
+    By default the headline: failed own-cited claims over own-cited claims with a verdict.
+    """
     by_q = {r["id"]: r for r in b}
     pairs = [(r, by_q[r["id"]]) for r in a if r["id"] in by_q]
 
     def stat(ps: list[tuple[dict, dict]]) -> float | None:
-        x = ratio([p[0] for p in ps], "failed_own", "verdict_own")
-        y = ratio([p[1] for p in ps], "failed_own", "verdict_own")
+        x = ratio([p[0] for p in ps], top, bottom)
+        y = ratio([p[1] for p in ps], top, bottom)
         return None if x is None or y is None else x - y
 
     return interval(pairs, stat) | {"questions": len(pairs)}  # type: ignore[arg-type]
+
+
+def pages_not_read(reports: list[dict]) -> dict[str, Any]:
+    """Cited pages the fetcher could not read: how many, why, and on which sites."""
+    reason_of: dict[str, str] = {}
+    read: set[str] = set()
+    for report in reports:
+        for claim in report["claims"]:
+            for page in claim["pages"]:
+                if page["skipped"]:
+                    reason_of[page["url"]] = page["skipped"]
+                else:
+                    read.add(page["url"])
+    by_site: dict[str, Counter] = {}
+    for url, reason in reason_of.items():
+        by_site.setdefault(host_of(url), Counter())[reason] += 1
+    top = sorted(by_site.items(), key=lambda kv: -sum(kv[1].values()))[:15]
+    return {
+        "pages_cited": len(read) + len(reason_of),
+        "pages_not_read": len(reason_of),
+        "by_reason": dict(Counter(reason_of.values()).most_common()),
+        "sites_most_often_not_read": [
+            {"site": site, "pages": sum(c.values()), "reasons": dict(c.most_common())}
+            for site, c in top
+        ],
+    }
 
 
 def summarise(which: str) -> dict[str, Any]:
@@ -244,11 +323,12 @@ def summarise(which: str) -> dict[str, Any]:
         per_tool: dict[str, Any] = {}
         rows_by_tool: dict[str, list[dict]] = {}
         for tool in TOOLS:
-            rows = []
+            rows, reports = [], []
             for q in questions:
                 audit = load(audit_path(judge, tool, q["id"]))
                 answer = load(answer_path(tool, q["id"]))
                 if audit and answer:
+                    reports.append(audit["report"])
                     rows.append(
                         {"id": q["id"], "answer_usd": answer["usd"]} | counts(audit["report"])
                     )
@@ -262,11 +342,14 @@ def summarise(which: str) -> dict[str, Any]:
                     },
                     "usd_per_answer": round(sum(r["answer_usd"] for r in rows) / len(rows), 4),
                     "usd_per_audit": round(sum(r["audit_usd"] for r in rows) / len(rows), 4),
+                    "pages": pages_not_read(reports),
                 }
         entry: dict[str, Any] = {"page_judge": model, "tools": per_tool}
         if all(rows_by_tool.get(t) for t in TOOLS):
-            entry["openai_minus_claude"] = difference(
-                rows_by_tool["openai"], rows_by_tool["claude"]
+            pair = (rows_by_tool["openai"], rows_by_tool["claude"])
+            entry["openai_minus_claude"] = difference(*pair)
+            entry["openai_minus_claude_verified_share_of_all_claims"] = difference(
+                *pair, top="supported", bottom="claims"
             )
         body["judges"][judge] = entry
     return body
