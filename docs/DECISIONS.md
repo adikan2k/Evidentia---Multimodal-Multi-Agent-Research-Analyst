@@ -827,3 +827,111 @@ the main screen first means a wrong direction costs an hour, not a milestone.
 
 **Trade-off.** Step 1 uses hand-recorded data, so a little of it is reworked when live events
 arrive in step 2.
+
+## D-030. PDFs: stored text that knows its page numbers
+
+**What.** The fetcher accepts PDFs as well as HTML pages.
+
+- A response is a PDF when its content type is `application/pdf` or its body starts with `%PDF-`.
+- Text comes from each page with `pypdf` 7.1.1 (pure Python, no other dependencies). Each page is
+  cleaned like a web page: whitespace collapsed, a word split by a hyphen at a line end joined
+  back ("evi-" + "dence" becomes "evidence"), and line breaks inside the page turned into spaces.
+  Pages are joined with a line break, so no paragraph runs across a page boundary.
+- `Source` gains `kind` (`html` or `pdf`) and `page_starts`, the offset in the stored text where
+  each page begins. A claim's page is worked out from where its quote starts; a quote that runs
+  over a page break is cited as "pp. 4-5". The quote check itself does not change.
+- Limits: 15 MB per PDF (web pages stay at 2 MB), the first 40 pages only (the report says when
+  it cut a document short), parsing done off the event loop with a 20-second limit.
+- Skipped, with the reason shown: a PDF with no text layer ("scanned PDF, no text"), and an
+  encrypted PDF. No OCR.
+- robots.txt, the per-domain rate limit and the private-address guard apply unchanged.
+
+**Why.** Many of the best sources for factual questions are PDFs (agency reports, papers,
+statistical releases), and today every one of them is skipped as "not an HTML page". The quote
+check works on any stored text, so PDF quotes get the same exact-span guarantee as web pages
+with no change to rule 8.
+
+**Considered.**
+- `pdfplumber` 0.11.11: better layout and table handling, but pulls in `pdfminer.six` and Pillow
+  and is slower.
+- OCR through an API for scans: costs per page, and OCR mistakes would become "exact quotes" of
+  text the PDF does not contain.
+- Page images for charts: see D-033.
+
+**Trade-off.** `pypdf` sometimes gets the reading order wrong on two-column pages and splits
+words oddly. Then a true quote fails the exact-span check and the claim is dropped or marked
+unverified: the failure costs claims, never produces a false citation. PDFs are untrusted input
+parsed in our own process; a malformed file could keep a worker thread busy past the time limit
+(Python cannot stop a thread), and the size and page caps bound that.
+
+**Tests.** Small PDFs built inside the test code: page offsets, a quote on page 3, a quote across
+a page break, hyphen joining, a scanned (textless) PDF, an encrypted PDF, an oversized PDF, and
+a PDF served with the wrong content type. No paid calls.
+
+## D-031. How a PDF citation is shown
+
+**What.** A claim from a PDF shows "PDF, p. 7" beside its source. The evidence pane shows the
+quote highlighted inside its stored context, exactly as for a web page. The source link opens
+the original document at that page (`url#page=7`), which the built-in PDF viewers in Chrome,
+Edge and Firefox follow.
+
+**Why.** The plan asked for pdf.js opening the page with the quote highlighted on it. pdf.js
+running on our site has to download the PDF from its host, and browsers block that unless the
+host allows cross-site reads, which most do not. The only way round it is to pass the file
+through our API, which means serving other people's documents from our address and paying for
+the bandwidth.
+
+**Considered.** pdf.js with a proxy (above). Rendering page images on the server (needs a PDF
+renderer, storage, and is still republishing).
+
+**Trade-off.** The highlight is in our evidence pane, not painted on the PDF page. The page
+itself is one click away.
+
+## D-032. YouTube captions: left out, because robots.txt forbids fetching them
+
+**What.** No YouTube support.
+
+**Why.** Rule 15 says respect robots.txt. Checked on 2026-11-24: YouTube's robots.txt for all
+crawlers disallows `/api/`, `/youtubei/`, `/timedtext_video` and `/get_video_info`. Every way to
+get captions for someone else's video goes through those paths: `youtube-transcript-api` 1.2.5
+posts to `/youtubei/v1/player`, and the caption files it then downloads are under `/api/`. The
+official Data API (`captions.download`) only gives captions to the video's owner. The plan also
+warned that YouTube blocks cloud addresses, so it would probably fail on Cloud Run regardless.
+
+**Considered.**
+1. Use `youtube-transcript-api` anyway. Breaks rule 15; would need Aditya to write an exception
+   into `CLAUDE.md`.
+2. Another source of timestamped transcripts whose robots.txt allows it (a talk or podcast site).
+   Each site is different, and it narrows "video" to one publisher.
+3. Let the visitor paste a transcript. The quote check would work on it, but nothing could check
+   that the pasted text matches the video.
+
+**Trade-off.** Evidentia covers web pages and PDFs, not video. The pitch loses "a video moment"
+and keeps only sentences that are true.
+
+## D-033. Charts read by vision: left out, and M5's finish line changes
+
+**What.** No page images, no `voyage-multimodal-3.5`, no chart reading. M5's "done when" becomes:
+one report cites a web page and a PDF page, each through a quote that passes the code check,
+and the site shows the page number and opens the PDF at that page. `docs/PLAN.md` is updated to
+match.
+
+**Why.** Rule 8: a citation is valid only if the quote is an exact span of the stored source
+text. A number read off a chart by a model has no span: the only text would be the model's own
+description, and checking a model against its own words proves nothing. Every chart claim would
+come out unverified. Charts that print their numbers (axis labels, data labels, captions, a
+table beside the chart) already have them in the PDF's text layer, and those get cited the
+normal way.
+
+**Considered.** Storing the vision model's reading as text marked "read from a figure" and
+always labelling those claims unverified. It shows a multimodal step, but adds a kind of claim
+the product's promise cannot stand behind, and costs a vision call per page.
+
+**Trade-off.** The milestone called "Multimodal" becomes "PDFs". The project gets narrower and
+stays honest.
+
+**Build order.**
+
+1. Fetcher, `Source` and claim page numbers, with tests. No paid calls.
+2. Page numbers in the report, the events and the site.
+3. One recorded run that cites a PDF, for the site's replays (about 10 cents), then deploy.
