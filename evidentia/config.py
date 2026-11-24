@@ -107,6 +107,14 @@ class Settings(BaseSettings):
     page_judge_model: str = "claude-sonnet-5-5"  # a "gpt-..." name sends it to OpenAI
     page_judge_effort: str = "medium"
     page_judge_max_tokens: int = 1_500
+    # The page judge's score (D-039): the share of `page_judge_votes` answers that say supported,
+    # or, with `page_judge_probability`, an OpenAI model's probability of "true" (reasoning off).
+    page_judge_votes: int = 1
+    page_judge_probability: bool = False
+    # Supported needs a score of at least this; a flag needs at most `audit_t_flag`; anything in
+    # between needs a human. 0.5 and 0.5 with one vote is D-038's plain agreement.
+    audit_t_supported: float = 0.5
+    audit_t_flag: float = 0.5
     # Show the checker the paragraph around each quote (D-038, practice run 3). Off until kept.
     audit_quote_context: bool = False
     quote_context_chars: int = 600

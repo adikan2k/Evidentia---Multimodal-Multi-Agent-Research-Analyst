@@ -38,6 +38,7 @@ from evidentia.audit.schemas import (
     PageResult,
     Quote,
     Split,
+    page_call,
 )
 from evidentia.chunk import make_passages
 from evidentia.config import Settings
@@ -334,26 +335,66 @@ class AuditNodes:
     async def page_verdict(
         self, claim: str, source: Source, run_id: str, config: RunnableConfig | None
     ) -> dict[str, Any]:
-        """The page judge's answer, as fields of a PageResult."""
+        """The page judge's score and verdict, as fields of a PageResult (D-038, D-039)."""
         passages = await self.passages_for(claim, source, run_id)
         tag = new_tag("page")
+        system, user = PAGE_JUDGE_SYSTEM.format(tag=tag), page_judge_prompt(claim, passages, tag)
+        if self.s.page_judge_probability:
+            score, reason = await self._page_probability(system, user)
+        else:
+            score, reason = await self._page_votes(system, user, config)
+        verdict = page_call(score, self.s.audit_t_supported, self.s.audit_t_flag)
+        return {"page_judged": verdict, "page_reason": reason, "page_score": score}
+
+    async def _page_votes(
+        self, system: str, user: str, config: RunnableConfig | None
+    ) -> tuple[float | None, str]:
+        """The share of the votes that say supported; votes that fail are left out."""
         model = self.s.page_judge_model
+
+        async def vote() -> PageJudgement | None:
+            try:
+                async with self.gate:
+                    return await self.model_for(model).structured(
+                        node="page_check",
+                        model=model,
+                        effort=self.s.page_judge_effort,
+                        max_tokens=self.s.page_judge_max_tokens,
+                        system=system,
+                        user=user,
+                        schema=PageJudgement,
+                        config=config,
+                    )
+            except ModelStopped:
+                return None
+
+        votes = [
+            v for v in await asyncio.gather(*(vote() for _ in range(self.s.page_judge_votes))) if v
+        ]
+        if not votes:
+            return None, NO_PAGE_JUDGE
+        score = sum(v.supported for v in votes) / len(votes)
+        majority = next(v for v in votes if v.supported == (score >= 0.5))
+        return score, majority.reason
+
+    async def _page_probability(self, system: str, user: str) -> tuple[float | None, str]:
+        model = self.s.page_judge_model
+        llm = self.model_for(model)
+        if not isinstance(llm, OpenAILLM):
+            raise ValueError(f"page_judge_probability needs an OpenAI model, not {model}")
         try:
             async with self.gate:
-                judgement = await self.model_for(model).structured(
+                judgement, score = await llm.probability(
                     node="page_check",
                     model=model,
-                    effort=self.s.page_judge_effort,
                     max_tokens=self.s.page_judge_max_tokens,
-                    system=PAGE_JUDGE_SYSTEM.format(tag=tag),
-                    user=page_judge_prompt(claim, passages, tag),
+                    system=system,
+                    user=user,
                     schema=PageJudgement,
-                    config=config,
                 )
         except ModelStopped:
-            return {"page_judged": "no_answer", "page_reason": NO_PAGE_JUDGE}
-        verdict = "supported" if judgement.supported else "not_supported"
-        return {"page_judged": verdict, "page_reason": judgement.reason}
+            return None, NO_PAGE_JUDGE
+        return score, judgement.reason
 
     async def assess(
         self, claim: str, source: Source, run_id: str, config: RunnableConfig | None = None

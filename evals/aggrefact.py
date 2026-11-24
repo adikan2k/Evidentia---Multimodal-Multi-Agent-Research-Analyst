@@ -35,7 +35,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from evals.common import ROOT, RUNS_DIR, read_jsonl, write_result
 from evals.stats import RESAMPLES, SEED
 from evidentia.audit.graph import AuditDeps, AuditNodes
-from evidentia.audit.schemas import FLAGS, combine
+from evidentia.audit.schemas import FLAGS, combine, page_call
 from evidentia.config import Settings, load_settings
 from evidentia.cost import BudgetExceeded, Charge, Ledger
 from evidentia.embed import Embedder
@@ -57,7 +57,9 @@ SAMPLES: dict[str, tuple[str, int, int, str | None]] = {
     "test2": ("test", 50, FRESH_SEED, "test"),
 }
 QUOTE_MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5"}
-PAGE_MODELS = QUOTE_MODELS | {"luna": "gpt-6-luna"}
+# "luna-p" is gpt-6-luna scored by its token probability, with reasoning off (D-039).
+PAGE_MODELS = QUOTE_MODELS | {"luna": "gpt-6-luna", "luna-p": "gpt-6-luna"}
+GRID = [round(i * 0.05, 2) for i in range(21)]  # thresholds tried on the practice rows
 DEFAULT_CAP = 1.50
 CONCURRENT_ROWS = 6
 
@@ -179,7 +181,7 @@ async def run_quote(row: Row, deps: AuditDeps, config: dict) -> dict[str, Any]:
 async def run_page(row: Row, deps: AuditDeps, config: dict) -> dict[str, Any]:
     nodes = AuditNodes(deps)
     verdict = await nodes.page_verdict(row.claim, as_source(row), f"aggrefact-{row.row}", config)
-    return {"page_judged": verdict["page_judged"]}
+    return {"page_judged": verdict["page_judged"], "page_score": verdict["page_score"]}
 
 
 RUNNERS: dict[str, Callable] = {"quote": run_quote, "page": run_page}
@@ -329,12 +331,36 @@ def quote_pred(line: dict) -> int:
     return int(line["quote_label"] == "supported")
 
 
+def score_of(line: dict) -> float | None:
+    """The page judge's score. Runs from before D-039 saved only the verdict."""
+    if "page_score" in line:
+        return line["page_score"]
+    return {"supported": 1.0, "not_supported": 0.0}.get(line["page_judged"])
+
+
 def page_pred(line: dict) -> int:
-    return int(line["page_judged"] == "supported")
+    score = score_of(line)
+    return int(score is not None and score >= 0.5)
 
 
-def two_judge_label(quote: dict, page: dict) -> str:
-    return combine(quote["quote_label"], page["page_judged"])
+def merge_votes(vote_runs: list[list[dict]]) -> list[dict]:
+    """One page line per row from several single-vote runs: the score is the share of the
+    answered votes that say supported. Only rows every run finished are kept."""
+    by_run = [{x["row"]: x for x in run} for run in vote_runs]
+    merged = []
+    for row in sorted(set.intersection(*(set(r) for r in by_run))):
+        lines = [r[row] for r in by_run]
+        scores = [score_of(x) for x in lines if score_of(x) is not None]
+        score = sum(scores) / len(scores) if scores else None
+        merged.append(
+            lines[0]
+            | {
+                "page_score": score,
+                "page_judged": page_call(score, 0.5, 0.5),
+                "usd": sum(x["usd"] for x in lines),
+            }
+        )
+    return merged
 
 
 def two_judge_pred(label: str) -> int | None:
@@ -343,7 +369,12 @@ def two_judge_pred(label: str) -> int | None:
     return 0 if label in FLAGS else None  # needs a human, or could not check
 
 
-def join(quote_lines: list[dict], page_lines: list[dict]) -> list[dict]:
+def join(
+    quote_lines: list[dict],
+    page_lines: list[dict],
+    t_supported: float = 0.5,
+    t_flag: float = 0.5,
+) -> list[dict]:
     """One line per row both judges finished, with every system's prediction."""
     pages = {x["row"]: x for x in page_lines}
     joined = []
@@ -351,7 +382,7 @@ def join(quote_lines: list[dict], page_lines: list[dict]) -> list[dict]:
         p = pages.get(q["row"])
         if p is None:
             continue
-        label = two_judge_label(q, p)
+        label = combine(q["quote_label"], page_call(score_of(p), t_supported, t_flag))
         pred = two_judge_pred(label)
         joined.append(
             {
@@ -372,11 +403,59 @@ def join(quote_lines: list[dict], page_lines: list[dict]) -> list[dict]:
     return joined
 
 
+def point(joined: list[dict]) -> dict[str, float | None]:
+    """The three D-038 measures, with partial both as a flag and as its own verdict."""
+    own = [x for x in joined if x["two_label"] != "partial"]
+    decided = sum(x["two_label"] in FLAGS | {"supported"} for x in joined)
+    rnd = lambda v: None if v is None else round(v, 4)  # noqa: E731
+    return {
+        "coverage": rnd(share(decided, len(joined))),
+        "supported_precision": rnd(supported_precision(joined, "two")),
+        "flag_precision": rnd(flag_precision(joined, "two")),
+        "flag_precision_partial_own_verdict": rnd(flag_precision(own, "two")),
+    }
+
+
+def meets(pt: dict, flag_key: str) -> bool:
+    values = {
+        "coverage": pt["coverage"],
+        "supported_precision": pt["supported_precision"],
+        "flag_precision": pt[flag_key],
+    }
+    return all(values[k] is not None and values[k] >= v for k, v in FINISH_LINE.items())
+
+
+def sweep(quote_lines: list[dict], page_lines: list[dict]) -> dict[str, Any]:
+    """Every threshold pair on the grid, and the pair with the most coverage that meets
+    D-038's bars, for each way of counting partial. Chosen on these rows, so it is fixed
+    before the confirming run, never chosen on it."""
+    points = []
+    for t_s in GRID:
+        for t_f in GRID:
+            if t_f <= t_s:
+                pt = point(join(quote_lines, page_lines, t_s, t_f))
+                points.append({"t_supported": t_s, "t_flag": t_f} | pt)
+
+    def best(flag_key: str) -> dict | None:
+        ok = [pt for pt in points if meets(pt, flag_key)]
+        return max(ok, key=lambda pt: (pt["coverage"], pt[flag_key])) if ok else None
+
+    return {
+        "points": points,
+        "best_partial_as_flag": best("flag_precision"),
+        "best_partial_own_verdict": best("flag_precision_partial_own_verdict"),
+    }
+
+
 def summarise(
-    quote_lines: list[dict], page_lines: list[dict], sample_name: str, judges: dict[str, str]
+    quote_lines: list[dict],
+    page_lines: list[dict],
+    sample_name: str,
+    judges: dict[str, str],
+    thresholds: tuple[float, float] = (0.5, 0.5),
 ) -> dict[str, Any]:
     """Every number in the result file comes from here."""
-    joined = join(quote_lines, page_lines)
+    joined = join(quote_lines, page_lines, *thresholds)
     groups: dict[str, list[dict]] = defaultdict(list)
     for x in joined:
         groups[x["dataset"]].append(x)
@@ -406,7 +485,7 @@ def summarise(
         "supported_precision": two["supported_precision"]["value"],
         "coverage": two["coverage"]["value"],
     }
-    # The proposed change after the practice runs: "partial" as its own verdict, not a flag.
+    # D-038's proposed change: "partial" as its own verdict, not a flag.
     partial = [x for x in joined if x["two_label"] == "partial"]
     separate = {
         "flag_precision": with_interval(
@@ -437,6 +516,7 @@ def summarise(
         "sample_seed": SAMPLES[sample_name][2],
         "rows": n,
         "judges": judges,
+        "thresholds": {"t_supported": thresholds[0], "t_flag": thresholds[1]},
         "metric": "balanced accuracy per sub-dataset, then their plain mean (95% bootstrap)",
         "two_judges": two,
         "quote_judge_alone": measures("quote")
@@ -450,6 +530,7 @@ def summarise(
             "measured": finish,
             "passed": all(finish[k] is not None and finish[k] >= v for k, v in FINISH_LINE.items()),
         },
+        "threshold_sweep": sweep(quote_lines, page_lines),
         "usd": {
             "quote_judge": round(usd_quote, 4),
             "page_judge": round(usd_page, 4),
@@ -466,8 +547,18 @@ def run_path(sample_name: str, judge: str, model: str, context: bool = False) ->
     return RUNS_DIR / f"aggrefact_{sample_name}_{judge}_{model}{suffix}.jsonl"
 
 
-def result_name(sample_name: str, quote: str, page: str, context: bool) -> str:
-    return f"aggrefact_{sample_name}_q-{quote}{'-ctx' if context else ''}_p-{page}"
+def vote_name(page: str, vote: int) -> str:
+    """Each vote is its own run, so a fifth vote reuses the first four."""
+    return page if vote == 1 else f"{page}_v{vote}"
+
+
+def result_name(args: argparse.Namespace) -> str:
+    name = f"aggrefact_{args.sample}_q-{args.quote}{'-ctx' if args.context else ''}_p-{args.page}"
+    if args.votes > 1:
+        name += f"-votes{args.votes}"
+    if (args.t_supported, args.t_flag) != (0.5, 0.5):
+        name += f"_t{args.t_supported}-{args.t_flag}"
+    return name
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
@@ -476,6 +567,9 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--quote", choices=list(QUOTE_MODELS), default="haiku")
     parser.add_argument("--page", choices=list(PAGE_MODELS), default="haiku")
     parser.add_argument("--context", action="store_true", help="show the checker each paragraph")
+    parser.add_argument("--votes", type=int, default=1, help="page judge answers per claim")
+    parser.add_argument("--t-supported", type=float, default=0.5, dest="t_supported")
+    parser.add_argument("--t-flag", type=float, default=0.5, dest="t_flag")
     parser.add_argument("--cap", type=float, default=DEFAULT_CAP, help="US dollars, whole command")
     parser.add_argument("--dry", action="store_true", help="download and describe the sample only")
     return parser.parse_args(argv)
@@ -507,6 +601,7 @@ def main(argv: list[str]) -> None:
         finder_model=quote,
         checker_model=quote,
         page_judge_model=page,
+        page_judge_probability=args.page == "luna-p",
         audit_quote_context=args.context,
     )
     print(
@@ -522,10 +617,9 @@ async def run_all(rows: list[Row], args: argparse.Namespace, settings: Settings)
     voyage = Embedder(settings, shared, tracer).client
     openai = make_client(settings) if is_openai_model(settings.page_judge_model) else None
     config = {"callbacks": tracer.callbacks(), "run_name": "evidentia-aggrefact"}
-    outs = {
-        "quote": run_path(args.sample, "quote", args.quote, args.context),
-        "page": run_path(args.sample, "page", args.page),
-    }
+    outs = {"quote": run_path(args.sample, "quote", args.quote, args.context)}
+    for vote in range(1, args.votes + 1):
+        outs[f"page vote {vote}"] = run_path(args.sample, "page", vote_name(args.page, vote))
     found = {}
     try:
         with tracer.span(f"aggrefact.{args.sample}", "span", {"rows": len(rows)}):
@@ -533,7 +627,7 @@ async def run_all(rows: list[Row], args: argparse.Namespace, settings: Settings)
                 print(f"== {judge} judge")
                 found[judge] = await evaluate(
                     rows,
-                    judge,
+                    judge.split()[0],
                     lambda: row_deps(settings, shared, tracer, voyage, openai),
                     out,
                     config,
@@ -541,9 +635,12 @@ async def run_all(rows: list[Row], args: argparse.Namespace, settings: Settings)
     finally:
         tracer.flush()
     print(f"  spent ${shared.spent:.4f} this command")
-    if found["quote"] and found["page"]:
+    votes = [found[k] for k in found if k.startswith("page")]
+    if found["quote"] and all(votes):
         judges = {"quote": settings.checker_model, "page": settings.page_judge_model}
-        judges["quote_context"] = str(args.context)
-        body = summarise(found["quote"], found["page"], args.sample, judges)
-        path = write_result(result_name(args.sample, args.quote, args.page, args.context), body)
+        judges |= {"quote_context": str(args.context), "page_votes": str(args.votes)}
+        judges["page_score"] = "token probability" if args.page == "luna-p" else "vote share"
+        thresholds = (args.t_supported, args.t_flag)
+        body = summarise(found["quote"], merge_votes(votes), args.sample, judges, thresholds)
+        path = write_result(result_name(args), body)
         print(f"  wrote {path.name}")

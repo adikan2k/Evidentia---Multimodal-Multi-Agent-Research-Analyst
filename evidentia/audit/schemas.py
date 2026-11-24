@@ -100,8 +100,10 @@ class PageResult(BaseModel):
     verdict: CheckLabel | None = None
     reason: str = ""
     # The page judge (D-038). None means it did not run, for example with one judge only.
-    page_judged: Literal["supported", "not_supported", "no_answer"] | None = None
+    # "uncertain" means its score fell between the two thresholds (D-039).
+    page_judged: Literal["supported", "not_supported", "uncertain", "no_answer"] | None = None
     page_reason: str = ""
+    page_score: float | None = None  # the page judge's probability that the claim is supported
 
     @property
     def quote_label(self) -> AuditLabel:
@@ -131,8 +133,20 @@ def combine(quote_label: AuditLabel, page: str | None) -> AuditLabel:
         return quote_label  # one judge only, or the page could not be checked at all
     if page == "no_answer":
         return "unchecked"
+    if page == "uncertain":
+        return "needs_human"
     agrees = (quote_label == "supported") == (page == "supported")
     return quote_label if agrees else "needs_human"
+
+
+def page_call(score: float | None, t_supported: float, t_flag: float) -> str:
+    """The page judge's score turned into its verdict (D-039). With one vote the score is 0 or 1,
+    and the default thresholds of 0.5 give D-038's plain agreement."""
+    if score is None:
+        return "no_answer"
+    if score >= t_supported:
+        return "supported"
+    return "not_supported" if score <= t_flag else "uncertain"
 
 
 class AuditClaim(BaseModel):

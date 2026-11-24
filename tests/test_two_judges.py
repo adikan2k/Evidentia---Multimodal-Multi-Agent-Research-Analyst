@@ -7,12 +7,13 @@ import pytest
 
 from evidentia.audit.graph import AuditNodes, quote_context
 from evidentia.audit.report import claim_views
-from evidentia.audit.schemas import PageJudgement, Quote, combine
+from evidentia.audit.schemas import PageJudgement, Quote, combine, page_call
 from evidentia.config import ConfigError
 from evidentia.cost import Ledger, openai_usd
 from evidentia.llm import ModelStopped
 from evidentia.openai_llm import OpenAILLM
 from evidentia.schemas import Source
+from tests.fakes import reply
 from tests.test_audit_graph import FACT, GOOD, LONG, audit, make_deps
 
 ANSWER = (
@@ -201,3 +202,107 @@ def test_a_gpt_page_judge_goes_to_openai_and_claude_does_the_rest(settings) -> N
     assert not [c for c in fake.calls if c["schema"] == "PageJudgement"]
     items = {(c.node, c.item) for c in deps.ledger.charges}
     assert ("page_check", "gpt-6-luna") in items and ("check", settings.checker_model) in items
+
+
+# Scores and thresholds (D-039)
+
+
+@pytest.mark.parametrize(
+    ("score", "t_supported", "t_flag", "call"),
+    [
+        (1.0, 0.5, 0.5, "supported"),
+        (0.0, 0.5, 0.5, "not_supported"),
+        (0.6, 0.8, 0.2, "uncertain"),
+        (0.8, 0.8, 0.2, "supported"),
+        (0.2, 0.8, 0.2, "not_supported"),
+        (None, 0.5, 0.5, "no_answer"),
+    ],
+)
+def test_the_score_becomes_a_verdict_by_two_thresholds(score, t_supported, t_flag, call) -> None:
+    assert page_call(score, t_supported, t_flag) == call
+
+
+def test_an_uncertain_page_judge_means_a_human_decides() -> None:
+    assert combine("supported", "uncertain") == "needs_human"
+    assert combine("not_found", "uncertain") == "needs_human"
+
+
+def test_votes_give_a_score_and_the_thresholds_decide(settings) -> None:
+    answers = iter([True, True, False, True, True])  # four of five votes say supported
+    settings = settings.model_copy(
+        update={"page_judge_votes": 5, "audit_t_supported": 0.9, "audit_t_flag": 0.2}
+    )
+    deps, fake = make_deps(settings)
+    original = fake._call
+
+    async def mixed(model, effort, max_tokens, system, user, schema, config):
+        if schema is PageJudgement:
+            fake.calls.append({"schema": "PageJudgement", "user": user})
+            return reply(PageJudgement(reason="vote", supported=next(answers)))
+        return await original(model, effort, max_tokens, system, user, schema, config)
+
+    deps.llm._call = mixed
+    state = audit(deps, f"Solar capacity grew 24% in 2023 [1].\n[1] {GOOD}")
+    page = claim_views(state)[0]["pages"][0]
+    assert page["page_score"] == 0.8 and page["page_judged"] == "uncertain"
+    assert claim_views(state)[0]["label"] == "needs_human"
+    assert len([c for c in fake.calls if c["schema"] == "PageJudgement"]) == 5
+
+
+def token(text: str, logprob: float, alts=()):
+    top = [SimpleNamespace(token=t, logprob=lp) for t, lp in alts]
+    return SimpleNamespace(token=text, logprob=logprob, top_logprobs=top)
+
+
+def response_with(tokens):
+    part = SimpleNamespace(logprobs=tokens)
+    return SimpleNamespace(output=[SimpleNamespace(content=[part])])
+
+
+def test_probability_of_true_reads_the_boolean_token() -> None:
+    import math
+
+    from evidentia.openai_llm import probability_of_true
+
+    tokens = [token('{"', 0.0), token("supported", 0.0), token('":', 0.0)]
+    sure = response_with([*tokens, token("true", 0.0), token("}", 0.0)])
+    assert probability_of_true(sure) == 1.0
+    split = [token("false", math.log(0.7), [("false", math.log(0.7)), ("true", math.log(0.3))])]
+    assert probability_of_true(response_with([*tokens, *split])) == pytest.approx(0.3)
+    with pytest.raises(ModelStopped):
+        probability_of_true(response_with(tokens))
+
+
+def test_the_probability_call_turns_reasoning_off_and_asks_for_token_probabilities(
+    settings,
+) -> None:
+    parsed = PageJudgement(reason="r", supported=True)
+    llm, responses = openai_with(parsed, settings)
+
+    async def parse(**kwargs):
+        responses.kwargs = kwargs
+        result = await FakeResponses(parsed).parse(**kwargs)
+        result.output = [SimpleNamespace(content=[SimpleNamespace(logprobs=[token("true", 0.0)])])]
+        return result
+
+    responses.parse = parse
+    judgement, score = asyncio.run(
+        llm.probability(
+            node="page_check",
+            model="gpt-6-luna",
+            max_tokens=200,
+            system="s",
+            user="u",
+            schema=PageJudgement,
+        )
+    )
+    assert judgement.supported and score == 1.0
+    assert responses.kwargs["reasoning"] == {"effort": "none"}
+    assert responses.kwargs["include"] == ["message.output_text.logprobs"]
+
+
+def test_probability_mode_needs_an_openai_model(settings) -> None:
+    settings = settings.model_copy(update={"page_judge_probability": True})
+    deps, _ = make_deps(settings)
+    with pytest.raises(ValueError, match="needs an OpenAI model"):
+        asyncio.run(AuditNodes(deps)._page_probability("s", "u"))

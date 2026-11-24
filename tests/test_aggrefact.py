@@ -191,3 +191,46 @@ def test_partial_can_be_scored_as_its_own_verdict() -> None:
     assert separate["flag_precision"]["value"] == 1.0 and separate["partial_share"] == 0.3333
     assert separate["partial_people_label_supported"] == 1.0
     assert separate["coverage"]["value"] == 1.0
+
+
+def page_line(row: int, judged: str, score=None, label: int = 1) -> dict:
+    line = {"row": row, "dataset": "A", "label": label, "page_judged": judged, "usd": 0.001}
+    return line if score is None else line | {"page_score": score}
+
+
+def test_votes_merge_into_a_share_and_old_runs_still_read() -> None:
+    from evals.aggrefact import merge_votes, score_of
+
+    assert score_of({"page_judged": "supported"}) == 1.0  # saved before D-039
+    assert score_of({"page_judged": "no_answer", "page_score": None}) is None
+    runs = [
+        [page_line(1, "supported", 1.0), page_line(2, "supported", 1.0)],
+        [page_line(1, "not_supported", 0.0), page_line(2, "supported", 1.0)],
+        [page_line(1, "no_answer", None)],  # row 2 missing from this vote
+    ]
+    merged = merge_votes(runs)
+    assert [x["row"] for x in merged] == [1]
+    assert merged[0]["page_score"] == 0.5 and merged[0]["usd"] == 0.003
+
+
+def test_the_sweep_finds_the_most_coverage_that_meets_the_bars() -> None:
+    from evals.aggrefact import sweep
+
+    base = {"dataset": "A", "usd": 0.0, "quote_offsets": []}
+    quote, page = [], []
+    # 20 claims the quote judge supports, mostly with high page scores; people agree above 0.65.
+    for i in range(20):
+        score = 0.6 + 0.4 * i / 19
+        quote.append(base | {"row": i, "label": int(score > 0.65), "quote_label": "supported"})
+        page.append(page_line(i, "", score, int(score > 0.65)))
+    # 20 it calls not on the page, mostly with low scores; people agree below 0.35.
+    for i in range(20, 40):
+        score = 0.4 * (i - 20) / 19
+        quote.append(base | {"row": i, "label": int(score > 0.35), "quote_label": "not_found"})
+        page.append(page_line(i, "", score, int(score > 0.35)))
+    found = sweep(quote, page)
+    best = found["best_partial_as_flag"]
+    assert best is not None and best["coverage"] >= 0.70
+    assert best["flag_precision"] >= 0.80 and best["supported_precision"] >= 0.93
+    assert best["t_flag"] <= best["t_supported"]
+    assert all(pt["t_flag"] <= pt["t_supported"] for pt in found["points"])
