@@ -28,8 +28,9 @@ library.
 ---
 
 The entries below cover milestone M1. **Approved by Aditya on 2026-11-24**, with one change: he
-said money and API credits are not a constraint and to favour quality. D-004, D-005, D-006 and
-D-008 were updated for that before any code was written, and D-011 was added.
+said Claude API credits are not a constraint and to favour quality, but the other services (Voyage,
+Tavily, Qdrant, Langfuse) must stay on their free tiers. D-004, D-005, D-006 and D-008 were updated
+for that before any code was written, and D-011 was added.
 Library facts were checked against the live docs and PyPI on 2026-11-24.
 
 ## D-002. M1 shape: one linear async graph of small modules
@@ -117,8 +118,11 @@ whatever the budget, because the public site in M4 runs questions from strangers
 
 Prices in the table, each with its source and date in a comment:
 Sonnet 5.5 $2 in / $10 out per million tokens, Opus 5.5 $4 / $20, Haiku 5.5 $0.10 / $0.50, Voyage
-`voyage-4-large` $0.12 and `rerank-3` $0.05 per million tokens, Tavily advanced search 2 credits
-at the pay-as-you-go rate of $0.008 per credit.
+`voyage-4-large` $0.12 and `rerank-3` $0.05 per million tokens, Tavily basic search 1 credit at the
+pay-as-you-go rate of $0.008 per credit.
+
+Only Claude is expected to be billed. Voyage gives 200 million free tokens per model and a run uses
+about 50 thousand; Tavily gives 1,000 free credits a month and a run uses 4.
 
 **Why.** Checking before the call is what makes the cap hard; checking only after would let one
 large call overshoot. Free-tier usage is still counted at list price so the number is the true
@@ -132,8 +136,9 @@ but an extra network call per model call). Tracking only model cost (misses sear
 
 ## D-006. Search, fetch and extract
 
-**What.** `search.py` calls Tavily with `search_depth="advanced"`, 6 results per query, and keeps
-at most 12 unique URLs per run. `fetch.py` downloads each page itself with `httpx`:
+**What.** `search.py` calls Tavily with `search_depth="basic"`, 6 results per query, and keeps
+at most 12 unique URLs per run. Basic costs 1 credit, half of advanced, and the extra depth only
+improves Tavily's own snippets, which we do not use because we fetch every page ourselves. `fetch.py` downloads each page itself with `httpx`:
 
 - `robots.txt` is read with the standard library parser and cached per host. Disallowed pages are
   skipped. If `robots.txt` cannot be read because of a server error, the host is skipped.
@@ -190,7 +195,8 @@ RRF combines the two rankings without tuning weights. The reranker reads the que
 passage together, which is slower but more accurate than comparing vectors, so it is used only on
 the 30 survivors. M3 measures what each stage adds.
 
-**Considered.** `voyage-4` or `voyage-4-lite` (half and a sixth of the price; M3 can compare). `fastembed` for BM25 (pulls
+**Considered.** `voyage-4` or `voyage-4-lite` (half and a sixth of the list price, but every one of
+these models has the same 200 million free tokens, so the best one costs nothing here). `fastembed` for BM25 (pulls
 in onnxruntime, against the no-heavy-local-models rule). One collection per run (slow to create
 and clutters the free cluster).
 
