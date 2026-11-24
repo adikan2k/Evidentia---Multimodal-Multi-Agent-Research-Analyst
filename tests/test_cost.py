@@ -51,7 +51,7 @@ def test_ledger_blocks_a_call_that_could_pass_the_cap() -> None:
     ledger.add(Charge(node="plan", item="claude-sonnet-5-5", usd=0.06))
     with ledger.reserve("write", 0.04):
         pass
-    with pytest.raises(BudgetExceeded, match="cap is \$0.10"), ledger.reserve("write", 0.05):
+    with pytest.raises(BudgetExceeded, match=r"cap is \$0.10"), ledger.reserve("write", 0.05):
         pass
     assert ledger.spent == pytest.approx(0.06)
 

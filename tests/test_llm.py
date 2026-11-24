@@ -95,7 +95,8 @@ def test_plan_prompt_states_the_limit() -> None:
 def test_check_prompt_holds_the_claim_and_the_quote_and_nothing_else() -> None:
     prompt = check_prompt("Solar grew 24%.", "Solar capacity grew 24% in 2023.", "quote-ab12")
     assert prompt == (
-        "Claim: Solar grew 24%.\n\nQuote:\n<quote-ab12>\nSolar capacity grew 24% in 2023.\n</quote-ab12>"
+        "Claim: Solar grew 24%.\n\nQuote:\n"
+        "<quote-ab12>\nSolar capacity grew 24% in 2023.\n</quote-ab12>"
     )
 
 
