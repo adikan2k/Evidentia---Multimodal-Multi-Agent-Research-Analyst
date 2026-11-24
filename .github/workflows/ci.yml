@@ -30,7 +30,8 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && inputs.run_evals
     needs: test
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # A fresh run makes every model call again: a few thousand calls, four at a time.
+    timeout-minutes: 150
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
