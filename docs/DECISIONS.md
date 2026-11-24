@@ -2427,3 +2427,20 @@ person reading the pages.
   the flags are mostly right or mostly wrong, not measure a small difference between the tools.
 - Pages can change between the audit and the check, so the labelling should not wait long.
 - It costs about two hours of Aditya's time and no money.
+
+### D-044 as built: 40 items, not 100
+
+Aditya capped the sample at 40 on 2026-11-24: from each tool, 10 failed and 10 supported claims.
+That is about 45 minutes of his time.
+
+- **The sample is fixed.** `evals/realworld/hand_check_items.json` was drawn with seed 20261201
+  and committed before any label. Every item cites one page.
+- **What 40 can show.** With 20 flags, "flags upheld" for both tools together is good to about
+  ±20 points. That is enough to say whether the flags are mostly right or mostly wrong. It is not
+  enough to compare the two tools' flags, so per-tool figures are reported but not compared.
+- **The 70% rule now applies to both tools together.** With 10 flags per tool, one tool's share is
+  too noisy to act on. If fewer than 70% of the 20 checked flags are upheld, the findings page
+  says so in its first screen and makes no comparison between the tools.
+- **Kept off the screen.** The tool's name, the verdict, the quotes, the question's id, link text
+  such as "(openai.com)" inside a claim, numbered markers, and `utm_` tracking parameters.
+- **Intervals** are Wilson intervals, which behave well for samples this small.

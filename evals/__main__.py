@@ -30,6 +30,8 @@ STEPS = {
     "report": ("evals.report", "run"),
     "label-partial": ("evals.label_partial", "run"),  # Aditya's step (D-039)
     "partial-labels": ("evals.label_partial", "score"),
+    "hand-check": ("evals.hand_check", "run"),  # Aditya's step (D-044)
+    "hand-check-score": ("evals.hand_check", "score"),
 }
 # `label` is Aditya's step and `pairs` must not be rebuilt once labelling has started.
 AUTOMATIC = [
