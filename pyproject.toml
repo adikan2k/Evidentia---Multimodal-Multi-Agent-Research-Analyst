@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling==1.33.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evidentia"
+version = "0.1.0"
+description = "Evidentia research agent (rebuild in progress)."
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "ruff==0.17.6",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["evidentia"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+# The old code is kept for reference only and is not held to the new lint rules.
+extend-exclude = ["backend", "frontend"]
+force-exclude = true
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
