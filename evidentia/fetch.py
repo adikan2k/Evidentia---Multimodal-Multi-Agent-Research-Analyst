@@ -238,7 +238,7 @@ class Fetcher:
 
     async def fetch_body(self, url: str) -> Body:
         """Follow redirects by hand so robots.txt and the rate limit apply to every hop."""
-        for _ in range(MAX_REDIRECTS + 1):
+        for hop in range(MAX_REDIRECTS + 1):
             if urlsplit(url).scheme not in ("http", "https"):
                 raise Skip("not an http(s) address")
             if not is_public_host(urlsplit(url).hostname or ""):
@@ -251,7 +251,10 @@ class Fetcher:
                     url = urljoin(url, response.headers["location"])
                     continue
                 if response.status_code != 200:
-                    raise Skip(f"HTTP {response.status_code}")
+                    # A 404 reached through a redirect is often a site sending crawlers to a
+                    # block page, not a missing page, so only the first answer counts as dead.
+                    after = " after a redirect" if hop else ""
+                    raise Skip(f"HTTP {response.status_code}{after}")
                 return await self._read_body(response)
         raise Skip("too many redirects")
 

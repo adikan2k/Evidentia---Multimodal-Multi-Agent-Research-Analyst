@@ -258,3 +258,29 @@ def test_pdf_reading_has_a_time_limit(settings, monkeypatch) -> None:
     url = "https://agency.org/report.pdf"
     _, skipped = fetch(quick, {url: pdf_response(make_pdf([LINES]))}, [url])
     assert skipped[0].reason == "PDF took too long to read"
+
+
+def test_a_404_reached_through_a_redirect_is_not_called_dead(settings) -> None:
+    import asyncio
+
+    import httpx
+
+    from evidentia.fetch import Fetcher
+    from evidentia.schemas import SearchHit
+    from evidentia.tracing import NoopTracer
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        if request.url.path == "/blocked":
+            return httpx.Response(302, headers={"location": "/apology"})
+        return httpx.Response(404)
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    fetcher = Fetcher(settings, NoopTracer(), client=client)
+    hits = [
+        SearchHit(url="https://site.example.org/blocked"),
+        SearchHit(url="https://site.example.org/gone"),
+    ]
+    _, skipped = asyncio.run(fetcher.fetch_all(hits))
+    assert [s.reason for s in skipped] == ["HTTP 404 after a redirect", "HTTP 404"]

@@ -1,0 +1,185 @@
+{
+ "id": "science-01",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "In its June 23, 2025 “First Look” release, the Vera C. Rubin Observatory showed a detailed composite of the Trifid and Lagoon nebulae, revealing faint clouds of gas and dust, and a sweeping view of the Virgo Cluster region, filled with galaxies. The release also highlighted 2,104 previously unknown asteroids detected in its initial observations. (nsf.gov)\nIts flagship project is the Legacy Survey of Space and Time (LSST), a 10-year survey that repeatedly images the southern night sky every few nights. By comparing those images, astronomers can track moving objects such as asteroids, spot changes such as supernova explosions, and study dark matter and dark energy. (nationalacademies.org)",
+  "claims": [
+   {
+    "sentence": "The release also highlighted 2,104 previously unknown asteroids detected in its initial observations. (nsf.gov)",
+    "start": 246,
+    "end": 357,
+    "claim": "The Vera C. Rubin Observatory's June 23, 2025 “First Look” release highlighted 2,104 previously unknown asteroids detected in its initial observations.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nsf.gov/news/first-imagery-nsf-doe-vera-c-rubin-observatory?utm_source=openai",
+      "host": "nsf.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In about 10 hours of observations, NSF-DOE Vera C. Rubin Observatory discovered 2,104 never-before-seen asteroids in our solar system, including seven near-Earth asteroids (which pose no danger).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The NSF-DOE Vera C. Rubin Observatory, a major new scientific facility jointly funded by the U.S. National Science Foundation and the U.S. Department of Energy's Office of Science, released its first imagery today at an event in Washington, D.C.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 2,104 never-before-seen asteroids from about 10 hours of observations and the first imagery release, but they do not mention the June 23, 2025 date or name the release as a \"First Look\" release.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Rubin discovered 2,104 never-before-seen asteroids in about 10 hours of observations, but it does not give a June 23, 2025 date or identify the release as “First Look.”"
+     }
+    ]
+   },
+   {
+    "sentence": "By comparing those images, astronomers can track moving objects such as asteroids, spot changes such as supernova explosions, and study dark matter and dark energy. (nationalacademies.org)",
+    "start": 507,
+    "end": 695,
+    "claim": "By comparing LSST images, astronomers can track moving objects such as asteroids.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nationalacademies.org/news/first-images-from-vera-c-rubin-observatory-debut-at-national-academy-of-sciences?utm_source=openai",
+      "host": "nationalacademies.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the observatory will scan the sky every three to four days and that its first images revealed 2,100 asteroids, but it does not state that astronomers compare images to track moving objects."
+     }
+    ]
+   },
+   {
+    "sentence": "By comparing those images, astronomers can track moving objects such as asteroids, spot changes such as supernova explosions, and study dark matter and dark energy. (nationalacademies.org)",
+    "start": 507,
+    "end": 695,
+    "claim": "By comparing LSST images, astronomers can spot changes such as supernova explosions.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nationalacademies.org/news/first-images-from-vera-c-rubin-observatory-debut-at-national-academy-of-sciences?utm_source=openai",
+      "host": "nationalacademies.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Rubin Observatory’s images and repeated sky surveys but does not say astronomers compare LSST images to spot changes such as supernova explosions."
+     }
+    ]
+   },
+   {
+    "sentence": "By comparing those images, astronomers can track moving objects such as asteroids, spot changes such as supernova explosions, and study dark matter and dark energy. (nationalacademies.org)",
+    "start": 507,
+    "end": 695,
+    "claim": "By comparing LSST images, astronomers can study dark matter and dark energy.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nationalacademies.org/news/first-images-from-vera-c-rubin-observatory-debut-at-national-academy-of-sciences?utm_source=openai",
+      "host": "nationalacademies.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the observatory will help explore dark matter and dark energy, but it does not state that astronomers do so by comparing LSST images."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.75,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 4,
+   "claims_over_limit": 0,
+   "usd": 0.002309,
+   "usd_per_claim": 0.000577
+  },
+  "cost": {
+   "total_usd": 0.0023,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0009
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

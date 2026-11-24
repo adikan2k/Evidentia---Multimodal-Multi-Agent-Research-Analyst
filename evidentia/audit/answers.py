@@ -17,7 +17,7 @@ from evidentia.openai_llm import make_client
 # 2026-11-24: $10 per 1,000 calls, plus the search content tokens at the model's own rates.
 WEB_SEARCH_USD_PER_CALL = 0.01
 ANSWER_MODEL = "gpt-6.2-sol"
-MAX_OUTPUT_TOKENS = 2_000
+MAX_OUTPUT_TOKENS = 4_000  # both tools think before they write, and that counts too
 WORST_CASE_SEARCHES = 5
 
 
@@ -65,8 +65,9 @@ def charge(ledger: Ledger, model: str, response: Any) -> float:
 
 
 CLAUDE_ANSWER_MODEL = "claude-sonnet-5-5"
-# The Messages API's web search tool for current models (Claude API reference, read 2026-11-24).
-CLAUDE_WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 5}
+# The Messages API's web search tool. The newer web_search_20260209 filters results with code
+# and its answers carry no citation data (checked on 2026-11-24), so the basic tool is used.
+CLAUDE_WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search", "max_uses": 5}
 MAX_PAUSES = 3  # a long search turn can pause; the API resumes it when the turn is sent back
 
 
@@ -125,6 +126,7 @@ async def claude_answer_with_web_search(
                 break
             messages = [messages[0], {"role": "assistant", "content": response.content}]
         text, cited = claude_markers(blocks)
+        ended = response.stop_reason  # "end_turn", or "max_tokens" if the answer was cut off
         span.update(output={"answer": text}, metadata={"usd": round(usd, 4), "cited_pages": cited})
     return {
         "question": question,
@@ -133,6 +135,7 @@ async def claude_answer_with_web_search(
         "made_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "text": text,
         "citations": cited,
+        "ended": ended,
         "usd": round(usd, 4),
     }
 
@@ -191,5 +194,6 @@ async def answer_with_web_search(
         "made_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "text": with_markers(text, citations),
         "citations": len({c.url for c in citations}),
+        "ended": getattr(response, "status", None),  # "completed", or "incomplete" if cut off
         "usd": round(usd, 4),
     }

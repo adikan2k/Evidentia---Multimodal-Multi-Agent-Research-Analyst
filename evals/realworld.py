@@ -144,7 +144,15 @@ class Runner:
 def counts(report: dict) -> dict[str, int]:
     labels = Counter(c["label"] for c in report["claims"])
     card = report["scorecard"]
+    # D-042, after the pilot: the headline counts only claims whose own sentence carries a
+    # citation. A claim that takes its paragraph's closing citation is reported apart.
+    own = Counter(c["label"] for c in report["claims"] if c.get("cited_by") == "sentence")
+    para = Counter(c["label"] for c in report["claims"] if c.get("cited_by") == "paragraph")
     return {
+        "verdict_own": sum(own[label] for label in VERDICT),
+        "failed_own": sum(own[label] for label in FAILED),
+        "verdict_paragraph": sum(para[label] for label in VERDICT),
+        "failed_paragraph": sum(para[label] for label in FAILED),
         "claims": len(report["claims"]),
         "with_verdict": sum(labels[label] for label in VERDICT),
         "failed": sum(labels[label] for label in FAILED),
@@ -187,6 +195,12 @@ def measures(rows: list[dict]) -> dict[str, Any]:
         "questions": len(rows),
         "claims": total("claims"),
         "with_verdict": total("with_verdict"),
+        "headline_failed_share": interval(rows, lambda rs: ratio(rs, "failed_own", "verdict_own")),
+        "headline_claims": total("verdict_own"),
+        "paragraph_cited_failed_share": interval(
+            rows, lambda rs: ratio(rs, "failed_paragraph", "verdict_paragraph")
+        ),
+        "paragraph_cited_claims": total("verdict_paragraph"),
         "failed_share_of_verdicts": interval(rows, lambda rs: ratio(rs, "failed", "with_verdict")),
         "contradicted": total("contradicted"),
         "shares_of_all_claims": {
@@ -202,13 +216,13 @@ def measures(rows: list[dict]) -> dict[str, Any]:
 
 
 def difference(a: list[dict], b: list[dict]) -> dict:
-    """First tool's failed share minus the second's, resampling the same questions for both."""
+    """First tool's headline failed share minus the second's, resampling the same questions."""
     by_q = {r["id"]: r for r in b}
     pairs = [(r, by_q[r["id"]]) for r in a if r["id"] in by_q]
 
     def stat(ps: list[tuple[dict, dict]]) -> float | None:
-        x = ratio([p[0] for p in ps], "failed", "with_verdict")
-        y = ratio([p[1] for p in ps], "failed", "with_verdict")
+        x = ratio([p[0] for p in ps], "failed_own", "verdict_own")
+        y = ratio([p[1] for p in ps], "failed_own", "verdict_own")
         return None if x is None or y is None else x - y
 
     return interval(pairs, stat) | {"questions": len(pairs)}  # type: ignore[arg-type]

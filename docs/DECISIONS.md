@@ -2006,3 +2006,39 @@ estimate with that error in it, and the page shows both numbers side by side.
 - The Findings page is built and checked in the browser.
 - The README section is written.
 - The tests pass, including those for the Claude answer collector.
+
+### What the first pilot found (D-042), and what changed before any full run
+
+The pilot ran the 10 fixed questions through both tools for $1.03 (answers $0.80, audits about
+$0.004 each), plus about $0.30 of single calls to find the causes. Its answers, audits and
+result file are kept in `evals/realworld/pilot_v1/` and `evals/results/realworld_pilot_v1.json`.
+They are not used for any finding, because three problems in this project's pipeline made them
+wrong:
+
+1. **Claude's answers came with no citations.** All 154 of its claims were counted "uncited".
+   The newer search tool (`web_search_20260209`) filters results with code, and its final text
+   carries no citation data. A single test call confirmed it. The older `web_search_20250305`,
+   still offered for this model, attaches each citation to its text block. Claude now uses it.
+   Both tools now get up to 4,000 output tokens instead of 2,000, because both think before
+   they write and the thinking counts. Each answer now records how it ended, so a cut-off
+   answer can be seen.
+2. **A blocked page was counted as a dead link.** FDA's server sends this fetcher to an "FDA
+   Apology" page that ends in a 404, while the same address returns 200 to other clients. Now
+   only a 404 or 410 on the address itself, with no redirect, counts as a dead link. A 404
+   reached through a redirect is "could not check". The Met Office PDF that answered 404 to every
+   client stays a dead link.
+3. **Paragraph citations turned uncited sentences into failures.** Under D-041's charitable
+   reading, a sentence with no citation of its own takes the one closing its paragraph. In the
+   pilot, that page often covered only the paragraph's last sentence, so the earlier sentences
+   were scored as failures instead of "uncited". **The headline now counts only claims whose own
+   sentence carries a citation.** Paragraph-cited claims are reported apart with their own
+   failure share, and so is everything together. This changes a measure D-042 fixed in advance.
+   It is recorded here before the full run, and the first pilot's numbers are kept for anyone to
+   compare.
+
+Not changed: tracking parameters that OpenAI adds to its links (`utm_source=openai`). The same
+addresses with those parameters returned 200 when tested.
+
+**Next.** The pilot runs again with these fixes, about $1.10, and needs Aditya's yes because it
+goes past the $2 first estimated. The full run follows only after that, with its own yes and
+its measured cost.

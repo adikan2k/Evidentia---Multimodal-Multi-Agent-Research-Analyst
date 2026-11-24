@@ -1,0 +1,187 @@
+{
+ "id": "sport_culture-01",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Chelsea FC won the 2025 FIFA Club World Cup, beating Paris Saint-Germain 3–0 in the final. The tournament was hosted by the United States, and the final was played on July 13, 2025, at MetLife Stadium in East Rutherford, New Jersey. (fifa.com)",
+  "claims": [
+   {
+    "sentence": "Chelsea FC won the 2025 FIFA Club World Cup, beating Paris Saint-Germain 3–0 in the final.",
+    "start": 0,
+    "end": 90,
+    "claim": "Chelsea FC won the 2025 FIFA Club World Cup.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fifa.com/en/news/articles/tournaments-review-2025?utm_source=openai",
+      "host": "fifa.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Chelsea FC won the 2025 FIFA Club World Cup, beating Paris Saint-Germain 3–0 in the final.",
+    "start": 0,
+    "end": 90,
+    "claim": "Chelsea FC beat Paris Saint-Germain 3–0 in the final of the 2025 FIFA Club World Cup.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fifa.com/en/news/articles/tournaments-review-2025?utm_source=openai",
+      "host": "fifa.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The tournament was hosted by the United States, and the final was played on July 13, 2025, at MetLife Stadium in East Rutherford, New Jersey. (fifa.com)",
+    "start": 91,
+    "end": 243,
+    "claim": "The 2025 FIFA Club World Cup was hosted by the United States.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fifa.com/en/news/articles/tournaments-review-2025?utm_source=openai",
+      "host": "fifa.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The tournament was hosted by the United States, and the final was played on July 13, 2025, at MetLife Stadium in East Rutherford, New Jersey. (fifa.com)",
+    "start": 91,
+    "end": 243,
+    "claim": "The final of the 2025 FIFA Club World Cup was played on July 13, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fifa.com/en/news/articles/tournaments-review-2025?utm_source=openai",
+      "host": "fifa.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The tournament was hosted by the United States, and the final was played on July 13, 2025, at MetLife Stadium in East Rutherford, New Jersey. (fifa.com)",
+    "start": 91,
+    "end": 243,
+    "claim": "The final of the 2025 FIFA Club World Cup was played at MetLife Stadium in East Rutherford, New Jersey.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fifa.com/en/news/articles/tournaments-review-2025?utm_source=openai",
+      "host": "fifa.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 5,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000349,
+   "usd_per_claim": 7e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

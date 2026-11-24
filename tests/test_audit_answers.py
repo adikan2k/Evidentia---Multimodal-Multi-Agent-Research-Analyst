@@ -121,7 +121,7 @@ def test_claude_answers_resume_a_paused_turn_and_count_searches(settings) -> Non
     answer = asyncio.run(
         claude_answer_with_web_search("Q?", settings, ledger, NoopTracer(), client=client)
     )
-    assert len(calls) == 2 and calls[0]["tools"][0]["type"] == "web_search_20260209"
+    assert len(calls) == 2 and calls[0]["tools"][0]["type"] == "web_search_20250305"
     assert calls[1]["messages"][1]["role"] == "assistant"  # the paused turn is sent back
     assert answer["text"].startswith("Part one. [1]Part two.") and answer["citations"] == 1
     expected = 2 * claude_usd("claude-sonnet-5-5", 4000, 300) + 3 * 0.01

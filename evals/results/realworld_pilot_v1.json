@@ -1,0 +1,297 @@
+{
+  "generated_at": "2026-11-24T20:09:04+00:00",
+  "set": "pilot",
+  "questions": 10,
+  "judges": {
+    "haiku": {
+      "page_judge": "claude-haiku-5-5",
+      "tools": {
+        "openai": {
+          "questions": 10,
+          "claims": 76,
+          "with_verdict": 29,
+          "failed_share_of_verdicts": {
+            "value": 0.5172,
+            "ci_low": 0.2963,
+            "ci_high": 1.0
+          },
+          "contradicted": 0,
+          "shares_of_all_claims": {
+            "partial": 0.0395,
+            "needs_human": 0.1316,
+            "unchecked": 0.1447,
+            "dead_link": 0.0789,
+            "uncited": 0.2632
+          },
+          "claims_per_answer": 7.6,
+          "pages_cited_per_answer": 1.8,
+          "pages_read_share": 0.6667,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 27,
+              "with_verdict": 9,
+              "failed_share_of_verdicts": {
+                "value": 0.6667,
+                "ci_low": 0.25,
+                "ci_high": 1.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.037,
+                "unchecked": 0.1111,
+                "dead_link": 0.1481,
+                "uncited": 0.3704
+              },
+              "claims_per_answer": 5.4,
+              "pages_cited_per_answer": 1.2,
+              "pages_read_share": 0.6667
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 49,
+              "with_verdict": 20,
+              "failed_share_of_verdicts": {
+                "value": 0.45,
+                "ci_low": 0.2,
+                "ci_high": 1.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0612,
+                "needs_human": 0.1837,
+                "unchecked": 0.1633,
+                "dead_link": 0.0408,
+                "uncited": 0.2041
+              },
+              "claims_per_answer": 9.8,
+              "pages_cited_per_answer": 2.4,
+              "pages_read_share": 0.6667
+            }
+          },
+          "usd_per_answer": 0.0354,
+          "usd_per_audit": 0.0037
+        },
+        "claude": {
+          "questions": 10,
+          "claims": 154,
+          "with_verdict": 0,
+          "failed_share_of_verdicts": {
+            "value": null,
+            "ci_low": null,
+            "ci_high": null
+          },
+          "contradicted": 0,
+          "shares_of_all_claims": {
+            "partial": 0.0,
+            "needs_human": 0.0,
+            "unchecked": 0.0,
+            "dead_link": 0.0,
+            "uncited": 1.0
+          },
+          "claims_per_answer": 15.4,
+          "pages_cited_per_answer": 0.0,
+          "pages_read_share": null,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 72,
+              "with_verdict": 0,
+              "failed_share_of_verdicts": {
+                "value": null,
+                "ci_low": null,
+                "ci_high": null
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.0,
+                "unchecked": 0.0,
+                "dead_link": 0.0,
+                "uncited": 1.0
+              },
+              "claims_per_answer": 14.4,
+              "pages_cited_per_answer": 0.0,
+              "pages_read_share": null
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 82,
+              "with_verdict": 0,
+              "failed_share_of_verdicts": {
+                "value": null,
+                "ci_low": null,
+                "ci_high": null
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.0,
+                "unchecked": 0.0,
+                "dead_link": 0.0,
+                "uncited": 1.0
+              },
+              "claims_per_answer": 16.4,
+              "pages_cited_per_answer": 0.0,
+              "pages_read_share": null
+            }
+          },
+          "usd_per_answer": 0.0582,
+          "usd_per_audit": 0.0008
+        }
+      },
+      "openai_minus_claude": {
+        "value": null,
+        "ci_low": null,
+        "ci_high": null,
+        "questions": 10
+      }
+    },
+    "luna": {
+      "page_judge": "gpt-6-luna",
+      "tools": {
+        "openai": {
+          "questions": 10,
+          "claims": 76,
+          "with_verdict": 28,
+          "failed_share_of_verdicts": {
+            "value": 0.5,
+            "ci_low": 0.25,
+            "ci_high": 0.8125
+          },
+          "contradicted": 1,
+          "shares_of_all_claims": {
+            "partial": 0.0263,
+            "needs_human": 0.1053,
+            "unchecked": 0.1053,
+            "dead_link": 0.1579,
+            "uncited": 0.2632
+          },
+          "claims_per_answer": 7.6,
+          "pages_cited_per_answer": 1.8,
+          "pages_read_share": 0.7222,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 24,
+              "with_verdict": 6,
+              "failed_share_of_verdicts": {
+                "value": 0.8333,
+                "ci_low": 0.5,
+                "ci_high": 1.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.0417,
+                "unchecked": 0.125,
+                "dead_link": 0.1667,
+                "uncited": 0.4167
+              },
+              "claims_per_answer": 4.8,
+              "pages_cited_per_answer": 1.2,
+              "pages_read_share": 0.6667
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 52,
+              "with_verdict": 22,
+              "failed_share_of_verdicts": {
+                "value": 0.4091,
+                "ci_low": 0.125,
+                "ci_high": 0.7
+              },
+              "contradicted": 1,
+              "shares_of_all_claims": {
+                "partial": 0.0385,
+                "needs_human": 0.1346,
+                "unchecked": 0.0962,
+                "dead_link": 0.1538,
+                "uncited": 0.1923
+              },
+              "claims_per_answer": 10.4,
+              "pages_cited_per_answer": 2.4,
+              "pages_read_share": 0.75
+            }
+          },
+          "usd_per_answer": 0.0354,
+          "usd_per_audit": 0.0045
+        },
+        "claude": {
+          "questions": 10,
+          "claims": 151,
+          "with_verdict": 0,
+          "failed_share_of_verdicts": {
+            "value": null,
+            "ci_low": null,
+            "ci_high": null
+          },
+          "contradicted": 0,
+          "shares_of_all_claims": {
+            "partial": 0.0,
+            "needs_human": 0.0,
+            "unchecked": 0.0,
+            "dead_link": 0.0,
+            "uncited": 1.0
+          },
+          "claims_per_answer": 15.1,
+          "pages_cited_per_answer": 0.0,
+          "pages_read_share": null,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 70,
+              "with_verdict": 0,
+              "failed_share_of_verdicts": {
+                "value": null,
+                "ci_low": null,
+                "ci_high": null
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.0,
+                "unchecked": 0.0,
+                "dead_link": 0.0,
+                "uncited": 1.0
+              },
+              "claims_per_answer": 14.0,
+              "pages_cited_per_answer": 0.0,
+              "pages_read_share": null
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 81,
+              "with_verdict": 0,
+              "failed_share_of_verdicts": {
+                "value": null,
+                "ci_low": null,
+                "ci_high": null
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.0,
+                "unchecked": 0.0,
+                "dead_link": 0.0,
+                "uncited": 1.0
+              },
+              "claims_per_answer": 16.2,
+              "pages_cited_per_answer": 0.0,
+              "pages_read_share": null
+            }
+          },
+          "usd_per_answer": 0.0582,
+          "usd_per_audit": 0.0007
+        }
+      },
+      "openai_minus_claude": {
+        "value": null,
+        "ci_low": null,
+        "ci_high": null,
+        "questions": 10
+      }
+    }
+  }
+}

@@ -3,15 +3,15 @@
 from evals.realworld import PILOT, counts, difference, measures, ratio
 
 
-def report(*labels: str) -> dict:
+def report(*labels: str, cited_by: str = "sentence") -> dict:
     return {
-        "claims": [{"label": label} for label in labels],
+        "claims": [{"label": label, "cited_by": cited_by} for label in labels],
         "scorecard": {"pages_cited": 2, "pages_read": 1, "usd": 0.01},
     }
 
 
-def row(qid: str, *labels: str) -> dict:
-    return {"id": qid, "answer_usd": 0.05} | counts(report(*labels))
+def row(qid: str, *labels: str, cited_by: str = "sentence") -> dict:
+    return {"id": qid, "answer_usd": 0.05} | counts(report(*labels, cited_by=cited_by))
 
 
 def test_counts_separate_failures_from_partial_and_unverdicted_claims() -> None:
@@ -47,3 +47,14 @@ def test_the_pilot_is_the_fixed_ten() -> None:
         "economy-01",
         "sport_culture-01",
     ]
+
+
+def test_the_headline_counts_only_claims_whose_own_sentence_is_cited() -> None:
+    rows = [
+        row("a", "supported", "supported"),
+        row("b", "not_found", "not_found", cited_by="paragraph"),
+    ]
+    m = measures(rows)
+    assert m["headline_failed_share"]["value"] == 0.0 and m["headline_claims"] == 2
+    assert m["paragraph_cited_failed_share"]["value"] == 1.0 and m["paragraph_cited_claims"] == 2
+    assert m["failed_share_of_verdicts"]["value"] == 0.5  # everything together, also reported
