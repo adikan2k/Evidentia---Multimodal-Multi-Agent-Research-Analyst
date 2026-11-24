@@ -141,6 +141,7 @@ class OpenAILLM:
                 item=model,
                 input_tokens=usage.input_tokens,
                 output_tokens=usage.output_tokens,
+                cache_read=cached,
                 usd=usd,
             )
         )

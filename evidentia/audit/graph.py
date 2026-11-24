@@ -75,6 +75,29 @@ NO_PAGE_JUDGE = "the page judge did not answer"
 OnUpdate = Callable[[str, dict[str, Any]], None]
 
 
+async def page_first(
+    todo: list[int], url_of: Callable[[int], str], run: Callable[[int], Any]
+) -> list[Any]:
+    """Run `run` for every index, one call per page first and the rest after it.
+
+    Calls that start together all miss the prompt cache, because none has written it yet. So
+    the first call about each page goes alone, and the others on that page follow it and read
+    the cache. Different pages still run at the same time. Results come back in `todo` order.
+    """
+    groups: dict[str, list[int]] = {}
+    for i in todo:
+        groups.setdefault(url_of(i), []).append(i)
+    found: dict[int, Any] = {}
+
+    async def one_page(indices: list[int]) -> None:
+        found[indices[0]] = await run(indices[0])
+        rest = await asyncio.gather(*(run(i) for i in indices[1:]))
+        found.update(zip(indices[1:], rest, strict=True))
+
+    await asyncio.gather(*(one_page(g) for g in groups.values()))
+    return [found[i] for i in todo]
+
+
 @dataclass
 class AuditDeps:
     settings: Settings
@@ -195,7 +218,7 @@ class AuditNodes:
                 return result.model_copy(update={"reason": NO_FINDER})
             return result.model_copy(update=self.offered(evidence))
 
-        found = await asyncio.gather(*(one(i) for i in todo))
+        found = await page_first(todo, lambda i: state.results[i].url, one)
         results = list(state.results)
         for i, result in zip(todo, found, strict=True):
             results[i] = result
@@ -244,7 +267,7 @@ class AuditNodes:
             claim = state.claims[result.claim].claim
             return await self.page_verdict(claim, by_url[result.url], state.run_id, config)
 
-        verdicts = await asyncio.gather(*(one(i) for i in todo))
+        verdicts = await page_first(todo, lambda i: state.results[i].url, one)
         return {"page_verdicts": dict(zip(todo, verdicts, strict=True))}
 
     async def combine(self, state: AuditState) -> dict[str, Any]:

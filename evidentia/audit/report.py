@@ -161,6 +161,12 @@ class AuditReporter:
             f"dead links: {card['dead_links']}"
         )
         Reporter(self.console).costs(ledger)
+        read = sum(t.cache_read for t in ledger.by_node())
+        written = sum(t.cache_write for t in ledger.by_node())
+        if read or written:
+            self.console.print(
+                Text(f"Prompt cache: {read:,} tokens read, {written:,} written", style="dim")
+            )
         if state.trace_url or state.trace_id:
             self.console.print(Text(f"Trace: {state.trace_url or state.trace_id}", style="dim"))
 

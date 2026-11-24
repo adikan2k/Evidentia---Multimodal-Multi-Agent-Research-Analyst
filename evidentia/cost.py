@@ -92,8 +92,10 @@ def tavily_usd(depth: str, searches: int = 1) -> float:
 class Charge(BaseModel):
     node: str
     item: str
-    input_tokens: int = 0
+    input_tokens: int = 0  # all of them, cached ones included
     output_tokens: int = 0
+    cache_read: int = 0  # of the input tokens, how many were read from the prompt cache
+    cache_write: int = 0  # and how many were written to it
     usd: float
 
 
@@ -102,6 +104,8 @@ class NodeTotal(BaseModel):
     calls: int = 0
     input_tokens: int = 0
     output_tokens: int = 0
+    cache_read: int = 0
+    cache_write: int = 0
     usd: float = 0.0
 
 
@@ -144,5 +148,7 @@ class Ledger:
             t.calls += 1
             t.input_tokens += c.input_tokens
             t.output_tokens += c.output_tokens
+            t.cache_read += c.cache_read
+            t.cache_write += c.cache_write
             t.usd += c.usd
         return list(totals.values())

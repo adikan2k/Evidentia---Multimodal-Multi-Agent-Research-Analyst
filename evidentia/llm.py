@@ -245,6 +245,8 @@ class LLM:
                 item=model,
                 input_tokens=plain + cache_read + cache_write,
                 output_tokens=output,
+                cache_read=cache_read,
+                cache_write=cache_write,
                 usd=usd,
             )
         )

@@ -393,3 +393,32 @@ def test_probability_mode_needs_an_openai_model(settings) -> None:
     deps, _ = make_deps(settings)
     with pytest.raises(ValueError, match="needs an OpenAI model"):
         asyncio.run(AuditNodes(deps)._page_probability("s", None, "u"))
+
+
+def test_one_call_per_page_goes_first_so_the_others_can_read_its_cache() -> None:
+    from evidentia.audit.graph import page_first
+
+    events: list[str] = []
+
+    async def run(i: int) -> int:
+        events.append(f"start {i}")
+        await asyncio.sleep(0)
+        events.append(f"end {i}")
+        return i * 10
+
+    urls = {0: "a", 1: "a", 2: "b", 3: "a"}
+    got = asyncio.run(page_first([0, 1, 2, 3], urls.__getitem__, run))
+    assert got == [0, 10, 20, 30]
+    assert events.index("end 0") < events.index("start 1")  # page a: first call alone
+    assert events.index("end 0") < events.index("start 3")
+    assert events.index("start 2") < events.index("end 0")  # page b runs alongside
+
+
+def test_cache_tokens_are_counted_per_step(settings) -> None:
+    from evidentia.cost import Charge
+
+    ledger = Ledger(1.0)
+    ledger.add(Charge(node="find", item="m", input_tokens=100, cache_read=60, usd=0.0))
+    ledger.add(Charge(node="find", item="m", input_tokens=100, cache_write=90, usd=0.0))
+    total = ledger.by_node()[0]
+    assert (total.cache_read, total.cache_write) == (60, 90)
