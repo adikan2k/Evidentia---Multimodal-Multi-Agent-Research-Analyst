@@ -160,6 +160,37 @@ Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.688
 
 | System | Balanced accuracy | Flag precision | Supported precision | Coverage |
 |---|---|---|---|---|
+| Two judges | 0.786 (0.751 to 0.819) | 0.690 (0.637 to 0.742) | 0.934 (0.897 to 0.967) | 0.816 (0.784 to 0.847) |
+| Quote judge alone | 0.720 (0.687 to 0.751) | 0.560 (0.511 to 0.608) | 0.922 (0.884 to 0.958) | 1.000 |
+| Page judge alone | 0.776 (0.735 to 0.815) | 0.671 (0.619 to 0.721) | 0.900 (0.865 to 0.933) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.655 (0.612 to 0.694). Labels: 181 supported, 143 not_found, 104 partial, 101 needs_human, 21 contradicted. Cost per claim, both judges: $0.00180. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.982 | 0.580 | 0.800 | 0.678 |
+| AggreFact-XSum | 0.625 | 0.740 | 0.580 | 0.680 |
+| ClaimVerify | 0.914 | 0.760 | 0.759 | 0.890 |
+| ExpertQA | 0.635 | 0.940 | 0.634 | 0.647 |
+| FactCheck-GPT | 0.640 | 0.920 | 0.611 | 0.676 |
+| Lfqa | 0.862 | 0.960 | 0.834 | 0.870 |
+| RAGTruth | 0.833 | 0.780 | 0.784 | 0.841 |
+| Reveal | 0.963 | 0.940 | 0.902 | 0.941 |
+| TofuEval-MediaS | 0.739 | 0.760 | 0.663 | 0.691 |
+| TofuEval-MeetB | 0.872 | 0.840 | 0.801 | 0.845 |
+| Wice | 0.582 | 0.760 | 0.550 | 0.778 |
+
+Best thresholds on these rows (most coverage that meets the bars):
+
+| Partial | Thresholds (supported / flag) | Flags right | Supported right | Coverage |
+|---|---|---|---|---|
+| partial counted as a flag | none meets the bars |  |  |  |
+| partial as its own verdict | 0.85 / 0.8 | 0.807 | 0.940 | 0.824 |
+
+### dev550: quote judge claude-haiku-5-5, page judge claude-haiku-5-5 (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
 | Two judges | 0.794 (0.758 to 0.830) | 0.695 (0.641 to 0.744) | 0.940 (0.905 to 0.972) | 0.804 (0.769 to 0.835) |
 | Quote judge alone | 0.720 (0.687 to 0.751) | 0.560 (0.511 to 0.608) | 0.922 (0.884 to 0.958) | 1.000 |
 | Page judge alone | 0.777 (0.734 to 0.816) | 0.684 (0.629 to 0.733) | 0.890 (0.853 to 0.924) | 1.000 |
@@ -179,6 +210,37 @@ Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.645
 | TofuEval-MediaS | 0.787 | 0.760 | 0.663 | 0.718 |
 | TofuEval-MeetB | 0.872 | 0.840 | 0.801 | 0.845 |
 | Wice | 0.624 | 0.680 | 0.550 | 0.828 |
+
+### dev550: quote judge claude-haiku-5-5, page judge gpt-6-luna (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.783 (0.750 to 0.814) | 0.677 (0.626 to 0.730) | 0.932 (0.895 to 0.967) | 0.829 (0.798 to 0.856) |
+| Quote judge alone | 0.720 (0.687 to 0.751) | 0.560 (0.511 to 0.608) | 0.922 (0.884 to 0.958) | 1.000 |
+| Page judge alone | 0.759 (0.720 to 0.798) | 0.651 (0.600 to 0.701) | 0.910 (0.875 to 0.943) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.655 (0.614 to 0.694). Labels: 177 supported, 143 not_found, 114 partial, 94 needs_human, 22 contradicted. Cost per claim, both judges: $0.00060. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.982 | 0.580 | 0.800 | 0.678 |
+| AggreFact-XSum | 0.611 | 0.820 | 0.580 | 0.680 |
+| ClaimVerify | 0.879 | 0.680 | 0.759 | 0.781 |
+| ExpertQA | 0.597 | 0.880 | 0.634 | 0.550 |
+| FactCheck-GPT | 0.624 | 0.980 | 0.611 | 0.656 |
+| Lfqa | 0.852 | 0.920 | 0.834 | 0.834 |
+| RAGTruth | 0.847 | 0.840 | 0.784 | 0.875 |
+| Reveal | 0.963 | 0.960 | 0.902 | 0.952 |
+| TofuEval-MediaS | 0.800 | 0.800 | 0.663 | 0.790 |
+| TofuEval-MeetB | 0.871 | 0.820 | 0.801 | 0.865 |
+| Wice | 0.582 | 0.840 | 0.550 | 0.692 |
+
+Best thresholds on these rows (most coverage that meets the bars):
+
+| Partial | Thresholds (supported / flag) | Flags right | Supported right | Coverage |
+|---|---|---|---|---|
+| partial counted as a flag | none meets the bars |  |  |  |
+| partial as its own verdict | 0.2 / 0.2 | 0.812 | 0.932 | 0.829 |
 
 ### dev550: quote judge claude-haiku-5-5, page judge gpt-6-luna (550 rows)
 

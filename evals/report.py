@@ -345,6 +345,33 @@ def two_judges_section(runs: dict[str, dict]) -> list[str]:
             for ds in two["per_dataset"]
         ]
         out += table(["Sub-dataset", "Two judges", "Coverage", "Quote alone", "Page alone"], per)
+        sweep = d.get("threshold_sweep")
+        if sweep:
+            out += ["", "Best thresholds on these rows (most coverage that meets the bars):", ""]
+            rows = []
+            for name, key in (
+                ("partial counted as a flag", "best_partial_as_flag"),
+                ("partial as its own verdict", "best_partial_own_verdict"),
+            ):
+                pt = sweep[key]
+                flag = (
+                    "flag_precision"
+                    if key == "best_partial_as_flag"
+                    else ("flag_precision_partial_own_verdict")
+                )
+                rows.append(
+                    [name, "none meets the bars", "", "", ""]
+                    if pt is None
+                    else [
+                        name,
+                        f"{pt['t_supported']} / {pt['t_flag']}",
+                        f"{pt[flag]:.3f}",
+                        f"{pt['supported_precision']:.3f}",
+                        f"{pt['coverage']:.3f}",
+                    ]
+                )
+            header = ["Partial", "Thresholds (supported / flag)", "Flags right"]
+            out += table([*header, "Supported right", "Coverage"], rows)
         out += [""]
     return out
 

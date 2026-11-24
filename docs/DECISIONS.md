@@ -1522,3 +1522,47 @@ Haiku for the judges and Sonnet only where it is measured to help. That is a sep
   instead of one line.
 - One tag per audit means a page cannot be cached across different audits. That is fine,
   because a cache entry lasts five minutes anyway.
+
+### What D-039's work showed so far
+
+Every number below is in `evals/results/aggrefact_dev550_*.json`, except the live-audit costs,
+which come from two runs of `python -m evidentia audit`. Spent: $0.67 on the two practice runs
+and about $0.25 on four live audits.
+
+**The calibrated score did not fix the flags.** On the 550 practice rows:
+
+| Page judge | Flags right, partial a flag | Flags right, partial its own verdict | "Supported" right | Coverage |
+|---|---|---|---|---|
+| One Haiku vote, plain agreement (D-038 run 1) | 0.695 | 0.810 | 0.940 | 0.804 |
+| Five Haiku votes, best thresholds (0.25 / 0) | 0.729 | 0.809 | ≥ 0.93 | 0.766 |
+| GPT token probability, best thresholds | 0.680 | 0.812 | 0.932 | 0.829 |
+
+- **Why the scores add nothing.** Haiku's five votes were unanimous on 476 of 550 rows, and
+  GPT's probabilities sit at 0 or 1. The judges are not unsure on the problem cases; they are
+  sure, and they disagree with the benchmark's labellers. So this is a question of what
+  "supported" means, not of confidence. Aditya's labels (part A) settle it.
+- **Decision.** The page judge keeps one vote. Five cost five times as much ($0.74 against
+  $0.15 for the page judge on 550 rows) for no real gain. The token-probability mode stays in
+  the code, with its tests, but is off.
+
+**The engineering changes work.**
+
+- **Parallel judges.** The two judges now run at the same time, and `combine` runs once, after
+  both.
+- **Caching.** At first, caching mostly missed: the calls about one page all started together,
+  so none of them found a cache entry yet. Now one call per page goes first and the rest
+  follow. On a 6-claim answer citing one page, 58,415 of the 70,368 tokens the judges sent were
+  read from the cache. The find and page-judge steps cost $0.0031 and $0.0030 per call, against
+  $0.0062 and $0.0060 the run before. That run reused entries written minutes earlier, so a
+  cold run also pays one write per page and judge.
+- **Cache prices and tracing.** Cache tokens are now counted per step in the ledger, and cache
+  reads are priced per model.
+- **Trace volume.** Langfuse's free tier (50,000 units a month) was used up by the eval runs,
+  because LangChain's wrapper steps made about nine of every ten observations. Those are no
+  longer sent: one live audit went from 108 observations to 27, with every model call, tool
+  call and graph step still traced.
+
+**Still to do before the confirming run:**
+
+1. Aditya's labels on the 50 items.
+2. The Sonnet measurement (C), with its own yes.
