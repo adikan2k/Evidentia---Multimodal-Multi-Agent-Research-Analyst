@@ -2561,3 +2561,45 @@ is the editor going over it with a pencil.
 **Order.** Tokens and layout first, the widest win. Then the audit page as home, then research,
 evals and the shared pieces. Each step is committed on its own. Nothing is pushed until Aditya has
 seen it. Cost: a few cents of live audits while checking.
+
+### As built (24 November 2026)
+
+**The pages.**
+
+- **Home (`/`)** is the auditor: headline, paste box, a recorded audit on the desk, three steps.
+  `/audit` redirects to it. Each recorded audit has its own address, `/recorded/<id>`.
+- **Research (`/research`)** uses the same desk: steps in a rail, the claims on a sheet with
+  proofreader's marks in place of stamps, the quote as a clipping.
+- **Evals (`/evals`)** now leads with the auditor, then the research agent, then what was not done.
+  Two charts are new:
+  - one judge against two, with a partly backed claim counted as a flag for all three so the
+    comparison is like for like. The old table set the as-shipped figure (0.806) beside
+    single-judge figures counted by the other rule, which flattered two judges. The text now says
+    the intervals overlap.
+  - balanced accuracy for each of the 11 sources of rows, weakest first.
+- **Method and limits (`/method`)** is new: the five steps, the nine marks, eight limits, and the
+  rules for live audits.
+- **Link preview.** One generated image, with no numbers on it.
+
+**Numbers on the method page come from code.** `python -m evals report` now writes an
+`auditor_limits` block into the site's data file from the settings' defaults (claims and pages per
+audit, the least text a page must give, the spending cap, audits per address, seconds between
+requests to one site). The page reads them from there, so it cannot drift from the code.
+
+**Three faults found while checking, all fixed before any push.**
+
+- The site's own CSS classes sat outside a layer, so they beat every Tailwind utility on the same
+  element. Sizes and weights set beside them were ignored. They are now in the components layer.
+- The page frame's class list was exported from a client file. A server component that imported it
+  got a stub, not the string, so the footer had no side padding. It now lives in `lib/site.ts`.
+- The production build failed on the recorded-audit page: a route setting this Next.js version
+  does not allow, and a file read that had to be cached. `npm run build` had not been run after
+  part 1. It passes now.
+
+**Measured** at 390, 1280, 1440 and 1920 pixels on `/`, `/research`, `/evals` and `/method`: no
+sideways scroll, no text under 12 pixels, no text under 4.5 to 1 contrast. Content runs from 77 to
+1,828 pixels on a 1,920 pixel screen. On a phone the charts put each row's name above its track.
+
+**Not done here.** The home page does not show the real-world finding; that waits for phase 1.
+An unknown `/recorded/<id>` shows the not-found page but answers with status 200, because the
+page streams.
