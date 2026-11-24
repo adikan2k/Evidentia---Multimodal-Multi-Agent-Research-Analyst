@@ -132,9 +132,11 @@ def describe(node: str, update: dict[str, Any]) -> str:
             f"{n} {LABEL_TEXT[label]}" for label, n in labels.most_common()
         )
     if node == "page_check":
-        verdicts = update.get("page_verdicts", {})
-        if not verdicts:
+        if "page_verdicts" not in update:
             return "one judge only"
+        verdicts = update["page_verdicts"]
+        if not verdicts:
+            return "no page was read, so nothing to judge"
         calls = Counter(v["page_judged"] for v in verdicts.values())
         return "page judge: " + ", ".join(f"{n} {call}" for call, n in calls.most_common())
     if node == "combine":

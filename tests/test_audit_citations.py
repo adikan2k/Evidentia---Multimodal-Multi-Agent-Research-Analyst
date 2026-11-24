@@ -75,3 +75,20 @@ def test_a_marker_with_no_source_is_noted_not_guessed() -> None:
 
 def test_a_sentence_that_is_not_in_the_answer_is_not_located() -> None:
     assert locate("Solar grew 42%.", parse_answer("Solar grew 24% [1].").text) is None
+
+
+def test_a_numbered_list_item_with_a_link_stays_in_the_answer() -> None:
+    stsci = "https://www.stsci.edu/news/2026?utm_source=openai"
+    nasa = "https://science.nasa.gov/launch/?utm_source=openai"
+    answer = (
+        f"Webb launched on December 25, 2021. ([science.nasa.gov]({nasa}))\n\n"
+        "Three discoveries:\n\n"
+        f"1. **A bright early galaxy.** Webb confirmed the galaxy MoM-z14. ([stsci.edu]({stsci}))\n"
+        f"2. **Water vapour** was found near PDS 70 [1].\n\n"
+        f"Sources:\n[1] {nasa}"
+    )
+    parsed = parse_answer(answer)
+    assert "Webb confirmed the galaxy MoM-z14." in parsed.text
+    assert cites(answer, "Webb confirmed the galaxy MoM-z14. (stsci.edu)") == [stsci]
+    assert cites(answer, "Water vapour was found near PDS 70 [1].") == [nasa]
+    assert "Sources" not in parsed.text and nasa not in parsed.text

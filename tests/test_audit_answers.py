@@ -55,3 +55,12 @@ def test_the_answer_call_uses_web_search_and_is_charged_with_its_searches(settin
     expected = openai_usd("gpt-6.2-sol", 5000, 400) + 2 * WEB_SEARCH_USD_PER_CALL
     assert abs(ledger.spent - expected) < 1e-9
     assert ledger.charges[0].item == "gpt-6.2-sol + 2 web searches"
+
+
+def test_a_span_that_already_holds_its_link_gets_no_marker() -> None:
+    url = "https://science.nasa.gov/launch/"
+    text = f"Webb launched in 2021. ([nasa]({url})) It orbits L2."
+    span_end = text.index(")) ") + 2
+    other = cite("https://b.example.org/", text.index("It orbits"), len(text))
+    out = with_markers(text, [cite(url, 23, span_end), other])
+    assert out.count(url) == 1 and "[1]" in out and out.endswith("[1] https://b.example.org/")

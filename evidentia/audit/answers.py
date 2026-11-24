@@ -22,10 +22,16 @@ WORST_CASE_SEARCHES = 5
 
 
 def with_markers(text: str, citations: list[Any]) -> str:
-    """The answer with a [n] after each cited span, and a numbered source list at the end."""
+    """The answer with a [n] after each cited span, and a numbered source list at the end.
+
+    A span that already holds its link inline, such as "([nasa.gov](https://...))", is left as
+    it is: the auditor reads markdown links, and a marker would cite the page twice.
+    """
     numbers: dict[str, int] = {}
     ends: dict[int, list[int]] = {}
     for c in citations:
+        if c.url in text[c.start_index : c.end_index]:
+            continue
         n = numbers.setdefault(c.url, len(numbers) + 1)
         if n not in ends.setdefault(c.end_index, []):
             ends[c.end_index].append(n)

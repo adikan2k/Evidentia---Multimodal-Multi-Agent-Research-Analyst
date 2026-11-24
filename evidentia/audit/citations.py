@@ -122,12 +122,26 @@ class _Builder:
             m.start, m.end = min(m.start, len(self.text) - 1), min(m.end, len(self.text) - 1)
 
 
+MAX_REFERENCE_TITLE = 150  # longer than this, a numbered line is a list item, not a source
+
+
+def is_reference(rest: str) -> bool:
+    """A numbered line is a source if it is an address with at most a short title.
+
+    "2. **A bright galaxy...** Webb confirmed it ([stsci.edu](https://...))" is a numbered list
+    item that happens to cite a page: it has a markdown link and a long sentence, so it stays.
+    """
+    if "](" in rest:
+        return False
+    return len(FIRST_URL.sub("", rest).strip()) <= MAX_REFERENCE_TITLE
+
+
 def references_in(lines: list[str]) -> tuple[dict[str, str], set[int]]:
     """Numbered source lines ("[1] Title https://...", "2. https://...") and where they are."""
     references, where = {}, set()
     for i, line in enumerate(lines):
         m = REFERENCE.match(line)
-        if m:
+        if m and is_reference(m["rest"]):
             references.setdefault(m["a"] or m["b"], tidy_url(FIRST_URL.search(m["rest"]).group(0)))
             where.add(i)
         elif HEADING.match(line):

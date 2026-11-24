@@ -262,7 +262,7 @@ class AuditNodes:
     async def page_check(self, state: AuditState, config: RunnableConfig) -> dict[str, Any]:
         """Runs alongside the quote judge, so it writes its own field, not `results`."""
         if not self.s.audit_two_judges:
-            return {"page_verdicts": {}}
+            return {}
         by_url = {s.url: s for s in state.sources}
         todo = [i for i, r in enumerate(state.results) if r.skipped is None]
 
