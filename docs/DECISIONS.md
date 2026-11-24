@@ -1603,3 +1603,28 @@ and agree with the benchmark on 9 of the 10 controls.
   If those are too few to decide, he labels more.
 - **The decision itself is unchanged.** If at least 60% of the decided partial items are "not
   supported", partial counts as a failed citation; otherwise it is its own verdict.
+
+### Part A closed without a person's labels: partial is not a failure
+
+Aditya does not have time to label, so no person has labelled the partial cases. D-039 allowed
+for this ("then partial would stay a matter of definition, and the README would have to say
+so"). The definition is chosen on what holds up whoever is right, not on the benchmark:
+
+- **Failed citation** means "not on the cited page" or "contradicted". The real-world audit's
+  headline counts only these.
+- **Partial** ("partly backed": the main point is backed, a detail is not) is its own verdict.
+  It is reported separately with the missing detail, and never counted as a failure.
+
+**Why this is safe either way.** If the judges are right that partial claims leave something
+out, then leaving them out of the failures makes the headline a lower bound. If the benchmark's
+labellers are right that those claims are fine, then they should not count as failures anyway.
+Either way, "X% of citations fail outright" does not overstate.
+
+**The confirming run, fixed now.** Two Haiku judges with one vote and thresholds of 0.5/0.5, as
+in D-038 run 1. It goes on the `test2` sample (50 rows per sub-dataset, seed 20261125, no rows
+from the first test run) and is scored with partial as its own verdict, against D-038's bars:
+flags right at least 0.80, "supported" right at least 0.93, coverage at least 0.70. It is run
+once. The result is reported whether it passes or not.
+
+Codex's AI labels say "not supported" on 33 of 40 partial cases. They are mentioned only as an
+AI's view (`labels_partial_codex.jsonl`) and not used for any decision.
