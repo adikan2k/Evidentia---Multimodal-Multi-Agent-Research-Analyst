@@ -258,6 +258,9 @@ def test_scorecard_and_json_count_what_happened(settings) -> None:
     assert card["claims"] == 9 and card["cited_claims"] == 8
     assert card["labels"]["dead_link"] == 2 and card["dead_links"] == 2
     assert card["supported_share_of_cited"] == round(1 / 8, 4)
+    # Of the 5 claims with a verdict: 1 supported, 1 partial, 1 contradicted, 2 not on the page.
+    assert card["claims_with_a_verdict"] == 5 and card["failed_citations"] == 3
+    assert card["partly_backed"] == 1 and card["failed_share_of_verdicts"] == 0.6
     assert card["pages_cited"] == 4 and card["pages_read"] == 1
     body = to_json(state, deps.ledger)
     assert '"offered"' not in body and FACT in body

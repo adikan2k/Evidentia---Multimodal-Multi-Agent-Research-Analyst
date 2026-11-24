@@ -64,10 +64,18 @@ def scorecard(state: AuditState, ledger: Ledger) -> dict[str, Any]:
     labels = Counter(v["label"] for v in claim_views(state))
     cited = len(state.claims) - labels["uncited"]
     dead = {s.url for s in state.skipped if s.reason in DEAD}
+    # D-039: a failed citation is "not on the cited page" or "contradicted". Partial (the main
+    # point backed, a detail not) is counted apart and never as a failure.
+    failed = labels["not_found"] + labels["contradicted"]
+    with_verdict = failed + labels["supported"] + labels["partial"]
     return {
         "claims": len(state.claims),
         "labels": {label: labels[label] for label in ORDER},
         "cited_claims": cited,
+        "claims_with_a_verdict": with_verdict,
+        "failed_citations": failed,
+        "failed_share_of_verdicts": round(failed / with_verdict, 4) if with_verdict else None,
+        "partly_backed": labels["partial"],
         "supported_share_of_cited": round(labels["supported"] / cited, 4) if cited else None,
         "pages_cited": len(state.sources) + len(state.skipped),
         "pages_read": len(state.sources),
@@ -153,6 +161,13 @@ class AuditReporter:
         self.console.print()
         counts = ", ".join(f"{n} {LABEL_TEXT[label]}" for label, n in card["labels"].items() if n)
         self.console.print(Text(f"{card['claims']} claims: {counts}", style="bold"))
+        if card["failed_share_of_verdicts"] is not None:
+            self.console.print(
+                f"Failed outright (not on the cited page, or contradicted): "
+                f"{card['failed_citations']} of {card['claims_with_a_verdict']} claims with a "
+                f"verdict ({card['failed_share_of_verdicts']:.0%}). Partly backed: "
+                f"{card['partly_backed']}."
+            )
         if card["supported_share_of_cited"] is not None:
             share = card["supported_share_of_cited"]
             self.console.print(f"Supported, of the claims that cite a page: {share:.0%}")
