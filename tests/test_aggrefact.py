@@ -259,3 +259,20 @@ def test_a_graded_page_line_is_read_by_its_grade() -> None:
         page_pred({"page_grade": "implies"}) == 1 and page_pred({"page_grade": "contradicts"}) == 0
     )
     assert page_verdict({"page_judged": "supported"}, 0.5, 0.5) == "supported"  # older runs
+
+
+def test_pooling_keeps_rows_from_different_samples_apart(monkeypatch) -> None:
+    import evals.aggrefact as agg
+
+    base = {"dataset": "A", "label": 1, "usd": 0.001}
+    saved = {
+        ("dev550b", "quote"): [base | {"row": 1, "quote_label": "supported", "quote_offsets": []}],
+        ("dev550b", "page"): [base | {"row": 1, "page_judged": "supported"}],
+        ("test2", "quote"): [base | {"row": 1, "quote_label": "not_found", "quote_offsets": []}],
+        ("test2", "page"): [base | {"row": 1, "page_judged": "not_supported", "label": 0}],
+    }
+    monkeypatch.setattr(agg, "run_path", lambda s, j, m, *a, **k: (s, j))
+    monkeypatch.setattr(agg, "read_jsonl", lambda key: saved[key])
+    body = agg.pool(["dev550b", "test2"])
+    assert body["rows"] == 2  # the same row number in two splits is two rows
+    assert body["pooled_from"] == ["dev550b", "test2"] and body["split"] == ["dev", "test"]

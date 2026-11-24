@@ -80,31 +80,36 @@ sub-datasets), with Claude Haiku:
 That version agreed with people less than a plain yes/no did (difference −0.080, from −0.120 to
 −0.038). It was stricter, not looser: it turned down about half the claims people accept.
 
-**Current version (D-038, D-039): two judges.** It was tuned on 550 practice rows from the
-benchmark's dev split, then run once on 550 test rows it had never seen
-(`evals/results/aggrefact_test2_q-haiku_p-haiku.json`). Partial is counted as its own verdict,
-not as a failure. The finish line was set before the run.
+**Current version (D-038 to D-040): two judges.** It was tuned on 550 practice rows from the
+benchmark's dev split, then measured on 1,100 rows never used to tune it: 550 more dev rows
+and 550 test rows (`evals/results/aggrefact_pooled-dev550b+test2_q-haiku_p-haiku.json`).
+Partial is counted as its own verdict, not as a failure.
 
-| On 550 unseen test rows | Flags right | When it says supported, right | Claims with a verdict |
+| On 1,100 untouched rows | Flags right | When it says supported, right | Claims with a verdict |
 |---|---|---|---|
-| Two judges | 0.774 (0.720 to 0.828) | 0.910 (0.867 to 0.948) | 0.816 |
-| Quote judge alone | 0.543 | 0.904 | 1.000 |
-| Page judge alone | 0.660 | 0.892 | 1.000 |
-| Finish line set in advance | at least 0.80 | at least 0.93 | at least 0.70 |
+| Two judges | 0.806 (0.767 to 0.844) | 0.926 (0.897 to 0.951) | 0.823 |
+| Quote judge alone | 0.560 | 0.913 | 1.000 |
+| Page judge alone | 0.681 | 0.918 | 1.000 |
 
-**It did not reach the finish line.** Flags right came in at 0.774 against 0.80, and "supported"
-right at 0.910 against 0.93. On the practice rows the same setup had scored 0.810 and 0.940.
+For a single judge, "flags" means every claim it does not call supported.
 
-**Two judges still beat either one alone on flags.** About 77 of every 100 flags are right,
-against 66 for the page judge alone and 54 for the quote judge alone. The price is that 18% of
-claims get "needs a human" instead of a verdict.
+- **Two judges beat either one alone.** About 81 of every 100 flags are right, against 68 for the
+  better single judge. The price is that 18% of claims get "needs a human" instead of a verdict.
+- **A finish line was set before the test run** (flags right at least 0.80, supported right at
+  least 0.93). On the 550 test rows alone it was missed: 0.774 and 0.910
+  (`aggrefact_test2_q-haiku_p-haiku.json`). On the 550 dev rows it was met. Three samples of 550
+  rows gave flags right of 0.810, 0.839 and 0.774, so a single sample of that size cannot settle
+  a bar this close. The pooled figures above are the better estimate, and both bars lie inside
+  their intervals.
+- **What else was tried, and dropped by rules set in advance.** Sonnet as the judges, a judge from
+  OpenAI, more votes, token probabilities, quote context, extra checker rules, and a graded page
+  judge. None held up on rows it had not been tuned on (`docs/DECISIONS.md`, D-038 to D-040).
+- **About partial.** On 18% of claims, both judges agree a detail is not stated. The benchmark's
+  labellers accepted about half of those. No person checked them for this project, so partial is
+  reported apart and never counted as a failed citation. That way, a count of failures is a
+  lower bound either way.
 
-**About partial.** On 17% of claims both judges agree a detail is not stated. The benchmark's
-labellers accepted about half of those. No person checked them for this project, so partial is
-reported apart and never counted as a failed citation. That way a count of failures is a lower
-bound either way.
-
-Cost: $0.00068 per claim for both judges together.
+Cost: $0.00069 per claim for both judges together.
 
 Full tables: `evals/results/REPORT.md`.
 

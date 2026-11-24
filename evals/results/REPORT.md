@@ -452,6 +452,37 @@ Best thresholds on these rows (most coverage that meets the bars):
 | partial counted as a flag | none meets the bars |  |  |  |
 | partial as its own verdict | 0.05 / 0.0 | 0.839 | 0.943 | 0.829 |
 
+### dev550b+test2: quote judge claude-haiku-5-5, page judge claude-haiku-5-5 (1100 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.754 (0.725 to 0.783) | 0.700 (0.665 to 0.735) | 0.926 (0.897 to 0.951) | 0.823 (0.801 to 0.845) |
+| Quote judge alone | 0.690 (0.663 to 0.716) | 0.560 (0.527 to 0.591) | 0.913 (0.882 to 0.939) | 1.000 |
+| Page judge alone | 0.777 (0.749 to 0.803) | 0.680 (0.645 to 0.715) | 0.917 (0.894 to 0.941) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.655 (0.627 to 0.683). Labels: 352 supported, 308 not_found, 198 partial, 194 needs_human, 47 contradicted, 1 unchecked. Cost per claim, both judges: $0.00069. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.741 | 0.730 | 0.600 | 0.763 |
+| AggreFact-XSum | 0.658 | 0.790 | 0.625 | 0.703 |
+| ClaimVerify | 0.833 | 0.880 | 0.792 | 0.795 |
+| ExpertQA | 0.572 | 0.890 | 0.563 | 0.586 |
+| FactCheck-GPT | 0.632 | 0.940 | 0.643 | 0.618 |
+| Lfqa | 0.927 | 0.900 | 0.861 | 0.919 |
+| RAGTruth | 0.893 | 0.690 | 0.788 | 0.902 |
+| Reveal | 0.912 | 0.960 | 0.873 | 0.910 |
+| TofuEval-MediaS | 0.720 | 0.740 | 0.610 | 0.732 |
+| TofuEval-MeetB | 0.810 | 0.660 | 0.694 | 0.803 |
+| Wice | 0.600 | 0.870 | 0.545 | 0.812 |
+
+Best thresholds on these rows (most coverage that meets the bars):
+
+| Partial | Thresholds (supported / flag) | Flags right | Supported right | Coverage |
+|---|---|---|---|---|
+| partial counted as a flag | none meets the bars |  |  |  |
+| partial as its own verdict | none meets the bars |  |  |  |
+
 ### test2: quote judge claude-haiku-5-5, page judge claude-haiku-5-5 (550 rows)
 
 | System | Balanced accuracy | Flag precision | Supported precision | Coverage |

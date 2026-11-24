@@ -608,7 +608,36 @@ def describe(rows: Sequence[Row]) -> None:
     )
 
 
+POOL_OFFSET = 10_000_000  # row numbers restart in each split, so pooled rows are kept apart
+
+
+def pool(sample_names: list[str], quote: str = "haiku", page: str = "haiku") -> dict[str, Any]:
+    """One setup's saved rows from several samples, scored as one larger sample. No model calls.
+
+    Only samples never used to tune that setup should be pooled; the result says which were.
+    """
+    quote_lines, page_lines = [], []
+    for k, name in enumerate(sample_names):
+        moved = lambda lines, k=k: [x | {"row": x["row"] + k * POOL_OFFSET} for x in lines]  # noqa: E731
+        quote_lines += moved(read_jsonl(run_path(name, "quote", quote)))
+        page_lines += moved(read_jsonl(run_path(name, "page", page)))
+    judges = {"quote": QUOTE_MODELS[quote], "page": PAGE_MODELS[page]}
+    body = summarise(quote_lines, page_lines, sample_names[0], judges)
+    return body | {
+        "sample": "+".join(sample_names),
+        "split": [SAMPLES[n][0] for n in sample_names],
+        "sample_seed": [SAMPLES[n][2] for n in sample_names],
+        "pooled_from": sample_names,
+    }
+
+
 def main(argv: list[str]) -> None:
+    if argv[:1] == ["pool"]:  # python -m evals aggrefact pool dev550b test2
+        names = argv[1:]
+        body = pool(names)
+        path = write_result(f"aggrefact_pooled-{'+'.join(names)}_q-haiku_p-haiku", body)
+        print(f"  {body['rows']} rows pooled; wrote {path.name}")
+        return
     args = parse_args(argv)
     rows = sample(args.sample)
     describe(rows)
