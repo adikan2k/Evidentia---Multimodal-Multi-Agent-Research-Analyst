@@ -10,7 +10,7 @@ const LABEL_COLOUR: Record<Label, string> = {
 };
 
 /** The verdict, pressed onto the page like a rubber stamp when the checker answers. */
-function Stamp({ label }: { label: Label }) {
+export function Stamp({ label }: { label: Label }) {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 1.6, rotate: -8 }}

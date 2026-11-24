@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { BreakIt } from "@/components/BreakIt";
 import type { Claim } from "@/lib/replay";
 
 // How much of the page to show either side of the quote. Enough to see it in its setting,
@@ -23,7 +24,9 @@ function firstWords(text: string): string {
  * The evidence for one claim: its quote, shown inside the surrounding text of the page it came
  * from. The highlighter only appears once code has found the quote word for word on that page.
  */
-export function SourcePane({ claim, index }: { claim: Claim | null; index: number }) {
+type Props = { claim: Claim | null; index: number; canCheck: boolean };
+
+export function SourcePane({ claim, index, canCheck }: Props) {
   if (!claim) {
     return (
       <div className="rounded-lg border border-dashed border-rule p-8 text-sm text-ink-faint">
@@ -77,6 +80,11 @@ export function SourcePane({ claim, index }: { claim: Claim | null; index: numbe
         )}
         {found && "Found word for word on the page, by code. Shown with the text around it."}
       </footer>
+
+      {/* Keyed by the claim, so the editor starts from each claim's own wording. */}
+      {found && canCheck && claim.label && (
+        <BreakIt key={`${index}-${claim.text}`} claimText={claim.text} quote={claim.quote} />
+      )}
     </article>
   );
 }

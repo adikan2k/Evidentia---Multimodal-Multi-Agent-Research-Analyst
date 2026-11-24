@@ -1,8 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AskBox } from "@/components/AskBox";
+import { LiveRun } from "@/components/LiveRun";
 import { RunScreen } from "@/components/RunScreen";
+import { liveAvailable } from "@/lib/api";
 import type { Replay } from "@/lib/replay";
+import { useLiveRun } from "@/lib/useLiveRun";
 
 type Entry = { id: string; question: string };
 
@@ -11,6 +15,12 @@ export function ReplayPicker() {
   const [entries, setEntries] = useState<Entry[]>([]);
   const [chosen, setChosen] = useState<string | null>(null);
   const [replay, setReplay] = useState<Replay | null>(null);
+  const [available, setAvailable] = useState<boolean | null>(null);
+  const { live, start, stop } = useLiveRun();
+
+  useEffect(() => {
+    liveAvailable().then(setAvailable);
+  }, []);
 
   useEffect(() => {
     fetch("/replays/index.json")
@@ -52,12 +62,13 @@ export function ReplayPicker() {
           ))}
         </nav>
       </header>
+      {!live && <AskBox available={available} onAsk={start} />}
+      {live && <LiveRun live={live} onClose={stop} />}
       {/* Keyed by run, so choosing another run starts it from the top with fresh state. */}
-      {replay ? (
-        <RunScreen key={replay.id} replay={replay} />
-      ) : (
-        <p className="label text-ink-faint">Loading…</p>
+      {!live && replay && (
+        <RunScreen key={replay.id} replay={replay} canCheck={available === true} />
       )}
+      {!live && !replay && <p className="label text-ink-faint">Loading…</p>}
     </div>
   );
 }
