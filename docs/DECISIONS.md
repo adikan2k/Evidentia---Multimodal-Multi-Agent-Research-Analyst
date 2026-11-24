@@ -1209,3 +1209,91 @@ combine parts of the page. On this benchmark that strictness loses to a plain ye
 in step 3's real answers are split into single facts first, which should suit quoting better,
 but that is untested. The Sonnet run stays separate and needs Aditya's yes. The README says the
 auditor scores below the baseline.
+
+## D-038. Get the auditor past the plain yes/no before auditing real answers
+
+**What.** Improve the auditor on practice rows, one change at a time. Then confirm the best
+version once on test rows it has never seen, against a finish line set here in advance. Steps
+3 and 4 (audit mode on the site, the real-world audit) wait for this.
+
+**Why.** On 550 test rows the auditor scored 0.688 and the plain yes/no 0.768
+(`evals/results/aggrefact_test_haiku.json`). The number that matters most for an auditor is
+worse still. Of the 351 rows it did not call supported, only 185 are labelled unsupported by
+people. So a flag from the auditor is right about 53% of the time, against about 65% for the
+baseline's flags. An auditor whose flags are wrong half the time cannot be shown to anyone.
+
+### The new measure
+
+**Flag precision**: of the claims the auditor does not call supported, the share that people
+label unsupported. It is added to every AggreFact result file, the report and the README, next
+to balanced accuracy and "when it says supported, how often it is right".
+
+### Where the changes are tried
+
+**Practice set: 550 rows from the dev split**, 50 from each sub-dataset, fixed seed. The first
+55 dev rows were too few to tell changes apart. The dev split is separate from the test split,
+so practice never touches test rows. Each run's result file is kept, named after the change.
+
+### The changes, each measured alone on the practice set against the baseline on the same rows
+
+1. **Context for the checker.** Each quote is shown with the paragraph it sits in, up to about
+   600 characters, marked as context. The label still rests on the quote. The quote is still
+   checked word for word by code, and the checker still never sees the rest of the page. This
+   aims at quotes that cannot be read alone, such as "it rose 4%" with no subject.
+2. **Single facts.** Each claim is first split into single facts by the product's own splitter
+   (D-037, step 2). Each fact goes through find, quote check and check. The claim's label then
+   comes from its facts, by code:
+   - supported if every fact is supported;
+   - contradicted if any fact is contradicted;
+   - partial if every fact is supported or partial;
+   - otherwise not on the page.
+
+   This aims at the summary claims that lost most (TofuEval-MediaS 0.483 and XSum 0.554, against
+   0.729 and 0.747). It also tests the splitter, which real answers go through anyway.
+3. **Both together**, if each helps alone.
+
+A change is kept only if it raises balanced accuracy or flag precision on the practice set
+without lowering the other by more than 0.01. Each is a setting in `config.py`, off by default
+until it is kept, and then on in the product too.
+
+### The finish line, fixed now
+
+Measured once, on a fresh test sample: 50 rows per sub-dataset, drawn with a new seed, leaving
+out every row of the first test run. The best version passes only if all three hold:
+- balanced accuracy is at least the baseline's on the same rows;
+- flag precision is at least 0.70 (now about 0.53, the baseline's about 0.65);
+- when it says supported, it is right at least 0.90 of the time (now 0.915).
+
+If it fails, the README says so with the numbers. Aditya then chooses between going ahead with
+the auditor as it is and the fallback below.
+
+**Fallback, if no change works.** Decide the label from the claim and the whole page, as the
+baseline does, and attach the exact quotes as evidence afterwards. That would give roughly the
+baseline's accuracy. But the label would no longer rest on the quotes shown, which is what the
+product promises. So this happens only if Aditya chooses it.
+
+### Cost and limits
+
+All with Haiku. Each paid run gets Aditya's yes first.
+- Baseline on the practice set, once: about $0.15.
+- Context: about $0.30. Single facts: about $0.60 (two to four facts per claim). Both: about
+  $0.70.
+- Confirming run on the fresh test sample, both systems: about $0.50 to $0.90.
+- Total about $2.25 to $2.65. No more than four practice runs, and a cap on every command.
+- Sonnet is a separate question after this, at about $5 to $8 for a confirming run.
+
+**Considered.**
+- More prompt tuning on the label wording: the first dev pass showed little movement, and it
+  invites fitting to the practice rows.
+- Tuning on the test rows already seen: that would make the test score meaningless.
+- Training a model: the benchmark's terms forbid training on it, and rule 12 rules out local
+  models.
+- Going straight to Sonnet: it costs 20 times as much per token. A stronger model might hide
+  the design problem rather than fix it.
+
+**Trade-off.**
+- Context lets the checker see more than the quote, though still not the page. That loosens the
+  rule that it sees only the claim and the quote (D-037, step 6).
+- Single facts multiply the model calls per claim.
+- The first test run stays in the record; the confirming run uses new rows instead of replacing
+  it.
