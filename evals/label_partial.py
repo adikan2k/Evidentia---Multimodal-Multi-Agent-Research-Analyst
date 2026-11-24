@@ -26,6 +26,11 @@ from evals.common import ROOT, read_jsonl, write_jsonl, write_result
 
 ITEMS = ROOT / "partial_items.json"  # which rows to label, fixed once chosen
 LABELS = ROOT / "labels_partial.jsonl"  # made by a person; never by a model
+MODEL_LABELS = ROOT / "labels_partial_codex.jsonl"  # made by OpenAI Codex, an AI; kept apart
+SPOT_CHECK = 15  # the first 15 items, which Aditya labels to check the model's labels
+# The spot-check rule (D-039), fixed before Aditya labels: if he and the model agree on at
+# least 13 of the 15, the model's labels on the other 35 are used with his, and reported as such.
+SPOT_CHECK_AGREEMENT = 13
 SEED = 20261126
 PARTIAL_ITEMS, CONTROL_ITEMS = 40, 10
 MAX_DOC_CHARS = 8_000  # longer documents are too slow to read on screen
@@ -91,6 +96,11 @@ def run() -> None:
             labels[row.row] = {"row": row.row, "answer": KEYS[answer], "labelled_at": now}
             write_jsonl(LABELS, [labels[n] for n in sorted(labels)])
             index += 1
+            if index == SPOT_CHECK and not all(it["row"] in labels for it in items):
+                console.print(f"\nThat is the {SPOT_CHECK} for the spot-check, saved.")
+                more = console.input("[bold]c to carry on, anything else to finish > [/bold]")
+                if more.strip().lower() != "c":
+                    break
         elif answer == "b" and index > 0:
             index -= 1
         elif answer == "q":
@@ -120,14 +130,63 @@ def tally(items: list[dict], labels: dict[int, dict], benchmark: dict[int, int])
     return out
 
 
+def agreement(items: list[dict], mine: dict[int, dict], model: dict[int, dict]) -> dict[str, int]:
+    """On items both answered yes or no: how often the person and the model give the same answer."""
+    both = [
+        it["row"]
+        for it in items
+        if it["row"] in mine
+        and it["row"] in model
+        and "unsure" not in (mine[it["row"]]["answer"], model[it["row"]]["answer"])
+    ]
+    same = sum(mine[r]["answer"] == model[r]["answer"] for r in both)
+    return {"compared": len(both), "same": same}
+
+
+def partial_decision(items: list[dict], labels: dict[int, dict]) -> dict[str, Any]:
+    """D-039's rule: at least 60% "no" on the partial items means partial counts as a failure."""
+    answers = [labels[it["row"]]["answer"] for it in items if it["group"] == "partial"]
+    decided = [a for a in answers if a != "unsure"]
+    share_no = sum(a == "no" for a in decided) / len(decided) if decided else None
+    return {
+        "partial_items_decided": len(decided),
+        "share_no": None if share_no is None else round(share_no, 4),
+        "partial_counts_as_a_failure": share_no is not None and share_no >= 0.60,
+    }
+
+
+def combined(
+    items: list[dict], mine: dict[int, dict], model: dict[int, dict]
+) -> tuple[dict, dict[str, Any]]:
+    """Aditya's labels where he gave them; the model's elsewhere, only if the spot-check passed."""
+    spot = agreement(items[:SPOT_CHECK], mine, model)
+    passed = spot["compared"] == SPOT_CHECK and spot["same"] >= SPOT_CHECK_AGREEMENT
+    labels = (model | mine) if passed else dict(mine)
+    sources = {
+        "by_aditya": sum(it["row"] in mine for it in items),
+        "by_the_model": sum(it["row"] in labels and it["row"] not in mine for it in items),
+    }
+    return labels, {
+        "spot_check": spot | {"needed": SPOT_CHECK_AGREEMENT, "passed": passed},
+        **sources,
+    }
+
+
 def score() -> None:
     items, rows = load_items()
-    labels = {x["row"]: x for x in read_jsonl(LABELS)}
+    mine = {x["row"]: x for x in read_jsonl(LABELS)}
+    model = {x["row"]: x for x in read_jsonl(MODEL_LABELS)}
+    benchmark = {n: r.label for n, r in rows.items()}
+    labels, how = combined(items, mine, model)
     body = {
-        "what": "Aditya's yes/no on claims both judges called partial, plus 10 controls",
-        "labeller": "Aditya (a person)",
+        "what": "Yes/no on 40 claims both judges called partial, plus 10 controls (D-039)",
         "items": len(items),
-        "by_group": tally(items, labels, {n: r.label for n, r in rows.items()}),
+        "aditya": {"labeller": "Aditya (a person)"} | {"by_group": tally(items, mine, benchmark)},
+        "model": {"labeller": "OpenAI Codex (AI)"} | {"by_group": tally(items, model, benchmark)},
+        "agreement_aditya_and_model_all_items": agreement(items, mine, model),
+        "used_for_the_decision": how | {"by_group": tally(items, labels, benchmark)},
+        "decision": partial_decision(items, labels),
     }
     path = write_result("partial_labels", body)
-    print(f"wrote {path.name}: {json.dumps(body['by_group'])}")
+    print(f"wrote {path.name}")
+    print(json.dumps({k: body[k] for k in ("used_for_the_decision", "decision")}, indent=1))

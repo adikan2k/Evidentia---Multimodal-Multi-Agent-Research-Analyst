@@ -1585,3 +1585,21 @@ judge. The auditor now has its own checker setting (`audit_checker_model`), so t
 pipeline's checker stays Sonnet and its measured numbers still hold. The per-audit cap goes from
 $0.75 to $0.25. The Eiffel Tower test answer gives the same five labels with Haiku as it did with
 Sonnet, for $0.008 instead of $0.045.
+
+### A different route for part A, chosen by Aditya
+
+Aditya supplied labels for all 50 items made by OpenAI Codex, an AI model, and not by a person.
+They are kept apart in `evals/labels_partial_codex.jsonl`, marked as AI labels, and are never
+reported as human labels. On their own they say "not supported" for 33 of the 40 partial cases,
+and agree with the benchmark on 9 of the 10 controls.
+
+**Spot-check, with the rule fixed before Aditya labels anything.**
+- **What Aditya labels.** The first 15 items in the fixed order: 13 partial cases and 2 controls.
+  The tool stops there.
+- **If he and Codex give the same answer on at least 13 of the 15.** Codex's labels on the other
+  35 items are used with his 15. The result says how many labels came from each, and the
+  agreement rate.
+- **Otherwise.** Codex's labels are not used, and the decision rests on Aditya's labels alone.
+  If those are too few to decide, he labels more.
+- **The decision itself is unchanged.** If at least 60% of the decided partial items are "not
+  supported", partial counts as a failed citation; otherwise it is its own verdict.

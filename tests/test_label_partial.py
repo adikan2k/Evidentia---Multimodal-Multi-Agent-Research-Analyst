@@ -71,3 +71,40 @@ def test_tally_counts_answers_and_agreement_with_the_benchmark() -> None:
         "decided": 2,
     }
     assert got["supported"]["agrees_with_benchmark"] == 1 and got["not_found"]["labelled"] == 0
+
+
+def items_and_labels(agree: int):
+    from evals.label_partial import SPOT_CHECK
+
+    items = [{"row": i, "group": "partial"} for i in range(50)]
+    model = {i: {"answer": "no"} for i in range(50)}
+    mine = {i: {"answer": "no" if i < agree else "yes"} for i in range(SPOT_CHECK)}
+    return items, mine, model
+
+
+def test_the_models_labels_are_used_only_if_the_spot_check_passes() -> None:
+    from evals.label_partial import combined, partial_decision
+
+    items, mine, model = items_and_labels(agree=13)
+    labels, how = combined(items, mine, model)
+    assert how["spot_check"] == {"compared": 15, "same": 13, "needed": 13, "passed": True}
+    assert how["by_aditya"] == 15 and how["by_the_model"] == 35
+    assert labels[3] is mine[3] and labels[40] is model[40]  # his answer wins where he gave one
+    assert partial_decision(items, labels)["partial_counts_as_a_failure"] is True
+
+    items, mine, model = items_and_labels(agree=12)
+    labels, how = combined(items, mine, model)
+    assert how["spot_check"]["passed"] is False and how["by_the_model"] == 0
+    assert set(labels) == set(range(15))
+
+
+def test_the_decision_rule_needs_sixty_percent_no() -> None:
+    from evals.label_partial import partial_decision
+
+    items = [{"row": i, "group": "partial"} for i in range(10)]
+    six = {i: {"answer": "no" if i < 6 else "yes"} for i in range(10)}
+    five = {i: {"answer": "no" if i < 5 else "yes"} for i in range(10)}
+    assert partial_decision(items, six)["partial_counts_as_a_failure"] is True
+    assert partial_decision(items, five)["partial_counts_as_a_failure"] is False
+    unsure = {i: {"answer": "unsure"} for i in range(10)}
+    assert partial_decision(items, unsure)["share_no"] is None
