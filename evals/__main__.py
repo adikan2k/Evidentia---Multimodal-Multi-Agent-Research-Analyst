@@ -28,6 +28,8 @@ STEPS = {
     "judge": ("evals.judge", "run"),
     "nasty": ("evals.nasty", "run"),
     "report": ("evals.report", "run"),
+    "label-partial": ("evals.label_partial", "run"),  # Aditya's step (D-039)
+    "partial-labels": ("evals.label_partial", "score"),
 }
 # `label` is Aditya's step and `pairs` must not be rebuilt once labelling has started.
 AUTOMATIC = [

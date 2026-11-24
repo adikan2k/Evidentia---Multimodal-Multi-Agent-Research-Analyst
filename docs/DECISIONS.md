@@ -1404,3 +1404,121 @@ this definition, once. It costs about $0.40.
 **Trade-off.** The headline would then leave out claims where a detail is missing. It gets more
 conservative and easier to defend, but it counts fewer failures. The change was found on
 practice rows, which is what they are for. The fresh test rows have not been seen.
+
+## D-039. A calibrated score, the model the product uses, and a person's word on "partial"
+
+**What.** Four pieces of work. Each paid run gets Aditya's yes first. The confirming run on the
+fresh test rows (D-038) waits until all four are done.
+
+**Why.** D-038's practice runs showed three gaps:
+
+- **Crude confidence.** Two judges agreeing is a single fixed trade-off between how often flags
+  are right and how many claims get a verdict.
+- **Wrong model.** Every number so far is for Haiku, but the product runs Sonnet.
+- **"Partial" is unresolved.** On those claims both judges agree a detail is not stated, yet the
+  benchmark's labellers accepted half of them. Only a person can say which side is right.
+
+### A. Aditya labels the "partial" cases (built)
+
+- **What is labelled.** `uv run python -m evals label-partial` shows 50 practice rows: 40 that
+  both judges called partial, and 10 controls (5 supported, 5 not on the page), shuffled
+  together. All are rows whose document is at most 8,000 characters, and the items are fixed in
+  `evals/partial_items.json`.
+- **What is shown.** Only the claim and the document. Not the judges' answers, not the
+  benchmark's label, and not which group an item is in.
+- **The answer and the scoring.** The answer is yes, no or unsure. `uv run python -m evals
+  partial-labels` writes `evals/results/partial_labels.json`, which holds counts only. Only row
+  numbers and answers are saved, never text.
+
+**The rule, fixed now, before any labels exist.** It looks at the partial items Aditya answered
+yes or no:
+
+- **At least 60% "no".** The judges are right and the benchmark is lenient. In the product,
+  partial counts as a failed citation ("the cited page does not state everything"). AggreFact
+  results are reported both ways, with these labels as the evidence.
+- **Otherwise.** Partial becomes its own verdict ("the page backs the main point but not every
+  detail") and is not counted as a failure, as proposed in D-038.
+
+The 10 controls show how often Aditya agrees with the benchmark on clear cases. That number is
+reported next to the result.
+
+### B. A calibrated score for the page judge
+
+Two ways to get a probability that a claim is supported, both measured on the 550 practice rows:
+
+1. **Token probability.** `gpt-6-luna` with reasoning switched off returns the probability of
+   each output token, so the score is the probability of `true`. A probe on 2026-11-24 showed it
+   works with reasoning off and is refused with reasoning on. This is one call per claim, about
+   $0.05 for 550 rows.
+2. **Repeated votes.** The Haiku page judge answers five times, and the score is the share of
+   "supported" votes. That is four more runs on top of D-038's run 1, about $0.60.
+
+Code then decides with two thresholds:
+- **Supported** if the quote judge says supported and the score is at least `t_supported`.
+- **Flag** if the quote judge says not on the page or contradicted, and the score is at most
+  `t_flag`. Partial counts as a flag here too if part A says so.
+- **Needs a human** otherwise.
+
+The two thresholds are chosen on the practice rows: the largest coverage that still meets
+D-038's bars (flags right 0.80, "supported" right 0.93). They are then fixed for the confirming
+run. The report also shows the whole curve: flag precision against coverage as the thresholds
+move. Two numbers chosen on 550 rows is a small risk of fitting the practice set, and the fresh
+test rows check it.
+
+### C. The model the product uses
+
+Sonnet as both judges, once, on the 550 practice rows: about $5 for the quote judge and $3 for
+the page judge (one vote; five Sonnet votes would cost about $15). It answers whether Sonnet is
+worth about 20 times Haiku's price per token. If it is not clearly better, the product uses
+Haiku for the judges and Sonnet only where it is measured to help. That is a separate yes.
+
+### D. Product engineering
+
+1. **The two judges run at the same time.** The page judge starts right after fetching, in
+   parallel with find, quote check and check. It writes its own state field. A final `combine`
+   node merges the two, and is deferred until both branches finish (`defer=True` in
+   `StateGraph.add_node`, checked in langgraph 1.2.24). The live stream still shows each step
+   as it finishes.
+2. **Prompt caching.** Claims citing the same page re-send that page today, to two judges.
+   - **One tag per audit.** Each audit uses one random data-block tag instead of one per call.
+     It is still unguessable by a page's author, which is what the tag is for.
+   - **Page before claim.** The page text comes before the claim, with a cache breakpoint after
+     the page, so later claims on the same page read it from the cache.
+   - **When it applies.** Claude 5.5 models cache prompts of at least 512 tokens (Claude API
+     docs, read 2026-11-24).
+   - **Measured.** The cost of one real answer, before and after.
+3. **Cache prices per model.** `cost.py` prices every cache read at 0.1 times input. The docs
+   give 0.05 for Sonnet 5.5, so the factor becomes per model. Without caching this changes no
+   past number.
+4. **The score is shown.** The page judge's score appears next to each label, so a reader sees
+   how close a call was.
+
+### Order and cost
+
+| Step | About |
+|---|---|
+| A. Aditya's labels | free, 20 to 30 minutes of his time |
+| B. Token-probability run, practice rows | $0.05 |
+| B. Four more Haiku votes, practice rows | $0.60 |
+| D. Engineering, plus one live audit to measure caching | $0.10 |
+| C. Sonnet as both judges, practice rows (separate yes) | $8 |
+| Confirming run on fresh test rows, chosen setup | $0.50 to $1 with Haiku, about $8 with Sonnet |
+
+**Considered.**
+
+- **Asking the model for a confidence percentage.** Stated confidence is known to be poorly
+  calibrated. A token probability or a vote share is measured, not stated.
+- **Fitting a small classifier on the judges' outputs.** The benchmark's terms forbid training
+  on it, and two thresholds are enough to show the curve.
+- **More prompt changes.** D-038's runs moved the numbers by less than the noise.
+- **Skipping the labels.** Then "partial" would stay a matter of definition, and the README
+  would have to say so.
+
+**Trade-off.**
+
+- Votes cost five times as many page-judge calls. The token probability is cheaper but only
+  comes from `gpt-6-luna` with reasoning off, which may judge worse than with it on.
+- Running the judges in parallel makes the graph harder to read: two branches and a join
+  instead of one line.
+- One tag per audit means a page cannot be cached across different audits. That is fine,
+  because a cache entry lasts five minutes anyway.
