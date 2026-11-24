@@ -9,6 +9,9 @@ The region used here is `us-central1`.
 Current deployment (2026-11-24): project `evidentia-515709`, service `evidentia-api`, at
 https://evidentia-api-499389159505.us-central1.run.app
 
+The site is the Vercel project `evidentia`, at https://evidentia-green.vercel.app , building the
+`web` folder of the `rebuild` branch.
+
 ## 1. The API on Cloud Run
 
 ### 1a. Switch on the services (once per project)
