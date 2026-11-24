@@ -28,6 +28,7 @@ from evals.pairs import BUILT, NATURAL, wrong_quote
 from evals.retrieval import relevant_ids
 from evals.retrieval import score as retrieval_score
 from evals.unanswerable import CANDIDATES, absent_from_corpus
+from evidentia.config import Settings
 from evidentia.schemas import CheckedClaim, Passage, RunState
 
 
@@ -241,3 +242,10 @@ def test_a_question_counts_as_unanswerable_only_if_its_answer_is_nowhere_in_the_
 def test_site_data_keeps_the_numbers_and_drops_the_long_lists() -> None:
     result = {"what": "x", "per_question": [1, 2], "systems": {"a": {"runs": [1], "value": 0.9}}}
     assert report.slim(result) == {"what": "x", "systems": {"a": {"value": 0.9}}}
+
+
+def test_the_sites_limits_are_the_settings_defaults() -> None:
+    limits = report.auditor_limits()
+    assert set(limits) == set(report.SITE_SETTINGS)
+    assert limits["audit_max_claims"] == Settings.model_fields["audit_max_claims"].default
+    assert all(isinstance(value, int | float) for value in limits.values())

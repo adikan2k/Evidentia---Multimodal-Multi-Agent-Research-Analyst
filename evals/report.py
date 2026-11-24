@@ -8,6 +8,7 @@ import json
 from typing import Any
 
 from evals.common import RESULTS_DIR
+from evidentia.config import Settings
 
 REPORT = RESULTS_DIR / "REPORT.md"
 # The website's Evals page reads this one file: the result files with the long lists removed.
@@ -31,9 +32,27 @@ def slim(value: Any) -> Any:
     return value
 
 
+# The limits the site's method page states. They are read from the settings' defaults, so the
+# page cannot say one thing while the code does another.
+SITE_SETTINGS = (
+    "audit_max_claims",
+    "audit_max_pages",
+    "audit_min_page_chars",
+    "audit_page_chars",
+    "audit_cap_usd",
+    "max_audits_per_ip",
+    "per_host_interval_s",
+)
+
+
+def auditor_limits() -> dict[str, Any]:
+    return {name: Settings.model_fields[name].default for name in SITE_SETTINGS}
+
+
 def write_site_data(results: dict[str, dict | None]) -> None:
     present = {name: slim(result) for name, result in results.items() if result}
     if present:  # never replace real numbers with an empty file
+        present["auditor_limits"] = auditor_limits()
         SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
         SITE_DATA.write_text(json.dumps(present, indent=1, ensure_ascii=False), encoding="utf-8")
 
