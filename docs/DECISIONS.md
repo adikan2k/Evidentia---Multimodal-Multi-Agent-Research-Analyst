@@ -374,3 +374,21 @@ run slower for no accuracy gain). A lock around all paid calls (same slowdown).
 **Trade-off.** Reservations use worst-case prices, so near the cap a call can be refused even
 though the actual costs would have fitted. The cap staying hard matters more.
 
+### What the first live M2 runs showed (2026-11-24)
+
+These are single runs, not an evaluation. M3 is where this gets measured.
+
+- The checker is strict and its reasons are specific. Across three ordinary runs it labelled 7 of
+  22 claims supported and 15 partial, and none unverified.
+- Most partial labels are about context the writer added from around the quote: who said it,
+  which study, how many trials. The writer prompt now says the checker sees only the claim and
+  the quote and that such context must be inside the quote or left out. That instruction is not
+  in D-012; it was added after the first run.
+- No claim failed outright in ordinary runs, so the repair loop did not fire on its own. It was
+  exercised against the real services by planting bad claims in a real draft: a corrupted quote
+  was repaired and came back supported; a false claim was rewritten to what the pages say; and a
+  claim no page could back ended as unverified.
+- One thing D-012 did not cover: if the checker returns no verdict for a claim (a refusal or a
+  cut-off), that claim is labelled unverified with the reason "the checker did not return a
+  verdict", and the run continues.
+
