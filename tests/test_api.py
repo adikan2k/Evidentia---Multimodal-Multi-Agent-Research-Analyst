@@ -78,7 +78,12 @@ def events(response: httpx.Response) -> list[tuple[str, dict]]:
 def test_health_and_status(settings) -> None:
     api = Harness(settings)
     assert api.call("GET", "/health").json() == {"ok": True}
-    assert api.call("GET", "/status").json() == {"live_available": True, "run_cap_usd": 0.25}
+    assert api.call("GET", "/status").json() == {
+        "live_available": True,
+        "run_cap_usd": 0.25,
+        "audit_available": False,  # this harness has no audit services
+        "audit_cap_usd": 0.25,
+    }
 
 
 def test_a_run_streams_each_step_then_the_report(settings) -> None:

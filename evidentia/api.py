@@ -1,4 +1,4 @@
-"""The web API (D-027). Three things: start a run and stream it, check one claim, report status.
+"""The web API (D-027, D-041). Start a run or an audit and stream it, check one claim, status.
 
     uvicorn evidentia.api:create_app --factory --port 8000
 
@@ -22,6 +22,9 @@ from langgraph.errors import NodeTimeoutError
 from pydantic import BaseModel, Field
 
 from evidentia.__main__ import build_deps
+from evidentia.audit.cli import build_audit_deps
+from evidentia.audit.events import AuditEventBuilder
+from evidentia.audit.graph import AuditDeps, run_audit
 from evidentia.config import Settings, load_settings
 from evidentia.cost import BudgetExceeded, Ledger
 from evidentia.events import EventBuilder
@@ -40,6 +43,10 @@ class RunRequest(BaseModel):
     question: str = Field(min_length=10, max_length=300)
 
 
+class AuditRequest(BaseModel):
+    answer: str = Field(min_length=20, max_length=12_000)
+
+
 class CheckRequest(BaseModel):
     claim: str = Field(min_length=3, max_length=600)
     quote: str = Field(min_length=3, max_length=2_000)
@@ -53,6 +60,7 @@ class Services:
     tracer: Tracer
     make_deps: Callable[[Ledger], Deps]
     make_llm: Callable[[Ledger], LLM]
+    make_audit_deps: Callable[[Ledger], AuditDeps] | None = None
 
 
 def real_services() -> Services:
@@ -63,6 +71,7 @@ def real_services() -> Services:
         tracer=tracer,
         make_deps=lambda ledger: build_deps(settings, ledger, tracer),
         make_llm=lambda ledger: LLM(settings, ledger),
+        make_audit_deps=lambda ledger: build_audit_deps(settings, ledger, tracer),
     )
 
 
@@ -107,7 +116,12 @@ def create_app(services: Services | None = None) -> FastAPI:
     @app.get("/status")
     async def status() -> dict[str, Any]:
         """Lets the page say up front whether a live run is possible right now."""
-        return {"live_available": limits.live_available(), "run_cap_usd": s.public_run_cap_usd}
+        return {
+            "live_available": limits.live_available(),
+            "run_cap_usd": s.public_run_cap_usd,
+            "audit_available": limits.audit_available() and svc.make_audit_deps is not None,
+            "audit_cap_usd": s.audit_cap_usd,
+        }
 
     @app.post("/runs")
     async def start_run(body: RunRequest, request: Request) -> StreamingResponse:
@@ -158,6 +172,53 @@ def create_app(services: Services | None = None) -> FastAPI:
             )
             await asyncio.gather(deps.store.aclose(), return_exceptions=True)
             limits.finish_run(ip, ledger.spent)
+            svc.tracer.flush()
+
+    @app.post("/audits")
+    async def start_audit(body: AuditRequest, request: Request) -> StreamingResponse:
+        if svc.make_audit_deps is None:
+            raise Refused(503, "Live audits are not available on this server.")
+        ip = client_ip(request)
+        limits.start_audit(ip)
+        return StreamingResponse(
+            stream_audit(body.answer, ip),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
+
+    async def stream_audit(answer: str, ip: str) -> AsyncIterator[str]:
+        ledger = Ledger(s.audit_cap_usd)
+        deps = svc.make_audit_deps(ledger)
+        builder = AuditEventBuilder(ledger)
+        queue: asyncio.Queue[tuple[str, dict[str, Any]] | None] = asyncio.Queue()
+        started = time.monotonic()
+
+        def on_update(node: str, update: dict[str, Any]) -> None:
+            seconds = round(time.monotonic() - started, 2)
+            queue.put_nowait(("node", {"t": seconds} | builder.node_event(node, update)))
+
+        async def work() -> None:
+            try:
+                state = await run_audit(answer, deps, on_update)
+                queue.put_nowait(("report", builder.report(state)))
+            except EXPECTED_STOPS as err:
+                queue.put_nowait(("error", {"message": f"The audit stopped: {err}"}))
+            except Exception:
+                log.exception("audit failed")
+                queue.put_nowait(("error", {"message": "The audit failed unexpectedly."}))
+            finally:
+                queue.put_nowait(None)
+
+        task = asyncio.create_task(work())
+        try:
+            while (item := await queue.get()) is not None:
+                yield sse(*item)
+        finally:
+            # Also reached when the visitor closes the tab: stop paying for an audit nobody sees.
+            task.cancel()
+            await asyncio.gather(task, return_exceptions=True)
+            await asyncio.gather(deps.fetcher.aclose(), return_exceptions=True)
+            limits.finish_audit(ip, ledger.spent)
             svc.tracer.flush()
 
     @app.post("/check")

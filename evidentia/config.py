@@ -137,6 +137,10 @@ class Settings(BaseSettings):
     max_runs_per_ip: int = 3
     max_checks_per_ip: int = 30
     max_concurrent_runs: int = 2
+    # Live audits from the website (D-041), within the same daily budget.
+    max_audits_per_ip: int = 5
+    max_concurrent_audits: int = 2
+    audit_reserve_usd: float = 0.05  # set aside when an audit starts, replaced by its real cost
     allowed_origins: str = "http://localhost:3000"  # comma-separated
 
 

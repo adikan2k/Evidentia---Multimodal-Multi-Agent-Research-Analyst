@@ -34,6 +34,8 @@ class Limits:
         self.runs: Counter[str] = Counter()
         self.checks: Counter[str] = Counter()
         self.running: set[str] = set()
+        self.audits: Counter[str] = Counter()
+        self.auditing: set[str] = set()
 
     def _new_day(self) -> None:
         if self.clock() != self.day:
@@ -41,6 +43,7 @@ class Limits:
             self.spent = 0.0
             self.runs.clear()
             self.checks.clear()
+            self.audits.clear()
 
     def _require_budget(self, amount: float) -> None:
         if self.spent + self.reserved + amount > self.s.daily_budget_usd:
@@ -82,4 +85,28 @@ class Limits:
         self.checks[ip] += 1
 
     def finish_check(self, spent_usd: float) -> None:
+        self.spent += spent_usd
+
+    def audit_available(self) -> bool:
+        self._new_day()
+        return self.spent + self.reserved + self.s.audit_reserve_usd <= self.s.daily_budget_usd
+
+    def start_audit(self, ip: str) -> None:
+        self._new_day()
+        if ip in self.auditing:
+            raise Refused(409, "An audit from your address is already in progress.")
+        if len(self.auditing) >= self.s.max_concurrent_audits:
+            raise Refused(503, "Other audits are in progress. Try again in a minute.")
+        if self.audits[ip] >= self.s.max_audits_per_ip:
+            raise Refused(
+                429, f"That is today's {self.s.max_audits_per_ip} live audits from your address."
+            )
+        self._require_budget(self.s.audit_reserve_usd)
+        self.audits[ip] += 1
+        self.auditing.add(ip)
+        self.reserved += self.s.audit_reserve_usd
+
+    def finish_audit(self, ip: str, spent_usd: float) -> None:
+        self.auditing.discard(ip)
+        self.reserved = max(0.0, self.reserved - self.s.audit_reserve_usd)
         self.spent += spent_usd
