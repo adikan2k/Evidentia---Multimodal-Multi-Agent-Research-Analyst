@@ -19,7 +19,8 @@ def test_claude_price_is_per_million_tokens() -> None:
 
 
 def test_cache_tokens_use_their_own_rates() -> None:
-    assert claude_usd("claude-sonnet-5-5", 0, 0, cache_read=1_000_000) == pytest.approx(0.20)
+    # Sonnet 5.5 cache reads are 0.05 of input (Claude API prompt-caching reference, 2026-11-24).
+    assert claude_usd("claude-sonnet-5-5", 0, 0, cache_read=1_000_000) == pytest.approx(0.10)
     assert claude_usd("claude-sonnet-5-5", 0, 0, cache_write=1_000_000) == pytest.approx(2.50)
 
 

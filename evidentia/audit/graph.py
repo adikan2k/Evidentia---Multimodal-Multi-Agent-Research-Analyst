@@ -1,9 +1,11 @@
-"""The audit as a LangGraph graph (D-037, D-038).
+"""The audit as a LangGraph graph (D-037, D-038, D-039).
 
-    parse -> split -> fetch -> find -> quote_check -> check -> page_check
+    parse -> split -> fetch -+-> find -> quote_check -> check -+-> combine
+                             +-> page_check -------------------+
 
-parse and quote_check are code. split, find, check and page_check are model calls. find, quote
-check and check are the quote judge; page_check is the page judge. Each node returns only
+parse, quote_check and combine are code. split, find, check and page_check are model calls.
+find, quote check and check are the quote judge; page_check is the page judge, and the two run
+at the same time. combine waits for both and merges them. Each node returns only
 the fields it filled in, as in the research pipeline.
 """
 
@@ -26,6 +28,7 @@ from evidentia.audit.prompts import (
     SPLIT_SYSTEM,
     audit_check_prompt,
     find_prompt,
+    page_blocks,
     page_judge_prompt,
     split_prompt,
 )
@@ -58,10 +61,10 @@ TIMEOUTS = {
     "find": 420,
     "quote_check": 30,
     "check": 300,
-    "page_check": 300,
+    "page_check": 420,
+    "combine": 10,
 }
 PATH = list(TIMEOUTS)
-JUDGED = ("supported", "partial", "contradicted", "not_found")  # quote labels the page judge sees
 
 OVER_LIMIT = "over the page limit for one audit"
 NO_FINDER = "the evidence finder did not answer"
@@ -115,7 +118,11 @@ class AuditNodes:
         self.d = deps
         self.s = deps.settings
         self.gate = asyncio.Semaphore(self.s.audit_concurrency)
-        self._passages: dict[tuple[str, str], list[Passage]] = {}  # (claim, url) -> passages
+        # (claim, url) -> the passages, shared by both judges even while they run at once
+        self._passages: dict[tuple[str, str], asyncio.Task[list[Passage]]] = {}
+        # One random data-block tag for the whole audit, so prompts about the same page are
+        # identical up to the claim and can be cached. Page authors still cannot guess it.
+        self.tag = new_tag("page")
 
     async def parse(self, state: AuditState) -> dict[str, Any]:
         return {"parsed": parse_answer(state.answer)}
@@ -226,25 +233,25 @@ class AuditNodes:
         return {"results": results}
 
     async def page_check(self, state: AuditState, config: RunnableConfig) -> dict[str, Any]:
+        """Runs alongside the quote judge, so it writes its own field, not `results`."""
         if not self.s.audit_two_judges:
-            return {}
+            return {"page_verdicts": {}}
         by_url = {s.url: s for s in state.sources}
-        todo = [
-            i
-            for i, r in enumerate(state.results)
-            if r.page_judged is None and r.quote_label in JUDGED
-        ]
+        todo = [i for i, r in enumerate(state.results) if r.skipped is None]
 
-        async def one(i: int) -> PageResult:
+        async def one(i: int) -> dict[str, Any]:
             result = state.results[i]
             claim = state.claims[result.claim].claim
-            verdict = await self.page_verdict(claim, by_url[result.url], state.run_id, config)
-            return result.model_copy(update=verdict)
+            return await self.page_verdict(claim, by_url[result.url], state.run_id, config)
 
-        judged = await asyncio.gather(*(one(i) for i in todo))
-        results = list(state.results)
-        for i, result in zip(todo, judged, strict=True):
-            results[i] = result
+        verdicts = await asyncio.gather(*(one(i) for i in todo))
+        return {"page_verdicts": dict(zip(todo, verdicts, strict=True))}
+
+    async def combine(self, state: AuditState) -> dict[str, Any]:
+        """Both judges are done: put the page judge's answers next to the quote judge's."""
+        results = [
+            r.model_copy(update=state.page_verdicts.get(i, {})) for i, r in enumerate(state.results)
+        ]
         return {"results": results}
 
     # The steps for one claim and one page, shared by the graph and the AggreFact eval.
@@ -267,8 +274,8 @@ class AuditNodes:
         """
         key = (claim, source.url)
         if key not in self._passages:
-            self._passages[key] = await self._passages_for(claim, source, run_id)
-        return self._passages[key]
+            self._passages[key] = asyncio.create_task(self._passages_for(claim, source, run_id))
+        return await self._passages[key]
 
     async def _passages_for(self, claim: str, source: Source, run_id: str) -> list[Passage]:
         if len(source.text) <= self.s.audit_page_chars:
@@ -289,7 +296,7 @@ class AuditNodes:
         self, claim: str, source: Source, run_id: str, config: RunnableConfig | None
     ) -> Evidence | None:
         passages = await self.passages_for(claim, source, run_id)
-        tag = new_tag("page")
+        tag = self.tag
         system = FIND_SYSTEM.format(tag=tag, max_quotes=self.s.audit_max_quotes)
         try:
             async with self.gate:
@@ -299,7 +306,8 @@ class AuditNodes:
                     effort=self.s.finder_effort,
                     max_tokens=self.s.finder_max_tokens,
                     system=system,
-                    user=find_prompt(claim, passages, tag),
+                    prefix=page_blocks(passages, tag) if self.s.audit_prompt_cache else None,
+                    user=find_prompt(claim, passages, tag, with_page=not self.s.audit_prompt_cache),
                     schema=Evidence,
                     config=config,
                 )
@@ -337,17 +345,20 @@ class AuditNodes:
     ) -> dict[str, Any]:
         """The page judge's score and verdict, as fields of a PageResult (D-038, D-039)."""
         passages = await self.passages_for(claim, source, run_id)
-        tag = new_tag("page")
-        system, user = PAGE_JUDGE_SYSTEM.format(tag=tag), page_judge_prompt(claim, passages, tag)
+        tag = self.tag
+        cache = self.s.audit_prompt_cache
+        system = PAGE_JUDGE_SYSTEM.format(tag=tag)
+        prefix = page_blocks(passages, tag) if cache else None
+        user = page_judge_prompt(claim, passages, tag, with_page=not cache)
         if self.s.page_judge_probability:
-            score, reason = await self._page_probability(system, user)
+            score, reason = await self._page_probability(system, prefix, user)
         else:
-            score, reason = await self._page_votes(system, user, config)
+            score, reason = await self._page_votes(system, prefix, user, config)
         verdict = page_call(score, self.s.audit_t_supported, self.s.audit_t_flag)
         return {"page_judged": verdict, "page_reason": reason, "page_score": score}
 
     async def _page_votes(
-        self, system: str, user: str, config: RunnableConfig | None
+        self, system: str, prefix: str | None, user: str, config: RunnableConfig | None
     ) -> tuple[float | None, str]:
         """The share of the votes that say supported; votes that fail are left out."""
         model = self.s.page_judge_model
@@ -361,6 +372,7 @@ class AuditNodes:
                         effort=self.s.page_judge_effort,
                         max_tokens=self.s.page_judge_max_tokens,
                         system=system,
+                        prefix=prefix,
                         user=user,
                         schema=PageJudgement,
                         config=config,
@@ -377,7 +389,9 @@ class AuditNodes:
         majority = next(v for v in votes if v.supported == (score >= 0.5))
         return score, majority.reason
 
-    async def _page_probability(self, system: str, user: str) -> tuple[float | None, str]:
+    async def _page_probability(
+        self, system: str, prefix: str | None, user: str
+    ) -> tuple[float | None, str]:
         model = self.s.page_judge_model
         llm = self.model_for(model)
         if not isinstance(llm, OpenAILLM):
@@ -389,6 +403,7 @@ class AuditNodes:
                     model=model,
                     max_tokens=self.s.page_judge_max_tokens,
                     system=system,
+                    prefix=prefix,
                     user=user,
                     schema=PageJudgement,
                 )
@@ -426,8 +441,21 @@ def build_audit_graph(deps: AuditDeps):
             getattr(nodes, name),
             timeout=TIMEOUTS[name],
             retry_policy=RetryPolicy(max_attempts=2),
+            defer=name == "combine",  # waits until both judges have finished
         )
-    for before, after in zip([START, *PATH], [*PATH, END], strict=True):
+    edges = [
+        (START, "parse"),
+        ("parse", "split"),
+        ("split", "fetch"),
+        ("fetch", "find"),
+        ("find", "quote_check"),
+        ("quote_check", "check"),
+        ("check", "combine"),
+        ("fetch", "page_check"),
+        ("page_check", "combine"),
+        ("combine", END),
+    ]
+    for before, after in edges:
         graph.add_edge(before, after)
     return graph.compile()
 

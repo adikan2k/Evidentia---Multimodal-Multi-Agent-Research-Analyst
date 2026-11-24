@@ -71,7 +71,9 @@ class OpenAILLM:
         user: str,
         schema: type[T],
         config: Any = None,  # accepted for the same signature as LLM; tracing is by the wrapper
+        prefix: str | None = None,  # OpenAI caches a long shared start of a prompt by itself
     ) -> T:
+        user = f"{prefix}\n\n{user}" if prefix else user
         worst_case = openai_usd(model, estimate_tokens(system + user), max_tokens)
         with self.ledger.reserve(node, worst_case):
             response = await self.client.responses.parse(
@@ -92,13 +94,22 @@ class OpenAILLM:
         return parsed
 
     async def probability(
-        self, *, node: str, model: str, max_tokens: int, system: str, user: str, schema: type[T]
+        self,
+        *,
+        node: str,
+        model: str,
+        max_tokens: int,
+        system: str,
+        user: str,
+        schema: type[T],
+        prefix: str | None = None,
     ) -> tuple[T, float]:
         """An answer plus the model's probability that its boolean field is true.
 
         OpenAI returns token probabilities only with reasoning off (checked 2026-11-24: with
         reasoning on, the request is refused). The schema must have exactly one boolean field.
         """
+        user = f"{prefix}\n\n{user}" if prefix else user
         worst_case = openai_usd(model, estimate_tokens(system + user), max_tokens)
         with self.ledger.reserve(node, worst_case):
             response = await self.client.responses.parse(

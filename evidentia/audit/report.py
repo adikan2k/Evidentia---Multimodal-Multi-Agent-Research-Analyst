@@ -124,8 +124,12 @@ def describe(node: str, update: dict[str, Any]) -> str:
             f"{n} {LABEL_TEXT[label]}" for label, n in labels.most_common()
         )
     if node == "page_check":
-        if not update:
+        verdicts = update.get("page_verdicts", {})
+        if not verdicts:
             return "one judge only"
+        calls = Counter(v["page_judged"] for v in verdicts.values())
+        return "page judge: " + ", ".join(f"{n} {call}" for call, n in calls.most_common())
+    if node == "combine":
         labels = Counter(r.label for r in update["results"])
         return "both judges: " + ", ".join(
             f"{n} {LABEL_TEXT[label]}" for label, n in labels.most_common()
@@ -182,4 +186,7 @@ class AuditReporter:
             if why:
                 self.console.print(Text(f"      Quote judge: {why}", style="yellow"))
             if page["page_reason"]:
-                self.console.print(Text(f"      Page judge: {page['page_reason']}", style="yellow"))
+                score = page["page_score"]
+                shown = "" if score is None else f" (score {score:.2f})"
+                text = f"      Page judge{shown}: {page['page_reason']}"
+                self.console.print(Text(text, style="yellow"))

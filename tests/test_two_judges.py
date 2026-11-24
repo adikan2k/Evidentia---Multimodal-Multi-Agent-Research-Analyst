@@ -84,12 +84,99 @@ def test_the_page_judge_reads_the_same_passages_and_the_reranker_runs_once(setti
     find = next(c for c in fake.calls if c["schema"] == "Evidence")
     page = next(c for c in fake.calls if c["schema"] == "PageJudgement")
 
-    def texts(call: dict) -> list[str]:  # the passage texts, without the random tags
-        body = call["user"].split("\n\nPage:\n\n", 1)[1]
+    def texts(call: dict) -> list[str]:  # the passage texts, without the tags
+        body = call["user"].split("Page:\n\n", 1)[1].rsplit("\n\nClaim: ", 1)[0]
         return [block.split(">\n", 1)[1].rsplit("\n</", 1)[0] for block in body.split("\n\n<")]
 
     assert len(texts(find)) == 2 and texts(find) == texts(page)
     assert "untrusted data" in page["system"]
+
+
+def test_both_judges_start_together_and_combine_waits_for_both(settings) -> None:
+    deps, _ = make_deps(settings)
+    seen: list[str] = []
+    state = audit(deps, ANSWER, seen)
+    assert seen.index("page_check") < seen.index("quote_check")  # ran alongside find
+    assert seen[-1] == "combine" and seen.count("combine") == 1
+    assert labels(state) == ["supported", "not_found", "contradicted"]
+    assert state.results[0].page_judged == "supported"
+
+
+def test_the_page_goes_first_as_a_cached_prefix_with_one_tag_per_audit(settings) -> None:
+    deps, _ = make_deps(settings)
+    sent: list[dict] = []
+    original = deps.llm._call
+
+    async def spy(model, effort, max_tokens, system, user, schema, config, prefix=None):
+        sent.append({"schema": schema.__name__, "prefix": prefix, "user": user})
+        return await original(model, effort, max_tokens, system, user, schema, config, prefix)
+
+    deps.llm._call = spy
+    audit(deps, ANSWER)
+    page_calls = [c for c in sent if c["schema"] in ("Evidence", "PageJudgement")]
+    assert all(
+        c["prefix"].startswith("Page:") and c["user"].startswith("Claim:") for c in page_calls
+    )
+    assert len({c["prefix"] for c in page_calls}) == 1  # same page, same tag: one cache entry
+
+
+def test_without_caching_the_page_is_inside_the_message(settings) -> None:
+    settings = settings.model_copy(update={"audit_prompt_cache": False})
+    deps, fake = make_deps(settings)
+    audit(deps, ANSWER)
+    find = next(c for c in fake.calls if c["schema"] == "Evidence")
+    assert find["user"].startswith("Page:") and "\n\nClaim: " in find["user"]
+
+
+def test_a_cached_call_sends_the_page_as_a_marked_block(settings) -> None:
+    from evidentia.llm import LLM
+
+    llm = LLM(settings, Ledger(1.0))
+    captured = {}
+
+    class FakeRunnable:
+        async def ainvoke(self, messages, config=None):
+            captured["messages"] = messages
+            raw = SimpleNamespace(usage_metadata={}, response_metadata={"stop_reason": "end_turn"})
+            return {"raw": raw, "parsed": PageJudgement(reason="r", supported=True)}
+
+    class FakeChat:
+        def __init__(self, **kwargs):
+            pass
+
+        def with_structured_output(self, *args, **kwargs):
+            return FakeRunnable()
+
+    import evidentia.llm as llm_module
+
+    real = llm_module.ChatAnthropic
+    llm_module.ChatAnthropic = FakeChat
+    try:
+        asyncio.run(
+            llm.structured(
+                node="find",
+                model="claude-haiku-5-5",
+                effort="low",
+                max_tokens=100,
+                system="s",
+                user="Claim: c",
+                schema=PageJudgement,
+                prefix="Page:\n\n<page-1>\ntext\n</page-1>",
+            )
+        )
+    finally:
+        llm_module.ChatAnthropic = real
+    content = captured["messages"][1].content
+    assert content[0]["cache_control"] == {"type": "ephemeral"}
+    assert content[0]["text"].startswith("Page:") and content[1]["text"] == "Claim: c"
+
+
+def test_cache_reads_are_priced_per_model() -> None:
+    from evidentia.cost import claude_usd
+
+    sonnet = claude_usd("claude-sonnet-5-5", 0, 0, cache_read=1_000_000)
+    haiku = claude_usd("claude-haiku-5-5", 0, 0, cache_read=1_000_000)
+    assert sonnet == pytest.approx(2.00 * 0.05) and haiku == pytest.approx(0.10 * 0.1)
 
 
 def test_quote_context_is_shown_only_when_switched_on(settings) -> None:
@@ -235,11 +322,11 @@ def test_votes_give_a_score_and_the_thresholds_decide(settings) -> None:
     deps, fake = make_deps(settings)
     original = fake._call
 
-    async def mixed(model, effort, max_tokens, system, user, schema, config):
+    async def mixed(model, effort, max_tokens, system, user, schema, config, prefix=None):
         if schema is PageJudgement:
             fake.calls.append({"schema": "PageJudgement", "user": user})
             return reply(PageJudgement(reason="vote", supported=next(answers)))
-        return await original(model, effort, max_tokens, system, user, schema, config)
+        return await original(model, effort, max_tokens, system, user, schema, config, prefix)
 
     deps.llm._call = mixed
     state = audit(deps, f"Solar capacity grew 24% in 2023 [1].\n[1] {GOOD}")
@@ -305,4 +392,4 @@ def test_probability_mode_needs_an_openai_model(settings) -> None:
     settings = settings.model_copy(update={"page_judge_probability": True})
     deps, _ = make_deps(settings)
     with pytest.raises(ValueError, match="needs an OpenAI model"):
-        asyncio.run(AuditNodes(deps)._page_probability("s", "u"))
+        asyncio.run(AuditNodes(deps)._page_probability("s", None, "u"))

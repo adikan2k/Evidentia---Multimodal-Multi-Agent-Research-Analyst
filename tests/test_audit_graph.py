@@ -80,7 +80,7 @@ def sentences(answer: str) -> list[SplitClaim]:
 
 
 def claim_of(user: str) -> str:
-    return user.split("\n")[0].removeprefix("Claim: ")
+    return user.rsplit("Claim: ", 1)[1].split("\n")[0]
 
 
 class AuditLLM:
@@ -98,7 +98,10 @@ class AuditLLM:
         self.page_says = page_says or {}
         self.calls: list[dict[str, str]] = []
 
-    async def _call(self, model, effort, max_tokens, system, user, schema, config) -> dict:
+    async def _call(
+        self, model, effort, max_tokens, system, user, schema, config, prefix=None
+    ) -> dict:
+        user = f"{prefix}\n\n{user}" if prefix else user  # the page, then the claim
         self.calls.append(
             {"schema": schema.__name__, "system": system, "user": user, "model": model}
         )
@@ -160,7 +163,7 @@ def test_every_label_comes_out_of_the_right_case(settings) -> None:
     deps, _ = make_deps(settings)
     seen: list[str] = []
     state = audit(deps, seen=seen)
-    assert seen == PATH
+    assert sorted(seen) == sorted(PATH) and seen[-1] == "combine"
     views = claim_views(state)
     assert [v["label"] for v in views] == EXPECTED
     assert state.not_located == ["A sentence that is not in the answer."]

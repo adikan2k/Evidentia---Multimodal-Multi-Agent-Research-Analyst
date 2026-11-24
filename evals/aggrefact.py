@@ -603,6 +603,7 @@ def main(argv: list[str]) -> None:
         page_judge_model=page,
         page_judge_probability=args.page == "luna-p",
         audit_quote_context=args.context,
+        audit_prompt_cache=False,  # no two rows share a document, so caching would only cost
     )
     print(
         f"  quote judge {quote}{' with context' if args.context else ''}, page judge {page}, "

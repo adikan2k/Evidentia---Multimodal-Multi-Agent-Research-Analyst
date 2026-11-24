@@ -13,8 +13,11 @@ CLAUDE_PRICES: dict[str, tuple[float, float]] = {
     "claude-opus-5-5": (4.00, 20.00),
     "claude-haiku-5-5": (0.10, 0.50),
 }
-# Cache reads cost a tenth of input and cache writes 1.25 times input. M1 does not cache.
-CACHE_READ_FACTOR = 0.1
+# Cache reads cost a share of the input price that depends on the model; writes (5-minute
+# entries) cost 1.25 times input. Source: the Claude API prompt-caching reference, read
+# 2026-11-24: 0.05 for Sonnet 5.5 and Opus 5.5, about 0.1 for the others.
+CACHE_READ_FACTORS: dict[str, float] = {"claude-sonnet-5-5": 0.05, "claude-opus-5-5": 0.05}
+CACHE_READ_FACTOR = 0.1  # any model not in the table above
 CACHE_WRITE_FACTOR = 1.25
 
 # US dollars per million tokens: (input, cached input, output), standard tier, prompts under
@@ -60,7 +63,8 @@ def claude_usd(
     if model not in CLAUDE_PRICES:
         raise UnknownPrice(model)
     price_in, price_out = CLAUDE_PRICES[model]
-    weighted_in = input_tokens + cache_read * CACHE_READ_FACTOR + cache_write * CACHE_WRITE_FACTOR
+    read_factor = CACHE_READ_FACTORS.get(model, CACHE_READ_FACTOR)
+    weighted_in = input_tokens + cache_read * read_factor + cache_write * CACHE_WRITE_FACTOR
     return (weighted_in * price_in + output_tokens * price_out) / 1_000_000
 
 

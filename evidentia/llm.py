@@ -9,7 +9,7 @@ from langchain_core.runnables import RunnableConfig
 from pydantic import BaseModel
 
 from evidentia.config import Settings
-from evidentia.cost import Charge, Ledger, claude_usd, estimate_tokens
+from evidentia.cost import CACHE_WRITE_FACTOR, Charge, Ledger, claude_usd, estimate_tokens
 from evidentia.schemas import CheckedClaim, Passage
 
 T = TypeVar("T", bound=BaseModel)
@@ -179,11 +179,20 @@ class LLM:
         user: str,
         schema: type[T],
         config: RunnableConfig | None = None,
+        prefix: str | None = None,
     ) -> T:
-        """Ask the model for an answer shaped like `schema`. Reserves the worst case first."""
-        worst_case = claude_usd(model, estimate_tokens(system + user), max_tokens)
-        with self.ledger.reserve(node, worst_case):
-            reply = await self._call(model, effort, max_tokens, system, user, schema, config)
+        """Ask the model for an answer shaped like `schema`. Reserves the worst case first.
+
+        `prefix` goes before `user` with a cache breakpoint after it, for text that several
+        calls share, such as a page that several claims cite (D-039).
+        """
+        worst_case = claude_usd(
+            model, estimate_tokens(system + (prefix or "") + user), max_tokens, cache_write=0
+        )
+        with self.ledger.reserve(node, worst_case * CACHE_WRITE_FACTOR if prefix else worst_case):
+            reply = await self._call(
+                model, effort, max_tokens, system, user, schema, config, prefix=prefix
+            )
             raw = reply["raw"]
             self._charge(node, model, raw.usage_metadata or {})
         stop = raw.response_metadata.get("stop_reason")
@@ -202,6 +211,7 @@ class LLM:
         user: str,
         schema: type[BaseModel],
         config: RunnableConfig | None,
+        prefix: str | None = None,
     ) -> dict[str, Any]:
         chat = ChatAnthropic(
             model=model,
@@ -214,7 +224,12 @@ class LLM:
         # json_schema is Anthropic's native structured output. The LangChain default forces a
         # tool call instead, which current Sonnet and Opus models reject.
         runnable = chat.with_structured_output(schema, method="json_schema", include_raw=True)
-        return await runnable.ainvoke([SystemMessage(system), HumanMessage(user)], config=config)
+        if prefix is None:
+            message = HumanMessage(user)
+        else:
+            cached = {"type": "text", "text": prefix, "cache_control": {"type": "ephemeral"}}
+            message = HumanMessage(content=[cached, {"type": "text", "text": user}])
+        return await runnable.ainvoke([SystemMessage(system), message], config=config)
 
     def _charge(self, node: str, model: str, usage: dict[str, Any]) -> None:
         details = usage.get("input_token_details") or {}

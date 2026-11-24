@@ -41,9 +41,11 @@ class Scripted:
         self.calls = 0
         self.page_wrong = page_wrong
 
-    async def __call__(self, model, effort, max_tokens, system, user, schema, config) -> dict:
+    async def __call__(
+        self, model, effort, max_tokens, system, user, schema, config, prefix=None
+    ) -> dict:
         self.calls += 1
-        claim = user.split("\n")[0].removeprefix("Claim: ")
+        claim = user.rsplit("Claim: ", 1)[1].split("\n")[0]
         true = claim in DOC
         if schema is Evidence:
             found = (

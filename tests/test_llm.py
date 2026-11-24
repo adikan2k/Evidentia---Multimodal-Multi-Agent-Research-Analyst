@@ -27,7 +27,7 @@ class OneReply(LLM):
         self.canned = canned
         self.calls = 0
 
-    async def _call(self, *args) -> dict:
+    async def _call(self, *args, **kwargs) -> dict:
         self.calls += 1
         return self.canned
 
@@ -140,7 +140,7 @@ def test_cached_tokens_are_priced_at_their_own_rate(settings) -> None:
     canned = reply(Plan(queries=["a"]), tokens=(1_000_000, 0))
     canned["raw"].usage_metadata["input_token_details"] = {"cache_read": 1_000_000}
     ask(OneReply(settings, ledger, canned))
-    assert ledger.spent == pytest.approx(0.20)
+    assert ledger.spent == pytest.approx(0.10)  # Sonnet 5.5 cache reads: 0.05 of input
 
 
 @pytest.mark.parametrize("stop", ["refusal", "max_tokens"])

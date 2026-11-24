@@ -56,7 +56,10 @@ class ScriptedLLM(LLM):
     def calls_for(self, schema: type) -> list[dict[str, str]]:
         return [c for c in self.calls if c["schema"] == schema.__name__]
 
-    async def _call(self, model, effort, max_tokens, system, user, schema, config) -> dict:
+    async def _call(
+        self, model, effort, max_tokens, system, user, schema, config, prefix=None
+    ) -> dict:
+        user = f"{prefix}\n\n{user}" if prefix else user
         self.calls.append(
             {"schema": schema.__name__, "model": model, "system": system, "user": user}
         )

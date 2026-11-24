@@ -167,6 +167,7 @@ class AuditState(BaseModel):
     sources: list[Source] = []
     skipped: list[SkippedPage] = []
     results: list[PageResult] = []
+    page_verdicts: dict[int, dict] = {}  # results index -> page judge fields, until combined
     trace_id: str | None = None
     trace_url: str | None = None
 

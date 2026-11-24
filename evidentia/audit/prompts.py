@@ -85,13 +85,20 @@ def split_prompt(answer_text: str, tag: str, max_claims: int) -> str:
     return f"Answer:\n<{tag}>\n{answer_text}\n</{tag}>\n\nReturn up to {max_claims} claims."
 
 
-def find_prompt(claim: str, passages: list[Passage], tag: str) -> str:
+def page_blocks(passages: list[Passage], tag: str) -> str:
+    """The page, first in the prompt, so every claim about the same page shares it (D-039)."""
     blocks = "\n\n".join(f"<{tag}>\n{p.text}\n</{tag}>" for p in passages)
-    return f"Claim: {claim}\n\nPage:\n\n{blocks}"
+    return f"Page:\n\n{blocks}"
 
 
-def page_judge_prompt(claim: str, passages: list[Passage], tag: str) -> str:
-    return find_prompt(claim, passages, tag)
+def find_prompt(claim: str, passages: list[Passage], tag: str, with_page: bool = True) -> str:
+    """The claim, after the page. Without `with_page` the page is sent separately, cached."""
+    page = page_blocks(passages, tag) + "\n\n" if with_page else ""
+    return f"{page}Claim: {claim}"
+
+
+def page_judge_prompt(claim: str, passages: list[Passage], tag: str, with_page: bool = True) -> str:
+    return find_prompt(claim, passages, tag, with_page)
 
 
 def audit_check_prompt(
