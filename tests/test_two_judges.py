@@ -282,13 +282,14 @@ def test_a_gpt_page_judge_goes_to_openai_and_claude_does_the_rest(settings) -> N
     deps.openai.ledger = deps.ledger
     nodes = AuditNodes(deps)
     assert nodes.model_for("gpt-6-luna") is deps.openai
-    assert nodes.model_for(settings.checker_model) is deps.llm
+    assert nodes.model_for(settings.audit_checker_model) is deps.llm
     state = audit(deps, f"Solar capacity grew 24% in 2023 [1].\n[1] {GOOD}")
     assert labels(state) == ["supported"]
     assert responses.kwargs["model"] == "gpt-6-luna"
     assert not [c for c in fake.calls if c["schema"] == "PageJudgement"]
     items = {(c.node, c.item) for c in deps.ledger.charges}
-    assert ("page_check", "gpt-6-luna") in items and ("check", settings.checker_model) in items
+    assert ("page_check", "gpt-6-luna") in items
+    assert ("check", settings.audit_checker_model) in items
 
 
 # Scores and thresholds (D-039)

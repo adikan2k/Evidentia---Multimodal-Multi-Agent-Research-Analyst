@@ -348,9 +348,9 @@ class AuditNodes:
             contexts = [quote_context(source, q, self.s.quote_context_chars) for q in quotes]
         try:
             async with self.gate:
-                return await self.model_for(self.s.checker_model).structured(
+                return await self.model_for(self.s.audit_checker_model).structured(
                     node="check",
-                    model=self.s.checker_model,
+                    model=self.s.audit_checker_model,
                     effort=self.s.checker_effort,
                     max_tokens=self.s.checker_max_tokens,
                     system=system,

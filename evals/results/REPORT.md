@@ -266,6 +266,37 @@ Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.659
 | TofuEval-MeetB | 0.901 | 0.780 | 0.801 | 0.890 |
 | Wice | 0.650 | 0.740 | 0.550 | 0.841 |
 
+### dev550: quote judge claude-sonnet-5-5, page judge claude-sonnet-5-5 (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.772 (0.730 to 0.814) | 0.704 (0.653 to 0.755) | 0.919 (0.882 to 0.954) | 0.846 (0.815 to 0.875) |
+| Quote judge alone | 0.717 (0.675 to 0.755) | 0.580 (0.531 to 0.629) | 0.910 (0.871 to 0.946) | 1.000 |
+| Page judge alone | 0.779 (0.742 to 0.816) | 0.680 (0.630 to 0.729) | 0.911 (0.876 to 0.943) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.675 (0.633 to 0.714). Labels: 198 supported, 172 not_found, 85 needs_human, 73 partial, 22 contradicted. Cost per claim, both judges: $0.01103. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.737 | 0.860 | 0.722 | 0.689 |
+| AggreFact-XSum | 0.528 | 0.860 | 0.520 | 0.580 |
+| ClaimVerify | 0.873 | 0.820 | 0.754 | 0.849 |
+| ExpertQA | 0.626 | 0.860 | 0.660 | 0.621 |
+| FactCheck-GPT | 0.640 | 0.940 | 0.656 | 0.643 |
+| Lfqa | 0.862 | 0.960 | 0.834 | 0.870 |
+| RAGTruth | 0.886 | 0.820 | 0.818 | 0.898 |
+| Reveal | 0.963 | 0.960 | 0.902 | 0.952 |
+| TofuEval-MediaS | 0.788 | 0.760 | 0.693 | 0.754 |
+| TofuEval-MeetB | 0.871 | 0.700 | 0.724 | 0.890 |
+| Wice | 0.714 | 0.760 | 0.601 | 0.828 |
+
+Best thresholds on these rows (most coverage that meets the bars):
+
+| Partial | Thresholds (supported / flag) | Flags right | Supported right | Coverage |
+|---|---|---|---|---|
+| partial counted as a flag | none meets the bars |  |  |  |
+| partial as its own verdict | none meets the bars |  |  |  |
+
 ## What failed
 
 - Retrieval, lowest recall with hybrid + rerank: q34 (0.33), q25 (0.50), q16 (0.67), q21 (0.67), q26 (0.67), q33 (0.67).

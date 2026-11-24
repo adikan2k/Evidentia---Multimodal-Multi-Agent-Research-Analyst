@@ -86,15 +86,16 @@ class Settings(BaseSettings):
     min_page_chars: int = 200
     min_quote_chars: int = 20
 
-    # The auditor (D-037). The checker model and effort above are shared with it.
+    # The auditor (D-037). Its judges are Haiku: on 550 practice rows Sonnet was no better and
+    # cost 15 times as much per claim (D-039, `aggrefact_dev550_q-sonnet_p-sonnet.json`).
     splitter_model: str = "claude-haiku-5-5"
     splitter_max_tokens: int = 8_000
-    finder_model: str = "claude-sonnet-5-5"
+    finder_model: str = "claude-haiku-5-5"
     finder_effort: str = "medium"
     finder_max_tokens: int = 2_000
     # About a cent per claim and page, plus room for the worst case of calls in flight, which
     # the ledger reserves before each call. $0.25 stopped a 5-claim audit with 4 calls in flight.
-    audit_cap_usd: float = 0.75  # $0.50 before the page judge doubled the calls (D-038)
+    audit_cap_usd: float = 0.25  # Haiku judges cost about a tenth of a cent per claim
     audit_max_claims: int = 25
     audit_max_pages: int = 10
     audit_page_chars: int = 24_000  # longer pages are cut to their best passages for each claim
@@ -104,8 +105,10 @@ class Settings(BaseSettings):
     # Two judges (D-038): a claim gets a verdict only when the quote judge and the page judge
     # agree; otherwise it is labelled "needs a human".
     audit_two_judges: bool = True
-    page_judge_model: str = "claude-sonnet-5-5"  # a "gpt-..." name sends it to OpenAI
+    page_judge_model: str = "claude-haiku-5-5"  # a "gpt-..." name sends it to OpenAI
     page_judge_effort: str = "medium"
+    # The auditor's own checker, apart from the research pipeline's, whose numbers depend on it.
+    audit_checker_model: str = "claude-haiku-5-5"
     page_judge_max_tokens: int = 1_500
     # The page judge's score (D-039): the share of `page_judge_votes` answers that say supported,
     # or, with `page_judge_probability`, an OpenAI model's probability of "true" (reasoning off).

@@ -1566,3 +1566,22 @@ and about $0.25 on four live audits.
 
 1. Aditya's labels on the 50 items.
 2. The Sonnet measurement (C), with its own yes.
+
+### Sonnet as the judges (part C)
+
+Measured on the 550 practice rows for $6.07 (`aggrefact_dev550_q-sonnet_p-sonnet.json`):
+
+| Both judges | Flags right, partial a flag | Flags right, partial its own verdict | "Supported" right | Coverage | Cost per claim |
+|---|---|---|---|---|---|
+| Haiku | 0.695 | 0.810 | 0.940 | 0.804 | $0.0007 |
+| Sonnet | 0.704 | 0.794 | 0.919 | 0.846 | $0.0110 |
+
+Sonnet gives a verdict on more claims, but its "supported" verdicts are less often right, and
+fall below the 0.93 bar. It costs 15 times as much per claim. The two mixed pairs (one judge of
+each), scored from the saved rows at no cost, are no better than Haiku alone.
+
+**Decision, as part C set in advance.** The auditor's judges are Haiku: finder, checker and page
+judge. The auditor now has its own checker setting (`audit_checker_model`), so the research
+pipeline's checker stays Sonnet and its measured numbers still hold. The per-audit cap goes from
+$0.75 to $0.25. The Eiffel Tower test answer gives the same five labels with Haiku as it did with
+Sonnet, for $0.008 instead of $0.045.

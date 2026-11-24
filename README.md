@@ -40,40 +40,60 @@ tool call is traced in Langfuse.
 ## Auditing another tool's answer
 
 `python -m evidentia audit answer.md` checks the citations in an answer written by another AI
-tool (D-037). The answer can use markdown links, bare addresses, or numbered markers like `[1]`
-with a source list.
+tool (D-037, D-038, D-039). The answer can use markdown links, bare addresses, or numbered
+markers like `[1]` with a source list.
 
 1. **Parse (code).** Finds every citation and where it sits in the answer.
 2. **Split (Claude Haiku).** Breaks the answer into claims. Code checks that each claim's
    sentence is really in the answer, and code decides which pages it cites.
 3. **Fetch (code).** The same fetcher as above.
-4. **Find evidence (Sonnet).** For each claim and cited page, up to three quotes that back or
-   contradict it. Long pages are cut to the passages Voyage's reranker ranks highest.
-5. **Quote check (code).** Each quote must be an exact span of the page.
-6. **Check (Sonnet).** A separate call that sees only the claim and the quotes.
+4. **Two judges, at the same time, both Claude Haiku:**
+   - **Quote judge.** Finds up to five quotes on the cited page that back or contradict the
+     claim. Code checks that each is an exact span of the page. A separate call then sees only
+     the claim and the quotes.
+   - **Page judge.** Sees the claim and the page, and says whether the page supports it.
+5. **Combine (code).** A claim gets a verdict only when the two judges agree. Otherwise it is
+   labelled **needs a human**, with both judges' reasons.
 
-Each claim gets one label: supported, partial, contradicted, not on the cited page, dead link
-(404, 410, or a name that does not resolve), could not check (for example, robots.txt forbids
-it), or uncited. A claim citing several pages shows its best result and is flagged if another
-cited page contradicts it.
+The labels are: supported, partial, contradicted, not on the cited page, needs a human, dead
+link (404, 410, or a name that does not resolve), could not check (for example, robots.txt
+forbids it), and uncited.
+
+Long pages are cut to the passages Voyage's reranker ranks highest. A page cited by several
+claims is sent as a cached prompt prefix, so later claims about it read it cheaply.
+
+Haiku is used for the judges because, on 550 practice rows, Sonnet was no better and cost 15
+times as much per claim (`evals/results/aggrefact_dev550_q-sonnet_p-sonnet.json`).
 
 ### How the auditor compares with people's labels
 
-LLM-AggreFact pairs claims with documents, each labelled supported or not by people. On 550 of
-its test rows (50 from each of 11 sub-datasets), with Claude Haiku for both the auditor and the
-baseline:
+LLM-AggreFact pairs claims with documents, each labelled supported or not by people.
+
+**First version (D-037): one judge, quotes only.** On 550 of its test rows (50 from each of 11
+sub-datasets), with Claude Haiku:
 
 | System | Balanced accuracy | When it says supported, right | Supported rows it accepts | Unsupported rows it rejects |
 |---|---|---|---|---|
 | Auditor (exact quotes, then a check on the quotes alone) | 0.688 (0.646 to 0.728) | 0.915 | 0.523 | 0.916 |
 | Plain yes/no on the whole document | 0.768 (0.721 to 0.811) | 0.910 | 0.730 | 0.876 |
 
-**The auditor agrees with people less than a plain yes/no does** (difference −0.080, from
-−0.120 to −0.038). It is stricter, not looser. When it says supported it is right as often as
-the baseline, but it turns down about half the claims people accept. Most of those become
-partial: the claim states something no quote states word for word. Counting partial as
-supported gives 0.696, still below the baseline. The auditor cost $0.00045 per claim here, the
-baseline $0.00024. Full table: `evals/results/REPORT.md`.
+That version agreed with people less than a plain yes/no did (difference −0.080, from −0.120 to
+−0.038). It was stricter, not looser: it turned down about half the claims people accept.
+
+**Current version (D-038, D-039): two judges.** It is measured so far only on 550 practice rows
+from the benchmark's dev split (`evals/results/aggrefact_dev550_q-haiku_p-haiku.json`):
+
+- **When it gives a verdict.** For the 80% of claims that get one, "supported" is right 0.940
+  of the time.
+- **Flags.** They are right 0.695 of the time when "partial" counts as a flag, and 0.810 when
+  partial is its own verdict.
+- **Why partial matters.** On those claims both judges agree a detail is not stated, yet the
+  benchmark's labellers accepted about half of them. A person's labels will decide how partial
+  is counted.
+- **Not done yet.** The finish line fixed in advance has not been tested on unseen rows. That
+  run comes next.
+
+Full tables: `evals/results/REPORT.md`.
 
 ## What the evaluation found
 

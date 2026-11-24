@@ -599,7 +599,7 @@ def main(argv: list[str]) -> None:
     settings = load_settings(
         cost_cap_usd=args.cap,
         finder_model=quote,
-        checker_model=quote,
+        audit_checker_model=quote,
         page_judge_model=page,
         page_judge_probability=args.page == "luna-p",
         audit_quote_context=args.context,
@@ -638,7 +638,7 @@ async def run_all(rows: list[Row], args: argparse.Namespace, settings: Settings)
     print(f"  spent ${shared.spent:.4f} this command")
     votes = [found[k] for k in found if k.startswith("page")]
     if found["quote"] and all(votes):
-        judges = {"quote": settings.checker_model, "page": settings.page_judge_model}
+        judges = {"quote": settings.audit_checker_model, "page": settings.page_judge_model}
         judges |= {"quote_context": str(args.context), "page_votes": str(args.votes)}
         judges["page_score"] = "token probability" if args.page == "luna-p" else "vote share"
         thresholds = (args.t_supported, args.t_flag)
