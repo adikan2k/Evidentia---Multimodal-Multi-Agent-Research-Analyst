@@ -80,6 +80,28 @@ class Store:
             for i in range(0, len(points), UPSERT_BATCH):
                 await self.client.upsert(self.name, points=points[i : i + UPSERT_BATCH], wait=True)
 
+    async def single(
+        self, run_id: str, question: str, vector: list[float], limit: int, using: str
+    ) -> list[Passage]:
+        """One retriever on its own: `using` is "dense" or "bm25". Used by the evals."""
+        query = vector if using == DENSE else bm25(question)
+        result = await self.client.query_points(
+            self.name,
+            query=query,
+            using=using,
+            query_filter=run_filter(run_id),
+            limit=limit,
+            with_payload=True,
+        )
+        return [to_passage(p) for p in result.points]
+
+    async def count(self, run_id: str) -> int:
+        """How many passages are stored for a run."""
+        if not await self.client.collection_exists(self.name):
+            return 0
+        result = await self.client.count(self.name, count_filter=run_filter(run_id), exact=True)
+        return result.count
+
     async def hybrid(
         self, run_id: str, question: str, vector: list[float], limit: int
     ) -> list[Passage]:

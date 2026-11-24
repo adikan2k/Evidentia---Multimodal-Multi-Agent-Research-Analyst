@@ -19,6 +19,23 @@ def export_span(span: Any) -> bool:
     return not span.name.startswith("anthropic.") and is_default_export_span(span)
 
 
+# Page texts run to tens of thousands of characters and sit in the graph state, which is traced
+# at every node. Prompts stay well under this limit, so they are still traced in full.
+MAX_TRACED_CHARS = 20_000
+KEPT_CHARS = 2_000
+
+
+def shorten(*, data: Any, **_: Any) -> Any:
+    """Cut very long strings before they are sent to Langfuse."""
+    if isinstance(data, str) and len(data) > MAX_TRACED_CHARS:
+        return f"{data[:KEPT_CHARS]} ... [{len(data) - KEPT_CHARS} more characters not traced]"
+    if isinstance(data, dict):
+        return {key: shorten(data=value) for key, value in data.items()}
+    if isinstance(data, list | tuple):
+        return [shorten(data=value) for value in data]
+    return data
+
+
 class Span(Protocol):
     def update(self, **fields: Any) -> Any: ...
 
@@ -67,6 +84,7 @@ class LangfuseTracer:
             secret_key=settings.langfuse_secret_key.get_secret_value(),
             base_url=settings.langfuse_host,
             should_export_span=export_span,
+            mask=shorten,
         )
         self._require_working_keys()
 

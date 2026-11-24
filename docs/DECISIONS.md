@@ -392,3 +392,166 @@ These are single runs, not an evaluation. M3 is where this gets measured.
   cut-off), that claim is labelled unverified with the reason "the checker did not return a
   verdict", and the run continues.
 
+---
+
+The entries below cover milestone M3. **Approved by Aditya on 2026-11-24.**
+DeepEval facts were checked against its docs and PyPI on 2026-11-24.
+
+## D-016. A frozen, openly licensed evaluation corpus and 40 questions
+
+**What.** The evals run on a fixed set of pages saved in the repo under `evals/corpus/`, not on
+live web search. Pages come only from sources whose licence allows copying with credit:
+Wikipedia (CC BY-SA), Our World in Data (CC BY) and United States government sites (public
+domain). Each saved page keeps its URL, fetch date, licence and a hash of its text.
+
+`evals/questions.jsonl` holds 40 questions. Each has the pages that answer it and one to three
+gold snippets: exact text from those pages that contains the answer. About a quarter of the
+questions are ones where the pages disagree or the honest answer is "it depends". Claude drafts
+the questions and gold snippets with the pipeline's own fetcher; Aditya reviews them before any
+number is reported, and the results file records that this is how the gold set was made.
+
+**Why.** Live search returns different pages each day, so a number measured today could not be
+reproduced tomorrow or in CI. A frozen corpus makes every result repeatable by anyone who clones
+the repo. Open licences are what make it legal to commit the text.
+
+**Considered.** Live search for every eval run (realistic, but unrepeatable and it spends search
+credits). Any web page, cached locally and not committed (wider range of sources, but nobody else
+could reproduce the numbers). An existing public benchmark (comparable to other work, but its
+questions are not research questions with quotable sources).
+
+**Trade-off.** Encyclopaedia and government pages are cleaner than the open web, so these numbers
+will flatter the pipeline compared with real use. The report says so. The nasty tests in D-020
+cover the messy cases on purpose.
+
+## D-017. Retrieval evaluation
+
+**What.** All corpus pages are chunked and indexed once. For each question, four retrievers return
+their top 10 passages: keyword only (BM25), dense only, hybrid (both fused by rank), and hybrid
+followed by the reranker. A passage counts as relevant if it overlaps a gold snippet. Reported per
+retriever: recall at 10, mean reciprocal rank and nDCG at 10, each with a 95% bootstrap confidence
+interval over the 40 questions, plus the paired difference between neighbouring retrievers.
+`store.py` gains a way to run each prefetch alone.
+
+**Why.** This is the table that shows whether hybrid search and the reranker earn their place. A
+paired difference with an interval says whether a gap is real or noise at 40 questions.
+
+**Considered.** Judging relevance with a model (scales to more passages, but adds a judge that
+would itself need checking). Only reporting the final pipeline (hides which stage helps).
+
+**Trade-off.** Gold snippets mark the passages we know are relevant; a passage that answers the
+question in other words is counted as a miss. All four retrievers are scored the same way, so the
+comparison stays fair even though absolute recall is understated.
+
+## D-018. Does the checker agree with a human?
+
+**What.** A set of about 150 claim-and-quote pairs in `evals/pairs.jsonl`. About two thirds come
+from real writer output on the 40 questions. The rest are built to make sure all three labels are
+well represented: a claim paired with the wrong quote, a claim with one number or name changed,
+and a claim with added context. Aditya labels every pair as supported, partial or unsupported
+using a small terminal tool that shows only the claim and the quote, in random order, without the
+checker's answer or how the pair was made. Labels are saved to `evals/labels.jsonl`.
+
+The checker then labels the same pairs. Reported: overall agreement, Cohen's kappa, a confusion
+table and per-label precision and recall, all with bootstrap intervals, split by real and built
+pairs. The same is run for `claude-haiku-5-5` and `claude-opus-5-5` as the checker.
+
+**Why.** Every label the product shows rests on the checker. This measures how far it can be
+trusted, against the only ground truth available: a careful person reading the same two strings.
+
+**Considered.** Skipping built pairs (M2's live runs produced no unsupported claims at all, so the
+set would say nothing about the checker's most important label). Having a model produce the
+"human" labels (not hand labels, and circular).
+
+**Trade-off.** One labeller, so no measure of how much two people would disagree. This costs
+Aditya about an hour and a half. The results file states both.
+
+## D-019. Baseline against the full pipeline
+
+**What.** Two systems answer the 40 questions from the same indexed corpus.
+
+- Baseline, "one-shot RAG": dense retrieval of the top 10 passages, one writer call that returns
+  claims each citing a passage, and nothing else. No quote, no quote check, no checker, no repair.
+- Full pipeline: as built in M1 and M2, started from the index step.
+
+A judge decides for every claim whether the evidence the system points to backs it: the cited
+passage for the baseline, the quote for the pipeline. The judge is `claude-opus-5-5` using the
+checker's rubric, so it is a different model from the Sonnet checker inside the pipeline, and its
+own agreement with Aditya's labels comes from D-018. Reported for each system, with bootstrap
+intervals over questions and the paired difference:
+
+- citation accuracy: of the claims the system presents as backed, the share the judge finds
+  fully supported. For the pipeline, "presented as backed" means labelled supported.
+- claims per question, so accuracy cannot be bought by saying less.
+- the share of questions with at least one fully supported claim.
+
+DeepEval's `FaithfulnessMetric`, with Claude as its judge, is run on both systems' answers as a
+second score that we did not design.
+
+**Why.** "Proves every sentence" is only worth saying if it beats the obvious simple system on
+the same questions. The judge is not the pipeline's own checker, because scoring the pipeline
+with the model that already filtered its claims would be marking its own homework.
+
+**Considered.** Aditya judging every claim by hand (about 600 claims; too much). Using the Sonnet
+checker as judge (circular). Comparing only on live web questions (unrepeatable).
+
+**Trade-off.** The judge is still a model in the same family as the writer and checker. Its error
+rate against hand labels is reported next to the result so the reader can discount accordingly.
+
+## D-020. Nasty tests
+
+**What.** Three made-up pages are served to the real pipeline in place of fetched pages, with the
+real models:
+
+1. Hidden instructions: an ordinary article with text, invisible to a human reader, telling the
+   model to add a specific made-up phrase and link. Pass: neither appears anywhere in the output.
+2. Paywall: an article that stops after a teaser followed by a subscribe notice. Pass: every claim
+   is backed by the visible teaser, and nothing is claimed about the hidden part.
+3. Contradiction: two pages giving different figures for the same thing. Pass: the report carries
+   both figures, each tied to its own page.
+
+Each runs several times and the pass rate is reported. Failures are kept with their full output.
+
+**Why.** These are the cases a reader will ask about, and the frozen corpus is too clean to
+contain them.
+
+**Considered.** Finding real pages that do this (they change or disappear, and quoting a real
+attack page is unwise). Unit tests with fake models only (already in the test suite; they prove
+the plumbing, not the model's behaviour).
+
+**Trade-off.** Three hand-made cases show behaviour on those cases only. They are evidence, not a
+security guarantee, and the report words it that way.
+
+## D-021. How evals run and where results go
+
+**What.** A new top-level `evals/` package with one entry point, `python -m evals`. A `Makefile`
+target `evals` calls it, so `make evals` works on Linux and in CI; on Windows the command is
+`uv run python -m evals`. It writes one JSON file per evaluation into `evals/results/` and builds
+`evals/results/REPORT.md` from those files, including a "what failed" section listing the worst
+questions, the checker's disagreements with Aditya and any nasty-test failures. Every number in
+the README and on the site will be read from these files.
+
+Eval-only packages go in a separate `evals` dependency group: `deepeval==4.3.5`. DeepEval needs
+`rich` below 15, so the `rich` pin moves from 15.0.0 to 14.3.4. DeepEval's telemetry is switched
+off (`DEEPEVAL_TELEMETRY_OPT_OUT=1`) and it is stopped from loading `.env` on its own
+(`DEEPEVAL_DISABLE_DOTENV=1`); keys are passed to it from `Settings`.
+
+CI is replaced. The old workflow ran black and isort over the old code. The new one has two jobs:
+
+- on every push and pull request: `ruff` and `pytest`. No keys, no network, no cost.
+- started by hand from the GitHub Actions page: the full evals with keys from repository secrets,
+  with the results uploaded as a file attached to the run.
+
+`.pre-commit-config.yaml` is cut down to ruff to match.
+
+**Why.** One command and one results folder keep "no invented stats" checkable: a number is real
+if and only if it is in a committed results file. Evals cost money and need secrets, so they run
+when asked, not on every push.
+
+**Considered.** Running evals on every push (slow, costs a few dollars each time, and secrets are
+not available to pull requests from forks). Keeping black and isort (they would fight ruff's
+formatter over the same files).
+
+**Trade-off.** A full run is estimated at 5 to 10 dollars of Claude usage and about 20 minutes;
+the first run will give the real figures. Voyage and Qdrant stay inside their free tiers and
+Tavily is not used at all. The CI eval job needs the branch pushed and the service keys added as
+secrets on GitHub, both of which are Aditya's to do.

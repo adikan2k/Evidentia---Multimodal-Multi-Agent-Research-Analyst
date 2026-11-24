@@ -75,7 +75,8 @@ def test_sends_our_user_agent(settings) -> None:
     client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
     fetcher = Fetcher(settings, NoopTracer(), client=client)
     asyncio.run(fetcher.fetch_all([SearchHit(url="https://a.org/x")]))
-    assert set(agents) == {"EvidentiaBot/0.1"}
+    assert set(agents) == {settings.user_agent}
+    assert settings.user_agent.startswith("EvidentiaBot/0.1 (+https://github.com/")
 
 
 def test_robots_disallow_is_respected_and_the_page_is_never_requested(settings) -> None:

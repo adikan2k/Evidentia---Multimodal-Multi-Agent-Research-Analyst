@@ -264,8 +264,10 @@ class Nodes:
         )
 
 
-def build_graph(deps: Deps):
+def build_graph(deps: Deps, start: str = "plan"):
+    """`start` lets the evals skip search and fetch and begin from saved pages."""
     nodes = Nodes(deps)
+    main_path = MAIN_PATH[MAIN_PATH.index(start) :]
     graph = StateGraph(RunState)
     for name in [*MAIN_PATH, *REPAIR_PATH]:
         graph.add_node(
@@ -274,7 +276,7 @@ def build_graph(deps: Deps):
             timeout=TIMEOUTS[name],
             retry_policy=RetryPolicy(max_attempts=2),
         )
-    for before, after in zip([START, *MAIN_PATH], MAIN_PATH, strict=False):
+    for before, after in zip([START, *main_path], main_path, strict=False):
         graph.add_edge(before, after)
     graph.add_conditional_edges("check", nodes.route, ["rewrite", END])
     # The repair path ends back at the quote check, so revised claims face both checks again.
@@ -283,10 +285,16 @@ def build_graph(deps: Deps):
     return graph.compile()
 
 
-async def run_question(question: str, deps: Deps, on_update: OnUpdate | None = None) -> RunState:
+async def run_question(
+    question: str,
+    deps: Deps,
+    on_update: OnUpdate | None = None,
+    initial: RunState | None = None,
+    start: str = "plan",
+) -> RunState:
     """Run the whole pipeline once. `on_update` is called as each node finishes."""
-    state = RunState(run_id=uuid.uuid4().hex, question=question)
-    graph = build_graph(deps)
+    state = initial or RunState(run_id=uuid.uuid4().hex, question=question)
+    graph = build_graph(deps, start)
     config: RunnableConfig = {"callbacks": deps.tracer.callbacks(), "run_name": "evidentia"}
     run_input = {"question": question, "run_id": state.run_id}
     with deps.tracer.span("evidentia.run", "span", run_input) as root:
