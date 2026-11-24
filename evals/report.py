@@ -56,29 +56,42 @@ def retrieval_section(d: dict | None) -> list[str]:
 
 
 def agreement_section(d: dict | None) -> list[str]:
-    out = ["## Does the checker agree with a person?", ""]
+    out = ["## How reliable is the checker?", ""]
     if d is None:
-        return [
-            *out,
-            "Not measured yet. This needs the hand labels: run `uv run python -m evals label`, "
-            "then `uv run python -m evals agreement report`.",
-            "",
-        ]
+        return [*out, "Not run yet: `evals/results/checker_agreement.json` does not exist.", ""]
+    out += ["### Deliberately broken claims", ""]
     out += [
-        f"{d['pairs_labelled']} of {d['pairs_total']} pairs labelled. {d['labeller']} "
-        f"{d['caveat']}",
+        "A third of the test pairs were broken on purpose: given the wrong quote, one fact "
+        "changed, or a detail added. This counts how many each checker refused to pass as "
+        "supported. No labels are involved.",
         "",
     ]
-    rows = []
-    for model, m in d["models"].items():
-        a, k = m["all"]["agreement"], m["all"]["cohen_kappa"]
-        natural, built = m["natural_pairs"]["agreement"], m["built_pairs"]["agreement"]
-        rows.append(
-            [model, with_ci(a, "value"), with_ci(k, "value")]
-            + [f"{natural['value']:.3f}", f"{built['value']:.3f}"]
-        )
-    header = ["Checker model", "Agreement", "Cohen's kappa", "Real pairs", "Built pairs"]
-    return [*out, *table(header, rows), ""]
+    kinds = ["wrong_quote", "changed_fact", "added_detail", "all_built"]
+    rows = [
+        [model, *(f"{m[k]['flagged']} of {m[k]['n']}" for k in kinds)]
+        for model, m in d["error_detection_on_built_pairs"].items()
+    ]
+    header = ["Checker model", "Wrong quote", "Changed fact", "Added detail", "All broken pairs"]
+    out += [*table(header, rows), ""]
+    titles = {
+        "person": "### Agreement with a person",
+        "second_model": "### Agreement with a second model (not a person)",
+    }
+    if "person" not in d["references"]:
+        out += [titles["person"], "", f"{d['human_labels']}", ""]
+    for name, ref in d["references"].items():
+        out += [titles[name], "", f"{ref['labeller']} {ref['caveat']}", ""]
+        rows = []
+        for model, m in ref["models"].items():
+            a, k = m["all"]["agreement"], m["all"]["cohen_kappa"]
+            real, built = m["real_pairs"]["agreement"], m["built_pairs"]["agreement"]
+            rows.append(
+                [model, with_ci(a, "value"), with_ci(k, "value")]
+                + [f"{real['value']:.3f}", f"{built['value']:.3f}"]
+            )
+        header = ["Checker model", "Agreement", "Cohen's kappa", "Real pairs", "Built pairs"]
+        out += [*table(header, rows), ""]
+    return out
 
 
 def accuracy_section(d: dict | None) -> list[str]:
@@ -148,17 +161,21 @@ def failures_section(results: dict[str, dict | None]) -> list[str]:
             f"  - {r['claim']} (judge: {r['judge']}; {r['judge_reason']})" for r in rejected[:5]
         ]
     if agreement:
-        product = agreement["models"][agreement["product_checker"]]
+        product = agreement["product_checker"]
+        missed = agreement["error_detection_on_built_pairs"][product]["all_built"]
         out += [
-            f"- The product's checker disagreed with the hand label on "
-            f"{len(product['disagreements'])} of {agreement['pairs_labelled']} pairs. "
-            "The first few:"
+            f"- The product's checker passed {missed['n'] - missed['flagged']} of "
+            f"{missed['n']} deliberately broken claims as supported."
         ]
-        out += [
-            f"  - {r['id']} ({r['origin']}): person said {r['human']}, checker said {r['model']}. "
-            f"{r['claim']}"
-            for r in product["disagreements"][:5]
-        ]
+        for name, ref in agreement["references"].items():
+            rows = ref["models"][product]["disagreements"]
+            who = "a person" if name == "person" else "the second model"
+            out += [f"- It disagreed with {who} on {len(rows)} of {ref['pairs_labelled']} pairs."]
+            out += [
+                f"  - {r['id']} ({r['origin']}): reference {r['reference']}, checker "
+                f"{r['checker']}. {r['claim']}"
+                for r in rows[:5]
+            ]
     if nasty:
         for name, case in nasty["cases"].items():
             for run in case["runs"]:

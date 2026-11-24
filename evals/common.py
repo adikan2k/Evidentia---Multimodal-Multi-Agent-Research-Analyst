@@ -21,7 +21,8 @@ PAGES_DIR = ROOT / "corpus" / "pages"
 QUESTIONS = ROOT / "questions.jsonl"
 RUNS_DIR = ROOT / "runs"
 PAIRS = ROOT / "pairs.jsonl"
-LABELS = ROOT / "labels.jsonl"
+LABELS = ROOT / "labels.jsonl"  # made by a person with `python -m evals label`
+MODEL_LABELS = ROOT / "labels_model.jsonl"  # made by a model; never reported as human
 RESULTS_DIR = ROOT / "results"
 
 # One cap for a whole evaluation command, on top of nothing else: evals make many calls.

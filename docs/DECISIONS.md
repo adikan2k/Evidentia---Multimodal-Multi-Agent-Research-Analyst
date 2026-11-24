@@ -576,3 +576,25 @@ labels.
 - The Anthropic API refused 33 requests sent at once, so eval steps now send at most 4 at a time.
 - Wikipedia refuses crawlers that do not identify themselves. With Aditya's approval the
   fetcher's User-Agent now carries the public repository address, for every fetch.
+
+### Change to D-018: labels made by a model, not by Aditya (2026-11-24)
+
+Aditya said he does not have time to label the 150 pairs and asked Claude to do it. Claude (Fable
+5.2) read all 150 pairs, seeing only the claim and the quote, and labelled them. Those labels are
+in `evals/labels_model.jsonl`, kept apart from `evals/labels.jsonl`, which is reserved for labels
+made by a person and is still empty.
+
+What this changes:
+
+- There is **no agreement-with-a-human figure**. D-018's main measurement has not been made, and
+  nothing in the README or on the site may say or imply that it has.
+- What exists instead is agreement between each checker model and a second, stronger model. It
+  shows whether the checker is consistent with a careful second reading. It cannot show that
+  either reading is right, and both models are from the same family.
+- A measurement that needs no labels was added: of the 50 pairs broken on purpose when they were
+  built, how many does each checker refuse to pass as supported.
+- The labelling tool still works. If Aditya later labels even the first 30 pairs, which are a
+  random sample because the file is shuffled, the report will show both comparisons side by side.
+
+Also changed: the default Langfuse address in `config.py` is now the US region, where this
+project lives, so the commands run without an extra line in `.env`.

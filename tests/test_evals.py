@@ -142,7 +142,7 @@ def test_report_says_what_has_not_been_run_instead_of_inventing_numbers(
     monkeypatch.setattr(report, "REPORT", tmp_path / "REPORT.md")
     report.run()
     text = (tmp_path / "REPORT.md").read_text(encoding="utf-8")
-    assert text.count("Not run yet") == 3 and "Not measured yet" in text
+    assert text.count("Not run yet") == 4
     assert "Nothing has been run yet." in text
     assert not any(ch.isdigit() for ch in text.split("## Retrieval")[1])
 

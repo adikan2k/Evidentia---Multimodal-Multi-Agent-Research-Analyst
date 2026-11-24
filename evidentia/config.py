@@ -26,7 +26,9 @@ class Settings(BaseSettings):
     langfuse_secret_key: SecretStr
     # Langfuse SDK v5 calls this LANGFUSE_BASE_URL; the plan calls it LANGFUSE_HOST. Accept both.
     langfuse_host: str = Field(
-        default="https://cloud.langfuse.com",
+        # Langfuse keys only work in the region the project was created in. This project is in
+        # the US region. For an EU project set LANGFUSE_HOST=https://cloud.langfuse.com.
+        default="https://us.cloud.langfuse.com",
         validation_alias=AliasChoices("LANGFUSE_HOST", "LANGFUSE_BASE_URL"),
     )
 
