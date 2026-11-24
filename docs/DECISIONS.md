@@ -1210,90 +1210,129 @@ in step 3's real answers are split into single facts first, which should suit qu
 but that is untested. The Sonnet run stays separate and needs Aditya's yes. The README says the
 auditor scores below the baseline.
 
-## D-038. Get the auditor past the plain yes/no before auditing real answers
+## D-038. Make the auditor's flags trustworthy: two independent judges, and "needs a human"
 
-**What.** Improve the auditor on practice rows, one change at a time. Then confirm the best
-version once on test rows it has never seen, against a finish line set here in advance. Steps
-3 and 4 (audit mode on the site, the real-world audit) wait for this.
+**Goal.** The headline of this project will be the real-world audit (D-034, step 4): how often
+the citations in ChatGPT, Perplexity and Gemini answers fail to back their sentences. That
+number is only worth publishing if the auditor's flags are right. Today they are not.
 
-**Why.** On 550 test rows the auditor scored 0.688 and the plain yes/no 0.768
-(`evals/results/aggrefact_test_haiku.json`). The number that matters most for an auditor is
-worse still. Of the 351 rows it did not call supported, only 185 are labelled unsupported by
-people. So a flag from the auditor is right about 53% of the time, against about 65% for the
-baseline's flags. An auditor whose flags are wrong half the time cannot be shown to anyone.
+**Why.** On 550 test rows (`evals/results/aggrefact_test_haiku.json`), the auditor and the
+plain yes/no on the whole document fail in opposite ways:
 
-### The new measure
+- **The auditor is strict.** When it says supported it is right 0.915 of the time, but it
+  accepts only 0.523 of the claims people accept.
+- **The yes/no is lenient.** It accepts 0.730 of them and is right 0.910 of the time.
+- **Flags.** Of the 351 rows the auditor did not call supported, people call only 185
+  unsupported, so its flags are right about 53% of the time. The yes/no's flags are right about
+  65% of the time.
 
-**Flag precision**: of the claims the auditor does not call supported, the share that people
-label unsupported. It is added to every AggreFact result file, the report and the README, next
-to balanced accuracy and "when it says supported, how often it is right".
+Two judges that fail differently are worth more together than either alone.
 
-### Where the changes are tried
+### What changes
 
-**Practice set: 550 rows from the dev split**, 50 from each sub-dataset, fixed seed. The first
-55 dev rows were too few to tell changes apart. The dev split is separate from the test split,
-so practice never touches test rows. Each run's result file is kept, named after the change.
+Each claim-page pair gets two judges:
 
-### The changes, each measured alone on the practice set against the baseline on the same rows
+1. **Quote judge.** As now: find quotes, check them word for word by code, then a checker that
+   sees only the claim and the quotes.
+2. **Page judge.** A separate call that sees the claim and the page and answers supported or
+   not, with one sentence of reason. It sees the whole page if the page is short, otherwise the
+   same best passages the finder sees. On the benchmark this is the direct baseline, now part
+   of the product.
 
-1. **Context for the checker.** Each quote is shown with the paragraph it sits in, up to about
-   600 characters, marked as context. The label still rests on the quote. The quote is still
-   checked word for word by code, and the checker still never sees the rest of the page. This
-   aims at quotes that cannot be read alone, such as "it rose 4%" with no subject.
-2. **Single facts.** Each claim is first split into single facts by the product's own splitter
-   (D-037, step 2). Each fact goes through find, quote check and check. The claim's label then
-   comes from its facts, by code:
-   - supported if every fact is supported;
-   - contradicted if any fact is contradicted;
-   - partial if every fact is supported or partial;
-   - otherwise not on the page.
+Code combines them:
 
-   This aims at the summary claims that lost most (TofuEval-MediaS 0.483 and XSum 0.554, against
-   0.729 and 0.747). It also tests the splitter, which real answers go through anyway.
-3. **Both together**, if each helps alone.
+| Quote judge | Page judge | Label |
+|---|---|---|
+| supported | supported | supported (with the exact quote as proof) |
+| contradicted | not supported | contradicted (with the exact quote) |
+| partial | not supported | partial |
+| not on the page | not supported | not on the cited page |
+| supported | not supported | **needs a human** |
+| partial, not on the page, or contradicted | supported | **needs a human** |
 
-A change is kept only if it raises balanced accuracy or flag precision on the practice set
-without lowering the other by more than 0.01. Each is a setting in `config.py`, off by default
-until it is kept, and then on in the product too.
+"Needs a human" is a new label. It shows both judges' reasons, so a reader sees exactly what
+they disagree on. Dead link, could not check and uncited are unchanged. A claim citing several
+pages still shows its best result.
 
-### The finish line, fixed now
+### How it is measured
 
-Measured once, on a fresh test sample: 50 rows per sub-dataset, drawn with a new seed, leaving
-out every row of the first test run. The best version passes only if all three hold:
-- balanced accuracy is at least the baseline's on the same rows;
-- flag precision is at least 0.70 (now about 0.53, the baseline's about 0.65);
-- when it says supported, it is right at least 0.90 of the time (now 0.915).
+Every number goes in the AggreFact result files, the report and the README. On the benchmark:
+supported counts as 1; partial, contradicted and not-on-page count as 0; "needs a human" is
+neither.
 
-If it fails, the README says so with the numbers. Aditya then chooses between going ahead with
-the auditor as it is and the fallback below.
+- **Flag precision.** Of the claims flagged (partial, contradicted or not on the page), the share
+  people label unsupported.
+- **Supported precision.** Of the claims called supported, the share people label supported.
+- **Coverage.** The share of claims that get a verdict rather than "needs a human".
+- **Balanced accuracy, two ways.** On the claims with a verdict. And over all claims with every
+  "needs a human" counted as wrong, so abstaining can never make the score look better.
+- **Per sub-dataset**, and next to the quote judge alone and the page judge alone on the same
+  rows.
 
-**Fallback, if no change works.** Decide the label from the claim and the whole page, as the
-baseline does, and attach the exact quotes as evidence afterwards. That would give roughly the
-baseline's accuracy. But the label would no longer rest on the quotes shown, which is what the
-product promises. So this happens only if Aditya chooses it.
+### Where it is tuned, and the finish line
 
-### Cost and limits
+**Practice set.** 550 rows from the dev split, 50 per sub-dataset, fixed seed. The test split is
+not touched. At most three practice runs, each kept in its own result file:
 
-All with Haiku. Each paid run gets Aditya's yes first.
-- Baseline on the practice set, once: about $0.15.
-- Context: about $0.30. Single facts: about $0.60 (two to four facts per claim). Both: about
-  $0.70.
-- Confirming run on the fresh test sample, both systems: about $0.50 to $0.90.
-- Total about $2.25 to $2.65. No more than four practice runs, and a cap on every command.
-- Sonnet is a separate question after this, at about $5 to $8 for a confirming run.
+1. **Two judges**, as above.
+2. **Two judges, plus quote context.** The checker sees each quote together with its paragraph,
+   up to about 600 characters. Most disagreements are expected where the quote judge says
+   partial because a quote cannot be read alone. The context is marked as context; the quote
+   is still what is checked by code.
+3. **Two judges, plus single facts.** Each claim is split into single facts by the product's own
+   splitter. Each fact goes through the quote judge, and code combines the facts' results.
+
+   This run happens only if coverage is still under 0.70.
+
+A change is kept only if it raises coverage without lowering flag precision or supported
+precision by more than 0.01.
+
+**Finish line, fixed now.** Measured once on a fresh test sample: 50 rows per sub-dataset, a new
+seed, none of the rows from the first test run. All three must hold:
+
+- flag precision at least 0.80;
+- supported precision at least 0.93;
+- coverage at least 0.70.
+
+If any fails, the README says so with the numbers, and Aditya decides whether the real-world
+audit goes ahead.
+
+### Cost
+
+With Haiku, and each paid run needs Aditya's yes first:
+
+| Run | About |
+|---|---|
+| Practice, two judges | $0.40 |
+| Practice, plus quote context | $0.30 |
+| Practice, plus single facts, if needed | $0.60 |
+| Confirming run on fresh test rows | $0.50 to $0.80 |
+| **Total** | **$1.20 to $2.10** |
+
+A Sonnet confirming run is a separate question, at about $5 to $8.
+
+In the product, the page judge adds one call per claim-page pair. A 15-claim answer would cost
+roughly $0.30 to $0.45 with Sonnet, so the per-audit cap goes from $0.50 to $0.75.
 
 **Considered.**
-- More prompt tuning on the label wording: the first dev pass showed little movement, and it
-  invites fitting to the practice rows.
-- Tuning on the test rows already seen: that would make the test score meaningless.
-- Training a model: the benchmark's terms forbid training on it, and rule 12 rules out local
-  models.
-- Going straight to Sonnet: it costs 20 times as much per token. A stronger model might hide
-  the design problem rather than fix it.
+
+- **Tuning one judge further.** It moves the trade-off between strict and lenient but does not
+  remove it. The first dev pass moved 0.718 to 0.725.
+- **The page judge alone, with quotes attached afterwards.** About the baseline's accuracy, but
+  its flags would be right only about 65% of the time, and the label would not rest on the quote
+  shown.
+- **Different models for the two judges, such as Haiku for one and Sonnet for the other.** Their
+  errors would be less alike, but it mixes two changes. It is kept for later.
+- **Training a classifier.** The benchmark's terms forbid training on it, and rule 12 rules out
+  local models.
 
 **Trade-off.**
-- Context lets the checker see more than the quote, though still not the page. That loosens the
-  rule that it sees only the claim and the quote (D-037, step 6).
-- Single facts multiply the model calls per claim.
-- The first test run stays in the record; the confirming run uses new rows instead of replacing
-  it.
+
+- Every claim costs one more call.
+- Both judges are Claude models, so their mistakes are not fully independent. Agreement is
+  evidence, not proof, which is why a person still checks a sample of flags in the real-world
+  audit.
+- "Needs a human" is an honest answer but not a verdict. If coverage is low, the auditor is less
+  useful, and the coverage finish line exists to catch that.
+- The first test run stays in the record. The confirming run uses new rows rather than
+  replacing it.
