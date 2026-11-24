@@ -1,0 +1,441 @@
+{
+  "generated_at": "2026-11-24T20:24:04+00:00",
+  "set": "pilot",
+  "questions": 10,
+  "judges": {
+    "haiku": {
+      "page_judge": "claude-haiku-5-5",
+      "tools": {
+        "openai": {
+          "questions": 10,
+          "claims": 82,
+          "with_verdict": 34,
+          "headline_failed_share": {
+            "value": 0.3462,
+            "ci_low": 0.1176,
+            "ci_high": 0.6316
+          },
+          "headline_claims": 26,
+          "paragraph_cited_failed_share": {
+            "value": 0.5,
+            "ci_low": 0.0,
+            "ci_high": 0.6667
+          },
+          "paragraph_cited_claims": 8,
+          "failed_share_of_verdicts": {
+            "value": 0.3824,
+            "ci_low": 0.1154,
+            "ci_high": 0.6087
+          },
+          "contradicted": 0,
+          "shares_of_all_claims": {
+            "partial": 0.0732,
+            "needs_human": 0.0854,
+            "unchecked": 0.2439,
+            "dead_link": 0.0,
+            "uncited": 0.2561
+          },
+          "claims_per_answer": 8.2,
+          "pages_cited_per_answer": 1.8,
+          "pages_read_share": 0.6111,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 28,
+              "with_verdict": 7,
+              "headline_failed_share": {
+                "value": 0.4,
+                "ci_low": 0.0,
+                "ci_high": 1.0
+              },
+              "headline_claims": 5,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 2,
+              "failed_share_of_verdicts": {
+                "value": 0.2857,
+                "ci_low": 0.0,
+                "ci_high": 1.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.0,
+                "unchecked": 0.3214,
+                "dead_link": 0.0,
+                "uncited": 0.4286
+              },
+              "claims_per_answer": 5.6,
+              "pages_cited_per_answer": 1.2,
+              "pages_read_share": 0.5
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 54,
+              "with_verdict": 27,
+              "headline_failed_share": {
+                "value": 0.3333,
+                "ci_low": 0.125,
+                "ci_high": 0.6
+              },
+              "headline_claims": 21,
+              "paragraph_cited_failed_share": {
+                "value": 0.6667,
+                "ci_low": 0.6667,
+                "ci_high": 0.6667
+              },
+              "paragraph_cited_claims": 6,
+              "failed_share_of_verdicts": {
+                "value": 0.4074,
+                "ci_low": 0.125,
+                "ci_high": 0.6364
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.1111,
+                "needs_human": 0.1296,
+                "unchecked": 0.2037,
+                "dead_link": 0.0,
+                "uncited": 0.1667
+              },
+              "claims_per_answer": 10.8,
+              "pages_cited_per_answer": 2.4,
+              "pages_read_share": 0.6667
+            }
+          },
+          "usd_per_answer": 0.0445,
+          "usd_per_audit": 0.0041
+        },
+        "claude": {
+          "questions": 10,
+          "claims": 173,
+          "with_verdict": 46,
+          "headline_failed_share": {
+            "value": 0.1579,
+            "ci_low": 0.0,
+            "ci_high": 0.4545
+          },
+          "headline_claims": 38,
+          "paragraph_cited_failed_share": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0
+          },
+          "paragraph_cited_claims": 8,
+          "failed_share_of_verdicts": {
+            "value": 0.1304,
+            "ci_low": 0.0,
+            "ci_high": 0.4348
+          },
+          "contradicted": 2,
+          "shares_of_all_claims": {
+            "partial": 0.0173,
+            "needs_human": 0.0347,
+            "unchecked": 0.1618,
+            "dead_link": 0.0116,
+            "uncited": 0.526
+          },
+          "claims_per_answer": 17.3,
+          "pages_cited_per_answer": 2.3,
+          "pages_read_share": 0.6522,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 74,
+              "with_verdict": 10,
+              "headline_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "headline_claims": 7,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 3,
+              "failed_share_of_verdicts": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0135,
+                "needs_human": 0.0135,
+                "unchecked": 0.0946,
+                "dead_link": 0.0,
+                "uncited": 0.7568
+              },
+              "claims_per_answer": 14.8,
+              "pages_cited_per_answer": 0.8,
+              "pages_read_share": 0.75
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 99,
+              "with_verdict": 36,
+              "headline_failed_share": {
+                "value": 0.1935,
+                "ci_low": 0.0,
+                "ci_high": 0.5556
+              },
+              "headline_claims": 31,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 5,
+              "failed_share_of_verdicts": {
+                "value": 0.1667,
+                "ci_low": 0.0,
+                "ci_high": 0.5556
+              },
+              "contradicted": 2,
+              "shares_of_all_claims": {
+                "partial": 0.0202,
+                "needs_human": 0.0505,
+                "unchecked": 0.2121,
+                "dead_link": 0.0202,
+                "uncited": 0.3535
+              },
+              "claims_per_answer": 19.8,
+              "pages_cited_per_answer": 3.8,
+              "pages_read_share": 0.6316
+            }
+          },
+          "usd_per_answer": 0.0297,
+          "usd_per_audit": 0.0039
+        }
+      },
+      "openai_minus_claude": {
+        "value": 0.1883,
+        "ci_low": 0.0196,
+        "ci_high": 0.5,
+        "questions": 10
+      }
+    },
+    "luna": {
+      "page_judge": "gpt-6-luna",
+      "tools": {
+        "openai": {
+          "questions": 10,
+          "claims": 77,
+          "with_verdict": 26,
+          "headline_failed_share": {
+            "value": 0.4091,
+            "ci_low": 0.1463,
+            "ci_high": 0.75
+          },
+          "headline_claims": 22,
+          "paragraph_cited_failed_share": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0
+          },
+          "paragraph_cited_claims": 4,
+          "failed_share_of_verdicts": {
+            "value": 0.3462,
+            "ci_low": 0.125,
+            "ci_high": 0.7
+          },
+          "contradicted": 0,
+          "shares_of_all_claims": {
+            "partial": 0.0649,
+            "needs_human": 0.1039,
+            "unchecked": 0.2987,
+            "dead_link": 0.0,
+            "uncited": 0.2597
+          },
+          "claims_per_answer": 7.7,
+          "pages_cited_per_answer": 1.8,
+          "pages_read_share": 0.6111,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 29,
+              "with_verdict": 5,
+              "headline_failed_share": {
+                "value": 0.6667,
+                "ci_low": 0.0,
+                "ci_high": 1.0
+              },
+              "headline_claims": 3,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 2,
+              "failed_share_of_verdicts": {
+                "value": 0.4,
+                "ci_low": 0.0,
+                "ci_high": 1.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0,
+                "needs_human": 0.069,
+                "unchecked": 0.3793,
+                "dead_link": 0.0,
+                "uncited": 0.3793
+              },
+              "claims_per_answer": 5.8,
+              "pages_cited_per_answer": 1.2,
+              "pages_read_share": 0.5
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 48,
+              "with_verdict": 21,
+              "headline_failed_share": {
+                "value": 0.3684,
+                "ci_low": 0.1111,
+                "ci_high": 0.6667
+              },
+              "headline_claims": 19,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 2,
+              "failed_share_of_verdicts": {
+                "value": 0.3333,
+                "ci_low": 0.1111,
+                "ci_high": 0.6667
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.1042,
+                "needs_human": 0.125,
+                "unchecked": 0.25,
+                "dead_link": 0.0,
+                "uncited": 0.1875
+              },
+              "claims_per_answer": 9.6,
+              "pages_cited_per_answer": 2.4,
+              "pages_read_share": 0.6667
+            }
+          },
+          "usd_per_answer": 0.0445,
+          "usd_per_audit": 0.0039
+        },
+        "claude": {
+          "questions": 10,
+          "claims": 168,
+          "with_verdict": 45,
+          "headline_failed_share": {
+            "value": 0.125,
+            "ci_low": 0.0,
+            "ci_high": 0.3636
+          },
+          "headline_claims": 40,
+          "paragraph_cited_failed_share": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0
+          },
+          "paragraph_cited_claims": 5,
+          "failed_share_of_verdicts": {
+            "value": 0.1111,
+            "ci_low": 0.0,
+            "ci_high": 0.3556
+          },
+          "contradicted": 0,
+          "shares_of_all_claims": {
+            "partial": 0.0298,
+            "needs_human": 0.0298,
+            "unchecked": 0.1548,
+            "dead_link": 0.006,
+            "uncited": 0.5417
+          },
+          "claims_per_answer": 16.8,
+          "pages_cited_per_answer": 2.3,
+          "pages_read_share": 0.6522,
+          "by_source": {
+            "natural_questions": {
+              "questions": 5,
+              "claims": 71,
+              "with_verdict": 9,
+              "headline_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "headline_claims": 6,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 3,
+              "failed_share_of_verdicts": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0141,
+                "needs_human": 0.0141,
+                "unchecked": 0.0845,
+                "dead_link": 0.0,
+                "uncited": 0.7746
+              },
+              "claims_per_answer": 14.2,
+              "pages_cited_per_answer": 0.8,
+              "pages_read_share": 0.75
+            },
+            "2025_2026": {
+              "questions": 5,
+              "claims": 97,
+              "with_verdict": 36,
+              "headline_failed_share": {
+                "value": 0.1471,
+                "ci_low": 0.0,
+                "ci_high": 0.4444
+              },
+              "headline_claims": 34,
+              "paragraph_cited_failed_share": {
+                "value": 0.0,
+                "ci_low": 0.0,
+                "ci_high": 0.0
+              },
+              "paragraph_cited_claims": 2,
+              "failed_share_of_verdicts": {
+                "value": 0.1389,
+                "ci_low": 0.0,
+                "ci_high": 0.4444
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0412,
+                "needs_human": 0.0412,
+                "unchecked": 0.2062,
+                "dead_link": 0.0103,
+                "uncited": 0.3711
+              },
+              "claims_per_answer": 19.4,
+              "pages_cited_per_answer": 3.8,
+              "pages_read_share": 0.6316
+            }
+          },
+          "usd_per_answer": 0.0297,
+          "usd_per_audit": 0.0045
+        }
+      },
+      "openai_minus_claude": {
+        "value": 0.2841,
+        "ci_low": 0.0873,
+        "ci_high": 0.6667,
+        "questions": 10
+      }
+    }
+  }
+}

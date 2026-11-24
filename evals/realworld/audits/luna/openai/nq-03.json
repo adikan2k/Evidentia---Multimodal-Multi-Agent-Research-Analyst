@@ -1,0 +1,113 @@
+{
+ "id": "nq-03",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Erling Haaland holds the record for most goals in a single Premier League season: 36 goals for Manchester City in 2022–23. (premierleague.com)",
+  "claims": [
+   {
+    "sentence": "Erling Haaland holds the record for most goals in a single Premier League season: 36 goals for Manchester City in 2022–23. (premierleague.com)",
+    "start": 0,
+    "end": 142,
+    "claim": "Erling Haaland holds the record for most goals in a single Premier League season.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.premierleague.com/en/stats/records?utm_source=openai",
+      "host": "premierleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Premier League records but does not state who holds the record for most goals by an individual in a single season."
+     }
+    ]
+   },
+   {
+    "sentence": "Erling Haaland holds the record for most goals in a single Premier League season: 36 goals for Manchester City in 2022–23. (premierleague.com)",
+    "start": 0,
+    "end": 142,
+    "claim": "Erling Haaland scored 36 goals for Manchester City in the 2022–23 Premier League season.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.premierleague.com/en/stats/records?utm_source=openai",
+      "host": "premierleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Premier League records but does not state that Erling Haaland scored 36 goals for Manchester City in the 2022–23 season."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001654,
+   "usd_per_claim": 0.000827
+  },
+  "cost": {
+   "total_usd": 0.0017,
+   "cap_usd": 0.4,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

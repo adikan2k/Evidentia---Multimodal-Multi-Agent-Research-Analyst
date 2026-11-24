@@ -71,6 +71,7 @@ TIMEOUTS = {
 PATH = list(TIMEOUTS)
 
 OVER_LIMIT = "over the page limit for one audit"
+TOO_LITTLE_TEXT = "too little text read (the page may need a browser to show it)"
 NO_FINDER = "the evidence finder did not answer"
 NO_CHECKER = "the checker did not return a verdict"
 NOT_EXACT = "no quote the finder gave is word for word on the page"
@@ -205,6 +206,11 @@ class AuditNodes:
             [SearchHit(url=u) for u in wanted[:limit]]
         )
         skipped += [SkippedPage(url=u, reason=OVER_LIMIT) for u in wanted[limit:]]
+        # A page we read only a few lines of is usually one built in the browser by scripts. Its
+        # claims would wrongly look "not on the cited page", so it counts as not read (D-042).
+        thin = [s for s in sources if len(s.text) < self.s.audit_min_page_chars]
+        sources = [s for s in sources if len(s.text) >= self.s.audit_min_page_chars]
+        skipped += [SkippedPage(url=s.url, reason=TOO_LITTLE_TEXT) for s in thin]
         why = {s.url: s.reason for s in skipped}
         results = [
             PageResult(claim=i, citation_id=cid, url=urls[cid], skipped=why.get(urls[cid]))

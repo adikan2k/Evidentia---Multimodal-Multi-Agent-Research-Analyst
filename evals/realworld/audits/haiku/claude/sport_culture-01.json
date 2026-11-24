@@ -1,0 +1,135 @@
+{
+ "id": "sport_culture-01",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Winner: Chelsea won the 2025 FIFA Club World Cup.\nHost: The tournament was held in the United States. The final was played at MetLife Stadium in East Rutherford, New Jersey, on July 13, 2025.\nFinal score: Chelsea beat Paris Saint-Germain 3-0. Cole Palmer scored twice and João Pedro scored once. It was the first Club World Cup in the expanded 32-team format.",
+  "claims": [
+   {
+    "sentence": "Winner: Chelsea won the 2025 FIFA Club World Cup.",
+    "start": 0,
+    "end": 49,
+    "claim": "Chelsea won the 2025 FIFA Club World Cup.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Host: The tournament was held in the United States.",
+    "start": 50,
+    "end": 101,
+    "claim": "The 2025 FIFA Club World Cup was held in the United States.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Host: The tournament was held in the United States. The final was played at MetLife Stadium in East Rutherford, New Jersey, on July 13, 2025.",
+    "start": 50,
+    "end": 191,
+    "claim": "The final of the 2025 FIFA Club World Cup was played at MetLife Stadium in East Rutherford, New Jersey.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Host: The tournament was held in the United States. The final was played at MetLife Stadium in East Rutherford, New Jersey, on July 13, 2025.",
+    "start": 50,
+    "end": 191,
+    "claim": "The final of the 2025 FIFA Club World Cup was played on July 13, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Final score: Chelsea beat Paris Saint-Germain 3-0.",
+    "start": 192,
+    "end": 242,
+    "claim": "Chelsea beat Paris Saint-Germain 3-0 in the 2025 FIFA Club World Cup final.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Final score: Chelsea beat Paris Saint-Germain 3-0. Cole Palmer scored twice and João Pedro scored once.",
+    "start": 192,
+    "end": 295,
+    "claim": "Cole Palmer scored twice in the 2025 FIFA Club World Cup final.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Final score: Chelsea beat Paris Saint-Germain 3-0. Cole Palmer scored twice and João Pedro scored once.",
+    "start": 192,
+    "end": 295,
+    "claim": "João Pedro scored once in the 2025 FIFA Club World Cup final.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was the first Club World Cup in the expanded 32-team format.",
+    "start": 296,
+    "end": 359,
+    "claim": "The 2025 FIFA Club World Cup was the first Club World Cup in the expanded 32-team format.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 8
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000423,
+   "usd_per_claim": 5.3e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 0.4,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

@@ -98,6 +98,9 @@ class Settings(BaseSettings):
     audit_cap_usd: float = 0.25  # Haiku judges cost about a tenth of a cent per claim
     audit_max_claims: int = 25
     audit_max_pages: int = 10
+    # Pages with less text than this are not judged (D-042 pilot: 311 to 1,552 characters read
+    # from script-built pages). The research pipeline keeps min_page_chars.
+    audit_min_page_chars: int = 2_000
     audit_page_chars: int = 24_000  # longer pages are cut to their best passages for each claim
     audit_top_passages: int = 6
     audit_max_quotes: int = 5  # 3 left multi-part claims partial on the AggreFact dev rows

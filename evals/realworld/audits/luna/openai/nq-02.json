@@ -1,0 +1,220 @@
+{
+ "id": "nq-02",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The most recent Christmas Day I could verify snow falling in England was 25 December 2021, in the Yorkshire Dales. The UK had an official white Christmas in 2023, but that year’s recorded Christmas Day snowfall was all in Scotland. (itv.com)\nIf you mean widespread snow on the ground, that was Christmas Day 2010. Much of England was already covered in snow. (metoffice.gov.uk)",
+  "claims": [
+   {
+    "sentence": "The most recent Christmas Day I could verify snow falling in England was 25 December 2021, in the Yorkshire Dales.",
+    "start": 0,
+    "end": 114,
+    "claim": "The most recent Christmas Day with verified snow falling in England was 25 December 2021, in the Yorkshire Dales.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.itv.com/news/2021-12-25/white-christmas-expected-in-pockets-of-uk?utm_source=openai",
+      "host": "itv.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The UK had an official white Christmas in 2023, but that year’s recorded Christmas Day snowfall was all in Scotland. (itv.com)",
+    "start": 115,
+    "end": 241,
+    "claim": "The UK had an official white Christmas in 2023.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.itv.com/news/2021-12-25/white-christmas-expected-in-pockets-of-uk?utm_source=openai",
+      "host": "itv.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The UK had an official white Christmas in 2023, but that year’s recorded Christmas Day snowfall was all in Scotland. (itv.com)",
+    "start": 115,
+    "end": 241,
+    "claim": "The recorded Christmas Day snowfall in 2023 was all in Scotland.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.itv.com/news/2021-12-25/white-christmas-expected-in-pockets-of-uk?utm_source=openai",
+      "host": "itv.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "If you mean widespread snow on the ground, that was Christmas Day 2010. Much of England was already covered in snow. (metoffice.gov.uk)",
+    "start": 242,
+    "end": 377,
+    "claim": "Widespread snow on the ground occurred on Christmas Day 2010.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.metoffice.gov.uk/api/assets/file/factsheet_5_white_christmas_2025pdf?prefix=assets",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Although falling snow was not reported widely on Christmas Day snow was still lying across much of the country.",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim's main point that snow lay across much of the country on Christmas Day, but it does not give the year 2010, and it says falling snow was not widely reported, so 'widespread snow on the ground' is only partly matched by the wording.",
+      "page_judged": "supported",
+      "page_reason": "The page states that snow was still lying across much of the country on Christmas Day 2010, supporting widespread snow on the ground."
+     }
+    ]
+   },
+   {
+    "sentence": "If you mean widespread snow on the ground, that was Christmas Day 2010. Much of England was already covered in snow. (metoffice.gov.uk)",
+    "start": 242,
+    "end": 377,
+    "claim": "Much of England was already covered in snow on Christmas Day 2010.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.metoffice.gov.uk/api/assets/file/factsheet_5_white_christmas_2025pdf?prefix=assets",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Although falling snow was not reported widely on Christmas Day snow was still lying across much of the country.",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that snow was still lying across much of the country on Christmas Day, which backs the claim that much of England was covered in snow then, though the quote does not name England specifically or the year 2010 explicitly.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says snow was lying across much of the UK on Christmas Day 2010, but does not specifically state that much of England was covered."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002948,
+   "usd_per_claim": 0.00059
+  },
+  "cost": {
+   "total_usd": 0.0029,
+   "cap_usd": 0.4,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0012
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0012
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

@@ -2042,3 +2042,36 @@ addresses with those parameters returned 200 when tested.
 **Next.** The pilot runs again with these fixes, about $1.10, and needs Aditya's yes because it
 goes past the $2 first estimated. The full run follows only after that, with its own yes and
 its measured cost.
+
+### The pilot, run again with the fixes (D-042)
+
+The cost: $0.91 for the answers and audits, $0.16 to re-audit after the fourth fix, and about $0.35
+of single calls to find the causes. All the pilot runs came to about $2.45. The result is in
+`evals/results/realworld_pilot.json`.
+
+**A fourth fix, from reading the cited pages.** Five pages came back with only 311 to 1,552
+characters of text: a gallery, a product page, a sports page and others built in the browser by
+scripts. Claims cited to those pages looked "not on the cited page" when the page was simply not
+read. An audit now treats a page with under 2,000 characters of text as not read ("could not
+check"). The research pipeline keeps its own lower limit.
+
+**What the 10 pilot questions show.** Too few to compare the tools with any confidence; this was
+only a check of the pipeline.
+
+- **Claims whose own citation fails outright**, with the Haiku page judge:
+  - OpenAI: 35% of 26 claims, interval 12% to 63%.
+  - Claude: 16% of 38 claims, interval 0% to 45%.
+- **With the GPT page judge**, the same figures are 41% and 13%. So there is no sign that the
+  Claude judges are easier on Claude. The GPT judge is the one that is harder on OpenAI.
+- **Uncited claims.** OpenAI 26%, Claude 53%. Claude often answers without searching: 5 of its
+  10 answers cite nothing.
+- **Pages that could not be read.** About 16% to 24% of cited claims: 403 refusals, redirects to
+  block pages, robots.txt, and too little text.
+- **Cost.** $0.045 per OpenAI answer, $0.030 per Claude answer, and about $0.004 per audit.
+- **Spot check.** The flags read by hand hold up. One example: the claim "the Virgo cluster
+  contains about 10 million galaxies" cites a page saying the image holds about 10 million
+  galaxies, of which a few thousand form the cluster.
+
+**Full run estimate, from the measured costs.** The other 90 questions × 2 tools: about $6.70 for
+answers and $1.50 for the two audits of each. About $8.20 in all, under a $12 cap. It needs
+Aditya's yes.

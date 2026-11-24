@@ -280,3 +280,13 @@ def test_an_uncited_sentence_in_a_cited_paragraph_is_checked_against_that_citati
     settings = settings.model_copy(update={"audit_paragraph_citations": False})
     deps, _ = make_deps(settings)
     assert claim_views(audit(deps, answer))[0]["label"] == "uncited"
+
+
+def test_a_page_with_too_little_text_is_not_judged(settings) -> None:
+    from evidentia.audit.graph import TOO_LITTLE_TEXT
+
+    settings = settings.model_copy(update={"audit_min_page_chars": 5_000})
+    deps, fake = make_deps(settings)
+    view = claim_views(audit(deps, f"Solar capacity grew 24% in 2023 [1].\n[1] {GOOD}"))[0]
+    assert view["label"] == "unchecked" and view["pages"][0]["skipped"] == TOO_LITTLE_TEXT
+    assert not [c for c in fake.calls if c["schema"] in ("Evidence", "PageJudgement")]
