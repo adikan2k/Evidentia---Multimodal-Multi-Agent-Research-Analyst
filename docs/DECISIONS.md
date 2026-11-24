@@ -935,3 +935,15 @@ stays honest.
 1. Fetcher, `Source` and claim page numbers, with tests. No paid calls.
 2. Page numbers in the report, the events and the site.
 3. One recorded run that cites a PDF, for the site's replays (about 10 cents), then deploy.
+
+### What M5 showed
+
+- One recorded run (`web/public/replays/cbo-deficit-outlook.json`, $0.10) read 11 pages, 2 of
+  them PDFs. Three of its six final claims cite page 3 of a CBO testimony PDF, three cite a web
+  page, and every quote was found word for word by code.
+- Some publishers' robots.txt rules disallow their PDFs (IRENA's reports, for one), so those
+  are skipped like any other disallowed page.
+- The first replay showed a PDF quote's surrounding text running back into the cover page. The
+  context window now stops at the edges of the quote's own pages.
+- On a narrow screen the run layout scrolled sideways; its single column is now capped at the
+  screen width.

@@ -86,13 +86,13 @@ Each one ends with something you can run and show.
 - Deploy: API on Cloud Run, frontend on Vercel.
 - Done when: a stranger can run a question from the public URL.
 
-### M5. Multimodal
-- PDFs: text with page numbers, pdf.js opens at the cited page with the quote highlighted.
-- Page images embedded with `voyage-multimodal-3.5` so charts and tables can be retrieved;
-  Claude vision reads the chart and the claim cites the page.
-- YouTube: captions with timestamps; a claim links to the exact second.
-  Test from Cloud Run early, because YouTube often blocks cloud addresses.
-- Done when: one report cites a web page, a PDF chart and a video moment.
+### M5. PDFs
+- PDFs: text with page numbers; a claim names its page, and its source link opens the PDF at
+  that page (D-030, D-031).
+- Left out: YouTube captions, because YouTube's robots.txt disallows the caption endpoints
+  (D-032); charts read by vision, because a chart reading has no exact text span to check (D-033).
+- Done when: one report cites a web page and a PDF page, each through a quote that passes the
+  code check.
 
 ### M6. Ship
 - README with architecture diagram, results table, the nasty test and its result.

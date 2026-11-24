@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { BreakIt } from "@/components/BreakIt";
-import type { Claim } from "@/lib/replay";
+import { type Claim, pageLabel, sourceHref } from "@/lib/replay";
 
 // How much of the page to show either side of the quote. Enough to see it in its setting,
 // little enough that the quote is what the eye lands on.
@@ -35,6 +35,7 @@ export function SourcePane({ claim, index, canCheck }: Props) {
     );
   }
   const found = claim.quote_found === true && claim.context !== null;
+  const page = pageLabel(claim);
 
   return (
     <article className="rounded-lg border border-rule bg-white/60 p-7 shadow-[0_1px_0_var(--rule)]">
@@ -45,12 +46,13 @@ export function SourcePane({ claim, index, canCheck }: Props) {
         </div>
         {claim.url && (
           <a
-            href={claim.url}
+            href={sourceHref(claim)}
             target="_blank"
             rel="noreferrer"
             className="label shrink-0 border-b border-ink-faint pb-0.5 text-ink-soft transition-colors hover:border-ink hover:text-ink"
           >
-            {claim.host} ↗
+            {claim.host}
+            {page && ` · PDF ${page}`} ↗
           </a>
         )}
       </header>
@@ -78,7 +80,8 @@ export function SourcePane({ claim, index, canCheck }: Props) {
         {claim.quote_found === false && (
           <span className="text-unverified">This quote is not on the page word for word.</span>
         )}
-        {found && "Found word for word on the page, by code. Shown with the text around it."}
+        {found && !page && "Found word for word on the page, by code. Shown with the text around it."}
+        {found && page && `Found word for word on ${page} of the PDF, by code. Shown with the text around it.`}
       </footer>
 
       {/* Keyed by the claim, so the editor starts from each claim's own wording. */}

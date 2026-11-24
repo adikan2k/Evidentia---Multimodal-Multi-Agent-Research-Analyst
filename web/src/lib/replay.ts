@@ -16,7 +16,32 @@ export type Claim = {
   reason: string;
   revised: boolean;
   context: { before: string; after: string } | null;
+  // Absent in runs recorded before PDFs were supported.
+  kind?: "html" | "pdf";
+  pages?: [number, number] | null;
 };
+
+export type Source = {
+  id: string;
+  url: string;
+  host: string;
+  title: string;
+  kind?: "html" | "pdf";
+  pages_read?: number | null;
+  pages_total?: number | null;
+};
+
+/** "p. 7" or "pp. 4-5" for a quote from a PDF; null for a web page. */
+export function pageLabel(claim: Pick<Claim, "pages">): string | null {
+  if (!claim.pages) return null;
+  const [first, last] = claim.pages;
+  return first === last ? `p. ${first}` : `pp. ${first}–${last}`;
+}
+
+/** Where "open the source" goes: a PDF opens at the quote's page in the browser's viewer. */
+export function sourceHref(claim: Pick<Claim, "url" | "pages">): string {
+  return claim.pages ? `${claim.url}#page=${claim.pages[0]}` : claim.url;
+}
 
 export type RunEvent = {
   t: number;
@@ -26,7 +51,7 @@ export type RunEvent = {
   data: {
     queries?: string[];
     hosts?: string[];
-    sources?: { id: string; url: string; host: string; title: string }[];
+    sources?: Source[];
     skipped?: { host: string; reason: string }[];
     repair_queries?: string[];
     claims?: Claim[];

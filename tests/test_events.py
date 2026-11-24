@@ -144,3 +144,24 @@ def test_fetch_event_says_how_much_of_a_pdf_was_read() -> None:
     assert (pdf["kind"], pdf["pages_read"], pdf["pages_total"]) == ("pdf", 2, 60)
     assert event["data"]["sources"][0]["pages_read"] is None
     assert event["summary"] == "read 2 pages (1 PDF)"
+
+
+def test_a_pdf_quote_keeps_its_context_on_its_own_page() -> None:
+    cover = "Cover page words that belong to page one only."
+    body = "The deficit grows from $1.6 trillion in 2024 to $2.6 trillion in 2034 as projected."
+    text = cover + "\n" + body + "\nPage three starts here."
+    pdf = Source(
+        id="S3",
+        url="https://a.org/r.pdf",
+        text=text,
+        kind="pdf",
+        page_starts=[0, len(cover) + 1, len(cover) + len(body) + 2],
+    )
+    start = text.index("$1.6")
+    end = start + len("$1.6 trillion in 2024")
+    checked = claim(
+        source_id="S3", quote_found=True, verdict="supported", start=start, end=end, pages=(2, 2)
+    )
+    context = claim_view(checked, {"S3": pdf})["context"]
+    assert context["before"] == "The deficit grows from "
+    assert context["after"] == " to $2.6 trillion in 2034 as projected."

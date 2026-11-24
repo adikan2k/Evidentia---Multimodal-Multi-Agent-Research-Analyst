@@ -15,15 +15,32 @@ from evidentia.schemas import CheckedClaim, RunState, Source
 CONTEXT_CHARS = 400
 
 
-def context_window(text: str, start: int, end: int, size: int = CONTEXT_CHARS) -> dict[str, str]:
-    """The text just before and after a quote, cut at word boundaries."""
-    left = max(0, start - size)
-    right = min(len(text), end + size)
-    if left > 0:  # do not start in the middle of a word
+def context_window(
+    text: str,
+    start: int,
+    end: int,
+    size: int = CONTEXT_CHARS,
+    bounds: tuple[int, int] | None = None,
+) -> dict[str, str]:
+    """The text just before and after a quote, cut at word boundaries and kept inside `bounds`."""
+    lo, hi = bounds or (0, len(text))
+    left = max(lo, start - size)
+    right = min(hi, end + size)
+    if left > lo:  # do not start in the middle of a word
         left = text.find(" ", left, start) + 1 or start
-    if right < len(text):
+    if right < hi:
         right = max(text.rfind(" ", end, right), end)
     return {"before": text[left:start], "after": text[end:right]}
+
+
+def page_bounds(source: Source, pages: tuple[int, int] | None) -> tuple[int, int] | None:
+    """Where the quote's pages begin and end in a PDF's text, so its context stays on them."""
+    if not pages or not source.page_starts:
+        return None
+    first, last = pages
+    starts = source.page_starts
+    end = starts[last] - 1 if last < len(starts) else len(source.text)
+    return starts[first - 1], max(end, starts[first - 1])
 
 
 def host_of(url: str) -> str:
@@ -52,7 +69,8 @@ def claim_view(claim: CheckedClaim, sources: dict[str, Source]) -> dict[str, Any
     }
     if source and claim.start is not None and claim.end is not None:
         view["quote"] = source.text[claim.start : claim.end]  # exactly as it is on the page
-        view["context"] = context_window(source.text, claim.start, claim.end)
+        bounds = page_bounds(source, claim.pages)
+        view["context"] = context_window(source.text, claim.start, claim.end, bounds=bounds)
     return view
 
 

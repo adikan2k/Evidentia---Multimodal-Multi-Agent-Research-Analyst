@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import type { Claim, Label } from "@/lib/replay";
+import { type Claim, type Label, pageLabel } from "@/lib/replay";
 
 const LABEL_COLOUR: Record<Label, string> = {
   supported: "text-supported border-supported",
@@ -81,6 +81,7 @@ export function ClaimList({ claims, firstDraft, selected, onSelect }: Props) {
                     {!claim.label && <span className="label text-ink-faint">{status(claim)}</span>}
                     <span className="label text-ink-faint normal-case tracking-normal">
                       {claim.host}
+                      {pageLabel(claim) && <span className="font-mono"> · PDF {pageLabel(claim)}</span>}
                     </span>
                     {reworded && (
                       <span className="label text-ink-faint" title={`First draft: ${firstDraft[index]}`}>

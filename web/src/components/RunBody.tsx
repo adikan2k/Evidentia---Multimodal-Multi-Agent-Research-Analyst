@@ -12,7 +12,7 @@ export function RunBody({ view, canCheck }: { view: View; canCheck: boolean }) {
   const claim = view.claims[index] ?? null;
 
   return (
-    <section className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+    <section className="mt-10 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
       <div>
         <div className="mb-3 flex items-baseline justify-between">
           <h2 className="label text-ink-soft">Claims</h2>
@@ -68,7 +68,7 @@ function Waiting({ view }: { view: View }) {
         <div>
           <p className="label mb-2 text-ink-faint">Reading</p>
           <p className="font-mono text-[0.8125rem] leading-relaxed text-ink-soft">
-            {view.sources.map((s) => s.host).join("  ·  ")}
+            {view.sources.map((s) => (s.kind === "pdf" ? `${s.host} (PDF)` : s.host)).join("  ·  ")}
           </p>
         </div>
       )}

@@ -4,10 +4,14 @@ A PDF is untrusted data, like a web page: its text is only ever stored, searched
 """
 
 import io
+import logging
 import re
 from dataclasses import dataclass
 
 from pypdf import PasswordType, PdfReader
+
+# pypdf logs a warning for every font quirk it works around, which buries the run's own output.
+logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 # A word split over a line end, as in "evi-" + "dence": joined without the hyphen. When the next
 # line starts with a capital or a digit, as in "COVID-" + "19", the hyphen is part of the word
