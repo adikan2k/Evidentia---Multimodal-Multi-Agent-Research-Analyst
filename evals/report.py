@@ -193,6 +193,81 @@ def nasty_section(d: dict | None) -> list[str]:
     return [*out, d["caveat"], "", *table(["Case", "Passed"], rows), ""]
 
 
+def bacc(stat: dict[str, Any]) -> str:
+    return with_ci(stat, "mean_bacc")
+
+
+def aggrefact_section(runs: dict[str, dict | None]) -> list[str]:
+    out = ["## The auditor on LLM-AggreFact", ""]
+    present = {name: d for name, d in runs.items() if d}
+    if not present:
+        return [*out, "Not run yet: no `evals/results/aggrefact_test_*.json` file exists.", ""]
+    out += [
+        "LLM-AggreFact pairs a claim with a document and a person's label: supported or not. "
+        "The sample is 50 test rows from each of its 11 sub-datasets. Balanced accuracy is "
+        "computed per sub-dataset, then averaged, with a 95% interval. The auditor finds quotes, "
+        "checks them by code, then a checker sees only the claim and the quotes; only "
+        "'supported' counts as supported. The direct baseline is the same model shown the "
+        "whole document and asked yes or no. Prompts were fixed on dev rows before this run.",
+        "",
+    ]
+    rows = []
+    for d in present.values():
+        auditor, direct = d["systems"]["auditor"], d["systems"]["direct"]
+        rows.append(
+            [
+                f"auditor, {d['model']}",
+                bacc(auditor["score"]),
+                bacc(auditor["score_partial_counted_supported"]),
+                f"${auditor['usd_per_claim']:.5f}",
+            ]
+        )
+        rows.append(
+            [f"direct, {d['model']}", bacc(direct["score"]), "", f"${direct['usd_per_claim']:.5f}"]
+        )
+    out += table(
+        ["System", "Balanced accuracy", "Partial counted as supported", "Cost per claim"], rows
+    )
+    for d in present.values():
+        diff = d["auditor_minus_direct"]
+        auditor = d["systems"]["auditor"]
+        out += [
+            "",
+            f"{d['model']}, {d['rows']} rows: auditor minus direct "
+            f"{diff['difference']:+.3f} ({diff['ci_low']:+.3f} to {diff['ci_high']:+.3f}). "
+            f"Auditor labels: {', '.join(f'{n} {k}' for k, n in auditor['labels'].items())}. "
+            f"{auditor['rows_with_an_exact_quote']} rows had at least one quote found word "
+            f"for word.",
+            "",
+        ]
+        pooled = [
+            [
+                name,
+                str(s["pooled"]["said_supported"]),
+                f"{s['pooled']['supported_and_right']:.3f}",
+                f"{s['pooled']['caught_supported']:.3f}",
+                f"{s['pooled']['caught_unsupported']:.3f}",
+            ]
+            for name, s in d["systems"].items()
+            if "pooled" in s
+        ]
+        if pooled:
+            header = ["System", "Said supported", "Of those, right", "Supported rows accepted"]
+            out += table([*header, "Unsupported rows rejected"], pooled) + [""]
+        names = list(auditor["score"]["per_dataset"])
+        per = [
+            [
+                name,
+                str(auditor["score"]["per_dataset"][name]["n"]),
+                f"{auditor['score']['per_dataset'][name]['bacc']:.3f}",
+                f"{d['systems']['direct']['score']['per_dataset'][name]['bacc']:.3f}",
+            ]
+            for name in names
+        ]
+        out += table(["Sub-dataset", "Rows", "Auditor", "Direct"], per)
+    return [*out, ""]
+
+
 def failures_section(results: dict[str, dict | None]) -> list[str]:
     out = ["## What failed", ""]
     retrieval, agreement, accuracy, nasty = (
@@ -247,7 +322,9 @@ def failures_section(results: dict[str, dict | None]) -> list[str]:
 
 def run() -> None:
     names = ["retrieval", "checker_agreement", "citation_accuracy", "unanswerable", "nasty"]
+    names += ["aggrefact_test_haiku", "aggrefact_test_sonnet"]
     results = {name: load(name) for name in names}
+    aggrefact = {k: v for k, v in results.items() if k.startswith("aggrefact_")}
     lines = [
         "# Evaluation report",
         "",
@@ -262,6 +339,7 @@ def run() -> None:
         *accuracy_section(results["citation_accuracy"]),
         *unanswerable_section(results["unanswerable"]),
         *nasty_section(results["nasty"]),
+        *aggrefact_section(aggrefact),
         *failures_section(results),
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)

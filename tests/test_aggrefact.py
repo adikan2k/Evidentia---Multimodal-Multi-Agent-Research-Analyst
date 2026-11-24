@@ -144,3 +144,26 @@ def test_summary_counts_only_rows_both_systems_finished() -> None:
     body = summarise(results, "test", "haiku")
     assert body["rows"] == 2
     assert by_dataset(results["direct"], "pred") == {"A": [(1, 1), (1, 1)]}
+
+
+def test_the_report_section_reads_its_numbers_from_the_result(settings, tmp_path) -> None:
+    from evals.report import aggrefact_section
+
+    deps, _, _ = make(settings)
+    out = {s: tmp_path / f"{s}.jsonl" for s in ("auditor", "direct")}
+    results = {s: asyncio.run(evaluate(rows(), s, deps, out[s])) for s in out}
+    text = "\n".join(aggrefact_section({"aggrefact_test_haiku": summarise(results, "test", "x")}))
+    assert "| auditor, x | 1.000 (1.000 to 1.000) |" in text
+    assert "auditor minus direct +0.000" in text and "| D0 | 3 | 1.000 | 1.000 |" in text
+
+
+def test_pooled_rates_say_how_often_supported_is_right() -> None:
+    from evals.aggrefact import rates
+
+    pairs = [(1, 1), (1, 1), (0, 1), (1, 0), (0, 0)]
+    assert rates(pairs) == {
+        "said_supported": 3,
+        "supported_and_right": 0.6667,
+        "caught_supported": 0.6667,
+        "caught_unsupported": 0.5,
+    }

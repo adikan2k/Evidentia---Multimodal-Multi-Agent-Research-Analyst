@@ -244,6 +244,25 @@ def by_dataset(lines: Sequence[dict[str, Any]], key: str) -> dict[str, list[tupl
     return dict(sorted(groups.items()))
 
 
+def rates(pairs: Sequence[tuple[int, int]]) -> dict[str, float | int | None]:
+    """Over all rows: how often "supported" is right, and the hit rate on each class."""
+
+    def share(hits: int, total: int) -> float | None:
+        return round(hits / total, 4) if total else None
+
+    said_yes = [label for label, pred in pairs if pred == 1]
+    return {
+        "said_supported": len(said_yes),
+        "supported_and_right": share(sum(said_yes), len(said_yes)),
+        "caught_supported": share(
+            sum(p for label, p in pairs if label == 1), sum(label for label, _ in pairs)
+        ),
+        "caught_unsupported": share(
+            sum(1 - p for label, p in pairs if label == 0), sum(1 - label for label, _ in pairs)
+        ),
+    }
+
+
 def mean_bacc(groups: dict[str, list[tuple[int, int]]]) -> float:
     return sum(balanced_accuracy(g) for g in groups.values()) / len(groups) if groups else 0.0
 
@@ -316,6 +335,7 @@ def summarise(results: dict[str, list[dict[str, Any]]], split: str, model: str) 
             "score": score(by_dataset(lines, "pred"), draws),
             "usd": round(sum(x["usd"] for x in lines), 4),
             "usd_per_claim": round(sum(x["usd"] for x in lines) / len(lines), 6) if lines else None,
+            "pooled": rates([(x["label"], x["pred"]) for x in lines]),
         }
         if system == "auditor":
             entry["score_partial_counted_supported"] = score(
