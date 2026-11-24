@@ -36,5 +36,6 @@ Read `docs/PLAN.md` before doing anything. It has the goal, the stack and the mi
 
 - Python 3.11+, type hints, pydantic models for all state and API shapes, ruff for lint.
 - Short functions, plain names, comments only where the reason is not obvious.
-- Frontend: Next.js, Tailwind, shadcn. White space, one accent colour, motion only when it shows
-  what changed. No gradients, no glass cards, no fake "live" badges.
+- Frontend: Next.js, Tailwind, shadcn. Polished and animated to the standard of the reference
+  galleries in `docs/PLAN.md` (M4). Motion should show something real: a step running, a claim
+  being checked, evidence opening. No fake "live" badges and no invented numbers.
