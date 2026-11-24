@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     qdrant_api_key: SecretStr
     langfuse_public_key: SecretStr
     langfuse_secret_key: SecretStr
+    # Only needed when a configured model is an OpenAI one, such as the page judge (D-038).
+    openai_api_key: SecretStr | None = None
     # Langfuse SDK v5 calls this LANGFUSE_BASE_URL; the plan calls it LANGFUSE_HOST. Accept both.
     langfuse_host: str = Field(
         # Langfuse keys only work in the region the project was created in. This project is in
@@ -92,13 +94,22 @@ class Settings(BaseSettings):
     finder_max_tokens: int = 2_000
     # About a cent per claim and page, plus room for the worst case of calls in flight, which
     # the ledger reserves before each call. $0.25 stopped a 5-claim audit with 4 calls in flight.
-    audit_cap_usd: float = 0.50
+    audit_cap_usd: float = 0.75  # $0.50 before the page judge doubled the calls (D-038)
     audit_max_claims: int = 25
     audit_max_pages: int = 10
     audit_page_chars: int = 24_000  # longer pages are cut to their best passages for each claim
     audit_top_passages: int = 6
     audit_max_quotes: int = 5  # 3 left multi-part claims partial on the AggreFact dev rows
     audit_concurrency: int = 4
+    # Two judges (D-038): a claim gets a verdict only when the quote judge and the page judge
+    # agree; otherwise it is labelled "needs a human".
+    audit_two_judges: bool = True
+    page_judge_model: str = "claude-sonnet-5-5"  # a "gpt-..." name sends it to OpenAI
+    page_judge_effort: str = "medium"
+    page_judge_max_tokens: int = 1_500
+    # Show the checker the paragraph around each quote (D-038, practice run 3). Off until kept.
+    audit_quote_context: bool = False
+    quote_context_chars: int = 600
 
     # The public API (D-028). Dollars are list prices, the same ones the ledger uses.
     daily_budget_usd: float = 1.00  # all live runs and checks in one UTC day

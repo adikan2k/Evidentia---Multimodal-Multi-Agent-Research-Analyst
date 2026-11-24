@@ -1,8 +1,9 @@
-"""The audit as a LangGraph graph (D-037).
+"""The audit as a LangGraph graph (D-037, D-038).
 
-    parse -> split -> fetch -> find -> quote_check -> check
+    parse -> split -> fetch -> find -> quote_check -> check -> page_check
 
-parse and quote_check are code. split, find and check are model calls. Each node returns only
+parse and quote_check are code. split, find, check and page_check are model calls. find, quote
+check and check are the quote judge; page_check is the page judge. Each node returns only
 the fields it filled in, as in the research pipeline.
 """
 
@@ -19,10 +20,13 @@ from langgraph.types import RetryPolicy
 from evidentia.audit.citations import citations_for, locate, parse_answer
 from evidentia.audit.prompts import (
     AUDIT_CHECK_SYSTEM,
+    CONTEXT_RULE,
     FIND_SYSTEM,
+    PAGE_JUDGE_SYSTEM,
     SPLIT_SYSTEM,
     audit_check_prompt,
     find_prompt,
+    page_judge_prompt,
     split_prompt,
 )
 from evidentia.audit.schemas import (
@@ -30,6 +34,7 @@ from evidentia.audit.schemas import (
     AuditJudgement,
     AuditState,
     Evidence,
+    PageJudgement,
     PageResult,
     Quote,
     Split,
@@ -40,17 +45,28 @@ from evidentia.cost import Ledger
 from evidentia.embed import Embedder
 from evidentia.fetch import Fetcher
 from evidentia.llm import LLM, ModelStopped, new_tag
+from evidentia.openai_llm import OpenAILLM, is_openai_model
 from evidentia.quote_check import collapse_whitespace, find_quote
 from evidentia.schemas import Passage, SearchHit, SkippedPage, Source
 from evidentia.tracing import Tracer
 
-TIMEOUTS = {"parse": 10, "split": 180, "fetch": 240, "find": 420, "quote_check": 30, "check": 300}
+TIMEOUTS = {
+    "parse": 10,
+    "split": 180,
+    "fetch": 240,
+    "find": 420,
+    "quote_check": 30,
+    "check": 300,
+    "page_check": 300,
+}
 PATH = list(TIMEOUTS)
+JUDGED = ("supported", "partial", "contradicted", "not_found")  # quote labels the page judge sees
 
 OVER_LIMIT = "over the page limit for one audit"
 NO_FINDER = "the evidence finder did not answer"
 NO_CHECKER = "the checker did not return a verdict"
 NOT_EXACT = "no quote the finder gave is word for word on the page"
+NO_PAGE_JUDGE = "the page judge did not answer"
 
 OnUpdate = Callable[[str, dict[str, Any]], None]
 
@@ -63,6 +79,7 @@ class AuditDeps:
     llm: LLM
     fetcher: Fetcher
     embedder: Embedder
+    openai: OpenAILLM | None = None  # made when a configured model is an OpenAI one
 
 
 def match_quotes(offered: list[str], source: Source, min_chars: int) -> list[Quote]:
@@ -80,11 +97,24 @@ def match_quotes(offered: list[str], source: Source, min_chars: int) -> list[Quo
     return list(quotes.values())
 
 
+def quote_context(source: Source, quote: Quote, limit: int) -> str:
+    """The paragraph a quote sits in, cut to about `limit` characters around the quote."""
+    text = source.text
+    start = text.rfind("\n", 0, quote.start) + 1
+    end = text.find("\n", quote.end)
+    end = len(text) if end < 0 else end
+    if end - start > limit:
+        spare = max(limit - (quote.end - quote.start), 0) // 2
+        start, end = max(start, quote.start - spare), min(end, quote.end + spare)
+    return text[start:end]
+
+
 class AuditNodes:
     def __init__(self, deps: AuditDeps) -> None:
         self.d = deps
         self.s = deps.settings
         self.gate = asyncio.Semaphore(self.s.audit_concurrency)
+        self._passages: dict[tuple[str, str], list[Passage]] = {}  # (claim, url) -> passages
 
     async def parse(self, state: AuditState) -> dict[str, Any]:
         return {"parsed": parse_answer(state.answer)}
@@ -176,10 +206,12 @@ class AuditNodes:
     async def check(self, state: AuditState, config: RunnableConfig) -> dict[str, Any]:
         todo = [i for i, r in enumerate(state.results) if r.quotes and r.verdict is None]
 
+        by_url = {s.url: s for s in state.sources}
+
         async def one(i: int) -> PageResult:
             result = state.results[i]
             claim = state.claims[result.claim].claim
-            judgement = await self.judge(claim, [q.text for q in result.quotes], config)
+            judgement = await self.judge(claim, result.quotes, by_url[result.url], config)
             if judgement is None:
                 return result.model_copy(update={"reason": NO_CHECKER})
             return result.model_copy(
@@ -192,14 +224,52 @@ class AuditNodes:
             results[i] = result
         return {"results": results}
 
-    # The three steps for one claim and one page, shared by the graph and the AggreFact eval.
+    async def page_check(self, state: AuditState, config: RunnableConfig) -> dict[str, Any]:
+        if not self.s.audit_two_judges:
+            return {}
+        by_url = {s.url: s for s in state.sources}
+        todo = [
+            i
+            for i, r in enumerate(state.results)
+            if r.page_judged is None and r.quote_label in JUDGED
+        ]
+
+        async def one(i: int) -> PageResult:
+            result = state.results[i]
+            claim = state.claims[result.claim].claim
+            verdict = await self.page_verdict(claim, by_url[result.url], state.run_id, config)
+            return result.model_copy(update=verdict)
+
+        judged = await asyncio.gather(*(one(i) for i in todo))
+        results = list(state.results)
+        for i, result in zip(todo, judged, strict=True):
+            results[i] = result
+        return {"results": results}
+
+    # The steps for one claim and one page, shared by the graph and the AggreFact eval.
+
+    def model_for(self, model: str) -> LLM | OpenAILLM:
+        if not is_openai_model(model):
+            return self.d.llm
+        if self.d.openai is None:
+            self.d.openai = OpenAILLM(self.s, self.d.ledger)
+        return self.d.openai
 
     def offered(self, evidence: Evidence) -> dict[str, Any]:
         quotes = [] if evidence.stance == "neither" else [q for q in evidence.quotes if q.strip()]
         return {"stance": evidence.stance, "offered": quotes[: self.s.audit_max_quotes]}
 
     async def passages_for(self, claim: str, source: Source, run_id: str) -> list[Passage]:
-        """The whole page if it is short, else its best passages for this claim, in page order."""
+        """The whole page if it is short, else its best passages for this claim, in page order.
+
+        Both judges see the same passages, so the reranker runs once per claim and page.
+        """
+        key = (claim, source.url)
+        if key not in self._passages:
+            self._passages[key] = await self._passages_for(claim, source, run_id)
+        return self._passages[key]
+
+    async def _passages_for(self, claim: str, source: Source, run_id: str) -> list[Passage]:
         if len(source.text) <= self.s.audit_page_chars:
             whole = Passage(
                 id="whole",
@@ -236,29 +306,59 @@ class AuditNodes:
             return None
 
     async def judge(
-        self, claim: str, quotes: list[str], config: RunnableConfig | None
+        self, claim: str, quotes: list[Quote], source: Source, config: RunnableConfig | None
     ) -> AuditJudgement | None:
         tag = new_tag("quote")
+        system = AUDIT_CHECK_SYSTEM.format(tag=tag)
+        contexts = None
+        if self.s.audit_quote_context:
+            system += CONTEXT_RULE.format(tag=tag)
+            contexts = [quote_context(source, q, self.s.quote_context_chars) for q in quotes]
         try:
             async with self.gate:
-                return await self.d.llm.structured(
+                return await self.model_for(self.s.checker_model).structured(
                     node="check",
                     model=self.s.checker_model,
                     effort=self.s.checker_effort,
                     max_tokens=self.s.checker_max_tokens,
-                    system=AUDIT_CHECK_SYSTEM.format(tag=tag),
-                    # The claim and the quotes are all the checker ever sees.
-                    user=audit_check_prompt(claim, quotes, tag),
+                    system=system,
+                    # The claim and the quotes, plus their paragraphs if asked, are all the
+                    # checker ever sees.
+                    user=audit_check_prompt(claim, [q.text for q in quotes], tag, contexts),
                     schema=AuditJudgement,
                     config=config,
                 )
         except ModelStopped:
             return None
 
+    async def page_verdict(
+        self, claim: str, source: Source, run_id: str, config: RunnableConfig | None
+    ) -> dict[str, Any]:
+        """The page judge's answer, as fields of a PageResult."""
+        passages = await self.passages_for(claim, source, run_id)
+        tag = new_tag("page")
+        model = self.s.page_judge_model
+        try:
+            async with self.gate:
+                judgement = await self.model_for(model).structured(
+                    node="page_check",
+                    model=model,
+                    effort=self.s.page_judge_effort,
+                    max_tokens=self.s.page_judge_max_tokens,
+                    system=PAGE_JUDGE_SYSTEM.format(tag=tag),
+                    user=page_judge_prompt(claim, passages, tag),
+                    schema=PageJudgement,
+                    config=config,
+                )
+        except ModelStopped:
+            return {"page_judged": "no_answer", "page_reason": NO_PAGE_JUDGE}
+        verdict = "supported" if judgement.supported else "not_supported"
+        return {"page_judged": verdict, "page_reason": judgement.reason}
+
     async def assess(
         self, claim: str, source: Source, run_id: str, config: RunnableConfig | None = None
     ) -> PageResult:
-        """find, quote check and check for one claim and one page, one after the other."""
+        """The quote judge for one claim and one page: find, quote check and check."""
         result = PageResult(claim=0, citation_id="c1", url=source.url)
         evidence = await self.find_evidence(claim, source, run_id, config)
         if evidence is None:
@@ -269,7 +369,7 @@ class AuditNodes:
         quotes = match_quotes(result.offered, source, self.s.min_quote_chars)
         if not quotes:
             return result.model_copy(update={"reason": NOT_EXACT})
-        judgement = await self.judge(claim, [q.text for q in quotes], config)
+        judgement = await self.judge(claim, quotes, source, config)
         if judgement is None:
             return result.model_copy(update={"quotes": quotes, "reason": NO_CHECKER})
         update = {"quotes": quotes, "verdict": judgement.label, "reason": judgement.reason}

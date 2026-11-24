@@ -17,6 +17,14 @@ CLAUDE_PRICES: dict[str, tuple[float, float]] = {
 CACHE_READ_FACTOR = 0.1
 CACHE_WRITE_FACTOR = 1.25
 
+# US dollars per million tokens: (input, cached input, output), standard tier, prompts under
+# 272K tokens. Source: https://developers.openai.com/api/docs/pricing read 2026-11-24 (D-038).
+OPENAI_PRICES: dict[str, tuple[float, float, float]] = {
+    "gpt-6-luna": (0.10, 0.01, 0.50),
+    "gpt-6.1-terra": (1.00, 0.05, 5.00),
+    "gpt-6.2-sol": (2.00, 0.10, 10.00),
+}
+
 # US dollars per million tokens. Source: https://docs.voyageai.com/docs/pricing read 2026-11-24.
 VOYAGE_PRICES: dict[str, float] = {
     "voyage-4-large": 0.12,
@@ -54,6 +62,15 @@ def claude_usd(
     price_in, price_out = CLAUDE_PRICES[model]
     weighted_in = input_tokens + cache_read * CACHE_READ_FACTOR + cache_write * CACHE_WRITE_FACTOR
     return (weighted_in * price_in + output_tokens * price_out) / 1_000_000
+
+
+def openai_usd(model: str, input_tokens: int, output_tokens: int, cached: int = 0) -> float:
+    """`input_tokens` includes the cached ones, as OpenAI reports it; they are priced lower."""
+    if model not in OPENAI_PRICES:
+        raise UnknownPrice(model)
+    price_in, price_cached, price_out = OPENAI_PRICES[model]
+    plain = max(input_tokens - cached, 0)
+    return (plain * price_in + cached * price_cached + output_tokens * price_out) / 1_000_000
 
 
 def voyage_usd(model: str, tokens: int) -> float:

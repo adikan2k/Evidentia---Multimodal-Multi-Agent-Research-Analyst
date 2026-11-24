@@ -8,7 +8,7 @@ import pytest
 
 from evidentia.audit.graph import NOT_EXACT, OVER_LIMIT, PATH, AuditDeps, run_audit
 from evidentia.audit.report import claim_views, scorecard, to_json
-from evidentia.audit.schemas import AuditJudgement, Evidence, Split, SplitClaim
+from evidentia.audit.schemas import AuditJudgement, Evidence, PageJudgement, Split, SplitClaim
 from evidentia.cost import BudgetExceeded, Ledger
 from evidentia.embed import Embedder
 from evidentia.fetch import Fetcher
@@ -84,14 +84,18 @@ def claim_of(user: str) -> str:
 
 
 class AuditLLM:
-    """Plays the three models. `refuse` lists claims whose checker refuses."""
+    """Plays the models. `refuse` lists claims whose checker refuses. The page judge agrees with
+    the quote judge unless `page_says` overrides it for a claim (None plays a refusal)."""
 
-    def __init__(self, settings, ledger, refuse: tuple[str, ...] = ()) -> None:
+    def __init__(
+        self, settings, ledger, refuse: tuple[str, ...] = (), page_says: dict | None = None
+    ) -> None:
         from evidentia.llm import LLM
 
         self.llm = LLM(settings, ledger)
         self.llm._call = self._call  # the real wrapper, cost and checks included
         self.refuse = refuse
+        self.page_says = page_says or {}
         self.calls: list[dict[str, str]] = []
 
     async def _call(self, model, effort, max_tokens, system, user, schema, config) -> dict:
@@ -107,6 +111,11 @@ class AuditLLM:
             stance, quotes, verdict = "backs", [FELL], "supported"
         if schema is Evidence:
             return reply(Evidence(stance=stance, quotes=quotes))
+        if schema is PageJudgement:
+            says = self.page_says.get(claim_of(user), verdict == "supported")
+            if says is None:
+                return reply(None, stop="refusal")
+            return reply(PageJudgement(reason="Scripted page verdict.", supported=says))
         if claim_of(user) in self.refuse:
             return reply(None, stop="refusal")
         return reply(AuditJudgement(label=verdict, reason="Scripted."))
@@ -124,10 +133,10 @@ def handler(request: httpx.Request) -> httpx.Response:
     return httpx.Response(200, headers={"content-type": "text/html"}, text=text)
 
 
-def make_deps(settings, cap: float = 1.0, refuse: tuple[str, ...] = ()):
+def make_deps(settings, cap: float = 1.0, refuse: tuple[str, ...] = (), page_says=None):
     ledger, tracer = Ledger(cap), NoopTracer()
     client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
-    fake = AuditLLM(settings, ledger, refuse)
+    fake = AuditLLM(settings, ledger, refuse, page_says)
     deps = AuditDeps(
         settings=settings,
         ledger=ledger,
@@ -189,7 +198,7 @@ def test_each_page_is_fetched_once_and_skipped_pages_cost_nothing(settings) -> N
     finds = [c for c in fake.calls if c["schema"] == "Evidence"]
     assert len(finds) == 5  # the five claims citing the page that was read
     nodes = {t.node for t in deps.ledger.by_node()}
-    assert nodes == {"split", "find", "check"}
+    assert nodes == {"split", "find", "check", "page_check"}
 
 
 def test_a_refusing_checker_means_could_not_check(settings) -> None:

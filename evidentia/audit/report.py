@@ -27,6 +27,7 @@ STYLE = {
     "supported": "bold green",
     "partial": "bold yellow",
     "contradicted": "bold magenta",
+    "needs_human": "bold cyan",
     "not_found": "bold red",
     "dead_link": "bold red",
     "unchecked": "bold blue",
@@ -50,7 +51,9 @@ def claim_views(state: AuditState) -> list[dict[str, Any]]:
                 "label": claim_label(claim, results),
                 "disputed": disputed(results),
                 "pages": [
-                    r.model_dump(exclude={"offered", "claim"}) | {"label": r.label} for r in results
+                    r.model_dump(exclude={"offered", "claim"})
+                    | {"label": r.label, "quote_label": r.quote_label}
+                    for r in results
                 ],
             }
         )
@@ -116,8 +119,17 @@ def describe(node: str, update: dict[str, Any]) -> str:
         exact = sum(bool(r.quotes) for r in update["results"])
         return f"{exact} pairs have quotes that are word for word on the page"
     if node == "check":
+        labels = Counter(r.quote_label for r in update["results"])
+        return "quote judge: " + ", ".join(
+            f"{n} {LABEL_TEXT[label]}" for label, n in labels.most_common()
+        )
+    if node == "page_check":
+        if not update:
+            return "one judge only"
         labels = Counter(r.label for r in update["results"])
-        return ", ".join(f"{n} {LABEL_TEXT[label]}" for label, n in labels.most_common())
+        return "both judges: " + ", ".join(
+            f"{n} {LABEL_TEXT[label]}" for label, n in labels.most_common()
+        )
     return ""
 
 
@@ -168,4 +180,6 @@ class AuditReporter:
                 self.console.print(Text(f'      "{quote["text"]}"', style="italic"))
             why = page["skipped"] or page["reason"]
             if why:
-                self.console.print(Text(f"      {why}", style="yellow"))
+                self.console.print(Text(f"      Quote judge: {why}", style="yellow"))
+            if page["page_reason"]:
+                self.console.print(Text(f"      Page judge: {page['page_reason']}", style="yellow"))

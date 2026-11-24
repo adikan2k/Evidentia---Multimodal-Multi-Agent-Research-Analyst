@@ -16,7 +16,7 @@ FAKE_ENV = {
 @pytest.fixture
 def fake_env(monkeypatch: pytest.MonkeyPatch) -> dict[str, str]:
     """Fake keys in the environment, and no .env file, so tests never see real secrets."""
-    for name in (*FAKE_ENV, "LANGFUSE_HOST", "LANGFUSE_BASE_URL", "COST_CAP_USD"):
+    for name in (*FAKE_ENV, "LANGFUSE_HOST", "LANGFUSE_BASE_URL", "COST_CAP_USD", "OPENAI_API_KEY"):
         monkeypatch.delenv(name, raising=False)
     for name, value in FAKE_ENV.items():
         monkeypatch.setenv(name, value)
