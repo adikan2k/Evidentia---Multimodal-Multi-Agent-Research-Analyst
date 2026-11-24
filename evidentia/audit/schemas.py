@@ -181,6 +181,9 @@ class AuditClaim(BaseModel):
     end: int
     claim: str
     citation_ids: list[str] = []
+    # "sentence": the citations sit in or right after the sentence. "paragraph": the sentence
+    # had none and takes the ones that close its paragraph (D-041).
+    cited_by: Literal["sentence", "paragraph"] | None = None
 
 
 class AuditState(BaseModel):

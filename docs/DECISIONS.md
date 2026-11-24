@@ -1864,3 +1864,23 @@ while building.
 **Trade-off.** Recorded answers from the API are not the same as answers in the ChatGPT app,
 which can differ. The labels say exactly where they came from. The daily budget is shared with
 research runs, so a busy day for one leaves less for the other.
+
+### What recording the first audits changed (D-041)
+
+- **Numbered list items that cite a page now stay in the answer.** The parser used to read
+  "1. **A bright galaxy...** ([stsci.edu](...))" as an entry in a source list and drop it. A
+  numbered line now counts as a source only if it is an address with at most a short title and
+  no markdown link.
+- **A page is not cited twice.** When the model's text already holds a link inline, the answer
+  collector adds no numbered marker for it.
+- **Paragraph citations.** The chat tool puts one citation at the end of a paragraph for the
+  whole of it. So a sentence with no citation of its own now takes the citation that closes its
+  paragraph. It is marked "cited at the end of its paragraph" (`cited_by: paragraph`), so the
+  reader can see the citation was not attached to that sentence. This is the charitable reading
+  of the tool being audited. Without it, 6 of the 9 claims in one answer came out "uncited". The
+  benchmark numbers are unaffected, because that eval gives each claim its document directly.
+- **Cost.** The API's answers cost $0.06 to $0.11 each, not $0.02 to $0.05, so recording costs
+  about $0.45 in all, against the $0.25 estimate.
+- **One recording replaced.** One answer cited only journal pages (doi.org, bmj.com) that refuse
+  automated fetches (HTTP 403). It is replaced by a different question. Pages like these are a
+  real limit of auditing, and the real-world audit will count them as "could not check".

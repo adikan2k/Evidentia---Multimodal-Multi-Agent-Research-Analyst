@@ -26,7 +26,8 @@ AUDITS_DIR = Path("web/public/audits")
 ANSWER_CAP_USD = 0.25
 
 
-async def record(audit_id: str, question: str) -> Path:
+async def record(audit_id: str, question: str, reuse: bool = False) -> Path:
+    """`reuse` audits the answer already saved for `audit_id` again, without asking OpenAI."""
     settings = load_settings()
     tracer = LangfuseTracer(settings)
     answer_ledger = Ledger(ANSWER_CAP_USD)
@@ -36,7 +37,11 @@ async def record(audit_id: str, question: str) -> Path:
     events = []
     try:
         with tracer.span("evidentia.record_audit", "span", {"id": audit_id, "question": question}):
-            answer = await answer_with_web_search(question, settings, answer_ledger)
+            saved = AUDITS_DIR / f"{audit_id}.json"
+            if reuse:
+                answer = json.loads(saved.read_text(encoding="utf-8"))["answer"] | {"citations": 0}
+            else:
+                answer = await answer_with_web_search(question, settings, answer_ledger)
             print(
                 f"  answer from {answer['model']}: {answer['citations']} cited pages, "
                 f"${answer['usd']:.4f}"
@@ -90,9 +95,10 @@ def write_index() -> None:
 def main() -> None:
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8")
-    if len(sys.argv) != 3:
-        raise SystemExit('Usage: python -m evidentia.audit.record <id> "<question>"')
-    path = asyncio.run(record(sys.argv[1], sys.argv[2]))
+    args = [a for a in sys.argv[1:] if a != "--reuse"]
+    if len(args) != 2:
+        raise SystemExit('Usage: python -m evidentia.audit.record <id> "<question>" [--reuse]')
+    path = asyncio.run(record(args[0], args[1], reuse="--reuse" in sys.argv))
     print(f"wrote {path}")
 
 

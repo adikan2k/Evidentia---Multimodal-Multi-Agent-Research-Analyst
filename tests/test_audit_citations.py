@@ -92,3 +92,18 @@ def test_a_numbered_list_item_with_a_link_stays_in_the_answer() -> None:
     assert cites(answer, "Webb confirmed the galaxy MoM-z14. (stsci.edu)") == [stsci]
     assert cites(answer, "Water vapour was found near PDS 70 [1].") == [nasa]
     assert "Sources" not in parsed.text and nasa not in parsed.text
+
+
+def test_a_sentence_without_a_citation_takes_the_one_that_closes_its_paragraph() -> None:
+    from evidentia.audit.citations import paragraph_citations
+
+    answer = (
+        f"Solar grew fast in 2023. It led all sources [1][2].\n"
+        f"Wind grew too.\n[1] {IEA}\n[2] {WIKI}"
+    )
+    parsed = parse_answer(answer)
+    first = locate("Solar grew fast in 2023.", parsed.text)
+    assert citations_for(parsed, *first) == []
+    assert paragraph_citations(parsed, first[1]) == ["c1", "c2"]
+    wind = locate("Wind grew too.", parsed.text)
+    assert paragraph_citations(parsed, wind[1]) == []  # nothing closes that paragraph

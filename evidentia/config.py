@@ -124,6 +124,8 @@ class Settings(BaseSettings):
     # precision rules for the quote judge's checker. Both off until measured and kept.
     page_judge_graded: bool = False
     audit_checker_rules: bool = False
+    # A sentence with no citation of its own takes the one that closes its paragraph (D-041).
+    audit_paragraph_citations: bool = True
     # Send the page as a cached prefix, so other claims on the same page read it cheaply (D-039).
     # Off in the benchmark, where no two rows share a document and a cache write costs 1.25x.
     audit_prompt_cache: bool = True

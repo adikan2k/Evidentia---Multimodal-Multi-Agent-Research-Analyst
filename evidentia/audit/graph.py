@@ -19,7 +19,7 @@ from langchain_core.runnables import RunnableConfig
 from langgraph.graph import END, START, StateGraph
 from langgraph.types import RetryPolicy
 
-from evidentia.audit.citations import citations_for, locate, parse_answer
+from evidentia.audit.citations import citations_for, locate, paragraph_citations, parse_answer
 from evidentia.audit.prompts import (
     AUDIT_CHECK_SYSTEM,
     CONTEXT_RULE,
@@ -176,13 +176,17 @@ class AuditNodes:
                 not_located.append(item.sentence)
                 continue
             start, end = span
+            cited, by = citations_for(parsed, start, end), "sentence"
+            if not cited and self.s.audit_paragraph_citations:
+                cited, by = paragraph_citations(parsed, end), "paragraph"
             claims.append(
                 AuditClaim(
                     sentence=parsed.text[start:end],
                     start=start,
                     end=end,
                     claim=item.claim.strip(),
-                    citation_ids=citations_for(parsed, start, end),
+                    citation_ids=cited,
+                    cited_by=by if cited else None,
                 )
             )
         limit = self.s.audit_max_claims

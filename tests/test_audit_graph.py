@@ -264,3 +264,19 @@ def test_scorecard_and_json_count_what_happened(settings) -> None:
     assert card["pages_cited"] == 4 and card["pages_read"] == 1
     body = to_json(state, deps.ledger)
     assert '"offered"' not in body and FACT in body
+
+
+def test_an_uncited_sentence_in_a_cited_paragraph_is_checked_against_that_citation(
+    settings,
+) -> None:
+    answer = (
+        f"Solar capacity grew 24% in 2023. Solar grew 24% in 2023, more than wind [1].\n[1] {GOOD}"
+    )
+    deps, _ = make_deps(settings)
+    views = claim_views(audit(deps, answer))
+    assert [v["cited_by"] for v in views] == ["paragraph", "sentence"]
+    assert views[0]["label"] == "supported"
+
+    settings = settings.model_copy(update={"audit_paragraph_citations": False})
+    deps, _ = make_deps(settings)
+    assert claim_views(audit(deps, answer))[0]["label"] == "uncited"

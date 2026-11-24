@@ -205,3 +205,24 @@ def citations_for(parsed: ParsedAnswer, start: int, end: int) -> list[str]:
         elif m.start >= end:
             break
     return list(dict.fromkeys(found))
+
+
+def paragraph_citations(parsed: ParsedAnswer, end: int) -> list[str]:
+    """The citations of the next cited sentence in the same paragraph (line), if any.
+
+    Many chat tools put one citation at the end of a paragraph for the whole of it. A sentence
+    with no citation of its own is read as covered by the citation that closes its paragraph.
+    """
+    line_end = parsed.text.find("\n", end)
+    line_end = len(parsed.text) if line_end < 0 else line_end
+    after = sorted((m for m in parsed.mentions if end <= m.start < line_end), key=lambda m: m.start)
+    if not after:
+        return []
+    first = after[0].start
+    return list(
+        dict.fromkeys(
+            m.citation_id
+            for m in after
+            if m.start == first or (set(parsed.text[first : m.start]) <= GAP | set("[]^0123456789"))
+        )
+    )
