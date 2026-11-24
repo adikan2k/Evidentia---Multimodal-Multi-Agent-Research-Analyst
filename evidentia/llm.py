@@ -15,8 +15,8 @@ from evidentia.schemas import CheckedClaim, Passage
 T = TypeVar("T", bound=BaseModel)
 
 QUOTE_RULES = """- The quote is one contiguous stretch of text copied character for character \
-from ONE passage, usually one or two sentences. Do not fix typos, change punctuation or capitalisation, \
-join separate parts, or put "..." in a quote.
+from ONE passage, usually one or two sentences. Do not fix typos, change punctuation or \
+capitalisation, join separate parts, or put "..." in a quote.
 - A separate checker will be shown only the claim and the quote, nothing else. So every specific \
 in the claim, such as a number, date, name, place, comparison or cause, must appear in the quote \
 itself. If the quote does not say it, do not claim it.
