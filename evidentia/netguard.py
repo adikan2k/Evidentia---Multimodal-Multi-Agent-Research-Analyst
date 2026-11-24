@@ -24,6 +24,15 @@ class BlockedAddress(Exception):
     """A host name that resolves to an address only this server can reach."""
 
 
+class Unresolvable(httpcore.ConnectError):
+    """DNS says the name does not exist. The auditor reports this as a dead link."""
+
+
+# getaddrinfo's "no such name" codes. Other failures, such as a DNS server timing out, may pass,
+# so they stay ordinary connection errors.
+NO_SUCH_NAME = {code for code in (socket.EAI_NONAME, getattr(socket, "EAI_NODATA", None)) if code}
+
+
 async def resolve(host: str, port: int) -> list[str]:
     """Every address the name resolves to, in the order the system gives them."""
     infos = await asyncio.get_running_loop().getaddrinfo(host, port, type=socket.SOCK_STREAM)
@@ -61,6 +70,10 @@ class GuardedBackend(httpcore.AsyncNetworkBackend):
             addresses = await asyncio.wait_for(
                 self.resolver(host, port), timeout or RESOLVE_TIMEOUT_S
             )
+        except socket.gaierror as err:
+            if err.errno in NO_SUCH_NAME:
+                raise Unresolvable(f"{host} does not resolve") from err
+            raise httpcore.ConnectError(f"could not resolve {host}") from err
         except (OSError, TimeoutError) as err:
             raise httpcore.ConnectError(f"could not resolve {host}") from err
         if not addresses or not all(is_public_address(a) for a in addresses):

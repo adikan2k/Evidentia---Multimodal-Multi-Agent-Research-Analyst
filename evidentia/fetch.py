@@ -17,7 +17,7 @@ import httpx
 import trafilatura
 
 from evidentia.config import Settings
-from evidentia.netguard import BlockedAddress, guarded_transport
+from evidentia.netguard import BlockedAddress, Unresolvable, guarded_transport
 from evidentia.pdf import Unreadable, read_pdf
 from evidentia.schemas import SearchHit, SkippedPage, Source
 from evidentia.tracing import Tracer
@@ -31,6 +31,14 @@ class Skip(Exception):
     def __init__(self, reason: str) -> None:
         super().__init__(reason)
         self.reason = reason
+
+
+NO_SUCH_NAME = "name does not resolve"
+
+
+def does_not_resolve(err: httpx.HTTPError) -> bool:
+    """httpx wraps the connection error; ours is kept as the cause."""
+    return isinstance(err.__cause__, Unresolvable)
 
 
 def clean_text(raw: str) -> str:
@@ -135,7 +143,9 @@ class Robots:
         await self.limiter.wait(origin)
         try:
             response = await self.client.get(f"{origin}/robots.txt", follow_redirects=True)
-        except httpx.HTTPError:
+        except httpx.HTTPError as err:
+            if does_not_resolve(err):
+                raise Skip(NO_SUCH_NAME) from err
             return None
         rules = RobotFileParser()
         if response.status_code in (401, 403):
@@ -198,6 +208,8 @@ class Fetcher:
                 return Skip("not a public address")
             except httpx.HTTPError as err:
                 span.update(output={"skipped": type(err).__name__})
+                if does_not_resolve(err):
+                    return Skip(NO_SUCH_NAME)
                 return Skip(f"network error ({type(err).__name__})")
             span.update(output={"kind": source.kind, "chars": len(source.text)})
             return source
