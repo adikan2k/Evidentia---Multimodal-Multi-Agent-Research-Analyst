@@ -1028,3 +1028,138 @@ the code does not have. That breaks rule 7 on the default branch.
 the project.
 
 **Trade-off.** The README is written now and again after the auditor ships.
+
+## D-037. The auditor's core, and testing it against human labels (step 2)
+
+This entry covers two new modules: the auditor itself (`evidentia/audit.py` and its graph) and
+its benchmark run (`evals/aggrefact.py`).
+
+### Part A. What an audit does
+
+**What.** Input: an AI tool's answer with its citations, as pasted text (markdown links, or
+numbered markers like `[1]` with a list of sources). Output: every claim in the answer with one
+label, the exact words on the cited page that the label rests on, and a scorecard for the answer.
+
+The steps, as a LangGraph graph like the research pipeline:
+
+1. **Parse (code).** Find every citation: inline links, and numbered markers matched to the
+   source list. Each becomes a marker such as `[c1]` tied to one address.
+2. **Split (Haiku).** The model breaks the answer into claims. For each claim it returns the
+   sentence it came from and a self-contained version of the claim ("it grew 40%" becomes
+   "global solar capacity grew 40% in 2023"). Code checks that the sentence is an exact span of
+   the answer, and attaches the citation markers found inside or right after that span. So code
+   decides which source a claim cites; the model does not.
+3. **Fetch (code).** The existing fetcher: robots.txt, the per-site wait, the address guard
+   (D-035), PDFs with pages.
+4. **Find evidence (Sonnet).** For each claim and each page it cites, the model is shown the
+   claim and the page (the whole page if it is short, else the passages Voyage's reranker ranks
+   highest for that claim, with no index needed). It returns whether the page backs or
+   contradicts the claim, with up to three quotes copied from the page. Up to three, not one,
+   because a claim often rests on two sentences that are not next to each other.
+5. **Quote check (code).** Each quote must be an exact span of the stored page text (rule 8),
+   with the page number for PDFs. A quote that fails is dropped.
+6. **Check (Sonnet).** A separate call that sees only the claim and the surviving quotes, as in
+   the research pipeline, and labels it supported, partial, contradicted or unsupported. The
+   auditor gets its own check prompt with the extra label. The research pipeline's checker is
+   left unchanged, so its measured numbers still stand.
+7. **Score (code).** Counts per label, the share of cited claims that are supported, dead
+   links, tokens and dollars per step.
+
+**Labels, decided by code from the steps above:**
+
+| Label | When |
+|---|---|
+| supported | quotes found by code, checker says supported |
+| partial | quotes found, checker says partial |
+| contradicted | quotes found, checker says the quotes contradict the claim |
+| not on the cited page | no quote passed the code check, or the checker says unsupported |
+| dead link | the address answers 404 or 410, or the name does not resolve |
+| could not check | the page exists but was not read: robots.txt, size limit, timeout, scanned PDF, not a public address |
+| uncited | the claim has no citation |
+
+The checker's word wins over the evidence finder's when they disagree, because the checker is
+the independent one. When a claim cites several pages, each page's result is kept, and the
+claim shows the best one, flagged when another cited page contradicts it. "Could not check" is
+kept apart from "dead link" on purpose: a site that blocks crawlers has not lost its page.
+
+The pasted answer is untrusted, like the pages: both go to models inside marked data blocks.
+
+Limits per audit, in `config.py`: a cost cap (starting at $0.25), at most 25 claims and at most
+10 cited pages. Every call is traced in Langfuse.
+
+Entry point in step 2: `uv run python -m evidentia audit answer.md`, which prints each claim with
+its label and quote. The site comes in step 3.
+
+**Considered.**
+- Letting the model assign citations to claims: simpler, but then a model decides what an
+  answer cited.
+- Checking the original sentence instead of a self-contained rewrite: "it grew 40%" cannot be
+  checked on its own. The rewrite could change the meaning, so both are kept and the original
+  sentence is what the reader sees next to the label.
+- One quote per claim, as in the research pipeline: stricter, but it would mark claims that rest
+  on two sentences as not found.
+- Plain async code instead of LangGraph: less code, but the site's live event stream already
+  works on graph events.
+
+**Trade-off.** Two Sonnet calls per claim and page, about 1 to 2 cents each, so a 15-claim
+answer costs roughly $0.15 to $0.30. Requiring exact quotes will miss support that is only
+implied across a page, and the benchmark run below measures how often that happens.
+
+### Part B. LLM-AggreFact run
+
+**What.** LLM-AggreFact is a public set of claim and document pairs labelled by people
+(`lytang/LLM-AggreFact` on Hugging Face). It has 11 sub-datasets (news summaries, meeting and
+interview transcripts, Wikipedia, long-form answers, RAG outputs), a test split of 29,320 rows,
+and a binary label (1 = supported, 0 = not).
+
+- **Sample.** 50 rows from each sub-dataset of the test split, 550 in all, drawn with a fixed
+  seed. The label mix inside each sub-dataset is kept as it is.
+- **What runs.** Steps 4 to 6 of the auditor, given the benchmark's document as the "page".
+  Parse, split and fetch are skipped, because the benchmark supplies the claim and the document.
+  Supported counts as 1. Partial, contradicted and not-found count as 0, decided before the run.
+  The result file also reports partial counted as 1.
+- **Baseline.** On the same rows, the same model shown the whole document and asked only
+  "supported or not". This tests whether making the model quote costs accuracy.
+- **Metric.** Balanced accuracy for each sub-dataset, then the plain mean over the 11, with 95%
+  bootstrap intervals. This follows the benchmark's own leaderboard, whose average is the plain
+  mean of the 11 sub-datasets. I will confirm the metric in the MiniCheck paper while building.
+  Also reported: how often an exact quote was found, and cost per claim.
+- **No tuning on the test rows.** The prompts are fixed on 50 dev-split rows, then the test
+  sample is run once.
+- **Leaderboard figures are not used.** They are other people's numbers, so they do not appear
+  on the site or in the README (rule 7). The comparison is against our own baseline.
+
+**Order and cost** (estimates; each paid run needs Aditya's yes first):
+1. Prompt fixing on 50 dev rows: about $0.30.
+2. Haiku, auditor and baseline, 550 rows: about $0.50.
+3. Sonnet, auditor and baseline, 550 rows: about $5 to $6. This run happens only after the
+   Haiku result is in, and only if Aditya approves.
+
+The eval's cost cap stops the command at the cap.
+
+**Data handling.** The dataset is gated: Aditya accepts its terms on Hugging Face with his own
+account and sets a read token in the `HF_TOKEN` environment variable. The code never prints or
+logs it. The licence is CC BY-ND 4.0, and the terms allow use as an evaluation benchmark and not
+for training. So the data is downloaded to a git-ignored cache and never committed. Result files
+under `evals/results/` hold row numbers, labels, predictions and quote offsets, not the documents
+or quote text. The download uses `huggingface_hub` and reads parquet with `pyarrow`; versions
+are pinned after checking their current docs.
+
+**Considered.**
+- Our own 30 human labels first: still worth doing, but 30 labels cannot show much. The
+  benchmark gives hundreds of labels at once.
+- The whole test split: about 50 times the cost, for intervals that are already narrow enough
+  to compare two systems.
+- Quoting published leaderboard scores: ruled out by rule 7.
+
+**Trade-off.** The benchmark is not the auditor's real job. Its documents are clean and come
+supplied, and its claims are not split out of real answers. It measures steps 4 to 6 only. The
+real-world audit (step 4) measures the rest.
+
+### Done when (step 2)
+
+- `uv run python -m evidentia audit answer.md` works, and tests with fakes cover every label in
+  the table. `pytest` passes.
+- The Haiku AggreFact results are under `evals/results/`, and the Sonnet results too if that run
+  is approved.
+- One live audit of a real answer that Aditya pastes from an AI tool he uses.
