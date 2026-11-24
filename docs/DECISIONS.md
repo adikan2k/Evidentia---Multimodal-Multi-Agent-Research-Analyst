@@ -2444,3 +2444,120 @@ That is about 45 minutes of his time.
 - **Kept off the screen.** The tool's name, the verdict, the quotes, the question's id, link text
   such as "(openai.com)" inside a claim, numbered markers, and `utm_` tracking parameters.
 - **Intervals** are Wilson intervals, which behave well for samples this small.
+
+## D-045. The site's look: an editor's desk, at the full width of the screen (D-043, phase 2)
+
+**What.** A redesign of the whole site, asked for by Aditya on 2026-11-24. Two things drive it.
+At 100% zoom on a desktop the site sits in a narrow centred column and looks small. And the
+review found the current look (cream paper, a thin serif headline, small uppercase mono labels)
+is the most common look for AI-built sites this year. D-024's idea, a marked-up document, stays.
+It is carried all the way through.
+
+### The idea
+
+**An editor's desk.** The visitor's pasted answer is a sheet of paper lying on a desk. Evidentia
+is the editor going over it with a pencil.
+
+- **The sheet.** The audited answer is set on a white sheet in a reading serif, with a wide
+  margin. Nothing else on the site is set in that serif, so the answer always reads as "the
+  document" and the rest as "the tool".
+- **The marks.** Each sentence gets a proofreader's mark in the margin, drawn as the verdict
+  arrives, with its name beside it. Colour is never the only signal.
+
+  | Verdict | Mark |
+  |---|---|
+  | supported | a tick |
+  | partly backed | a tick with a caret (something missing) |
+  | not on the cited page | a cross |
+  | contradicted | a "not equal" sign |
+  | needs a human | a question mark |
+  | could not check, could not read the citation, uncited | a dash |
+
+- **The clipping.** Evidence opens as a strip cut from the cited page: its title and address
+  across the top, the quote highlighted in its surrounding text, and the two judges' reasons as
+  two notes beneath.
+- **The tally.** The scorecard is one bar across the sheet's foot, split by verdict, with the
+  count of each. It fills as verdicts land. The auditor's own error rates sit beside it.
+- **The desk.** Everything around the sheet (navigation, steps, controls, numbers) is set in the
+  sans face on a slightly darker surface, in sentence case. Uppercase mono is kept only for
+  numbers and data labels.
+
+### Full width
+
+- **The canvas.** It spans the screen. The centred 78rem column goes. Content runs to about
+  112rem (1,800px), with side padding that grows with the screen.
+- **Type that grows.** Headline, body and sheet text scale smoothly with the width, so a 1920px
+  screen gets larger type and not wider margins.
+- **Wide screens, three zones side by side.** The steps and controls in a narrow left rail, the
+  sheet in the middle, the clipping and tally on the right. The right zone stays in view while
+  the sheet scrolls.
+- **Laptops and phones.** Two zones on a laptop. On a phone, one column, with the clipping
+  opening as a sheet from the bottom.
+
+### Type and colour
+
+- **Faces.** Geist for the interface and headlines, set heavier and tighter than now. Newsreader,
+  a reading serif, for the audited answer and quotes only. Geist Mono for numbers. Instrument
+  Serif is dropped.
+- **Surfaces.** A warm grey desk, a white sheet, near-black ink.
+- **Accents.** The highlighter yellow stays for quoted evidence only. Verdict colours are used
+  only on marks, the tally and verdict names.
+- **Legibility.** No text under 12px. All text at least 4.5 to 1 against its background. Tap
+  targets at least 40px tall. A skip link, and visible focus rings.
+
+### Motion, only when something real happened
+
+- A mark is drawn stroke by stroke when its verdict arrives.
+- The highlighter sweeps across a quote when its clipping opens.
+- The tally bar grows as verdicts land.
+- The steps fill as the server reports them.
+- A recorded audit opens on its finished result, with a "Replay" button, so nobody waits 20
+  seconds to see anything.
+- All of it is switched off for visitors who ask for reduced motion.
+
+### Pages
+
+1. **Home is the auditor.**
+   - First screen: what this is, in one headline; the paste box; and a recorded audit beside it,
+     already marked up.
+   - Below: how it works in three steps; how often it is right, read from the results files; the
+     finding, once phase 1 is done; and the limits.
+2. **Research** gets its own tab, restyled with the same pieces. Its claims are the sheet, its
+   source the clipping.
+3. **Evals**, restyled, with step names and tables that fit.
+4. **Method and limits**, a new short page.
+5. **Shared pieces.**
+   - A footer with the author and a contact.
+   - An address for each recorded audit, so it can be linked.
+   - Link previews (`og:` tags and one image).
+   - Page titles in place of bare site names in the clipping.
+   - Short step names that fit.
+
+### How it is checked
+
+- `npm run build` and `npm run lint`.
+- Measured in the browser at 390, 1280, 1440 and 1920 pixels wide: no sideways scroll, text
+  sizes, contrast, and how much of the width the content uses.
+- **A limit of my own checking.** The browser pane I work in is too small to judge fine visual
+  detail. So Aditya looks at each page on his own screen before it is pushed.
+
+**Considered.**
+
+- **Only widening the column.** It fixes "small" and leaves the generic look.
+- **A dark theme.** D-024 ruled it out as the default AI look, and that still holds.
+- **Handwriting fonts for the marks.** They slide into kitsch. Marks drawn as simple strokes read
+  as an editor's pencil without pretending to be handwriting.
+- **Keeping the thin serif headline.** It is the single most recognisable part of the look the
+  review named.
+
+**Trade-off.**
+
+- Every component is touched, so this is the largest change to the site since M4.
+- Type that scales with the screen needs care at the extremes, which is why four widths are
+  measured.
+- The home page will have a gap where the finding goes until phase 1 is done. It shows the
+  auditor's measured accuracy until then.
+
+**Order.** Tokens and layout first, the widest win. Then the audit page as home, then research,
+evals and the shared pieces. Each step is committed on its own. Nothing is pushed until Aditya has
+seen it. Cost: a few cents of live audits while checking.
