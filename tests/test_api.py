@@ -57,7 +57,8 @@ class Harness:
         async def go() -> httpx.Response:
             transport = httpx.ASGITransport(app=self.app)
             async with httpx.AsyncClient(transport=transport, base_url="http://api") as client:
-                headers = {"x-forwarded-for": f"{ip}, 10.0.0.1"} | kwargs.pop("headers", {})
+                # The first entry is what a visitor could forge; the last is the real address.
+                headers = {"x-forwarded-for": f"1.2.3.4, {ip}"} | kwargs.pop("headers", {})
                 return await client.request(method, path, headers=headers, **kwargs)
 
         return asyncio.run(go())
@@ -253,3 +254,13 @@ def test_a_page_at_a_private_address_is_skipped_without_a_request(settings) -> N
 def test_judge_fake_is_the_one_the_graph_tests_use() -> None:
     assert judge("cheapest").label == "unsupported"
     assert isinstance(judge("anything else"), Judgement)
+
+
+def test_a_forged_forwarded_address_does_not_dodge_the_per_address_limit(settings) -> None:
+    api = Harness(settings)
+
+    def run_claiming_to_be(fake: str) -> int:
+        headers = {"x-forwarded-for": f"{fake}, 203.0.113.5"}
+        return api.call("POST", "/runs", headers=headers, json={"question": QUESTION}).status_code
+
+    assert [run_claiming_to_be(f"9.9.9.{n}") for n in range(4)] == [200, 200, 200, 429]

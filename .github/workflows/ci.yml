@@ -24,6 +24,28 @@ jobs:
       - name: Tests (no keys, no network)
         run: make test
 
+  web:
+    name: web type-check, lint and build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+
   evals:
     name: evaluation
     # Only when started by hand with the box ticked. Never on a push or a pull request.

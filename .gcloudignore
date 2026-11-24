@@ -1,0 +1,10 @@
+# What `gcloud run deploy --source .` uploads to Google Cloud Build. Same rule as the image:
+# only what the API needs, and never .env.
+*
+!pyproject.toml
+!uv.lock
+!Dockerfile
+!.dockerignore
+!evidentia/
+!evidentia/**
+evidentia/**/__pycache__/

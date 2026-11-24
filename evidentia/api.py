@@ -67,10 +67,15 @@ def real_services() -> Services:
 
 
 def client_ip(request: Request) -> str:
-    """The visitor's address. Behind Cloud Run the first forwarded address is the real one."""
+    """The visitor's address.
+
+    Cloud Run appends the real address to the end of X-Forwarded-For. Anything before it was
+    sent by the visitor and could be made up to dodge the per-address limits, so only the last
+    entry is trusted.
+    """
     forwarded = request.headers.get("x-forwarded-for", "")
     if forwarded:
-        return forwarded.split(",")[0].strip()
+        return forwarded.split(",")[-1].strip()
     return request.client.host if request.client else "unknown"
 
 
