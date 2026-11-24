@@ -235,6 +235,13 @@ inject a no-op tracer.
 SDK v5 reads `LANGFUSE_BASE_URL`. The plan and `.env` use `LANGFUSE_HOST`, so `Settings` reads
 either name and passes the value to the client explicitly. No change to `.env` is needed.
 
+Two things found on the first live run (2026-11-24):
+- Langfuse keys only work in the region the project was created in. The default host is the EU
+  one, so a US project needs `LANGFUSE_HOST=https://us.cloud.langfuse.com`. The start-up error now
+  says so.
+- The Anthropic SDK emits its own span for every call, on top of the one LangChain's callback
+  records, so each model call and its cost showed up twice. `export_span` drops the SDK's copy.
+
 **Why.** The rules require every model call and tool call to be traced. Failing at start is better
 than a run that silently leaves no trace.
 

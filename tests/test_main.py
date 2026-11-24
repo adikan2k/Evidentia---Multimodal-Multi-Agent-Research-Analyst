@@ -3,7 +3,8 @@ import asyncio
 import pytest
 
 from evidentia.__main__ import EXIT_BAD_CONFIG, amain, parse_args
-from evidentia.tracing import NoopTracer
+from evidentia.config import ConfigError
+from evidentia.tracing import LangfuseTracer, NoopTracer, export_span
 
 
 def test_question_words_are_joined_and_flags_parsed() -> None:
@@ -36,3 +37,27 @@ def test_noop_tracer_matches_what_the_pipeline_calls() -> None:
     assert tracer.callbacks() == []
     assert tracer.trace_id() is None and tracer.trace_url() is None
     tracer.flush()
+
+
+def test_anthropic_sdk_spans_are_not_exported_a_second_time() -> None:
+    from types import SimpleNamespace
+
+    assert export_span(SimpleNamespace(name="anthropic.messages.create")) is False
+
+
+def test_rejected_langfuse_keys_stop_the_run_with_a_region_hint(
+    settings, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    class Rejecting:
+        def __init__(self, **kwargs) -> None:
+            self.kwargs = kwargs
+
+        def auth_check(self) -> bool:
+            raise RuntimeError("401")
+
+    monkeypatch.setattr("evidentia.tracing.Langfuse", Rejecting)
+    with pytest.raises(ConfigError) as err:
+        LangfuseTracer(settings)
+    message = str(err.value)
+    assert "us.cloud.langfuse.com" in message and settings.langfuse_host in message
+    assert settings.langfuse_secret_key.get_secret_value() not in message

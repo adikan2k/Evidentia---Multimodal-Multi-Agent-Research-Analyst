@@ -5,8 +5,18 @@ from typing import Any, Protocol
 
 from langfuse import Langfuse
 from langfuse.langchain import CallbackHandler
+from langfuse.span_filter import is_default_export_span
 
 from evidentia.config import ConfigError, Settings
+
+
+def export_span(span: Any) -> bool:
+    """Decide which spans go to Langfuse.
+
+    The Anthropic SDK emits its own span for every call. LangChain's callback already records
+    that same call, so sending both would count each model call, and its cost, twice.
+    """
+    return not span.name.startswith("anthropic.") and is_default_export_span(span)
 
 
 class Span(Protocol):
@@ -51,10 +61,12 @@ class NoopTracer:
 class LangfuseTracer:
     def __init__(self, settings: Settings) -> None:
         self._public_key = settings.langfuse_public_key.get_secret_value()
+        self._host = settings.langfuse_host
         self.client = Langfuse(
             public_key=self._public_key,
             secret_key=settings.langfuse_secret_key.get_secret_value(),
             base_url=settings.langfuse_host,
+            should_export_span=export_span,
         )
         self._require_working_keys()
 
@@ -66,7 +78,9 @@ class LangfuseTracer:
             ok = False
         if not ok:
             raise ConfigError(
-                "Langfuse did not accept LANGFUSE_PUBLIC_KEY / LANGFUSE_SECRET_KEY at LANGFUSE_HOST"
+                f"Langfuse at {self._host} did not accept LANGFUSE_PUBLIC_KEY and "
+                "LANGFUSE_SECRET_KEY. Keys only work in the region the project was created in; "
+                "for a US project set LANGFUSE_HOST=https://us.cloud.langfuse.com"
             )
 
     def span(self, name: str, as_type: str = "span", input: Any = None):
