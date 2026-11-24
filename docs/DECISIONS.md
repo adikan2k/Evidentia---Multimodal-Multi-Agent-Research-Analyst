@@ -680,3 +680,150 @@ All figures are in `evals/results/`. Judge: Opus, same rubric as the checker.
      the part the product's promise rests on, and the saving is under two cents a run.
 - The unanswerable set has 20 questions drawn from 40 candidates; code dropped the other 20
   because the corpus did contain their answers.
+
+---
+
+The entries below cover milestone M4, the live site. **Approved by Aditya on 2026-11-24.** The three reference galleries in `docs/PLAN.md` were looked at on 2026-11-24.
+
+## D-024. Visual direction: a marked-up document
+
+**What.** The site looks like a carefully typeset page that someone has gone over with a
+highlighter. Off-white paper background, near-black ink, a serif display face for headlines, a
+plain sans for reading text and a monospace face for small labels and numbers. One accent colour
+only, a highlighter yellow, and it is used for exactly one thing: evidence. Supported, partial
+and unverified get three quiet ink colours for their labels.
+
+Motion follows one rule: something moves only when something real happened.
+
+- When a claim is checked, a highlighter stroke sweeps across its quote inside the source text.
+- Claims are set on the page as the writer produces them. Labels stamp in when the checker
+  answers.
+- The pipeline is a thin strip of seven steps that fill in with real counts and cost.
+- Scrolling the home page plays a recorded real run in step with the scroll.
+
+**Why.** The galleries' best AI sites share four habits: large confident type with space around
+it, a near-monochrome palette with one accent, the product itself shown in the first screen
+instead of abstract art, and one strong motif. Evidentia's whole point is the exact quote, so the
+highlighter is the motif, and it is also what the animation shows. That keeps it from looking
+like every other dark-gradient AI site.
+
+**Considered.** Dark theme with glowing accents (the default look for AI products, and close to
+the old site this rebuild is leaving behind). A terminal look (matches the command-line tool,
+but reads as a developer toy). Heavy 3D or WebGL (impressive in a gallery, slow on phones, and
+nothing in the product is three-dimensional).
+
+**Trade-off.** A light, typographic site is quieter than the flashiest Awwwards winners. The bet
+is that precise motion tied to real events is more memorable than spectacle. A dark mode can come
+later; it is not in M4.
+
+## D-025. What the site contains
+
+**What.** Four screens.
+
+1. Home. A headline, the question box, and directly beneath it a recorded real run that plays as
+   you scroll. Then the three measured facts with links to their numbers, and a short "what this
+   does not do".
+2. Run. The main screen. Claims on the left, the source on the right. Clicking a claim scrolls
+   the source to its quote and highlights it. The pipeline strip sits on top with cost so far.
+   The same screen plays recorded runs and live ones.
+3. Try to break it. Any claim on the Run screen can be edited in place. The checker is called
+   and its verdict and reason appear. This is the 49-of-50 result made into something a visitor
+   can poke at.
+4. Evals. Charts drawn from the files in `evals/results/`, including the result that the
+   pipeline is not more accurate than plain RAG, and the "what failed" list.
+
+**Why.** Each screen is one of the three things the evidence supports: you can see the exact
+words, the checker catches errors, and the numbers are shown whether or not they flatter.
+
+**Considered.** A chat interface (familiar, but it hides the evidence, which is the product). A
+dashboard of past runs (needs accounts and a database for little gain).
+
+**Trade-off.** No accounts and no history. A visitor's run lives in their browser tab.
+
+## D-026. Frontend: a fresh app in `web/`
+
+**What.** A new Next.js app in `web/`, with Tailwind, shadcn components and Motion for animation,
+deployed on Vercel. Exact versions are pinned when it is created, after checking current docs.
+The old `frontend/` folder is deleted in the same change; it stays in git history and on the
+archive branch.
+
+**Why.** The old frontend is built from glass cards, gradients and pages for features that no
+longer exist. Restyling it would mean deleting most of it anyway, and starting clean avoids
+carrying its dependencies.
+
+**Considered.** Restyling `frontend/` in place (keeps the folder, but nearly every file would
+change). A plain static site (simplest to host, but the live run view needs real interactivity).
+
+**Trade-off.** Any link to an old page will break. Nothing public depends on them.
+
+## D-027. API: FastAPI with a live event stream, and no database
+
+**What.** A small FastAPI app in `evidentia/api.py`, deployed on Cloud Run:
+
+- `POST /runs` starts a run and streams it as server-sent events: one event as each node
+  finishes, then the final report.
+- `POST /check` takes one claim and one quote and returns the checker's verdict. This powers
+  "try to break it".
+- `GET /health`.
+
+Recorded runs are plain JSON files in `web/public/replays/`, produced by a script from real runs
+and served by Vercel. Browsing them never touches the API. There is no database: the plan's
+Postgres is dropped for M4.
+
+The source pane shows each quote with a few hundred characters either side and a link to the
+original page, not the whole page.
+
+**Why.** Server-sent events are the simplest way to push the pipeline's real progress to a
+browser. Replays as files make the site fast, free to browse and still working if the API is
+down or over its cap. Showing a window around the quote, not the full text, avoids republishing
+other people's pages.
+
+**Considered.** WebSockets (two-way, which we do not need). Postgres for run history (needed only
+if runs must outlive the browser tab). Showing full page text (better context, but it is
+republishing).
+
+**Trade-off.** A live run is lost if the tab closes. Replays are a fixed set chosen in advance.
+
+## D-028. Protecting the credits on a public site
+
+**What.** Four layers, all on by default:
+
+1. Replays first. The home page and the default Run screen play recorded runs. A live run
+   happens only when a visitor types a question and presses the button.
+2. A daily budget in dollars, in code. When the day's live runs and checks reach it, the API
+   answers "today's live budget is used up; here are recorded runs" until midnight UTC. It
+   starts at $1.00 a day, about 20 live runs.
+3. Per-visitor limits: 3 live runs and 30 checks per IP address per day, one run at a time.
+4. Cloud Run is limited to one instance, so the counters in memory are the only counters.
+
+Outside the code, Aditya sets a monthly spend limit in the Anthropic console. That is the real
+backstop and it is his to set.
+
+**Why.** A public box that spends money per press will be found and pressed. The per-run cap
+already exists; these add a cap per day and per visitor.
+
+**Considered.** A sign-in wall (stops abuse, and also stops interviewers trying it). A CAPTCHA
+(friction, and a third-party script). A shared counter in a database (survives restarts, but
+adds a service for a small gain).
+
+**Trade-off.** The in-memory counters reset if the instance restarts, so a restart can let a
+little more than the daily budget through. The console spend limit covers that.
+
+## D-029. Build order
+
+**What.** Four steps, each ending in something to look at:
+
+1. A clickable prototype of the Run screen in `web/`, playing two recorded runs. No API, and no
+   model calls beyond recording the runs once. Aditya reacts to the look and the motion here,
+   before anything else is built on it.
+2. The API with the event stream, the caps, and live runs wired into the Run screen.
+3. Try to break it, the Evals page and the Home page.
+4. Deploy to Vercel and Cloud Run.
+
+**Why.** The look and the motion are the riskiest part and the cheapest to change early. Seeing
+the main screen first means a wrong direction costs an hour, not a milestone.
+
+**Considered.** API first (the usual order, but nothing to look at for longest).
+
+**Trade-off.** Step 1 uses hand-recorded data, so a little of it is reworked when live events
+arrive in step 2.
