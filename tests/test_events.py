@@ -85,6 +85,9 @@ def test_node_events_carry_a_summary_running_cost_and_what_the_page_needs() -> N
         "url": SOURCE.url,
         "host": "energy.example.org",
         "title": "Report",
+        "kind": "html",
+        "pages_read": None,
+        "pages_total": None,
     }
     assert fetch["data"]["skipped"] == [{"host": "b.org", "reason": "HTTP 403"}]
     rewrite = builder.node_event("rewrite", {"repairs": [Repair(index=0, query="solar 2023")]})
@@ -108,3 +111,36 @@ def test_report_counts_labels_and_costs() -> None:
     assert report["cost"]["by_node"] == [{"node": "write", "calls": 1, "usd": 0.02}]
     assert report["sources_read"] == 1 and report["repair_rounds"] == 1
     assert "text" not in json.dumps(report["cost"]) and TEXT not in json.dumps(report)
+
+
+PDF = Source(
+    id="S2",
+    url="https://agency.example.org/report.pdf",
+    title="Annual report",
+    text="Page one text.\nSolar capacity grew 24% in 2023 on page two.",
+    kind="pdf",
+    page_starts=[0, 15],
+    pages_total=60,
+)
+
+
+def test_a_pdf_claim_carries_its_kind_and_pages() -> None:
+    checked = claim(
+        source_id="S2", quote_found=True, verdict="supported", start=15, end=47, pages=(2, 2)
+    )
+    view = claim_view(checked, {"S2": PDF})
+    assert view["kind"] == "pdf" and view["pages"] == [2, 2]
+
+
+def test_a_web_claim_has_no_pages() -> None:
+    view = claim_view(claim(quote_found=True, verdict="supported", start=START, end=END), SOURCES)
+    assert view["kind"] == "html" and view["pages"] is None
+
+
+def test_fetch_event_says_how_much_of_a_pdf_was_read() -> None:
+    builder = EventBuilder(Ledger(1.0))
+    event = builder.node_event("fetch", {"sources": [SOURCE, PDF], "skipped": []})
+    pdf = event["data"]["sources"][1]
+    assert (pdf["kind"], pdf["pages_read"], pdf["pages_total"]) == ("pdf", 2, 60)
+    assert event["data"]["sources"][0]["pages_read"] is None
+    assert event["summary"] == "read 2 pages (1 PDF)"

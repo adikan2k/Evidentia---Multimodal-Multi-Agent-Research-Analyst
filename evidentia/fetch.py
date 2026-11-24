@@ -8,6 +8,8 @@ import ipaddress
 import time
 from collections import defaultdict
 from collections.abc import Awaitable, Callable
+from dataclasses import dataclass
+from typing import Literal
 from urllib.parse import urljoin, urlsplit
 from urllib.robotparser import RobotFileParser
 
@@ -15,6 +17,7 @@ import httpx
 import trafilatura
 
 from evidentia.config import Settings
+from evidentia.pdf import Unreadable, read_pdf
 from evidentia.schemas import SearchHit, SkippedPage, Source
 from evidentia.tracing import Tracer
 
@@ -57,6 +60,25 @@ def is_public_host(host: str) -> bool:
     except ValueError:
         return True  # an ordinary name
     return address.is_global
+
+
+Kind = Literal["html", "pdf"]
+
+
+@dataclass
+class Body:
+    data: bytes
+    kind: Kind
+
+
+def expected_kind(content_type: str) -> Kind | None:
+    """What a response says it is. PDFs are often served as plain binary, so that counts too."""
+    content_type = content_type.lower()
+    if "html" in content_type:
+        return "html"
+    if "application/pdf" in content_type or "octet-stream" in content_type:
+        return "pdf"
+    return None
 
 
 def origin_of(url: str) -> str:
@@ -145,33 +167,58 @@ class Fetcher:
         await self.client.aclose()
 
     async def fetch_all(self, hits: list[SearchHit]) -> tuple[list[Source], list[SkippedPage]]:
-        results = await asyncio.gather(*(self._one(hit.url) for hit in hits))
+        results = await asyncio.gather(*(self._one(hit) for hit in hits))
         sources, skipped = [], []
         for hit, result in zip(hits, results, strict=True):
             if isinstance(result, Skip):
                 skipped.append(SkippedPage(url=hit.url, reason=result.reason))
             else:
-                source_id = f"S{len(sources) + 1}"
-                sources.append(Source(id=source_id, url=hit.url, title=hit.title, text=result))
+                sources.append(result.model_copy(update={"id": f"S{len(sources) + 1}"}))
         return sources, skipped
 
-    async def _one(self, url: str) -> str | Skip:
-        with self.tracer.span("fetch", "tool", {"url": url}) as span:
+    async def _one(self, hit: SearchHit) -> Source | Skip:
+        with self.tracer.span("fetch", "tool", {"url": hit.url}) as span:
             try:
-                html = await self.fetch_html(url)
-                text = await asyncio.to_thread(extract_text, html)
-                if len(text) < self.settings.min_page_chars:
-                    raise Skip("no readable text")
+                body = await self.fetch_body(hit.url)
+                if body.kind == "pdf":
+                    source = await self.read_pdf(hit, body.data)
+                else:
+                    text = await asyncio.to_thread(extract_text, body.data)
+                    if len(text) < self.settings.min_page_chars:
+                        raise Skip("no readable text")
+                    source = Source(id="", url=hit.url, title=hit.title, text=text)
             except Skip as skip:
                 span.update(output={"skipped": skip.reason})
                 return skip
             except httpx.HTTPError as err:
                 span.update(output={"skipped": type(err).__name__})
                 return Skip(f"network error ({type(err).__name__})")
-            span.update(output={"chars": len(text)})
-            return text
+            span.update(output={"kind": source.kind, "chars": len(source.text)})
+            return source
 
-    async def fetch_html(self, url: str) -> bytes:
+    async def read_pdf(self, hit: SearchHit, data: bytes) -> Source:
+        s = self.settings
+        try:
+            pdf = await asyncio.wait_for(
+                asyncio.to_thread(read_pdf, data, s.pdf_max_pages), s.pdf_timeout_s
+            )
+        except TimeoutError as err:
+            raise Skip("PDF took too long to read") from err
+        except Unreadable as err:
+            raise Skip(err.reason) from err
+        if len(pdf.text) < s.min_page_chars:
+            raise Skip("scanned PDF, no text")
+        return Source(
+            id="",
+            url=hit.url,
+            title=hit.title,
+            text=pdf.text,
+            kind="pdf",
+            page_starts=pdf.page_starts,
+            pages_total=pdf.pages_total,
+        )
+
+    async def fetch_body(self, url: str) -> Body:
         """Follow redirects by hand so robots.txt and the rate limit apply to every hop."""
         for _ in range(MAX_REDIRECTS + 1):
             if urlsplit(url).scheme not in ("http", "https"):
@@ -187,15 +234,31 @@ class Fetcher:
                     continue
                 if response.status_code != 200:
                     raise Skip(f"HTTP {response.status_code}")
-                if "html" not in response.headers.get("content-type", ""):
-                    raise Skip("not an HTML page")
-                return await self._read_capped(response)
+                return await self._read_body(response)
         raise Skip("too many redirects")
 
-    async def _read_capped(self, response: httpx.Response) -> bytes:
-        body = b""
+    async def _read_body(self, response: httpx.Response) -> Body:
+        kind = expected_kind(response.headers.get("content-type", ""))
+        if kind is None:
+            raise Skip("not an HTML page or PDF")
+        if kind == "pdf":
+            data = await self._read_capped(response, self.settings.pdf_max_bytes, "PDF")
+        else:
+            data = await self._read_capped(response, self.settings.fetch_max_bytes, "page")
+        if data.startswith(b"%PDF-"):
+            return Body(data, "pdf")
+        if kind == "pdf":
+            raise Skip("not a valid PDF")
+        return Body(data, "html")
+
+    async def _read_capped(self, response: httpx.Response, limit: int, what: str) -> bytes:
+        too_big = Skip(f"{what} is larger than the size limit")
+        declared = response.headers.get("content-length", "")
+        if declared.isdigit() and int(declared) > limit:
+            raise too_big
+        body = bytearray()
         async for part in response.aiter_bytes():
             body += part
-            if len(body) > self.settings.fetch_max_bytes:
-                raise Skip("page is larger than the size limit")
-        return body
+            if len(body) > limit:
+                raise too_big
+        return bytes(body)

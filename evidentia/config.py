@@ -77,6 +77,9 @@ class Settings(BaseSettings):
     )
     fetch_timeout_s: float = 15.0
     fetch_max_bytes: int = 2_000_000
+    pdf_max_bytes: int = 15_000_000
+    pdf_max_pages: int = 40
+    pdf_timeout_s: float = 20.0
     per_host_interval_s: float = 2.0
     min_page_chars: int = 200
     min_quote_chars: int = 20

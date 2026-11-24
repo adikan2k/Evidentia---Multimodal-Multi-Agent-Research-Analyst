@@ -6,6 +6,7 @@ import pytest
 from evidentia.fetch import Fetcher, HostLimiter, clean_text, extract_text
 from evidentia.schemas import SearchHit
 from evidentia.tracing import NoopTracer
+from tests.pdfs import make_pdf
 
 PARAGRAPH = (
     "Solar capacity grew 24% in 2023, the fastest rate on record, according to the agency. "
@@ -141,8 +142,12 @@ def test_allowed_redirect_is_followed(settings) -> None:
     [
         (httpx.Response(500), "HTTP 500"),
         (
-            httpx.Response(200, headers={"content-type": "application/pdf"}, content=b"%PDF"),
-            "not an HTML page",
+            httpx.Response(200, headers={"content-type": "image/png"}, content=b"png"),
+            "not an HTML page or PDF",
+        ),
+        (
+            httpx.Response(200, headers={"content-type": "application/pdf"}, content=b"<html>"),
+            "not a valid PDF",
         ),
         (page("<html><body><p>Too short.</p></body></html>"), "no readable text"),
         (
@@ -188,3 +193,68 @@ def test_limiter_spaces_out_requests_to_one_host_only() -> None:
 
     asyncio.run(scenario())
     assert sleeps == [2.0]
+
+
+LINES = [
+    "Solar capacity grew 24% in 2023, the fastest rate on record, according to the agency.",
+    "Analysts expect the pace to continue as panel prices keep falling across every market.",
+    "Wind additions were slower over the same period, held back by permitting delays.",
+]
+
+
+def pdf_response(body: bytes, content_type: str = "application/pdf") -> httpx.Response:
+    return httpx.Response(200, headers={"content-type": content_type}, content=body)
+
+
+@pytest.mark.parametrize("content_type", ["application/pdf", "application/octet-stream"])
+def test_pdf_becomes_a_source_with_page_offsets(settings, content_type: str) -> None:
+    body = make_pdf([LINES[:2], LINES[2:]])
+    url = "https://agency.org/report.pdf"
+    sources, skipped = fetch(settings, {url: pdf_response(body, content_type)}, [url])
+    assert skipped == []
+    source = sources[0]
+    assert (source.id, source.kind, source.pages_total) == ("S1", "pdf", 2)
+    assert source.text == "\n".join([" ".join(LINES[:2]), LINES[2]])
+    assert source.page_starts == [0, len(" ".join(LINES[:2])) + 1]
+
+
+def test_pdf_served_as_html_is_still_read_as_a_pdf(settings) -> None:
+    body = make_pdf([LINES])
+    url = "https://agency.org/report"
+    sources, _ = fetch(settings, {url: pdf_response(body, "text/html")}, [url])
+    assert sources[0].kind == "pdf"
+
+
+def test_scanned_pdf_is_skipped(settings) -> None:
+    url = "https://agency.org/scan.pdf"
+    _, skipped = fetch(settings, {url: pdf_response(make_pdf([[], []]))}, [url])
+    assert skipped[0].reason == "scanned PDF, no text"
+
+
+def test_pdf_over_the_size_limit_is_skipped_before_download(settings) -> None:
+    small = settings.model_copy(update={"pdf_max_bytes": 1_000})
+    url = "https://agency.org/big.pdf"
+    _, skipped = fetch(small, {url: pdf_response(make_pdf([LINES] * 5))}, [url])
+    assert skipped[0].reason == "PDF is larger than the size limit"
+
+
+def test_pdfs_may_be_larger_than_web_pages(settings) -> None:
+    small = settings.model_copy(update={"fetch_max_bytes": 100})
+    url = "https://agency.org/report.pdf"
+    sources, _ = fetch(small, {url: pdf_response(make_pdf([LINES]))}, [url])
+    assert sources[0].kind == "pdf"
+
+
+def test_pdf_reading_has_a_time_limit(settings, monkeypatch) -> None:
+    import time
+
+    import evidentia.fetch as fetch_module
+
+    def slow(data: bytes, max_pages: int):
+        time.sleep(0.5)
+
+    monkeypatch.setattr(fetch_module, "read_pdf", slow)
+    quick = settings.model_copy(update={"pdf_timeout_s": 0.05})
+    url = "https://agency.org/report.pdf"
+    _, skipped = fetch(quick, {url: pdf_response(make_pdf([LINES]))}, [url])
+    assert skipped[0].reason == "PDF took too long to read"

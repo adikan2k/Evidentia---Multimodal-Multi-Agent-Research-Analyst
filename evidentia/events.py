@@ -40,6 +40,8 @@ def claim_view(claim: CheckedClaim, sources: dict[str, Source]) -> dict[str, Any
         "url": source.url if source else "",
         "host": host_of(source.url) if source else "",
         "title": source.title if source else "",
+        "kind": source.kind if source else "html",
+        "pages": list(claim.pages) if claim.pages else None,
         "quote_found": claim.quote_found,
         "verdict": claim.verdict,
         # A label only exists once both checks have had their say.
@@ -70,7 +72,15 @@ class EventBuilder:
         if "sources" in update:
             self.sources = {s.id: s for s in update["sources"]}
             data["sources"] = [
-                {"id": s.id, "url": s.url, "host": host_of(s.url), "title": s.title}
+                {
+                    "id": s.id,
+                    "url": s.url,
+                    "host": host_of(s.url),
+                    "title": s.title,
+                    "kind": s.kind,
+                    "pages_read": len(s.page_starts) or None,
+                    "pages_total": s.pages_total,
+                }
                 for s in update["sources"]
             ]
             data["skipped"] = [

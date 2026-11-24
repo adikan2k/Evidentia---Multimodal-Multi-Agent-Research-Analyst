@@ -33,6 +33,11 @@ def count_labels(claims: list[CheckedClaim]) -> str:
     return ", ".join(f"{labels.count(label)} {label}" for label in LABELS)
 
 
+def page_label(pages: tuple[int, int]) -> str:
+    first, last = pages
+    return f"p. {first}" if first == last else f"pp. {first}-{last}"
+
+
 def describe(node: str, update: dict[str, Any]) -> str:
     """One plain sentence about what a node just did."""
     if node == "plan":
@@ -42,6 +47,9 @@ def describe(node: str, update: dict[str, Any]) -> str:
         return f"found {_plural(len(update['hits']), 'page')} on {_plural(len(sites), 'site')}"
     if node == "fetch":
         line = f"read {_plural(len(update['sources']), 'page')}"
+        pdfs = sum(s.kind == "pdf" for s in update["sources"])
+        if pdfs:
+            line += f" ({_plural(pdfs, 'PDF')})"
         reasons = Counter(s.reason for s in update["skipped"])
         if reasons:
             why = ", ".join(f"{n} {reason}" for reason, n in reasons.most_common())
@@ -79,7 +87,15 @@ def to_json(state: RunState, ledger: Ledger) -> str:
         "question": state.question,
         "queries": state.queries,
         "sources": [
-            {"id": s.id, "url": s.url, "title": s.title, "chars": len(s.text)}
+            {
+                "id": s.id,
+                "url": s.url,
+                "title": s.title,
+                "kind": s.kind,
+                "pages_read": len(s.page_starts) or None,
+                "pages_total": s.pages_total,
+                "chars": len(s.text),
+            }
             for s in state.sources
         ],
         "skipped": [s.model_dump() for s in state.skipped],
@@ -146,7 +162,8 @@ class Reporter:
                 )
             )
         if claim.url:
-            self.console.print(Text(f"    {claim.url}", style="blue"))
+            where = f"  ({page_label(claim.pages)})" if claim.pages else ""
+            self.console.print(Text(f"    {claim.url}{where}", style="blue"))
 
     def costs(self, ledger: Ledger) -> None:
         table = Table(title="Cost of this run", title_justify="left", show_edge=False)

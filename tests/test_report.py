@@ -142,6 +142,23 @@ def test_json_output_has_labels_reasons_costs_and_no_page_text() -> None:
     assert result["claims"][1]["reason"] == "The quote does not mention wind."
     assert result["claims"][1]["revised"] is True
     assert result["repair_rounds"] == 1
-    assert result["sources"] == [{"id": "S1", "url": SOURCE.url, "title": "A", "chars": 32}]
+    assert result["sources"] == [
+        {
+            "id": "S1",
+            "url": SOURCE.url,
+            "title": "A",
+            "kind": "html",
+            "pages_read": None,
+            "pages_total": None,
+            "chars": 32,
+        }
+    ]
     assert result["cost"]["total_usd"] == 0.0134
     assert [n["node"] for n in result["cost"]["by_node"]] == ["plan", "search"]
+
+
+def test_cli_report_names_the_page_of_a_pdf_quote() -> None:
+    on_page = SUPPORTED.model_copy(update={"url": "https://a.org/r.pdf", "pages": (4, 5)})
+    out = io.StringIO()
+    Reporter(Console(file=out, width=200)).final(make_state(checked=[on_page]), make_ledger())
+    assert "https://a.org/r.pdf  (pp. 4-5)" in out.getvalue()

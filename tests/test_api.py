@@ -102,7 +102,15 @@ def test_the_stream_carries_quotes_with_context_and_no_source_text_field(setting
     stream = events(api.run())
     assert all("text" not in source for _, data in stream for source in data.get("sources", []))
     fetch = next(data for name, data in stream if name == "node" and data["node"] == "fetch")
-    assert set(fetch["data"]["sources"][0]) == {"id", "url", "host", "title"}
+    assert set(fetch["data"]["sources"][0]) == {
+        "id",
+        "url",
+        "host",
+        "title",
+        "kind",
+        "pages_read",
+        "pages_total",
+    }
 
 
 def test_after_a_run_its_cost_is_booked_and_its_passages_are_deleted(settings) -> None:

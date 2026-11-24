@@ -1,5 +1,6 @@
 """Data shapes shared by every module. The graph state is one of these models."""
 
+from bisect import bisect_right
 from typing import Literal
 
 from pydantic import BaseModel, Field, computed_field
@@ -22,6 +23,17 @@ class Source(BaseModel):
     url: str
     title: str = ""
     text: str
+    kind: Literal["html", "pdf"] = "html"
+    page_starts: list[int] = []  # PDFs only: where each page begins in `text`
+    pages_total: int | None = None  # PDFs only: pages in the document, read or not
+
+    def pages_of(self, start: int, end: int) -> tuple[int, int] | None:
+        """First and last page (counting from 1) that the span `text[start:end]` lies on."""
+        if not self.page_starts:
+            return None
+        first = bisect_right(self.page_starts, start)
+        last = bisect_right(self.page_starts, max(start, end - 1))
+        return first, last
 
 
 class SkippedPage(BaseModel):
@@ -58,6 +70,7 @@ class CheckedClaim(Claim):
     url: str = ""
     start: int | None = None
     end: int | None = None
+    pages: tuple[int, int] | None = None  # first and last page of the quote, for PDFs
     revised: bool = False
 
     @property

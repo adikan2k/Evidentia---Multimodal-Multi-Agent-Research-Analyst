@@ -34,7 +34,13 @@ def check_quote(claim: CheckedClaim, sources: dict[str, Source], min_chars: int)
     span = find_quote(claim.quote, source.text)
     if span is None:
         return missing("quote is not an exact span of the source", source.url)
-    found = {"quote_found": True, "url": source.url, "start": span[0], "end": span[1]}
+    found = {
+        "quote_found": True,
+        "url": source.url,
+        "start": span[0],
+        "end": span[1],
+        "pages": source.pages_of(*span),
+    }
     return claim.model_copy(update=found)
 
 
