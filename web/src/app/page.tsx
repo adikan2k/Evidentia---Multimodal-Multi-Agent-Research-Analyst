@@ -1,6 +1,6 @@
-import { ReplayPicker } from "@/components/ReplayPicker";
+import { AuditPicker } from "@/components/AuditPicker";
 
-// Prototype of the Run screen (M4, step 1). The Home page replaces this in step 3.
+// The home page is the auditor (D-045). The research agent lives at /research.
 export default function Page() {
-  return <ReplayPicker />;
+  return <AuditPicker />;
 }

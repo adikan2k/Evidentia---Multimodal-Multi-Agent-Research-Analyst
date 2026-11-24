@@ -1,6 +1,7 @@
 // The shape of an audit (written by `python -m evidentia.audit.record`, or streamed by the API's
 // `/audits`) and the functions that answer: "what should the page show at second t?"
 
+import type { MarkKind } from "@/components/Mark";
 import type { StripItem } from "@/components/PipelineStrip";
 import type { Step } from "@/lib/replay";
 
@@ -27,6 +28,71 @@ export const LABEL_TEXT: Record<AuditLabel, string> = {
   uncited: "Uncited",
 };
 
+/** A shorter name, for the sheet's margin. */
+export const LABEL_SHORT: Record<AuditLabel, string> = {
+  supported: "Supported",
+  partial: "Partly backed",
+  contradicted: "Contradicted",
+  needs_human: "Needs a human",
+  not_found: "Not on the page",
+  dead_link: "Dead link",
+  unchecked: "Not checked",
+  citation_unread: "Citation unread",
+  uncited: "Uncited",
+};
+
+/** One sentence on what each verdict means, for the legend and the method page. */
+export const LABEL_MEANING: Record<AuditLabel, string> = {
+  supported: "Both judges agree the cited page states the claim.",
+  partial: "The page backs the main point but not every detail. Never counted as a failure.",
+  contradicted: "The page says something that cannot be true along with the claim.",
+  needs_human: "The two judges disagree, so no verdict is given.",
+  not_found: "Both judges agree the cited page does not state the claim.",
+  dead_link: "The cited address no longer exists.",
+  unchecked: "The page could not be read: robots.txt, a refusal, or too little text.",
+  citation_unread: "The sentence has a marker, but no source could be matched to it.",
+  uncited: "No citation in the sentence or its paragraph.",
+};
+
+/** The proofreader's mark for each verdict (D-045). */
+export const LABEL_MARK: Record<AuditLabel, MarkKind> = {
+  supported: "tick",
+  partial: "tick-caret",
+  contradicted: "not-equal",
+  needs_human: "question",
+  not_found: "cross",
+  dead_link: "cross",
+  unchecked: "dash",
+  citation_unread: "dash",
+  uncited: "dash",
+};
+
+/** Background for a tally segment. */
+export const LABEL_FILL: Record<AuditLabel, string> = {
+  supported: "bg-supported",
+  partial: "bg-partial",
+  contradicted: "bg-contradicted",
+  needs_human: "bg-human",
+  not_found: "bg-unverified",
+  dead_link: "bg-unverified/60",
+  unchecked: "bg-ink-faint/60",
+  citation_unread: "bg-ink-faint/40",
+  uncited: "bg-ink-faint/25",
+};
+
+/** The order verdicts are listed in: failures first, then the rest. */
+export const LABEL_ORDER: AuditLabel[] = [
+  "contradicted",
+  "not_found",
+  "dead_link",
+  "partial",
+  "needs_human",
+  "supported",
+  "unchecked",
+  "citation_unread",
+  "uncited",
+];
+
 /** Text colour for each label, from the theme in globals.css. */
 export const LABEL_TONE: Record<AuditLabel, string> = {
   supported: "text-supported",
@@ -35,9 +101,9 @@ export const LABEL_TONE: Record<AuditLabel, string> = {
   needs_human: "text-human",
   not_found: "text-unverified",
   dead_link: "text-unverified",
-  unchecked: "text-ink-faint",
-  citation_unread: "text-ink-faint",
-  uncited: "text-ink-faint",
+  unchecked: "text-ink-soft",
+  citation_unread: "text-ink-soft",
+  uncited: "text-ink-soft",
 };
 
 /** The underline under a sentence in the answer, in its label's colour. */

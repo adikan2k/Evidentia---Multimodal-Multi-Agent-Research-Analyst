@@ -1,5 +1,6 @@
 "use client";
 
+import { Mark } from "@/components/Mark";
 import { labelOf, MAIN_STEPS, type RunEvent, type Step, stepsOf } from "@/lib/replay";
 
 export type StripItem = {
@@ -43,7 +44,11 @@ export function liveItems(events: RunEvent[], finished: boolean): StripItem[] {
   return [...done, ...(expected.length > 0 ? expected : [repair])];
 }
 
-/** The pipeline as a row of steps that fill in as the run actually completes them. */
+/**
+ * The steps, as a list that fills in as the run really completes them. In the left rail of a
+ * wide screen it is a column, each finished step with what it found. On narrower screens it
+ * wraps as a row of short names, with the latest step's finding written out underneath.
+ */
 export function PipelineStrip({ items }: { items: StripItem[] }) {
   const running = items.find((item) => item.state === "running");
   const lastDone = [...items].reverse().find((item) => item.state === "done");
@@ -51,41 +56,38 @@ export function PipelineStrip({ items }: { items: StripItem[] }) {
 
   return (
     <div>
-      <ol className="flex gap-1.5">
-        {items.map((item, index) => (
-          <li key={item.key} className="min-w-0 flex-1">
-            <div className="h-[3px] overflow-hidden rounded-full bg-rule">
-              <div
-                className={`h-full origin-left bg-ink ${
-                  item.state === "running" && item.progress === 0.5 ? "animate-pulse" : ""
-                }`}
-                style={{ transform: `scaleX(${item.progress})` }}
-              />
-            </div>
+      <ol className="flex flex-wrap gap-x-5 gap-y-2 2xl:flex-col 2xl:gap-y-3.5">
+        {items.map((item) => (
+          <li key={item.key} className="min-w-0">
             <div
-              className={`label mt-2 truncate transition-colors duration-300 ${
-                item.state === "running"
-                  ? "text-ink"
-                  : item.state === "done"
-                    ? "text-ink-soft"
-                    : "text-ink-faint"
+              className={`label flex items-center gap-2 transition-colors duration-300 ${
+                item.state === "pending" ? "text-ink-faint" : "text-ink"
               }`}
             >
-              <span className="mr-1.5 tabular-nums opacity-60">
-                {String(index + 1).padStart(2, "0")}
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center">
+                {item.state === "done" && <Mark kind="tick" draw className="text-supported" />}
+                {item.state === "running" && (
+                  <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-ink" />
+                )}
+                {item.state === "pending" && (
+                  <span className="h-2.5 w-2.5 rounded-full border border-ink-faint" />
+                )}
               </span>
-              {item.label}
+              <span className="whitespace-nowrap">{item.label}</span>
             </div>
+            {item.state === "done" && item.summary && (
+              <p className="label mt-0.5 hidden pl-7 font-normal text-ink-soft 2xl:block">
+                {item.summary}
+              </p>
+            )}
           </li>
         ))}
       </ol>
-      <p className="mt-4 min-h-6 text-sm text-ink-soft">
+      <p className="label mt-3 min-h-5 font-normal text-ink-soft 2xl:hidden">
         {shown && (
           <>
-            <span className="font-medium text-ink">{shown.label}</span>
-            <span className="mx-2 text-ink-faint">/</span>
-            {shown.state === "running" ? "running" : shown.summary}
-            {shown.state === "running" && <span className="ml-1 animate-pulse">…</span>}
+            <span className="font-medium text-ink">{shown.label}:</span>{" "}
+            {shown.state === "running" ? "running…" : shown.summary}
           </>
         )}
       </p>

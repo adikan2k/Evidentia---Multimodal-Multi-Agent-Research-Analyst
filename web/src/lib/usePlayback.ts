@@ -2,10 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-/** A clock for replaying a recorded run: play, pause, change speed, jump to a moment. */
-export function usePlayback(duration: number, initialSpeed = 2) {
-  const [time, setTime] = useState(0);
-  const [playing, setPlaying] = useState(true);
+/**
+ * A clock for replaying a recorded run: play, pause, change speed, jump to a moment.
+ * With `startAtEnd`, it opens on the finished result and waits for "Replay" (D-045), so nobody
+ * has to sit through a recording before seeing anything.
+ */
+export function usePlayback(duration: number, initialSpeed = 2, startAtEnd = false) {
+  const [time, setTime] = useState(startAtEnd ? duration : 0);
+  const [playing, setPlaying] = useState(!startAtEnd);
   const [speed, setSpeed] = useState(initialSpeed);
   const lastFrame = useRef<number | null>(null);
 

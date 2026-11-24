@@ -5,7 +5,7 @@ import { AskBox } from "@/components/AskBox";
 import { LiveRun } from "@/components/LiveRun";
 import { Facts } from "@/components/Facts";
 import { RunScreen } from "@/components/RunScreen";
-import { SiteHeader } from "@/components/SiteHeader";
+import { SHELL } from "@/components/SiteHeader";
 import { liveAvailable } from "@/lib/api";
 import type { Replay } from "@/lib/replay";
 import { useLiveRun } from "@/lib/useLiveRun";
@@ -41,8 +41,7 @@ export function ReplayPicker() {
   }, [chosen]);
 
   return (
-    <div className="mx-auto max-w-[78rem] px-6 pb-24 pt-8 md:px-10">
-      <SiteHeader />
+    <div className={`${SHELL} pt-10`}>
       {live ? (
         <LiveRun live={live} onClose={stop} />
       ) : (

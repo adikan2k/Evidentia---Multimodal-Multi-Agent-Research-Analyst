@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { IntervalChart } from "@/components/IntervalChart";
-import { SiteHeader } from "@/components/SiteHeader";
+import { SHELL } from "@/components/SiteHeader";
 import {
   caught,
   checkerModel,
@@ -100,8 +100,7 @@ export default function EvalsPage() {
     `${s.value.toFixed(3)} (${s.ci_low.toFixed(3)}–${s.ci_high.toFixed(3)})`;
 
   return (
-    <div className="mx-auto max-w-[78rem] px-6 pb-28 pt-8 md:px-10">
-      <SiteHeader />
+    <div className={`${SHELL} pt-10`}>
       <p className="label text-ink-faint">Evals</p>
       <h1 className="mt-3 max-w-4xl font-serif text-5xl leading-[1.05] tracking-tight md:text-6xl">
         It is not more accurate than plain RAG. Here is what it does do.

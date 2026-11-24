@@ -1,25 +1,31 @@
 @import "tailwindcss";
 
-/* A marked-up document: paper, ink, and one highlighter (see docs/DECISIONS.md, D-024). */
+/* An editor's desk (docs/DECISIONS.md, D-045): a grey desk, a white sheet, ink, and a pencil.
+   The audited answer is the only thing set in the serif face. */
 :root {
-  --paper: #faf8f2;
-  --paper-deep: #f2eee2;
-  --ink: #17150f;
-  --ink-soft: #5d584c;
-  --ink-faint: #9b9585;
-  --rule: #e1dbcc;
-  /* The only accent. It is used for evidence and nothing else. */
+  --paper: #edece7; /* the desk */
+  --paper-deep: #e2e0d9;
+  --sheet: #ffffff;
+  --ink: #141413;
+  --ink-soft: #45443f;
+  --ink-faint: #5f5e58; /* still 4.5 to 1 against the desk */
+  --rule: #d3d1c8;
+  /* The highlighter. Used for quoted evidence and nothing else. */
   --marker: #ffe24a;
-  --supported: #1e6b45;
-  --partial: #94600a;
-  --unverified: #a3322a;
-  --contradicted: #7b2d6e;
-  --human: #2f5b86;
+  /* Verdict colours. Used on marks, the tally and verdict names only. */
+  --supported: #17603c;
+  --partial: #855600;
+  --unverified: #a12b22;
+  --contradicted: #762a69;
+  --human: #27527c;
+  /* Side padding grows with the screen, so wide screens are used, not left empty. */
+  --gutter: clamp(1.25rem, 4vw, 5rem);
 }
 
 @theme inline {
   --color-paper: var(--paper);
   --color-paper-deep: var(--paper-deep);
+  --color-sheet: var(--sheet);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
@@ -32,7 +38,14 @@
   --color-human: var(--human);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-instrument-serif);
+  --font-serif: var(--font-newsreader);
+}
+
+/* Everything is sized in rem, so growing the root size with the screen makes a 1920px screen
+   show larger type instead of wider margins. Never smaller than the visitor's own default. */
+html {
+  font-size: clamp(100%, 0.55vw + 0.5625rem, 137.5%);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,12 +58,70 @@ body {
   background: var(--marker);
 }
 
-/* Small capitals in the mono face, for labels and numbers. */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Small interface text: sentence case, in the sans face. Never under 13px. */
 .label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Numbers and data labels: the mono face, uppercase, never under 12px. */
+.data {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.display-1 {
+  font-size: clamp(2.5rem, 1.2rem + 3.2vw, 4.75rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.display-2 {
+  font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.875rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.display-3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* The sheet of paper the audited answer lies on. */
+.sheet {
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow:
+    0 1px 0 var(--rule),
+    0 18px 40px -24px rgb(20 20 19 / 0.28);
+}
+
+/* The document itself: the only place the serif face is used. */
+.sheet-text {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 1.1875rem;
+  line-height: 1.7;
 }
 
 /* The highlighter. Width is animated from 0 to 100% so the stroke sweeps across the quote,
@@ -63,7 +134,33 @@ body {
   padding: 0.08em 0;
 }
 
+/* A strip cut from the cited page: dashed where the scissors went. */
+.clipping {
+  background: var(--sheet);
+  border-inline: 1px solid var(--rule);
+  border-block: 1.5px dashed var(--ink-faint);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 50;
+  background: var(--ink);
+  color: var(--sheet);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
