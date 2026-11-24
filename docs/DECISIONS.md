@@ -1649,3 +1649,89 @@ Run once on the `test2` sample, 550 test rows never used before, for $0.37
 - **Reported as is.** The README states it with these numbers.
 - **Next.** Aditya decides whether the real-world audit goes ahead with these measured rates
   shown next to its results, or whether the auditor is improved first.
+
+## D-040. Tune the judges again, with a separate check before the confirming run
+
+**What.** Two targeted changes, each aimed at one kind of error found on the practice rows.
+Any change that helps is checked on a second, separate set of practice rows. Only a change that
+survives that check is run once on fresh test rows.
+
+**Why.** D-039's confirming run missed the bars: flags right 0.774 against 0.80, "supported" right
+0.910 against 0.93. Reading the errors on the practice rows (console only, nothing saved) showed
+two opposite problems:
+
+- **Wrong "supported" (11 on the practice rows).** The checker accepts quotes that are close to
+  the claim but shift what it is about. "A mirror diameter of 2.4 metres" was taken to back "the
+  telescope is 2.4 m in diameter". A name "meaning Saint Joseph of the Fields" was taken to back
+  "named after Saint Joseph". One striker's comment was taken to back "they credit their success
+  to…". The benchmark's labellers reject these, and a citation checker should too.
+- **Wrong flags (31 on the practice rows; 22 of them in ExpertQA and RAGTruth).** Both judges say
+  "not supported" where people say supported. Many of these claims paraphrase, sum up or draw a
+  plain conclusion from the page. The papers do not show that those two sub-datasets are
+  labelled differently, so they stay in.
+- **What was already tried.** More judges, Sonnet, votes and probabilities moved flags right only
+  from 0.810 to about 0.82 on the practice rows. The problem is what each judge counts as
+  support, not how many judges there are.
+
+### The changes
+
+1. **A graded page judge (one call, as now).** It answers one of four: the page *states* the
+   claim; the page *implies* it (a fair paraphrase, a summary, or a plain conclusion from what it
+   says); it *does not support* it; or it *contradicts* it. Code then decides:
+   - **Supported:** the quote judge says supported, and the page judge says states. Implies is
+     not enough.
+   - **A flag:** the quote judge says not on the page or contradicted, and the page judge says
+     does not support or contradicts.
+   - **Partial:** the quote judge says partial, and the page judge says does not support or
+     contradicts, as before.
+   - **Needs a human:** everything else, including implies against a flag.
+
+   This aims at both errors at once. Supported gets stricter, and a flag is no longer raised
+   when the page plainly implies the claim.
+2. **Precision rules for the quote judge's checker.** Three general rules are added to its
+   prompt, each with no example taken from the benchmark:
+   - **The same thing.** The claim must be about the same thing as the quote. A part is not the
+     whole, a component is not the system, and a measurement of one thing is not a measurement
+     of another.
+   - **The same scope.** A statement by or about one person or source does not back a claim
+     about a group.
+   - **The same relation.** "Meaning X", "named X", "named after X" and "like X" are different
+     claims.
+
+   This aims at the wrong supported verdicts.
+
+### Tune, check, confirm
+
+- **Tune** on the 550 practice rows already used (`dev550`). Each change is run alone, then both
+  together. A change is kept only if it raises flags right or "supported" right, without lowering
+  the other or coverage by more than 0.01, as before.
+- **Check** the kept version once on a second practice set: `dev550b`, 50 rows per sub-dataset from
+  the dev split, seed 20261127, none of them in `dev550`. It goes ahead only if it still beats
+  D-039's setup there on flags right and "supported" right.
+- **Confirm** once on `test3`: 50 rows per sub-dataset from the test split, seed 20261128, none of
+  them in `test` or `test2`. The bars are unchanged: flags right 0.80, "supported" right 0.93,
+  coverage 0.70, with partial as its own verdict. The result is reported either way.
+
+### Cost
+
+All with Haiku, and each paid run needs Aditya's yes first, under a cap:
+
+| Run | About |
+|---|---|
+| Graded page judge on `dev550` | $0.15 |
+| Checker rules on `dev550` (the quote judge runs again) | $0.25 |
+| The kept version on `dev550b`, both judges | $0.40 |
+| The kept version on `test3`, both judges | $0.40 |
+| **Total** | **about $1.20** |
+
+**Considered.**
+
+- **Dropping ExpertQA and RAGTruth from the score.** The papers do not support it, as above.
+- **Prompt examples taken from the benchmark rows.** That would fit those rows. The rules are
+  written in general terms instead.
+- **Two separate page-judge calls (one strict, one lenient).** It doubles the cost, and one
+  graded answer gives the same two thresholds.
+
+**Trade-off.** "Implies" will move some claims from a verdict to "needs a human", so coverage
+may fall; the 0.70 bar is there to catch that. Prompt rules are tuning, and the second practice
+set is there to catch tuning that only fits the first one.
