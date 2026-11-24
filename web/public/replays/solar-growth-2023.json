@@ -1,0 +1,1080 @@
+{
+ "id": "solar-growth-2023",
+ "question": "How fast did global solar capacity grow in 2023?",
+ "recorded_at": "2026-11-24T08:36:45+00:00",
+ "duration_s": 26.86,
+ "models": {
+  "writer": "claude-sonnet-5-5",
+  "checker": "claude-sonnet-5-5"
+ },
+ "events": [
+  {
+   "t": 2.27,
+   "node": "plan",
+   "summary": "wrote 4 search queries",
+   "cost_usd": 0.002,
+   "data": {
+    "queries": [
+     "IRENA Renewable Capacity Statistics 2024 solar capacity added 2023",
+     "IEA Renewables 2023 report global solar PV additions record",
+     "SolarPower Europe Global Market Outlook 2024-2028 solar installations 2023 GW",
+     "BloombergNEF Ember global solar installations 2023 growth year-over-year"
+    ]
+   }
+  },
+  {
+   "t": 6.14,
+   "node": "search",
+   "summary": "found 12 pages on 11 sites",
+   "cost_usd": 0.034,
+   "data": {
+    "hosts": [
+     "about.bnef.com",
+     "ember-energy.org",
+     "en.wikipedia.org",
+     "finance.yahoo.com",
+     "iea.blob.core.windows.net",
+     "iea.org",
+     "irena.org",
+     "ortelius.be",
+     "reglobal.org",
+     "static.poder360.com.br",
+     "taiyangnews.info"
+    ]
+   }
+  },
+  {
+   "t": 14.75,
+   "node": "fetch",
+   "summary": "read 7 pages, skipped 5 (3 disallowed by robots.txt, 2 not an HTML page)",
+   "cost_usd": 0.034,
+   "data": {
+    "sources": [
+     {
+      "id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024"
+     },
+     {
+      "id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember"
+     },
+     {
+      "id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius"
+     },
+     {
+      "id": "S4",
+      "url": "https://about.bnef.com/insights/clean-energy/solar-set-to-rule-worlds-power-supply-three-things-to-know",
+      "host": "about.bnef.com",
+      "title": "Solar Set to Rule World’s Power Supply: Three Things to Know | BloombergNEF"
+     },
+     {
+      "id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022"
+     },
+     {
+      "id": "S6",
+      "url": "https://reglobal.org/solar-power-outlook-for-eu-and-turkiye",
+      "host": "reglobal.org",
+      "title": "Solar Power Outlook for EU and Türkiye - REGlobal - Mega Trends & Analysis"
+     },
+     {
+      "id": "S7",
+      "url": "https://en.wikipedia.org/wiki/Growth_of_photovoltaics",
+      "host": "en.wikipedia.org",
+      "title": "Growth of photovoltaics - Wikipedia"
+     }
+    ],
+    "skipped": [
+     {
+      "host": "iea.org",
+      "reason": "disallowed by robots.txt"
+     },
+     {
+      "host": "static.poder360.com.br",
+      "reason": "not an HTML page"
+     },
+     {
+      "host": "irena.org",
+      "reason": "disallowed by robots.txt"
+     },
+     {
+      "host": "iea.blob.core.windows.net",
+      "reason": "not an HTML page"
+     },
+     {
+      "host": "irena.org",
+      "reason": "disallowed by robots.txt"
+     }
+    ]
+   }
+  },
+  {
+   "t": 16.03,
+   "node": "index",
+   "summary": "indexed 79 passages (dense + BM25)",
+   "cost_usd": 0.0363,
+   "data": {}
+  },
+  {
+   "t": 16.59,
+   "node": "retrieve",
+   "summary": "kept the best 10 passages after reranking",
+   "cost_usd": 0.0367,
+   "data": {}
+  },
+  {
+   "t": 21.25,
+   "node": "write",
+   "summary": "wrote 7 claims",
+   "cost_usd": 0.0536,
+   "data": {
+    "claims": [
+     {
+      "text": "SolarPower Europe reported that a record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+      "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+      "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "Ember described an estimated 87% surge in solar installations in 2023.",
+      "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "BNEF reported 76% growth in solar in 2023.",
+      "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+      "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+      "source_id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "China installed 253 GW of new solar PV in 2023, 57% of the global total and a 167% year-on-year increase.",
+      "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "IRENA data cited in one passage gives 345.5 GW of solar PV additions in 2023, a lower figure than other estimates.",
+      "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+      "source_id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     }
+    ]
+   }
+  },
+  {
+   "t": 21.25,
+   "node": "quote_check",
+   "summary": "7 of 7 quotes found word for word",
+   "cost_usd": 0.0536,
+   "data": {
+    "claims": [
+     {
+      "text": "SolarPower Europe reported that a record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+      "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "SolarPower Europe recently released a comprehensive report presenting key insights and updates on the global solar PV sector. This Climate Shocker will guide you through the most significant findings from the report:\n- ",
+       "after": " This milestone establishes 2023 as a record-breaking year for solar PV.\n- Solar PV accounted for 78% of the net renewable power generating capacity in 2023, which makes solar PV the leading technological driver for new renewable energy capacity (see Figure 1). This number was 66% in 2022 and 56% in 2021.\n- Several factors contribute to this substantial growth in solar PV capacity. Firstly, a"
+      }
+     },
+     {
+      "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+      "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "to South Africa have recently picked up again after they dropped in the middle of 2023.\n2024 is set to substantially exceed most forecasts – again\nThe 593 GW estimated from the pace of additions so far this year is in line with forecasts made by Bloomberg New Energy Finance (BNEF) but is almost 200 GW higher than the International Energy Agency’s (IEA) main case outlook released in January 2024.\n",
+       "after": " – an amount that seemed inconceivable even one year before. As an example, in January 2022, BNEF predicted that global solar additions in 2023 would reach just 236 GW. As a result of the higher installations in 2023, forecasts for 2024 have been revised upwards. For example, SolarPower Europe adjusted its forecast for 2024 from 401 GW (June 2023) to 544 GW (June 2024).\nEven forecasts made by"
+      }
+     },
+     {
+      "text": "Ember described an estimated 87% surge in solar installations in 2023.",
+      "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "surge in 2024\nAnalysis of national monthly data for solar capacity additions shows that the world will – once again – beat forecasts, even though expectations are higher than ever\nThe world is on track to add 593 GW of solar power this year\nEmber estimates that at the current rate of additions, the world will install 593 GW of solar panels this year. That’s 29% more than was installed last year, ",
+       "after": " In 2024, an estimated 292 GW of solar capacity was installed by the end of July.\nEmber analysed the latest monthly solar capacity data for 15 countries, accounting for 80% of solar installations in 2023. Capacity additions in these countries increased by 29% in January to July this year, compared to the same period last year. If this 29% growth rate continues until the end of this year, they"
+      }
+     },
+     {
+      "text": "BNEF reported 76% growth in solar in 2023.",
+      "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "of the world’s electricity by the end of the decade. Under this scenario, solar shows the fastest growth, with expectations that it needs to quintuple to reach 6000 GW by 2030. After the high levels of additions in the last two years, annual solar installations would only have to show relatively modest levels of growth to meet this. BNEF forecasts average growth of 6% per year from 2024 to 2030. ",
+       "after": "\nAlthough growth of 6% per year sounds small, the absolute additions this will require will be substantial. Sustaining this pace of additions will require concerted efforts to reduce barriers to solar integration, and to enable the growth of solar power in new markets.\nCountries that have already seen rapid levels of solar growth need to make sure they are planning for power systems with high"
+      }
+     },
+     {
+      "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+      "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+      "source_id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "China commissioned as much new solar power capacity in 2023 as the entire world did in 2022, as Beijing ramped up its drive to dominate the renewable energy market.\nRenewable energy capacity surged globally last year, the International Energy Agency (IEA) said in a new report, driven chiefly by huge expansion in China.\n",
+       "after": "\nMuch of the growth has come from China. Swathes of the Gobi desert are being carpeted in solar panels. Last April the first stages of a planned 450 gigawatt solar and wind system were connected to the grid.\nXi Jinping, China's autocratic president, has promised the country's CO2 emissions will peak by 2030 but the breakneck expansion of renewables means it could start falling as soon as this"
+      }
+     },
+     {
+      "text": "China installed 253 GW of new solar PV in 2023, 57% of the global total and a 167% year-on-year increase.",
+      "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "led to a dramatic decrease in system component prices throughout 2023, with module prices dropping by approximately 50%. Secondly, the ongoing global energy crisis continued to stimulate demand across various regions, as solar PV proved to be a reliable and cost-effective solution. Additionally, the accelerated electrification of the heat and transport sectors further boosted demand.\n- ",
+       "after": " This makes the country the primary driver of global market expansion. Other countries in the top five largest solar PV markets include the United States, Brazil, Germany, and India.\n- SolarPower Europe anticipates that an average of 876 GW will be installed annually worldwide,implying an annual growth rate of 14,4%. In the “High Scenario”, the organisation expects 1.112 GW of installations per"
+      }
+     },
+     {
+      "text": "IRENA data cited in one passage gives 345.5 GW of solar PV additions in 2023, a lower figure than other estimates.",
+      "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+      "source_id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "(YoY) increase, according to IRENA’s Renewable Capacity Statistics 2025.\nTogether, solar PV and wind accounted for 96.6% of all net renewable energy additions in 2024 as wind energy capacity rose by 11.1%, adding 113 GW. For solar PV, it was China that led the installations at 278 GW.\nWith 1,865 GW, solar PV now accounts for over 3/4th of the 4,448 GW global installed renewable energy capacity. ",
+       "after": " (see IRENA Releases Renewable Capacity Statistics 2024).\nDespite 2024 being the year with the largest increase in renewable energy capacity and growth, IRENA points out that regional disparities continue to exist globally. Asia continues to command the lion’s share, with the region reporting 64% of the global renewable energy capacity additions. Central America and the Caribbean contributed the"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 23.06,
+   "node": "check",
+   "summary": "2 supported, 5 partial, 0 unverified",
+   "cost_usd": 0.0689,
+   "data": {
+    "claims": [
+     {
+      "text": "SolarPower Europe reported that a record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+      "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs the record 447 GW installed globally in 2023 and the 87% year-on-year increase, but it does not name SolarPower Europe as the source of the report.",
+      "revised": false,
+      "context": {
+       "before": "SolarPower Europe recently released a comprehensive report presenting key insights and updates on the global solar PV sector. This Climate Shocker will guide you through the most significant findings from the report:\n- ",
+       "after": " This milestone establishes 2023 as a record-breaking year for solar PV.\n- Solar PV accounted for 78% of the net renewable power generating capacity in 2023, which makes solar PV the leading technological driver for new renewable energy capacity (see Figure 1). This number was 66% in 2022 and 56% in 2021.\n- Several factors contribute to this substantial growth in solar PV capacity. Firstly, a"
+      }
+     },
+     {
+      "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+      "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "to South Africa have recently picked up again after they dropped in the middle of 2023.\n2024 is set to substantially exceed most forecasts – again\nThe 593 GW estimated from the pace of additions so far this year is in line with forecasts made by Bloomberg New Energy Finance (BNEF) but is almost 200 GW higher than the International Energy Agency’s (IEA) main case outlook released in January 2024.\n",
+       "after": " – an amount that seemed inconceivable even one year before. As an example, in January 2022, BNEF predicted that global solar additions in 2023 would reach just 236 GW. As a result of the higher installations in 2023, forecasts for 2024 have been revised upwards. For example, SolarPower Europe adjusted its forecast for 2024 from 401 GW (June 2023) to 544 GW (June 2024).\nEven forecasts made by"
+      }
+     },
+     {
+      "text": "Ember described an estimated 87% surge in solar installations in 2023.",
+      "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs an estimated 87% surge in 2023, but it does not name Ember as the source or say the surge was in solar installations.",
+      "revised": false,
+      "context": {
+       "before": "surge in 2024\nAnalysis of national monthly data for solar capacity additions shows that the world will – once again – beat forecasts, even though expectations are higher than ever\nThe world is on track to add 593 GW of solar power this year\nEmber estimates that at the current rate of additions, the world will install 593 GW of solar panels this year. That’s 29% more than was installed last year, ",
+       "after": " In 2024, an estimated 292 GW of solar capacity was installed by the end of July.\nEmber analysed the latest monthly solar capacity data for 15 countries, accounting for 80% of solar installations in 2023. Capacity additions in these countries increased by 29% in January to July this year, compared to the same period last year. If this 29% growth rate continues until the end of this year, they"
+      }
+     },
+     {
+      "text": "BNEF reported 76% growth in solar in 2023.",
+      "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote states that 'they' reported 76% growth in 2023, but it does not name BNEF as the reporter or say the growth was in solar.",
+      "revised": false,
+      "context": {
+       "before": "of the world’s electricity by the end of the decade. Under this scenario, solar shows the fastest growth, with expectations that it needs to quintuple to reach 6000 GW by 2030. After the high levels of additions in the last two years, annual solar installations would only have to show relatively modest levels of growth to meet this. BNEF forecasts average growth of 6% per year from 2024 to 2030. ",
+       "after": "\nAlthough growth of 6% per year sounds small, the absolute additions this will require will be substantial. Sustaining this pace of additions will require concerted efforts to reduce barriers to solar integration, and to enable the growth of solar power in new markets.\nCountries that have already seen rapid levels of solar growth need to make sure they are planning for power systems with high"
+      }
+     },
+     {
+      "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+      "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+      "source_id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "China commissioned as much new solar power capacity in 2023 as the entire world did in 2022, as Beijing ramped up its drive to dominate the renewable energy market.\nRenewable energy capacity surged globally last year, the International Energy Agency (IEA) said in a new report, driven chiefly by huge expansion in China.\n",
+       "after": "\nMuch of the growth has come from China. Swathes of the Gobi desert are being carpeted in solar panels. Last April the first stages of a planned 450 gigawatt solar and wind system were connected to the grid.\nXi Jinping, China's autocratic president, has promised the country's CO2 emissions will peak by 2030 but the breakneck expansion of renewables means it could start falling as soon as this"
+      }
+     },
+     {
+      "text": "China installed 253 GW of new solar PV in 2023, 57% of the global total and a 167% year-on-year increase.",
+      "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs 253 GW, 57% and 167% year-on-year growth, but it does not say the year was 2023, and it describes 57% as 'of global capacity' rather than of the global total installed that year.",
+      "revised": false,
+      "context": {
+       "before": "led to a dramatic decrease in system component prices throughout 2023, with module prices dropping by approximately 50%. Secondly, the ongoing global energy crisis continued to stimulate demand across various regions, as solar PV proved to be a reliable and cost-effective solution. Additionally, the accelerated electrification of the heat and transport sectors further boosted demand.\n- ",
+       "after": " This makes the country the primary driver of global market expansion. Other countries in the top five largest solar PV markets include the United States, Brazil, Germany, and India.\n- SolarPower Europe anticipates that an average of 876 GW will be installed annually worldwide,implying an annual growth rate of 14,4%. In the “High Scenario”, the organisation expects 1.112 GW of installations per"
+      }
+     },
+     {
+      "text": "IRENA data cited in one passage gives 345.5 GW of solar PV additions in 2023, a lower figure than other estimates.",
+      "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+      "source_id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote states 345.5 GW of solar PV in 2023 additions, but it does not name IRENA as the source and says nothing about this figure being lower than other estimates.",
+      "revised": false,
+      "context": {
+       "before": "(YoY) increase, according to IRENA’s Renewable Capacity Statistics 2025.\nTogether, solar PV and wind accounted for 96.6% of all net renewable energy additions in 2024 as wind energy capacity rose by 11.1%, adding 113 GW. For solar PV, it was China that led the installations at 278 GW.\nWith 1,865 GW, solar PV now accounts for over 3/4th of the 4,448 GW global installed renewable energy capacity. ",
+       "after": " (see IRENA Releases Renewable Capacity Statistics 2024).\nDespite 2024 being the year with the largest increase in renewable energy capacity and growth, IRENA points out that regional disparities continue to exist globally. Asia continues to command the lion’s share, with the region reporting 64% of the global renewable energy capacity additions. Central America and the Caribbean contributed the"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 23.08,
+   "node": "rewrite",
+   "summary": "no claim failed; tightening partial claims only",
+   "cost_usd": 0.0689,
+   "data": {
+    "repair_queries": []
+   }
+  },
+  {
+   "t": 23.08,
+   "node": "reretrieve",
+   "summary": "searched the fetched pages again, 0 passages to re-read",
+   "cost_usd": 0.0689,
+   "data": {
+    "repair_queries": []
+   }
+  },
+  {
+   "t": 24.7,
+   "node": "revise",
+   "summary": "rewrote 5 claims from the new passages",
+   "cost_usd": 0.0783,
+   "data": {
+    "claims": [
+     {
+      "text": "A record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+      "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "SolarPower Europe recently released a comprehensive report presenting key insights and updates on the global solar PV sector. This Climate Shocker will guide you through the most significant findings from the report:\n- ",
+       "after": " This milestone establishes 2023 as a record-breaking year for solar PV.\n- Solar PV accounted for 78% of the net renewable power generating capacity in 2023, which makes solar PV the leading technological driver for new renewable energy capacity (see Figure 1). This number was 66% in 2022 and 56% in 2021.\n- Several factors contribute to this substantial growth in solar PV capacity. Firstly, a"
+      }
+     },
+     {
+      "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+      "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "to South Africa have recently picked up again after they dropped in the middle of 2023.\n2024 is set to substantially exceed most forecasts – again\nThe 593 GW estimated from the pace of additions so far this year is in line with forecasts made by Bloomberg New Energy Finance (BNEF) but is almost 200 GW higher than the International Energy Agency’s (IEA) main case outlook released in January 2024.\n",
+       "after": " – an amount that seemed inconceivable even one year before. As an example, in January 2022, BNEF predicted that global solar additions in 2023 would reach just 236 GW. As a result of the higher installations in 2023, forecasts for 2024 have been revised upwards. For example, SolarPower Europe adjusted its forecast for 2024 from 401 GW (June 2023) to 544 GW (June 2024).\nEven forecasts made by"
+      }
+     },
+     {
+      "text": "There was an estimated 87% surge in 2023, after which strong growth was maintained.",
+      "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "surge in 2024\nAnalysis of national monthly data for solar capacity additions shows that the world will – once again – beat forecasts, even though expectations are higher than ever\nThe world is on track to add 593 GW of solar power this year\nEmber estimates that at the current rate of additions, the world will install 593 GW of solar panels this year. That’s 29% more than was installed last year, ",
+       "after": " In 2024, an estimated 292 GW of solar capacity was installed by the end of July.\nEmber analysed the latest monthly solar capacity data for 15 countries, accounting for 80% of solar installations in 2023. Capacity additions in these countries increased by 29% in January to July this year, compared to the same period last year. If this 29% growth rate continues until the end of this year, they"
+      }
+     },
+     {
+      "text": "A source reported 76% growth in 2023 and expects 33% growth in 2024.",
+      "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "of the world’s electricity by the end of the decade. Under this scenario, solar shows the fastest growth, with expectations that it needs to quintuple to reach 6000 GW by 2030. After the high levels of additions in the last two years, annual solar installations would only have to show relatively modest levels of growth to meet this. BNEF forecasts average growth of 6% per year from 2024 to 2030. ",
+       "after": "\nAlthough growth of 6% per year sounds small, the absolute additions this will require will be substantial. Sustaining this pace of additions will require concerted efforts to reduce barriers to solar integration, and to enable the growth of solar power in new markets.\nCountries that have already seen rapid levels of solar growth need to make sure they are planning for power systems with high"
+      }
+     },
+     {
+      "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+      "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+      "source_id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "China commissioned as much new solar power capacity in 2023 as the entire world did in 2022, as Beijing ramped up its drive to dominate the renewable energy market.\nRenewable energy capacity surged globally last year, the International Energy Agency (IEA) said in a new report, driven chiefly by huge expansion in China.\n",
+       "after": "\nMuch of the growth has come from China. Swathes of the Gobi desert are being carpeted in solar panels. Last April the first stages of a planned 450 gigawatt solar and wind system were connected to the grid.\nXi Jinping, China's autocratic president, has promised the country's CO2 emissions will peak by 2030 but the breakneck expansion of renewables means it could start falling as soon as this"
+      }
+     },
+     {
+      "text": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, a 167% year-on-year growth rate.",
+      "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "led to a dramatic decrease in system component prices throughout 2023, with module prices dropping by approximately 50%. Secondly, the ongoing global energy crisis continued to stimulate demand across various regions, as solar PV proved to be a reliable and cost-effective solution. Additionally, the accelerated electrification of the heat and transport sectors further boosted demand.\n- ",
+       "after": " This makes the country the primary driver of global market expansion. Other countries in the top five largest solar PV markets include the United States, Brazil, Germany, and India.\n- SolarPower Europe anticipates that an average of 876 GW will be installed annually worldwide,implying an annual growth rate of 14,4%. In the “High Scenario”, the organisation expects 1.112 GW of installations per"
+      }
+     },
+     {
+      "text": "In 2023, renewables accounted for 86% of global power sector additions, including 345.5 GW of solar PV.",
+      "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+      "source_id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "(YoY) increase, according to IRENA’s Renewable Capacity Statistics 2025.\nTogether, solar PV and wind accounted for 96.6% of all net renewable energy additions in 2024 as wind energy capacity rose by 11.1%, adding 113 GW. For solar PV, it was China that led the installations at 278 GW.\nWith 1,865 GW, solar PV now accounts for over 3/4th of the 4,448 GW global installed renewable energy capacity. ",
+       "after": " (see IRENA Releases Renewable Capacity Statistics 2024).\nDespite 2024 being the year with the largest increase in renewable energy capacity and growth, IRENA points out that regional disparities continue to exist globally. Asia continues to command the lion’s share, with the region reporting 64% of the global renewable energy capacity additions. Central America and the Caribbean contributed the"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 24.7,
+   "node": "quote_check",
+   "summary": "7 of 7 quotes found word for word",
+   "cost_usd": 0.0783,
+   "data": {
+    "claims": [
+     {
+      "text": "A record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+      "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "SolarPower Europe recently released a comprehensive report presenting key insights and updates on the global solar PV sector. This Climate Shocker will guide you through the most significant findings from the report:\n- ",
+       "after": " This milestone establishes 2023 as a record-breaking year for solar PV.\n- Solar PV accounted for 78% of the net renewable power generating capacity in 2023, which makes solar PV the leading technological driver for new renewable energy capacity (see Figure 1). This number was 66% in 2022 and 56% in 2021.\n- Several factors contribute to this substantial growth in solar PV capacity. Firstly, a"
+      }
+     },
+     {
+      "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+      "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "to South Africa have recently picked up again after they dropped in the middle of 2023.\n2024 is set to substantially exceed most forecasts – again\nThe 593 GW estimated from the pace of additions so far this year is in line with forecasts made by Bloomberg New Energy Finance (BNEF) but is almost 200 GW higher than the International Energy Agency’s (IEA) main case outlook released in January 2024.\n",
+       "after": " – an amount that seemed inconceivable even one year before. As an example, in January 2022, BNEF predicted that global solar additions in 2023 would reach just 236 GW. As a result of the higher installations in 2023, forecasts for 2024 have been revised upwards. For example, SolarPower Europe adjusted its forecast for 2024 from 401 GW (June 2023) to 544 GW (June 2024).\nEven forecasts made by"
+      }
+     },
+     {
+      "text": "There was an estimated 87% surge in 2023, after which strong growth was maintained.",
+      "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "surge in 2024\nAnalysis of national monthly data for solar capacity additions shows that the world will – once again – beat forecasts, even though expectations are higher than ever\nThe world is on track to add 593 GW of solar power this year\nEmber estimates that at the current rate of additions, the world will install 593 GW of solar panels this year. That’s 29% more than was installed last year, ",
+       "after": " In 2024, an estimated 292 GW of solar capacity was installed by the end of July.\nEmber analysed the latest monthly solar capacity data for 15 countries, accounting for 80% of solar installations in 2023. Capacity additions in these countries increased by 29% in January to July this year, compared to the same period last year. If this 29% growth rate continues until the end of this year, they"
+      }
+     },
+     {
+      "text": "A source reported 76% growth in 2023 and expects 33% growth in 2024.",
+      "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "of the world’s electricity by the end of the decade. Under this scenario, solar shows the fastest growth, with expectations that it needs to quintuple to reach 6000 GW by 2030. After the high levels of additions in the last two years, annual solar installations would only have to show relatively modest levels of growth to meet this. BNEF forecasts average growth of 6% per year from 2024 to 2030. ",
+       "after": "\nAlthough growth of 6% per year sounds small, the absolute additions this will require will be substantial. Sustaining this pace of additions will require concerted efforts to reduce barriers to solar integration, and to enable the growth of solar power in new markets.\nCountries that have already seen rapid levels of solar growth need to make sure they are planning for power systems with high"
+      }
+     },
+     {
+      "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+      "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+      "source_id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "China commissioned as much new solar power capacity in 2023 as the entire world did in 2022, as Beijing ramped up its drive to dominate the renewable energy market.\nRenewable energy capacity surged globally last year, the International Energy Agency (IEA) said in a new report, driven chiefly by huge expansion in China.\n",
+       "after": "\nMuch of the growth has come from China. Swathes of the Gobi desert are being carpeted in solar panels. Last April the first stages of a planned 450 gigawatt solar and wind system were connected to the grid.\nXi Jinping, China's autocratic president, has promised the country's CO2 emissions will peak by 2030 but the breakneck expansion of renewables means it could start falling as soon as this"
+      }
+     },
+     {
+      "text": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, a 167% year-on-year growth rate.",
+      "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "led to a dramatic decrease in system component prices throughout 2023, with module prices dropping by approximately 50%. Secondly, the ongoing global energy crisis continued to stimulate demand across various regions, as solar PV proved to be a reliable and cost-effective solution. Additionally, the accelerated electrification of the heat and transport sectors further boosted demand.\n- ",
+       "after": " This makes the country the primary driver of global market expansion. Other countries in the top five largest solar PV markets include the United States, Brazil, Germany, and India.\n- SolarPower Europe anticipates that an average of 876 GW will be installed annually worldwide,implying an annual growth rate of 14,4%. In the “High Scenario”, the organisation expects 1.112 GW of installations per"
+      }
+     },
+     {
+      "text": "In 2023, renewables accounted for 86% of global power sector additions, including 345.5 GW of solar PV.",
+      "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+      "source_id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "(YoY) increase, according to IRENA’s Renewable Capacity Statistics 2025.\nTogether, solar PV and wind accounted for 96.6% of all net renewable energy additions in 2024 as wind energy capacity rose by 11.1%, adding 113 GW. For solar PV, it was China that led the installations at 278 GW.\nWith 1,865 GW, solar PV now accounts for over 3/4th of the 4,448 GW global installed renewable energy capacity. ",
+       "after": " (see IRENA Releases Renewable Capacity Statistics 2024).\nDespite 2024 being the year with the largest increase in renewable energy capacity and growth, IRENA points out that regional disparities continue to exist globally. Asia continues to command the lion’s share, with the region reporting 64% of the global renewable energy capacity additions. Central America and the Caribbean contributed the"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 26.38,
+   "node": "check",
+   "summary": "7 supported, 0 partial, 0 unverified",
+   "cost_usd": 0.089,
+   "data": {
+    "claims": [
+     {
+      "text": "A record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+      "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "SolarPower Europe recently released a comprehensive report presenting key insights and updates on the global solar PV sector. This Climate Shocker will guide you through the most significant findings from the report:\n- ",
+       "after": " This milestone establishes 2023 as a record-breaking year for solar PV.\n- Solar PV accounted for 78% of the net renewable power generating capacity in 2023, which makes solar PV the leading technological driver for new renewable energy capacity (see Figure 1). This number was 66% in 2022 and 56% in 2021.\n- Several factors contribute to this substantial growth in solar PV capacity. Firstly, a"
+      }
+     },
+     {
+      "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+      "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "to South Africa have recently picked up again after they dropped in the middle of 2023.\n2024 is set to substantially exceed most forecasts – again\nThe 593 GW estimated from the pace of additions so far this year is in line with forecasts made by Bloomberg New Energy Finance (BNEF) but is almost 200 GW higher than the International Energy Agency’s (IEA) main case outlook released in January 2024.\n",
+       "after": " – an amount that seemed inconceivable even one year before. As an example, in January 2022, BNEF predicted that global solar additions in 2023 would reach just 236 GW. As a result of the higher installations in 2023, forecasts for 2024 have been revised upwards. For example, SolarPower Europe adjusted its forecast for 2024 from 401 GW (June 2023) to 544 GW (June 2024).\nEven forecasts made by"
+      }
+     },
+     {
+      "text": "There was an estimated 87% surge in 2023, after which strong growth was maintained.",
+      "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "surge in 2024\nAnalysis of national monthly data for solar capacity additions shows that the world will – once again – beat forecasts, even though expectations are higher than ever\nThe world is on track to add 593 GW of solar power this year\nEmber estimates that at the current rate of additions, the world will install 593 GW of solar panels this year. That’s 29% more than was installed last year, ",
+       "after": " In 2024, an estimated 292 GW of solar capacity was installed by the end of July.\nEmber analysed the latest monthly solar capacity data for 15 countries, accounting for 80% of solar installations in 2023. Capacity additions in these countries increased by 29% in January to July this year, compared to the same period last year. If this 29% growth rate continues until the end of this year, they"
+      }
+     },
+     {
+      "text": "A source reported 76% growth in 2023 and expects 33% growth in 2024.",
+      "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+      "source_id": "S2",
+      "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+      "host": "ember-energy.org",
+      "title": "Solar power continues to surge in 2024 | Ember",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "of the world’s electricity by the end of the decade. Under this scenario, solar shows the fastest growth, with expectations that it needs to quintuple to reach 6000 GW by 2030. After the high levels of additions in the last two years, annual solar installations would only have to show relatively modest levels of growth to meet this. BNEF forecasts average growth of 6% per year from 2024 to 2030. ",
+       "after": "\nAlthough growth of 6% per year sounds small, the absolute additions this will require will be substantial. Sustaining this pace of additions will require concerted efforts to reduce barriers to solar integration, and to enable the growth of solar power in new markets.\nCountries that have already seen rapid levels of solar growth need to make sure they are planning for power systems with high"
+      }
+     },
+     {
+      "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+      "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+      "source_id": "S5",
+      "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+      "host": "finance.yahoo.com",
+      "title": "China built more solar panels in 2023 than entire world in 2022",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "China commissioned as much new solar power capacity in 2023 as the entire world did in 2022, as Beijing ramped up its drive to dominate the renewable energy market.\nRenewable energy capacity surged globally last year, the International Energy Agency (IEA) said in a new report, driven chiefly by huge expansion in China.\n",
+       "after": "\nMuch of the growth has come from China. Swathes of the Gobi desert are being carpeted in solar panels. Last April the first stages of a planned 450 gigawatt solar and wind system were connected to the grid.\nXi Jinping, China's autocratic president, has promised the country's CO2 emissions will peak by 2030 but the breakneck expansion of renewables means it could start falling as soon as this"
+      }
+     },
+     {
+      "text": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, a 167% year-on-year growth rate.",
+      "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+      "source_id": "S3",
+      "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+      "host": "ortelius.be",
+      "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "led to a dramatic decrease in system component prices throughout 2023, with module prices dropping by approximately 50%. Secondly, the ongoing global energy crisis continued to stimulate demand across various regions, as solar PV proved to be a reliable and cost-effective solution. Additionally, the accelerated electrification of the heat and transport sectors further boosted demand.\n- ",
+       "after": " This makes the country the primary driver of global market expansion. Other countries in the top five largest solar PV markets include the United States, Brazil, Germany, and India.\n- SolarPower Europe anticipates that an average of 876 GW will be installed annually worldwide,implying an annual growth rate of 14,4%. In the “High Scenario”, the organisation expects 1.112 GW of installations per"
+      }
+     },
+     {
+      "text": "In 2023, renewables accounted for 86% of global power sector additions, including 345.5 GW of solar PV.",
+      "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+      "source_id": "S1",
+      "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+      "host": "taiyangnews.info",
+      "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "(YoY) increase, according to IRENA’s Renewable Capacity Statistics 2025.\nTogether, solar PV and wind accounted for 96.6% of all net renewable energy additions in 2024 as wind energy capacity rose by 11.1%, adding 113 GW. For solar PV, it was China that led the installations at 278 GW.\nWith 1,865 GW, solar PV now accounts for over 3/4th of the 4,448 GW global installed renewable energy capacity. ",
+       "after": " (see IRENA Releases Renewable Capacity Statistics 2024).\nDespite 2024 being the year with the largest increase in renewable energy capacity and growth, IRENA points out that regional disparities continue to exist globally. Asia continues to command the lion’s share, with the region reporting 64% of the global renewable energy capacity additions. Central America and the Caribbean contributed the"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "report": {
+  "question": "How fast did global solar capacity grow in 2023?",
+  "claims": [
+   {
+    "text": "A record 447 GW of solar capacity was installed globally in 2023, an 87% year-on-year increase.",
+    "quote": "In 2023, a record 447 GW of solar capacity was installed globally, reflecting an impressive year-on-year increase of 87%.",
+    "source_id": "S3",
+    "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+    "host": "ortelius.be",
+    "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "SolarPower Europe recently released a comprehensive report presenting key insights and updates on the global solar PV sector. This Climate Shocker will guide you through the most significant findings from the report:\n- ",
+     "after": " This milestone establishes 2023 as a record-breaking year for solar PV.\n- Solar PV accounted for 78% of the net renewable power generating capacity in 2023, which makes solar PV the leading technological driver for new renewable energy capacity (see Figure 1). This number was 66% in 2022 and 56% in 2021.\n- Several factors contribute to this substantial growth in solar PV capacity. Firstly, a"
+    }
+   },
+   {
+    "text": "Ember, BNEF and SolarPower Europe estimates put global solar installations in 2023 at around 450 GW.",
+    "quote": "According to estimates from Ember, BNEF, and SolarPower Europe, the world installed around 450 GW of solar panels in 2023",
+    "source_id": "S2",
+    "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+    "host": "ember-energy.org",
+    "title": "Solar power continues to surge in 2024 | Ember",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "to South Africa have recently picked up again after they dropped in the middle of 2023.\n2024 is set to substantially exceed most forecasts – again\nThe 593 GW estimated from the pace of additions so far this year is in line with forecasts made by Bloomberg New Energy Finance (BNEF) but is almost 200 GW higher than the International Energy Agency’s (IEA) main case outlook released in January 2024.\n",
+     "after": " – an amount that seemed inconceivable even one year before. As an example, in January 2022, BNEF predicted that global solar additions in 2023 would reach just 236 GW. As a result of the higher installations in 2023, forecasts for 2024 have been revised upwards. For example, SolarPower Europe adjusted its forecast for 2024 from 401 GW (June 2023) to 544 GW (June 2024).\nEven forecasts made by"
+    }
+   },
+   {
+    "text": "There was an estimated 87% surge in 2023, after which strong growth was maintained.",
+    "quote": "maintaining strong growth even after an estimated 87% surge in 2023.",
+    "source_id": "S2",
+    "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+    "host": "ember-energy.org",
+    "title": "Solar power continues to surge in 2024 | Ember",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "surge in 2024\nAnalysis of national monthly data for solar capacity additions shows that the world will – once again – beat forecasts, even though expectations are higher than ever\nThe world is on track to add 593 GW of solar power this year\nEmber estimates that at the current rate of additions, the world will install 593 GW of solar panels this year. That’s 29% more than was installed last year, ",
+     "after": " In 2024, an estimated 292 GW of solar capacity was installed by the end of July.\nEmber analysed the latest monthly solar capacity data for 15 countries, accounting for 80% of solar installations in 2023. Capacity additions in these countries increased by 29% in January to July this year, compared to the same period last year. If this 29% growth rate continues until the end of this year, they"
+    }
+   },
+   {
+    "text": "A source reported 76% growth in 2023 and expects 33% growth in 2024.",
+    "quote": "They reported 76% growth in 2023 and are expecting 33% in 2024.",
+    "source_id": "S2",
+    "url": "https://ember-energy.org/latest-insights/solar-power-continues-to-surge-in-2024",
+    "host": "ember-energy.org",
+    "title": "Solar power continues to surge in 2024 | Ember",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "of the world’s electricity by the end of the decade. Under this scenario, solar shows the fastest growth, with expectations that it needs to quintuple to reach 6000 GW by 2030. After the high levels of additions in the last two years, annual solar installations would only have to show relatively modest levels of growth to meet this. BNEF forecasts average growth of 6% per year from 2024 to 2030. ",
+     "after": "\nAlthough growth of 6% per year sounds small, the absolute additions this will require will be substantial. Sustaining this pace of additions will require concerted efforts to reduce barriers to solar integration, and to enable the growth of solar power in new markets.\nCountries that have already seen rapid levels of solar growth need to make sure they are planning for power systems with high"
+    }
+   },
+   {
+    "text": "The IEA said global renewable electricity capacity grew by 50% in 2023.",
+    "quote": "\"The world's capacity to generate renewable electricity is expanding faster than at any time in the last three decades,\" the IEA said, pointing out that capacity grew by 50pc globally in 2023.",
+    "source_id": "S5",
+    "url": "https://finance.yahoo.com/news/china-built-more-solar-panels-161831795.html",
+    "host": "finance.yahoo.com",
+    "title": "China built more solar panels in 2023 than entire world in 2022",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "China commissioned as much new solar power capacity in 2023 as the entire world did in 2022, as Beijing ramped up its drive to dominate the renewable energy market.\nRenewable energy capacity surged globally last year, the International Energy Agency (IEA) said in a new report, driven chiefly by huge expansion in China.\n",
+     "after": "\nMuch of the growth has come from China. Swathes of the Gobi desert are being carpeted in solar panels. Last April the first stages of a planned 450 gigawatt solar and wind system were connected to the grid.\nXi Jinping, China's autocratic president, has promised the country's CO2 emissions will peak by 2030 but the breakneck expansion of renewables means it could start falling as soon as this"
+    }
+   },
+   {
+    "text": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, a 167% year-on-year growth rate.",
+    "quote": "China installed 253 GW of new solar PV capacity, accounting for 57% of global capacity, and marking a 167% year-on-year growth rate.",
+    "source_id": "S3",
+    "url": "https://ortelius.be/five-takeaways-from-the-global-market-outlook-for-solar-power-2024-2028",
+    "host": "ortelius.be",
+    "title": "Five takeaways from the Global Market Outlook for Solar Power 2024-2028 – Ortelius",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "led to a dramatic decrease in system component prices throughout 2023, with module prices dropping by approximately 50%. Secondly, the ongoing global energy crisis continued to stimulate demand across various regions, as solar PV proved to be a reliable and cost-effective solution. Additionally, the accelerated electrification of the heat and transport sectors further boosted demand.\n- ",
+     "after": " This makes the country the primary driver of global market expansion. Other countries in the top five largest solar PV markets include the United States, Brazil, Germany, and India.\n- SolarPower Europe anticipates that an average of 876 GW will be installed annually worldwide,implying an annual growth rate of 14,4%. In the “High Scenario”, the organisation expects 1.112 GW of installations per"
+    }
+   },
+   {
+    "text": "In 2023, renewables accounted for 86% of global power sector additions, including 345.5 GW of solar PV.",
+    "quote": "In 2023, renewables accounted for 86% of the global power sector additions, including 345.5 GW of solar PV",
+    "source_id": "S1",
+    "url": "https://taiyangnews.info/business/irena-renewable-capacity-statistics-2025",
+    "host": "taiyangnews.info",
+    "title": "IRENA: A Record 452 GW Solar Capacity Installed In 2024",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "(YoY) increase, according to IRENA’s Renewable Capacity Statistics 2025.\nTogether, solar PV and wind accounted for 96.6% of all net renewable energy additions in 2024 as wind energy capacity rose by 11.1%, adding 113 GW. For solar PV, it was China that led the installations at 278 GW.\nWith 1,865 GW, solar PV now accounts for over 3/4th of the 4,448 GW global installed renewable energy capacity. ",
+     "after": " (see IRENA Releases Renewable Capacity Statistics 2024).\nDespite 2024 being the year with the largest increase in renewable energy capacity and growth, IRENA points out that regional disparities continue to exist globally. Asia continues to command the lion’s share, with the region reporting 64% of the global renewable energy capacity additions. Central America and the Caribbean contributed the"
+    }
+   }
+  ],
+  "labels": {
+   "supported": 7,
+   "partial": 0,
+   "unverified": 0
+  },
+  "sources_read": 7,
+  "sources_skipped": 5,
+  "passages_indexed": 79,
+  "repair_rounds": 1,
+  "cost": {
+   "total_usd": 0.089,
+   "cap_usd": 1.0,
+   "by_node": [
+    {
+     "node": "plan",
+     "calls": 1,
+     "usd": 0.002
+    },
+    {
+     "node": "search",
+     "calls": 4,
+     "usd": 0.032
+    },
+    {
+     "node": "index",
+     "calls": 1,
+     "usd": 0.0023
+    },
+    {
+     "node": "retrieve",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "write",
+     "calls": 1,
+     "usd": 0.0169
+    },
+    {
+     "node": "check",
+     "calls": 12,
+     "usd": 0.0261
+    },
+    {
+     "node": "revise",
+     "calls": 5,
+     "usd": 0.0093
+    }
+   ]
+  }
+ }
+}

@@ -64,10 +64,12 @@ def describe(node: str, update: dict[str, Any]) -> str:
         return f"{_plural(len(update['repairs']), 'claim')} failed; wrote a new query for each"
     if node == "reretrieve":
         passages = sum(len(r.passages) for r in update["repairs"])
+        if not update["repairs"]:
+            return "nothing to search for"
         return f"searched the fetched pages again, {_plural(passages, 'passage')} to re-read"
     if node == "revise":
         rewritten = sum(c.revised and c.verdict is None for c in update["checked"])
-        return f"rewrote {_plural(rewritten, 'claim')} from the new passages"
+        return f"rewrote {_plural(rewritten, 'claim')}"
     return ""
 
 

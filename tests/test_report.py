@@ -94,9 +94,7 @@ def test_each_node_gets_a_plain_sentence() -> None:
     assert describe("reretrieve", {"repairs": repairs}) == (
         "searched the fetched pages again, 2 passages to re-read"
     )
-    assert describe("revise", {"checked": [*ALL, PENDING]}) == (
-        "rewrote 1 claim from the new passages"
-    )
+    assert describe("revise", {"checked": [*ALL, PENDING]}) == ("rewrote 1 claim")
 
 
 def test_final_report_shows_label_quote_reason_source_and_cost() -> None:

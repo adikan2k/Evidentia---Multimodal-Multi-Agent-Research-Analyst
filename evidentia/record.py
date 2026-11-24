@@ -57,7 +57,19 @@ async def record(replay_id: str, question: str) -> Path:
     REPLAYS_DIR.mkdir(parents=True, exist_ok=True)
     path = REPLAYS_DIR / f"{replay_id}.json"
     path.write_text(json.dumps(replay, indent=1, ensure_ascii=False), encoding="utf-8")
+    write_index()
     return path
+
+
+def write_index() -> None:
+    """The list of recorded runs the site offers, rebuilt from the files that exist."""
+    replays = [
+        json.loads(p.read_text(encoding="utf-8"))
+        for p in sorted(REPLAYS_DIR.glob("*.json"))
+        if p.name != "index.json"
+    ]
+    index = [{"id": r["id"], "question": r["question"]} for r in replays]
+    (REPLAYS_DIR / "index.json").write_text(json.dumps(index, indent=1), encoding="utf-8")
 
 
 def main() -> None:
