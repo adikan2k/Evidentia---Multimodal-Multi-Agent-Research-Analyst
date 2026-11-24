@@ -147,8 +147,12 @@ def combine(quote_label: AuditLabel, page: str | None) -> AuditLabel:
         return quote_label  # one judge only, or the page could not be checked at all
     if page == "no_answer":
         return "unchecked"
-    if page in ("uncertain", "implied"):
-        return "needs_human"  # implied is not enough to call a claim supported, nor to flag it
+    if page == "implied":
+        # D-040: implied is not enough to call a claim supported, nor to flag it. But partial
+        # (the main point backed, a detail not) is what an implying page shows, so it stays.
+        return "partial" if quote_label == "partial" else "needs_human"
+    if page == "uncertain":
+        return "needs_human"
     agrees = (quote_label == "supported") == (page == "supported")
     return quote_label if agrees else "needs_human"
 

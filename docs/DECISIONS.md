@@ -1735,3 +1735,45 @@ All with Haiku, and each paid run needs Aditya's yes first, under a cap:
 **Trade-off.** "Implies" will move some claims from a verdict to "needs a human", so coverage
 may fall; the 0.70 bar is there to catch that. Prompt rules are tuning, and the second practice
 set is there to catch tuning that only fits the first one.
+
+### What D-040 found
+
+Spent: $0.79 (graded judge $0.15, checker rules $0.25, second practice set $0.39 + $0.14 less
+what was reused). Every number below is in `evals/results/aggrefact_dev550*_*.json`, except the
+pooled figures, which come from saved rows and are not yet in a result file.
+
+**Tuning on `dev550`**, with partial as its own verdict:
+
+| Version | Flags right | "Supported" right | Coverage | Kept? |
+|---|---|---|---|---|
+| D-039 setup | 0.810 | 0.940 | 0.804 | the base |
+| Checker rules | 0.802 | 0.939 | 0.771 | no: worse on all three |
+| Graded page judge, as designed | 0.837 | 0.946 | 0.675 | no: coverage fell 0.13 |
+| Graded, "implies" keeps partial as partial | 0.837 | 0.946 | 0.816 | yes, for the check |
+| Graded plus rules | 0.829 | 0.942 | 0.796 | no |
+
+The kept reading of "implies" was chosen from four, on the same rows. The rule behind it: an
+implying page backs the main point, and that is what partial says. "Implies" is still not
+enough for supported, and it still blocks a flag.
+
+**The check on `dev550b`** (550 dev rows never used):
+
+| Version | Flags right | "Supported" right | Coverage |
+|---|---|---|---|
+| D-039 setup | 0.839 (0.790 to 0.886) | 0.943 (0.905 to 0.975) | 0.829 |
+| Graded page judge | 0.861 (0.813 to 0.906) | 0.938 (0.899 to 0.973) | 0.807 |
+
+The graded judge wins on flags and loses slightly on "supported", so by the rule fixed above it
+does not go on to `test3`. It stays in the code, switched off (`page_judge_graded`).
+
+**What the three samples show together.** The same D-039 setup scored 0.810, 0.839 and 0.774 for
+flags right on three separate sets of 550 rows. That spread comes from which rows are drawn, and
+it is as large as any change tried in D-039 or D-040. Pooled over the 1,100 rows never used to
+tune it (`dev550b` and `test2`):
+
+- flags right **0.806** (0.767 to 0.844);
+- "supported" right **0.926** (0.897 to 0.951);
+- coverage **0.823**.
+
+Both bars lie inside those intervals. The auditor's true rates sit at the bars, and a single run
+of 550 rows cannot say on which side.

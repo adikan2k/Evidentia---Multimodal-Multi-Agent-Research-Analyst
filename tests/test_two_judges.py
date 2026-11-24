@@ -437,6 +437,8 @@ def test_cache_tokens_are_counted_per_step(settings) -> None:
         ("not_found", "does_not_support", "not_found"),
         ("contradicted", "contradicts", "contradicted"),
         ("partial", "does_not_support", "partial"),
+        ("partial", "implies", "partial"),  # an implying page backs the main point
+        ("partial", "states", "needs_human"),
         ("supported", "does_not_support", "needs_human"),
     ],
 )
