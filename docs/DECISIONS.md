@@ -1180,3 +1180,32 @@ real-world audit (step 4) measures the rest.
   in the evals group only.
 - **Metric.** The MiniCheck paper (section 4.1) reports balanced accuracy, with no
   per-dataset threshold tuning in the main results.
+
+### What the LLM-AggreFact run showed (Haiku)
+
+Every number below is in `evals/results/aggrefact_*_haiku*.json`.
+
+- **Dev rows, first prompts** (`aggrefact_dev_haiku_v1.json`): the auditor scored 0.718 and the
+  direct baseline 0.794. On a re-run of the wrong rows, the checker's reasons showed multi-part
+  summary claims left partial because no quote covered one part.
+- **The one prompt fix.** The finder was told that its quotes together must cover every part of
+  the claim, and the quote limit went from 3 to 5. The dev score moved to 0.725
+  (`aggrefact_dev_haiku.json`), within noise. No further tuning: 55 rows cannot support it.
+- **Test, 550 rows** (`aggrefact_test_haiku.json`):
+  - Balanced accuracy: auditor 0.688 (0.646 to 0.728), direct 0.768 (0.721 to 0.811).
+    Difference −0.080 (−0.120 to −0.038).
+  - When each says supported, it is right 0.915 (auditor) and 0.910 (direct). Each rejects
+    0.916 and 0.876 of unsupported rows, and accepts 0.523 and 0.730 of supported rows.
+  - Auditor labels: 199 supported, 189 partial, 141 not found, 21 contradicted. Partial counted
+    as supported gives 0.696 (0.648 to 0.748).
+  - The worst sub-datasets for the auditor against direct are TofuEval-MediaS (0.483 against
+    0.729) and XSum (0.554 against 0.747). Both have summary claims that blend several parts of
+    a document.
+  - Cost $0.38 for both systems: $0.00045 per claim for the auditor, $0.00024 for direct.
+
+**What this means.** Requiring exact quotes makes the auditor strict. It rarely calls a wrong
+claim supported, but it rejects many claims a person would accept, because they paraphrase or
+combine parts of the page. On this benchmark that strictness loses to a plain yes/no. The claims
+in step 3's real answers are split into single facts first, which should suit quoting better,
+but that is untested. The Sonnet run stays separate and needs Aditya's yes. The README says the
+auditor scores below the baseline.

@@ -57,8 +57,23 @@ Each claim gets one label: supported, partial, contradicted, not on the cited pa
 it), or uncited. A claim citing several pages shows its best result and is flagged if another
 cited page contradicts it.
 
-The auditor has not been measured yet. The run on LLM-AggreFact, a benchmark labelled by people,
-is built (`uv run python -m evals aggrefact --help`) but has not been run.
+### How the auditor compares with people's labels
+
+LLM-AggreFact pairs claims with documents, each labelled supported or not by people. On 550 of
+its test rows (50 from each of 11 sub-datasets), with Claude Haiku for both the auditor and the
+baseline:
+
+| System | Balanced accuracy | When it says supported, right | Supported rows it accepts | Unsupported rows it rejects |
+|---|---|---|---|---|
+| Auditor (exact quotes, then a check on the quotes alone) | 0.688 (0.646 to 0.728) | 0.915 | 0.523 | 0.916 |
+| Plain yes/no on the whole document | 0.768 (0.721 to 0.811) | 0.910 | 0.730 | 0.876 |
+
+**The auditor agrees with people less than a plain yes/no does** (difference −0.080, from
+−0.120 to −0.038). It is stricter, not looser. When it says supported it is right as often as
+the baseline, but it turns down about half the claims people accept. Most of those become
+partial: the claim states something no quote states word for word. Counting partial as
+supported gives 0.696, still below the baseline. The auditor cost $0.00045 per claim here, the
+baseline $0.00024. Full table: `evals/results/REPORT.md`.
 
 ## What the evaluation found
 

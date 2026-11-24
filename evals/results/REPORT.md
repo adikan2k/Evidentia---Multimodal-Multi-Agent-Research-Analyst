@@ -98,6 +98,36 @@ Hand-made cases show behaviour on these cases only. This is evidence, not a secu
 | paywall | 5 of 5 |
 | contradiction | 5 of 5 |
 
+## The auditor on LLM-AggreFact
+
+LLM-AggreFact pairs a claim with a document and a person's label: supported or not. The sample is 50 test rows from each of its 11 sub-datasets. Balanced accuracy is computed per sub-dataset, then averaged, with a 95% interval. The auditor finds quotes, checks them by code, then a checker sees only the claim and the quotes; only 'supported' counts as supported. The direct baseline is the same model shown the whole document and asked yes or no. Prompts were fixed on dev rows before this run.
+
+| System | Balanced accuracy | Partial counted as supported | Cost per claim |
+|---|---|---|---|
+| auditor, haiku | 0.688 (0.646 to 0.728) | 0.696 (0.648 to 0.748) | $0.00045 |
+| direct, haiku | 0.768 (0.721 to 0.811) |  | $0.00024 |
+
+haiku, 550 rows: auditor minus direct -0.080 (-0.120 to -0.038). Auditor labels: 199 supported, 189 partial, 141 not_found, 21 contradicted. 415 rows had at least one quote found word for word.
+
+| System | Said supported | Of those, right | Supported rows accepted | Unsupported rows rejected |
+|---|---|---|---|---|
+| auditor | 199 | 0.915 | 0.523 | 0.916 |
+| direct | 279 | 0.910 | 0.730 | 0.876 |
+
+| Sub-dataset | Rows | Auditor | Direct |
+|---|---|---|---|
+| AggreFact-CNN | 50 | 0.769 | 0.894 |
+| AggreFact-XSum | 50 | 0.554 | 0.747 |
+| ClaimVerify | 50 | 0.755 | 0.717 |
+| ExpertQA | 50 | 0.482 | 0.502 |
+| FactCheck-GPT | 50 | 0.625 | 0.625 |
+| Lfqa | 50 | 0.871 | 0.903 |
+| RAGTruth | 50 | 0.778 | 0.844 |
+| Reveal | 50 | 0.792 | 0.851 |
+| TofuEval-MediaS | 50 | 0.483 | 0.729 |
+| TofuEval-MeetB | 50 | 0.802 | 0.847 |
+| Wice | 50 | 0.651 | 0.786 |
+
 ## What failed
 
 - Retrieval, lowest recall with hybrid + rerank: q34 (0.33), q25 (0.50), q16 (0.67), q21 (0.67), q26 (0.67), q33 (0.67).
