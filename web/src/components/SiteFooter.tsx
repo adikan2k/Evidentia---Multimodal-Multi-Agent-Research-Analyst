@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { REPO, SHELL } from "@/components/SiteHeader";
+import { REPO, SHELL } from "@/lib/site";
 
 const AUTHOR = "https://github.com/adikan2k";
 

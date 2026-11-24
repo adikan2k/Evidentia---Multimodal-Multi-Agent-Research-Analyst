@@ -64,81 +64,85 @@ body {
   border-radius: 2px;
 }
 
-/* Small interface text: sentence case, in the sans face. Never under 13px. */
-.label {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.35;
-}
+/* The site's own classes sit in the components layer, so a Tailwind utility on the same
+   element (a size, a weight, a colour) wins over them. Outside a layer they would always win. */
+@layer components {
+  /* Small interface text: sentence case, in the sans face. Never under 13px. */
+  .label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.35;
+  }
 
-/* Numbers and data labels: the mono face, uppercase, never under 12px. */
-.data {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
-}
+  /* Numbers and data labels: the mono face, uppercase, never under 12px. */
+  .data {
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
 
-.display-1 {
-  font-size: clamp(2.5rem, 1.2rem + 3.2vw, 4.75rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 0.98;
-}
+  .display-1 {
+    font-size: clamp(2.5rem, 1.2rem + 3.2vw, 4.75rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+  }
 
-.display-2 {
-  font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.875rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
+  .display-2 {
+    font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.875rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
 
-.display-3 {
-  font-size: 1.375rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
+  .display-3 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
 
-.lead {
-  font-size: 1.125rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-}
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
 
-/* The sheet of paper the audited answer lies on. */
-.sheet {
-  background: var(--sheet);
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  box-shadow:
-    0 1px 0 var(--rule),
-    0 18px 40px -24px rgb(20 20 19 / 0.28);
-}
+  /* The sheet of paper the audited answer lies on. */
+  .sheet {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    box-shadow:
+      0 1px 0 var(--rule),
+      0 18px 40px -24px rgb(20 20 19 / 0.28);
+  }
 
-/* The document itself: the only place the serif face is used. */
-.sheet-text {
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-size: 1.1875rem;
-  line-height: 1.7;
-}
+  /* The document itself: the only place the serif face is used. */
+  .sheet-text {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-size: 1.1875rem;
+    line-height: 1.7;
+  }
 
-/* The highlighter. Width is animated from 0 to 100% so the stroke sweeps across the quote,
-   line by line, the way a pen would. */
-.marker {
-  background-image: linear-gradient(var(--marker), var(--marker));
-  background-repeat: no-repeat;
-  background-position: 0 88%;
-  color: var(--ink);
-  padding: 0.08em 0;
-}
+  /* The highlighter. Width is animated from 0 to 100% so the stroke sweeps across the quote,
+     line by line, the way a pen would. */
+  .marker {
+    background-image: linear-gradient(var(--marker), var(--marker));
+    background-repeat: no-repeat;
+    background-position: 0 88%;
+    color: var(--ink);
+    padding: 0.08em 0;
+  }
 
-/* A strip cut from the cited page: dashed where the scissors went. */
-.clipping {
-  background: var(--sheet);
-  border-inline: 1px solid var(--rule);
-  border-block: 1.5px dashed var(--ink-faint);
+  /* A strip cut from the cited page: dashed where the scissors went. */
+  .clipping {
+    background: var(--sheet);
+    border-inline: 1px solid var(--rule);
+    border-block: 1.5px dashed var(--ink-faint);
+  }
 }
 
 .skip-link {

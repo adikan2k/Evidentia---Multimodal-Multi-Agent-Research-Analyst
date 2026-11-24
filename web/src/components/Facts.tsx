@@ -25,29 +25,30 @@ export function Facts() {
   ];
 
   return (
-    <section className="mt-28 border-t border-ink pt-10">
-      <div className="grid gap-12 lg:grid-cols-[18rem_1fr]">
-        <h2 className="font-serif text-4xl leading-tight tracking-tight">What was measured</h2>
+    <section className="mt-24 border-t border-ink pt-10">
+      <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <h2 className="display-2">What was measured</h2>
         <div>
           <div className="grid gap-10 sm:grid-cols-3">
             {facts.map((fact) => (
               <div key={fact.label}>
-                <p className="font-serif text-5xl leading-none tracking-tight">{fact.value}</p>
-                <p className="mt-3 text-sm font-medium">{fact.label}</p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-soft">{fact.note}</p>
+                <p className="text-5xl font-semibold tracking-tight tabular-nums">{fact.value}</p>
+                <p className="mt-3 font-medium">{fact.label}</p>
+                <p className="mt-1 leading-relaxed text-ink-soft">{fact.note}</p>
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            <span className="text-ink">It is not more accurate than plain RAG.</span> On the same
-            questions it scored {ours} against {plain}, a gap inside the noise. What it gives you
-            is evidence short enough to read, and a check that catches a claim when it is wrong.
+          <p className="lead mt-12 max-w-[44rem]">
+            <span className="font-medium text-ink">It is not more accurate than plain RAG.</span> On
+            the same questions it scored {ours} against {plain}, a gap inside the noise. What it
+            gives you is evidence short enough to read, and a check that catches a claim when it is
+            wrong.
           </p>
           <Link
             href="/evals"
-            className="label mt-6 inline-block border-b border-ink pb-0.5 hover:opacity-70"
+            className="label mt-6 inline-flex min-h-10 items-center text-ink underline underline-offset-4"
           >
-            All the numbers, including the unflattering ones →
+            All the numbers, including the unflattering ones
           </Link>
         </div>
       </div>

@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { REPO, SHELL } from "@/lib/site";
 
-export const REPO = "https://github.com/adikan2k/Evidentia---Multimodal-Multi-Agent-Research-Analyst";
-/** The page frame: as wide as the screen, up to 112rem, with padding that grows with it. */
-export const SHELL = "mx-auto w-full max-w-[112rem] px-[var(--gutter)]";
 
 const LINKS = [
   { href: "/", label: "Audit" },

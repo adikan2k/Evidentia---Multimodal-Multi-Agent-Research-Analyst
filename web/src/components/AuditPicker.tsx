@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LiveAuditScreen, RecordedAuditScreen } from "@/components/AuditScreen";
 import { Mark } from "@/components/Mark";
-import { SHELL } from "@/components/SiteHeader";
+import { SHELL } from "@/lib/site";
 import { auditAvailable } from "@/lib/api";
 import type { RecordedAudit } from "@/lib/audit";
 import { useLiveAudit } from "@/lib/useLiveAudit";
