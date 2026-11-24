@@ -1777,3 +1777,90 @@ tune it (`dev550b` and `test2`):
 
 Both bars lie inside those intervals. The auditor's true rates sit at the bars, and a single run
 of 550 rows cannot say on which side.
+
+## D-041. The audit page on the site (D-034, step 3)
+
+**What.** A page where a visitor pastes an AI tool's answer with its citations and watches
+Evidentia check it, sentence by sentence. Each claim shows the exact words on the cited page,
+what both judges said, and a scorecard. Next to the scorecard sit the auditor's measured error
+rates. Recorded audits play for free; live audits are limited the same way live research runs
+are.
+
+**Why.** This is the demo. It is also the tool the real-world audit (step 4) uses, and it is the
+first thing anyone tries. The auditor is measured (D-038 to D-040), so its results can be shown
+together with how often they are right.
+
+### API
+
+- **`POST /audits`** takes `{answer}`, 20 to 12,000 characters. It streams server-sent events,
+  as `/runs` does:
+  - `node`, as each audit step finishes, with only what that step found: the claims and their
+    places in the answer; which pages were read, and why others were not; and the verdicts;
+  - then `report`: every claim with its label, its quotes with the text around them, both
+    judges' reasons, and the scorecard;
+  - or `error`.
+- **A new event builder.** `evidentia/audit/events.py` builds those events, as
+  `evidentia/events.py` does for research runs.
+- **Limits** (`limits.py`). The audits share the daily budget ($1.00) with live runs and checks.
+  On top of that, each address gets at most 5 audits a day, at most 2 audits run at once, $0.05
+  is reserved per audit, and each audit has a $0.25 cap. The Haiku judges cost about $0.01 for a
+  15-claim answer (D-039), so the daily budget allows about 100 audits.
+- **Safety, as it already stands.** Visitors' links go through the fetcher's rules: public
+  addresses only, checked after DNS (D-035); robots.txt; the wait per site; size limits; and at
+  most 10 pages per audit. The pasted answer and the pages go to the models as untrusted data in
+  marked blocks.
+
+### The page (`/audit`, Next.js, the site's existing style, D-024)
+
+1. **Paste.** One text box, an "Audit" button, and a picker of recorded audits.
+2. **Watch it run.** The answer is shown as text.
+   - As steps finish, each claim's sentence is underlined.
+   - It turns its label's colour when both judges have ruled.
+   - A strip shows the steps (parse, split, fetch, the two judges, combine) as they really
+     finish. No animation runs ahead of the events.
+3. **Open a claim.** Clicking a sentence opens the side pane, as for research runs:
+   - the cited page;
+   - the exact quotes, with their context and page numbers for PDFs;
+   - the quote judge's and the page judge's reasons;
+   - for "needs a human", what the two disagree on.
+4. **Scorecard.** Failed outright (not on the cited page, or contradicted), partly backed, needs a
+   human, supported, dead links, could not check, uncited, and the cost.
+5. **"How often is this right?"** Flags right 0.806 (0.767 to 0.844), "supported" right 0.926
+   (0.897 to 0.951), and 18% of claims sent to a person, all on 1,100 human-labelled benchmark
+   rows. They are read from `evals/results/` through the site's data file, never typed in, with
+   a link to the method.
+
+### Recorded audits
+
+The page plays three recorded audits without spending anything. Their answers are made by
+OpenAI's Responses API with web search (`gpt-6.2-sol`, about $0.02 to $0.05 each). Each is
+labelled with the model, "with web search", and the date. Three questions of general interest,
+picked before seeing any answer. Recording the three audits costs about $0.03. This is not the
+real-world audit; it only gives the page real content. It needs one OpenAI client call with web
+search: the current docs are checked first, and the call is traced and priced like the others.
+
+### Tests and checks
+
+- API tests with fake services: the event order, the limits, the refusals, and that a closed tab
+  stops the audit.
+- Event-builder tests: the sentence offsets match the answer text, and no secret or page text
+  beyond the quotes and their context goes out.
+- `npm run build` and `npm run lint`, then a look in the browser at desktop and phone widths.
+
+**Deploy.** The API to Cloud Run, then the site through Vercel. Both only when Aditya says to push.
+
+**Cost.** About $0.25 in all: the three recorded answers and their audits, and a few live audits
+while building.
+
+**Considered.**
+
+- **Folding audits into `/runs`:** the two have different inputs and events, so they are kept
+  apart.
+- **Collecting the recorded answers by hand:** Aditya has no time for it. API answers are
+  repeatable and dated.
+- **Live audits only:** the page would cost money every time someone opened it, and would break
+  when the daily budget runs out.
+
+**Trade-off.** Recorded answers from the API are not the same as answers in the ChatGPT app,
+which can differ. The labels say exactly where they came from. The daily budget is shared with
+research runs, so a busy day for one leaves less for the other.
