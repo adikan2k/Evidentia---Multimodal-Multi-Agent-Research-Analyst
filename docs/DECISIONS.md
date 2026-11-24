@@ -1272,14 +1272,19 @@ neither.
 ### Where it is tuned, and the finish line
 
 **Practice set.** 550 rows from the dev split, 50 per sub-dataset, fixed seed. The test split is
-not touched. At most three practice runs, each kept in its own result file:
+not touched. At most four practice runs, each kept in its own result file:
 
-1. **Two judges**, as above.
-2. **Two judges, plus quote context.** The checker sees each quote together with its paragraph,
+1. **Two judges**, both Claude Haiku, as above.
+2. **Two judges from two companies.** The page judge is OpenAI's `gpt-6-luna` instead of Haiku.
+   It is priced the same as Haiku: $0.10 in and $0.50 out per million tokens (OpenAI's pricing
+   page, read 2026-11-24). Models from different vendors should make fewer of the same
+   mistakes, so agreement should mean more. It is kept only if it raises flag precision or
+   coverage over run 1. The quote judge stays Claude in every run.
+3. **Two judges, plus quote context.** The checker sees each quote together with its paragraph,
    up to about 600 characters. Most disagreements are expected where the quote judge says
    partial because a quote cannot be read alone. The context is marked as context; the quote
    is still what is checked by code.
-3. **Two judges, plus single facts.** Each claim is split into single facts by the product's own
+4. **Two judges, plus single facts.** Each claim is split into single facts by the product's own
    splitter. Each fact goes through the quote judge, and code combines the facts' results.
 
    This run happens only if coverage is still under 0.70.
@@ -1304,10 +1309,11 @@ With Haiku, and each paid run needs Aditya's yes first:
 | Run | About |
 |---|---|
 | Practice, two judges | $0.40 |
+| Practice, OpenAI page judge | $0.15 to $0.30 |
 | Practice, plus quote context | $0.30 |
 | Practice, plus single facts, if needed | $0.60 |
 | Confirming run on fresh test rows | $0.50 to $0.80 |
-| **Total** | **$1.20 to $2.10** |
+| **Total** | **$1.35 to $2.40** |
 
 A Sonnet confirming run is a separate question, at about $5 to $8.
 
@@ -1321,18 +1327,39 @@ roughly $0.30 to $0.45 with Sonnet, so the per-audit cap goes from $0.50 to $0.7
 - **The page judge alone, with quotes attached afterwards.** About the baseline's accuracy, but
   its flags would be right only about 65% of the time, and the label would not rest on the quote
   shown.
-- **Different models for the two judges, such as Haiku for one and Sonnet for the other.** Their
-  errors would be less alike, but it mixes two changes. It is kept for later.
+- **Haiku and Sonnet as the two judges.** Same vendor, so their errors are likely more alike
+  than Claude's and GPT's. Run 2 tests the stronger version of the same idea.
 - **Training a classifier.** The benchmark's terms forbid training on it, and rule 12 rules out
   local models.
 
 **Trade-off.**
 
 - Every claim costs one more call.
-- Both judges are Claude models, so their mistakes are not fully independent. Agreement is
-  evidence, not proof, which is why a person still checks a sample of flags in the real-world
-  audit.
+- With two Claude judges, their mistakes are not fully independent. A GPT page judge reduces
+  that but does not remove it, since both kinds of model are trained on much the same web.
+  Agreement is evidence, not proof, which is why a person still checks a sample of flags in the
+  real-world audit.
+- **Self-preference.** In the real-world audit, a GPT judge would check ChatGPT's own answers and
+  might go easier on them. If run 2 is kept, step 4 also audits a sample of ChatGPT answers with
+  two Claude judges and reports any gap between the two setups.
 - "Needs a human" is an honest answer but not a verdict. If coverage is low, the auditor is less
   useful, and the coverage finish line exists to catch that.
 - The first test run stays in the record. The confirming run uses new rows rather than
   replacing it.
+
+### Using OpenAI (applies to every OpenAI call from here on)
+
+- **Key.** `OPENAI_API_KEY` from the environment only (rule 6). Aditya has set it.
+- **Client.** The `openai` Python package, pinned at 3.58.0 (PyPI, read 2026-11-24). Structured
+  answers use `client.responses.parse(..., text_format=<pydantic model>)`.
+- **Code checks first.** Before writing against the SDK, the token-usage fields and the
+  reasoning-effort parameter are checked against the installed package.
+- **Prices.** OpenAI models get their own rows in `cost.py`. A model without a price is refused,
+  as for Claude, so the cost cap holds for OpenAI calls too.
+- **Tracing.** Every OpenAI call is traced in Langfuse, through the same tracer as the Claude
+  calls (rule 11). I check Langfuse's current OpenAI integration before writing it.
+- **Data blocks.** Page text goes inside the same marked data blocks with the same untrusted-data
+  rule (rule 9).
+- **Later, for step 4.** OpenAI's Responses API can answer with web search and citations
+  (`url_citation` annotations with `start_index` and `end_index`). That is a way to collect
+  ChatGPT-style answers. It gets its own decision entry and cost estimate.
