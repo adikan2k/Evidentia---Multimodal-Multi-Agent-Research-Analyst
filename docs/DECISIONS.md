@@ -598,3 +598,60 @@ What this changes:
 
 Also changed: the default Langfuse address in `config.py` is now the US region, where this
 project lives, so the commands run without an extra line in `.env`.
+
+---
+
+The entries below cover phase 1 of the gameplan agreed on 2026-11-24. Aditya approved the phase
+in outline ("Yes, start phase 1"); these entries write down what that outline means in detail.
+
+## D-022. Three harder evaluations
+
+**What.** Added to M3, all on the frozen corpus:
+
+1. Unanswerable questions. `evals/unanswerable.jsonl` holds 20 general-knowledge questions whose
+   answers are not in any corpus page. Each has an answer pattern, and code confirms the pattern
+   matches nothing in the corpus. Both systems answer them. Reported: how often each system
+   presents no backed claim, how often a backed claim contains the answer (which can only have
+   come from the model's memory), and what the judge makes of the claims it does present.
+2. A cheap writer. The baseline and the pipeline are rerun with `claude-haiku-5-5` as the writer
+   (and, for the pipeline, as the checker too), to see whether checking lets a model twenty times
+   cheaper be used safely.
+3. Evidence size. From the saved runs, with no model calls: how many characters a reader must
+   read to verify one claim. For the baseline that is the cited passage; for the pipeline, the
+   quote.
+
+**Why.** The first results showed no accuracy gap between the baseline and the pipeline, because
+a strong writer on clean pages rarely errs. These three look where a gap could exist: when the
+sources lack the answer, when the writer is weaker, and in how precise the evidence is.
+
+**Considered.** Stopping at the first result (honest, but leaves the obvious follow-up questions
+unasked). A live-web slice (more realistic, but unrepeatable; still open as a later option).
+
+**Trade-off.** The unanswerable questions were written by Claude and are easy trivia, so a model
+is strongly tempted to answer from memory. That is the point, but it is a stress test and not a
+sample of real questions.
+
+## D-023. Three product changes, each kept only if measurement supports it
+
+**What.**
+
+1. Tighten partial claims. A new setting, `tighten_partial`. When on, a claim the checker calls
+   partial is rewritten in the repair round to say only what its quote says, keeping the same
+   quote, and is then checked again. This reverses D-013's choice to leave partial claims alone.
+2. Dense search by default. A new setting, `keyword_search`, off by default. Retrieval becomes
+   dense search plus the reranker. Passages are still indexed with both vectors, so switching
+   keyword search back on needs no re-indexing.
+3. A cheaper checker. `checker_model` moves from Sonnet to Haiku if the cheap-pipeline run in
+   D-022 holds up.
+
+**Why.** Each follows from a measured result: 87 of 310 claims were labelled partial, mostly for
+context added around the quote; dense + rerank matched hybrid + rerank exactly; and Haiku caught
+48 of 50 broken claims against Sonnet's 49.
+
+**Considered.** Leaving all three as they are (the plan's original design, but it ignores what the
+evals found). Removing keyword search outright (simpler, but it has not been tested on live web
+pages, where exact names and numbers may matter more).
+
+**Trade-off.** Tightening makes claims safer and blander: "A Cochrane review found X" becomes "X"
+when the quote does not name the review. The eval reports how many claims change so the loss is
+visible.
