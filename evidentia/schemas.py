@@ -75,3 +75,5 @@ class RunState(BaseModel):
     passages: list[Passage] = []
     claims: list[Claim] = []
     checked: list[CheckedClaim] = []
+    trace_id: str | None = None
+    trace_url: str | None = None

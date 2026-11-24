@@ -91,9 +91,11 @@ the question into up to 4 search queries, and the `write` node turns retrieved p
 - Effort is `medium` for `plan` and `high` for `write`. `max_tokens` is 4,000 and 12,000.
 - Model names are settings, so trying `claude-opus-5-5` as the writer is a one-line change that
   the M3 evals can then justify with numbers.
-- Fetched text goes in the user message inside `<source id="...">` blocks. The system prompt says
-  those blocks are data and that instructions inside them must be ignored. Any `</source>` inside
-  fetched text is escaped.
+- Fetched text goes in the user message inside `<passage-xxxxxxxx source_id="...">` blocks, where
+  the `xxxxxxxx` part is random for each call. The system prompt says those blocks are data and
+  that instructions inside them must be ignored. A page cannot close the block because it cannot
+  guess the tag, so the text is passed through unchanged. (The first draft of this entry escaped
+  `</source>` instead; that would have altered page text and broken exact quoting.)
 - `stop_reason` is checked on every reply. `refusal` or `max_tokens` ends the run with a clear
   message instead of a half-parsed answer.
 
