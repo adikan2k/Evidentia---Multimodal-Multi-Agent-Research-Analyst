@@ -1163,3 +1163,20 @@ real-world audit (step 4) measures the rest.
 - The Haiku AggreFact results are under `evals/results/`, and the Sonnet results too if that run
   is approved.
 - One live audit of a real answer that Aditya pastes from an AI tool he uses.
+
+### What building it changed
+
+- **Cap and concurrency.** The ledger reserves each call's worst case before making it. With
+  the finder allowed 3,000 output tokens and 8 calls at once, a 5-claim test answer stopped at
+  a $0.10 cap after spending $0.003. So the finder now gets 2,000 tokens, at most 4 calls run at
+  once, and the cap per audit starts at $0.50 instead of $0.25. The same answer then cost
+  $0.047: split $0.0002, find $0.0368, check $0.0098.
+- **Dev rows.** The dev sample is 5 rows from each of the 11 sub-datasets, 55 in all, rather
+  than 50.
+- **Dead links.** The fetcher now tells "DNS says this name does not exist" apart from other
+  network errors. A temporary DNS failure is not called a dead link.
+- **Libraries.** `huggingface-hub` is pinned at 1.16.1, the version already locked through
+  Voyage's tokenizer. 2.4.0 conflicts with DeepEval's `click` pin. `pyarrow` is 26.0.1. Both are
+  in the evals group only.
+- **Metric.** The MiniCheck paper (section 4.1) reports balanced accuracy, with no
+  per-dataset threshold tuning in the main results.

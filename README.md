@@ -37,6 +37,29 @@ plan → search → fetch → index → retrieve → write → quote check → c
 Every run has a hard cost cap in code and records tokens and dollars per step. Every model and
 tool call is traced in Langfuse.
 
+## Auditing another tool's answer
+
+`python -m evidentia audit answer.md` checks the citations in an answer written by another AI
+tool (D-037). The answer can use markdown links, bare addresses, or numbered markers like `[1]`
+with a source list.
+
+1. **Parse (code).** Finds every citation and where it sits in the answer.
+2. **Split (Claude Haiku).** Breaks the answer into claims. Code checks that each claim's
+   sentence is really in the answer, and code decides which pages it cites.
+3. **Fetch (code).** The same fetcher as above.
+4. **Find evidence (Sonnet).** For each claim and cited page, up to three quotes that back or
+   contradict it. Long pages are cut to the passages Voyage's reranker ranks highest.
+5. **Quote check (code).** Each quote must be an exact span of the page.
+6. **Check (Sonnet).** A separate call that sees only the claim and the quotes.
+
+Each claim gets one label: supported, partial, contradicted, not on the cited page, dead link
+(404, 410, or a name that does not resolve), could not check (for example, robots.txt forbids
+it), or uncited. A claim citing several pages shows its best result and is flagged if another
+cited page contradicts it.
+
+The auditor has not been measured yet. The run on LLM-AggreFact, a benchmark labelled by people,
+is built (`uv run python -m evals aggrefact --help`) but has not been run.
+
 ## What the evaluation found
 
 Run on a frozen set of 50 openly licensed pages (mostly Wikipedia) and 40 questions. These pages
@@ -106,6 +129,7 @@ Deployment (Cloud Run for the API, Vercel for the site) is in [`docs/DEPLOY.md`]
 | Path | What it is |
 |---|---|
 | `evidentia/` | The pipeline, the fetcher, the quote check, the API |
+| `evidentia/audit/` | The auditor for other tools' answers |
 | `evals/` | The evaluation: corpus, questions, runs and results |
 | `tests/` | Tests; they use fakes and make no paid calls |
 | `web/` | The site (Next.js) |
