@@ -1,0 +1,1565 @@
+{
+ "id": "jwst",
+ "question": "When was the James Webb Space Telescope launched, and what are three of its most important discoveries so far?",
+ "answer": {
+  "model": "gpt-6.2-sol",
+  "tool": "web search",
+  "made_at": "2026-11-24T19:39:07+00:00",
+  "text": "The **James Webb Space Telescope launched on December 25, 2021**, at **7:20 a.m. EST (12:20 UTC)** aboard an Ariane 5 rocket from Kourou, French Guiana. ([science.nasa.gov](https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai))\n\nThree of its most important discoveries so far are:\n\n1. **A bright galaxy just 280 million years after the Big Bang.** Webb confirmed that **MoM-z14** existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. ([science.nasa.gov](https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai))\n2. **The first clear detection of carbon dioxide in an exoplanet atmosphere.** In 2022, Webb identified CO₂ in the atmosphere of **WASP-39 b**, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. ([science.nasa.gov](https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai))\n3. **A previously unknown population of “little red dots” in the early universe.** Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. ([science.nasa.gov](https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai))",
+  "usd": 0.0749
+ },
+ "recorded_at": "2026-11-24T19:44:06+00:00",
+ "duration_s": 32.16,
+ "judges": {
+  "quote": "claude-haiku-5-5",
+  "finder": "claude-haiku-5-5",
+  "page": "claude-haiku-5-5"
+ },
+ "events": [
+  {
+   "t": 0.0,
+   "node": "parse",
+   "summary": "found 4 cited addresses",
+   "cost_usd": 0,
+   "data": {
+    "answer_text": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)\nThree of its most important discoveries so far are:\n1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)\n2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)\n3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+    "citations": [
+     {
+      "id": "c1",
+      "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+      "host": "science.nasa.gov"
+     },
+     {
+      "id": "c2",
+      "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+      "host": "science.nasa.gov"
+     },
+     {
+      "id": "c3",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+      "host": "science.nasa.gov"
+     },
+     {
+      "id": "c4",
+      "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+      "host": "science.nasa.gov"
+     }
+    ]
+   }
+  },
+  {
+   "t": 6.27,
+   "node": "split",
+   "summary": "split the answer into 14 claims",
+   "cost_usd": 0.0011,
+   "data": {
+    "claims": [
+     {
+      "index": 0,
+      "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+      "start": 0,
+      "end": 163,
+      "claim": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC).",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 1,
+      "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+      "start": 0,
+      "end": 163,
+      "claim": "The James Webb Space Telescope launched aboard an Ariane 5 rocket.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 2,
+      "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+      "start": 0,
+      "end": 163,
+      "claim": "The James Webb Space Telescope launched from Kourou, French Guiana.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 3,
+      "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+      "start": 216,
+      "end": 472,
+      "claim": "MoM-z14 is a bright galaxy that existed just 280 million years after the Big Bang.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 4,
+      "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+      "start": 216,
+      "end": 472,
+      "claim": "Webb confirmed that MoM-z14 existed remarkably early in cosmic history.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 5,
+      "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+      "start": 216,
+      "end": 472,
+      "claim": "The brightness of MoM-z14 gives astronomers a concrete test of how quickly the first galaxies could form and grow.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 6,
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "Webb made the first clear detection of carbon dioxide in an exoplanet atmosphere.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 7,
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 8,
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "WASP-39 b is a hot gas giant.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 9,
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "Webb's CO₂ detection in WASP-39 b demonstrates how precisely Webb can measure the chemistry of planets around other stars.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 10,
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "Webb discovered a previously unknown population of \"little red dots\" in the early universe.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 11,
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "Webb discovered the little red dots, which are compact objects, in 2022.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 12,
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "Follow-up observations found strong evidence that at least one little red dot contains a rapidly growing supermassive black hole wrapped in dense gas.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 13,
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "The little red dot with a rapidly growing supermassive black hole offers a clue to how black holes grew so early.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence"
+     }
+    ],
+    "not_located": 0
+   }
+  },
+  {
+   "t": 14.36,
+   "node": "fetch",
+   "summary": "read 4 pages",
+   "cost_usd": 0.0011,
+   "data": {
+    "read": [
+     {
+      "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html"
+     },
+     {
+      "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html"
+     },
+     {
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html"
+     },
+     {
+      "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html"
+     }
+    ],
+    "skipped": []
+   }
+  },
+  {
+   "t": 21.2,
+   "node": "find",
+   "summary": "found candidate quotes for 12 of 14 claim-page pairs",
+   "cost_usd": 0.0051,
+   "data": {}
+  },
+  {
+   "t": 26.11,
+   "node": "page_check",
+   "summary": "page judge: 9 supported, 5 not_supported",
+   "cost_usd": 0.0063,
+   "data": {
+    "judged": 14
+   }
+  },
+  {
+   "t": 26.11,
+   "node": "quote_check",
+   "summary": "12 pairs have quotes that are word for word on the page",
+   "cost_usd": 0.0063,
+   "data": {}
+  },
+  {
+   "t": 31.77,
+   "node": "check",
+   "summary": "quote judge: 6 supported, 5 partial, 3 not on the cited page",
+   "cost_usd": 0.0087,
+   "data": {
+    "quote_labels": [
+     {
+      "claim": 0,
+      "citation_id": "c1",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 1,
+      "citation_id": "c1",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 2,
+      "citation_id": "c1",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 3,
+      "citation_id": "c2",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 4,
+      "citation_id": "c2",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 5,
+      "citation_id": "c2",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 6,
+      "citation_id": "c3",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 7,
+      "citation_id": "c3",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 8,
+      "citation_id": "c3",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 9,
+      "citation_id": "c3",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 10,
+      "citation_id": "c4",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 11,
+      "citation_id": "c4",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 12,
+      "citation_id": "c4",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 13,
+      "citation_id": "c4",
+      "quote_label": "partial"
+     }
+    ]
+   }
+  },
+  {
+   "t": 31.77,
+   "node": "combine",
+   "summary": "both judges: 6 supported, 3 needs a human, 3 partial, 2 not on the cited page",
+   "cost_usd": 0.0087,
+   "data": {
+    "claims": [
+     {
+      "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+      "start": 0,
+      "end": 163,
+      "claim": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC).",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "Launch Date | December 25, 2021 07:20am EST (2021-12-25 12:20 GMT/UTC)",
+          "pages": null,
+          "context": {
+           "before": "will complement and extend the discoveries of the Hubble Space Telescope, with longer wavelength coverage and greatly improved sensitivity. The longer wavelengths enable Webb to look much closer to the beginning of time and to hunt for the unobserved formation of the first galaxies, as well as to look inside dust clouds where stars and planetary systems are forming today.\nKey Facts\nKey Facts\n| ",
+           "after": " |\n| Launch Vehicle | Ariane 5 ECA |\n| Mission Duration | 5 - 10 years |\n| Total Payload Mass | Approx 6200 kg, including observatory, on-orbit consumables and launch vehicle adaptor. |\n| Diameter of Primary Mirror | 6.5 m (21.3 ft) approximately |\n| Clear Aperture of Primary Mirror | 25 m2 |\n| Primary Mirror Material | beryllium coated with gold |\n| Mass of Primary Mirror | 705 kg |\n| Mass of a"
+          }
+         },
+         {
+          "text": "DEC 25, 2021, 7:20AM EST",
+          "pages": null,
+          "context": {
+           "before": "K (-370 °F) |\n| Gold Coating | Thickness of gold coating = 100 x 10-9 meters (1000 angstroms). Surface area = 25 m2. Using these numbers plus the density of gold at room temperature (19.3 g/cm3), the coating is calculated to use 48.25g of gold, about equal to the mass of a golf ball. (A golf ball has a mass of 45.9 grams. Note mass does not equal size!) |\nWebb Mission Elapsed Time Since Launch\n",
+           "after": "\nMission Goals\n- Early Universe : Search for the first galaxies or luminous objects formed after the Big Bang\n- Galaxies Over Time: Determine how galaxies evolved from their formation until now\n- Star Lifecycle: Observe the formation of stars from their initial stages to the formation of planetary systems.\n- Other Worlds : Measure the physical and chemical properties of planetary systems,"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state the launch date of December 25, 2021, at 07:20 EST, equivalent to 12:20 UTC/GMT, which matches every fact in the claim.",
+        "page_judged": "supported",
+        "page_reason": "The page's Key Facts table states a launch date of December 25, 2021 at 07:20am EST (2021-12-25 12:20 GMT/UTC), and the mission elapsed time section also shows DEC 25, 2021, 7:20AM EST, fully matching the claim."
+       }
+      ]
+     },
+     {
+      "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+      "start": 0,
+      "end": 163,
+      "claim": "The James Webb Space Telescope launched aboard an Ariane 5 rocket.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "Launch Vehicle | Ariane 5 ECA",
+          "pages": null,
+          "context": {
+           "before": "with longer wavelength coverage and greatly improved sensitivity. The longer wavelengths enable Webb to look much closer to the beginning of time and to hunt for the unobserved formation of the first galaxies, as well as to look inside dust clouds where stars and planetary systems are forming today.\nKey Facts\nKey Facts\n| Launch Date | December 25, 2021 07:20am EST (2021-12-25 12:20 GMT/UTC) |\n| ",
+           "after": " |\n| Mission Duration | 5 - 10 years |\n| Total Payload Mass | Approx 6200 kg, including observatory, on-orbit consumables and launch vehicle adaptor. |\n| Diameter of Primary Mirror | 6.5 m (21.3 ft) approximately |\n| Clear Aperture of Primary Mirror | 25 m2 |\n| Primary Mirror Material | beryllium coated with gold |\n| Mass of Primary Mirror | 705 kg |\n| Mass of a Single Primary Mirror Segment |"
+          }
+         }
+        ],
+        "quote_reason": "The quote names 'Ariane 5 ECA' as a launch vehicle in a table row but never mentions the James Webb Space Telescope, so it neither ties the telescope to Ariane 5 nor contradicts the claim.",
+        "page_judged": "supported",
+        "page_reason": "The page's Key Facts table lists the Launch Vehicle as Ariane 5 ECA, which supports the claim that Webb launched aboard an Ariane 5 rocket, though it lists the vehicle rather than explicitly stating a completed launch."
+       }
+      ]
+     },
+     {
+      "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+      "start": 0,
+      "end": 163,
+      "claim": "The James Webb Space Telescope launched from Kourou, French Guiana.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": "not_supported",
+        "page_reason": "The page lists the launch vehicle as Ariane 5 ECA and gives the launch date and time, but it never mentions the launch site Kourou or French Guiana."
+       }
+      ]
+     },
+     {
+      "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+      "start": 216,
+      "end": 472,
+      "claim": "MoM-z14 is a bright galaxy that existed just 280 million years after the Big Bang.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "confirmation of a bright galaxy that existed 280 million years after the big bang",
+          "pages": null,
+          "context": {
+           "before": "NASA’s James Webb Space Telescope has topped itself once again, delivering on its promise to push the boundaries of the observable universe closer to cosmic dawn with the ",
+           "after": ". By now Webb has established that it will eventually surpass virtually every benchmark it sets in these early years, but the newly confirmed galaxy, MoM-z14, holds intriguing clues to the universe’s historical timeline and just how different a place the early universe was than astronomers expected.\n“With Webb, we are able to see farther than humans ever have before, and it looks nothing like"
+          }
+         },
+         {
+          "text": "With galaxy MoM-z14 existing only 280 million years after the big bang",
+          "pages": null,
+          "context": {
+           "before": "galaxies, including MoM-z14.\n“We can take a page from archeology and look at these ancient stars in our own galaxy like fossils from the early universe, except in astronomy we are lucky enough to have Webb seeing so far that we also have direct information about galaxies during that time. It turns out we are seeing some of the same features, like this unusual nitrogen enrichment,” said Naidu.\n",
+           "after": ", there was not enough time for generations of stars to produce such high amounts of nitrogen in the way that astronomers would expect. One theory the researchers note is that the dense environment of the early universe resulted in supermassive stars capable of producing more nitrogen than any stars observed in the local universe.\nThe galaxy MoM-z14 also shows signs of clearing out the thick,"
+          }
+         }
+        ],
+        "quote_reason": "Both quotes state that the bright galaxy MoM-z14 existed 280 million years after the Big Bang, matching every fact in the claim.",
+        "page_judged": "supported",
+        "page_reason": "The page states that MoM-z14 is a bright galaxy existing 280 million years after the big bang, matching the claim fully."
+       }
+      ]
+     },
+     {
+      "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+      "start": 216,
+      "end": 472,
+      "claim": "Webb confirmed that MoM-z14 existed remarkably early in cosmic history.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "the confirmation of a bright galaxy that existed 280 million years after the big bang",
+          "pages": null,
+          "context": {
+           "before": "NASA’s James Webb Space Telescope has topped itself once again, delivering on its promise to push the boundaries of the observable universe closer to cosmic dawn with ",
+           "after": ". By now Webb has established that it will eventually surpass virtually every benchmark it sets in these early years, but the newly confirmed galaxy, MoM-z14, holds intriguing clues to the universe’s historical timeline and just how different a place the early universe was than astronomers expected.\n“With Webb, we are able to see farther than humans ever have before, and it looks nothing like"
+          }
+         },
+         {
+          "text": "astronomers confirmed that MoM-z14 has a cosmological redshift of 14.44",
+          "pages": null,
+          "context": {
+           "before": "Institute of Technology’s (MIT) Kavli Institute for Astrophysics and Space Research, lead author of a paper on galaxy MoM-z14 published in the Open Journal of Astrophysics.\nDue to the expansion of the universe that is driven by dark energy, discussion of physical distances and “years ago” becomes tricky when looking this far. Using Webb’s NIRSpec (Near-Infrared Spectrograph) instrument, ",
+           "after": ", meaning that its light has been travelling through (expanding) space, being stretched and “shifted” to longer, redder wavelengths, for about 13.5 of the universe’s estimated 13.8 billion years of existence.\n“We can estimate the distance of galaxies from images, but it’s really important to follow up and confirm with more detailed spectroscopy so that we know exactly what we are seeing, and"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that astronomers confirmed MoM-z14 (a bright galaxy existing 280 million years after the big bang), which backs both the confirmation and the remarkably early existence, though they never name Webb as the instrument or confirmer.",
+        "page_judged": "supported",
+        "page_reason": "The page states Webb confirmed MoM-z14 is a bright galaxy existing 280 million years after the big bang with a redshift of 14.44, which supports the claim that it existed remarkably early in cosmic history."
+       }
+      ]
+     },
+     {
+      "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+      "start": 216,
+      "end": 472,
+      "claim": "The brightness of MoM-z14 gives astronomers a concrete test of how quickly the first galaxies could form and grow.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": "not_supported",
+        "page_reason": "The page says MoM-z14 is surprisingly bright, that bright early galaxies are 100 times more numerous than predicted, and that there is a growing theory-observation gap, but it never states that MoM-z14's brightness serves as a concrete test of how quickly the first galaxies formed and grew."
+       }
+      ]
+     },
+     {
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "Webb made the first clear detection of carbon dioxide in an exoplanet atmosphere.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c3",
+        "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "NASA’s James Webb Space Telescope has captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system.",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": " This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\nWASP-39 b is a hot gas giant with a mass"
+          }
+         },
+         {
+          "text": "In the resulting spectrum of the exoplanet’s atmosphere, a small hill between 4.1 and 4.6 microns presents the first clear, detailed evidence for carbon dioxide ever detected in a planet outside the solar system.",
+          "pages": null,
+          "context": {
+           "before": "in brightness of the transmitted light across a spectrum of wavelengths to determine exactly what an atmosphere is made of. With its combination of inflated atmosphere and frequent transits, WASP-39 b is an ideal target for transmission spectroscopy.\nFirst Clear Detection of Carbon Dioxide\nThe research team used Webb’s Near-Infrared Spectrograph (NIRSpec) for its observations of WASP-39b. ",
+           "after": "\n“As soon as the data appeared on my screen, the whopping carbon dioxide feature grabbed me,” said Zafar Rustamkulov, a graduate student at Johns Hopkins University and member of the JWST Transiting Exoplanet Community Early Release Science team, which undertook this investigation. “It was a special moment, crossing an important threshold in exoplanet sciences.”\nNo observatory has ever measured"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that Webb captured the first clear evidence of carbon dioxide in an exoplanet's atmosphere, which matches the claim's core assertion with no extra specifics added.",
+        "page_judged": "supported",
+        "page_reason": "The page states that Webb captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system, described as the first clear, detailed evidence ever detected in an exoplanet."
+       }
+      ]
+     },
+     {
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence",
+      "label": "partial",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c3",
+        "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "partial",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "NASA’s James Webb Space Telescope has captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system.",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": " This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\nWASP-39 b is a hot gas giant with a mass"
+          }
+         },
+         {
+          "text": "WASP-39 b is a hot gas giant with a mass roughly one-quarter that of Jupiter (about the same as Saturn) and a diameter 1.3 times greater than Jupiter.",
+          "pages": null,
+          "context": {
+           "before": "of a planet outside the solar system. This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\n",
+           "after": " Its extreme puffiness is related in part to its high temperature (about 1,600 degrees Fahrenheit or 900 degrees Celsius). Unlike the cooler, more compact gas giants in our solar system, WASP-39 b orbits very close to its star – only about one-eighth the distance between the Sun and Mercury – completing one circuit in just over four Earth-days. The planet’s discovery, reported in 2011, was made"
+          }
+         }
+        ],
+        "quote_reason": "The quotes back that Webb captured the first clear evidence of CO₂ in an exoplanet's atmosphere, and describe WASP-39 b, but neither quote names WASP-39 b as the planet with CO₂ and neither gives the year 2022.",
+        "page_judged": "not_supported",
+        "page_reason": "The page confirms that Webb detected carbon dioxide in WASP-39 b's atmosphere but never states that this happened in 2022; the only year it gives is 2011, for the planet's discovery."
+       }
+      ]
+     },
+     {
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "WASP-39 b is a hot gas giant.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c3",
+        "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "WASP-39 b is a hot gas giant with a mass roughly one-quarter that of Jupiter",
+          "pages": null,
+          "context": {
+           "before": "of a planet outside the solar system. This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\n",
+           "after": " (about the same as Saturn) and a diameter 1.3 times greater than Jupiter. Its extreme puffiness is related in part to its high temperature (about 1,600 degrees Fahrenheit or 900 degrees Celsius). Unlike the cooler, more compact gas giants in our solar system, WASP-39 b orbits very close to its star – only about one-eighth the distance between the Sun and Mercury – completing one circuit in just"
+          }
+         }
+        ],
+        "quote_reason": "The quote states that WASP-39 b is a hot gas giant, which backs the entire claim with no extra specifics added.",
+        "page_judged": "supported",
+        "page_reason": "The page describes WASP-39 b as a hot gas giant with a temperature of about 1,600 degrees Fahrenheit (900 degrees Celsius), so the claim is directly supported."
+       }
+      ]
+     },
+     {
+      "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+      "start": 473,
+      "end": 732,
+      "claim": "Webb's CO₂ detection in WASP-39 b demonstrates how precisely Webb can measure the chemistry of planets around other stars.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "sentence",
+      "label": "partial",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c3",
+        "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "partial",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "NASA’s James Webb Space Telescope has captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system.",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": " This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\nWASP-39 b is a hot gas giant with a mass"
+          }
+         },
+         {
+          "text": "No observatory has ever measured such subtle differences in brightness of so many individual colors across the 3 to 5.5-micron range in an exoplanet transmission spectrum before.",
+          "pages": null,
+          "context": {
+           "before": "a planet outside the solar system.\n“As soon as the data appeared on my screen, the whopping carbon dioxide feature grabbed me,” said Zafar Rustamkulov, a graduate student at Johns Hopkins University and member of the JWST Transiting Exoplanet Community Early Release Science team, which undertook this investigation. “It was a special moment, crossing an important threshold in exoplanet sciences.”\n",
+           "after": " Access to this part of the spectrum is crucial for measuring abundances of gases like water and methane, as well as carbon dioxide, which are thought to exist in many different types of exoplanets.\n“Detecting such a clear signal of carbon dioxide on WASP-39 b bodes well for the detection of atmospheres on smaller, terrestrial-sized planets,” said Natalie Batalha of the University of California"
+          }
+         },
+         {
+          "text": "Webb’s unmatched infrared sensitivity has now confirmed the presence of carbon dioxide on this planet as well.",
+          "pages": null,
+          "context": {
+           "before": "Earth-days. The planet’s discovery, reported in 2011, was made based on ground-based detections of the subtle, periodic dimming of light from its host star as the planet transits, or passes in front of the star.\nPrevious observations from other telescopes, including NASA’s Hubble and Spitzer space telescopes, revealed the presence of water vapor, sodium, and potassium in the planet’s atmosphere. ",
+           "after": "\nFiltered Starlight\nTransiting planets like WASP-39 b, whose orbits we observe edge-on rather than from above, can provide researchers with ideal opportunities to probe planetary atmospheres.\nDuring a transit, some of the starlight is eclipsed by the planet completely (causing the overall dimming) and some is transmitted through the planet’s atmosphere.\nBecause different gases absorb different"
+          }
+         }
+        ],
+        "quote_reason": "The quotes back that Webb detected CO2 on an exoplanet with unmatched sensitivity and subtle brightness measurements, but they never name WASP-39 b and do not explicitly frame the result as showing how precisely Webb measures planetary chemistry in general.",
+        "page_judged": "not_supported",
+        "page_reason": "The page reports Webb detected CO2 in WASP-39 b's atmosphere via transmission spectroscopy and says future work may detect CO2 on smaller planets, but it does not claim or quantify how precisely Webb measures planetary chemistry, so the claim's 'demonstrates how precisely' qualifier is not stated."
+       }
+      ]
+     },
+     {
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "Webb discovered a previously unknown population of \"little red dots\" in the early universe.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c4",
+        "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "In December 2022, less than six months after commencing science operations, NASA’s James Webb Space Telescope revealed something never seen before: numerous red objects that appear small on the sky, which scientists soon called “little red dots” (LRDs).",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": " Though these dots are quite abundant, researchers are perplexed by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. They found that a large fraction of the LRDs in their sample showed"
+          }
+         },
+         {
+          "text": "We’re confounded by this new population of objects that Webb has found.",
+          "pages": null,
+          "context": {
+           "before": "by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. They found that a large fraction of the LRDs in their sample showed signs of containing growing supermassive black holes.\n“",
+           "after": " We don’t see analogs of them at lower redshifts, which is why we haven’t seen them prior to Webb,” said Dale Kocevski of Colby College in Waterville, Maine, and lead author of the study. “There's a substantial amount of work being done to try to determine the nature of these little red dots and whether their light is dominated by accreting black holes.”\nImage: Little Red Dots (NIRCam Image)\nA"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that Webb revealed numerous never-before-seen small red objects, called little red dots, and describe them as a new population Webb found, which matches the claim's main point; the claim's 'early universe' is consistent with the 'early universe' framing of the page's context but the quoted sentences themselves do not explicitly tie the dots to the early universe beyond the first quote's timing of December 2022 observations.",
+        "page_judged": "supported",
+        "page_reason": "The page states that in December 2022 Webb revealed numerous red objects never seen before, which scientists called 'little red dots', and that they are a new population with no analogs at lower redshifts."
+       }
+      ]
+     },
+     {
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "Webb discovered the little red dots, which are compact objects, in 2022.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c4",
+        "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "In December 2022, less than six months after commencing science operations, NASA’s James Webb Space Telescope revealed something never seen before: numerous red objects that appear small on the sky, which scientists soon called “little red dots” (LRDs).",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": " Though these dots are quite abundant, researchers are perplexed by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. They found that a large fraction of the LRDs in their sample showed"
+          }
+         }
+        ],
+        "quote_reason": "The quote backs that Webb revealed the little red dots in December 2022, but it only says they appear small on the sky, not that they are compact objects.",
+        "page_judged": "supported",
+        "page_reason": "The page states that in December 2022 Webb revealed numerous small red objects later called little red dots, which appear small on the sky, so the claim that Webb discovered them in 2022 and that they are compact is supported."
+       }
+      ]
+     },
+     {
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "Follow-up observations found strong evidence that at least one little red dot contains a rapidly growing supermassive black hole wrapped in dense gas.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence",
+      "label": "partial",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c4",
+        "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "partial",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "They found that about 70 percent of the targets showed evidence for gas rapidly orbiting 2 million miles per hour (1,000 kilometers per second) – a sign of an accretion disk around a supermassive black hole.",
+          "pages": null,
+          "context": {
+           "before": "in the census spanning a wide redshift range. The distribution they discovered is intriguing: LRDs emerge in large numbers around 600 million years after the big bang and undergo a rapid decline in quantity around 1.5 billion years after the big bang.\nThe team looked toward the Red Unknowns: Bright Infrared Extragalactic Survey (RUBIES) for spectroscopic data on some of the LRDs in their sample. ",
+           "after": " This suggests that many LRDs are accreting black holes, also known as active galactic nuclei (AGN).\n“The most exciting thing for me is the redshift distributions. These really red, high-redshift sources basically stop existing at a certain point after the big bang,” said Steven Finkelstein, a co-author of the study at the University of Texas at Austin. “If they are growing black holes, and we"
+          }
+         },
+         {
+          "text": "This suggests that many LRDs are accreting black holes, also known as active galactic nuclei (AGN).",
+          "pages": null,
+          "context": {
+           "before": "1.5 billion years after the big bang.\nThe team looked toward the Red Unknowns: Bright Infrared Extragalactic Survey (RUBIES) for spectroscopic data on some of the LRDs in their sample. They found that about 70 percent of the targets showed evidence for gas rapidly orbiting 2 million miles per hour (1,000 kilometers per second) – a sign of an accretion disk around a supermassive black hole. ",
+           "after": "\n“The most exciting thing for me is the redshift distributions. These really red, high-redshift sources basically stop existing at a certain point after the big bang,” said Steven Finkelstein, a co-author of the study at the University of Texas at Austin. “If they are growing black holes, and we think at least 70 percent of them are, this hints at an era of obscured black hole growth in the early"
+          }
+         }
+        ],
+        "quote_reason": "The quotes back the core point that follow-up targets show evidence of an accreting supermassive black hole via rapidly orbiting gas, but nothing in them says the black hole is wrapped in dense gas or describes its growth as rapid.",
+        "page_judged": "not_supported",
+        "page_reason": "The page reports that RUBIES spectroscopy showed rapidly orbiting gas, suggesting accreting black holes in about 70 percent of targets, but it describes dense gas cocoons and obscured black holes only as possible explanations, not as an established finding, so the claim's 'strong evidence' and 'wrapped in dense gas' go beyond what it states."
+       }
+      ]
+     },
+     {
+      "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+      "start": 733,
+      "end": 1063,
+      "claim": "The little red dot with a rapidly growing supermassive black hole offers a clue to how black holes grew so early.",
+      "citation_ids": [
+       "c4"
+      ],
+      "cited_by": "sentence",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c4",
+        "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+        "host": "science.nasa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "They found that a large fraction of the LRDs in their sample showed signs of containing growing supermassive black holes.",
+          "pages": null,
+          "context": {
+           "before": "on the sky, which scientists soon called “little red dots” (LRDs). Though these dots are quite abundant, researchers are perplexed by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. ",
+           "after": "\n“We’re confounded by this new population of objects that Webb has found. We don’t see analogs of them at lower redshifts, which is why we haven’t seen them prior to Webb,” said Dale Kocevski of Colby College in Waterville, Maine, and lead author of the study. “There's a substantial amount of work being done to try to determine the nature of these little red dots and whether their light is"
+          }
+         }
+        ],
+        "quote_reason": "The quote backs that a large fraction of little red dots show signs of growing supermassive black holes, but it does not say the growth is rapid or that it explains how black holes grew so early.",
+        "page_judged": "supported",
+        "page_reason": "The page reports that about 70 percent of the sampled LRDs show fast-orbiting gas indicating growing supermassive black holes, and says this hints at an era of obscured black hole growth in the early universe, which broadly supports the claim that these objects offer a clue to early black hole growth."
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "report": {
+  "answer_text": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)\nThree of its most important discoveries so far are:\n1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)\n2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)\n3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+  "claims": [
+   {
+    "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+    "start": 0,
+    "end": 163,
+    "claim": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC).",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Launch Date | December 25, 2021 07:20am EST (2021-12-25 12:20 GMT/UTC)",
+        "pages": null,
+        "context": {
+         "before": "will complement and extend the discoveries of the Hubble Space Telescope, with longer wavelength coverage and greatly improved sensitivity. The longer wavelengths enable Webb to look much closer to the beginning of time and to hunt for the unobserved formation of the first galaxies, as well as to look inside dust clouds where stars and planetary systems are forming today.\nKey Facts\nKey Facts\n| ",
+         "after": " |\n| Launch Vehicle | Ariane 5 ECA |\n| Mission Duration | 5 - 10 years |\n| Total Payload Mass | Approx 6200 kg, including observatory, on-orbit consumables and launch vehicle adaptor. |\n| Diameter of Primary Mirror | 6.5 m (21.3 ft) approximately |\n| Clear Aperture of Primary Mirror | 25 m2 |\n| Primary Mirror Material | beryllium coated with gold |\n| Mass of Primary Mirror | 705 kg |\n| Mass of a"
+        }
+       },
+       {
+        "text": "DEC 25, 2021, 7:20AM EST",
+        "pages": null,
+        "context": {
+         "before": "K (-370 °F) |\n| Gold Coating | Thickness of gold coating = 100 x 10-9 meters (1000 angstroms). Surface area = 25 m2. Using these numbers plus the density of gold at room temperature (19.3 g/cm3), the coating is calculated to use 48.25g of gold, about equal to the mass of a golf ball. (A golf ball has a mass of 45.9 grams. Note mass does not equal size!) |\nWebb Mission Elapsed Time Since Launch\n",
+         "after": "\nMission Goals\n- Early Universe : Search for the first galaxies or luminous objects formed after the Big Bang\n- Galaxies Over Time: Determine how galaxies evolved from their formation until now\n- Star Lifecycle: Observe the formation of stars from their initial stages to the formation of planetary systems.\n- Other Worlds : Measure the physical and chemical properties of planetary systems,"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state the launch date of December 25, 2021, at 07:20 EST, equivalent to 12:20 UTC/GMT, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page's Key Facts table states a launch date of December 25, 2021 at 07:20am EST (2021-12-25 12:20 GMT/UTC), and the mission elapsed time section also shows DEC 25, 2021, 7:20AM EST, fully matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+    "start": 0,
+    "end": 163,
+    "claim": "The James Webb Space Telescope launched aboard an Ariane 5 rocket.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Launch Vehicle | Ariane 5 ECA",
+        "pages": null,
+        "context": {
+         "before": "with longer wavelength coverage and greatly improved sensitivity. The longer wavelengths enable Webb to look much closer to the beginning of time and to hunt for the unobserved formation of the first galaxies, as well as to look inside dust clouds where stars and planetary systems are forming today.\nKey Facts\nKey Facts\n| Launch Date | December 25, 2021 07:20am EST (2021-12-25 12:20 GMT/UTC) |\n| ",
+         "after": " |\n| Mission Duration | 5 - 10 years |\n| Total Payload Mass | Approx 6200 kg, including observatory, on-orbit consumables and launch vehicle adaptor. |\n| Diameter of Primary Mirror | 6.5 m (21.3 ft) approximately |\n| Clear Aperture of Primary Mirror | 25 m2 |\n| Primary Mirror Material | beryllium coated with gold |\n| Mass of Primary Mirror | 705 kg |\n| Mass of a Single Primary Mirror Segment |"
+        }
+       }
+      ],
+      "quote_reason": "The quote names 'Ariane 5 ECA' as a launch vehicle in a table row but never mentions the James Webb Space Telescope, so it neither ties the telescope to Ariane 5 nor contradicts the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page's Key Facts table lists the Launch Vehicle as Ariane 5 ECA, which supports the claim that Webb launched aboard an Ariane 5 rocket, though it lists the vehicle rather than explicitly stating a completed launch."
+     }
+    ]
+   },
+   {
+    "sentence": "The James Webb Space Telescope launched on December 25, 2021, at 7:20 a.m. EST (12:20 UTC) aboard an Ariane 5 rocket from Kourou, French Guiana. (science.nasa.gov)",
+    "start": 0,
+    "end": 163,
+    "claim": "The James Webb Space Telescope launched from Kourou, French Guiana.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://science.nasa.gov/mission/webb/fact-sheet/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists the launch vehicle as Ariane 5 ECA and gives the launch date and time, but it never mentions the launch site Kourou or French Guiana."
+     }
+    ]
+   },
+   {
+    "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+    "start": 216,
+    "end": 472,
+    "claim": "MoM-z14 is a bright galaxy that existed just 280 million years after the Big Bang.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "confirmation of a bright galaxy that existed 280 million years after the big bang",
+        "pages": null,
+        "context": {
+         "before": "NASA’s James Webb Space Telescope has topped itself once again, delivering on its promise to push the boundaries of the observable universe closer to cosmic dawn with the ",
+         "after": ". By now Webb has established that it will eventually surpass virtually every benchmark it sets in these early years, but the newly confirmed galaxy, MoM-z14, holds intriguing clues to the universe’s historical timeline and just how different a place the early universe was than astronomers expected.\n“With Webb, we are able to see farther than humans ever have before, and it looks nothing like"
+        }
+       },
+       {
+        "text": "With galaxy MoM-z14 existing only 280 million years after the big bang",
+        "pages": null,
+        "context": {
+         "before": "galaxies, including MoM-z14.\n“We can take a page from archeology and look at these ancient stars in our own galaxy like fossils from the early universe, except in astronomy we are lucky enough to have Webb seeing so far that we also have direct information about galaxies during that time. It turns out we are seeing some of the same features, like this unusual nitrogen enrichment,” said Naidu.\n",
+         "after": ", there was not enough time for generations of stars to produce such high amounts of nitrogen in the way that astronomers would expect. One theory the researchers note is that the dense environment of the early universe resulted in supermassive stars capable of producing more nitrogen than any stars observed in the local universe.\nThe galaxy MoM-z14 also shows signs of clearing out the thick,"
+        }
+       }
+      ],
+      "quote_reason": "Both quotes state that the bright galaxy MoM-z14 existed 280 million years after the Big Bang, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that MoM-z14 is a bright galaxy existing 280 million years after the big bang, matching the claim fully."
+     }
+    ]
+   },
+   {
+    "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+    "start": 216,
+    "end": 472,
+    "claim": "Webb confirmed that MoM-z14 existed remarkably early in cosmic history.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the confirmation of a bright galaxy that existed 280 million years after the big bang",
+        "pages": null,
+        "context": {
+         "before": "NASA’s James Webb Space Telescope has topped itself once again, delivering on its promise to push the boundaries of the observable universe closer to cosmic dawn with ",
+         "after": ". By now Webb has established that it will eventually surpass virtually every benchmark it sets in these early years, but the newly confirmed galaxy, MoM-z14, holds intriguing clues to the universe’s historical timeline and just how different a place the early universe was than astronomers expected.\n“With Webb, we are able to see farther than humans ever have before, and it looks nothing like"
+        }
+       },
+       {
+        "text": "astronomers confirmed that MoM-z14 has a cosmological redshift of 14.44",
+        "pages": null,
+        "context": {
+         "before": "Institute of Technology’s (MIT) Kavli Institute for Astrophysics and Space Research, lead author of a paper on galaxy MoM-z14 published in the Open Journal of Astrophysics.\nDue to the expansion of the universe that is driven by dark energy, discussion of physical distances and “years ago” becomes tricky when looking this far. Using Webb’s NIRSpec (Near-Infrared Spectrograph) instrument, ",
+         "after": ", meaning that its light has been travelling through (expanding) space, being stretched and “shifted” to longer, redder wavelengths, for about 13.5 of the universe’s estimated 13.8 billion years of existence.\n“We can estimate the distance of galaxies from images, but it’s really important to follow up and confirm with more detailed spectroscopy so that we know exactly what we are seeing, and"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that astronomers confirmed MoM-z14 (a bright galaxy existing 280 million years after the big bang), which backs both the confirmation and the remarkably early existence, though they never name Webb as the instrument or confirmer.",
+      "page_judged": "supported",
+      "page_reason": "The page states Webb confirmed MoM-z14 is a bright galaxy existing 280 million years after the big bang with a redshift of 14.44, which supports the claim that it existed remarkably early in cosmic history."
+     }
+    ]
+   },
+   {
+    "sentence": "1. A bright galaxy just 280 million years after the Big Bang. Webb confirmed that MoM-z14 existed remarkably early in cosmic history. Its brightness gives astronomers a concrete test of how quickly the first galaxies could form and grow. (science.nasa.gov)",
+    "start": 216,
+    "end": 472,
+    "claim": "The brightness of MoM-z14 gives astronomers a concrete test of how quickly the first galaxies could form and grow.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://science.nasa.gov/missions/webb/nasa-webb-pushes-boundaries-of-observable-universe-closer-to-big-bang/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says MoM-z14 is surprisingly bright, that bright early galaxies are 100 times more numerous than predicted, and that there is a growing theory-observation gap, but it never states that MoM-z14's brightness serves as a concrete test of how quickly the first galaxies formed and grew."
+     }
+    ]
+   },
+   {
+    "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+    "start": 473,
+    "end": 732,
+    "claim": "Webb made the first clear detection of carbon dioxide in an exoplanet atmosphere.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NASA’s James Webb Space Telescope has captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system.",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\nWASP-39 b is a hot gas giant with a mass"
+        }
+       },
+       {
+        "text": "In the resulting spectrum of the exoplanet’s atmosphere, a small hill between 4.1 and 4.6 microns presents the first clear, detailed evidence for carbon dioxide ever detected in a planet outside the solar system.",
+        "pages": null,
+        "context": {
+         "before": "in brightness of the transmitted light across a spectrum of wavelengths to determine exactly what an atmosphere is made of. With its combination of inflated atmosphere and frequent transits, WASP-39 b is an ideal target for transmission spectroscopy.\nFirst Clear Detection of Carbon Dioxide\nThe research team used Webb’s Near-Infrared Spectrograph (NIRSpec) for its observations of WASP-39b. ",
+         "after": "\n“As soon as the data appeared on my screen, the whopping carbon dioxide feature grabbed me,” said Zafar Rustamkulov, a graduate student at Johns Hopkins University and member of the JWST Transiting Exoplanet Community Early Release Science team, which undertook this investigation. “It was a special moment, crossing an important threshold in exoplanet sciences.”\nNo observatory has ever measured"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that Webb captured the first clear evidence of carbon dioxide in an exoplanet's atmosphere, which matches the claim's core assertion with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Webb captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system, described as the first clear, detailed evidence ever detected in an exoplanet."
+     }
+    ]
+   },
+   {
+    "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+    "start": 473,
+    "end": 732,
+    "claim": "In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NASA’s James Webb Space Telescope has captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system.",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\nWASP-39 b is a hot gas giant with a mass"
+        }
+       },
+       {
+        "text": "WASP-39 b is a hot gas giant with a mass roughly one-quarter that of Jupiter (about the same as Saturn) and a diameter 1.3 times greater than Jupiter.",
+        "pages": null,
+        "context": {
+         "before": "of a planet outside the solar system. This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\n",
+         "after": " Its extreme puffiness is related in part to its high temperature (about 1,600 degrees Fahrenheit or 900 degrees Celsius). Unlike the cooler, more compact gas giants in our solar system, WASP-39 b orbits very close to its star – only about one-eighth the distance between the Sun and Mercury – completing one circuit in just over four Earth-days. The planet’s discovery, reported in 2011, was made"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back that Webb captured the first clear evidence of CO₂ in an exoplanet's atmosphere, and describe WASP-39 b, but neither quote names WASP-39 b as the planet with CO₂ and neither gives the year 2022.",
+      "page_judged": "not_supported",
+      "page_reason": "The page confirms that Webb detected carbon dioxide in WASP-39 b's atmosphere but never states that this happened in 2022; the only year it gives is 2011, for the planet's discovery."
+     }
+    ]
+   },
+   {
+    "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+    "start": 473,
+    "end": 732,
+    "claim": "WASP-39 b is a hot gas giant.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "WASP-39 b is a hot gas giant with a mass roughly one-quarter that of Jupiter",
+        "pages": null,
+        "context": {
+         "before": "of a planet outside the solar system. This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\n",
+         "after": " (about the same as Saturn) and a diameter 1.3 times greater than Jupiter. Its extreme puffiness is related in part to its high temperature (about 1,600 degrees Fahrenheit or 900 degrees Celsius). Unlike the cooler, more compact gas giants in our solar system, WASP-39 b orbits very close to its star – only about one-eighth the distance between the Sun and Mercury – completing one circuit in just"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that WASP-39 b is a hot gas giant, which backs the entire claim with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page describes WASP-39 b as a hot gas giant with a temperature of about 1,600 degrees Fahrenheit (900 degrees Celsius), so the claim is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "2. The first clear detection of carbon dioxide in an exoplanet atmosphere. In 2022, Webb identified CO₂ in the atmosphere of WASP-39 b, a hot gas giant, demonstrating how precisely it can measure the chemistry of planets around other stars. (science.nasa.gov)",
+    "start": 473,
+    "end": 732,
+    "claim": "Webb's CO₂ detection in WASP-39 b demonstrates how precisely Webb can measure the chemistry of planets around other stars.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NASA’s James Webb Space Telescope has captured the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system.",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " This observation of a gas giant planet orbiting a Sun-like star 700 light-years away provides important insights into the composition and formation of the planet. The finding, accepted for publication in Nature, offers evidence that in the future Webb may be able to detect and measure carbon dioxide in the thinner atmospheres of smaller rocky planets.\nWASP-39 b is a hot gas giant with a mass"
+        }
+       },
+       {
+        "text": "No observatory has ever measured such subtle differences in brightness of so many individual colors across the 3 to 5.5-micron range in an exoplanet transmission spectrum before.",
+        "pages": null,
+        "context": {
+         "before": "a planet outside the solar system.\n“As soon as the data appeared on my screen, the whopping carbon dioxide feature grabbed me,” said Zafar Rustamkulov, a graduate student at Johns Hopkins University and member of the JWST Transiting Exoplanet Community Early Release Science team, which undertook this investigation. “It was a special moment, crossing an important threshold in exoplanet sciences.”\n",
+         "after": " Access to this part of the spectrum is crucial for measuring abundances of gases like water and methane, as well as carbon dioxide, which are thought to exist in many different types of exoplanets.\n“Detecting such a clear signal of carbon dioxide on WASP-39 b bodes well for the detection of atmospheres on smaller, terrestrial-sized planets,” said Natalie Batalha of the University of California"
+        }
+       },
+       {
+        "text": "Webb’s unmatched infrared sensitivity has now confirmed the presence of carbon dioxide on this planet as well.",
+        "pages": null,
+        "context": {
+         "before": "Earth-days. The planet’s discovery, reported in 2011, was made based on ground-based detections of the subtle, periodic dimming of light from its host star as the planet transits, or passes in front of the star.\nPrevious observations from other telescopes, including NASA’s Hubble and Spitzer space telescopes, revealed the presence of water vapor, sodium, and potassium in the planet’s atmosphere. ",
+         "after": "\nFiltered Starlight\nTransiting planets like WASP-39 b, whose orbits we observe edge-on rather than from above, can provide researchers with ideal opportunities to probe planetary atmospheres.\nDuring a transit, some of the starlight is eclipsed by the planet completely (causing the overall dimming) and some is transmitted through the planet’s atmosphere.\nBecause different gases absorb different"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back that Webb detected CO2 on an exoplanet with unmatched sensitivity and subtle brightness measurements, but they never name WASP-39 b and do not explicitly frame the result as showing how precisely Webb measures planetary chemistry in general.",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports Webb detected CO2 in WASP-39 b's atmosphere via transmission spectroscopy and says future work may detect CO2 on smaller planets, but it does not claim or quantify how precisely Webb measures planetary chemistry, so the claim's 'demonstrates how precisely' qualifier is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+    "start": 733,
+    "end": 1063,
+    "claim": "Webb discovered a previously unknown population of \"little red dots\" in the early universe.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In December 2022, less than six months after commencing science operations, NASA’s James Webb Space Telescope revealed something never seen before: numerous red objects that appear small on the sky, which scientists soon called “little red dots” (LRDs).",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " Though these dots are quite abundant, researchers are perplexed by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. They found that a large fraction of the LRDs in their sample showed"
+        }
+       },
+       {
+        "text": "We’re confounded by this new population of objects that Webb has found.",
+        "pages": null,
+        "context": {
+         "before": "by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. They found that a large fraction of the LRDs in their sample showed signs of containing growing supermassive black holes.\n“",
+         "after": " We don’t see analogs of them at lower redshifts, which is why we haven’t seen them prior to Webb,” said Dale Kocevski of Colby College in Waterville, Maine, and lead author of the study. “There's a substantial amount of work being done to try to determine the nature of these little red dots and whether their light is dominated by accreting black holes.”\nImage: Little Red Dots (NIRCam Image)\nA"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that Webb revealed numerous never-before-seen small red objects, called little red dots, and describe them as a new population Webb found, which matches the claim's main point; the claim's 'early universe' is consistent with the 'early universe' framing of the page's context but the quoted sentences themselves do not explicitly tie the dots to the early universe beyond the first quote's timing of December 2022 observations.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in December 2022 Webb revealed numerous red objects never seen before, which scientists called 'little red dots', and that they are a new population with no analogs at lower redshifts."
+     }
+    ]
+   },
+   {
+    "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+    "start": 733,
+    "end": 1063,
+    "claim": "Webb discovered the little red dots, which are compact objects, in 2022.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In December 2022, less than six months after commencing science operations, NASA’s James Webb Space Telescope revealed something never seen before: numerous red objects that appear small on the sky, which scientists soon called “little red dots” (LRDs).",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " Though these dots are quite abundant, researchers are perplexed by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. They found that a large fraction of the LRDs in their sample showed"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs that Webb revealed the little red dots in December 2022, but it only says they appear small on the sky, not that they are compact objects.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in December 2022 Webb revealed numerous small red objects later called little red dots, which appear small on the sky, so the claim that Webb discovered them in 2022 and that they are compact is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+    "start": 733,
+    "end": 1063,
+    "claim": "Follow-up observations found strong evidence that at least one little red dot contains a rapidly growing supermassive black hole wrapped in dense gas.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "They found that about 70 percent of the targets showed evidence for gas rapidly orbiting 2 million miles per hour (1,000 kilometers per second) – a sign of an accretion disk around a supermassive black hole.",
+        "pages": null,
+        "context": {
+         "before": "in the census spanning a wide redshift range. The distribution they discovered is intriguing: LRDs emerge in large numbers around 600 million years after the big bang and undergo a rapid decline in quantity around 1.5 billion years after the big bang.\nThe team looked toward the Red Unknowns: Bright Infrared Extragalactic Survey (RUBIES) for spectroscopic data on some of the LRDs in their sample. ",
+         "after": " This suggests that many LRDs are accreting black holes, also known as active galactic nuclei (AGN).\n“The most exciting thing for me is the redshift distributions. These really red, high-redshift sources basically stop existing at a certain point after the big bang,” said Steven Finkelstein, a co-author of the study at the University of Texas at Austin. “If they are growing black holes, and we"
+        }
+       },
+       {
+        "text": "This suggests that many LRDs are accreting black holes, also known as active galactic nuclei (AGN).",
+        "pages": null,
+        "context": {
+         "before": "1.5 billion years after the big bang.\nThe team looked toward the Red Unknowns: Bright Infrared Extragalactic Survey (RUBIES) for spectroscopic data on some of the LRDs in their sample. They found that about 70 percent of the targets showed evidence for gas rapidly orbiting 2 million miles per hour (1,000 kilometers per second) – a sign of an accretion disk around a supermassive black hole. ",
+         "after": "\n“The most exciting thing for me is the redshift distributions. These really red, high-redshift sources basically stop existing at a certain point after the big bang,” said Steven Finkelstein, a co-author of the study at the University of Texas at Austin. “If they are growing black holes, and we think at least 70 percent of them are, this hints at an era of obscured black hole growth in the early"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back the core point that follow-up targets show evidence of an accreting supermassive black hole via rapidly orbiting gas, but nothing in them says the black hole is wrapped in dense gas or describes its growth as rapid.",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports that RUBIES spectroscopy showed rapidly orbiting gas, suggesting accreting black holes in about 70 percent of targets, but it describes dense gas cocoons and obscured black holes only as possible explanations, not as an established finding, so the claim's 'strong evidence' and 'wrapped in dense gas' go beyond what it states."
+     }
+    ]
+   },
+   {
+    "sentence": "3. A previously unknown population of “little red dots” in the early universe. Webb discovered these compact objects in 2022. Follow-up observations found strong evidence that at least one contains a rapidly growing supermassive black hole wrapped in dense gas, offering a clue to how black holes grew so early. (science.nasa.gov)",
+    "start": 733,
+    "end": 1063,
+    "claim": "The little red dot with a rapidly growing supermassive black hole offers a clue to how black holes grew so early.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/missions/webb/newfound-galaxy-class-may-indicate-early-black-hole-growth-webb-finds/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "They found that a large fraction of the LRDs in their sample showed signs of containing growing supermassive black holes.",
+        "pages": null,
+        "context": {
+         "before": "on the sky, which scientists soon called “little red dots” (LRDs). Though these dots are quite abundant, researchers are perplexed by their nature, the reason for their unique colors, and what they convey about the early universe.\nA team of astronomers recently compiled one of the largest samples of LRDs to date, nearly all of which existed during the first 1.5 billion years after the big bang. ",
+         "after": "\n“We’re confounded by this new population of objects that Webb has found. We don’t see analogs of them at lower redshifts, which is why we haven’t seen them prior to Webb,” said Dale Kocevski of Colby College in Waterville, Maine, and lead author of the study. “There's a substantial amount of work being done to try to determine the nature of these little red dots and whether their light is"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs that a large fraction of little red dots show signs of growing supermassive black holes, but it does not say the growth is rapid or that it explains how black holes grew so early.",
+      "page_judged": "supported",
+      "page_reason": "The page reports that about 70 percent of the sampled LRDs show fast-orbiting gas indicating growing supermassive black holes, and says this hints at an era of obscured black hole growth in the early universe, which broadly supports the claim that these objects offer a clue to early black hole growth."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 6,
+    "partial": 3,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 11,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.1818,
+   "partly_backed": 3,
+   "supported_share_of_cited": 0.4286,
+   "pages_cited": 4,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.008662,
+   "usd_per_claim": 0.000619
+  },
+  "cost": {
+   "total_usd": 0.0087,
+   "cap_usd": 0.25,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 14,
+     "usd": 0.0028
+    },
+    {
+     "node": "page_check",
+     "calls": 14,
+     "usd": 0.0024
+    },
+    {
+     "node": "check",
+     "calls": 12,
+     "usd": 0.0024
+    }
+   ]
+  }
+ }
+}
