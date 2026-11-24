@@ -2138,3 +2138,166 @@ This check was made by Claude Code, a model, not by a person.
 - Pages that could not be read (32% and 19% of cited claims) are left out of the headline.
 - **Tracing.** Langfuse accepted this run's traces, despite the free tier being used up this
   month.
+
+## D-043. The plan in answer to the review of 24 November 2026
+
+**What.** An outside review of the site and the code (written as a hiring manager, at commit
+`a4c0aa5`) listed 20 items. This entry fixes the order they are done in, who does each, and what
+each costs. It is a plan only. Every new module still gets its own entry before it is built.
+
+**Why.** The review's verdict: the engineering is strong, but two things decide an interview.
+Whether the OpenAI-against-Claude finding survives a hostile reading, and what Aditya did himself.
+Both are answered by work in phase 1 and phase 4, so the order below puts those first.
+
+**Checked before planning.** Two of the review's claims were tested and hold:
+- A source list pasted on one line makes the parser drop the markers. The claim is then judged
+  against the wrong page.
+- Claude's searches were capped at 5 per answer and OpenAI's were not.
+
+**Marked [ADITYA].** These need Aditya's own hands. No model does them, and no model's labels
+stand in for his.
+
+### Phase 0. Wrong verdicts and the front door (hours, free)
+
+| Review item | Work | Who |
+|---|---|---|
+| 5 | Parse source lists written on one line | Claude Code |
+| 5 | A marker with no source, or a source list that cannot be read, gives the new label "could not read the citation". It never gives "not on the cited page", and the paragraph rule never borrows from a source list | Claude Code |
+| 5 | Tests in the shapes chat apps paste (numbered, footnote, inline links; with and without line breaks) | Claude Code, from formats I know |
+| 5 | Three or four real pastes from the apps, to add as fixtures | **[ADITYA]**, 5 minutes, optional |
+| 5, 10 | The Audit and Run buttons work at once and say "starting" while the server wakes. The dead click in the review was most likely the button disabled during a 13-second cold start | Claude Code |
+| 6 | The README opens with the auditor; the research agent comes second | Claude Code |
+| 6 | Merge the pull request into `main`; switch Vercel's production branch | **[ADITYA]** says when |
+| 6 | Rename the repository to `evidentia`; then the User-Agent and docs are updated | **[ADITYA]** clicks, then Claude Code |
+
+### Phase 1. Can the finding survive a hostile reading? (review items 1 to 4)
+
+Nothing about the real-world audit goes on the site until this phase is done.
+
+**1a. Free analyses from the saved audits, added to `evals/results/realworld.json`:**
+- **Both denominators.** The failure rate among checkable cited claims (38.0% and 7.9%), and the
+  share of all claims verified against a cited page (18.5% and 24.6% by the review's count).
+- **All eight labels** for each tool, as counts and shares.
+- **Bounds.** The headline if every unread page had supported its claim, and if none had.
+- **Which sites refuse**, by tool and by reason.
+
+**1b. A person checks the flags (item 1). [ADITYA], about two hours.**
+- **The tool.** A blind labelling tool, built by Claude Code with its own decision entry.
+- **The sample.** 100 claims drawn with a fixed seed: 25 failed and 25 supported from each tool,
+  all with their own citation.
+- **What is shown.** The claim and the cited page, opened in the browser. Tracking parameters such
+  as `utm_source=openai` are stripped from the address, because they would give the tool away.
+  Not shown: the tool's name, the auditor's verdict, or the judges' reasons.
+- **What is reported.** For each tool, the share of flags upheld and of "supported" verdicts
+  upheld, with intervals. The headline is not adjusted. The findings page and README state "N
+  flags checked by hand, X% upheld."
+- **If Aditya cannot do it.** The finding is published only with "no flag was checked by a
+  person" in its first screen. That is a much weaker claim, and it leaves the review's first
+  question open.
+
+**1c. Treat the two tools alike (item 3).** One paid run of about $4.50, with Aditya's yes first.
+- **The run.** 20 questions, chosen by a fixed seed, are asked three more times of each tool.
+  Both tools are capped at 5 searches. The run saves how many searches each answer used, and
+  OpenAI's raw citation offsets.
+- **What it gives.** The spread between repeated answers. Whether the search cap changes
+  OpenAI's result. The data for a code test that every marker sits right after the span its
+  annotation covers. A person reading 20 answers against their markers would be stronger; that is
+  **[ADITYA]**, optional.
+- **Disclosed on the findings page, not only here.** Claude ran on the older search tool
+  (`web_search_20250305`), because the newer one returns no citation data.
+
+**1d. Pages that could not be read (item 4).**
+- **Script-built pages.** A second reader, with its own decision entry, renders the page in a
+  headless browser where robots.txt allows. It is used only for pages that answered but gave too
+  little text. The audits of those pages are run again, and the report says how far the headline
+  moves. About $1.
+- **Refusals.** Pages that refused the fetcher (403, or a redirect to a block page) stay unread. A
+  site that refuses a crawler has said no, and getting round that with a browser's identity is
+  not something this project does. Those pages are covered by the bounds in 1a.
+
+**1e. The findings page**, built only after 1a to 1d.
+- **First screen.** A stacked bar per tool over all claims and all labels. Both readings of the
+  result. The plain statement that the tools fail differently. The hand-check line. The limits.
+- **Below.** Examples chosen by D-042's rule, each with its own address.
+
+### Phase 2. The site (review items 7 to 10, 13, 14)
+
+One decision entry for the set, then built and checked in the browser at desktop and phone widths.
+
+- **Home (7).** Audit becomes the home page: what this is, the finding, "paste an answer". The
+  research agent moves to its own tab.
+- **Reading a result (8).**
+  - A text mark and a legend for every verdict, so colour is never the only signal.
+  - Step names that fit.
+  - The evidence beside the answer on wide screens, and as a sheet on a phone.
+  - Page titles in place of bare site names.
+  - Recorded audits open on the finished result, with a replay button.
+- **Sharing (9).** An address for each recorded audit and each findings example. Link previews
+  (`og:` tags and an image). A footer with the author and a contact. A short "method and limits"
+  page.
+- **First visit (10).** Keep the service warm. The choice between a scheduled ping and one
+  minimum instance is made in the entry, with Google's current prices checked first.
+- **Legibility (13).** Labels at 12px and at least 4.5 to 1 contrast. Tap targets at least 40px
+  tall. A skip link. Focus styles checked by keyboard.
+- **Visual design (14).** Verdicts as proofreader's marks, and fewer uppercase labels, done as part
+  of the work on item 8. The larger redesign waits until phase 1 is public.
+- **Research agent (12).** It is the weaker half, so it gets only small repairs: check that the
+  raw `<u>` tag in a source title is gone, and note where two claims give different figures.
+  A written answer on top and source ranking are not planned unless Aditya asks.
+
+### Phase 3. The budget (review item 11)
+
+- **Persist the counters.** The day's spend and the per-address counts move out of memory into a
+  small store, so a cold start no longer resets them. Proposed: Firestore in the same Google
+  Cloud project, which needs no new account. It gets its own entry, and Aditya approves the
+  permission it needs.
+- **Console limits.** Hard monthly limits in the Anthropic, OpenAI, Voyage and Tavily consoles,
+  named in `DEPLOY.md` as the real ceiling. **[ADITYA]**, about 15 minutes.
+
+### Phase 4. The record, and Aditya in it (review items 17 to 19)
+
+- **A one-page summary** at the top of this file: the ten decisions that mattered and what each
+  measured. Claude Code.
+- **The trade-off curve (17).** Flags right against the share of claims given a verdict, as the
+  agreement rule is loosened and tightened, drawn from the benchmark rows already saved. Free.
+- **"What changes at scale" (18).** A short README section: a queue for audits, stored results,
+  shared counters, and what breaks first. Claude Code.
+- **In Aditya's own words. [ADITYA]**
+  - A "what I learned" note.
+  - A two-minute video in which he pastes an answer and explains one flag.
+  - Five people outside the project auditing an answer of their own, quoted.
+  - The review's ten interview questions. Claude Code can list where each answer's evidence
+    lives; the answers are his.
+
+### Phase 5. Depth (review items 15, 16, 20), one at a time, each measured
+
+1. **A review queue for "needs a human" (15).** The audit pauses with LangGraph's interrupt and a
+   checkpointer, a person rules, and the audit resumes. This comes first because its rulings are
+   also human labels.
+2. **Citation repair (15).** When a citation fails, a loop searches for a page that does back the
+   claim, or refutes it, and decides when to stop. The share repaired is measured. This is D-034's
+   step 5.
+3. **The vector database (16).** Either a cache of pages across runs, keyed by address and content
+   hash, with the keyword-against-dense test rerun on finding one sentence in a long page. Or
+   Qdrant removed from the research pipeline, with the reason stated. Decided in its own entry.
+4. **Later (20).** More tools if keys are given; MCP tools; evidence from tables and figures.
+
+### Cost
+
+| | About |
+|---|---|
+| Models and search, phases 0 to 4 | $6 to $8: the re-ask run $4.50, re-audits $1, live checks under $2 |
+| Phase 5 | estimated in each entry |
+| Aditya's time, phases 0 to 4 | 4 to 5 hours: labelling 2 h; merge, rename and console limits 30 min; his own words and video 1 to 2 h; five outside users as they come |
+
+**Considered.**
+
+- **Publishing the finding now and fixing later.** The review shows where it would be attacked. A
+  named company's product is involved, so it waits for phase 1.
+- **A model labelling the flags.** That is the thing the review says cannot stand in for a person.
+- **A reader service or a browser identity for pages that refuse.** Not done, for the reason in 1d.
+- **Doing the agent work first.** It is the most interesting to build, and it does nothing for the
+  finding's credibility.
+
+**Trade-off.** The finding stays off the site for some days. Phase 1 cannot finish without about
+two hours of Aditya's time, and nothing in this plan removes that.
