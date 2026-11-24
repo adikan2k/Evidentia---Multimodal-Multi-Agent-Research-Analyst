@@ -9,7 +9,15 @@ from evidentia.chunk import make_passages
 from evidentia.graph import Deps
 from evidentia.schemas import Passage, Source
 
-RETRIEVERS = ["bm25", "dense", "hybrid", "hybrid_rerank"]
+RETRIEVERS = ["bm25", "dense", "hybrid", "dense_rerank", "hybrid_rerank"]
+# (before, after): each pair is reported as the per-question difference after minus before.
+COMPARISONS = [
+    ("bm25", "dense"),
+    ("dense", "hybrid"),
+    ("hybrid", "hybrid_rerank"),
+    ("dense", "hybrid_rerank"),
+    ("dense_rerank", "hybrid_rerank"),
+]
 METRICS = ["recall_at_10", "mrr_at_10", "ndcg_at_10"]
 TOP_K = 10
 
@@ -49,6 +57,9 @@ async def retrieve(deps: Deps, run_id: str, name: str, question: str, vector: li
     limit = deps.settings.retrieve_limit
     if name in ("bm25", "dense"):
         return await deps.store.single(run_id, question, vector, TOP_K, using=name)
+    if name == "dense_rerank":
+        candidates = await deps.store.single(run_id, question, vector, limit, using="dense")
+        return await deps.embedder.rerank("eval-retrieve", question, candidates, TOP_K)
     candidates = await deps.store.hybrid(run_id, question, vector, limit)
     if name == "hybrid":
         return candidates[:TOP_K]
@@ -83,7 +94,7 @@ def summarise(rows: list[dict]) -> dict:
             m: paired_difference([r[after][m] for r in rows], [r[before][m] for r in rows])
             for m in METRICS
         }
-        for before, after in zip(RETRIEVERS, RETRIEVERS[1:], strict=False)
+        for before, after in COMPARISONS
     }
     return {"retrievers": table, "paired_differences": steps}
 
@@ -106,7 +117,8 @@ async def run() -> None:
     path = write_result(
         "retrieval",
         {
-            "what": "Top-10 passage retrieval on the frozen corpus, four retrievers.",
+            "what": "Top-10 passage retrieval on the frozen corpus. The plan asked for four "
+            "retrievers; dense_rerank was added to show what keyword search contributes.",
             "gold": "Gold snippets were drafted by Claude from each question's pages and "
             "checked word for word against the page text. See evals/questions.jsonl.",
             "relevance": "A passage is relevant if it overlaps a gold snippet on the same page.",
