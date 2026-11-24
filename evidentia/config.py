@@ -97,7 +97,7 @@ class Settings(BaseSettings):
     audit_max_pages: int = 10
     audit_page_chars: int = 24_000  # longer pages are cut to their best passages for each claim
     audit_top_passages: int = 6
-    audit_max_quotes: int = 3
+    audit_max_quotes: int = 5  # 3 left multi-part claims partial on the AggreFact dev rows
     audit_concurrency: int = 4
 
     # The public API (D-028). Dollars are list prices, the same ones the ledger uses.

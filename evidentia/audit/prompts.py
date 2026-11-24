@@ -37,9 +37,10 @@ Then give up to {{max_quotes}} quotes that show it:
 - Each quote is one contiguous stretch of text copied character for character from ONE block, \
 usually one or two sentences. Do not fix typos, change punctuation or capitalisation, join \
 separate parts, or put "..." in a quote.
-- Choose quotes that contain the specifics: numbers, dates, names, places, who said it.
-- A separate checker will see only the claim and your quotes, so the quotes must be enough on \
-their own.
+- A separate checker will see only the claim and your quotes, so the quotes together must cover \
+every part of the claim: each number, date, name, place, event and who said it. If the claim has \
+several parts, quote the place where each part is stated, wherever it is on the page.
+- Use as few quotes as that needs.
 - For neither, return no quotes."""
 
 AUDIT_CHECK_SYSTEM = f"""You check whether quotes from a web page back a claim. You are given \
