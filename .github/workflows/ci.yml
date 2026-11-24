@@ -39,12 +39,13 @@ jobs:
           cache-dependency-path: web/package-lock.json
       - name: Install
         run: npm ci
+      - name: Build
+        run: npm run build
+      # The build writes the route types the type-check relies on, so it goes first.
       - name: Type-check
         run: npx tsc --noEmit
       - name: Lint
         run: npm run lint
-      - name: Build
-        run: npm run build
 
   evals:
     name: evaluation
