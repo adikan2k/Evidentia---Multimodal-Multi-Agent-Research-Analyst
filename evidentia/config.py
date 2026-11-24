@@ -84,6 +84,22 @@ class Settings(BaseSettings):
     min_page_chars: int = 200
     min_quote_chars: int = 20
 
+    # The auditor (D-037). The checker model and effort above are shared with it.
+    splitter_model: str = "claude-haiku-5-5"
+    splitter_max_tokens: int = 8_000
+    finder_model: str = "claude-sonnet-5-5"
+    finder_effort: str = "medium"
+    finder_max_tokens: int = 2_000
+    # About a cent per claim and page, plus room for the worst case of calls in flight, which
+    # the ledger reserves before each call. $0.25 stopped a 5-claim audit with 4 calls in flight.
+    audit_cap_usd: float = 0.50
+    audit_max_claims: int = 25
+    audit_max_pages: int = 10
+    audit_page_chars: int = 24_000  # longer pages are cut to their best passages for each claim
+    audit_top_passages: int = 6
+    audit_max_quotes: int = 3
+    audit_concurrency: int = 4
+
     # The public API (D-028). Dollars are list prices, the same ones the ledger uses.
     daily_budget_usd: float = 1.00  # all live runs and checks in one UTC day
     public_run_cap_usd: float = 0.25  # one live run from the website
