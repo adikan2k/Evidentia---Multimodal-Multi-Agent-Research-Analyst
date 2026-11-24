@@ -1636,14 +1636,14 @@ Run once on the `test2` sample, 550 test rows never used before, for $0.37
 
 | Two judges, partial its own verdict | Measured | Bar | Met? |
 |---|---|---|---|
-| Flags right | 0.774 (0.720 to 0.828) | 0.80 | no |
+| Flags right | 0.773 (0.720 to 0.828) | 0.80 | no |
 | "Supported" right | 0.910 (0.867 to 0.948) | 0.93 | no |
 | Coverage | 0.816 | 0.70 | yes |
 
 - **What failed.** Two of the three bars. The practice rows had given 0.810 and 0.940, so part of
   that was luck in the practice sample; the bar upper bounds still overlap the measured
   intervals.
-- **What held.** Two judges beat either alone on the same unseen rows. Flags right: 0.774, against
+- **What held.** Two judges beat either alone on the same unseen rows. Flags right: 0.773, against
   0.660 for the page judge and 0.543 for the quote judge. "Supported" right: 0.910, against
   0.892 and 0.904.
 - **Reported as is.** The README states it with these numbers.
@@ -1656,7 +1656,7 @@ Run once on the `test2` sample, 550 test rows never used before, for $0.37
 Any change that helps is checked on a second, separate set of practice rows. Only a change that
 survives that check is run once on fresh test rows.
 
-**Why.** D-039's confirming run missed the bars: flags right 0.774 against 0.80, "supported" right
+**Why.** D-039's confirming run missed the bars: flags right 0.773 against 0.80, "supported" right
 0.910 against 0.93. Reading the errors on the practice rows (console only, nothing saved) showed
 two opposite problems:
 
@@ -1766,7 +1766,7 @@ enough for supported, and it still blocks a flag.
 The graded judge wins on flags and loses slightly on "supported", so by the rule fixed above it
 does not go on to `test3`. It stays in the code, switched off (`page_judge_graded`).
 
-**What the three samples show together.** The same D-039 setup scored 0.810, 0.839 and 0.774 for
+**What the three samples show together.** The same D-039 setup scored 0.810, 0.839 and 0.773 for
 flags right on three separate sets of 550 rows. That spread comes from which rows are drawn, and
 it is as large as any change tried in D-039 or D-040. Pooled over the 1,100 rows never used to
 tune it (`dev550b` and `test2`):

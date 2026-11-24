@@ -94,6 +94,10 @@ export default function EvalsPage() {
   // Computed, not typed in: every figure in the prose below is derived from the result files.
   const costRatio = (system(product).costPerQuestion / system("baseline").costPerQuestion).toFixed(1);
   const unanswerableCount = Object.values(evals.unanswerable.systems)[0].questions;
+  const pooled = evals["aggrefact_pooled-dev550b+test2_q-haiku_p-haiku"];
+  const test2 = evals["aggrefact_test2_q-haiku_p-haiku"];
+  const interval = (s: { value: number; ci_low: number; ci_high: number }) =>
+    `${s.value.toFixed(3)} (${s.ci_low.toFixed(3)}–${s.ci_high.toFixed(3)})`;
 
   return (
     <div className="mx-auto max-w-[78rem] px-6 pb-28 pt-8 md:px-10">
@@ -223,6 +227,44 @@ export default function EvalsPage() {
           today&apos;s models mostly do.
         </p>
       </Section>
+
+      <div id="auditor" className="scroll-mt-8">
+        <Section title="The auditor, against people's labels">
+          <Table
+            head={["System", "Flags right", "Supported right", "Claims with a verdict"]}
+            rows={[
+              [
+                "Two judges (as shipped)",
+                interval(pooled.two_judges.partial_as_its_own_verdict.flag_precision),
+                interval(pooled.two_judges.supported_precision),
+                pooled.two_judges.coverage.value.toFixed(3),
+              ],
+              [
+                "Quote judge alone",
+                pooled.quote_judge_alone.flag_precision.value.toFixed(3),
+                pooled.quote_judge_alone.supported_precision.value.toFixed(3),
+                "1.000",
+              ],
+              [
+                "Page judge alone",
+                pooled.page_judge_alone.flag_precision.value.toFixed(3),
+                pooled.page_judge_alone.supported_precision.value.toFixed(3),
+                "1.000",
+              ],
+            ]}
+          />
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-soft">
+            {pooled.rows.toLocaleString()} rows of LLM-AggreFact, each a claim, a document and a
+            person&apos;s label, none used to tune the auditor. A claim gets a verdict only when a
+            judge that sees exact quotes and a judge that sees the page agree. A finish line set
+            before the test (flags right 0.80, supported right 0.93) was missed on the 550 test rows
+            alone ({test2.two_judges.partial_as_its_own_verdict.flag_precision.value.toFixed(3)} and{" "}
+            {test2.two_judges.supported_precision.value.toFixed(3)}). Three samples of 550 rows
+            differ by about as much as any change tried, so the pooled figures are the better
+            estimate. Partial is its own verdict and never counted as a failure.
+          </p>
+        </Section>
+      </div>
 
       <Section title="What was not done">
         <ul className="max-w-2xl space-y-3 leading-relaxed text-ink-soft">

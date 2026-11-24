@@ -12,6 +12,9 @@ export function SiteHeader() {
         <Link href="/" className="underline-offset-4 hover:text-ink hover:underline">
           Run
         </Link>
+        <Link href="/audit" className="underline-offset-4 hover:text-ink hover:underline">
+          Audit
+        </Link>
         <Link href="/evals" className="underline-offset-4 hover:text-ink hover:underline">
           Evals
         </Link>

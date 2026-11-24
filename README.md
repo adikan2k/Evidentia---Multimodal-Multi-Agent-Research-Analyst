@@ -39,8 +39,9 @@ tool call is traced in Langfuse.
 
 ## Auditing another tool's answer
 
-`python -m evidentia audit answer.md` checks the citations in an answer written by another AI
-tool (D-037, D-038, D-039). The answer can use markdown links, bare addresses, or numbered
+On the site's Audit page, or with `python -m evidentia audit answer.md`, Evidentia checks the
+citations in an answer written by another AI tool (D-037 to D-041). The page plays three recorded
+audits of answers from `gpt-6.2-sol` with web search, and runs live audits within a daily budget. The answer can use markdown links, bare addresses, or numbered
 markers like `[1]` with a source list.
 
 1. **Parse (code).** Finds every citation and where it sits in the answer.
@@ -96,9 +97,9 @@ For a single judge, "flags" means every claim it does not call supported.
 - **Two judges beat either one alone.** About 81 of every 100 flags are right, against 68 for the
   better single judge. The price is that 18% of claims get "needs a human" instead of a verdict.
 - **A finish line was set before the test run** (flags right at least 0.80, supported right at
-  least 0.93). On the 550 test rows alone it was missed: 0.774 and 0.910
+  least 0.93). On the 550 test rows alone it was missed: 0.773 and 0.910
   (`aggrefact_test2_q-haiku_p-haiku.json`). On the 550 dev rows it was met. Three samples of 550
-  rows gave flags right of 0.810, 0.839 and 0.774, so a single sample of that size cannot settle
+  rows gave flags right of 0.810, 0.839 and 0.773, so a single sample of that size cannot settle
   a bar this close. The pooled figures above are the better estimate, and both bars lie inside
   their intervals.
 - **What else was tried, and dropped by rules set in advance.** Sonnet as the judges, a judge from

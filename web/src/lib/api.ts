@@ -1,5 +1,6 @@
 // Talking to the Evidentia API: start a live run and read its events, or check one claim.
 
+import type { AuditEvent, AuditReport } from "@/lib/audit";
 import type { Label, Replay, RunEvent } from "@/lib/replay";
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
@@ -31,14 +32,39 @@ export async function liveAvailable(): Promise<boolean> {
   }
 }
 
+/** Whether a live audit is possible right now. False if the API is down or over its budget. */
+export async function auditAvailable(): Promise<boolean> {
+  try {
+    const response = await fetch(`${API_URL}/status`);
+    return response.ok && (await response.json()).audit_available === true;
+  } catch {
+    return false;
+  }
+}
+
 /** Start a run and call the handlers as its server-sent events arrive. */
 export async function streamRun(question: string, handlers: Handlers, signal: AbortSignal) {
+  return stream("/runs", { question }, handlers, signal);
+}
+
+type AuditHandlers = {
+  onNode: (event: AuditEvent) => void;
+  onReport: (report: AuditReport) => void;
+  onError: (message: string) => void;
+};
+
+/** Start an audit of a pasted answer and call the handlers as its events arrive. */
+export async function streamAudit(answer: string, handlers: AuditHandlers, signal: AbortSignal) {
+  return stream("/audits", { answer }, handlers as unknown as Handlers, signal);
+}
+
+async function stream(path: string, body: object, handlers: Handlers, signal: AbortSignal) {
   let response: Response;
   try {
-    response = await fetch(`${API_URL}/runs`, {
+    response = await fetch(`${API_URL}${path}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ question }),
+      body: JSON.stringify(body),
       signal,
     });
   } catch {
