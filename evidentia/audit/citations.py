@@ -4,6 +4,10 @@ Answers arrive in a few shapes: markdown links (`[IEA](https://...)`), bare addr
 numbered markers (`[1]`, `[^2]`, `[1, 3]`) with a numbered source list at the end. This turns
 the answer into plain text the splitter can copy sentences from, and records where in that text
 each citation sits. Which claim cites which page is decided from those positions, not by a model.
+
+The source list may be one entry per line, or all on one line after "Sources:", as it arrives
+when a paste loses its line breaks (D-043). A marker with no source it can be matched to is
+recorded as unresolved, so its claim is never judged against some other page.
 """
 
 import re
@@ -24,7 +28,18 @@ TOKEN = re.compile(
 REFERENCE = re.compile(rf"^\s*(?:\[\^?(?P<a>\d+)\]:?|(?P<b>\d+)[.)])\s*(?P<rest>.*?{URL}.*)$")
 FIRST_URL = re.compile(URL)
 HEADING = re.compile(r"^\s*(?:sources|citations|references)\s*:?\s*$", re.IGNORECASE)
+# "Sources:" in the middle of a line, followed by a numbered entry.
+INLINE_HEADING = re.compile(
+    r"(?:^|(?<=[\s.!?)\]]))(?:sources|citations|references)\s*:\s*(?=(?:\[\^?\d+\]|\d+[.)])\s*\S)",
+    re.IGNORECASE,
+)
+SOURCES_WORD = re.compile(r"\b(?:sources|citations|references)\s*:", re.IGNORECASE)
+BRACKET_ENTRY = re.compile(r"\[\^?(\d+)\]:?\s*")
+DOTTED_ENTRY = re.compile(r"(?:^|(?<=\s))(\d+)[.)]\s+")
+MARKDOWN_LINK = re.compile(rf"\[[^\]\n]*\]\({URL}\)")
+BULLET = re.compile(r"^\s*[-*+•]\s*")
 LINE_START = re.compile(r"^\s*(?:#{1,6}\s+|[-*+•]\s+)?")
+MARKER = re.compile(r"\[\^?\d+(?:\s*,\s*\d+)*\]")
 # What may sit between a sentence and a citation that still belongs to it: "...2023 [1][2]."
 GAP = set(" \t.,;:!?()\"'")
 
@@ -40,11 +55,23 @@ class Mention(BaseModel):
     end: int
 
 
+class Unresolved(BaseModel):
+    """A numbered marker in the answer with no source it can be matched to."""
+
+    marker: str
+    start: int
+    end: int
+
+
 class ParsedAnswer(BaseModel):
     text: str  # the answer without its source list, links and markdown marks
     citations: list[Cited] = []
     mentions: list[Mention] = []
-    unknown_markers: list[str] = []  # markers like [7] with no matching source
+    unresolved: list[Unresolved] = []
+
+    @property
+    def unknown_markers(self) -> list[str]:
+        return [u.marker for u in self.unresolved]
 
 
 def tidy_url(url: str) -> str:
@@ -67,7 +94,7 @@ class _Builder:
         self.text = ""
         self.ids: dict[str, str] = {}
         self.mentions: list[Mention] = []
-        self.unknown: list[str] = []
+        self.unresolved: list[Unresolved] = []
 
     def plain(self, piece: str) -> None:
         piece = re.sub(r"\s+", " ", piece)
@@ -108,7 +135,7 @@ class _Builder:
         for n in (part.strip() for part in nums.split(",")):
             url = self.references.get(n)
             if url is None:
-                self.unknown.append(n)
+                self.unresolved.append(Unresolved(marker=n, start=start, end=len(self.text)))
                 continue
             cid = self.ids.setdefault(url, f"c{len(self.ids) + 1}")
             self.mentions.append(Mention(citation_id=cid, start=start, end=len(self.text)))
@@ -118,7 +145,7 @@ class _Builder:
         if len(self.text) == before:
             return
         self.text += "\n"
-        for m in self.mentions:  # a citation at the very end of a line loses no characters
+        for m in [*self.mentions, *self.unresolved]:  # one at a line's very end stays on it
             m.start, m.end = min(m.start, len(self.text) - 1), min(m.end, len(self.text) - 1)
 
 
@@ -130,15 +157,60 @@ def is_reference(rest: str) -> bool:
 
     "2. **A bright galaxy...** Webb confirmed it ([stsci.edu](https://...))" is a numbered list
     item that happens to cite a page: it has a markdown link and a long sentence, so it stays.
+    A source written as a link, "[Title](https://...)", starts with the link.
     """
+    link = MARKDOWN_LINK.match(rest)
+    if link:
+        return len(rest[link.end() :].strip()) <= MAX_REFERENCE_TITLE
     if "](" in rest:
         return False
     return len(FIRST_URL.sub("", rest).strip()) <= MAX_REFERENCE_TITLE
 
 
+def split_entries(chunk: str) -> list[str] | None:
+    """Several numbered sources on one line, as one "[n] rest" line each; None if it is not that."""
+    for pattern in (BRACKET_ENTRY, DOTTED_ENTRY):
+        marks = list(pattern.finditer(chunk))
+        if len(marks) < 2 or chunk[: marks[0].start()].strip():
+            continue
+        entries = []
+        for mark, following in zip(marks, [*marks[1:], None], strict=True):
+            rest = chunk[mark.end() : following.start() if following else len(chunk)].strip()
+            if not FIRST_URL.search(rest) or not is_reference(rest):
+                break
+            entries.append(f"[{mark[1]}] {rest}")
+        else:
+            return entries
+    return None
+
+
+def expand_lines(lines: list[str]) -> list[str]:
+    """Put a source list that arrived on one line back on separate lines."""
+    out: list[str] = []
+    for line in lines:
+        heading = INLINE_HEADING.search(line)
+        if heading:
+            before, chunk = line[: heading.start()].rstrip(), line[heading.end() :]
+            out += ([before] if before else []) + ["Sources:"]
+            out += split_entries(chunk) or [chunk]
+        else:
+            out += split_entries(line) or [line]
+    return out
+
+
+def is_unnumbered_source(line: str) -> bool:
+    """Under a "Sources" heading: a line that is just an address and a short title."""
+    rest = BULLET.sub("", line).strip()
+    if not FIRST_URL.search(rest) or MARKER.search(rest):
+        return False
+    title = MARKDOWN_LINK.sub("", rest) if MARKDOWN_LINK.search(rest) else FIRST_URL.sub("", rest)
+    return len(title.strip()) <= MAX_REFERENCE_TITLE
+
+
 def references_in(lines: list[str]) -> tuple[dict[str, str], set[int]]:
     """Numbered source lines ("[1] Title https://...", "2. https://...") and where they are."""
     references, where = {}, set()
+    under_heading = False
     for i, line in enumerate(lines):
         m = REFERENCE.match(line)
         if m and is_reference(m["rest"]):
@@ -146,11 +218,16 @@ def references_in(lines: list[str]) -> tuple[dict[str, str], set[int]]:
             where.add(i)
         elif HEADING.match(line):
             where.add(i)
+            under_heading = True
+        elif under_heading and is_unnumbered_source(line):
+            where.add(i)  # listed, but with no number a claim could point to
+        elif line.strip():
+            under_heading = False
     return references, where
 
 
 def parse_answer(answer: str) -> ParsedAnswer:
-    lines = answer.replace("\r\n", "\n").split("\n")
+    lines = expand_lines(answer.replace("\r\n", "\n").split("\n"))
     references, reference_lines = references_in(lines)
     builder = _Builder(references)
     for i, line in enumerate(lines):
@@ -161,11 +238,8 @@ def parse_answer(answer: str) -> ParsedAnswer:
         text=builder.text.rstrip("\n"),
         citations=citations,
         mentions=builder.mentions,
-        unknown_markers=builder.unknown,
+        unresolved=builder.unresolved,
     )
-
-
-MARKER = re.compile(r"\[\^?\d+(?:\s*,\s*\d+)*\]")
 
 
 def locate(sentence: str, text: str) -> tuple[int, int] | None:
@@ -192,19 +266,31 @@ def locate(sentence: str, text: str) -> tuple[int, int] | None:
     return kept[found], kept[found + len(needle) - 1] + 1
 
 
+def attached(parsed: ParsedAnswer, start: int, end: int) -> tuple[list[str], list[str]]:
+    """What sits inside `text[start:end]` or right after it on the same line, in order:
+    the citation ids, and the markers that could not be matched to a source."""
+    cited: list[str] = []
+    unread: list[str] = []
+    pos = end
+    for m in sorted([*parsed.mentions, *parsed.unresolved], key=lambda m: m.start):
+        inside = start <= m.start < end
+        right_after = m.start >= end and set(parsed.text[pos : m.start]) <= GAP
+        if not inside and not right_after:
+            if m.start >= end:
+                break
+            continue
+        if right_after:
+            pos = max(pos, m.end)
+        if isinstance(m, Mention):
+            cited.append(m.citation_id)
+        else:
+            unread.append(m.marker)
+    return list(dict.fromkeys(cited)), list(dict.fromkeys(unread))
+
+
 def citations_for(parsed: ParsedAnswer, start: int, end: int) -> list[str]:
     """Citation ids inside `text[start:end]` or right after it, on the same line, in order."""
-    found: list[str] = []
-    pos = end
-    for m in sorted(parsed.mentions, key=lambda m: m.start):
-        if start <= m.start < end:
-            found.append(m.citation_id)
-        elif m.start >= end and set(parsed.text[pos : m.start]) <= GAP:
-            found.append(m.citation_id)
-            pos = max(pos, m.end)
-        elif m.start >= end:
-            break
-    return list(dict.fromkeys(found))
+    return attached(parsed, start, end)[0]
 
 
 def paragraph_citations(parsed: ParsedAnswer, end: int) -> list[str]:
@@ -219,6 +305,11 @@ def paragraph_citations(parsed: ParsedAnswer, end: int) -> list[str]:
     if not after:
         return []
     first = after[0].start
+    # Never borrow across a marker that could not be read, or from a source list left in the
+    # text: that is how a claim came to be judged against another claim's page (D-043).
+    between = parsed.text[end:first]
+    if SOURCES_WORD.search(between) or any(end <= u.start < first for u in parsed.unresolved):
+        return []
     return list(
         dict.fromkeys(
             m.citation_id

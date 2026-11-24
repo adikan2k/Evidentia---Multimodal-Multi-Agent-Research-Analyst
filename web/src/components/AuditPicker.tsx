@@ -43,7 +43,9 @@ export function AuditPicker() {
   }, [chosen]);
 
   const length = answer.trim().length;
-  const ready = available === true && length >= MIN && length <= MAX;
+  // Usable at once: while the status is still unknown, the server is probably waking up, and
+  // the audit request itself will wait for it.
+  const ready = available !== false && length >= MIN && length <= MAX;
 
   return (
     <div className="mx-auto max-w-[78rem] px-6 pb-24 pt-8 md:px-10">

@@ -2301,3 +2301,26 @@ One decision entry for the set, then built and checked in the browser at desktop
 
 **Trade-off.** The finding stays off the site for some days. Phase 1 cannot finish without about
 two hours of Aditya's time, and nothing in this plan removes that.
+
+### Phase 0 done (D-043)
+
+- **One-line source lists are parsed.** "Sources: [1] … [2] …" on the answer's own line, a list
+  with no heading, dotted numbers, titles, and sources written as links all reach the right page.
+  The list is removed from the answer shown. Tests cover eight layouts. They are written from how
+  chat apps lay citations out, not from captured pastes.
+- **New label: "could not read the citation".** A sentence with a marker that matches no source
+  gets this label and is checked against no page. The paragraph rule no longer borrows across an
+  unreadable marker or from a source list left in the text.
+- **Checked on the running site** with the review's example plus a `[7]` that has no source. Each
+  marker reached its own page, and the `[7]` claim read "could not read the citation".
+- **Not done from the review's item 5.** Labelling a claim unreadable when two markers resolve to
+  one page. Two numbers can properly point at the same address, and with the fixes above the
+  faulty case no longer arises.
+- **Buttons.** "Audit it" and "Run it live" work as soon as the page loads. While the server
+  wakes, the page says "Starting…" and why.
+- **README.** It opens with the auditor. The research agent is its second half. The real-world
+  audit is named but not summarised, until phase 1 is done.
+- **Seen while checking, not changed.** "8,849 metres" against a page that says 8,848.86 came out
+  contradicted in one run and "needs a human" in the next. The auditor treats rounding as a
+  mismatch, and its verdict on such a claim can differ between runs. This goes on the list for
+  the hand check in phase 1.

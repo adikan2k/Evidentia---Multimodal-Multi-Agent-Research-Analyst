@@ -30,6 +30,12 @@ export function LiveRun({ live, onClose }: { live: LiveState; onClose: () => voi
             {live.finished ? "Back to recorded runs" : "Stop and go back"}
           </button>
           {live.error && <p className="text-sm text-unverified">{live.error}</p>}
+          {!live.finished && live.events.length === 0 && (
+            <p className="text-sm text-ink-soft">
+              <span className="animate-pulse">Starting…</span> If nobody has used the site for a
+              while, the server takes about 15 seconds to wake up.
+            </p>
+          )}
         </div>
       </section>
       <RunBody view={view} canCheck={live.finished && !live.error} />

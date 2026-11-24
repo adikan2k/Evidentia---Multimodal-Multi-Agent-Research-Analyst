@@ -12,6 +12,7 @@ export type AuditLabel =
   | "not_found"
   | "dead_link"
   | "unchecked"
+  | "citation_unread"
   | "uncited";
 
 export const LABEL_TEXT: Record<AuditLabel, string> = {
@@ -22,6 +23,7 @@ export const LABEL_TEXT: Record<AuditLabel, string> = {
   not_found: "Not on the cited page",
   dead_link: "Dead link",
   unchecked: "Could not check",
+  citation_unread: "Could not read the citation",
   uncited: "Uncited",
 };
 
@@ -34,6 +36,7 @@ export const LABEL_TONE: Record<AuditLabel, string> = {
   not_found: "text-unverified",
   dead_link: "text-unverified",
   unchecked: "text-ink-faint",
+  citation_unread: "text-ink-faint",
   uncited: "text-ink-faint",
 };
 
@@ -46,6 +49,7 @@ export const LABEL_LINE: Record<AuditLabel, string> = {
   not_found: "decoration-unverified",
   dead_link: "decoration-unverified",
   unchecked: "decoration-ink-faint",
+  citation_unread: "decoration-ink-faint",
   uncited: "decoration-rule",
 };
 
@@ -57,6 +61,7 @@ const SEVERITY: AuditLabel[] = [
   "needs_human",
   "partial",
   "unchecked",
+  "citation_unread",
   "supported",
   "uncited",
 ];
@@ -89,6 +94,8 @@ export type AuditClaim = {
   claim: string;
   citation_ids: string[];
   cited_by: "sentence" | "paragraph" | null;
+  /** Markers on the sentence, such as "7" for [7], that match no source in the answer. */
+  unread_markers?: string[];
   // Only once both judges have ruled:
   label?: AuditLabel;
   disputed?: boolean;

@@ -15,6 +15,7 @@ AuditLabel = Literal[
     "not_found",  # not on the cited page
     "dead_link",
     "unchecked",  # could not check
+    "citation_unread",  # the sentence has a marker, but no source could be matched to it
     "uncited",
 ]
 Stance = Literal["backs", "contradicts", "neither"]
@@ -28,6 +29,7 @@ LABEL_TEXT = {
     "not_found": "not on the cited page",
     "dead_link": "dead link",
     "unchecked": "could not check",
+    "citation_unread": "could not read the citation",
     "uncited": "uncited",
 }
 # A claim citing several pages shows its best result. "Could not check" ranks above "not found"
@@ -184,6 +186,8 @@ class AuditClaim(BaseModel):
     # "sentence": the citations sit in or right after the sentence. "paragraph": the sentence
     # had none and takes the ones that close its paragraph (D-041).
     cited_by: Literal["sentence", "paragraph"] | None = None
+    # Markers on the sentence, such as [7], that match no source in the answer (D-043).
+    unread_markers: list[str] = []
 
 
 class AuditState(BaseModel):
@@ -203,7 +207,8 @@ class AuditState(BaseModel):
 
 def claim_label(claim: AuditClaim, results: list[PageResult]) -> AuditLabel:
     if not claim.citation_ids:
-        return "uncited"
+        # A marker we could not match is not "uncited", and never "not on the cited page".
+        return "citation_unread" if claim.unread_markers else "uncited"
     labels = {r.label for r in results}
     return next(label for label in RANK if label in labels) if labels else "unchecked"
 

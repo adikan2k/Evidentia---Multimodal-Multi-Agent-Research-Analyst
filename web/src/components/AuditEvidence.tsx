@@ -113,6 +113,13 @@ function ClaimResult({ claim, number }: { claim: AuditClaim; number: number }) {
       {claim.cited_by === "paragraph" && (
         <p className="label mt-1.5 text-ink-faint">Cited at the end of its paragraph, not in this sentence</p>
       )}
+      {claim.label === "citation_unread" && (
+        <p className="mt-2 text-sm text-ink-soft">
+          This sentence is marked {(claim.unread_markers ?? []).map((m) => `[${m}]`).join(" ")}, but
+          no source with that number could be read from what was pasted. So it was not checked
+          against any page.
+        </p>
+      )}
       {claim.label === "uncited" && (
         <p className="mt-2 text-sm text-ink-soft">No citation in this sentence or its paragraph.</p>
       )}

@@ -162,6 +162,7 @@ def counts(report: dict) -> dict[str, int]:
         "unchecked": labels["unchecked"],
         "dead_link": labels["dead_link"],
         "uncited": labels["uncited"],
+        "citation_unread": labels["citation_unread"],
         "pages_cited": card["pages_cited"],
         "pages_read": card["pages_read"],
         "audit_usd": card["usd"],
@@ -205,7 +206,14 @@ def measures(rows: list[dict]) -> dict[str, Any]:
         "contradicted": total("contradicted"),
         "shares_of_all_claims": {
             key: round(total(key) / total("claims"), 4) if total("claims") else None
-            for key in ("partial", "needs_human", "unchecked", "dead_link", "uncited")
+            for key in (
+                "partial",
+                "needs_human",
+                "unchecked",
+                "dead_link",
+                "citation_unread",
+                "uncited",
+            )
         },
         "claims_per_answer": round(total("claims") / len(rows), 2) if rows else None,
         "pages_cited_per_answer": round(total("pages_cited") / len(rows), 2) if rows else None,

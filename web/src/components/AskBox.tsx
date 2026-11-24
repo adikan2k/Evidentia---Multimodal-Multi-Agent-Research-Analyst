@@ -7,7 +7,9 @@ type Props = { available: boolean | null; onAsk: (question: string) => void };
 /** The question box. A live run is real: it searches, reads and calls the models. */
 export function AskBox({ available, onAsk }: Props) {
   const [question, setQuestion] = useState("");
-  const ready = available === true && question.trim().length >= 10;
+  // Usable at once: while the status is unknown the server is probably waking up, and the
+  // run request itself will wait for it.
+  const ready = available !== false && question.trim().length >= 10;
 
   return (
     <form
@@ -35,8 +37,7 @@ export function AskBox({ available, onAsk }: Props) {
         </button>
       </div>
       <p className="label mt-2.5 text-ink-faint normal-case tracking-normal">
-        {available === null && "Checking whether live runs are available…"}
-        {available === true &&
+        {available !== false &&
           "A live run takes about half a minute and draws on a small daily budget."}
         {available === false &&
           "Live runs are not available right now. The recorded runs below are real ones."}

@@ -139,6 +139,12 @@ export function LiveAuditScreen({ events, report, finished, error, onClose }: Li
         </button>
       </div>
       {error && <p className="mt-4 text-sm text-unverified">{error}</p>}
+      {!finished && events.length === 0 && (
+        <p className="mt-4 text-sm text-ink-soft">
+          <span className="animate-pulse">Starting…</span> If nobody has used the site for a while,
+          the server takes about 15 seconds to wake up.
+        </p>
+      )}
       <AuditBody
         events={events}
         time={Number.POSITIVE_INFINITY}

@@ -10,6 +10,7 @@ const ORDER: AuditLabel[] = [
   "supported",
   "dead_link",
   "unchecked",
+  "citation_unread",
   "uncited",
 ];
 

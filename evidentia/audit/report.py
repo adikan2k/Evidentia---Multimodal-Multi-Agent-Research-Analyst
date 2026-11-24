@@ -31,6 +31,7 @@ STYLE = {
     "not_found": "bold red",
     "dead_link": "bold red",
     "unchecked": "bold blue",
+    "citation_unread": "bold blue",
     "uncited": "bold white",
 }
 
@@ -62,7 +63,7 @@ def claim_views(state: AuditState) -> list[dict[str, Any]]:
 
 def scorecard(state: AuditState, ledger: Ledger) -> dict[str, Any]:
     labels = Counter(v["label"] for v in claim_views(state))
-    cited = len(state.claims) - labels["uncited"]
+    cited = len(state.claims) - labels["uncited"] - labels["citation_unread"]
     dead = {s.url for s in state.skipped if s.reason in DEAD}
     # D-039: a failed citation is "not on the cited page" or "contradicted". Partial (the main
     # point backed, a detail not) is counted apart and never as a failure.

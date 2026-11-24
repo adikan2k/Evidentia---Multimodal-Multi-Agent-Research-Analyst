@@ -69,6 +69,7 @@ class AuditEventBuilder:
                     "claim": c.claim,
                     "citation_ids": c.citation_ids,
                     "cited_by": c.cited_by,
+                    "unread_markers": c.unread_markers,
                 }
                 for i, c in enumerate(update["claims"])
             ]
@@ -112,6 +113,7 @@ class AuditEventBuilder:
                     "claim": view["claim"],
                     "citation_ids": view["citation_ids"],
                     "cited_by": view["cited_by"],
+                    "unread_markers": view["unread_markers"],
                     "label": view["label"],
                     "disputed": view["disputed"],
                     "pages": pages,

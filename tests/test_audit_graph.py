@@ -290,3 +290,29 @@ def test_a_page_with_too_little_text_is_not_judged(settings) -> None:
     view = claim_views(audit(deps, f"Solar capacity grew 24% in 2023 [1].\n[1] {GOOD}"))[0]
     assert view["label"] == "unchecked" and view["pages"][0]["skipped"] == TOO_LITTLE_TEXT
     assert not [c for c in fake.calls if c["schema"] in ("Evidence", "PageJudgement")]
+
+
+def test_a_marker_with_no_source_is_never_judged_against_another_page(settings) -> None:
+    # The review's case, with the list left unparseable: the marker's page is unknown.
+    answer = (
+        f"Solar capacity grew 24% in 2023 [1]. Solar capacity fell 10% in 2023 [2].\n[1] {GOOD}"
+    )
+    deps, fake = make_deps(settings)
+    views = claim_views(audit(deps, answer))
+    assert [v["label"] for v in views] == ["supported", "citation_unread"]
+    assert views[1]["unread_markers"] == ["2"] and views[1]["pages"] == []
+    judged = [c["user"] for c in fake.calls if c["schema"] == "Evidence"]
+    assert len(judged) == 1 and "fell 10%" not in judged[0]
+
+
+def test_a_one_line_source_list_is_audited_like_one_on_separate_lines(settings) -> None:
+    answer = (
+        "Solar capacity grew 24% in 2023 [1]. Solar capacity fell 10% in 2023 [2]. "
+        f"Sources: [1] {GOOD} [2] {SECOND}"
+    )
+    deps, _ = make_deps(settings)
+    state = audit(deps, answer)
+    views = claim_views(state)
+    assert [v["pages"][0]["url"] for v in views] == [GOOD, SECOND]
+    assert [v["label"] for v in views] == ["supported", "supported"]
+    assert "http" not in state.parsed.text

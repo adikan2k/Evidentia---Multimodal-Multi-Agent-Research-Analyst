@@ -1,4 +1,12 @@
-from evidentia.audit.citations import citations_for, locate, parse_answer
+import pytest
+
+from evidentia.audit.citations import (
+    attached,
+    citations_for,
+    locate,
+    paragraph_citations,
+    parse_answer,
+)
 
 IEA = "https://www.iea.org/reports/renewables-2023"
 WIKI = "https://en.wikipedia.org/wiki/Solar_power_(disambiguation)"
@@ -107,3 +115,75 @@ def test_a_sentence_without_a_citation_takes_the_one_that_closes_its_paragraph()
     assert paragraph_citations(parsed, first[1]) == ["c1", "c2"]
     wind = locate("Wind grew too.", parsed.text)
     assert paragraph_citations(parsed, wind[1]) == []  # nothing closes that paragraph
+
+
+# D-043: source lists that arrive on one line, and markers with no source. The shapes below are
+# written from how chat apps lay out citations; they are not captured pastes.
+
+EVEREST = "https://en.wikipedia.org/wiki/Mount_Everest"
+KESSLER = "https://en.wikipedia.org/wiki/Kessler_syndrome"
+S1 = "Mount Everest is 8,849 metres tall [1]."
+S2 = "The Kessler syndrome was proposed in 1978 [2]."
+PLAIN = "It is in the Himalayas."
+BODY = f"{S1} {S2}"
+
+SOURCE_LISTS = {
+    "one per line": f"{BODY}\n\nSources:\n[1] {EVEREST}\n[2] {KESSLER}",
+    "all on the answer's line": f"{BODY} Sources: [1] {EVEREST} [2] {KESSLER}",
+    "one line, no heading": f"{BODY}\n[1] {EVEREST} [2] {KESSLER}",
+    "one line, dotted numbers": f"{BODY}\nSources: 1. {EVEREST} 2. {KESSLER}",
+    "one line, with titles": f"{BODY} References: [1] Mount Everest, Wikipedia {EVEREST} "
+    f"[2] Kessler syndrome {KESSLER}",
+    "links as titles": f"{BODY}\n\nSources\n1. [Mount Everest - Wikipedia]({EVEREST})\n"
+    f"2. [Kessler syndrome]({KESSLER})",
+    "footnotes": f"{BODY.replace('[1]', '[^1]').replace('[2]', '[^2]')}\n\n"
+    f"[^1]: {EVEREST}\n[^2]: {KESSLER}",
+    "windows line ends": f"{BODY}\r\n\r\nCitations:\r\n[1] {EVEREST}\r\n[2] {KESSLER}",
+}
+
+
+@pytest.mark.parametrize("answer", SOURCE_LISTS.values(), ids=SOURCE_LISTS.keys())
+def test_each_marker_reaches_its_own_page_however_the_list_is_laid_out(answer: str) -> None:
+    parsed = parse_answer(answer)
+    urls = {c.id: c.url for c in parsed.citations}
+    assert parsed.unresolved == [] and "http" not in parsed.text and "ources" not in parsed.text
+    for sentence, url in ((S1, EVEREST), (S2, KESSLER)):
+        span = locate(sentence.replace("[", "[^") if "[^" in answer else sentence, parsed.text)
+        cited, unread = attached(parsed, *span)
+        assert [urls[c] for c in cited] == [url] and unread == []
+
+
+def test_inline_links_and_linked_markers_need_no_source_list() -> None:
+    answer = f"Mount Everest is 8,849 metres tall ([Wikipedia]({EVEREST})). Kessler [2]({KESSLER})."
+    parsed = parse_answer(answer)
+    assert [c.url for c in parsed.citations] == [EVEREST, KESSLER] and parsed.unresolved == []
+
+
+def test_a_marker_with_no_source_is_unread_and_borrows_nothing() -> None:
+    parsed = parse_answer(f"{S1} {PLAIN} {S2}\n[1] {EVEREST}")
+    cited, unread = attached(parsed, *locate(S2, parsed.text))
+    assert cited == [] and unread == ["2"]
+    plain = locate(PLAIN, parsed.text)
+    # The plain sentence is followed by an unreadable marker, so it borrows nothing either.
+    assert attached(parsed, *plain) == ([], []) and paragraph_citations(parsed, plain[1]) == []
+
+
+def test_a_source_list_that_cannot_be_parsed_is_never_borrowed_from() -> None:
+    parsed = parse_answer(f"{PLAIN} {S2} Sources: (1) {EVEREST} (2) {KESSLER}")
+    plain, kessler = locate(PLAIN, parsed.text), locate(S2, parsed.text)
+    assert attached(parsed, *kessler) == ([], ["2"])
+    assert paragraph_citations(parsed, plain[1]) == []
+    no_markers = parse_answer(f"{PLAIN} Everest is tall. Sources: {EVEREST}")
+    assert paragraph_citations(no_markers, locate(PLAIN, no_markers.text)[1]) == []
+
+
+def test_unnumbered_sources_under_a_heading_leave_the_answer_text() -> None:
+    parsed = parse_answer(
+        f"{PLAIN} Everest is tall.\n\nSources:\n- {EVEREST}\n- [Kessler]({KESSLER})"
+    )
+    assert parsed.text == f"{PLAIN} Everest is tall." and parsed.mentions == []
+
+
+def test_a_sentence_that_mentions_sources_is_not_cut() -> None:
+    parsed = parse_answer("Sources: the agency and two universities. Solar grew 24% [1].")
+    assert parsed.text.startswith("Sources: the agency")

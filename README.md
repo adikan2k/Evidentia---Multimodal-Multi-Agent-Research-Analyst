@@ -1,53 +1,34 @@
 # Evidentia
 
-A research agent that backs every sentence with an exact quote, and checks each quote with code.
+An auditor for AI answers. Paste an answer with its sources, and Evidentia checks whether each
+cited page says what the answer says it does.
 
-Ask a question. Evidentia searches the web, reads the pages (HTML and PDFs), and writes short
-claims. Each claim carries a quote copied from a page. Code then checks that the quote is on the
-page word for word, and a separate model, shown only the claim and the quote, judges whether the
-quote backs the claim. Each claim ends up labelled **supported**, **partial** or **unverified**,
-and you can open the quote in its place on the page.
+Every claim in the answer is checked twice against the page it cites: once against exact quotes
+that code has found on the page word for word, and once against the page as a whole. A claim
+gets a verdict only when the two checks agree. When they disagree, it is labelled **needs a
+human**. Beside every result, the site shows how often the auditor itself is right, measured on
+claims that people labelled.
 
-- Site: https://evidentia-green.vercel.app (recorded runs, live runs, and the evaluation results)
+- Site: https://evidentia-green.vercel.app/audit (paste an answer, or watch a recorded audit)
 - Decisions behind every part: [`docs/DECISIONS.md`](docs/DECISIONS.md)
 - Full evaluation report: [`evals/results/REPORT.md`](evals/results/REPORT.md)
 
-## How a run works
+Evidentia began as a research agent that backs each sentence with an exact quote. That agent is
+still here, in the second half of this page. Its own evaluation found it no more accurate than
+plain RAG, and that result is why the project turned to auditing (D-034).
 
-```
-plan → search → fetch → index → retrieve → write → quote check → check
-                                                                   │
-                     failed claims: new query → search the pages again → rewrite → check again
-```
+## How an audit works
 
-1. **Plan.** Claude Sonnet writes a few web search queries.
-2. **Search and fetch.** Tavily returns addresses; Evidentia's own fetcher downloads them. It
-   obeys robots.txt, waits between requests to the same site, and connects only to public
-   addresses, checked after DNS resolution. PDFs are read page by page, so a quote from a PDF is
-   cited to its page.
-3. **Index and retrieve.** Pages are cut into passages, embedded with Voyage, stored in Qdrant,
-   and reranked with Voyage's reranker.
-4. **Write.** Sonnet writes claims, each with a quote and the source it came from. Page text is
-   passed to the model inside marked data blocks and treated as data, never as instructions.
-5. **Quote check (code).** A quote counts only if it is an exact span of the stored page text.
-6. **Check (model).** An independent checker sees only the claim and the quote.
-7. **Repair.** A claim that fails gets one more try: a new query, a fresh look through the
-   fetched pages, and a rewrite, which is checked again from the start.
-
-Every run has a hard cost cap in code and records tokens and dollars per step. Every model and
-tool call is traced in Langfuse.
-
-## Auditing another tool's answer
-
-On the site's Audit page, or with `python -m evidentia audit answer.md`, Evidentia checks the
-citations in an answer written by another AI tool (D-037 to D-041). The page plays three recorded
-audits of answers from `gpt-6.2-sol` with web search, and runs live audits within a daily budget. The answer can use markdown links, bare addresses, or numbered
-markers like `[1]` with a source list.
+On the site's Audit page, or with `python -m evidentia audit answer.md`. The answer can use
+markdown links, bare addresses, or numbered markers like `[1]` with a source list, whether the
+list is on separate lines or has lost its line breaks in the paste.
 
 1. **Parse (code).** Finds every citation and where it sits in the answer.
 2. **Split (Claude Haiku).** Breaks the answer into claims. Code checks that each claim's
    sentence is really in the answer, and code decides which pages it cites.
-3. **Fetch (code).** The same fetcher as above.
+3. **Fetch (code).** Evidentia's own fetcher downloads each cited page. It obeys robots.txt,
+   waits between requests to the same site, and connects only to public addresses, checked
+   after DNS resolution. PDFs are read page by page.
 4. **Two judges, at the same time, both Claude Haiku:**
    - **Quote judge.** Finds up to five quotes on the cited page that back or contradict the
      claim. Code checks that each is an exact span of the page. A separate call then sees only
@@ -56,9 +37,22 @@ markers like `[1]` with a source list.
 5. **Combine (code).** A claim gets a verdict only when the two judges agree. Otherwise it is
    labelled **needs a human**, with both judges' reasons.
 
-The labels are: supported, partial, contradicted, not on the cited page, needs a human, dead
-link (404, 410, or a name that does not resolve), could not check (for example, robots.txt
-forbids it), and uncited.
+The labels are:
+
+| Label | Meaning |
+|---|---|
+| supported | both judges agree the cited page states the claim |
+| partial | the page backs the main point but not every detail; never counted as a failure |
+| contradicted | the page says something that cannot be true along with the claim |
+| not on the cited page | both judges agree the page does not state it |
+| needs a human | the two judges disagree |
+| dead link | the address answers 404 or 410, or its name does not resolve |
+| could not check | the page was not read: robots.txt, a refusal, too little text, a time-out |
+| could not read the citation | the sentence has a marker such as `[7]`, but no source matches it |
+| uncited | no citation in the sentence or its paragraph |
+
+A sentence with no citation of its own takes the one that closes its paragraph, and is marked as
+cited that way.
 
 Long pages are cut to the passages Voyage's reranker ranks highest. A page cited by several
 claims is sent as a cached prompt prefix, so later claims about it read it cheaply.
@@ -114,7 +108,44 @@ Cost: $0.00069 per claim for both judges together.
 
 Full tables: `evals/results/REPORT.md`.
 
-## What the evaluation found
+### The real-world audit
+
+Two AI tools were asked the same 100 questions with web search on, and every answer was audited
+(D-042). The answers, the audits and the numbers are in `evals/realworld/` and
+`evals/results/realworld.json`. The result is not summarised here yet: a sample of the flags is
+being checked by a person first, and the two tools' set-ups are being made alike (D-043).
+
+## The research agent
+
+Ask a question. Evidentia searches the web, reads the pages (HTML and PDFs), and writes short
+claims. Each claim carries a quote copied from a page. Code checks that the quote is on the page
+word for word, and a separate model, shown only the claim and the quote, judges whether the
+quote backs the claim. Each claim ends up labelled **supported**, **partial** or **unverified**.
+
+```
+plan → search → fetch → index → retrieve → write → quote check → check
+                                                                   │
+                     failed claims: new query → search the pages again → rewrite → check again
+```
+
+1. **Plan.** Claude Sonnet writes a few web search queries.
+2. **Search and fetch.** Tavily returns addresses; Evidentia's own fetcher downloads them. It
+   obeys robots.txt, waits between requests to the same site, and connects only to public
+   addresses, checked after DNS resolution. PDFs are read page by page, so a quote from a PDF is
+   cited to its page.
+3. **Index and retrieve.** Pages are cut into passages, embedded with Voyage, stored in Qdrant,
+   and reranked with Voyage's reranker.
+4. **Write.** Sonnet writes claims, each with a quote and the source it came from. Page text is
+   passed to the model inside marked data blocks and treated as data, never as instructions.
+5. **Quote check (code).** A quote counts only if it is an exact span of the stored page text.
+6. **Check (model).** An independent checker sees only the claim and the quote.
+7. **Repair.** A claim that fails gets one more try: a new query, a fresh look through the
+   fetched pages, and a rewrite, which is checked again from the start.
+
+Every run has a hard cost cap in code and records tokens and dollars per step. Every model and
+tool call is traced in Langfuse.
+
+### What the research agent's evaluation found
 
 Run on a frozen set of 50 openly licensed pages (mostly Wikipedia) and 40 questions. These pages
 are cleaner than the open web, so real use would likely score lower. All numbers below are
@@ -148,14 +179,17 @@ figure; the only agreement figure is with a second model, which says little abou
 
 Needs Python 3.11+, [uv](https://docs.astral.sh/uv/), and Node 22 for the site. Keys come from
 environment variables: `ANTHROPIC_API_KEY`, `TAVILY_API_KEY`, `VOYAGE_API_KEY`, `QDRANT_URL`,
-`QDRANT_API_KEY`, `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`.
+`QDRANT_API_KEY`, `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`. `OPENAI_API_KEY` is needed only
+for the real-world audit and for recording new audits.
 
 ```
 uv sync
+uv run python -m evidentia audit answer.md
 uv run python -m evidentia "How fast did global solar capacity grow in 2023?"
 ```
 
-A run costs money (model, search and embedding calls) and stops at the cap set in
+The first line audits an answer saved in a file, for about a cent. The second runs the research
+agent. Both cost money (model, search and embedding calls) and stop at the caps set in
 `evidentia/config.py`.
 
 The site and the API:
@@ -172,8 +206,8 @@ uv run pytest
 uv run ruff check .
 ```
 
-The evaluation is `uv run python -m evals`. It makes many model calls; see D-021 in the
-decisions file before running it. `uv run python -m evals report` rebuilds the report from the
+The evaluations are under `uv run python -m evals`. They make many model calls; see D-021 in the
+decisions file before running them. `uv run python -m evals report` rebuilds the report from the
 saved results for free.
 
 Deployment (Cloud Run for the API, Vercel for the site) is in [`docs/DEPLOY.md`](docs/DEPLOY.md).
