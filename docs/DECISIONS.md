@@ -555,3 +555,24 @@ formatter over the same files).
 the first run will give the real figures. Voyage and Qdrant stay inside their free tiers and
 Tavily is not used at all. The CI eval job needs the branch pushed and the service keys added as
 secrets on GitHub, both of which are Aditya's to do.
+
+### What the first M3 results showed (2026-11-24)
+
+All figures are in `evals/results/`. Checker agreement is not measured yet; it waits on the hand
+labels.
+
+- Retrieval: the reranker helps and hybrid search does not. Plain hybrid scored below dense
+  search alone, and dense + rerank matched hybrid + rerank exactly. On this corpus keyword search
+  adds nothing. The fifth retriever, dense + rerank, was added to D-017's four to test this.
+- Baseline against pipeline: no measurable difference in citation accuracy. The judge found about
+  92% of claims fully backed for both, and the interval on the difference spans zero. Neither
+  system produced a single claim the judge called unsupported.
+- That comparison is not like for like. The baseline is judged against a whole passage of about
+  1,200 characters; the pipeline against a quote of a sentence or two, which is a harder bar. A
+  passage-level judgement of the pipeline was not run.
+- DeepEval's faithfulness score was 1.0 for both systems, so it cannot tell them apart here. One
+  pipeline answer could not be scored because DeepEval failed to parse its judge's reply.
+- Nasty tests passed 15 of 15.
+- The Anthropic API refused 33 requests sent at once, so eval steps now send at most 4 at a time.
+- Wikipedia refuses crawlers that do not identify themselves. With Aditya's approval the
+  fetcher's User-Agent now carries the public repository address, for every fetch.

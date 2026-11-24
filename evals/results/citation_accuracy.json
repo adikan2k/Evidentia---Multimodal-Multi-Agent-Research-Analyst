@@ -1,0 +1,276 @@
+{
+  "generated_at": "2026-11-24T06:32:55+00:00",
+  "what": "For each claim, does the evidence the system points to back it? Baseline evidence is the cited passage; pipeline evidence is the quote.",
+  "judge": "claude-opus-5-5 with the checker's rubric. Its agreement with hand labels is in checker_agreement.json.",
+  "citation_accuracy": "share of presented claims the judge finds fully supported",
+  "main_point_backed": "share the judge finds supported or partial",
+  "questions": 40,
+  "interval": "95% bootstrap over questions, 2000 resamples",
+  "baseline": {
+    "citation_accuracy": {
+      "value": 0.9172,
+      "ci_low": 0.8774,
+      "ci_high": 0.9528,
+      "correct": 288,
+      "claims": 314
+    },
+    "main_point_backed": {
+      "value": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "correct": 314,
+      "claims": 314
+    },
+    "claims_per_question": {
+      "mean": 7.85,
+      "ci_low": 7.675,
+      "ci_high": 7.975,
+      "n": 40
+    },
+    "questions_with_a_fully_backed_claim": {
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 40
+    },
+    "judge_labels": {
+      "supported": 288,
+      "partial": 26,
+      "unsupported": 0,
+      "none": 0
+    }
+  },
+  "pipeline_claims_labelled_supported": {
+    "citation_accuracy": {
+      "value": 0.9283,
+      "ci_low": 0.8947,
+      "ci_high": 0.9607,
+      "correct": 207,
+      "claims": 223
+    },
+    "main_point_backed": {
+      "value": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "correct": 223,
+      "claims": 223
+    },
+    "claims_per_question": {
+      "mean": 5.575,
+      "ci_low": 5.1,
+      "ci_high": 6.05,
+      "n": 40
+    },
+    "questions_with_a_fully_backed_claim": {
+      "mean": 0.975,
+      "ci_low": 0.925,
+      "ci_high": 1.0,
+      "n": 40
+    },
+    "judge_labels": {
+      "supported": 207,
+      "partial": 16,
+      "unsupported": 0,
+      "none": 0
+    }
+  },
+  "pipeline_all_claims": {
+    "citation_accuracy": {
+      "value": 0.6806,
+      "ci_low": 0.6109,
+      "ci_high": 0.7476,
+      "correct": 211,
+      "claims": 310
+    },
+    "main_point_backed": {
+      "value": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "correct": 310,
+      "claims": 310
+    },
+    "claims_per_question": {
+      "mean": 7.75,
+      "ci_low": 7.55,
+      "ci_high": 7.925,
+      "n": 40
+    },
+    "questions_with_a_fully_backed_claim": {
+      "mean": 0.975,
+      "ci_low": 0.925,
+      "ci_high": 1.0,
+      "n": 40
+    },
+    "judge_labels": {
+      "supported": 211,
+      "partial": 99,
+      "unsupported": 0,
+      "none": 0
+    }
+  },
+  "pipeline_labels": {
+    "supported": 223,
+    "partial": 87,
+    "unverified": 0
+  },
+  "accuracy_difference_supported_minus_baseline": {
+    "mean": -0.0135,
+    "ci_low": -0.0602,
+    "ci_high": 0.0319,
+    "n": 40
+  },
+  "accuracy_difference_all_pipeline_minus_baseline": {
+    "mean": -0.2344,
+    "ci_low": -0.2979,
+    "ci_high": -0.1744,
+    "n": 40
+  },
+  "deepeval_faithfulness": {
+    "baseline": {
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 40,
+      "could_not_be_scored": 0
+    },
+    "pipeline": {
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 39,
+      "could_not_be_scored": 1
+    }
+  },
+  "supported_claims_the_judge_rejected": [
+    {
+      "key": "pipeline:q01:0",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs the 2020 joint Nepalese–Chinese survey measuring the height as 8,848.86 m, but it refers only to \"its\" height and never names Mount Everest.",
+      "claim": "Mount Everest's height was most recently measured in 2020 by a joint Nepalese and Chinese survey as 8,848.86 m.",
+      "evidence": "Its height was most recently measured in 2020 through a joint survey by Nepalese and Chinese authorities as 8,848.86 m (29,031 ft 8+1⁄2 in)."
+    },
+    {
+      "key": "pipeline:q04:3",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote says Cas9 active-site mutants, also called Cas9 nickases, can induce single-strand nicks, but it never says this happens instead of double-strand breaks.",
+      "claim": "Cas9 nickases, which are Cas9 active-site mutants, can induce single-strand nicks instead of double-strand breaks.",
+      "evidence": "Single-strand nicks can also be induced by Cas9 active-site mutants,[145] also known as Cas9 nickases.[146]"
+    },
+    {
+      "key": "pipeline:q05:2",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote states nearly all 211 control rods were withdrawn and the reactor was left extremely unstable, but it never mentions an explosion, so the 'before the explosion' timing is not backed.",
+      "claim": "Before the explosion, nearly all of the 211 control rods had been withdrawn, leaving the reactor in an extremely unstable state.",
+      "evidence": "These actions left the reactor in an extremely unstable state. Nearly all of the 211 control rods had been withdrawn, and excessive coolant flow prevented the water from adequately cooling between cycles"
+    },
+    {
+      "key": "pipeline:q06:0",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote states that a scenario was proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978, but it is cut off before the subject, so it never says that this scenario is the Kessler syndrome.",
+      "claim": "The Kessler syndrome is a scenario proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978.",
+      "evidence": "is a scenario proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978."
+    },
+    {
+      "key": "pipeline:q10:6",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote states that the protocol is lightweight and very simple, with no message ordering and no connection tracking, but it never names UDP as the protocol being described.",
+      "claim": "UDP is lightweight and simple, with no ordering of messages and no tracking of connections.",
+      "evidence": "Lightweight – There is no ordering of messages, no tracking connections, etc. It is a very simple transport layer designed on top of IP."
+    },
+    {
+      "key": "pipeline:q11:3",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs the anode oxidation producing lithium ions and electrons, ions moving through the electrolyte, and electrons moving through the external circuit to recombine with the cathode material in a reduction half-reaction, but it never says this happens during discharge.",
+      "claim": "During discharge, an oxidation half-reaction at the anode produces lithium ions and electrons; the ions travel through the electrolyte while the electrons travel through the external circuit to the cathode, where they recombine with the cathode material in a reduction half-reaction.",
+      "evidence": "An oxidation half-reaction at the anode produces positively charged lithium ions and negatively charged electrons. The oxidation half-reaction may also produce uncharged material that remains at the anode. Lithium ions move through the electrolyte; electrons move through the external circuit toward the cathode where they recombine with the cathode material in a reduction half-reaction."
+    },
+    {
+      "key": "pipeline:q18:3",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs that microorganisms surviving continued antimicrobial attack naturally become more prevalent while non-resistant ones become obsolete, but it does not explicitly call resistance an evolutionary process or name natural selection.",
+      "claim": "Resistance is a natural evolutionary process: through natural selection, microorganisms that survive continued exposure to antimicrobial agents become more prevalent while those without resistance die out.",
+      "evidence": "As a result, the types of microorganisms that are able to survive over time with continued attack by certain antimicrobial agents will naturally become more prevalent in the environment, and those without this resistance will become obsolete."
+    },
+    {
+      "key": "pipeline:q21:1",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote states word for word that extreme poverty is still the reality for every tenth person even after two centuries of progress, but nothing in it attributes this to Our World in Data.",
+      "claim": "Our World in Data says extreme poverty is still the reality for every tenth person in the world, even after two centuries of progress.",
+      "evidence": "But even after two centuries of progress, extreme poverty is still the reality for every tenth person in the world."
+    },
+    {
+      "key": "pipeline:q23:0",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs that China is the world's largest emitter, responsible for more than one-quarter of global emissions, but it does not say these are annual or CO2 emissions specifically.",
+      "claim": "China is the world's largest annual CO2 emitter, emitting more than one-quarter of global emissions.",
+      "evidence": "China is, by a significant margin, Asia’s and the world’s largest emitter: it emits more than one-quarter of global emissions."
+    },
+    {
+      "key": "pipeline:q27:1",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs rising rates from 2004 to 2006, spiking payments on largely adjustable-rate mortgages, and the resulting wave of defaults, foreclosures and subprime-lender bankruptcies in early 2007, but it refers only to \"these\" mortgages and never states that they were subprime mortgages.",
+      "claim": "Rising interest rates from 2004 to 2006 caused monthly payments on largely adjustable-rate subprime mortgages to spike, leading to a wave of defaults, foreclosures and bankruptcies among subprime lenders in early 2007.",
+      "evidence": "As interest rates rose from 2004 to 2006, monthly payments on these largely adjustable-rate mortgages spiked, leading to a wave of defaults, foreclosures, and bankruptcies among subprime lenders in early 2007."
+    },
+    {
+      "key": "pipeline:q30:1",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs that old lithosphere, being denser than the underlying asthenosphere, sinks into the deep mantle at subduction zones and provides most of the driving force for plate movement, but it never says the lithosphere is oceanic.",
+      "claim": "The greater density of old oceanic lithosphere relative to the asthenosphere lets it sink into the deep mantle at subduction zones, providing most of the driving force for plate movement.",
+      "evidence": "The greater density of old lithosphere relative to the underlying asthenosphere allows it to sink into the deep mantle at subduction zones, providing most of the driving force for plate movement."
+    },
+    {
+      "key": "pipeline:q30:7",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote says the relative importance of active convection, mantle upwelling and the Moon's tidal drag is debated, but it calls them only \"other proposed factors\" and never says they are factors in plate motion.",
+      "claim": "The relative importance of active convection, mantle upwelling, and the Moon's tidal drag as drivers of plate motion is debated.",
+      "evidence": "The relative importance and interaction of other proposed factors such as active convection, upwelling inside the mantle, and tidal drag of the Moon are subjects of debate."
+    },
+    {
+      "key": "pipeline:q31:1",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote gives exactly the figures for nuclear causing 99.9% fewer deaths than brown coal, 99.8% fewer than coal, 99.7% fewer than oil and 97.6% fewer than gas, but it does not show that Our World in Data is the source making this statement.",
+      "claim": "Our World in Data states that nuclear energy results in 99.9% fewer deaths than brown coal, 99.8% fewer than coal, 99.7% fewer than oil, and 97.6% fewer than gas.",
+      "evidence": "Nuclear energy, for example, results in 99.9% fewer deaths than brown coal; 99.8% fewer than coal; 99.7% fewer than oil; and 97.6% fewer than gas."
+    },
+    {
+      "key": "pipeline:q31:4",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote says the fossil fuel estimates are likely very conservative because they rely on European power plants with good pollution controls and older models of air pollution's health impacts, but it never says the estimates are from Our World in Data.",
+      "claim": "The Our World in Data estimates for fossil fuels are likely conservative, since they are based on European power plants with good pollution controls and older models of air pollution's health impacts.",
+      "evidence": "Even then, these estimates for fossil fuels are likely to be very conservative. They are based on power plants in Europe, which have good pollution controls and are based on older models of the health impacts of air pollution."
+    },
+    {
+      "key": "pipeline:q33:1",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote backs the IARC Working Group assessing over 800 epidemiological studies plus other studies such as animal bioassays for \"this classification,\" but it never says the classification concerns red meat.",
+      "claim": "The IARC Working Group assessed over 800 epidemiological studies, in addition to other types of studies such as animal bioassays, to make the red meat classification.",
+      "evidence": "To make this classification, the IARC Working Group assessed over 800 epidemiological studies in addition to other types of studies such as animal bioassays.[36]"
+    },
+    {
+      "key": "pipeline:q38:0",
+      "label": "supported",
+      "judge": "partial",
+      "judge_reason": "The quote describes a loss of central political control in the Western Roman Empire, with its territory divided among several successor polities, but its subject is cut off, so it never names this process as the fall of the Western Roman Empire.",
+      "claim": "The fall of the Western Roman Empire was the loss of central political control over its Western provinces, whose territory was divided among several successor polities.",
+      "evidence": "was the loss of central political control in the Western Roman Empire, a process in which the Empire failed to enforce its rule, and its vast territory was divided among several successor polities."
+    }
+  ],
+  "baseline_claims_judged_unsupported": [],
+  "cost_usd": 5.0515
+}

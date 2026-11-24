@@ -132,20 +132,28 @@ async def faithfulness(deps: Deps) -> dict:
             api_key=key,
             cost_per_input_token=price_in / 1e6,
             cost_per_output_token=price_out / 1e6,
+            generation_kwargs={"max_tokens": 16_000},
         )
         metric = FaithfulnessMetric(model=model, include_reason=False)
         case = LLMTestCase(input=row["question"], actual_output=answer, retrieval_context=evidence)
         span_input = {"system": system, "question": row["id"]}
+        result = {"system": system, "id": row["id"], "score": None}
         async with limit:
             with (
                 deps.ledger.reserve("deepeval", DEEPEVAL_WORST_CASE_USD),
                 deps.tracer.span("deepeval.faithfulness", "evaluator", span_input) as span,
             ):
-                value = await metric.a_measure(case, _show_indicator=False)
+                try:
+                    result["score"] = await metric.a_measure(case, _show_indicator=False)
+                except Exception as err:
+                    # DeepEval gives up when it cannot parse its judge's reply. One bad answer
+                    # must not sink the rest, so it is recorded as unscored and counted.
+                    result["error"] = type(err).__name__
                 usd = metric.evaluation_cost or 0.0
                 deps.ledger.add(Charge(node="deepeval", item=JUDGE_MODEL, usd=usd))
-                span.update(output={"score": value}, metadata={"usd": usd})
-        saved[(system, row["id"])] = {"system": system, "id": row["id"], "score": value}
+                span.update(output=result, metadata={"usd": usd})
+        saved[(system, row["id"])] = result
+        write_jsonl(FAITHFULNESS, [saved[k] for k in sorted(saved)])
 
     jobs = []
     for row in read_jsonl(BASELINE_RUNS):
@@ -156,8 +164,12 @@ async def faithfulness(deps: Deps) -> dict:
         jobs.append(("pipeline", row, evidence))
     await asyncio.gather(*(one(*job) for job in jobs if (job[0], job[1]["id"]) not in saved))
     write_jsonl(FAITHFULNESS, [saved[k] for k in sorted(saved)])
-    scores = {s: [r["score"] for (system, _), r in saved.items() if system == s] for s in SYSTEMS}
-    return {system: summary(values) for system, values in scores.items()}
+    out = {}
+    for name in SYSTEMS:
+        rows = [row for (system, _), row in saved.items() if system == name]
+        scored = [row["score"] for row in rows if row["score"] is not None]
+        out[name] = summary(scored) | {"could_not_be_scored": len(rows) - len(scored)}
+    return out
 
 
 SYSTEMS = ("baseline", "pipeline")
