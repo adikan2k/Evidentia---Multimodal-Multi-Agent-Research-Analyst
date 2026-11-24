@@ -150,10 +150,12 @@ def test_report_says_what_has_not_been_run_instead_of_inventing_numbers(
 ) -> None:
     monkeypatch.setattr(report, "RESULTS_DIR", tmp_path)
     monkeypatch.setattr(report, "REPORT", tmp_path / "REPORT.md")
+    monkeypatch.setattr(report, "SITE_DATA", tmp_path / "evals.json")
     report.run()
     text = (tmp_path / "REPORT.md").read_text(encoding="utf-8")
     assert text.count("Not run yet") == 5
     assert "Nothing has been run yet." in text
+    assert not (tmp_path / "evals.json").exists()  # no results, so no site data
     assert not any(ch.isdigit() for ch in text.split("## Retrieval")[1])
 
 
@@ -234,3 +236,8 @@ def test_a_question_counts_as_unanswerable_only_if_its_answer_is_nowhere_in_the_
     assert absent_from_corpus("Aconcagua", texts) is True
     assert absent_from_corpus(r"8[,.]?611", texts) is False
     assert len(CANDIDATES) >= 20
+
+
+def test_site_data_keeps_the_numbers_and_drops_the_long_lists() -> None:
+    result = {"what": "x", "per_question": [1, 2], "systems": {"a": {"runs": [1], "value": 0.9}}}
+    assert report.slim(result) == {"what": "x", "systems": {"a": {"value": 0.9}}}

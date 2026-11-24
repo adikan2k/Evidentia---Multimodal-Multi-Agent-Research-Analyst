@@ -10,6 +10,32 @@ from typing import Any
 from evals.common import RESULTS_DIR
 
 REPORT = RESULTS_DIR / "REPORT.md"
+# The website's Evals page reads this one file: the result files with the long lists removed.
+SITE_DATA = RESULTS_DIR.parent.parent / "web" / "src" / "data" / "evals.json"
+TOO_LONG_FOR_THE_SITE = {
+    "per_question",
+    "disagreements",
+    "runs",
+    "supported_claims_the_judge_rejected",
+    "confusion_reference_rows_checker_columns",
+    "lowest_recall_questions",
+}
+
+
+def slim(value: Any) -> Any:
+    """A copy without the long lists, so the site ships numbers and not megabytes."""
+    if isinstance(value, dict):
+        return {k: slim(v) for k, v in value.items() if k not in TOO_LONG_FOR_THE_SITE}
+    if isinstance(value, list):
+        return [slim(v) for v in value]
+    return value
+
+
+def write_site_data(results: dict[str, dict | None]) -> None:
+    present = {name: slim(result) for name, result in results.items() if result}
+    if present:  # never replace real numbers with an empty file
+        SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
+        SITE_DATA.write_text(json.dumps(present, indent=1, ensure_ascii=False), encoding="utf-8")
 
 
 def load(name: str) -> dict[str, Any] | None:
@@ -240,4 +266,5 @@ def run() -> None:
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines), encoding="utf-8", newline="\n")
+    write_site_data(results)
     print(f"report: wrote {REPORT}")

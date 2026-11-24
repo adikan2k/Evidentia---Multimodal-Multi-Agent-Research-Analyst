@@ -25,9 +25,9 @@ export function RunScreen({ replay, canCheck }: { replay: Replay; canCheck: bool
         A real run, recorded {recorded} · {replay.models.writer} writes, {replay.models.checker}{" "}
         checks
       </p>
-      <h1 className="mt-3 max-w-4xl font-serif text-5xl leading-[1.05] tracking-tight md:text-6xl">
+      <h2 className="mt-3 max-w-4xl font-serif text-4xl leading-[1.08] tracking-tight md:text-5xl">
         {replay.question}
-      </h1>
+      </h2>
       <section className="mt-10 border-y border-rule py-6">
         <PipelineStrip items={replayItems(steps, playback.time)} />
         <div className="mt-5">

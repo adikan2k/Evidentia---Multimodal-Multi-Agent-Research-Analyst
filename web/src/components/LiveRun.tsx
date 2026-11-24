@@ -16,9 +16,9 @@ export function LiveRun({ live, onClose }: { live: LiveState; onClose: () => voi
         {live.finished ? "A live run, just now" : "Running live"} · {live.seconds.toFixed(1)}s · $
         {view.cost.toFixed(3)}
       </p>
-      <h1 className="mt-3 max-w-4xl font-serif text-5xl leading-[1.05] tracking-tight md:text-6xl">
+      <h2 className="mt-3 max-w-4xl font-serif text-4xl leading-[1.08] tracking-tight md:text-5xl">
         {live.question}
-      </h1>
+      </h2>
       <section className="mt-10 border-y border-rule py-6">
         <PipelineStrip items={liveItems(live.events, live.finished)} />
         <div className="mt-5 flex flex-wrap items-center gap-5">
