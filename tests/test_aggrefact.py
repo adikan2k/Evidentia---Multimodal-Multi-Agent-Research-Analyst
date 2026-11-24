@@ -236,3 +236,26 @@ def test_the_sweep_finds_the_most_coverage_that_meets_the_bars() -> None:
     assert best["flag_precision"] >= 0.80 and best["supported_precision"] >= 0.93
     assert best["t_flag"] <= best["t_supported"]
     assert all(pt["t_flag"] <= pt["t_supported"] for pt in found["points"])
+
+
+def test_new_samples_leave_out_every_earlier_sample() -> None:
+    many = [
+        Row(split="test", row=i, dataset=f"D{i % 3}", doc="d", claim="c", label=i % 2)
+        for i in range(900)
+    ]
+    used = {r.row for name in ("test", "test2") for r in sample(name, many)}
+    fresh = sample("test3", many)
+    assert len(fresh) == 150 and not used & {r.row for r in fresh}
+    dev = [r.model_copy(update={"split": "dev"}) for r in many]
+    assert not {r.row for r in sample("dev550", dev)} & {r.row for r in sample("dev550b", dev)}
+
+
+def test_a_graded_page_line_is_read_by_its_grade() -> None:
+    from evals.aggrefact import page_pred, page_verdict
+
+    assert page_verdict({"page_grade": "implies", "page_score": None}, 0.5, 0.5) == "implied"
+    assert page_verdict({"page_grade": "states", "page_score": None}, 0.5, 0.5) == "supported"
+    assert (
+        page_pred({"page_grade": "implies"}) == 1 and page_pred({"page_grade": "contradicts"}) == 0
+    )
+    assert page_verdict({"page_judged": "supported"}, 0.5, 0.5) == "supported"  # older runs

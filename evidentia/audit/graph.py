@@ -24,7 +24,9 @@ from evidentia.audit.prompts import (
     AUDIT_CHECK_SYSTEM,
     CONTEXT_RULE,
     FIND_SYSTEM,
+    GRADED_PAGE_JUDGE_SYSTEM,
     PAGE_JUDGE_SYSTEM,
+    PRECISION_RULES,
     SPLIT_SYSTEM,
     audit_check_prompt,
     find_prompt,
@@ -33,10 +35,12 @@ from evidentia.audit.prompts import (
     split_prompt,
 )
 from evidentia.audit.schemas import (
+    GRADE_CALL,
     AuditClaim,
     AuditJudgement,
     AuditState,
     Evidence,
+    GradedPageJudgement,
     PageJudgement,
     PageResult,
     Quote,
@@ -342,6 +346,8 @@ class AuditNodes:
     ) -> AuditJudgement | None:
         tag = new_tag("quote")
         system = AUDIT_CHECK_SYSTEM.format(tag=tag)
+        if self.s.audit_checker_rules:
+            system += PRECISION_RULES
         contexts = None
         if self.s.audit_quote_context:
             system += CONTEXT_RULE.format(tag=tag)
@@ -373,12 +379,41 @@ class AuditNodes:
         system = PAGE_JUDGE_SYSTEM.format(tag=tag)
         prefix = page_blocks(passages, tag) if cache else None
         user = page_judge_prompt(claim, passages, tag, with_page=not cache)
+        if self.s.page_judge_graded:
+            return await self._page_grade(prefix, user, config)
         if self.s.page_judge_probability:
             score, reason = await self._page_probability(system, prefix, user)
         else:
             score, reason = await self._page_votes(system, prefix, user, config)
         verdict = page_call(score, self.s.audit_t_supported, self.s.audit_t_flag)
         return {"page_judged": verdict, "page_reason": reason, "page_score": score}
+
+    async def _page_grade(
+        self, prefix: str | None, user: str, config: RunnableConfig | None
+    ) -> dict[str, Any]:
+        """D-040: states / implies / does not support / contradicts, turned into a verdict."""
+        model = self.s.page_judge_model
+        try:
+            async with self.gate:
+                judgement = await self.model_for(model).structured(
+                    node="page_check",
+                    model=model,
+                    effort=self.s.page_judge_effort,
+                    max_tokens=self.s.page_judge_max_tokens,
+                    system=GRADED_PAGE_JUDGE_SYSTEM.format(tag=self.tag),
+                    prefix=prefix,
+                    user=user,
+                    schema=GradedPageJudgement,
+                    config=config,
+                )
+        except ModelStopped:
+            return {"page_judged": "no_answer", "page_reason": NO_PAGE_JUDGE, "page_score": None}
+        return {
+            "page_judged": GRADE_CALL[judgement.grade],
+            "page_grade": judgement.grade,
+            "page_reason": judgement.reason,
+            "page_score": None,
+        }
 
     async def _page_votes(
         self, system: str, prefix: str | None, user: str, config: RunnableConfig | None

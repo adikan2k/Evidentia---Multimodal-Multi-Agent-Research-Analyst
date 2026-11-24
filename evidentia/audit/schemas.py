@@ -72,6 +72,16 @@ class PageJudgement(BaseModel):
     supported: bool = Field(description="True only if the page supports every part of the claim.")
 
 
+PageGrade = Literal["states", "implies", "does_not_support", "contradicts"]
+
+
+class GradedPageJudgement(BaseModel):
+    """What the graded page judge returns (D-040)."""
+
+    reason: str = Field(description="One sentence on what the page does or does not state.")
+    grade: PageGrade = Field(description="How the page relates to the claim.")
+
+
 class AuditJudgement(BaseModel):
     label: CheckLabel
     reason: str = Field(description="One sentence naming exactly what is or is not backed.")
@@ -100,8 +110,12 @@ class PageResult(BaseModel):
     verdict: CheckLabel | None = None
     reason: str = ""
     # The page judge (D-038). None means it did not run, for example with one judge only.
-    # "uncertain" means its score fell between the two thresholds (D-039).
-    page_judged: Literal["supported", "not_supported", "uncertain", "no_answer"] | None = None
+    # "uncertain" means its score fell between the two thresholds (D-039). "implied" means the
+    # graded page judge said the page implies the claim but does not state it (D-040).
+    page_judged: (
+        Literal["supported", "not_supported", "uncertain", "implied", "no_answer"] | None
+    ) = None
+    page_grade: PageGrade | None = None
     page_reason: str = ""
     page_score: float | None = None  # the page judge's probability that the claim is supported
 
@@ -133,10 +147,18 @@ def combine(quote_label: AuditLabel, page: str | None) -> AuditLabel:
         return quote_label  # one judge only, or the page could not be checked at all
     if page == "no_answer":
         return "unchecked"
-    if page == "uncertain":
-        return "needs_human"
+    if page in ("uncertain", "implied"):
+        return "needs_human"  # implied is not enough to call a claim supported, nor to flag it
     agrees = (quote_label == "supported") == (page == "supported")
     return quote_label if agrees else "needs_human"
+
+
+GRADE_CALL = {
+    "states": "supported",
+    "implies": "implied",
+    "does_not_support": "not_supported",
+    "contradicts": "not_supported",
+}
 
 
 def page_call(score: float | None, t_supported: float, t_flag: float) -> str:

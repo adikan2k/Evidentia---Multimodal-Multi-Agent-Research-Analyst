@@ -120,6 +120,10 @@ class Settings(BaseSettings):
     audit_t_flag: float = 0.5
     # Show the checker the paragraph around each quote (D-038, practice run 3). Off until kept.
     audit_quote_context: bool = False
+    # D-040. A page judge that says states / implies / does not support / contradicts, and three
+    # precision rules for the quote judge's checker. Both off until measured and kept.
+    page_judge_graded: bool = False
+    audit_checker_rules: bool = False
     # Send the page as a cached prefix, so other claims on the same page read it cheaply (D-039).
     # Off in the benchmark, where no two rows share a document and a cache write costs 1.25x.
     audit_prompt_cache: bool = True

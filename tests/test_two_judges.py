@@ -423,3 +423,60 @@ def test_cache_tokens_are_counted_per_step(settings) -> None:
     ledger.add(Charge(node="find", item="m", input_tokens=100, cache_write=90, usd=0.0))
     total = ledger.by_node()[0]
     assert (total.cache_read, total.cache_write) == (60, 90)
+
+
+# D-040: the graded page judge and the checker rules
+
+
+@pytest.mark.parametrize(
+    ("quote", "grade", "label"),
+    [
+        ("supported", "states", "supported"),
+        ("supported", "implies", "needs_human"),  # implied is not enough for supported
+        ("not_found", "implies", "needs_human"),  # nor for a flag
+        ("not_found", "does_not_support", "not_found"),
+        ("contradicted", "contradicts", "contradicted"),
+        ("partial", "does_not_support", "partial"),
+        ("supported", "does_not_support", "needs_human"),
+    ],
+)
+def test_the_graded_table(quote, grade, label) -> None:
+    from evidentia.audit.schemas import GRADE_CALL
+
+    assert combine(quote, GRADE_CALL[grade]) == label
+
+
+def test_the_graded_judge_is_asked_when_switched_on(settings) -> None:
+    from evidentia.audit.schemas import GradedPageJudgement
+
+    settings = settings.model_copy(update={"page_judge_graded": True})
+    deps, fake = make_deps(settings)
+    original = fake._call
+    asked = []
+
+    async def graded(model, effort, max_tokens, system, user, schema, config, prefix=None):
+        if schema is GradedPageJudgement:
+            asked.append(system)
+            grade = "implies" if "cheapest" in user else "states"
+            return reply(GradedPageJudgement(reason="graded", grade=grade))
+        return await original(model, effort, max_tokens, system, user, schema, config, prefix)
+
+    deps.llm._call = graded
+    state = audit(deps, ANSWER)
+    assert labels(state) == ["supported", "needs_human", "needs_human"]
+    page = claim_views(state)[0]["pages"][0]
+    assert page["page_grade"] == "states" and page["page_judged"] == "supported"
+    assert asked and "implies:" in asked[0] and "untrusted data" in asked[0]
+
+
+def test_the_checker_rules_are_added_only_when_switched_on(settings) -> None:
+    deps, fake = make_deps(settings)
+    audit(deps, ANSWER)
+    check = next(c for c in fake.calls if c["schema"] == "AuditJudgement")
+    assert "The same thing." not in check["system"]
+
+    settings = settings.model_copy(update={"audit_checker_rules": True})
+    deps, fake = make_deps(settings)
+    audit(deps, ANSWER)
+    check = next(c for c in fake.calls if c["schema"] == "AuditJudgement")
+    assert "The same thing." in check["system"] and "The same scope." in check["system"]

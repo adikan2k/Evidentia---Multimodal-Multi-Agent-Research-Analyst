@@ -35,7 +35,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from evals.common import ROOT, RUNS_DIR, read_jsonl, write_result
 from evals.stats import RESAMPLES, SEED
 from evidentia.audit.graph import AuditDeps, AuditNodes
-from evidentia.audit.schemas import FLAGS, combine, page_call
+from evidentia.audit.schemas import FLAGS, GRADE_CALL, combine, page_call
 from evidentia.config import Settings, load_settings
 from evidentia.cost import BudgetExceeded, Charge, Ledger
 from evidentia.embed import Embedder
@@ -49,12 +49,14 @@ REPO = "lytang/LLM-AggreFact"
 CACHE = ROOT / "cache" / "aggrefact"
 SAMPLE_SEED = 20261124
 FRESH_SEED = 20261125  # D-038's confirming run: new rows, none from the "test" sample
-# name -> (split, rows per sub-dataset, seed, sample whose rows are left out)
-SAMPLES: dict[str, tuple[str, int, int, str | None]] = {
-    "dev55": ("dev", 5, SAMPLE_SEED, None),
-    "dev550": ("dev", 50, SAMPLE_SEED, None),
-    "test": ("test", 50, SAMPLE_SEED, None),
-    "test2": ("test", 50, FRESH_SEED, "test"),
+# name -> (split, rows per sub-dataset, seed, samples whose rows are left out)
+SAMPLES: dict[str, tuple[str, int, int, tuple[str, ...]]] = {
+    "dev55": ("dev", 5, SAMPLE_SEED, ()),
+    "dev550": ("dev", 50, SAMPLE_SEED, ()),
+    "test": ("test", 50, SAMPLE_SEED, ()),
+    "test2": ("test", 50, FRESH_SEED, ("test",)),
+    "dev550b": ("dev", 50, 20261127, ("dev550",)),  # D-040's second practice set
+    "test3": ("test", 50, 20261128, ("test", "test2")),  # D-040's confirming run
 }
 QUOTE_MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5"}
 # "luna-p" is gpt-6-luna scored by its token probability, with reasoning off (D-039).
@@ -139,7 +141,7 @@ def draw_sample(
 def sample(name: str, rows: Sequence[Row] | None = None) -> list[Row]:
     split, per_dataset, seed, leave_out_of = SAMPLES[name]
     rows = rows if rows is not None else load_rows(split)
-    leave_out = {r.row for r in sample(leave_out_of, rows)} if leave_out_of else set()
+    leave_out = {r.row for other in leave_out_of for r in sample(other, rows)}
     return draw_sample(rows, per_dataset, seed, leave_out)
 
 
@@ -181,7 +183,10 @@ async def run_quote(row: Row, deps: AuditDeps, config: dict) -> dict[str, Any]:
 async def run_page(row: Row, deps: AuditDeps, config: dict) -> dict[str, Any]:
     nodes = AuditNodes(deps)
     verdict = await nodes.page_verdict(row.claim, as_source(row), f"aggrefact-{row.row}", config)
-    return {"page_judged": verdict["page_judged"], "page_score": verdict["page_score"]}
+    line = {"page_judged": verdict["page_judged"], "page_score": verdict["page_score"]}
+    if "page_grade" in verdict:
+        line["page_grade"] = verdict["page_grade"]
+    return line
 
 
 RUNNERS: dict[str, Callable] = {"quote": run_quote, "page": run_page}
@@ -339,8 +344,17 @@ def score_of(line: dict) -> float | None:
 
 
 def page_pred(line: dict) -> int:
+    """The page judge alone. A graded judge counts "states" and "implies" as supported."""
+    if line.get("page_grade"):
+        return int(line["page_grade"] in ("states", "implies"))
     score = score_of(line)
     return int(score is not None and score >= 0.5)
+
+
+def page_verdict(line: dict, t_supported: float, t_flag: float) -> str:
+    if line.get("page_grade"):
+        return GRADE_CALL[line["page_grade"]]
+    return page_call(score_of(line), t_supported, t_flag)
 
 
 def merge_votes(vote_runs: list[list[dict]]) -> list[dict]:
@@ -382,7 +396,7 @@ def join(
         p = pages.get(q["row"])
         if p is None:
             continue
-        label = combine(q["quote_label"], page_call(score_of(p), t_supported, t_flag))
+        label = combine(q["quote_label"], page_verdict(p, t_supported, t_flag))
         pred = two_judge_pred(label)
         joined.append(
             {
@@ -542,8 +556,10 @@ def summarise(
 # Command.
 
 
-def run_path(sample_name: str, judge: str, model: str, context: bool = False) -> Path:
-    suffix = "_ctx" if context else ""
+def run_path(
+    sample_name: str, judge: str, model: str, context: bool = False, variant: str = ""
+) -> Path:
+    suffix = ("_ctx" if context else "") + (f"_{variant}" if variant else "")
     return RUNS_DIR / f"aggrefact_{sample_name}_{judge}_{model}{suffix}.jsonl"
 
 
@@ -553,7 +569,8 @@ def vote_name(page: str, vote: int) -> str:
 
 
 def result_name(args: argparse.Namespace) -> str:
-    name = f"aggrefact_{args.sample}_q-{args.quote}{'-ctx' if args.context else ''}_p-{args.page}"
+    quote = args.quote + ("-ctx" if args.context else "") + ("-rules" if args.rules else "")
+    name = f"aggrefact_{args.sample}_q-{quote}_p-{args.page}{'-graded' if args.graded else ''}"
     if args.votes > 1:
         name += f"-votes{args.votes}"
     if (args.t_supported, args.t_flag) != (0.5, 0.5):
@@ -568,6 +585,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--page", choices=list(PAGE_MODELS), default="haiku")
     parser.add_argument("--context", action="store_true", help="show the checker each paragraph")
     parser.add_argument("--votes", type=int, default=1, help="page judge answers per claim")
+    parser.add_argument("--graded", action="store_true", help="states/implies page judge (D-040)")
+    parser.add_argument("--rules", action="store_true", help="checker precision rules (D-040)")
     parser.add_argument("--t-supported", type=float, default=0.5, dest="t_supported")
     parser.add_argument("--t-flag", type=float, default=0.5, dest="t_flag")
     parser.add_argument("--cap", type=float, default=DEFAULT_CAP, help="US dollars, whole command")
@@ -603,6 +622,8 @@ def main(argv: list[str]) -> None:
         page_judge_model=page,
         page_judge_probability=args.page == "luna-p",
         audit_quote_context=args.context,
+        page_judge_graded=args.graded,
+        audit_checker_rules=args.rules,
         audit_prompt_cache=False,  # no two rows share a document, so caching would only cost
     )
     print(
@@ -618,9 +639,12 @@ async def run_all(rows: list[Row], args: argparse.Namespace, settings: Settings)
     voyage = Embedder(settings, shared, tracer).client
     openai = make_client(settings) if is_openai_model(settings.page_judge_model) else None
     config = {"callbacks": tracer.callbacks(), "run_name": "evidentia-aggrefact"}
-    outs = {"quote": run_path(args.sample, "quote", args.quote, args.context)}
+    rules = "rules" if args.rules else ""
+    outs = {"quote": run_path(args.sample, "quote", args.quote, args.context, rules)}
+    graded = "graded" if args.graded else ""
     for vote in range(1, args.votes + 1):
-        outs[f"page vote {vote}"] = run_path(args.sample, "page", vote_name(args.page, vote))
+        page = vote_name(args.page, vote)
+        outs[f"page vote {vote}"] = run_path(args.sample, "page", page, variant=graded)
     found = {}
     try:
         with tracer.span(f"aggrefact.{args.sample}", "span", {"rows": len(rows)}):
@@ -640,6 +664,7 @@ async def run_all(rows: list[Row], args: argparse.Namespace, settings: Settings)
     if found["quote"] and all(votes):
         judges = {"quote": settings.audit_checker_model, "page": settings.page_judge_model}
         judges |= {"quote_context": str(args.context), "page_votes": str(args.votes)}
+        judges |= {"page_graded": str(args.graded), "checker_rules": str(args.rules)}
         judges["page_score"] = "token probability" if args.page == "luna-p" else "vote share"
         thresholds = (args.t_supported, args.t_flag)
         body = summarise(found["quote"], merge_votes(votes), args.sample, judges, thresholds)
