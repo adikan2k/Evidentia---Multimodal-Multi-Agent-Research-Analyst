@@ -268,6 +268,87 @@ def aggrefact_section(runs: dict[str, dict | None]) -> list[str]:
     return [*out, ""]
 
 
+def ci(stat: dict[str, Any] | None) -> str:
+    if not stat or stat["value"] is None:
+        return "none"
+    if stat["ci_low"] is None:
+        return f"{stat['value']:.3f}"
+    return f"{stat['value']:.3f} ({stat['ci_low']:.3f} to {stat['ci_high']:.3f})"
+
+
+def two_judges_section(runs: dict[str, dict]) -> list[str]:
+    out = ["## Two judges on LLM-AggreFact", ""]
+    if not runs:
+        return [*out, "Not run yet: no `evals/results/aggrefact_*_q-*_p-*.json` file exists.", ""]
+    out += [
+        "A claim gets a verdict only when the quote judge (exact quotes, then a check on the "
+        "quotes alone) and the page judge (the claim and the page) agree. Otherwise it is "
+        "'needs a human'. Flag precision: of the claims flagged, the share people label "
+        "unsupported. Supported precision: of the claims called supported, the share people "
+        "label supported. Coverage: the share that get a verdict. 95% intervals in brackets.",
+        "",
+    ]
+    for d in runs.values():
+        two, quote, page = d["two_judges"], d["quote_judge_alone"], d["page_judge_alone"]
+        judges = d["judges"]
+        context = " with quote context" if judges.get("quote_context") == "True" else ""
+        out += [
+            f"### {d['sample']}: quote judge {judges['quote']}{context}, page judge "
+            f"{judges['page']} ({d['rows']} rows)",
+            "",
+        ]
+        header = ["System", "Balanced accuracy", "Flag precision", "Supported precision"]
+        rows = [
+            [
+                "Two judges",
+                ci(two["balanced_accuracy"]),
+                ci(two["flag_precision"]),
+                ci(two["supported_precision"]),
+                ci(two["coverage"]),
+            ],
+            [
+                "Quote judge alone",
+                ci(quote["balanced_accuracy"]),
+                ci(quote["flag_precision"]),
+                ci(quote["supported_precision"]),
+                "1.000",
+            ],
+            [
+                "Page judge alone",
+                ci(page["balanced_accuracy"]),
+                ci(page["flag_precision"]),
+                ci(page["supported_precision"]),
+                "1.000",
+            ],
+        ]
+        out += table([*header, "Coverage"], rows)
+        labels = ", ".join(f"{n} {k}" for k, n in two["labels"].items())
+        finish = d["finish_line"]
+        verdict = "passed" if finish["passed"] else "not passed"
+        bars = ", ".join(f"{k} {v}" for k, v in finish["thresholds"].items())
+        out += [
+            "",
+            f"Two judges, with every 'needs a human' counted as wrong: balanced accuracy "
+            f"{ci(two['balanced_accuracy_abstain_counted_wrong'])}. Labels: {labels}. "
+            f"Cost per claim, both judges: ${d['usd']['per_claim_both']:.5f}. "
+            f"D-038 finish line ({bars}): {verdict}.",
+            "",
+        ]
+        per = [
+            [
+                ds,
+                f"{two['per_dataset'][ds]:.3f}",
+                f"{two['coverage_per_dataset'][ds]:.3f}",
+                f"{quote['per_dataset'][ds]:.3f}",
+                f"{page['per_dataset'][ds]:.3f}",
+            ]
+            for ds in two["per_dataset"]
+        ]
+        out += table(["Sub-dataset", "Two judges", "Coverage", "Quote alone", "Page alone"], per)
+        out += [""]
+    return out
+
+
 def failures_section(results: dict[str, dict | None]) -> list[str]:
     out = ["## What failed", ""]
     retrieval, agreement, accuracy, nasty = (
@@ -325,6 +406,10 @@ def run() -> None:
     names += ["aggrefact_test_haiku", "aggrefact_test_sonnet"]
     results = {name: load(name) for name in names}
     aggrefact = {k: v for k, v in results.items() if k.startswith("aggrefact_")}
+    two_judges = {
+        p.stem: load(p.stem) for p in sorted(RESULTS_DIR.glob("aggrefact_*_q-*_p-*.json"))
+    }
+    results |= two_judges
     lines = [
         "# Evaluation report",
         "",
@@ -340,6 +425,7 @@ def run() -> None:
         *unanswerable_section(results["unanswerable"]),
         *nasty_section(results["nasty"]),
         *aggrefact_section(aggrefact),
+        *two_judges_section(two_judges),
         *failures_section(results),
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
