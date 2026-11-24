@@ -1,0 +1,1147 @@
+{
+ "id": "cbo-deficit-outlook",
+ "question": "What did the CBO project in February 2024 for the federal deficit in 2024 and in 2034?",
+ "recorded_at": "2026-11-24T09:44:40+00:00",
+ "duration_s": 36.56,
+ "models": {
+  "writer": "claude-sonnet-5-5",
+  "checker": "claude-sonnet-5-5"
+ },
+ "events": [
+  {
+   "t": 2.59,
+   "node": "plan",
+   "summary": "wrote 4 search queries",
+   "cost_usd": 0.0023,
+   "data": {
+    "queries": [
+     "CBO Budget and Economic Outlook 2024 to 2034 federal deficit projection",
+     "CBO February 2024 deficit $1.5 trillion 2024 $2.6 trillion 2034",
+     "CBO \"The Budget and Economic Outlook: 2024 to 2034\" key projections deficit percent of GDP",
+     "CBO February 2024 baseline deficit projections news coverage debt held by public 2034"
+    ]
+   }
+  },
+  {
+   "t": 7.5,
+   "node": "search",
+   "summary": "found 12 pages on 7 sites",
+   "cost_usd": 0.0343,
+   "data": {
+    "hosts": [
+     "brookings.edu",
+     "conference-board.org",
+     "congress.gov",
+     "crfb.org",
+     "finance.yahoo.com",
+     "ideas.repec.org",
+     "uk.investing.com"
+    ]
+   }
+  },
+  {
+   "t": 17.86,
+   "node": "fetch",
+   "summary": "read 11 pages (2 PDFs), skipped 1 (1 disallowed by robots.txt)",
+   "cost_usd": 0.0343,
+   "data": {
+    "sources": [
+     {
+      "id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages_read": 11,
+      "pages_total": 11
+     },
+     {
+      "id": "S2",
+      "url": "https://www.crfb.org/blogs/cbo-releases-february-2024-budget-and-economic-outlook",
+      "host": "crfb.org",
+      "title": "CBO Releases February 2024 Budget and Economic Outlook-2024-02-07",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S3",
+      "url": "https://ideas.repec.org/p/cbo/report/60039.html",
+      "host": "ideas.repec.org",
+      "title": "An Update to the Budget and Economic Outlook: 2024 to 2034",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S4",
+      "url": "https://www.crfb.org/papers/cbos-june-2024-budget-and-economic-outlook",
+      "host": "crfb.org",
+      "title": "CBO's June 2024 Budget and Economic Outlook-Mon, 08/05/2024 - 12:00 | Committee for a Responsible Federal Budget",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S5",
+      "url": "https://finance.yahoo.com/news/cbo-raises-2024-deficit-forecast-225528658.html",
+      "host": "finance.yahoo.com",
+      "title": "CBO Raises Its 2024 Deficit Forecast 27% to Nearly $2 Trillion",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S7",
+      "url": "https://finance.yahoo.com/news/cbo-raises-2024-deficit-forecast-225528658.html?_fsig=G94ZpM40njJYaWaTkv_OeQ--~A",
+      "host": "finance.yahoo.com",
+      "title": "CBO Raises Its 2024 Deficit Forecast 27% to Nearly $2 Trillion",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S8",
+      "url": "https://finance.yahoo.com/news/1-u-cbo-forecasts-slightly-194938445.html",
+      "host": "finance.yahoo.com",
+      "title": "UPDATE 2-US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     },
+     {
+      "id": "S10",
+      "url": "https://www.conference-board.org/pdfdownload.cfm?masterProductID=51983",
+      "host": "conference-board.org",
+      "title": "Policy Backgrounder: June 2024 CBO Budget",
+      "kind": "pdf",
+      "pages_read": 3,
+      "pages_total": 3
+     },
+     {
+      "id": "S11",
+      "url": "https://www.brookings.edu/articles/the-federal-budget-outlook-update-for-2024",
+      "host": "brookings.edu",
+      "title": "The federal budget outlook: Update for 2024 | Brookings",
+      "kind": "html",
+      "pages_read": null,
+      "pages_total": null
+     }
+    ],
+    "skipped": [
+     {
+      "host": "uk.investing.com",
+      "reason": "disallowed by robots.txt"
+     }
+    ]
+   }
+  },
+  {
+   "t": 19.09,
+   "node": "index",
+   "summary": "indexed 64 passages (dense + BM25)",
+   "cost_usd": 0.0363,
+   "data": {}
+  },
+  {
+   "t": 19.64,
+   "node": "retrieve",
+   "summary": "kept the best 10 passages after reranking",
+   "cost_usd": 0.0368,
+   "data": {}
+  },
+  {
+   "t": 24.53,
+   "node": "write",
+   "summary": "wrote 6 claims",
+   "cost_usd": 0.0556,
+   "data": {
+    "claims": [
+     {
+      "text": "In February 2024, CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and return to 6.1 percent of GDP by 2034.",
+      "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+      "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "Reuters reported that CBO projected a $1.507 trillion federal deficit for fiscal 2024.",
+      "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+      "source_id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "Reuters reported that CBO's deficit projection would rise to $2.579 trillion in fiscal 2034, after $1.772 trillion in fiscal 2025.",
+      "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "CBO's February 2024 projections assumed the 2017 individual tax cuts expire at the end of 2025, pushing revenues higher in later years.",
+      "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     }
+    ]
+   }
+  },
+  {
+   "t": 24.53,
+   "node": "quote_check",
+   "summary": "6 of 6 quotes found word for word",
+   "cost_usd": 0.0556,
+   "data": {
+    "claims": [
+     {
+      "text": "In February 2024, CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "The Budget Outlook Deficits ",
+       "after": " Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues."
+      }
+     },
+     {
+      "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and return to 6.1 percent of GDP by 2034.",
+      "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "The Budget Outlook Deficits In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034. ",
+       "after": " In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years. Debt Debt held by the public rises each year in relation to the size of the economy,"
+      }
+     },
+     {
+      "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+      "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. ",
+       "after": " Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and growth in revenues and the economy, driving up debt. That trend persists, pushing federal debt to"
+      }
+     },
+     {
+      "text": "Reuters reported that CBO projected a $1.507 trillion federal deficit for fiscal 2024.",
+      "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+      "source_id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON, Feb 7 (Reuters) - ",
+       "after": " as increased revenues from a strong economy and employment offsets higher outlays for clean energy tax credits and interest on the public debt.\nThe CBO said that the deficit will dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.\nThe figures are based on current tax and spending laws and"
+      }
+     },
+     {
+      "text": "Reuters reported that CBO's deficit projection would rise to $2.579 trillion in fiscal 2034, after $1.772 trillion in fiscal 2025.",
+      "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON (Reuters) -The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\n",
+       "after": "\nThe figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO"
+      }
+     },
+     {
+      "text": "CBO's February 2024 projections assumed the 2017 individual tax cuts expire at the end of 2025, pushing revenues higher in later years.",
+      "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\nThe CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.\n",
+       "after": "\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO said a key reason for the lower longer-term deficit projections was legislation passed last June to impose caps on discretionary spending programs, which cut the 10-year deficit by $2.6"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 26.55,
+   "node": "check",
+   "summary": "1 supported, 4 partial, 1 unverified",
+   "cost_usd": 0.0702,
+   "data": {
+    "claims": [
+     {
+      "text": "In February 2024, CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs the CBO projection of the deficit growing from $1.6 trillion in fiscal 2024 to $2.6 trillion in 2034, but it does not state that the projection was made in February 2024.",
+      "revised": false,
+      "context": {
+       "before": "The Budget Outlook Deficits ",
+       "after": " Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues."
+      }
+     },
+     {
+      "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and return to 6.1 percent of GDP by 2034.",
+      "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "unsupported",
+      "label": "unverified",
+      "reason": "The quote gives 5.6 percent of GDP for 2024 but says the deficit rises to 6.1 percent in 2025, not 2034, so the claim's date for the 6.1 percent figure is wrong and the quote does not back it.",
+      "revised": false,
+      "context": {
+       "before": "The Budget Outlook Deficits In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034. ",
+       "after": " In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years. Debt Debt held by the public rises each year in relation to the size of the economy,"
+      }
+     },
+     {
+      "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+      "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. ",
+       "after": " Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and growth in revenues and the economy, driving up debt. That trend persists, pushing federal debt to"
+      }
+     },
+     {
+      "text": "Reuters reported that CBO projected a $1.507 trillion federal deficit for fiscal 2024.",
+      "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+      "source_id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs that the CBO projected a $1.507 trillion federal deficit for fiscal 2024, but it does not show that Reuters reported it, since no source is named.",
+      "revised": false,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON, Feb 7 (Reuters) - ",
+       "after": " as increased revenues from a strong economy and employment offsets higher outlays for clean energy tax credits and interest on the public debt.\nThe CBO said that the deficit will dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.\nThe figures are based on current tax and spending laws and"
+      }
+     },
+     {
+      "text": "Reuters reported that CBO's deficit projection would rise to $2.579 trillion in fiscal 2034, after $1.772 trillion in fiscal 2025.",
+      "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs the CBO deficit figures of $1.772 trillion in fiscal 2025 and $2.579 trillion in fiscal 2034, but it does not name Reuters as the source of the report.",
+      "revised": false,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON (Reuters) -The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\n",
+       "after": "\nThe figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO"
+      }
+     },
+     {
+      "text": "CBO's February 2024 projections assumed the 2017 individual tax cuts expire at the end of 2025, pushing revenues higher in later years.",
+      "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs the expiration assumption at the end of 2025 and the higher revenues in later years, but it never names CBO or says the figures are from February 2024.",
+      "revised": false,
+      "context": {
+       "before": "projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\nThe CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.\n",
+       "after": "\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO said a key reason for the lower longer-term deficit projections was legislation passed last June to impose caps on discretionary spending programs, which cut the 10-year deficit by $2.6"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 28.48,
+   "node": "rewrite",
+   "summary": "1 claim failed; wrote a new query for each",
+   "cost_usd": 0.0703,
+   "data": {
+    "repair_queries": [
+     "CBO February 2024 budget outlook deficit 5.6 percent of GDP 2024 6.1 percent 2034"
+    ]
+   }
+  },
+  {
+   "t": 28.98,
+   "node": "reretrieve",
+   "summary": "searched the fetched pages again, 6 passages to re-read",
+   "cost_usd": 0.0708,
+   "data": {
+    "repair_queries": [
+     "CBO February 2024 budget outlook deficit 5.6 percent of GDP 2024 6.1 percent 2034"
+    ]
+   }
+  },
+  {
+   "t": 34.02,
+   "node": "revise",
+   "summary": "rewrote 5 claims",
+   "cost_usd": 0.0899,
+   "data": {
+    "claims": [
+     {
+      "text": "CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "The Budget Outlook Deficits ",
+       "after": " Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues."
+      }
+     },
+     {
+      "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and, after rising to 6.1 percent in 2025 and shrinking to 5.2 percent by 2027, return to 6.1 percent of GDP by 2034.",
+      "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. By 2034, the deficit returns to 6.1 percent of GDP",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": null,
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": null
+     },
+     {
+      "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+      "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. ",
+       "after": " Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and growth in revenues and the economy, driving up debt. That trend persists, pushing federal debt to"
+      }
+     },
+     {
+      "text": "The U.S. Congressional Budget Office projected a $1.507 trillion federal deficit for fiscal 2024, slightly smaller than a previous projection.",
+      "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+      "source_id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON, Feb 7 (Reuters) - ",
+       "after": " as increased revenues from a strong economy and employment offsets higher outlays for clean energy tax credits and interest on the public debt.\nThe CBO said that the deficit will dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.\nThe figures are based on current tax and spending laws and"
+      }
+     },
+     {
+      "text": "The CBO said its deficit projection would resume rising to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.",
+      "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON (Reuters) -The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\n",
+       "after": "\nThe figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO"
+      }
+     },
+     {
+      "text": "The projections are based on current tax and spending laws and assume that the individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\nThe CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.\n",
+       "after": "\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO said a key reason for the lower longer-term deficit projections was legislation passed last June to impose caps on discretionary spending programs, which cut the 10-year deficit by $2.6"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 34.02,
+   "node": "quote_check",
+   "summary": "6 of 6 quotes found word for word",
+   "cost_usd": 0.0899,
+   "data": {
+    "claims": [
+     {
+      "text": "CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "The Budget Outlook Deficits ",
+       "after": " Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues."
+      }
+     },
+     {
+      "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and, after rising to 6.1 percent in 2025 and shrinking to 5.2 percent by 2027, return to 6.1 percent of GDP by 2034.",
+      "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. By 2034, the deficit returns to 6.1 percent of GDP",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "The Budget Outlook Deficits In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034. ",
+       "after": "— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years. Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and"
+      }
+     },
+     {
+      "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+      "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. ",
+       "after": " Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and growth in revenues and the economy, driving up debt. That trend persists, pushing federal debt to"
+      }
+     },
+     {
+      "text": "The U.S. Congressional Budget Office projected a $1.507 trillion federal deficit for fiscal 2024, slightly smaller than a previous projection.",
+      "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+      "source_id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON, Feb 7 (Reuters) - ",
+       "after": " as increased revenues from a strong economy and employment offsets higher outlays for clean energy tax credits and interest on the public debt.\nThe CBO said that the deficit will dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.\nThe figures are based on current tax and spending laws and"
+      }
+     },
+     {
+      "text": "The CBO said its deficit projection would resume rising to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.",
+      "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON (Reuters) -The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\n",
+       "after": "\nThe figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO"
+      }
+     },
+     {
+      "text": "The projections are based on current tax and spending laws and assume that the individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\nThe CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.\n",
+       "after": "\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO said a key reason for the lower longer-term deficit projections was legislation passed last June to impose caps on discretionary spending programs, which cut the 10-year deficit by $2.6"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 36.05,
+   "node": "check",
+   "summary": "5 supported, 1 partial, 0 unverified",
+   "cost_usd": 0.1023,
+   "data": {
+    "claims": [
+     {
+      "text": "CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "The Budget Outlook Deficits ",
+       "after": " Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues."
+      }
+     },
+     {
+      "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and, after rising to 6.1 percent in 2025 and shrinking to 5.2 percent by 2027, return to 6.1 percent of GDP by 2034.",
+      "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. By 2034, the deficit returns to 6.1 percent of GDP",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs the 5.6% (2024), 6.1% (2025), 5.2% (2027) and 6.1% (2034) figures, but it never names CBO or says these are projections, so the attribution is not stated.",
+      "revised": true,
+      "context": {
+       "before": "The Budget Outlook Deficits In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034. ",
+       "after": "— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years. Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and"
+      }
+     },
+     {
+      "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+      "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+      "source_id": "S1",
+      "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+      "host": "congress.gov",
+      "title": "The Budget and Economic Outlook: 2024 to 2034",
+      "kind": "pdf",
+      "pages": [
+       3,
+       3
+      ],
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. ",
+       "after": " Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and growth in revenues and the economy, driving up debt. That trend persists, pushing federal debt to"
+      }
+     },
+     {
+      "text": "The U.S. Congressional Budget Office projected a $1.507 trillion federal deficit for fiscal 2024, slightly smaller than a previous projection.",
+      "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+      "source_id": "S6",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+      "host": "finance.yahoo.com",
+      "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON, Feb 7 (Reuters) - ",
+       "after": " as increased revenues from a strong economy and employment offsets higher outlays for clean energy tax credits and interest on the public debt.\nThe CBO said that the deficit will dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.\nThe figures are based on current tax and spending laws and"
+      }
+     },
+     {
+      "text": "The CBO said its deficit projection would resume rising to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.",
+      "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "By David Lawder\nWASHINGTON (Reuters) -The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\n",
+       "after": "\nThe figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO"
+      }
+     },
+     {
+      "text": "The projections are based on current tax and spending laws and assume that the individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+      "source_id": "S9",
+      "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+      "host": "finance.yahoo.com",
+      "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+      "kind": "html",
+      "pages": null,
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\nThe CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.\n",
+       "after": "\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO said a key reason for the lower longer-term deficit projections was legislation passed last June to impose caps on discretionary spending programs, which cut the 10-year deficit by $2.6"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "report": {
+  "question": "What did the CBO project in February 2024 for the federal deficit in 2024 and in 2034?",
+  "claims": [
+   {
+    "text": "CBO projected the federal budget deficit would grow from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+    "quote": "In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034.",
+    "source_id": "S1",
+    "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+    "host": "congress.gov",
+    "title": "The Budget and Economic Outlook: 2024 to 2034",
+    "kind": "pdf",
+    "pages": [
+     3,
+     3
+    ],
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "The Budget Outlook Deficits ",
+     "after": " Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues."
+    }
+   },
+   {
+    "text": "CBO projected the deficit would equal 5.6 percent of GDP in 2024 and, after rising to 6.1 percent in 2025 and shrinking to 5.2 percent by 2027, return to 6.1 percent of GDP by 2034.",
+    "quote": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. By 2034, the deficit returns to 6.1 percent of GDP",
+    "source_id": "S1",
+    "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+    "host": "congress.gov",
+    "title": "The Budget and Economic Outlook: 2024 to 2034",
+    "kind": "pdf",
+    "pages": [
+     3,
+     3
+    ],
+    "quote_found": true,
+    "verdict": "partial",
+    "label": "partial",
+    "reason": "The quote backs the 5.6% (2024), 6.1% (2025), 5.2% (2027) and 6.1% (2034) figures, but it never names CBO or says these are projections, so the attribution is not stated.",
+    "revised": true,
+    "context": {
+     "before": "The Budget Outlook Deficits In CBO’s projections, the federal budget deficit grows from $1.6 trillion in fiscal year 2024 to $2.6 trillion in 2034. ",
+     "after": "— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years. Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and"
+    }
+   },
+   {
+    "text": "By 2034, the deficit was projected to return to 6.1 percent of GDP, significantly larger than the 3.7 percent average over the past 50 years.",
+    "quote": "By 2034, the deficit returns to 6.1 percent of GDP— significantly larger than the 3.7 percent that deficits have averaged over the past 50 years.",
+    "source_id": "S1",
+    "url": "https://www.congress.gov/118/meeting/house/116833/witnesses/HHRG-118-BU00-Wstate-SwagelP-20240214.pdf",
+    "host": "congress.gov",
+    "title": "The Budget and Economic Outlook: 2024 to 2034",
+    "kind": "pdf",
+    "pages": [
+     3,
+     3
+    ],
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "Deficits also expand in relation to the size of the economy, from 5.6 percent of gross domestic product (GDP) in 2024, when the collection of certain postponed tax payments temporarily boosts revenues, to 6.1 percent of GDP in 2025. In 2026 and 2027, revenues increase faster than outlays, causing the deficit to shrink to 5.2 percent of GDP by 2027. Thereafter, outlays rise faster than revenues. ",
+     "after": " Debt Debt held by the public rises each year in relation to the size of the economy, reaching 116 percent of GDP in 2034—an amount greater than at any point in the nation’s history. From 2024 to 2034, increases in mandatory spending and interest costs outpace declines in discretionary spending and growth in revenues and the economy, driving up debt. That trend persists, pushing federal debt to"
+    }
+   },
+   {
+    "text": "The U.S. Congressional Budget Office projected a $1.507 trillion federal deficit for fiscal 2024, slightly smaller than a previous projection.",
+    "quote": "The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024",
+    "source_id": "S6",
+    "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190000599.html",
+    "host": "finance.yahoo.com",
+    "title": "U.S. CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+    "kind": "html",
+    "pages": null,
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "By David Lawder\nWASHINGTON, Feb 7 (Reuters) - ",
+     "after": " as increased revenues from a strong economy and employment offsets higher outlays for clean energy tax credits and interest on the public debt.\nThe CBO said that the deficit will dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.\nThe figures are based on current tax and spending laws and"
+    }
+   },
+   {
+    "text": "The CBO said its deficit projection would resume rising to $1.772 trillion in fiscal 2025 and reach $2.579 trillion in fiscal 2034.",
+    "quote": "The CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.",
+    "source_id": "S9",
+    "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+    "host": "finance.yahoo.com",
+    "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+    "kind": "html",
+    "pages": null,
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "By David Lawder\nWASHINGTON (Reuters) -The U.S. Congressional Budget Office on Wednesday projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\n",
+     "after": "\nThe figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO"
+    }
+   },
+   {
+    "text": "The projections are based on current tax and spending laws and assume that the individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+    "quote": "The figures are based on current tax and spending laws and assume that individual tax cuts passed by Republicans in 2017 expire at the end of 2025, pushing revenues higher in later years.",
+    "source_id": "S9",
+    "url": "https://finance.yahoo.com/news/u-cbo-forecasts-slightly-smaller-190404400.html",
+    "host": "finance.yahoo.com",
+    "title": "US CBO forecasts slightly smaller $1.5 trillion deficit for 2024",
+    "kind": "html",
+    "pages": null,
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "projected a slightly smaller $1.507 trillion federal deficit for fiscal 2024 as increased revenues from stronger growth and employment offset higher costs for clean energy tax credits and public debt interest.\nThe CBO said the deficit would dip this year from $1.695 trillion in fiscal 2023, but resume its march upward to $1.772 trillion in fiscal 2025, hitting $2.579 trillion in fiscal 2034.\n",
+     "after": "\nThe CBO also projected a slightly smaller cumulative 10-year deficit, to $20.016 trillion for the fiscal 2025-2034 period, compared with last year's estimate of a $20.314 trillion deficit for 2024-2033.\nThe CBO said a key reason for the lower longer-term deficit projections was legislation passed last June to impose caps on discretionary spending programs, which cut the 10-year deficit by $2.6"
+    }
+   }
+  ],
+  "labels": {
+   "supported": 5,
+   "partial": 1,
+   "unverified": 0
+  },
+  "sources_read": 11,
+  "sources_skipped": 1,
+  "passages_indexed": 64,
+  "repair_rounds": 1,
+  "cost": {
+   "total_usd": 0.1023,
+   "cap_usd": 1.0,
+   "by_node": [
+    {
+     "node": "plan",
+     "calls": 1,
+     "usd": 0.0023
+    },
+    {
+     "node": "search",
+     "calls": 4,
+     "usd": 0.032
+    },
+    {
+     "node": "index",
+     "calls": 1,
+     "usd": 0.002
+    },
+    {
+     "node": "retrieve",
+     "calls": 2,
+     "usd": 0.0005
+    },
+    {
+     "node": "write",
+     "calls": 1,
+     "usd": 0.0189
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0269
+    },
+    {
+     "node": "rewrite",
+     "calls": 1,
+     "usd": 0.0001
+    },
+    {
+     "node": "reretrieve",
+     "calls": 2,
+     "usd": 0.0005
+    },
+    {
+     "node": "revise",
+     "calls": 5,
+     "usd": 0.0191
+    }
+   ]
+  }
+ }
+}

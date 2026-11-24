@@ -1,0 +1,6 @@
+# Leave everything out of the image except what the API needs. In particular, never .env.
+*
+!pyproject.toml
+!uv.lock
+!evidentia/
+evidentia/**/__pycache__/

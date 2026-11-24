@@ -1,0 +1,1118 @@
+{
+  "generated_at": "2026-11-24T07:39:34+00:00",
+  "what": "Three checker models label 150 claim-and-quote pairs. A third of the pairs were broken on purpose when built.",
+  "pairs_total": 150,
+  "product_checker": "claude-sonnet-5-5",
+  "interval": "95% bootstrap over pairs, 2000 resamples",
+  "human_labels": "NOT DONE. No person has labelled these pairs, so there is no agreement-with-a-human figure.",
+  "error_detection_on_built_pairs": {
+    "claude-sonnet-5-5": {
+      "wrong_quote": {
+        "n": 17,
+        "flagged": 17,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      },
+      "changed_fact": {
+        "n": 17,
+        "flagged": 16,
+        "flagged_share": {
+          "value": 0.9412,
+          "ci_low": 0.8235,
+          "ci_high": 1.0
+        }
+      },
+      "added_detail": {
+        "n": 16,
+        "flagged": 16,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      },
+      "all_built": {
+        "n": 50,
+        "flagged": 49,
+        "flagged_share": {
+          "value": 0.98,
+          "ci_low": 0.94,
+          "ci_high": 1.0
+        }
+      }
+    },
+    "claude-haiku-5-5": {
+      "wrong_quote": {
+        "n": 17,
+        "flagged": 17,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      },
+      "changed_fact": {
+        "n": 17,
+        "flagged": 16,
+        "flagged_share": {
+          "value": 0.9412,
+          "ci_low": 0.8235,
+          "ci_high": 1.0
+        }
+      },
+      "added_detail": {
+        "n": 16,
+        "flagged": 15,
+        "flagged_share": {
+          "value": 0.9375,
+          "ci_low": 0.8125,
+          "ci_high": 1.0
+        }
+      },
+      "all_built": {
+        "n": 50,
+        "flagged": 48,
+        "flagged_share": {
+          "value": 0.96,
+          "ci_low": 0.9,
+          "ci_high": 1.0
+        }
+      }
+    },
+    "claude-opus-5-5": {
+      "wrong_quote": {
+        "n": 17,
+        "flagged": 17,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      },
+      "changed_fact": {
+        "n": 17,
+        "flagged": 17,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      },
+      "added_detail": {
+        "n": 16,
+        "flagged": 16,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      },
+      "all_built": {
+        "n": 50,
+        "flagged": 50,
+        "flagged_share": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      }
+    }
+  },
+  "references": {
+    "second_model": {
+      "labeller": "Claude Fable 5.2, shown only the claim and the quote. NOT a person.",
+      "caveat": "This is one model agreeing with another from the same family. It says the checker is consistent with a stronger model; it does not say either is right. Convention used: a pronoun in the quote that plainly refers to the page's subject is not counted as a missing fact, but an added number, date, cause or 'who said it' is.",
+      "pairs_labelled": 150,
+      "models": {
+        "claude-sonnet-5-5": {
+          "all": {
+            "n": 150,
+            "agreement": {
+              "value": 0.8933,
+              "ci_low": 0.84,
+              "ci_high": 0.94
+            },
+            "cohen_kappa": {
+              "value": 0.8289,
+              "ci_low": 0.7444,
+              "ci_high": 0.9035
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 65,
+                "partial": 8,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 2,
+                "partial": 46,
+                "unsupported": 6,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 23,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.9701,
+                "recall": 0.8904,
+                "model_count": 67,
+                "human_count": 73
+              },
+              "partial": {
+                "precision": 0.8519,
+                "recall": 0.8519,
+                "model_count": 54,
+                "human_count": 54
+              },
+              "unsupported": {
+                "precision": 0.7931,
+                "recall": 1.0,
+                "model_count": 29,
+                "human_count": 23
+              }
+            }
+          },
+          "real_pairs": {
+            "n": 100,
+            "agreement": {
+              "value": 0.91,
+              "ci_low": 0.85,
+              "ci_high": 0.96
+            },
+            "cohen_kappa": {
+              "value": 0.7889,
+              "ci_low": 0.6477,
+              "ci_high": 0.9067
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 65,
+                "partial": 8,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 1,
+                "partial": 26,
+                "unsupported": 0,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.9848,
+                "recall": 0.8904,
+                "model_count": 66,
+                "human_count": 73
+              },
+              "partial": {
+                "precision": 0.7647,
+                "recall": 0.963,
+                "model_count": 34,
+                "human_count": 27
+              },
+              "unsupported": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "model_count": 0,
+                "human_count": 0
+              }
+            }
+          },
+          "built_pairs": {
+            "n": 50,
+            "agreement": {
+              "value": 0.86,
+              "ci_low": 0.76,
+              "ci_high": 0.94
+            },
+            "cohen_kappa": {
+              "value": 0.7293,
+              "ci_low": 0.5455,
+              "ci_high": 0.8825
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 1,
+                "partial": 20,
+                "unsupported": 6,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 23,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "model_count": 1,
+                "human_count": 0
+              },
+              "partial": {
+                "precision": 1.0,
+                "recall": 0.7407,
+                "model_count": 20,
+                "human_count": 27
+              },
+              "unsupported": {
+                "precision": 0.7931,
+                "recall": 1.0,
+                "model_count": 29,
+                "human_count": 23
+              }
+            }
+          },
+          "disagreements": [
+            {
+              "id": "p019",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote says trade winds weaken during El Niño, which contradicts the claim that they strengthen; only the eastward push of warm water toward the west coast of the Americas matches.",
+              "claim": "During El Niño the trade winds strengthen and warm water is pushed back east toward the west coast of the Americas.",
+              "quote": "During El Niño, trade winds weaken. Warm water is pushed back east, toward the west coast of the Americas."
+            },
+            {
+              "id": "p020",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote gives the 1900 figure of 32 years and the 2021 figure of 71 years with the doubling, but it never says these are worldwide averages, which the claim adds.",
+              "claim": "In 1900 the average life expectancy of a newborn worldwide was 32 years, and by 2021 it had more than doubled to 71 years.",
+              "quote": "In 1900, the average life expectancy of a newborn was 32 years. By 2021 this had more than doubled to 71 years."
+            },
+            {
+              "id": "p034",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote says the energy is stored as chemical energy in the cell with some loss, but 'This energy' is never identified as electrical energy supplied during charging, so that detail is not stated.",
+              "claim": "The electrical energy supplied during charging is stored as chemical energy in the cell, with some loss.",
+              "quote": "This energy is then stored as chemical energy in the cell (with some loss, e. g., due to coulombic efficiency lower than 1)."
+            },
+            {
+              "id": "p036",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote confirms the MDG1 target was met five years early but says 700 million people were lifted out of extreme poverty from 1990 to 2010, contradicting the claim's figure of 400 million.",
+              "claim": "The MDG1 target of halving extreme poverty rates was met five years early, with 400 million people lifted out of extreme poverty from 1990 to 2010.",
+              "quote": "with the MDG1 target of reducing extreme poverty rates by half being met five years early, representing 700 million people being lifted out of extreme poverty from 1990 to 2010"
+            },
+            {
+              "id": "p044",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs that the World Wars, 1918 Spanish flu, HIV/AIDS and COVID-19 left a visible mark on life expectancy, but it never says the overall rise in life expectancy has not been constant.",
+              "claim": "The rise has not been constant: the World Wars, the 1918 Spanish flu, HIV/AIDS and COVID-19 left a visible mark on life expectancy.",
+              "quote": "Major events – the World Wars, the 1918 Spanish flu pandemic, the HIV/AIDS epidemic, and the COVID-19 pandemic – have had a major impact on mortality rates and left a visible mark on life expectancy."
+            },
+            {
+              "id": "p050",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote states that the boundary of no escape is called the event horizon, but it never mentions a black hole, which the claim adds.",
+              "claim": "The boundary of no escape of a black hole is called the event horizon.",
+              "quote": "The boundary of no escape is called the event horizon."
+            },
+            {
+              "id": "p057",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "supported",
+              "checker_reason": "The quote says all gases with three or more atoms, including H2O and CO2, are infrared active greenhouse gases, which covers the claim's H2O, CO2 and four-or-more-atom gases; the only gap is the claim's absorb-and-emit wording, which is just the definition of infrared active.",
+              "claim": "Gases that can absorb and emit longwave radiation are infrared active and act as greenhouse gases; this includes H2O and CO2, as well as all gases with four or more atoms.",
+              "quote": "Most gases whose molecules have two different atoms (such as carbon monoxide, CO), and all gases with three or more atoms (including H2O and CO2), are infrared active and act as greenhouse gases."
+            },
+            {
+              "id": "p060",
+              "origin": "added_detail",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote is only a table row whose last cell is 12,731, with three other figures, so it does not name the source, say the total covers four years or is in millions, or mention any scholarly lack of consensus.",
+              "claim": "A table of aid by country, from The Marshall Plan Fifty Years Later, totals $12,731 million over the program's four years, and the passage notes scholars lack consensus on exact amounts.",
+              "quote": "| Totals | 4,924 | 3,652 | 4,155 | 12,731 |"
+            },
+            {
+              "id": "p067",
+              "origin": "natural",
+              "reference": "partial",
+              "checker": "supported",
+              "checker_reason": "The quote states all four figures (99.9% fewer than brown coal, 99.8% than coal, 99.7% than oil, 97.6% than gas) exactly as the claim does, though it does not name Our World in Data as the source, which is a minor attribution detail.",
+              "claim": "Our World in Data states that nuclear energy results in 99.9% fewer deaths than brown coal, 99.8% fewer than coal, 99.7% fewer than oil, and 97.6% fewer than gas.",
+              "quote": "Nuclear energy, for example, results in 99.9% fewer deaths than brown coal; 99.8% fewer than coal; 99.7% fewer than oil; and 97.6% fewer than gas."
+            },
+            {
+              "id": "p072",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the comparison of low final death tolls against the millions who die yearly from fossil fuels, but it never names Chernobyl or Fukushima, so the claim's link to those accidents is not stated.",
+              "claim": "Even with the Chernobyl and Fukushima accidents, the final death tolls were very low compared with the millions who die from fossil fuels every year.",
+              "quote": "However, compared to the millions that die from fossil fuels every year, the final death tolls were very low."
+            },
+            {
+              "id": "p080",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote says entanglement holds even when particles are separated by a large distance, which contradicts the claim's restriction that it applies only when they are separated by a small distance.",
+              "claim": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, but only when the particles are separated by a small distance.",
+              "quote": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, even when the particles are separated by a large distance."
+            },
+            {
+              "id": "p083",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote lists 'female sex' as a risk factor outside personal control, while the claim says 'male sex', so it contradicts that specific even though age and genetics match.",
+              "claim": "Some risk factors are not under personal control, such as increasing age, male sex, and genetics.",
+              "quote": "While some of these factors are under personal control, such as diet and obesity, other factors are not, such as increasing age, female sex, and genetics.[10]"
+            },
+            {
+              "id": "p115",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the 8,850 m rock head elevation and the geoid-uncertainty doubt about the 1999 and 2005 surveys, but it never says that the 8,850 m figure came from a 1999 GPS measurement; it says only that it was obtained via 'this device'.",
+              "claim": "A 1999 GPS measurement gave a rock head elevation of 8,850 m, though geoid uncertainty casts doubt on the accuracy claimed by the 1999 and 2005 surveys.",
+              "quote": "A rock head elevation of 8,850 m (29,035 ft), and a snow/ice elevation 1 m (3 ft) higher, were obtained via this device.[37] Geoid uncertainty casts doubt upon the accuracy claimed by both the 1999 and 2005 (see § 21st-century surveys) surveys.[38]"
+            },
+            {
+              "id": "p143",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote says TCP is a reliable byte stream service, directly contradicting the claim's description of TCP as unreliable, and it also never mentions positive acknowledgment with re-transmission.",
+              "claim": "TCP is unreliable, guaranteeing that received bytes are identical to and in the same order as those sent, using positive acknowledgment with re-transmission.",
+              "quote": "TCP is a reliable byte stream delivery service that guarantees that all bytes received will be identical and in the same order as those sent."
+            },
+            {
+              "id": "p144",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the scenario, the two NASA scientists and the 1978 date, but its subject is cut off, so it never says the scenario is called the Kessler syndrome.",
+              "claim": "The Kessler syndrome is a scenario proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978.",
+              "quote": "is a scenario proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978."
+            },
+            {
+              "id": "p148",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the core mechanism (microorganisms surviving continued antimicrobial attack become more prevalent, those without resistance become obsolete), but it never calls resistance an 'evolutionary process' or mentions 'natural selection' by name.",
+              "claim": "Resistance is a natural evolutionary process: through natural selection, microorganisms that survive continued exposure to antimicrobial agents become more prevalent while those without resistance die out.",
+              "quote": "As a result, the types of microorganisms that are able to survive over time with continued attack by certain antimicrobial agents will naturally become more prevalent in the environment, and those without this resistance will become obsolete."
+            }
+          ]
+        },
+        "claude-haiku-5-5": {
+          "all": {
+            "n": 150,
+            "agreement": {
+              "value": 0.9,
+              "ci_low": 0.8533,
+              "ci_high": 0.9467
+            },
+            "cohen_kappa": {
+              "value": 0.8379,
+              "ci_low": 0.7528,
+              "ci_high": 0.913
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 65,
+                "partial": 8,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 3,
+                "partial": 48,
+                "unsupported": 3,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 1,
+                "unsupported": 22,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.9559,
+                "recall": 0.8904,
+                "model_count": 68,
+                "human_count": 73
+              },
+              "partial": {
+                "precision": 0.8421,
+                "recall": 0.8889,
+                "model_count": 57,
+                "human_count": 54
+              },
+              "unsupported": {
+                "precision": 0.88,
+                "recall": 0.9565,
+                "model_count": 25,
+                "human_count": 23
+              }
+            }
+          },
+          "real_pairs": {
+            "n": 100,
+            "agreement": {
+              "value": 0.91,
+              "ci_low": 0.85,
+              "ci_high": 0.96
+            },
+            "cohen_kappa": {
+              "value": 0.7889,
+              "ci_low": 0.6491,
+              "ci_high": 0.9083
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 65,
+                "partial": 8,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 1,
+                "partial": 26,
+                "unsupported": 0,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.9848,
+                "recall": 0.8904,
+                "model_count": 66,
+                "human_count": 73
+              },
+              "partial": {
+                "precision": 0.7647,
+                "recall": 0.963,
+                "model_count": 34,
+                "human_count": 27
+              },
+              "unsupported": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "model_count": 0,
+                "human_count": 0
+              }
+            }
+          },
+          "built_pairs": {
+            "n": 50,
+            "agreement": {
+              "value": 0.88,
+              "ci_low": 0.78,
+              "ci_high": 0.96
+            },
+            "cohen_kappa": {
+              "value": 0.7699,
+              "ci_low": 0.5852,
+              "ci_high": 0.921
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 2,
+                "partial": 22,
+                "unsupported": 3,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 1,
+                "unsupported": 22,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "model_count": 2,
+                "human_count": 0
+              },
+              "partial": {
+                "precision": 0.9565,
+                "recall": 0.8148,
+                "model_count": 23,
+                "human_count": 27
+              },
+              "unsupported": {
+                "precision": 0.88,
+                "recall": 0.9565,
+                "model_count": 25,
+                "human_count": 23
+              }
+            }
+          },
+          "disagreements": [
+            {
+              "id": "p011",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the claim that China emits more than one-quarter of global emissions and is the world's largest emitter, but it does not specify that the measure is annual CO2 emissions, as the claim does.",
+              "claim": "China is the world's largest annual CO2 emitter, emitting more than one-quarter of global emissions.",
+              "quote": "China is, by a significant margin, Asia’s and the world’s largest emitter: it emits more than one-quarter of global emissions."
+            },
+            {
+              "id": "p017",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote agrees that rainfall reduces over Indonesia, India and northern Australia but says rainfall and tropical cyclone formation increase over the tropical Pacific, which contradicts the claim's statement that they decrease there.",
+              "claim": "El Niño reduces rainfall over Indonesia, India and northern Australia, while rainfall and tropical cyclone formation decrease over the tropical Pacific Ocean.",
+              "quote": "with rainfall reducing over Indonesia, India and northern Australia, while rainfall and tropical cyclone formation increases over the tropical Pacific Ocean.[47]"
+            },
+            {
+              "id": "p020",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the 32-year figure for 1900, the more-than-doubled rise to 71 years by 2021, and the newborn life expectancy measure, but it does not say the figures are worldwide as the claim does.",
+              "claim": "In 1900 the average life expectancy of a newborn worldwide was 32 years, and by 2021 it had more than doubled to 71 years.",
+              "quote": "In 1900, the average life expectancy of a newborn was 32 years. By 2021 this had more than doubled to 71 years."
+            },
+            {
+              "id": "p034",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote states that energy is stored as chemical energy in the cell with some loss, but it does not explicitly say the energy is electrical energy supplied during charging, though 'this energy' implies it follows from prior context not shown.",
+              "claim": "The electrical energy supplied during charging is stored as chemical energy in the cell, with some loss.",
+              "quote": "This energy is then stored as chemical energy in the cell (with some loss, e. g., due to coulombic efficiency lower than 1)."
+            },
+            {
+              "id": "p044",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs that the World Wars, 1918 Spanish flu, HIV/AIDS and COVID-19 left a visible mark on life expectancy, but it never mentions a rise in life expectancy or says that rise was non-constant.",
+              "claim": "The rise has not been constant: the World Wars, the 1918 Spanish flu, HIV/AIDS and COVID-19 left a visible mark on life expectancy.",
+              "quote": "Major events – the World Wars, the 1918 Spanish flu pandemic, the HIV/AIDS epidemic, and the COVID-19 pandemic – have had a major impact on mortality rates and left a visible mark on life expectancy."
+            },
+            {
+              "id": "p057",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "supported",
+              "checker_reason": "The quote states that all gases with three or more atoms, including H2O and CO2, are infrared active and act as greenhouse gases, which entails the claim's narrower 'four or more atoms' statement and its H2O and CO2 examples.",
+              "claim": "Gases that can absorb and emit longwave radiation are infrared active and act as greenhouse gases; this includes H2O and CO2, as well as all gases with four or more atoms.",
+              "quote": "Most gases whose molecules have two different atoms (such as carbon monoxide, CO), and all gases with three or more atoms (including H2O and CO2), are infrared active and act as greenhouse gases."
+            },
+            {
+              "id": "p063",
+              "origin": "natural",
+              "reference": "partial",
+              "checker": "supported",
+              "checker_reason": "The quote states that the vigour of the military government was relaxed and dissolved and that the Roman world was overwhelmed by a deluge of Barbarians, which covers both causes named in the claim, though it does not explicitly say 'partly'.",
+              "claim": "Edward Gibbon attributed the fall partly to the corruption of military discipline and a deluge of Barbarians overwhelming the Roman world.",
+              "quote": "the vigour of the military government was relaxed, and finally dissolved, by the partial institutions of Constantine; and the Roman world was overwhelmed by a deluge of Barbarians."
+            },
+            {
+              "id": "p072",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the core comparison that nuclear accident death tolls were very low versus millions dying yearly from fossil fuels, but it never mentions Chernobyl or Fukushima by name.",
+              "claim": "Even with the Chernobyl and Fukushima accidents, the final death tolls were very low compared with the millions who die from fossil fuels every year.",
+              "quote": "However, compared to the millions that die from fossil fuels every year, the final death tolls were very low."
+            },
+            {
+              "id": "p080",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote defines entanglement as holding even when particles are separated by a large distance, which contradicts the claim's restriction that the correlation applies only when particles are a small distance apart.",
+              "claim": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, but only when the particles are separated by a small distance.",
+              "quote": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, even when the particles are separated by a large distance."
+            },
+            {
+              "id": "p096",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote names the same four factors (diet, visceral fat, tobacco smoking, lack of exercise) as the primary controllable contributors, but it specifies they are for type 2 diabetes, which the claim omits, so the claim is backed in substance though not in its stated scope.",
+              "claim": "Diet, visceral fat, tobacco smoking, and lack of exercise are the primary controllable contributing factors.",
+              "quote": "Diet, visceral fat, tobacco smoking, and lack of exercise are the primary controllable contributing factors for type 2 diabetes.[15][16]"
+            },
+            {
+              "id": "p097",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the density-driven sinking at subduction zones and its role as most of the driving force, but it says 'old lithosphere' rather than specifically 'old oceanic lithosphere' as the claim states.",
+              "claim": "The greater density of old oceanic lithosphere relative to the asthenosphere lets it sink into the deep mantle at subduction zones, providing most of the driving force for plate movement.",
+              "quote": "The greater density of old lithosphere relative to the underlying asthenosphere allows it to sink into the deep mantle at subduction zones, providing most of the driving force for plate movement."
+            },
+            {
+              "id": "p115",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the rock head elevation of 8,850 m and the geoid-uncertainty doubt about the 1999 and 2005 surveys, but it never says the 8,850 m figure came from a 1999 GPS measurement, since it only refers to 'this device'.",
+              "claim": "A 1999 GPS measurement gave a rock head elevation of 8,850 m, though geoid uncertainty casts doubt on the accuracy claimed by the 1999 and 2005 surveys.",
+              "quote": "A rock head elevation of 8,850 m (29,035 ft), and a snow/ice elevation 1 m (3 ft) higher, were obtained via this device.[37] Geoid uncertainty casts doubt upon the accuracy claimed by both the 1999 and 2005 (see § 21st-century surveys) surveys.[38]"
+            },
+            {
+              "id": "p118",
+              "origin": "added_detail",
+              "reference": "partial",
+              "checker": "supported",
+              "checker_reason": "The quote states the IARC conditional conclusion (if unprocessed red meat causes cancer), the 17% higher colorectal cancer risk per 100 g daily, and the 18% higher risk per 50 g daily of processed meat, matching every figure in the claim, though it does not explicitly name the year 2015.",
+              "claim": "In its 2015 evaluation, the IARC concluded that if unprocessed red meat causes cancer, each 100 g eaten daily is linked to a 17% higher colorectal cancer risk, and each 50 g of processed meat daily to an 18% higher risk.",
+              "quote": "The IARC concluded that if unprocessed red meat does cause cancer, there is a 17% higher risk of colorectal cancer for every 100 g of unprocessed red meat consumed daily.[35] It found an 18% higher risk of colorectal cancer for every 50 g of processed red meat consumed daily.[35]"
+            },
+            {
+              "id": "p140",
+              "origin": "changed_fact",
+              "reference": "unsupported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the main point that extreme poverty persists after two centuries of progress, but it says every tenth person rather than every third person as the claim states.",
+              "claim": "Our World in Data says extreme poverty is still the reality for every third person in the world, even after two centuries of progress.",
+              "quote": "But even after two centuries of progress, extreme poverty is still the reality for every tenth person in the world."
+            },
+            {
+              "id": "p143",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote calls TCP a reliable byte stream service that guarantees identical, in-order delivery, which contradicts the claim's main assertion that TCP is unreliable, and the quote says nothing about positive acknowledgment or retransmission.",
+              "claim": "TCP is unreliable, guaranteeing that received bytes are identical to and in the same order as those sent, using positive acknowledgment with re-transmission.",
+              "quote": "TCP is a reliable byte stream delivery service that guarantees that all bytes received will be identical and in the same order as those sent."
+            }
+          ]
+        },
+        "claude-opus-5-5": {
+          "all": {
+            "n": 150,
+            "agreement": {
+              "value": 0.88,
+              "ci_low": 0.8267,
+              "ci_high": 0.9267
+            },
+            "cohen_kappa": {
+              "value": 0.8092,
+              "ci_low": 0.7227,
+              "ci_high": 0.8847
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 62,
+                "partial": 11,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 0,
+                "partial": 47,
+                "unsupported": 7,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 23,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 1.0,
+                "recall": 0.8493,
+                "model_count": 62,
+                "human_count": 73
+              },
+              "partial": {
+                "precision": 0.8103,
+                "recall": 0.8704,
+                "model_count": 58,
+                "human_count": 54
+              },
+              "unsupported": {
+                "precision": 0.7667,
+                "recall": 1.0,
+                "model_count": 30,
+                "human_count": 23
+              }
+            }
+          },
+          "real_pairs": {
+            "n": 100,
+            "agreement": {
+              "value": 0.89,
+              "ci_low": 0.83,
+              "ci_high": 0.95
+            },
+            "cohen_kappa": {
+              "value": 0.7527,
+              "ci_low": 0.6122,
+              "ci_high": 0.8802
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 62,
+                "partial": 11,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 0,
+                "partial": 27,
+                "unsupported": 0,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 1.0,
+                "recall": 0.8493,
+                "model_count": 62,
+                "human_count": 73
+              },
+              "partial": {
+                "precision": 0.7105,
+                "recall": 1.0,
+                "model_count": 38,
+                "human_count": 27
+              },
+              "unsupported": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "model_count": 0,
+                "human_count": 0
+              }
+            }
+          },
+          "built_pairs": {
+            "n": 50,
+            "agreement": {
+              "value": 0.86,
+              "ci_low": 0.76,
+              "ci_high": 0.94
+            },
+            "cohen_kappa": {
+              "value": 0.7244,
+              "ci_low": 0.5399,
+              "ci_high": 0.8804
+            },
+            "confusion_reference_rows_checker_columns": {
+              "supported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              },
+              "partial": {
+                "supported": 0,
+                "partial": 20,
+                "unsupported": 7,
+                "none": 0
+              },
+              "unsupported": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 23,
+                "none": 0
+              },
+              "none": {
+                "supported": 0,
+                "partial": 0,
+                "unsupported": 0,
+                "none": 0
+              }
+            },
+            "per_label": {
+              "supported": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "model_count": 0,
+                "human_count": 0
+              },
+              "partial": {
+                "precision": 1.0,
+                "recall": 0.7407,
+                "model_count": 20,
+                "human_count": 27
+              },
+              "unsupported": {
+                "precision": 0.7667,
+                "recall": 1.0,
+                "model_count": 30,
+                "human_count": 23
+              }
+            }
+          },
+          "disagreements": [
+            {
+              "id": "p011",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs that China is the world's largest emitter with more than one-quarter of global emissions, but it does not say these are annual CO2 emissions specifically.",
+              "claim": "China is the world's largest annual CO2 emitter, emitting more than one-quarter of global emissions.",
+              "quote": "China is, by a significant margin, Asia’s and the world’s largest emitter: it emits more than one-quarter of global emissions."
+            },
+            {
+              "id": "p017",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote backs reduced rainfall over Indonesia, India and northern Australia, but it says rainfall and tropical cyclone formation increase over the tropical Pacific, contradicting the claim's decrease, and it never names El Niño as the cause.",
+              "claim": "El Niño reduces rainfall over Indonesia, India and northern Australia, while rainfall and tropical cyclone formation decrease over the tropical Pacific Ocean.",
+              "quote": "with rainfall reducing over Indonesia, India and northern Australia, while rainfall and tropical cyclone formation increases over the tropical Pacific Ocean.[47]"
+            },
+            {
+              "id": "p019",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote says trade winds weaken during El Niño, contradicting the claim that they strengthen, though it does back the warm water being pushed east toward the Americas.",
+              "claim": "During El Niño the trade winds strengthen and warm water is pushed back east toward the west coast of the Americas.",
+              "quote": "During El Niño, trade winds weaken. Warm water is pushed back east, toward the west coast of the Americas."
+            },
+            {
+              "id": "p020",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the figures of 32 years in 1900 more than doubling to 71 years by 2021, but it never says these are worldwide averages.",
+              "claim": "In 1900 the average life expectancy of a newborn worldwide was 32 years, and by 2021 it had more than doubled to 71 years.",
+              "quote": "In 1900, the average life expectancy of a newborn was 32 years. By 2021 this had more than doubled to 71 years."
+            },
+            {
+              "id": "p034",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote says the energy is stored as chemical energy in the cell with some loss, but it refers only to \"this energy\" and does not state that it is electrical energy supplied during charging.",
+              "claim": "The electrical energy supplied during charging is stored as chemical energy in the cell, with some loss.",
+              "quote": "This energy is then stored as chemical energy in the cell (with some loss, e. g., due to coulombic efficiency lower than 1)."
+            },
+            {
+              "id": "p036",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote backs the MDG1 halving target being met five years early, but it gives 700 million people lifted out of extreme poverty from 1990 to 2010, contradicting the claim's figure of 400 million.",
+              "claim": "The MDG1 target of halving extreme poverty rates was met five years early, with 400 million people lifted out of extreme poverty from 1990 to 2010.",
+              "quote": "with the MDG1 target of reducing extreme poverty rates by half being met five years early, representing 700 million people being lifted out of extreme poverty from 1990 to 2010"
+            },
+            {
+              "id": "p039",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote backs the definition of d and 1 - d, but it states the damping factor is generally assumed to be around 0.85, contradicting the claim's 0.50.",
+              "claim": "A damping factor, generally assumed to be around 0.50, represents the probability that the surfer continues following links, with 1 - d being the probability of jumping to a random page.",
+              "quote": "The probability, at any step, that the person will continue following links is a damping factor d. The probability that they instead jump to any random page is 1 - d. Various studies have tested different damping factors, but it is generally assumed that the damping factor will be set around 0.85.[5]"
+            },
+            {
+              "id": "p044",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the claim that the World Wars, the 1918 Spanish flu, HIV/AIDS and COVID-19 left a visible mark on life expectancy, but it does not mention a rise in life expectancy or say that the rise has not been constant.",
+              "claim": "The rise has not been constant: the World Wars, the 1918 Spanish flu, HIV/AIDS and COVID-19 left a visible mark on life expectancy.",
+              "quote": "Major events – the World Wars, the 1918 Spanish flu pandemic, the HIV/AIDS epidemic, and the COVID-19 pandemic – have had a major impact on mortality rates and left a visible mark on life expectancy."
+            },
+            {
+              "id": "p050",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote states that the boundary of no escape is called the event horizon, but it never says this boundary belongs to a black hole.",
+              "claim": "The boundary of no escape of a black hole is called the event horizon.",
+              "quote": "The boundary of no escape is called the event horizon."
+            },
+            {
+              "id": "p072",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote says the final death tolls were very low compared with the millions who die from fossil fuels every year, but it never names Chernobyl or Fukushima as the accidents those tolls refer to.",
+              "claim": "Even with the Chernobyl and Fukushima accidents, the final death tolls were very low compared with the millions who die from fossil fuels every year.",
+              "quote": "However, compared to the millions that die from fossil fuels every year, the final death tolls were very low."
+            },
+            {
+              "id": "p080",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote defines entanglement as holding even when particles are separated by a large distance, which contradicts the claim's restriction to particles separated only by a small distance.",
+              "claim": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, but only when the particles are separated by a small distance.",
+              "quote": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, even when the particles are separated by a large distance."
+            },
+            {
+              "id": "p083",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote does list increasing age and genetics as uncontrollable factors, but it names female sex rather than male sex, which contradicts the claim.",
+              "claim": "Some risk factors are not under personal control, such as increasing age, male sex, and genetics.",
+              "quote": "While some of these factors are under personal control, such as diet and obesity, other factors are not, such as increasing age, female sex, and genetics.[10]"
+            },
+            {
+              "id": "p088",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs fusing CRISPR/Cas9 to enzymes that change single bases (C to T, G to A) without DNA cleavage, but it never uses the term \"base editing\" to name these versions.",
+              "claim": "Base-editing versions of CRISPR fuse Cas9 to enzymes that change single bases without requiring DNA cleavage.",
+              "quote": "CRISPR/Cas9 was fused with specific enzymes that initially could only change C to T and G to A mutations and their reverse. This was accomplished eventually without requiring any DNA cleavage.[140][141][142]"
+            },
+            {
+              "id": "p097",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs that old lithosphere, being denser than the underlying asthenosphere, sinks into the deep mantle at subduction zones and provides most of the driving force for plate movement, but it never specifies that this lithosphere is oceanic.",
+              "claim": "The greater density of old oceanic lithosphere relative to the asthenosphere lets it sink into the deep mantle at subduction zones, providing most of the driving force for plate movement.",
+              "quote": "The greater density of old lithosphere relative to the underlying asthenosphere allows it to sink into the deep mantle at subduction zones, providing most of the driving force for plate movement."
+            },
+            {
+              "id": "p115",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs the 8,850 m rock head elevation and the geoid uncertainty doubting the 1999 and 2005 surveys, but it says only \"via this device\" and never states that the measurement was made by GPS or in 1999.",
+              "claim": "A 1999 GPS measurement gave a rock head elevation of 8,850 m, though geoid uncertainty casts doubt on the accuracy claimed by the 1999 and 2005 surveys.",
+              "quote": "A rock head elevation of 8,850 m (29,035 ft), and a snow/ice elevation 1 m (3 ft) higher, were obtained via this device.[37] Geoid uncertainty casts doubt upon the accuracy claimed by both the 1999 and 2005 (see § 21st-century surveys) surveys.[38]"
+            },
+            {
+              "id": "p143",
+              "origin": "changed_fact",
+              "reference": "partial",
+              "checker": "unsupported",
+              "checker_reason": "The quote calls TCP reliable, contradicting the claim's main point that it is unreliable; it does back that received bytes are identical and in order but says nothing about positive acknowledgment with re-transmission.",
+              "claim": "TCP is unreliable, guaranteeing that received bytes are identical to and in the same order as those sent, using positive acknowledgment with re-transmission.",
+              "quote": "TCP is a reliable byte stream delivery service that guarantees that all bytes received will be identical and in the same order as those sent."
+            },
+            {
+              "id": "p144",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote says a scenario was proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978, but its subject is cut off, so it never names the scenario as the Kessler syndrome.",
+              "claim": "The Kessler syndrome is a scenario proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978.",
+              "quote": "is a scenario proposed by NASA scientists Donald J. Kessler and Burton G. Cour-Palais in 1978."
+            },
+            {
+              "id": "p148",
+              "origin": "natural",
+              "reference": "supported",
+              "checker": "partial",
+              "checker_reason": "The quote backs that microorganisms surviving continued antimicrobial exposure become more prevalent while non-resistant ones become obsolete, but it does not explicitly call resistance a natural evolutionary process or name natural selection.",
+              "claim": "Resistance is a natural evolutionary process: through natural selection, microorganisms that survive continued exposure to antimicrobial agents become more prevalent while those without resistance die out.",
+              "quote": "As a result, the types of microorganisms that are able to survive over time with continued attack by certain antimicrobial agents will naturally become more prevalent in the environment, and those without this resistance will become obsolete."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "cost_usd": 1.1257
+}

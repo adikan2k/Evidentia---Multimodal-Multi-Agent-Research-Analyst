@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(./backend/.env)",
+      "Read(./frontend/.env.local)",
+      "Bash(git push --force*)",
+      "Bash(git push origin main*)"
+    ]
+  }
+}

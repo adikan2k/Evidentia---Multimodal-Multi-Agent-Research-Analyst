@@ -1,0 +1,1197 @@
+{
+ "id": "red-meat-cancer",
+ "question": "Does eating red meat increase the risk of cancer?",
+ "recorded_at": "2026-11-24T08:36:12+00:00",
+ "duration_s": 35.88,
+ "models": {
+  "writer": "claude-sonnet-5-5",
+  "checker": "claude-sonnet-5-5"
+ },
+ "events": [
+  {
+   "t": 2.45,
+   "node": "plan",
+   "summary": "wrote 4 search queries",
+   "cost_usd": 0.002,
+   "data": {
+    "queries": [
+     "IARC red meat processed meat carcinogenicity classification monograph",
+     "red meat consumption colorectal cancer risk meta-analysis relative risk per serving",
+     "World Cancer Research Fund red meat processed meat cancer recommendations",
+     "red meat cancer risk criticism certainty of evidence NutriRECS observational studies"
+    ]
+   }
+  },
+  {
+   "t": 6.16,
+   "node": "search",
+   "summary": "found 12 pages on 10 sites",
+   "cost_usd": 0.034,
+   "data": {
+    "hosts": [
+     "cancerletter.com",
+     "cnbc.com",
+     "frontiersin.org",
+     "iarc.who.int",
+     "link.springer.com",
+     "meatscience.org",
+     "nutritioncoalition.us",
+     "pmc.ncbi.nlm.nih.gov",
+     "publications.iarc.who.int",
+     "wcrf.org"
+    ]
+   }
+  },
+  {
+   "t": 21.23,
+   "node": "fetch",
+   "summary": "read 8 pages, skipped 4 (2 robots.txt could not be read, 1 no readable text, 1 disallowed by robots.txt)",
+   "cost_usd": 0.034,
+   "data": {
+    "sources": [
+     {
+      "id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer"
+     },
+     {
+      "id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund"
+     },
+     {
+      "id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter"
+     },
+     {
+      "id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund"
+     },
+     {
+      "id": "S5",
+      "url": "https://www.cnbc.com/2019/10/01/eating-less-red-meat-does-not-improve-according-to-controversial-new-health-study.html",
+      "host": "cnbc.com",
+      "title": "Study: Eating less red meat won't improve health, but experts disagree"
+     },
+     {
+      "id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis"
+     },
+     {
+      "id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition"
+     },
+     {
+      "id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat"
+     }
+    ],
+    "skipped": [
+     {
+      "host": "pmc.ncbi.nlm.nih.gov",
+      "reason": "no readable text"
+     },
+     {
+      "host": "iarc.who.int",
+      "reason": "robots.txt could not be read"
+     },
+     {
+      "host": "link.springer.com",
+      "reason": "disallowed by robots.txt"
+     },
+     {
+      "host": "iarc.who.int",
+      "reason": "robots.txt could not be read"
+     }
+    ]
+   }
+  },
+  {
+   "t": 22.25,
+   "node": "index",
+   "summary": "indexed 75 passages (dense + BM25)",
+   "cost_usd": 0.036,
+   "data": {}
+  },
+  {
+   "t": 22.81,
+   "node": "retrieve",
+   "summary": "kept the best 10 passages after reranking",
+   "cost_usd": 0.0363,
+   "data": {}
+  },
+  {
+   "t": 29.56,
+   "node": "write",
+   "summary": "wrote 8 claims",
+   "cost_usd": 0.0573,
+   "data": {
+    "claims": [
+     {
+      "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+      "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+      "source_id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+      "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+      "source_id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "A meta-analysis of twelve articles found red meat to be a risk factor for colon, colorectal, and rectal cancers.",
+      "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "In that meta-analysis, the combined odds ratios for red meat consumption were 2.14 for colon cancer, 1.77 for colorectal cancer, and 2.42 for rectal cancer.",
+      "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+      "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+      "source_id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "An epidemiologist said effect sizes from red and processed meat are very large for colorectal cancer but lower for breast and prostate cancer.",
+      "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+      "source_id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "A 2019 Annals of Internal Medicine review concluded that low- or very-low-certainty evidence suggests diets with less red and processed meat may produce very small reductions in cancer outcomes.",
+      "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+      "source_id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     },
+     {
+      "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+      "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+      "source_id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund",
+      "quote_found": null,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": null
+     }
+    ]
+   }
+  },
+  {
+   "t": 29.58,
+   "node": "quote_check",
+   "summary": "8 of 8 quotes found word for word",
+   "cost_usd": 0.0573,
+   "data": {
+    "claims": [
+     {
+      "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+      "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+      "source_id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "would evaluate the carcinogenicity of red and processed meats.\n- In October 2015, IARC held an expert panel meeting with 22 participants in Lyon, France. The panel considered the evidence for red and processed meats as possible human carcinogens. Several individuals from the USA served as members on this expert panel and there were six observers from the USA that were selected to participate.\n- ",
+       "after": " The complete monograph defining the full details of the report and the studies it considered will be published in 2016.\n- IARC defines red and processed meats as the following:\n- Red meat refers to unprocessed mammalian muscle meat—for example, beef, veal, pork, lamb, mutton, horse, or goat meat—including minced or frozen meat; it is usually consumed cooked.\n- Processed meat refers to meat that"
+      }
+     },
+     {
+      "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+      "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+      "source_id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Limit consumption of red and processed meat\nOn this page\nEvidence\n- ",
+       "after": "\nThe term ‘red meat’ means all types of muscle meat from a mammal, including beef, veal, pork, lamb, mutton, horse, and goat.\nThe term ‘processed meat’ refers to meat that has been transformed through salting, curing, fermentation, smoking or other processes to enhance flavour or improve preservation.\nProcessed meat can include ham, salami, bacon and some sausages (for example, frankfurters and"
+      }
+     },
+     {
+      "text": "A meta-analysis of twelve articles found red meat to be a risk factor for colon, colorectal, and rectal cancers.",
+      "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "meat and the incidence of colon cancer, the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009); and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\n",
+       "after": " However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and processed meat has been identified to increase the risk of certain cancers, particularly colorectal cancer (CRC). CRC is a common malignancy of the digestive tract. It ranks third among global malignancies after lung cancer and female breast"
+      }
+     },
+     {
+      "text": "In that meta-analysis, the combined odds ratios for red meat consumption were 2.14 for colon cancer, 1.77 for colorectal cancer, and 2.42 for rectal cancer.",
+      "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "studies was analyzed via sensitivity analysis. I2 was used to evaluate the heterogeneity among the included studies.\nResults:\nTwelve articles were included, which involved 13,292 and 12,544 cases in the case and control groups, respectively. The results of the meta-analysis revealed that in the study of the correlation between the consumption of red meat and the incidence of colon cancer, ",
+       "after": "; and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\nThe results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers. However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and"
+      }
+     },
+     {
+      "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+      "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+      "source_id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "curing, fermentation, smoking or other processes to enhance flavour or improve preservation. Most processed meats contain pork or beef, but may also contain other meats including poultry and offal (e.g. liver) or meat by-products such as blood.\nRed meat contains proteins of high biological value, and important micronutrients such as B vitamins, iron (both free iron and haem iron), and zinc.\n",
+       "after": " Meat processing such as curing and smoking can result in formation of carcinogenic chemicals including N-nitroso compounds and polycyclic aromatic hydrocarbons.\nAn IARC Monographs Working Group reviewed epidemiological evidence, animal bioassays, and mechanistic and other relevant data to reach conclusions as to the carcinogenic hazard to humans of the consumption of red meat and processed"
+      }
+     },
+     {
+      "text": "An epidemiologist said effect sizes from red and processed meat are very large for colorectal cancer but lower for breast and prostate cancer.",
+      "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+      "source_id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "that people want is impossible,” Daniel said to The Cancer Letter. “We cannot get individuals to leave everything in their diets the same and just change meat intake and follow them for 10 years to see who gets cancer.\n“I’ve worked on studies where we’ve actually found fairly large effect sizes from eating red and processed meat with large prospective studies. It’s individual to the cancer. ",
+       "after": "\n“So, if you mash it all together, the low ones and the high ones, you’re going to get something modest. But that doesn’t mean that red and processed meat doesn’t cause colorectal cancer. From a mechanistic standpoint, it does.”\nPublic health organizations have accepted that cigarettes are a cause for cancer without needing proof from randomized studies, said Rita Redberg, professor of medicine"
+      }
+     },
+     {
+      "text": "A 2019 Annals of Internal Medicine review concluded that low- or very-low-certainty evidence suggests diets with less red and processed meat may produce very small reductions in cancer outcomes.",
+      "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+      "source_id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "very-low-certainty evidence suggests that diets restricted in red meat may have little or no effect on major cardiometabolic outcomes and cancer mortality and incidence.”\n5. Patterns of Red and Processed Meat Consumption and Risk for Cardiometabolic and Cancer Outcomes: A Systematic Review and Meta-analysis of Cohort Studies (Using GRADE Guideline methodology)\nAnnals of Internal Medicine, 2019\n",
+       "after": "\nNutrirecs Guideline Recommendation\nUnprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations From the Nutritional Recommendations (NutriRECS) Consortium (Using GRADE Guideline methodology) This paper summarizes and creates a guidelines recommendation from the four papers above.\nAnnals of Internal Medicine, 2019\nRecommendation: The panel suggests that adults continue"
+      }
+     },
+     {
+      "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+      "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+      "source_id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "your health. Even with white processed meats, it’s best to eat them only occasionally.\nRed meat and cancer\nRed meat is any type of meat from the muscle of a mammal, including:\n- Beef / veal\n- Pork\n- Lamb / mutton\n- Horse\n- Goat\nRed meat is a good source of nutrients such as protein, iron, zinc and vitamin B12 so can form part of a healthy, balanced diet. But we don’t need to eat it every day.\n",
+       "after": " It’s best to choose lean, rather than fatty cuts of meat.\n500g of cooked red meat is around 700–750g of raw meat. A medium steak is about 145g (cooked weight), and 3 slices of roast beef or pork is about 90g (cooked weight).\nWhite meat and cancer\nOur experts haven’t found any evidence that eating white meat affects your risk of cancer. This means white meat can be enjoyed as part of a healthy,"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 31.47,
+   "node": "check",
+   "summary": "4 supported, 4 partial, 0 unverified",
+   "cost_usd": 0.0768,
+   "data": {
+    "claims": [
+     {
+      "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+      "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+      "source_id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "would evaluate the carcinogenicity of red and processed meats.\n- In October 2015, IARC held an expert panel meeting with 22 participants in Lyon, France. The panel considered the evidence for red and processed meats as possible human carcinogens. Several individuals from the USA served as members on this expert panel and there were six observers from the USA that were selected to participate.\n- ",
+       "after": " The complete monograph defining the full details of the report and the studies it considered will be published in 2016.\n- IARC defines red and processed meats as the following:\n- Red meat refers to unprocessed mammalian muscle meat—for example, beef, veal, pork, lamb, mutton, horse, or goat meat—including minced or frozen meat; it is usually consumed cooked.\n- Processed meat refers to meat that"
+      }
+     },
+     {
+      "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+      "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+      "source_id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Limit consumption of red and processed meat\nOn this page\nEvidence\n- ",
+       "after": "\nThe term ‘red meat’ means all types of muscle meat from a mammal, including beef, veal, pork, lamb, mutton, horse, and goat.\nThe term ‘processed meat’ refers to meat that has been transformed through salting, curing, fermentation, smoking or other processes to enhance flavour or improve preservation.\nProcessed meat can include ham, salami, bacon and some sausages (for example, frankfurters and"
+      }
+     },
+     {
+      "text": "A meta-analysis of twelve articles found red meat to be a risk factor for colon, colorectal, and rectal cancers.",
+      "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs red meat being a risk factor for colon, colorectal, and rectal cancers, but it does not mention a meta-analysis or the number of articles (twelve).",
+      "revised": false,
+      "context": {
+       "before": "meat and the incidence of colon cancer, the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009); and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\n",
+       "after": " However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and processed meat has been identified to increase the risk of certain cancers, particularly colorectal cancer (CRC). CRC is a common malignancy of the digestive tract. It ranks third among global malignancies after lung cancer and female breast"
+      }
+     },
+     {
+      "text": "In that meta-analysis, the combined odds ratios for red meat consumption were 2.14 for colon cancer, 1.77 for colorectal cancer, and 2.42 for rectal cancer.",
+      "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote gives ORs of 1.77 for red meat and CRC and 2.42 for rectal cancer, but the 2.14 combined OR is not tied to red meat and colon cancer in the visible text, and the quote never names the meta-analysis.",
+      "revised": false,
+      "context": {
+       "before": "studies was analyzed via sensitivity analysis. I2 was used to evaluate the heterogeneity among the included studies.\nResults:\nTwelve articles were included, which involved 13,292 and 12,544 cases in the case and control groups, respectively. The results of the meta-analysis revealed that in the study of the correlation between the consumption of red meat and the incidence of colon cancer, ",
+       "after": "; and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\nThe results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers. However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and"
+      }
+     },
+     {
+      "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+      "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+      "source_id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "curing, fermentation, smoking or other processes to enhance flavour or improve preservation. Most processed meats contain pork or beef, but may also contain other meats including poultry and offal (e.g. liver) or meat by-products such as blood.\nRed meat contains proteins of high biological value, and important micronutrients such as B vitamins, iron (both free iron and haem iron), and zinc.\n",
+       "after": " Meat processing such as curing and smoking can result in formation of carcinogenic chemicals including N-nitroso compounds and polycyclic aromatic hydrocarbons.\nAn IARC Monographs Working Group reviewed epidemiological evidence, animal bioassays, and mechanistic and other relevant data to reach conclusions as to the carcinogenic hazard to humans of the consumption of red meat and processed"
+      }
+     },
+     {
+      "text": "An epidemiologist said effect sizes from red and processed meat are very large for colorectal cancer but lower for breast and prostate cancer.",
+      "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+      "source_id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs very large effect sizes in colorectal cancer and lower ones in breast and prostate cancer, but it never mentions red or processed meat and does not say the speaker is an epidemiologist.",
+      "revised": false,
+      "context": {
+       "before": "that people want is impossible,” Daniel said to The Cancer Letter. “We cannot get individuals to leave everything in their diets the same and just change meat intake and follow them for 10 years to see who gets cancer.\n“I’ve worked on studies where we’ve actually found fairly large effect sizes from eating red and processed meat with large prospective studies. It’s individual to the cancer. ",
+       "after": "\n“So, if you mash it all together, the low ones and the high ones, you’re going to get something modest. But that doesn’t mean that red and processed meat doesn’t cause colorectal cancer. From a mechanistic standpoint, it does.”\nPublic health organizations have accepted that cigarettes are a cause for cancer without needing proof from randomized studies, said Rita Redberg, professor of medicine"
+      }
+     },
+     {
+      "text": "A 2019 Annals of Internal Medicine review concluded that low- or very-low-certainty evidence suggests diets with less red and processed meat may produce very small reductions in cancer outcomes.",
+      "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+      "source_id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+      "quote_found": true,
+      "verdict": "partial",
+      "label": "partial",
+      "reason": "The quote backs the low- or very-low-certainty evidence and the very small reductions in cancer outcomes from diets with less red and processed meat, but it never mentions the 2019 date, Annals of Internal Medicine, or that this was a review.",
+      "revised": false,
+      "context": {
+       "before": "very-low-certainty evidence suggests that diets restricted in red meat may have little or no effect on major cardiometabolic outcomes and cancer mortality and incidence.”\n5. Patterns of Red and Processed Meat Consumption and Risk for Cardiometabolic and Cancer Outcomes: A Systematic Review and Meta-analysis of Cohort Studies (Using GRADE Guideline methodology)\nAnnals of Internal Medicine, 2019\n",
+       "after": "\nNutrirecs Guideline Recommendation\nUnprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations From the Nutritional Recommendations (NutriRECS) Consortium (Using GRADE Guideline methodology) This paper summarizes and creates a guidelines recommendation from the four papers above.\nAnnals of Internal Medicine, 2019\nRecommendation: The panel suggests that adults continue"
+      }
+     },
+     {
+      "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+      "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+      "source_id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "your health. Even with white processed meats, it’s best to eat them only occasionally.\nRed meat and cancer\nRed meat is any type of meat from the muscle of a mammal, including:\n- Beef / veal\n- Pork\n- Lamb / mutton\n- Horse\n- Goat\nRed meat is a good source of nutrients such as protein, iron, zinc and vitamin B12 so can form part of a healthy, balanced diet. But we don’t need to eat it every day.\n",
+       "after": " It’s best to choose lean, rather than fatty cuts of meat.\n500g of cooked red meat is around 700–750g of raw meat. A medium steak is about 145g (cooked weight), and 3 slices of roast beef or pork is about 90g (cooked weight).\nWhite meat and cancer\nOur experts haven’t found any evidence that eating white meat affects your risk of cancer. This means white meat can be enjoyed as part of a healthy,"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 31.47,
+   "node": "rewrite",
+   "summary": "no claim failed; tightening partial claims only",
+   "cost_usd": 0.0768,
+   "data": {
+    "repair_queries": []
+   }
+  },
+  {
+   "t": 31.47,
+   "node": "reretrieve",
+   "summary": "searched the fetched pages again, 0 passages to re-read",
+   "cost_usd": 0.0768,
+   "data": {
+    "repair_queries": []
+   }
+  },
+  {
+   "t": 33.69,
+   "node": "revise",
+   "summary": "rewrote 4 claims from the new passages",
+   "cost_usd": 0.0856,
+   "data": {
+    "claims": [
+     {
+      "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+      "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+      "source_id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "would evaluate the carcinogenicity of red and processed meats.\n- In October 2015, IARC held an expert panel meeting with 22 participants in Lyon, France. The panel considered the evidence for red and processed meats as possible human carcinogens. Several individuals from the USA served as members on this expert panel and there were six observers from the USA that were selected to participate.\n- ",
+       "after": " The complete monograph defining the full details of the report and the studies it considered will be published in 2016.\n- IARC defines red and processed meats as the following:\n- Red meat refers to unprocessed mammalian muscle meat—for example, beef, veal, pork, lamb, mutton, horse, or goat meat—including minced or frozen meat; it is usually consumed cooked.\n- Processed meat refers to meat that"
+      }
+     },
+     {
+      "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+      "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+      "source_id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Limit consumption of red and processed meat\nOn this page\nEvidence\n- ",
+       "after": "\nThe term ‘red meat’ means all types of muscle meat from a mammal, including beef, veal, pork, lamb, mutton, horse, and goat.\nThe term ‘processed meat’ refers to meat that has been transformed through salting, curing, fermentation, smoking or other processes to enhance flavour or improve preservation.\nProcessed meat can include ham, salami, bacon and some sausages (for example, frankfurters and"
+      }
+     },
+     {
+      "text": "Red meat was found to be a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "meat and the incidence of colon cancer, the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009); and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\n",
+       "after": " However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and processed meat has been identified to increase the risk of certain cancers, particularly colorectal cancer (CRC). CRC is a common malignancy of the digestive tract. It ranks third among global malignancies after lung cancer and female breast"
+      }
+     },
+     {
+      "text": "The combined odds ratio for red meat consumption and colorectal cancer incidence was 1.77, and for red meat consumption and rectal cancer incidence it was 2.42.",
+      "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "studies was analyzed via sensitivity analysis. I2 was used to evaluate the heterogeneity among the included studies.\nResults:\nTwelve articles were included, which involved 13,292 and 12,544 cases in the case and control groups, respectively. The results of the meta-analysis revealed that in the study of the correlation between the consumption of red meat and the incidence of colon cancer, ",
+       "after": "; and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\nThe results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers. However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and"
+      }
+     },
+     {
+      "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+      "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+      "source_id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "curing, fermentation, smoking or other processes to enhance flavour or improve preservation. Most processed meats contain pork or beef, but may also contain other meats including poultry and offal (e.g. liver) or meat by-products such as blood.\nRed meat contains proteins of high biological value, and important micronutrients such as B vitamins, iron (both free iron and haem iron), and zinc.\n",
+       "after": " Meat processing such as curing and smoking can result in formation of carcinogenic chemicals including N-nitroso compounds and polycyclic aromatic hydrocarbons.\nAn IARC Monographs Working Group reviewed epidemiological evidence, animal bioassays, and mechanistic and other relevant data to reach conclusions as to the carcinogenic hazard to humans of the consumption of red meat and processed"
+      }
+     },
+     {
+      "text": "A speaker said that very large effect sizes have been seen in colorectal cancer, while lower effect sizes are seen in breast and prostate cancer, which are different cancers that develop from different mechanisms.",
+      "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+      "source_id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "that people want is impossible,” Daniel said to The Cancer Letter. “We cannot get individuals to leave everything in their diets the same and just change meat intake and follow them for 10 years to see who gets cancer.\n“I’ve worked on studies where we’ve actually found fairly large effect sizes from eating red and processed meat with large prospective studies. It’s individual to the cancer. ",
+       "after": "\n“So, if you mash it all together, the low ones and the high ones, you’re going to get something modest. But that doesn’t mean that red and processed meat doesn’t cause colorectal cancer. From a mechanistic standpoint, it does.”\nPublic health organizations have accepted that cigarettes are a cause for cancer without needing proof from randomized studies, said Rita Redberg, professor of medicine"
+      }
+     },
+     {
+      "text": "Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.",
+      "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+      "source_id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "very-low-certainty evidence suggests that diets restricted in red meat may have little or no effect on major cardiometabolic outcomes and cancer mortality and incidence.”\n5. Patterns of Red and Processed Meat Consumption and Risk for Cardiometabolic and Cancer Outcomes: A Systematic Review and Meta-analysis of Cohort Studies (Using GRADE Guideline methodology)\nAnnals of Internal Medicine, 2019\n",
+       "after": "\nNutrirecs Guideline Recommendation\nUnprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations From the Nutritional Recommendations (NutriRECS) Consortium (Using GRADE Guideline methodology) This paper summarizes and creates a guidelines recommendation from the four papers above.\nAnnals of Internal Medicine, 2019\nRecommendation: The panel suggests that adults continue"
+      }
+     },
+     {
+      "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+      "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+      "source_id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "your health. Even with white processed meats, it’s best to eat them only occasionally.\nRed meat and cancer\nRed meat is any type of meat from the muscle of a mammal, including:\n- Beef / veal\n- Pork\n- Lamb / mutton\n- Horse\n- Goat\nRed meat is a good source of nutrients such as protein, iron, zinc and vitamin B12 so can form part of a healthy, balanced diet. But we don’t need to eat it every day.\n",
+       "after": " It’s best to choose lean, rather than fatty cuts of meat.\n500g of cooked red meat is around 700–750g of raw meat. A medium steak is about 145g (cooked weight), and 3 slices of roast beef or pork is about 90g (cooked weight).\nWhite meat and cancer\nOur experts haven’t found any evidence that eating white meat affects your risk of cancer. This means white meat can be enjoyed as part of a healthy,"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 33.69,
+   "node": "quote_check",
+   "summary": "8 of 8 quotes found word for word",
+   "cost_usd": 0.0856,
+   "data": {
+    "claims": [
+     {
+      "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+      "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+      "source_id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "would evaluate the carcinogenicity of red and processed meats.\n- In October 2015, IARC held an expert panel meeting with 22 participants in Lyon, France. The panel considered the evidence for red and processed meats as possible human carcinogens. Several individuals from the USA served as members on this expert panel and there were six observers from the USA that were selected to participate.\n- ",
+       "after": " The complete monograph defining the full details of the report and the studies it considered will be published in 2016.\n- IARC defines red and processed meats as the following:\n- Red meat refers to unprocessed mammalian muscle meat—for example, beef, veal, pork, lamb, mutton, horse, or goat meat—including minced or frozen meat; it is usually consumed cooked.\n- Processed meat refers to meat that"
+      }
+     },
+     {
+      "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+      "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+      "source_id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Limit consumption of red and processed meat\nOn this page\nEvidence\n- ",
+       "after": "\nThe term ‘red meat’ means all types of muscle meat from a mammal, including beef, veal, pork, lamb, mutton, horse, and goat.\nThe term ‘processed meat’ refers to meat that has been transformed through salting, curing, fermentation, smoking or other processes to enhance flavour or improve preservation.\nProcessed meat can include ham, salami, bacon and some sausages (for example, frankfurters and"
+      }
+     },
+     {
+      "text": "Red meat was found to be a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "meat and the incidence of colon cancer, the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009); and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\n",
+       "after": " However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and processed meat has been identified to increase the risk of certain cancers, particularly colorectal cancer (CRC). CRC is a common malignancy of the digestive tract. It ranks third among global malignancies after lung cancer and female breast"
+      }
+     },
+     {
+      "text": "The combined odds ratio for red meat consumption and colorectal cancer incidence was 1.77, and for red meat consumption and rectal cancer incidence it was 2.42.",
+      "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "studies was analyzed via sensitivity analysis. I2 was used to evaluate the heterogeneity among the included studies.\nResults:\nTwelve articles were included, which involved 13,292 and 12,544 cases in the case and control groups, respectively. The results of the meta-analysis revealed that in the study of the correlation between the consumption of red meat and the incidence of colon cancer, ",
+       "after": "; and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\nThe results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers. However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and"
+      }
+     },
+     {
+      "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+      "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+      "source_id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "curing, fermentation, smoking or other processes to enhance flavour or improve preservation. Most processed meats contain pork or beef, but may also contain other meats including poultry and offal (e.g. liver) or meat by-products such as blood.\nRed meat contains proteins of high biological value, and important micronutrients such as B vitamins, iron (both free iron and haem iron), and zinc.\n",
+       "after": " Meat processing such as curing and smoking can result in formation of carcinogenic chemicals including N-nitroso compounds and polycyclic aromatic hydrocarbons.\nAn IARC Monographs Working Group reviewed epidemiological evidence, animal bioassays, and mechanistic and other relevant data to reach conclusions as to the carcinogenic hazard to humans of the consumption of red meat and processed"
+      }
+     },
+     {
+      "text": "A speaker said that very large effect sizes have been seen in colorectal cancer, while lower effect sizes are seen in breast and prostate cancer, which are different cancers that develop from different mechanisms.",
+      "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+      "source_id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "that people want is impossible,” Daniel said to The Cancer Letter. “We cannot get individuals to leave everything in their diets the same and just change meat intake and follow them for 10 years to see who gets cancer.\n“I’ve worked on studies where we’ve actually found fairly large effect sizes from eating red and processed meat with large prospective studies. It’s individual to the cancer. ",
+       "after": "\n“So, if you mash it all together, the low ones and the high ones, you’re going to get something modest. But that doesn’t mean that red and processed meat doesn’t cause colorectal cancer. From a mechanistic standpoint, it does.”\nPublic health organizations have accepted that cigarettes are a cause for cancer without needing proof from randomized studies, said Rita Redberg, professor of medicine"
+      }
+     },
+     {
+      "text": "Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.",
+      "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+      "source_id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+      "quote_found": true,
+      "verdict": null,
+      "label": null,
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "very-low-certainty evidence suggests that diets restricted in red meat may have little or no effect on major cardiometabolic outcomes and cancer mortality and incidence.”\n5. Patterns of Red and Processed Meat Consumption and Risk for Cardiometabolic and Cancer Outcomes: A Systematic Review and Meta-analysis of Cohort Studies (Using GRADE Guideline methodology)\nAnnals of Internal Medicine, 2019\n",
+       "after": "\nNutrirecs Guideline Recommendation\nUnprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations From the Nutritional Recommendations (NutriRECS) Consortium (Using GRADE Guideline methodology) This paper summarizes and creates a guidelines recommendation from the four papers above.\nAnnals of Internal Medicine, 2019\nRecommendation: The panel suggests that adults continue"
+      }
+     },
+     {
+      "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+      "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+      "source_id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "your health. Even with white processed meats, it’s best to eat them only occasionally.\nRed meat and cancer\nRed meat is any type of meat from the muscle of a mammal, including:\n- Beef / veal\n- Pork\n- Lamb / mutton\n- Horse\n- Goat\nRed meat is a good source of nutrients such as protein, iron, zinc and vitamin B12 so can form part of a healthy, balanced diet. But we don’t need to eat it every day.\n",
+       "after": " It’s best to choose lean, rather than fatty cuts of meat.\n500g of cooked red meat is around 700–750g of raw meat. A medium steak is about 145g (cooked weight), and 3 slices of roast beef or pork is about 90g (cooked weight).\nWhite meat and cancer\nOur experts haven’t found any evidence that eating white meat affects your risk of cancer. This means white meat can be enjoyed as part of a healthy,"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "t": 35.44,
+   "node": "check",
+   "summary": "8 supported, 0 partial, 0 unverified",
+   "cost_usd": 0.0955,
+   "data": {
+    "claims": [
+     {
+      "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+      "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+      "source_id": "S1",
+      "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+      "host": "meatscience.org",
+      "title": "International Agency for Research on Cancer",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "would evaluate the carcinogenicity of red and processed meats.\n- In October 2015, IARC held an expert panel meeting with 22 participants in Lyon, France. The panel considered the evidence for red and processed meats as possible human carcinogens. Several individuals from the USA served as members on this expert panel and there were six observers from the USA that were selected to participate.\n- ",
+       "after": " The complete monograph defining the full details of the report and the studies it considered will be published in 2016.\n- IARC defines red and processed meats as the following:\n- Red meat refers to unprocessed mammalian muscle meat—for example, beef, veal, pork, lamb, mutton, horse, or goat meat—including minced or frozen meat; it is usually consumed cooked.\n- Processed meat refers to meat that"
+      }
+     },
+     {
+      "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+      "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+      "source_id": "S2",
+      "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+      "host": "wcrf.org",
+      "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "Limit consumption of red and processed meat\nOn this page\nEvidence\n- ",
+       "after": "\nThe term ‘red meat’ means all types of muscle meat from a mammal, including beef, veal, pork, lamb, mutton, horse, and goat.\nThe term ‘processed meat’ refers to meat that has been transformed through salting, curing, fermentation, smoking or other processes to enhance flavour or improve preservation.\nProcessed meat can include ham, salami, bacon and some sausages (for example, frankfurters and"
+      }
+     },
+     {
+      "text": "Red meat was found to be a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "meat and the incidence of colon cancer, the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009); and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\n",
+       "after": " However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and processed meat has been identified to increase the risk of certain cancers, particularly colorectal cancer (CRC). CRC is a common malignancy of the digestive tract. It ranks third among global malignancies after lung cancer and female breast"
+      }
+     },
+     {
+      "text": "The combined odds ratio for red meat consumption and colorectal cancer incidence was 1.77, and for red meat consumption and rectal cancer incidence it was 2.42.",
+      "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+      "source_id": "S6",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+      "host": "frontiersin.org",
+      "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "studies was analyzed via sensitivity analysis. I2 was used to evaluate the heterogeneity among the included studies.\nResults:\nTwelve articles were included, which involved 13,292 and 12,544 cases in the case and control groups, respectively. The results of the meta-analysis revealed that in the study of the correlation between the consumption of red meat and the incidence of colon cancer, ",
+       "after": "; and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\nThe results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers. However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and"
+      }
+     },
+     {
+      "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+      "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+      "source_id": "S8",
+      "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+      "host": "publications.iarc.who.int",
+      "title": "IARC Publications Website - Red Meat and Processed Meat",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "curing, fermentation, smoking or other processes to enhance flavour or improve preservation. Most processed meats contain pork or beef, but may also contain other meats including poultry and offal (e.g. liver) or meat by-products such as blood.\nRed meat contains proteins of high biological value, and important micronutrients such as B vitamins, iron (both free iron and haem iron), and zinc.\n",
+       "after": " Meat processing such as curing and smoking can result in formation of carcinogenic chemicals including N-nitroso compounds and polycyclic aromatic hydrocarbons.\nAn IARC Monographs Working Group reviewed epidemiological evidence, animal bioassays, and mechanistic and other relevant data to reach conclusions as to the carcinogenic hazard to humans of the consumption of red meat and processed"
+      }
+     },
+     {
+      "text": "A speaker said that very large effect sizes have been seen in colorectal cancer, while lower effect sizes are seen in breast and prostate cancer, which are different cancers that develop from different mechanisms.",
+      "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+      "source_id": "S3",
+      "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+      "host": "cancerletter.com",
+      "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "that people want is impossible,” Daniel said to The Cancer Letter. “We cannot get individuals to leave everything in their diets the same and just change meat intake and follow them for 10 years to see who gets cancer.\n“I’ve worked on studies where we’ve actually found fairly large effect sizes from eating red and processed meat with large prospective studies. It’s individual to the cancer. ",
+       "after": "\n“So, if you mash it all together, the low ones and the high ones, you’re going to get something modest. But that doesn’t mean that red and processed meat doesn’t cause colorectal cancer. From a mechanistic standpoint, it does.”\nPublic health organizations have accepted that cigarettes are a cause for cancer without needing proof from randomized studies, said Rita Redberg, professor of medicine"
+      }
+     },
+     {
+      "text": "Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.",
+      "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+      "source_id": "S7",
+      "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+      "host": "nutritioncoalition.us",
+      "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": true,
+      "context": {
+       "before": "very-low-certainty evidence suggests that diets restricted in red meat may have little or no effect on major cardiometabolic outcomes and cancer mortality and incidence.”\n5. Patterns of Red and Processed Meat Consumption and Risk for Cardiometabolic and Cancer Outcomes: A Systematic Review and Meta-analysis of Cohort Studies (Using GRADE Guideline methodology)\nAnnals of Internal Medicine, 2019\n",
+       "after": "\nNutrirecs Guideline Recommendation\nUnprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations From the Nutritional Recommendations (NutriRECS) Consortium (Using GRADE Guideline methodology) This paper summarizes and creates a guidelines recommendation from the four papers above.\nAnnals of Internal Medicine, 2019\nRecommendation: The panel suggests that adults continue"
+      }
+     },
+     {
+      "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+      "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+      "source_id": "S4",
+      "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+      "host": "wcrf.org",
+      "title": "Meat and cancer | World Cancer Research Fund",
+      "quote_found": true,
+      "verdict": "supported",
+      "label": "supported",
+      "reason": "",
+      "revised": false,
+      "context": {
+       "before": "your health. Even with white processed meats, it’s best to eat them only occasionally.\nRed meat and cancer\nRed meat is any type of meat from the muscle of a mammal, including:\n- Beef / veal\n- Pork\n- Lamb / mutton\n- Horse\n- Goat\nRed meat is a good source of nutrients such as protein, iron, zinc and vitamin B12 so can form part of a healthy, balanced diet. But we don’t need to eat it every day.\n",
+       "after": " It’s best to choose lean, rather than fatty cuts of meat.\n500g of cooked red meat is around 700–750g of raw meat. A medium steak is about 145g (cooked weight), and 3 slices of roast beef or pork is about 90g (cooked weight).\nWhite meat and cancer\nOur experts haven’t found any evidence that eating white meat affects your risk of cancer. This means white meat can be enjoyed as part of a healthy,"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "report": {
+  "question": "Does eating red meat increase the risk of cancer?",
+  "claims": [
+   {
+    "text": "IARC classified processed meat as Group 1 (carcinogenic to humans) and red meat as Group 2A (probably carcinogenic to humans).",
+    "quote": "IARC findings which were made public this morning (10/26) classified processed meat as a Group 1, carcinogenic to humans, and red meat was classified as Group 2A, probably carcinogenic to humans.",
+    "source_id": "S1",
+    "url": "https://meatscience.org/publications-resources/other-meat-science-resources/IARC",
+    "host": "meatscience.org",
+    "title": "International Agency for Research on Cancer",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "would evaluate the carcinogenicity of red and processed meats.\n- In October 2015, IARC held an expert panel meeting with 22 participants in Lyon, France. The panel considered the evidence for red and processed meats as possible human carcinogens. Several individuals from the USA served as members on this expert panel and there were six observers from the USA that were selected to participate.\n- ",
+     "after": " The complete monograph defining the full details of the report and the studies it considered will be published in 2016.\n- IARC defines red and processed meats as the following:\n- Red meat refers to unprocessed mammalian muscle meat—for example, beef, veal, pork, lamb, mutton, horse, or goat meat—including minced or frozen meat; it is usually consumed cooked.\n- Processed meat refers to meat that"
+    }
+   },
+   {
+    "text": "There is evidence that red meat is probably a cause of colorectal cancer, while processed meat convincingly is a cause.",
+    "quote": "There is convincing evidence that consumption of processed meat is a cause of colorectal cancer.\n- Consumption of red meat is probably a cause of colorectal cancer.",
+    "source_id": "S2",
+    "url": "https://www.wcrf.org/research-policy/evidence-for-our-recommendations/limit-red-processed-meat",
+    "host": "wcrf.org",
+    "title": "Limit consumption of red and processed meat | Recommendation evidence | World Cancer Research Fund",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "Limit consumption of red and processed meat\nOn this page\nEvidence\n- ",
+     "after": "\nThe term ‘red meat’ means all types of muscle meat from a mammal, including beef, veal, pork, lamb, mutton, horse, and goat.\nThe term ‘processed meat’ refers to meat that has been transformed through salting, curing, fermentation, smoking or other processes to enhance flavour or improve preservation.\nProcessed meat can include ham, salami, bacon and some sausages (for example, frankfurters and"
+    }
+   },
+   {
+    "text": "Red meat was found to be a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+    "quote": "The results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers.",
+    "source_id": "S6",
+    "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+    "host": "frontiersin.org",
+    "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "meat and the incidence of colon cancer, the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009); and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\n",
+     "after": " However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and processed meat has been identified to increase the risk of certain cancers, particularly colorectal cancer (CRC). CRC is a common malignancy of the digestive tract. It ranks third among global malignancies after lung cancer and female breast"
+    }
+   },
+   {
+    "text": "The combined odds ratio for red meat consumption and colorectal cancer incidence was 1.77, and for red meat consumption and rectal cancer incidence it was 2.42.",
+    "quote": "the combined OR was 2.14 (P < 0.00001); that for the consumption of red meat and the incidence of CRC, the OR was 1.77 (P = 0.006); that for the consumption of red meat and the incidence of rectal cancer, the OR was 2.42 (P = 0.0009)",
+    "source_id": "S6",
+    "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2025.1555717/full",
+    "host": "frontiersin.org",
+    "title": "Frontiers | Associations between the consumption of red meat and processed meat and the incidence of colorectal cancer in Asia: a meta-analysis",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "studies was analyzed via sensitivity analysis. I2 was used to evaluate the heterogeneity among the included studies.\nResults:\nTwelve articles were included, which involved 13,292 and 12,544 cases in the case and control groups, respectively. The results of the meta-analysis revealed that in the study of the correlation between the consumption of red meat and the incidence of colon cancer, ",
+     "after": "; and that for the consumption of processed meat and the incidence of CRC, the combined OR was 1.51 (P > 0.05).\nConclusion:\nThe results suggest that red meat is a risk factor for the incidence of colon, colorectal, and rectal cancers. However, no significant correlation was found between the consumption of processed meat and the incidence of CRC.\n1 Introduction\nConsumption of red meat and"
+    }
+   },
+   {
+    "text": "Cooking meat at high temperatures such as pan-frying, grilling, or barbecuing can produce carcinogens like heterocyclic aromatic amines and polycyclic aromatic hydrocarbons.",
+    "quote": "Carcinogens, including heterocyclic aromatic amines and polycyclic aromatic hydrocarbons, can be produced by cooking of meat, with greatest amounts generated at high temperatures by pan-frying, grilling, or barbecuing.",
+    "source_id": "S8",
+    "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Monographs-On-The-Identification-Of-Carcinogenic-Hazards-To-Humans/Red-Meat-And-Processed-Meat-2018",
+    "host": "publications.iarc.who.int",
+    "title": "IARC Publications Website - Red Meat and Processed Meat",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "curing, fermentation, smoking or other processes to enhance flavour or improve preservation. Most processed meats contain pork or beef, but may also contain other meats including poultry and offal (e.g. liver) or meat by-products such as blood.\nRed meat contains proteins of high biological value, and important micronutrients such as B vitamins, iron (both free iron and haem iron), and zinc.\n",
+     "after": " Meat processing such as curing and smoking can result in formation of carcinogenic chemicals including N-nitroso compounds and polycyclic aromatic hydrocarbons.\nAn IARC Monographs Working Group reviewed epidemiological evidence, animal bioassays, and mechanistic and other relevant data to reach conclusions as to the carcinogenic hazard to humans of the consumption of red meat and processed"
+    }
+   },
+   {
+    "text": "A speaker said that very large effect sizes have been seen in colorectal cancer, while lower effect sizes are seen in breast and prostate cancer, which are different cancers that develop from different mechanisms.",
+    "quote": "In colorectal cancer, we’ve seen very large effect sizes. In breast and prostate cancer, we see lower effect sizes, because they’re totally different cancers that develop from totally different mechanisms.",
+    "source_id": "S3",
+    "url": "https://cancerletter.com/the-cancer-letter/20191004_1",
+    "host": "cancerletter.com",
+    "title": "Don't put red, processed meat back on the menu: Cancer and dietary experts dispute controversial directive - The Cancer Letter",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "that people want is impossible,” Daniel said to The Cancer Letter. “We cannot get individuals to leave everything in their diets the same and just change meat intake and follow them for 10 years to see who gets cancer.\n“I’ve worked on studies where we’ve actually found fairly large effect sizes from eating red and processed meat with large prospective studies. It’s individual to the cancer. ",
+     "after": "\n“So, if you mash it all together, the low ones and the high ones, you’re going to get something modest. But that doesn’t mean that red and processed meat doesn’t cause colorectal cancer. From a mechanistic standpoint, it does.”\nPublic health organizations have accepted that cigarettes are a cause for cancer without needing proof from randomized studies, said Rita Redberg, professor of medicine"
+    }
+   },
+   {
+    "text": "Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.",
+    "quote": "Conclusion: “Low- or very-low-certainty evidence suggests that dietary patterns with less red and processed meat intake may result in very small reductions in adverse cardiometabolic and cancer outcomes.’",
+    "source_id": "S7",
+    "url": "https://www.nutritioncoalition.us/red-meat-does-it-cause-heart-disease-and-cancer",
+    "host": "nutritioncoalition.us",
+    "title": "Red meat: does it cause heart disease and cancer? — The Nutrition Coalition",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": true,
+    "context": {
+     "before": "very-low-certainty evidence suggests that diets restricted in red meat may have little or no effect on major cardiometabolic outcomes and cancer mortality and incidence.”\n5. Patterns of Red and Processed Meat Consumption and Risk for Cardiometabolic and Cancer Outcomes: A Systematic Review and Meta-analysis of Cohort Studies (Using GRADE Guideline methodology)\nAnnals of Internal Medicine, 2019\n",
+     "after": "\nNutrirecs Guideline Recommendation\nUnprocessed Red Meat and Processed Meat Consumption: Dietary Guideline Recommendations From the Nutritional Recommendations (NutriRECS) Consortium (Using GRADE Guideline methodology) This paper summarizes and creates a guidelines recommendation from the four papers above.\nAnnals of Internal Medicine, 2019\nRecommendation: The panel suggests that adults continue"
+    }
+   },
+   {
+    "text": "One source recommends limiting red meat to 3 portions a week (350–500g cooked weight).",
+    "quote": "We recommend limiting the amount of red meat we eat to 3 portions a week (350–500g or 12–18oz cooked weight).",
+    "source_id": "S4",
+    "url": "https://www.wcrf.org/preventing-cancer/topics/meat-and-cancer",
+    "host": "wcrf.org",
+    "title": "Meat and cancer | World Cancer Research Fund",
+    "quote_found": true,
+    "verdict": "supported",
+    "label": "supported",
+    "reason": "",
+    "revised": false,
+    "context": {
+     "before": "your health. Even with white processed meats, it’s best to eat them only occasionally.\nRed meat and cancer\nRed meat is any type of meat from the muscle of a mammal, including:\n- Beef / veal\n- Pork\n- Lamb / mutton\n- Horse\n- Goat\nRed meat is a good source of nutrients such as protein, iron, zinc and vitamin B12 so can form part of a healthy, balanced diet. But we don’t need to eat it every day.\n",
+     "after": " It’s best to choose lean, rather than fatty cuts of meat.\n500g of cooked red meat is around 700–750g of raw meat. A medium steak is about 145g (cooked weight), and 3 slices of roast beef or pork is about 90g (cooked weight).\nWhite meat and cancer\nOur experts haven’t found any evidence that eating white meat affects your risk of cancer. This means white meat can be enjoyed as part of a healthy,"
+    }
+   }
+  ],
+  "labels": {
+   "supported": 8,
+   "partial": 0,
+   "unverified": 0
+  },
+  "sources_read": 8,
+  "sources_skipped": 4,
+  "passages_indexed": 75,
+  "repair_rounds": 1,
+  "cost": {
+   "total_usd": 0.0955,
+   "cap_usd": 1.0,
+   "by_node": [
+    {
+     "node": "plan",
+     "calls": 1,
+     "usd": 0.002
+    },
+    {
+     "node": "search",
+     "calls": 4,
+     "usd": 0.032
+    },
+    {
+     "node": "index",
+     "calls": 1,
+     "usd": 0.002
+    },
+    {
+     "node": "retrieve",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "write",
+     "calls": 1,
+     "usd": 0.0209
+    },
+    {
+     "node": "check",
+     "calls": 12,
+     "usd": 0.0294
+    },
+    {
+     "node": "revise",
+     "calls": 4,
+     "usd": 0.0088
+    }
+   ]
+  }
+ }
+}
