@@ -1,4 +1,8 @@
-"""Entry point: `python -m evals <step>`. With no step, runs every step that needs no human."""
+"""Entry point: `python -m evals <step>`. With no step, runs every step that needs no human.
+
+Saved model outputs in `evals/runs/` are reused, so a second run only pays for what is missing.
+`--fresh` deletes them first, which makes every model call again.
+"""
 
 import asyncio
 import importlib
@@ -33,10 +37,22 @@ def run_step(name: str) -> None:
         asyncio.run(result)
 
 
+def forget_saved_outputs() -> None:
+    from evals.common import RUNS_DIR
+
+    for path in [*RUNS_DIR.glob("*.jsonl"), RUNS_DIR / "cost.json"]:
+        path.unlink(missing_ok=True)
+    print("fresh: deleted saved model outputs in evals/runs/")
+
+
 def main() -> None:
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8")
-    steps = sys.argv[1:] or AUTOMATIC
+    args = sys.argv[1:]
+    if "--fresh" in args:
+        args.remove("--fresh")
+        forget_saved_outputs()
+    steps = args or AUTOMATIC
     unknown = [s for s in steps if s not in STEPS]
     if unknown:
         raise SystemExit(f"Unknown step {unknown}. Choose from: {', '.join(STEPS)}")
