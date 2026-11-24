@@ -95,6 +95,12 @@ class Store:
         )
         return [to_passage(p) for p in result.points]
 
+    async def delete_run(self, run_id: str) -> None:
+        """Remove a finished run's passages so the free cluster does not fill up."""
+        if await self.client.collection_exists(self.name):
+            selector = models.FilterSelector(filter=run_filter(run_id))
+            await self.client.delete(self.name, points_selector=selector)
+
     async def count(self, run_id: str) -> int:
         """How many passages are stored for a run."""
         if not await self.client.collection_exists(self.name):

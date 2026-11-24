@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Evidentia research agent (rebuild in progress)."
 requires-python = ">=3.11"
 dependencies = [
+    "fastapi==0.165.0",
     "httpx==0.28.1",
     "langchain-anthropic==1.7.12",
     "langchain-core==1.8.4",
@@ -19,6 +20,7 @@ dependencies = [
     "rich==14.3.4",
     "tavily-python==0.8.5",
     "trafilatura==2.4.0",
+    "uvicorn==0.54.0",
     "voyageai==0.6.0",
 ]
 

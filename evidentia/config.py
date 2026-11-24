@@ -81,6 +81,16 @@ class Settings(BaseSettings):
     min_page_chars: int = 200
     min_quote_chars: int = 20
 
+    # The public API (D-028). Dollars are list prices, the same ones the ledger uses.
+    daily_budget_usd: float = 1.00  # all live runs and checks in one UTC day
+    public_run_cap_usd: float = 0.25  # one live run from the website
+    run_reserve_usd: float = 0.12  # set aside when a run starts, replaced by its real cost
+    check_cap_usd: float = 0.02  # one "try to break it" check
+    max_runs_per_ip: int = 3
+    max_checks_per_ip: int = 30
+    max_concurrent_runs: int = 2
+    allowed_origins: str = "http://localhost:3000"  # comma-separated
+
 
 def load_settings(**overrides: object) -> Settings:
     """Build Settings, turning pydantic's error into one that names variables and never values."""

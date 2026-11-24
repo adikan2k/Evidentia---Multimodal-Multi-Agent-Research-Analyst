@@ -4,6 +4,7 @@ Everything fetched here is untrusted data. It is only ever stored, searched and 
 """
 
 import asyncio
+import ipaddress
 import time
 from collections import defaultdict
 from collections.abc import Awaitable, Callable
@@ -40,6 +41,22 @@ def clean_text(raw: str) -> str:
 def extract_text(html: bytes) -> str:
     raw = trafilatura.extract(html, include_comments=False, favor_precision=True)
     return clean_text(raw or "")
+
+
+def is_public_host(host: str) -> bool:
+    """False for this machine, private networks and cloud-internal names.
+
+    The API fetches pages a search engine suggests. This stops a page, or a redirect, from
+    pointing the fetcher at something only the server can reach.
+    """
+    host = host.lower().rstrip(".")
+    if not host or host == "localhost" or host.endswith((".localhost", ".local", ".internal")):
+        return False
+    try:
+        address = ipaddress.ip_address(host)
+    except ValueError:
+        return True  # an ordinary name
+    return address.is_global
 
 
 def origin_of(url: str) -> str:
@@ -159,6 +176,8 @@ class Fetcher:
         for _ in range(MAX_REDIRECTS + 1):
             if urlsplit(url).scheme not in ("http", "https"):
                 raise Skip("not an http(s) address")
+            if not is_public_host(urlsplit(url).hostname or ""):
+                raise Skip("not a public address")
             if not await self.robots.allowed(url):
                 raise Skip("disallowed by robots.txt")
             await self.limiter.wait(origin_of(url))

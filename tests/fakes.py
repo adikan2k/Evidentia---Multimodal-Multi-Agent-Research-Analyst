@@ -125,5 +125,9 @@ class MemoryQdrant:
         found = [SimpleNamespace(id=p.id, score=0.5, payload=p.payload) for p in mine[:limit]]
         return SimpleNamespace(points=found)
 
+    async def delete(self, name: str, points_selector) -> None:
+        run_id = points_selector.filter.must[0].match.value
+        self.points = [p for p in self.points if p.payload["run_id"] != run_id]
+
     async def close(self) -> None:
         pass
