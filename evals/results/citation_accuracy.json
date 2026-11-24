@@ -1,129 +1,433 @@
 {
-  "generated_at": "2026-11-24T06:32:55+00:00",
+  "generated_at": "2026-11-24T07:59:49+00:00",
   "what": "For each claim, does the evidence the system points to back it? Baseline evidence is the cited passage; pipeline evidence is the quote.",
-  "judge": "claude-opus-5-5 with the checker's rubric. Its agreement with hand labels is in checker_agreement.json.",
+  "judge": "claude-opus-5-5 with the checker's rubric.",
   "citation_accuracy": "share of presented claims the judge finds fully supported",
   "main_point_backed": "share the judge finds supported or partial",
+  "presented_as_backed": "all claims for a baseline; claims labelled supported for a pipeline",
+  "variants": {
+    "baseline": {},
+    "pipeline": {
+      "keyword_search": true
+    },
+    "baseline_haiku": {
+      "writer_model": "claude-haiku-5-5"
+    },
+    "pipeline_haiku": {
+      "writer_model": "claude-haiku-5-5",
+      "checker_model": "claude-haiku-5-5"
+    },
+    "pipeline_tighten": {
+      "tighten_partial": true
+    }
+  },
   "questions": 40,
   "interval": "95% bootstrap over questions, 2000 resamples",
-  "baseline": {
-    "citation_accuracy": {
-      "value": 0.9172,
-      "ci_low": 0.8774,
-      "ci_high": 0.9528,
-      "correct": 288,
-      "claims": 314
+  "systems": {
+    "baseline": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 0.9172,
+          "ci_low": 0.8774,
+          "ci_high": 0.9528,
+          "correct": 288,
+          "claims": 314
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 314,
+          "claims": 314
+        },
+        "claims_per_question": {
+          "mean": 7.85,
+          "ci_low": 7.675,
+          "ci_high": 7.975,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 288,
+          "partial": 26,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.9172,
+          "ci_low": 0.8774,
+          "ci_high": 0.9528,
+          "correct": 288,
+          "claims": 314
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 314,
+          "claims": 314
+        },
+        "claims_per_question": {
+          "mean": 7.85,
+          "ci_low": 7.675,
+          "ci_high": 7.975,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 288,
+          "partial": 26,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "labels": {
+        "presented": 314
+      },
+      "evidence_chars_median": 1039,
+      "cost_per_question_usd": 0.0141
     },
-    "main_point_backed": {
-      "value": 1.0,
-      "ci_low": 1.0,
-      "ci_high": 1.0,
-      "correct": 314,
-      "claims": 314
+    "pipeline": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 0.9283,
+          "ci_low": 0.8947,
+          "ci_high": 0.9607,
+          "correct": 207,
+          "claims": 223
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 223,
+          "claims": 223
+        },
+        "claims_per_question": {
+          "mean": 5.575,
+          "ci_low": 5.1,
+          "ci_high": 6.05,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 0.975,
+          "ci_low": 0.925,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 207,
+          "partial": 16,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.6806,
+          "ci_low": 0.6109,
+          "ci_high": 0.7476,
+          "correct": 211,
+          "claims": 310
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 310,
+          "claims": 310
+        },
+        "claims_per_question": {
+          "mean": 7.75,
+          "ci_low": 7.55,
+          "ci_high": 7.925,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 0.975,
+          "ci_low": 0.925,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 211,
+          "partial": 99,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "labels": {
+        "supported": 223,
+        "partial": 87
+      },
+      "evidence_chars_median": 195,
+      "cost_per_question_usd": 0.0401
     },
-    "claims_per_question": {
-      "mean": 7.85,
-      "ci_low": 7.675,
-      "ci_high": 7.975,
-      "n": 40
+    "baseline_haiku": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 0.9211,
+          "ci_low": 0.8664,
+          "ci_high": 0.9607,
+          "correct": 280,
+          "claims": 304
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 304,
+          "claims": 304
+        },
+        "claims_per_question": {
+          "mean": 7.6,
+          "ci_low": 7.375,
+          "ci_high": 7.8,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 280,
+          "partial": 24,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.9211,
+          "ci_low": 0.8664,
+          "ci_high": 0.9607,
+          "correct": 280,
+          "claims": 304
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 304,
+          "claims": 304
+        },
+        "claims_per_question": {
+          "mean": 7.6,
+          "ci_low": 7.375,
+          "ci_high": 7.8,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 280,
+          "partial": 24,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "labels": {
+        "presented": 304
+      },
+      "evidence_chars_median": 1039,
+      "cost_per_question_usd": 0.001
     },
-    "questions_with_a_fully_backed_claim": {
-      "mean": 1.0,
-      "ci_low": 1.0,
-      "ci_high": 1.0,
-      "n": 40
+    "pipeline_haiku": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 0.888,
+          "ci_low": 0.8444,
+          "ci_high": 0.9269,
+          "correct": 222,
+          "claims": 250
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 250,
+          "claims": 250
+        },
+        "claims_per_question": {
+          "mean": 6.25,
+          "ci_low": 5.8,
+          "ci_high": 6.675,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 222,
+          "partial": 28,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.7442,
+          "ci_low": 0.6902,
+          "ci_high": 0.798,
+          "correct": 224,
+          "claims": 301
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 301,
+          "claims": 301
+        },
+        "claims_per_question": {
+          "mean": 7.525,
+          "ci_low": 7.25,
+          "ci_high": 7.775,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 224,
+          "partial": 77,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "labels": {
+        "supported": 250,
+        "partial": 51
+      },
+      "evidence_chars_median": 170,
+      "cost_per_question_usd": 0.003
     },
-    "judge_labels": {
-      "supported": 288,
-      "partial": 26,
-      "unsupported": 0,
-      "none": 0
+    "pipeline_tighten": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 0.9246,
+          "ci_low": 0.901,
+          "ci_high": 0.9479,
+          "correct": 282,
+          "claims": 305
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 305,
+          "claims": 305
+        },
+        "claims_per_question": {
+          "mean": 7.625,
+          "ci_low": 7.425,
+          "ci_high": 7.8,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 282,
+          "partial": 23,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.91,
+          "ci_low": 0.8829,
+          "ci_high": 0.9363,
+          "correct": 283,
+          "claims": 311
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 311,
+          "claims": 311
+        },
+        "claims_per_question": {
+          "mean": 7.775,
+          "ci_low": 7.6,
+          "ci_high": 7.925,
+          "n": 40
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 40
+        },
+        "judge_labels": {
+          "supported": 283,
+          "partial": 28,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "labels": {
+        "supported": 305,
+        "partial": 6
+      },
+      "evidence_chars_median": 188,
+      "cost_per_question_usd": 0.0491
     }
   },
-  "pipeline_claims_labelled_supported": {
-    "citation_accuracy": {
-      "value": 0.9283,
-      "ci_low": 0.8947,
-      "ci_high": 0.9607,
-      "correct": 207,
-      "claims": 223
-    },
-    "main_point_backed": {
-      "value": 1.0,
-      "ci_low": 1.0,
-      "ci_high": 1.0,
-      "correct": 223,
-      "claims": 223
-    },
-    "claims_per_question": {
-      "mean": 5.575,
-      "ci_low": 5.1,
-      "ci_high": 6.05,
+  "accuracy_difference_from_baseline": {
+    "pipeline": {
+      "mean": -0.0135,
+      "ci_low": -0.0602,
+      "ci_high": 0.0319,
       "n": 40
     },
-    "questions_with_a_fully_backed_claim": {
-      "mean": 0.975,
-      "ci_low": 0.925,
-      "ci_high": 1.0,
+    "baseline_haiku": {
+      "mean": 0.0073,
+      "ci_low": -0.0323,
+      "ci_high": 0.0469,
       "n": 40
     },
-    "judge_labels": {
-      "supported": 207,
-      "partial": 16,
-      "unsupported": 0,
-      "none": 0
+    "pipeline_haiku": {
+      "mean": -0.0303,
+      "ci_low": -0.0793,
+      "ci_high": 0.0182,
+      "n": 40
+    },
+    "pipeline_tighten": {
+      "mean": 0.0091,
+      "ci_low": -0.0321,
+      "ci_high": 0.0554,
+      "n": 40
     }
-  },
-  "pipeline_all_claims": {
-    "citation_accuracy": {
-      "value": 0.6806,
-      "ci_low": 0.6109,
-      "ci_high": 0.7476,
-      "correct": 211,
-      "claims": 310
-    },
-    "main_point_backed": {
-      "value": 1.0,
-      "ci_low": 1.0,
-      "ci_high": 1.0,
-      "correct": 310,
-      "claims": 310
-    },
-    "claims_per_question": {
-      "mean": 7.75,
-      "ci_low": 7.55,
-      "ci_high": 7.925,
-      "n": 40
-    },
-    "questions_with_a_fully_backed_claim": {
-      "mean": 0.975,
-      "ci_low": 0.925,
-      "ci_high": 1.0,
-      "n": 40
-    },
-    "judge_labels": {
-      "supported": 211,
-      "partial": 99,
-      "unsupported": 0,
-      "none": 0
-    }
-  },
-  "pipeline_labels": {
-    "supported": 223,
-    "partial": 87,
-    "unverified": 0
-  },
-  "accuracy_difference_supported_minus_baseline": {
-    "mean": -0.0135,
-    "ci_low": -0.0602,
-    "ci_high": 0.0319,
-    "n": 40
-  },
-  "accuracy_difference_all_pipeline_minus_baseline": {
-    "mean": -0.2344,
-    "ci_low": -0.2979,
-    "ci_high": -0.1744,
-    "n": 40
   },
   "deepeval_faithfulness": {
     "baseline": {
@@ -271,6 +575,5 @@
       "evidence": "was the loss of central political control in the Western Roman Empire, a process in which the Empire failed to enforce its rule, and its vast territory was divided among several successor polities."
     }
   ],
-  "baseline_claims_judged_unsupported": [],
-  "cost_usd": 5.0515
+  "cost_usd": 4.8921
 }

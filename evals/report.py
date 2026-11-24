@@ -99,7 +99,7 @@ SYSTEM_NAMES = {
     "pipeline": "Pipeline, Sonnet writer and checker",
     "baseline_haiku": "Baseline, Haiku writer",
     "pipeline_haiku": "Pipeline, Haiku writer and checker",
-    "pipeline_tighten": "Pipeline with partial claims tightened",
+    "pipeline_tighten": "Pipeline with partial claims tightened (the product default)",
 }
 
 

@@ -54,21 +54,39 @@ Claude Fable 5.2, shown only the claim and the quote. NOT a person. This is one 
 | claude-haiku-5-5 | 0.900 (0.853 to 0.947) | 0.838 (0.753 to 0.913) | 0.910 | 0.880 |
 | claude-opus-5-5 | 0.880 (0.827 to 0.927) | 0.809 (0.723 to 0.885) | 0.890 | 0.860 |
 
-## Baseline against the full pipeline
+## Baselines against pipelines
 
-For each claim, does the evidence the system points to back it? Baseline evidence is the cited passage; pipeline evidence is the quote. Judge: claude-opus-5-5 with the checker's rubric. Its agreement with hand labels is in checker_agreement.json.
+For each claim, does the evidence the system points to back it? Baseline evidence is the cited passage; pipeline evidence is the quote. Judge: claude-opus-5-5 with the checker's rubric. Shown as backed means: all claims for a baseline; claims labelled supported for a pipeline.
 
-| System | Fully backed | Main point backed | Claims per question | Questions with a fully backed claim |
-|---|---|---|---|---|
-| Baseline (one-shot RAG), all claims | 0.917 (0.877 to 0.953) | 1.000 (1.000 to 1.000) | 7.850 (7.675 to 7.975) | 1.000 (1.000 to 1.000) |
-| Pipeline, claims labelled supported | 0.928 (0.895 to 0.961) | 1.000 (1.000 to 1.000) | 5.575 (5.100 to 6.050) | 0.975 (0.925 to 1.000) |
-| Pipeline, all claims | 0.681 (0.611 to 0.748) | 1.000 (1.000 to 1.000) | 7.750 (7.550 to 7.925) | 0.975 (0.925 to 1.000) |
+| System | Shown as backed that are fully backed | Shown as backed per question | All claims per question | Characters to read per claim | Cost per question |
+|---|---|---|---|---|---|
+| Baseline (one-shot RAG), Sonnet writer | 0.917 (0.877 to 0.953) | 7.85 | 7.85 | 1039 | $0.0141 |
+| Pipeline, Sonnet writer and checker | 0.928 (0.895 to 0.961) | 5.58 | 7.75 | 195 | $0.0401 |
+| Baseline, Haiku writer | 0.921 (0.866 to 0.961) | 7.60 | 7.60 | 1039 | $0.0010 |
+| Pipeline, Haiku writer and checker | 0.888 (0.844 to 0.927) | 6.25 | 7.53 | 170 | $0.0030 |
+| Pipeline with partial claims tightened (the product default) | 0.925 (0.901 to 0.948) | 7.62 | 7.78 | 188 | $0.0491 |
 
-Fully backed, pipeline claims labelled supported minus baseline, per question: -0.013 (-0.060 to +0.032) over 40 questions.
+Fully backed, each system minus the Sonnet baseline, per question:
 
-Pipeline labels: {'supported': 223, 'partial': 87, 'unverified': 0}.
+| System | Difference | Questions |
+|---|---|---|
+| Pipeline, Sonnet writer and checker | -0.013 (-0.060 to +0.032) | 40 |
+| Baseline, Haiku writer | +0.007 (-0.032 to +0.047) | 40 |
+| Pipeline, Haiku writer and checker | -0.030 (-0.079 to +0.018) | 40 |
+| Pipeline with partial claims tightened (the product default) | +0.009 (-0.032 to +0.055) | 40 |
 
 DeepEval faithfulness (stock metric, same judge model): baseline 1.000 (1.000 to 1.000), pipeline 1.000 (1.000 to 1.000).
+
+## Questions the corpus cannot answer
+
+20 easy general-knowledge questions whose answers are not in the corpus. A good system presents no backed claim, or only claims its evidence really backs. Written by Claude as a stress test; not a sample of real questions.
+
+| System | Stayed quiet | Answered from memory | Claims shown as backed | Of those, fully backed |
+|---|---|---|---|---|
+| Baseline (one-shot RAG), Sonnet writer | 20 of 20 | 0 of 20 | 0 | 0 |
+| Pipeline, Sonnet writer and checker | 20 of 20 | 0 of 20 | 0 | 0 |
+| Baseline, Haiku writer | 19 of 20 | 0 of 20 | 2 | 2 |
+| Pipeline, Haiku writer and checker | 20 of 20 | 0 of 20 | 0 | 0 |
 
 ## Nasty tests
 

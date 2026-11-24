@@ -25,4 +25,6 @@ def fake_env(monkeypatch: pytest.MonkeyPatch) -> dict[str, str]:
 
 @pytest.fixture
 def settings(fake_env: dict[str, str]) -> Settings:
-    return load_settings(_env_file=None, per_host_interval_s=0.0)
+    # Tightening is on in the product but off here, so most tests can check one thing at a time.
+    # The tests about tightening switch it on themselves.
+    return load_settings(_env_file=None, per_host_interval_s=0.0, tighten_partial=False)

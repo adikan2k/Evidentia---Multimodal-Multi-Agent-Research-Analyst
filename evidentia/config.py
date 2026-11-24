@@ -49,7 +49,8 @@ class Settings(BaseSettings):
     max_repair_rounds: int = 1
     repair_top_k: int = 6
     # Rewrite a claim the checker calls partial so it says only what its quote says (D-023).
-    tighten_partial: bool = False
+    # On: in the evals it cut partial labels from 87 to 6 with no loss of accuracy.
+    tighten_partial: bool = True
     # Also search by keywords (BM25) and fuse with dense search. Off: the evals found it added
     # nothing once the reranker is used (D-023). Passages are indexed for both either way.
     keyword_search: bool = False

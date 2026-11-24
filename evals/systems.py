@@ -38,9 +38,12 @@ VARIANTS: dict[str, tuple[str, dict]] = {
     "baseline": ("baseline", {}),
     # Saved before keyword search was switched off by default, so it is pinned on here. The
     # retrieval eval found the two give the same top 10 once the reranker is used.
-    "pipeline": ("pipeline", {"keyword_search": True}),
+    "pipeline": ("pipeline", {"keyword_search": True, "tighten_partial": False}),
     "baseline_haiku": ("baseline", {"writer_model": HAIKU}),
-    "pipeline_haiku": ("pipeline", {"writer_model": HAIKU, "checker_model": HAIKU}),
+    "pipeline_haiku": (
+        "pipeline",
+        {"writer_model": HAIKU, "checker_model": HAIKU, "tighten_partial": False},
+    ),
     "pipeline_tighten": ("pipeline", {"tighten_partial": True}),
 }
 # question set -> (file, variants run on it)

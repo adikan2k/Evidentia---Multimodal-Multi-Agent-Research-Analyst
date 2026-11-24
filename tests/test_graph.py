@@ -240,7 +240,14 @@ def test_search_is_dense_only_unless_keyword_search_is_switched_on(settings) -> 
     assert hybrid.store.client.searches == ["hybrid"]
 
 
-def test_partial_claims_are_left_alone_by_default(settings) -> None:
+def test_tightening_is_on_in_the_product(fake_env) -> None:
+    from evidentia.config import load_settings
+
+    assert load_settings(_env_file=None).tighten_partial is True
+    assert load_settings(_env_file=None).keyword_search is False
+
+
+def test_partial_claims_are_left_alone_when_tightening_is_off(settings) -> None:
     deps, seen = make_deps(settings, claims=[BACKED, OVERREACH], tightened="Solar grew 24%."), []
     state = run(deps, seen)
     assert seen == MAIN_PATH and deps.llm.calls_for(Tightened) == []

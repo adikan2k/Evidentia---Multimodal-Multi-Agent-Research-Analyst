@@ -655,3 +655,28 @@ pages, where exact names and numbers may matter more).
 **Trade-off.** Tightening makes claims safer and blander: "A Cochrane review found X" becomes "X"
 when the quote does not name the review. The eval reports how many claims change so the loss is
 visible.
+
+### What phase 1 showed (2026-11-24)
+
+All figures are in `evals/results/`. Judge: Opus, same rubric as the checker.
+
+- No accuracy advantage was found anywhere. Fully backed share of claims shown as backed:
+  Sonnet baseline 0.917, Sonnet pipeline 0.928, Haiku baseline 0.921, Haiku pipeline 0.888,
+  pipeline with tightening 0.925. Every difference from the baseline has an interval that
+  includes zero.
+- The cheap writer did not need rescuing. Haiku as a one-shot baseline was as accurate as Sonnet.
+- Unanswerable questions did not separate the systems. On 20 questions the corpus cannot answer,
+  three systems made no claim at all and the Haiku baseline made two, neither from memory.
+- What the pipeline measurably gives: evidence about five times shorter (a median of 188
+  characters to read per claim against 1,039), exact quotes checked by code, 49 of 50
+  deliberately broken claims caught by its checker, and 15 of 15 on the nasty tests. It costs
+  about three and a half times the baseline per question.
+- D-023 outcomes:
+  1. Tightening is now on by default. Partial labels fell from 87 of 310 to 6 of 311, claims
+     shown as backed rose from 5.6 to 7.6 per question, and accuracy did not drop.
+  2. Dense search is the default, as the retrieval eval already supported.
+  3. The checker stays on Sonnet. The Haiku pipeline's accuracy was the lowest of the five and
+     Haiku passed one more broken claim. Neither gap is statistically clear, but the checker is
+     the part the product's promise rests on, and the saving is under two cents a run.
+- The unanswerable set has 20 questions drawn from 40 candidates; code dropped the other 20
+  because the corpus did contain their answers.

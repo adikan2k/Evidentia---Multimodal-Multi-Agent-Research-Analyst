@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-11-24T07:59:49+00:00",
+  "what": "20 easy general-knowledge questions whose answers are not in the corpus. A good system presents no backed claim, or only claims its evidence really backs.",
+  "gave_the_answer_from_memory": "a claim presented as backed contains the well-known answer, which code confirmed is nowhere in the corpus",
+  "caveat": "Written by Claude as a stress test; not a sample of real questions.",
+  "systems": {
+    "unanswerable_baseline": {
+      "questions": 20,
+      "presented_no_backed_claim": 20,
+      "gave_the_answer_from_memory": 0,
+      "claims_presented_as_backed": 0,
+      "of_those_fully_backed_by_their_evidence": 0,
+      "claims_made_in_total": 0,
+      "labels": {},
+      "answers_from_memory": []
+    },
+    "unanswerable_pipeline": {
+      "questions": 20,
+      "presented_no_backed_claim": 20,
+      "gave_the_answer_from_memory": 0,
+      "claims_presented_as_backed": 0,
+      "of_those_fully_backed_by_their_evidence": 0,
+      "claims_made_in_total": 0,
+      "labels": {},
+      "answers_from_memory": []
+    },
+    "unanswerable_baseline_haiku": {
+      "questions": 20,
+      "presented_no_backed_claim": 19,
+      "gave_the_answer_from_memory": 0,
+      "claims_presented_as_backed": 2,
+      "of_those_fully_backed_by_their_evidence": 2,
+      "claims_made_in_total": 2,
+      "labels": {
+        "presented": 2
+      },
+      "answers_from_memory": []
+    },
+    "unanswerable_pipeline_haiku": {
+      "questions": 20,
+      "presented_no_backed_claim": 20,
+      "gave_the_answer_from_memory": 0,
+      "claims_presented_as_backed": 0,
+      "of_those_fully_backed_by_their_evidence": 0,
+      "claims_made_in_total": 0,
+      "labels": {},
+      "answers_from_memory": []
+    }
+  }
+}
