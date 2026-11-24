@@ -561,6 +561,7 @@ version = "0.1.0"
 source = { editable = "." }
 default-groups = ["dev", "evals"]
 dependencies = [
+    { name = "anthropic" },
     { name = "fastapi" },
     { name = "httpx" },
     { name = "langchain-anthropic" },
@@ -592,6 +593,7 @@ evals = [
 
 [package.metadata]
 requires-dist = [
+    { name = "anthropic", specifier = "==2.13.0" },
     { name = "fastapi", specifier = "==0.165.0" },
     { name = "httpx", specifier = "==0.28.1" },
     { name = "langchain-anthropic", specifier = "==1.7.12" },

@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Evidentia research agent (rebuild in progress)."
 requires-python = ">=3.11"
 dependencies = [
+    "anthropic==2.13.0",
     "fastapi==0.165.0",
     "httpx==0.28.1",
     "langchain-anthropic==1.7.12",

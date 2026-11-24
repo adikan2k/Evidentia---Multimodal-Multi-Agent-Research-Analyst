@@ -63,6 +63,11 @@ def main() -> None:
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
+    if args[:1] == ["realworld"]:  # D-042; has its own options, never automatic
+        from evals.realworld import main as realworld
+
+        realworld(args[1:])
+        return
     if args[:1] == ["aggrefact"]:  # has its own options; never part of the automatic steps
         from evals.aggrefact import main as aggrefact
 

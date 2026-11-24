@@ -64,3 +64,65 @@ def test_a_span_that_already_holds_its_link_gets_no_marker() -> None:
     other = cite("https://b.example.org/", text.index("It orbits"), len(text))
     out = with_markers(text, [cite(url, 23, span_end), other])
     assert out.count(url) == 1 and "[1]" in out and out.endswith("[1] https://b.example.org/")
+
+
+def claude_block(text: str, *urls: str):
+    citations = [
+        SimpleNamespace(type="web_search_result_location", url=u, cited_text="x") for u in urls
+    ]
+    return SimpleNamespace(type="text", text=text, citations=citations or None)
+
+
+def test_claude_blocks_get_markers_after_each_cited_block() -> None:
+    from evidentia.audit.answers import claude_markers
+
+    a, b = "https://a.example.org/", "https://b.example.org/"
+    text, cited = claude_markers(
+        [
+            claude_block("Webb launched in 2021. "),
+            claude_block("It orbits L2.", a, b),
+            claude_block(" It has a 6.5 m mirror.", a),
+        ]
+    )
+    assert text.startswith("Webb launched in 2021. It orbits L2.[1][2] It has a 6.5 m mirror.[1]")
+    assert text.endswith(f"Sources:\n[1] {a}\n[2] {b}") and cited == 2
+
+
+def test_claude_answers_resume_a_paused_turn_and_count_searches(settings) -> None:
+    from evidentia.audit.answers import claude_answer_with_web_search
+    from evidentia.cost import claude_usd
+    from evidentia.tracing import NoopTracer
+
+    calls = []
+    usage = lambda searches: SimpleNamespace(  # noqa: E731
+        input_tokens=4000,
+        output_tokens=300,
+        cache_read_input_tokens=0,
+        cache_creation_input_tokens=0,
+        server_tool_use=SimpleNamespace(web_search_requests=searches),
+    )
+    replies = [
+        SimpleNamespace(
+            stop_reason="pause_turn",
+            content=[claude_block("Part one. ", "https://a.example.org/")],
+            usage=usage(2),
+        ),
+        SimpleNamespace(
+            stop_reason="end_turn", content=[claude_block("Part two.")], usage=usage(1)
+        ),
+    ]
+
+    async def create(**kwargs):
+        calls.append(kwargs)
+        return replies[len(calls) - 1]
+
+    client = SimpleNamespace(messages=SimpleNamespace(create=create))
+    ledger = Ledger(1.0)
+    answer = asyncio.run(
+        claude_answer_with_web_search("Q?", settings, ledger, NoopTracer(), client=client)
+    )
+    assert len(calls) == 2 and calls[0]["tools"][0]["type"] == "web_search_20260209"
+    assert calls[1]["messages"][1]["role"] == "assistant"  # the paused turn is sent back
+    assert answer["text"].startswith("Part one. [1]Part two.") and answer["citations"] == 1
+    expected = 2 * claude_usd("claude-sonnet-5-5", 4000, 300) + 3 * 0.01
+    assert abs(ledger.spent - expected) < 1e-9

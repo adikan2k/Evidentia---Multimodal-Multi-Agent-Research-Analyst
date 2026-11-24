@@ -10,7 +10,7 @@ from datetime import UTC, datetime
 from typing import Any
 
 from evidentia.config import Settings
-from evidentia.cost import Charge, Ledger, estimate_tokens, openai_usd
+from evidentia.cost import Charge, Ledger, claude_usd, estimate_tokens, openai_usd
 from evidentia.openai_llm import make_client
 
 # The Responses API's web search tool. Source: developers.openai.com/api/docs/pricing, read
@@ -58,6 +58,99 @@ def charge(ledger: Ledger, model: str, response: Any) -> float:
             input_tokens=usage.input_tokens,
             output_tokens=usage.output_tokens,
             cache_read=cached,
+            usd=usd,
+        )
+    )
+    return usd
+
+
+CLAUDE_ANSWER_MODEL = "claude-sonnet-5-5"
+# The Messages API's web search tool for current models (Claude API reference, read 2026-11-24).
+CLAUDE_WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 5}
+MAX_PAUSES = 3  # a long search turn can pause; the API resumes it when the turn is sent back
+
+
+def claude_markers(blocks: list[Any]) -> tuple[str, int]:
+    """Claude's text blocks, each cited one followed by its [n] markers, and a source list.
+
+    Claude splits its answer into text blocks at citation boundaries, so a block's citations
+    belong to that block's text.
+    """
+    numbers: dict[str, int] = {}
+    out = []
+    for block in blocks:
+        out.append(block.text)
+        urls = [
+            c.url
+            for c in (getattr(block, "citations", None) or [])
+            if getattr(c, "type", "") == "web_search_result_location"
+        ]
+        marks = list(dict.fromkeys(numbers.setdefault(u, len(numbers) + 1) for u in urls))
+        out.append("".join(f"[{n}]" for n in marks))
+    sources = "\n".join(f"[{n}] {url}" for url, n in numbers.items())
+    text = "".join(out).rstrip() + ("\n\nSources:\n" + sources if sources else "")
+    return text, len(numbers)
+
+
+async def claude_answer_with_web_search(
+    question: str,
+    settings: Settings,
+    ledger: Ledger,
+    tracer: Any,
+    client: Any = None,
+    model: str = CLAUDE_ANSWER_MODEL,
+) -> dict[str, Any]:
+    """Ask Claude with its web search tool on; return the answer in the auditor's input shape."""
+    if client is None:
+        from anthropic import AsyncAnthropic
+
+        client = AsyncAnthropic(api_key=settings.anthropic_api_key.get_secret_value())
+    messages: list[dict[str, Any]] = [{"role": "user", "content": question}]
+    blocks: list[Any] = []
+    usd = 0.0
+    # The SDK's own spans are not exported (tracing.export_span), so this call gets its own.
+    with tracer.span("answer.claude", "generation", {"question": question, "model": model}) as span:
+        for _ in range(MAX_PAUSES + 1):
+            worst = claude_usd(model, estimate_tokens(question) + 30_000, MAX_OUTPUT_TOKENS)
+            with ledger.reserve("answer", worst + WORST_CASE_SEARCHES * WEB_SEARCH_USD_PER_CALL):
+                response = await client.messages.create(
+                    model=model,
+                    max_tokens=MAX_OUTPUT_TOKENS,
+                    messages=messages,
+                    tools=[CLAUDE_WEB_SEARCH],
+                )
+                usd += charge_claude(ledger, model, response.usage)
+            blocks += [b for b in response.content if getattr(b, "type", "") == "text"]
+            if response.stop_reason != "pause_turn":
+                break
+            messages = [messages[0], {"role": "assistant", "content": response.content}]
+        text, cited = claude_markers(blocks)
+        span.update(output={"answer": text}, metadata={"usd": round(usd, 4), "cited_pages": cited})
+    return {
+        "question": question,
+        "model": model,
+        "tool": "web search",
+        "made_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "text": text,
+        "citations": cited,
+        "usd": round(usd, 4),
+    }
+
+
+def charge_claude(ledger: Ledger, model: str, usage: Any) -> float:
+    searches = getattr(getattr(usage, "server_tool_use", None), "web_search_requests", 0) or 0
+    cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
+    cache_write = getattr(usage, "cache_creation_input_tokens", 0) or 0
+    usd = claude_usd(model, usage.input_tokens, usage.output_tokens, cache_read, cache_write)
+    usd += searches * WEB_SEARCH_USD_PER_CALL
+    ledger.add(
+        Charge(
+            node="answer",
+            item=f"{model} + {searches} web searches",
+            input_tokens=usage.input_tokens + cache_read + cache_write,
+            output_tokens=usage.output_tokens,
+            cache_read=cache_read,
+            cache_write=cache_write,
             usd=usd,
         )
     )
