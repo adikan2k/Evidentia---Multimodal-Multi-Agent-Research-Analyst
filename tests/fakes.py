@@ -1,10 +1,12 @@
 """Stand-ins for the outside world, shared by the pipeline tests. Nothing here uses the network."""
 
+import asyncio
+from collections.abc import Callable
 from types import SimpleNamespace
 from typing import Any
 
 from evidentia.llm import LLM
-from evidentia.schemas import Claim, Draft, Plan
+from evidentia.schemas import Claim, Draft, Judgement, Plan, RepairQueries, Revision
 
 
 def reply(parsed: Any, stop: str = "end_turn", tokens: tuple[int, int] = (1000, 200)) -> dict:
@@ -16,20 +18,57 @@ def reply(parsed: Any, stop: str = "end_turn", tokens: tuple[int, int] = (1000, 
     return {"raw": raw, "parsed": parsed, "parsing_error": None}
 
 
-class ScriptedLLM(LLM):
-    """The real LLM class with the network call replaced by canned answers."""
+def always_supported(user: str) -> Judgement:
+    return Judgement(label="supported", reason="The quote states the claim.")
 
-    def __init__(self, settings, ledger, queries: list[str], claims: list[Claim]) -> None:
+
+def never_backed(user: str) -> Revision:
+    return Revision(backed=False, text="", quote="", source_id="")
+
+
+class ScriptedLLM(LLM):
+    """The real LLM class with the network call replaced by canned answers.
+
+    `judge` and `revise` receive the user prompt and decide what the model "says". A `judge`
+    that returns None plays a checker that refused.
+    """
+
+    def __init__(
+        self,
+        settings,
+        ledger,
+        queries: list[str],
+        claims: list[Claim],
+        judge: Callable[[str], Judgement | None] = always_supported,
+        revise: Callable[[str], Revision] = never_backed,
+        repair_queries: list[str] | None = None,
+    ) -> None:
         super().__init__(settings, ledger)
         self.queries = queries
         self.claims = claims
-        self.prompts: dict[str, dict[str, str]] = {}
+        self.judge = judge
+        self.revise = revise
+        self.repair_queries = repair_queries or []
+        self.calls: list[dict[str, str]] = []
+
+    def calls_for(self, schema: type) -> list[dict[str, str]]:
+        return [c for c in self.calls if c["schema"] == schema.__name__]
 
     async def _call(self, model, effort, max_tokens, system, user, schema, config) -> dict:
-        self.prompts[schema.__name__] = {"system": system, "user": user}
+        self.calls.append(
+            {"schema": schema.__name__, "model": model, "system": system, "user": user}
+        )
+        await asyncio.sleep(0)  # let other calls start, as a real network call would
         if schema is Plan:
             return reply(Plan(queries=self.queries))
-        return reply(Draft(claims=self.claims))
+        if schema is Draft:
+            return reply(Draft(claims=self.claims))
+        if schema is RepairQueries:
+            return reply(RepairQueries(queries=self.repair_queries))
+        if schema is Revision:
+            return reply(self.revise(user))
+        judgement = self.judge(user)
+        return reply(judgement, stop="end_turn" if judgement else "refusal")
 
 
 class FakeTavily:
@@ -55,6 +94,7 @@ class MemoryQdrant:
     def __init__(self) -> None:
         self.points: list[Any] = []
         self.created = False
+        self.queries: list[str] = []
 
     async def collection_exists(self, name: str) -> bool:
         return self.created
@@ -69,6 +109,7 @@ class MemoryQdrant:
         self.points += points
 
     async def query_points(self, name: str, prefetch, limit: int, **kwargs):
+        self.queries.append(prefetch[1].query.text)
         run_id = prefetch[0].filter.must[0].match.value
         mine = [p for p in self.points if p.payload["run_id"] == run_id]
         found = [SimpleNamespace(id=p.id, score=0.5, payload=p.payload) for p in mine[:limit]]

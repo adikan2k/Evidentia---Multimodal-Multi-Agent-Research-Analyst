@@ -48,8 +48,11 @@ class Embedder:
 
     async def _embed(self, node: str, texts: list[str], input_type: str) -> list[list[float]]:
         model = self.settings.embed_model
-        self.ledger.check(node, voyage_usd(model, sum(estimate_tokens(t) for t in texts)))
-        with self.tracer.span("voyage.embed", "embedding", {"texts": len(texts)}) as span:
+        worst = voyage_usd(model, sum(estimate_tokens(t) for t in texts))
+        with (
+            self.ledger.reserve(node, worst),
+            self.tracer.span("voyage.embed", "embedding", {"texts": len(texts)}) as span,
+        ):
             result = await self.client.embed(
                 texts, model=model, input_type=input_type, output_dimension=self.settings.embed_dim
             )
@@ -65,11 +68,13 @@ class Embedder:
             return []
         model = self.settings.rerank_model
         # Voyage bills the query once per document plus every document.
-        worst = estimate_tokens(query) * len(passages) + sum(
+        worst_tokens = estimate_tokens(query) * len(passages) + sum(
             estimate_tokens(p.text) for p in passages
         )
-        self.ledger.check(node, voyage_usd(model, worst))
-        with self.tracer.span("voyage.rerank", "retriever", {"candidates": len(passages)}) as span:
+        with (
+            self.ledger.reserve(node, voyage_usd(model, worst_tokens)),
+            self.tracer.span("voyage.rerank", "retriever", {"candidates": len(passages)}) as span,
+        ):
             result = await self.client.rerank(
                 query, [p.text for p in passages], model=model, top_k=top_k
             )

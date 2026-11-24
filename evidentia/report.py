@@ -15,11 +15,22 @@ from rich.text import Text
 from evidentia.cost import Ledger
 from evidentia.schemas import CheckedClaim, RunState
 
-STATUS_STYLE = {"verified": "bold green", "unverified": "bold yellow"}
+LABELS = ("supported", "partial", "unverified")
+LABEL_STYLE = {"supported": "bold green", "partial": "bold yellow", "unverified": "bold red"}
+LEGEND = (
+    "Supported: an independent check, shown only the claim and the quote, found the quote backs "
+    "all of it. Partial: the quote backs the main point but not every detail. Unverified: no "
+    "exact quote from a fetched page backs it."
+)
 
 
 def _plural(n: int, word: str, many: str | None = None) -> str:
     return f"{n} {word}" if n == 1 else f"{n} {many or word + 's'}"
+
+
+def count_labels(claims: list[CheckedClaim]) -> str:
+    labels = [c.label for c in claims]
+    return ", ".join(f"{labels.count(label)} {label}" for label in LABELS)
 
 
 def describe(node: str, update: dict[str, Any]) -> str:
@@ -43,8 +54,18 @@ def describe(node: str, update: dict[str, Any]) -> str:
     if node == "write":
         return f"wrote {_plural(len(update['claims']), 'claim')}"
     if node == "quote_check":
-        verified = sum(c.status == "verified" for c in update["checked"])
-        return f"{verified} verified, {len(update['checked']) - verified} unverified"
+        found = sum(c.quote_found is True for c in update["checked"])
+        return f"{found} of {_plural(len(update['checked']), 'quote')} found word for word"
+    if node == "check":
+        return count_labels(update["checked"])
+    if node == "rewrite":
+        return f"{_plural(len(update['repairs']), 'claim')} failed; wrote a new query for each"
+    if node == "reretrieve":
+        passages = sum(len(r.passages) for r in update["repairs"])
+        return f"searched the fetched pages again, {_plural(passages, 'passage')} to re-read"
+    if node == "revise":
+        rewritten = sum(c.revised and c.quote_found is None for c in update["checked"])
+        return f"rewrote {_plural(rewritten, 'claim')} from the new passages"
     return ""
 
 
@@ -59,6 +80,7 @@ def to_json(state: RunState, ledger: Ledger) -> str:
         ],
         "skipped": [s.model_dump() for s in state.skipped],
         "claims": [c.model_dump() for c in state.checked],
+        "repair_rounds": state.round,
         "cost": {
             "cap_usd": ledger.cap_usd,
             "total_usd": round(ledger.spent, 6),
@@ -80,23 +102,22 @@ class Reporter:
         self.console.print(line)
         if node == "plan":
             for query in update["queries"]:
-                self.console.print(Text(f"{'':<16}{query}", style="dim"))
+                self.console.print(Text(f"{'':<14}{query}", style="dim"))
+        if node == "rewrite":
+            for repair in update["repairs"]:
+                self.console.print(Text(f"{'':<14}{repair.query}", style="dim"))
 
     def final(self, state: RunState, ledger: Ledger) -> None:
         self.console.print()
         self.console.print(Text(state.question, style="bold"))
-        if not state.checked:
+        if state.checked:
+            self.console.print(Text(count_labels(state.checked), style="dim"))
+        else:
             self.console.print(Text(self._why_empty(state), style="yellow"))
         for number, claim in enumerate(state.checked, start=1):
             self._claim(number, claim)
         self.console.print()
-        self.console.print(
-            Text(
-                "Verified means the quote is an exact span of the fetched page. Whether the "
-                "quote supports the claim is not checked yet; that is the checker in M2.",
-                style="dim",
-            )
-        )
+        self.console.print(Text(LEGEND, style="dim"))
         self.costs(ledger)
         if state.trace_url or state.trace_id:
             self.console.print(Text(f"Trace: {state.trace_url or state.trace_id}", style="dim"))
@@ -108,12 +129,18 @@ class Reporter:
 
     def _claim(self, number: int, claim: CheckedClaim) -> None:
         head = Text(f"\n{number:>2}. ")
-        head.append(claim.status.upper(), style=STATUS_STYLE[claim.status])
+        head.append(claim.label.upper(), style=LABEL_STYLE[claim.label])
         head.append(f"  {claim.text}")
         self.console.print(head)
         self.console.print(Text(f'    "{claim.quote}"', style="italic"))
-        if claim.reason:
-            self.console.print(Text(f"    Why unverified: {claim.reason}", style="yellow"))
+        if claim.label != "supported" and claim.reason:
+            self.console.print(Text(f"    Why {claim.label}: {claim.reason}", style="yellow"))
+        if claim.revised:
+            self.console.print(
+                Text(
+                    "    Rewritten after failing the first check, then checked again.", style="dim"
+                )
+            )
         if claim.url:
             self.console.print(Text(f"    {claim.url}", style="blue"))
 

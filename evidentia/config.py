@@ -37,6 +37,16 @@ class Settings(BaseSettings):
     planner_max_tokens: int = 4_000
     writer_max_tokens: int = 12_000
 
+    checker_model: str = "claude-sonnet-5-5"
+    checker_effort: str = "medium"
+    checker_max_tokens: int = 1_500
+    # The cheap, fast model. It only writes search queries for the repair round.
+    reader_model: str = "claude-haiku-5-5"
+    reader_max_tokens: int = 2_000
+    reviser_max_tokens: int = 4_000
+    max_repair_rounds: int = 1
+    repair_top_k: int = 6
+
     embed_model: str = "voyage-4-large"
     embed_dim: int = 1024
     rerank_model: str = "rerank-3"

@@ -1,5 +1,8 @@
 """Price table and the per-run ledger that enforces the hard cost cap."""
 
+from collections.abc import Iterator
+from contextlib import contextmanager
+
 from pydantic import BaseModel
 
 # US dollars per million tokens: (input, output).
@@ -85,18 +88,30 @@ class Ledger:
     def __init__(self, cap_usd: float) -> None:
         self.cap_usd = cap_usd
         self.charges: list[Charge] = []
+        self.reserved = 0.0
 
     @property
     def spent(self) -> float:
         return sum(c.usd for c in self.charges)
 
-    def check(self, node: str, worst_case_usd: float) -> None:
-        """Call before every paid request. Raises instead of letting the run pass the cap."""
-        if self.spent + worst_case_usd > self.cap_usd:
+    @contextmanager
+    def reserve(self, node: str, worst_case_usd: float) -> Iterator[None]:
+        """Wrap every paid request in this. It refuses the request if it could pass the cap.
+
+        The worst case is held as "reserved" while the request is in flight, so several
+        requests running at the same time cannot each see room and together overshoot.
+        """
+        if self.spent + self.reserved + worst_case_usd > self.cap_usd:
             raise BudgetExceeded(
-                f"{node}: spent ${self.spent:.4f}, next call could cost up to "
-                f"${worst_case_usd:.4f}, cap is ${self.cap_usd:.2f}"
+                f"{node}: spent ${self.spent:.4f}, ${self.reserved:.4f} reserved by calls in "
+                f"flight, next call could cost up to ${worst_case_usd:.4f}, "
+                f"cap is ${self.cap_usd:.2f}"
             )
+        self.reserved += worst_case_usd
+        try:
+            yield
+        finally:
+            self.reserved -= worst_case_usd
 
     def add(self, charge: Charge) -> None:
         self.charges.append(charge)

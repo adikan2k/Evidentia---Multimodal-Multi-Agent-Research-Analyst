@@ -50,8 +50,10 @@ class Searcher:
 
     async def _one(self, node: str, query: str) -> list[SearchHit]:
         usd = tavily_usd(SEARCH_DEPTH)
-        self.ledger.check(node, usd)
-        with self.tracer.span("tavily.search", "tool", {"query": query}) as span:
+        with (
+            self.ledger.reserve(node, usd),
+            self.tracer.span("tavily.search", "tool", {"query": query}) as span,
+        ):
             response = await self.client.search(
                 query, search_depth=SEARCH_DEPTH, max_results=self.settings.results_per_query
             )

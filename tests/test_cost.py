@@ -49,10 +49,31 @@ def test_estimate_is_at_least_one_token() -> None:
 def test_ledger_blocks_a_call_that_could_pass_the_cap() -> None:
     ledger = Ledger(cap_usd=0.10)
     ledger.add(Charge(node="plan", item="claude-sonnet-5-5", usd=0.06))
-    ledger.check("write", 0.04)
-    with pytest.raises(BudgetExceeded, match="cap is \\$0.10"):
-        ledger.check("write", 0.05)
+    with ledger.reserve("write", 0.04):
+        pass
+    with pytest.raises(BudgetExceeded, match="cap is \$0.10"), ledger.reserve("write", 0.05):
+        pass
     assert ledger.spent == pytest.approx(0.06)
+
+
+def test_calls_in_flight_count_against_the_cap() -> None:
+    ledger = Ledger(cap_usd=0.10)
+    with ledger.reserve("check", 0.06):
+        assert ledger.reserved == pytest.approx(0.06)
+        with pytest.raises(BudgetExceeded, match="reserved"), ledger.reserve("check", 0.06):
+            pass
+        with ledger.reserve("check", 0.03):
+            assert ledger.reserved == pytest.approx(0.09)
+    assert ledger.reserved == pytest.approx(0.0)
+
+
+def test_reservation_is_released_when_the_call_fails() -> None:
+    ledger = Ledger(cap_usd=0.10)
+    with pytest.raises(ValueError), ledger.reserve("check", 0.08):
+        raise ValueError("network down")
+    assert ledger.reserved == pytest.approx(0.0)
+    with ledger.reserve("check", 0.08):
+        pass
 
 
 def test_budget_error_is_not_retried_by_langgraph() -> None:

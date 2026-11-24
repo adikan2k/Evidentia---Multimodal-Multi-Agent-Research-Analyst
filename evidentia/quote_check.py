@@ -5,7 +5,7 @@ paragraphs (see `fetch.clean_text`). The only leniency here is whitespace, so a 
 across a paragraph break still matches. Letters, case and punctuation must match exactly.
 """
 
-from evidentia.schemas import CheckedClaim, Claim, Source
+from evidentia.schemas import CheckedClaim, Source
 
 
 def collapse_whitespace(text: str) -> str:
@@ -22,21 +22,25 @@ def find_quote(quote: str, source_text: str) -> tuple[int, int] | None:
     return None if start < 0 else (start, start + len(needle))
 
 
-def check_claim(claim: Claim, sources: dict[str, Source], min_chars: int) -> CheckedClaim:
-    def result(status: str, reason: str = "", **extra: object) -> CheckedClaim:
-        return CheckedClaim(**claim.model_dump(), status=status, reason=reason, **extra)
+def check_quote(claim: CheckedClaim, sources: dict[str, Source], min_chars: int) -> CheckedClaim:
+    def missing(reason: str, url: str = "") -> CheckedClaim:
+        return claim.model_copy(update={"quote_found": False, "reason": reason, "url": url})
 
     source = sources.get(claim.source_id)
     if source is None:
-        return result("unverified", "cites a source that was not fetched")
+        return missing("cites a source that was not fetched")
     if len(collapse_whitespace(claim.quote)) < min_chars:
-        return result("unverified", f"quote is shorter than {min_chars} characters", url=source.url)
+        return missing(f"quote is shorter than {min_chars} characters", source.url)
     span = find_quote(claim.quote, source.text)
     if span is None:
-        return result("unverified", "quote is not an exact span of the source", url=source.url)
-    return result("verified", url=source.url, start=span[0], end=span[1])
+        return missing("quote is not an exact span of the source", source.url)
+    found = {"quote_found": True, "url": source.url, "start": span[0], "end": span[1]}
+    return claim.model_copy(update=found)
 
 
-def check_claims(claims: list[Claim], sources: list[Source], min_chars: int) -> list[CheckedClaim]:
+def check_quotes(
+    claims: list[CheckedClaim], sources: list[Source], min_chars: int
+) -> list[CheckedClaim]:
+    """Check every claim that has not had its quote checked yet; leave the others alone."""
     by_id = {s.id: s for s in sources}
-    return [check_claim(c, by_id, min_chars) for c in claims]
+    return [check_quote(c, by_id, min_chars) if c.quote_found is None else c for c in claims]

@@ -5,26 +5,48 @@ from rich.console import Console
 
 from evidentia.cost import Charge, Ledger
 from evidentia.report import Reporter, describe, to_json
-from evidentia.schemas import CheckedClaim, Passage, RunState, SearchHit, SkippedPage, Source
+from evidentia.schemas import (
+    CheckedClaim,
+    Passage,
+    Repair,
+    RunState,
+    SearchHit,
+    SkippedPage,
+    Source,
+)
 
 SOURCE = Source(id="S1", url="https://a.org/x", title="A", text="Solar capacity grew 24% in 2023.")
-VERIFIED = CheckedClaim(
+QUOTE = "Solar capacity grew 24% in 2023."
+SUPPORTED = CheckedClaim(
     text="Solar grew 24% [in 2023].",
-    quote="Solar capacity grew 24% in 2023.",
+    quote=QUOTE,
     source_id="S1",
-    status="verified",
+    quote_found=True,
+    verdict="supported",
     url=SOURCE.url,
     start=0,
     end=32,
+)
+PARTIAL = CheckedClaim(
+    text="Solar grew 24%, more than wind.",
+    quote=QUOTE,
+    source_id="S1",
+    quote_found=True,
+    verdict="partial",
+    reason="The quote does not mention wind.",
+    url=SOURCE.url,
+    revised=True,
 )
 UNVERIFIED = CheckedClaim(
     text="Wind fell.",
     quote="Wind capacity fell sharply.",
     source_id="S1",
-    status="unverified",
+    quote_found=False,
     reason="quote is not an exact span of the source",
     url=SOURCE.url,
 )
+PENDING = CheckedClaim(text="New.", quote="q", source_id="S1", revised=True)
+ALL = [SUPPORTED, PARTIAL, UNVERIFIED]
 
 
 def make_state(**fields) -> RunState:
@@ -40,7 +62,7 @@ def make_ledger() -> Ledger:
 
 def render(state: RunState, ledger: Ledger) -> str:
     out = io.StringIO()
-    Reporter(Console(file=out, width=120, color_system=None)).final(state, ledger)
+    Reporter(Console(file=out, width=200, color_system=None)).final(state, ledger)
     return out.getvalue()
 
 
@@ -52,6 +74,7 @@ def test_each_node_gets_a_plain_sentence() -> None:
         SkippedPage(url="u3", reason="HTTP 403"),
     ]
     hits = [SearchHit(url="https://a.org/1"), SearchHit(url="https://a.org/2")]
+    repairs = [Repair(index=2, query="wind capacity", passages=[passage, passage])]
     assert describe("plan", {"queries": ["a"]}) == "wrote 1 search query"
     assert describe("plan", {"queries": ["a", "b"]}) == "wrote 2 search queries"
     assert describe("search", {"hits": hits}) == "found 2 pages on 1 site"
@@ -63,23 +86,38 @@ def test_each_node_gets_a_plain_sentence() -> None:
     assert describe("retrieve", {"passages": [passage]}) == (
         "kept the best 1 passage after reranking"
     )
-    assert describe("write", {"claims": [VERIFIED, UNVERIFIED]}) == "wrote 2 claims"
-    assert describe("quote_check", {"checked": [VERIFIED, UNVERIFIED]}) == (
-        "1 verified, 1 unverified"
+    assert describe("write", {"claims": ALL}) == "wrote 3 claims"
+    assert describe("quote_check", {"checked": ALL}) == "2 of 3 quotes found word for word"
+    assert describe("check", {"checked": ALL}) == "1 supported, 1 partial, 1 unverified"
+    assert describe("rewrite", {"repairs": repairs}) == "1 claim failed; wrote a new query for each"
+    assert describe("reretrieve", {"repairs": repairs}) == (
+        "searched the fetched pages again, 2 passages to re-read"
+    )
+    assert describe("revise", {"checked": [*ALL, PENDING]}) == (
+        "rewrote 1 claim from the new passages"
     )
 
 
-def test_final_report_shows_status_quote_source_reason_and_cost() -> None:
-    state = make_state(sources=[SOURCE], checked=[VERIFIED, UNVERIFIED], trace_url="https://t/1")
+def test_final_report_shows_label_quote_reason_source_and_cost() -> None:
+    state = make_state(sources=[SOURCE], checked=ALL, trace_url="https://t/1")
     text = render(state, make_ledger())
-    assert "VERIFIED  Solar grew 24% [in 2023]." in text  # square brackets survive
-    assert '"Solar capacity grew 24% in 2023."' in text
+    assert "1 supported, 1 partial, 1 unverified" in text
+    assert "SUPPORTED  Solar grew 24% [in 2023]." in text  # square brackets survive
+    assert f'"{QUOTE}"' in text
+    assert "PARTIAL  Solar grew 24%, more than wind." in text
+    assert "Why partial: The quote does not mention wind." in text
+    assert "Rewritten after failing the first check" in text
     assert "UNVERIFIED  Wind fell." in text
     assert "Why unverified: quote is not an exact span of the source" in text
     assert "https://a.org/x" in text
     assert "0.0134" in text and "Cap per run: $1.00" in text
     assert "Trace: https://t/1" in text
-    assert "not checked yet" in text
+    assert "shown only the claim and the quote" in text
+
+
+def test_supported_claims_show_no_reason_line() -> None:
+    text = render(make_state(sources=[SOURCE], checked=[SUPPORTED]), make_ledger())
+    assert "Why" not in text and "Rewritten" not in text
 
 
 def test_empty_run_says_why() -> None:
@@ -87,19 +125,24 @@ def test_empty_run_says_why() -> None:
     assert "did not support any claim" in render(make_state(sources=[SOURCE]), make_ledger())
 
 
-def test_progress_line_lists_the_queries() -> None:
+def test_progress_lines_list_the_queries() -> None:
     out = io.StringIO()
     reporter = Reporter(Console(file=out, width=120, color_system=None))
     reporter.on_update("plan", {"queries": ["solar growth 2023", "solar capacity record"]})
+    reporter.on_update("rewrite", {"repairs": [Repair(index=0, query="wind capacity 2023")]})
     text = out.getvalue()
     assert "plan" in text and "wrote 2 search queries" in text
     assert "solar growth 2023" in text and "solar capacity record" in text
+    assert "wind capacity 2023" in text
 
 
-def test_json_output_has_claims_costs_and_no_page_text() -> None:
-    state = make_state(sources=[SOURCE], checked=[VERIFIED, UNVERIFIED], queries=["q"])
+def test_json_output_has_labels_reasons_costs_and_no_page_text() -> None:
+    state = make_state(sources=[SOURCE], checked=ALL, queries=["q"], round=1)
     result = json.loads(to_json(state, make_ledger()))
-    assert [c["status"] for c in result["claims"]] == ["verified", "unverified"]
+    assert [c["label"] for c in result["claims"]] == ["supported", "partial", "unverified"]
+    assert result["claims"][1]["reason"] == "The quote does not mention wind."
+    assert result["claims"][1]["revised"] is True
+    assert result["repair_rounds"] == 1
     assert result["sources"] == [{"id": "S1", "url": SOURCE.url, "title": "A", "chars": 32}]
     assert result["cost"]["total_usd"] == 0.0134
     assert [n["node"] for n in result["cost"]["by_node"]] == ["plan", "search"]
