@@ -406,6 +406,28 @@ def summarise(
         "supported_precision": two["supported_precision"]["value"],
         "coverage": two["coverage"]["value"],
     }
+    # The proposed change after the practice runs: "partial" as its own verdict, not a flag.
+    partial = [x for x in joined if x["two_label"] == "partial"]
+    separate = {
+        "flag_precision": with_interval(
+            lambda ls: flag_precision([x for x in ls if x["two_label"] != "partial"], "two"),
+            groups,
+            draws,
+        ),
+        "supported_precision": two["supported_precision"],
+        "coverage": two["coverage"],  # partial is still a verdict, so coverage is unchanged
+        "partial_share": round(len(partial) / len(joined), 4) if joined else None,
+        "partial_people_label_supported": (
+            round(sum(x["label"] for x in partial) / len(partial), 4) if partial else None
+        ),
+    }
+    separate_finish = {k: separate[k]["value"] for k in FINISH_LINE}
+    two["partial_as_its_own_verdict"] = separate | {
+        "finish_line_passed": all(
+            separate_finish[k] is not None and separate_finish[k] >= v
+            for k, v in FINISH_LINE.items()
+        )
+    }
     n = len(joined)
     usd_quote = sum(x["usd_quote"] for x in joined)
     usd_page = sum(x["usd_page"] for x in joined)

@@ -1363,3 +1363,44 @@ roughly $0.30 to $0.45 with Sonnet, so the per-audit cap goes from $0.50 to $0.7
 - **Later, for step 4.** OpenAI's Responses API can answer with web search and citations
   (`url_citation` annotations with `start_index` and `end_index`). That is a way to collect
   ChatGPT-style answers. It gets its own decision entry and cost estimate.
+
+### What the practice runs showed (550 dev rows, all Haiku unless named)
+
+Every number below is in `evals/results/aggrefact_dev550_*.json`. Cost of all three runs: $0.77.
+
+| Run | Flags right | "Supported" right | Coverage | Kept? |
+|---|---|---|---|---|
+| Quote judge alone (for comparison) | 0.560 | 0.922 | 1.000 | |
+| Page judge alone (for comparison) | 0.684 | 0.890 | 1.000 | |
+| 1. Two judges | 0.695 | 0.940 | 0.804 | the base |
+| 2. Page judge is GPT (`gpt-6-luna`) | 0.706 | 0.926 | 0.809 | no |
+| 3. Plus quote context | 0.709 | 0.929 | 0.847 | no |
+
+- **Two judges help.** Run 1 beats either judge alone on flags and on "supported". Balanced
+  accuracy on the claims with a verdict is 0.794.
+- **The GPT judge made no clear difference.** "Supported" right fell 0.014, more than the 0.01
+  allowed, so by the rule set in advance it is not kept. It cost $0.10 against Haiku's $0.15.
+- **Context raised coverage by 0.043,** but "supported" right fell 0.0107, just over the 0.01
+  allowed, so it is not kept either.
+- **No run met the flag bar, for one reason.** In run 1, "partial" flags are right half the time
+  (48 of 96). "Not on the cited page" flags are right 112 of 142 times, and "contradicted" 20 of
+  21. Both judges agree a detail of those partial claims is not stated, but the people who
+  labelled the benchmark accepted half of them anyway.
+
+### Proposed change, waiting for Aditya's yes
+
+Make "partial" its own verdict instead of a flag: "the page backs the main point but not every
+detail". It is still shown, with the detail that is missing. Flags become "not on the cited
+page" and "contradicted" only. The real-world audit's headline would then count only those two:
+citations that fail outright.
+
+On run 1 this gives flags right 0.810 (0.750 to 0.862), "supported" right 0.940 and coverage
+0.804. That passes all three bars (`partial_as_its_own_verdict` in
+`aggrefact_dev550_q-haiku_p-haiku.json`). Partial is 17% of claims.
+
+If approved, the confirming run is run 1's setup on the fresh test rows (`test2`), scored with
+this definition, once. It costs about $0.40.
+
+**Trade-off.** The headline would then leave out claims where a detail is missing. It gets more
+conservative and easier to defend, but it counts fewer failures. The change was found on
+practice rows, which is what they are for. The fresh test rows have not been seen.

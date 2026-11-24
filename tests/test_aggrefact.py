@@ -170,3 +170,24 @@ def test_nothing_is_scored_without_both_judges(missing, settings, tmp_path) -> N
     found, _, _ = run_both(settings, tmp_path)
     found[missing] = []
     assert join(found["quote"], found["page"]) == []
+
+
+def test_partial_can_be_scored_as_its_own_verdict() -> None:
+    base = {"dataset": "A", "usd": 0.0, "quote_offsets": []}
+    quote = [
+        base | {"row": 1, "label": 1, "quote_label": "partial"},
+        base | {"row": 2, "label": 0, "quote_label": "not_found"},
+        base | {"row": 3, "label": 1, "quote_label": "supported"},
+    ]
+    page = [
+        base
+        | {"row": n, "label": q["label"], "page_judged": "not_supported" if n < 3 else "supported"}
+        for n, q in zip((1, 2, 3), quote, strict=True)
+    ]
+    body = summarise(quote, page, "dev55", {"quote": "q", "page": "p"})
+    two = body["two_judges"]
+    assert two["flag_precision"]["value"] == 0.5  # partial counted as a flag: one of two right
+    separate = two["partial_as_its_own_verdict"]
+    assert separate["flag_precision"]["value"] == 1.0 and separate["partial_share"] == 0.3333
+    assert separate["partial_people_label_supported"] == 1.0
+    assert separate["coverage"]["value"] == 1.0

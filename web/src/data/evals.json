@@ -1408,5 +1408,539 @@
    "ci_low": -0.1198,
    "ci_high": -0.038
   }
+ },
+ "aggrefact_dev550_q-haiku-ctx_p-haiku": {
+  "generated_at": "2026-11-24T17:35:30+00:00",
+  "sample": "dev550",
+  "split": "dev",
+  "sample_seed": 20261124,
+  "rows": 550,
+  "judges": {
+   "quote": "claude-haiku-5-5",
+   "page": "claude-haiku-5-5",
+   "quote_context": "True"
+  },
+  "metric": "balanced accuracy per sub-dataset, then their plain mean (95% bootstrap)",
+  "two_judges": {
+   "balanced_accuracy": {
+    "value": 0.7949,
+    "ci_low": 0.7475,
+    "ci_high": 0.8374
+   },
+   "flag_precision": {
+    "value": 0.7087,
+    "ci_low": 0.6557,
+    "ci_high": 0.7575
+   },
+   "supported_precision": {
+    "value": 0.9292,
+    "ci_low": 0.8945,
+    "ci_high": 0.9614
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.8198,
+    "AggreFact-XSum": 0.6995,
+    "ClaimVerify": 0.8516,
+    "ExpertQA": 0.5662,
+    "FactCheck-GPT": 0.6987,
+    "Lfqa": 0.8701,
+    "RAGTruth": 0.8636,
+    "Reveal": 0.9865,
+    "TofuEval-MediaS": 0.7833,
+    "TofuEval-MeetB": 0.8819,
+    "Wice": 0.7222
+   },
+   "coverage": {
+    "value": 0.8473,
+    "ci_low": 0.8182,
+    "ci_high": 0.8745
+   },
+   "balanced_accuracy_abstain_counted_wrong": {
+    "value": 0.6875,
+    "ci_low": 0.6451,
+    "ci_high": 0.7272
+   },
+   "coverage_per_dataset": {
+    "AggreFact-CNN": 0.8,
+    "AggreFact-XSum": 0.8,
+    "ClaimVerify": 0.82,
+    "ExpertQA": 0.92,
+    "FactCheck-GPT": 0.98,
+    "Lfqa": 1.0,
+    "RAGTruth": 0.78,
+    "Reveal": 0.9,
+    "TofuEval-MediaS": 0.8,
+    "TofuEval-MeetB": 0.82,
+    "Wice": 0.7
+   },
+   "labels": {
+    "supported": 212,
+    "not_found": 141,
+    "partial": 85,
+    "needs_human": 84,
+    "contradicted": 28
+   },
+   "partial_as_its_own_verdict": {
+    "flag_precision": {
+     "value": 0.8047,
+     "ci_low": 0.7453,
+     "ci_high": 0.8598
+    },
+    "supported_precision": {
+     "value": 0.9292,
+     "ci_low": 0.8945,
+     "ci_high": 0.9614
+    },
+    "coverage": {
+     "value": 0.8473,
+     "ci_low": 0.8182,
+     "ci_high": 0.8745
+    },
+    "partial_share": 0.1545,
+    "partial_people_label_supported": 0.4824,
+    "finish_line_passed": false
+   }
+  },
+  "quote_judge_alone": {
+   "balanced_accuracy": {
+    "value": 0.7513,
+    "ci_low": 0.7119,
+    "ci_high": 0.7877
+   },
+   "flag_precision": {
+    "value": 0.6068,
+    "ci_low": 0.5576,
+    "ci_high": 0.6537
+   },
+   "supported_precision": {
+    "value": 0.9163,
+    "ci_low": 0.8811,
+    "ci_high": 0.9518
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.8,
+    "AggreFact-XSum": 0.66,
+    "ClaimVerify": 0.7434,
+    "ExpertQA": 0.5501,
+    "FactCheck-GPT": 0.7214,
+    "Lfqa": 0.8701,
+    "RAGTruth": 0.8182,
+    "Reveal": 0.9881,
+    "TofuEval-MediaS": 0.7183,
+    "TofuEval-MeetB": 0.7809,
+    "Wice": 0.6136
+   },
+   "labels": {
+    "supported": 227,
+    "partial": 152,
+    "not_found": 142,
+    "contradicted": 29
+   },
+   "rows_with_an_exact_quote": 409
+  },
+  "page_judge_alone": {
+   "balanced_accuracy": {
+    "value": 0.7767,
+    "ci_low": 0.7341,
+    "ci_high": 0.8157
+   },
+   "flag_precision": {
+    "value": 0.684,
+    "ci_low": 0.6294,
+    "ci_high": 0.7326
+   },
+   "supported_precision": {
+    "value": 0.8897,
+    "ci_low": 0.8531,
+    "ci_high": 0.9236
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.6889,
+    "AggreFact-XSum": 0.7,
+    "ClaimVerify": 0.8355,
+    "ExpertQA": 0.6014,
+    "FactCheck-GPT": 0.676,
+    "Lfqa": 0.8701,
+    "RAGTruth": 0.8523,
+    "Reveal": 0.9286,
+    "TofuEval-MediaS": 0.7183,
+    "TofuEval-MeetB": 0.845,
+    "Wice": 0.8279
+   }
+  },
+  "finish_line": {
+   "thresholds": {
+    "flag_precision": 0.8,
+    "supported_precision": 0.93,
+    "coverage": 0.7
+   },
+   "measured": {
+    "flag_precision": 0.7087,
+    "supported_precision": 0.9292,
+    "coverage": 0.8473
+   },
+   "passed": false
+  },
+  "usd": {
+   "quote_judge": 0.2757,
+   "page_judge": 0.1474,
+   "per_claim_both": 0.000769
+  }
+ },
+ "aggrefact_dev550_q-haiku_p-haiku": {
+  "generated_at": "2026-11-24T17:35:13+00:00",
+  "sample": "dev550",
+  "split": "dev",
+  "sample_seed": 20261124,
+  "rows": 550,
+  "judges": {
+   "quote": "claude-haiku-5-5",
+   "page": "claude-haiku-5-5",
+   "quote_context": "False"
+  },
+  "metric": "balanced accuracy per sub-dataset, then their plain mean (95% bootstrap)",
+  "two_judges": {
+   "balanced_accuracy": {
+    "value": 0.7944,
+    "ci_low": 0.7576,
+    "ci_high": 0.83
+   },
+   "flag_precision": {
+    "value": 0.695,
+    "ci_low": 0.6412,
+    "ci_high": 0.7444
+   },
+   "supported_precision": {
+    "value": 0.9399,
+    "ci_low": 0.905,
+    "ci_high": 0.9721
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.9821,
+    "AggreFact-XSum": 0.6333,
+    "ClaimVerify": 0.9074,
+    "ExpertQA": 0.6306,
+    "FactCheck-GPT": 0.6396,
+    "Lfqa": 0.8619,
+    "RAGTruth": 0.8382,
+    "Reveal": 0.9615,
+    "TofuEval-MediaS": 0.7875,
+    "TofuEval-MeetB": 0.8719,
+    "Wice": 0.6243
+   },
+   "coverage": {
+    "value": 0.8036,
+    "ci_low": 0.7691,
+    "ci_high": 0.8345
+   },
+   "balanced_accuracy_abstain_counted_wrong": {
+    "value": 0.6447,
+    "ci_low": 0.6002,
+    "ci_high": 0.685
+   },
+   "coverage_per_dataset": {
+    "AggreFact-CNN": 0.6,
+    "AggreFact-XSum": 0.72,
+    "ClaimVerify": 0.72,
+    "ExpertQA": 0.92,
+    "FactCheck-GPT": 0.92,
+    "Lfqa": 0.96,
+    "RAGTruth": 0.8,
+    "Reveal": 0.92,
+    "TofuEval-MediaS": 0.76,
+    "TofuEval-MeetB": 0.84,
+    "Wice": 0.68
+   },
+   "labels": {
+    "supported": 183,
+    "not_found": 142,
+    "needs_human": 108,
+    "partial": 96,
+    "contradicted": 21
+   },
+   "partial_as_its_own_verdict": {
+    "flag_precision": {
+     "value": 0.8098,
+     "ci_low": 0.75,
+     "ci_high": 0.8621
+    },
+    "supported_precision": {
+     "value": 0.9399,
+     "ci_low": 0.905,
+     "ci_high": 0.9721
+    },
+    "coverage": {
+     "value": 0.8036,
+     "ci_low": 0.7691,
+     "ci_high": 0.8345
+    },
+    "partial_share": 0.1745,
+    "partial_people_label_supported": 0.5,
+    "finish_line_passed": true
+   }
+  },
+  "quote_judge_alone": {
+   "balanced_accuracy": {
+    "value": 0.7198,
+    "ci_low": 0.687,
+    "ci_high": 0.7507
+   },
+   "flag_precision": {
+    "value": 0.5602,
+    "ci_low": 0.5112,
+    "ci_high": 0.6078
+   },
+   "supported_precision": {
+    "value": 0.9223,
+    "ci_low": 0.8836,
+    "ci_high": 0.9581
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.8,
+    "AggreFact-XSum": 0.58,
+    "ClaimVerify": 0.7588,
+    "ExpertQA": 0.634,
+    "FactCheck-GPT": 0.6107,
+    "Lfqa": 0.8344,
+    "RAGTruth": 0.7841,
+    "Reveal": 0.9018,
+    "TofuEval-MediaS": 0.6627,
+    "TofuEval-MeetB": 0.8007,
+    "Wice": 0.5503
+   },
+   "labels": {
+    "supported": 193,
+    "partial": 189,
+    "not_found": 146,
+    "contradicted": 22
+   },
+   "rows_with_an_exact_quote": 412
+  },
+  "page_judge_alone": {
+   "balanced_accuracy": {
+    "value": 0.7767,
+    "ci_low": 0.7341,
+    "ci_high": 0.8157
+   },
+   "flag_precision": {
+    "value": 0.684,
+    "ci_low": 0.6294,
+    "ci_high": 0.7326
+   },
+   "supported_precision": {
+    "value": 0.8897,
+    "ci_low": 0.8531,
+    "ci_high": 0.9236
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.6889,
+    "AggreFact-XSum": 0.7,
+    "ClaimVerify": 0.8355,
+    "ExpertQA": 0.6014,
+    "FactCheck-GPT": 0.676,
+    "Lfqa": 0.8701,
+    "RAGTruth": 0.8523,
+    "Reveal": 0.9286,
+    "TofuEval-MediaS": 0.7183,
+    "TofuEval-MeetB": 0.845,
+    "Wice": 0.8279
+   }
+  },
+  "finish_line": {
+   "thresholds": {
+    "flag_precision": 0.8,
+    "supported_precision": 0.93,
+    "coverage": 0.7
+   },
+   "measured": {
+    "flag_precision": 0.695,
+    "supported_precision": 0.9399,
+    "coverage": 0.8036
+   },
+   "passed": false
+  },
+  "usd": {
+   "quote_judge": 0.2527,
+   "page_judge": 0.1474,
+   "per_claim_both": 0.000728
+  }
+ },
+ "aggrefact_dev550_q-haiku_p-luna": {
+  "generated_at": "2026-11-24T17:35:22+00:00",
+  "sample": "dev550",
+  "split": "dev",
+  "sample_seed": 20261124,
+  "rows": 550,
+  "judges": {
+   "quote": "claude-haiku-5-5",
+   "page": "gpt-6-luna",
+   "quote_context": "False"
+  },
+  "metric": "balanced accuracy per sub-dataset, then their plain mean (95% bootstrap)",
+  "two_judges": {
+   "balanced_accuracy": {
+    "value": 0.7869,
+    "ci_low": 0.751,
+    "ci_high": 0.8212
+   },
+   "flag_precision": {
+    "value": 0.7063,
+    "ci_low": 0.6534,
+    "ci_high": 0.7549
+   },
+   "supported_precision": {
+    "value": 0.9261,
+    "ci_low": 0.8869,
+    "ci_high": 0.9627
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.9655,
+    "AggreFact-XSum": 0.5938,
+    "ClaimVerify": 0.8899,
+    "ExpertQA": 0.6016,
+    "FactCheck-GPT": 0.6612,
+    "Lfqa": 0.8675,
+    "RAGTruth": 0.8485,
+    "Reveal": 0.9625,
+    "TofuEval-MediaS": 0.7143,
+    "TofuEval-MeetB": 0.901,
+    "Wice": 0.65
+   },
+   "coverage": {
+    "value": 0.8091,
+    "ci_low": 0.7745,
+    "ci_high": 0.8418
+   },
+   "balanced_accuracy_abstain_counted_wrong": {
+    "value": 0.6591,
+    "ci_low": 0.6181,
+    "ci_high": 0.697
+   },
+   "coverage_per_dataset": {
+    "AggreFact-CNN": 0.62,
+    "AggreFact-XSum": 0.8,
+    "ClaimVerify": 0.74,
+    "ExpertQA": 0.9,
+    "FactCheck-GPT": 0.92,
+    "Lfqa": 0.88,
+    "RAGTruth": 0.78,
+    "Reveal": 0.94,
+    "TofuEval-MediaS": 0.8,
+    "TofuEval-MeetB": 0.78,
+    "Wice": 0.74
+   },
+   "labels": {
+    "supported": 176,
+    "not_found": 142,
+    "needs_human": 105,
+    "partial": 105,
+    "contradicted": 22
+   },
+   "partial_as_its_own_verdict": {
+    "flag_precision": {
+     "value": 0.811,
+     "ci_low": 0.7515,
+     "ci_high": 0.8644
+    },
+    "supported_precision": {
+     "value": 0.9261,
+     "ci_low": 0.8869,
+     "ci_high": 0.9627
+    },
+    "coverage": {
+     "value": 0.8091,
+     "ci_low": 0.7745,
+     "ci_high": 0.8418
+    },
+    "partial_share": 0.1909,
+    "partial_people_label_supported": 0.4571,
+    "finish_line_passed": false
+   }
+  },
+  "quote_judge_alone": {
+   "balanced_accuracy": {
+    "value": 0.7198,
+    "ci_low": 0.687,
+    "ci_high": 0.7507
+   },
+   "flag_precision": {
+    "value": 0.5602,
+    "ci_low": 0.5112,
+    "ci_high": 0.6078
+   },
+   "supported_precision": {
+    "value": 0.9223,
+    "ci_low": 0.8836,
+    "ci_high": 0.9581
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.8,
+    "AggreFact-XSum": 0.58,
+    "ClaimVerify": 0.7588,
+    "ExpertQA": 0.634,
+    "FactCheck-GPT": 0.6107,
+    "Lfqa": 0.8344,
+    "RAGTruth": 0.7841,
+    "Reveal": 0.9018,
+    "TofuEval-MediaS": 0.6627,
+    "TofuEval-MeetB": 0.8007,
+    "Wice": 0.5503
+   },
+   "labels": {
+    "supported": 193,
+    "partial": 189,
+    "not_found": 146,
+    "contradicted": 22
+   },
+   "rows_with_an_exact_quote": 412
+  },
+  "page_judge_alone": {
+   "balanced_accuracy": {
+    "value": 0.7829,
+    "ci_low": 0.7433,
+    "ci_high": 0.8208
+   },
+   "flag_precision": {
+    "value": 0.6713,
+    "ci_low": 0.6205,
+    "ci_high": 0.72
+   },
+   "supported_precision": {
+    "value": 0.9129,
+    "ci_low": 0.8776,
+    "ci_high": 0.9455
+   },
+   "per_dataset": {
+    "AggreFact-CNN": 0.6778,
+    "AggreFact-XSum": 0.7,
+    "ClaimVerify": 0.8487,
+    "ExpertQA": 0.5956,
+    "FactCheck-GPT": 0.7343,
+    "Lfqa": 0.8295,
+    "RAGTruth": 0.8636,
+    "Reveal": 0.9405,
+    "TofuEval-MediaS": 0.6905,
+    "TofuEval-MeetB": 0.8904,
+    "Wice": 0.8409
+   }
+  },
+  "finish_line": {
+   "thresholds": {
+    "flag_precision": 0.8,
+    "supported_precision": 0.93,
+    "coverage": 0.7
+   },
+   "measured": {
+    "flag_precision": 0.7063,
+    "supported_precision": 0.9261,
+    "coverage": 0.8091
+   },
+   "passed": false
+  },
+  "usd": {
+   "quote_judge": 0.2527,
+   "page_judge": 0.0957,
+   "per_claim_both": 0.000634
+  }
  }
 }

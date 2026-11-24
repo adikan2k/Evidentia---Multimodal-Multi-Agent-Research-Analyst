@@ -128,6 +128,82 @@ haiku, 550 rows: auditor minus direct -0.080 (-0.120 to -0.038). Auditor labels:
 | TofuEval-MeetB | 50 | 0.802 | 0.847 |
 | Wice | 50 | 0.651 | 0.786 |
 
+## Two judges on LLM-AggreFact
+
+A claim gets a verdict only when the quote judge (exact quotes, then a check on the quotes alone) and the page judge (the claim and the page) agree. Otherwise it is 'needs a human'. Flag precision: of the claims flagged, the share people label unsupported. Supported precision: of the claims called supported, the share people label supported. Coverage: the share that get a verdict. 95% intervals in brackets.
+
+### dev550: quote judge claude-haiku-5-5 with quote context, page judge claude-haiku-5-5 (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.795 (0.748 to 0.837) | 0.709 (0.656 to 0.757) | 0.929 (0.894 to 0.961) | 0.847 (0.818 to 0.875) |
+| Quote judge alone | 0.751 (0.712 to 0.788) | 0.607 (0.558 to 0.654) | 0.916 (0.881 to 0.952) | 1.000 |
+| Page judge alone | 0.777 (0.734 to 0.816) | 0.684 (0.629 to 0.733) | 0.890 (0.853 to 0.924) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.688 (0.645 to 0.727). Labels: 212 supported, 141 not_found, 85 partial, 84 needs_human, 28 contradicted. Cost per claim, both judges: $0.00077. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.820 | 0.800 | 0.800 | 0.689 |
+| AggreFact-XSum | 0.700 | 0.800 | 0.660 | 0.700 |
+| ClaimVerify | 0.852 | 0.820 | 0.743 | 0.836 |
+| ExpertQA | 0.566 | 0.920 | 0.550 | 0.601 |
+| FactCheck-GPT | 0.699 | 0.980 | 0.721 | 0.676 |
+| Lfqa | 0.870 | 1.000 | 0.870 | 0.870 |
+| RAGTruth | 0.864 | 0.780 | 0.818 | 0.852 |
+| Reveal | 0.987 | 0.900 | 0.988 | 0.929 |
+| TofuEval-MediaS | 0.783 | 0.800 | 0.718 | 0.718 |
+| TofuEval-MeetB | 0.882 | 0.820 | 0.781 | 0.845 |
+| Wice | 0.722 | 0.700 | 0.614 | 0.828 |
+
+### dev550: quote judge claude-haiku-5-5, page judge claude-haiku-5-5 (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.794 (0.758 to 0.830) | 0.695 (0.641 to 0.744) | 0.940 (0.905 to 0.972) | 0.804 (0.769 to 0.835) |
+| Quote judge alone | 0.720 (0.687 to 0.751) | 0.560 (0.511 to 0.608) | 0.922 (0.884 to 0.958) | 1.000 |
+| Page judge alone | 0.777 (0.734 to 0.816) | 0.684 (0.629 to 0.733) | 0.890 (0.853 to 0.924) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.645 (0.600 to 0.685). Labels: 183 supported, 142 not_found, 108 needs_human, 96 partial, 21 contradicted. Cost per claim, both judges: $0.00073. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.982 | 0.600 | 0.800 | 0.689 |
+| AggreFact-XSum | 0.633 | 0.720 | 0.580 | 0.700 |
+| ClaimVerify | 0.907 | 0.720 | 0.759 | 0.836 |
+| ExpertQA | 0.631 | 0.920 | 0.634 | 0.601 |
+| FactCheck-GPT | 0.640 | 0.920 | 0.611 | 0.676 |
+| Lfqa | 0.862 | 0.960 | 0.834 | 0.870 |
+| RAGTruth | 0.838 | 0.800 | 0.784 | 0.852 |
+| Reveal | 0.962 | 0.920 | 0.902 | 0.929 |
+| TofuEval-MediaS | 0.787 | 0.760 | 0.663 | 0.718 |
+| TofuEval-MeetB | 0.872 | 0.840 | 0.801 | 0.845 |
+| Wice | 0.624 | 0.680 | 0.550 | 0.828 |
+
+### dev550: quote judge claude-haiku-5-5, page judge gpt-6-luna (550 rows)
+
+| System | Balanced accuracy | Flag precision | Supported precision | Coverage |
+|---|---|---|---|---|
+| Two judges | 0.787 (0.751 to 0.821) | 0.706 (0.653 to 0.755) | 0.926 (0.887 to 0.963) | 0.809 (0.774 to 0.842) |
+| Quote judge alone | 0.720 (0.687 to 0.751) | 0.560 (0.511 to 0.608) | 0.922 (0.884 to 0.958) | 1.000 |
+| Page judge alone | 0.783 (0.743 to 0.821) | 0.671 (0.621 to 0.720) | 0.913 (0.878 to 0.946) | 1.000 |
+
+Two judges, with every 'needs a human' counted as wrong: balanced accuracy 0.659 (0.618 to 0.697). Labels: 176 supported, 142 not_found, 105 needs_human, 105 partial, 22 contradicted. Cost per claim, both judges: $0.00063. D-038 finish line (flag_precision 0.8, supported_precision 0.93, coverage 0.7): not passed.
+
+| Sub-dataset | Two judges | Coverage | Quote alone | Page alone |
+|---|---|---|---|---|
+| AggreFact-CNN | 0.966 | 0.620 | 0.800 | 0.678 |
+| AggreFact-XSum | 0.594 | 0.800 | 0.580 | 0.700 |
+| ClaimVerify | 0.890 | 0.740 | 0.759 | 0.849 |
+| ExpertQA | 0.602 | 0.900 | 0.634 | 0.596 |
+| FactCheck-GPT | 0.661 | 0.920 | 0.611 | 0.734 |
+| Lfqa | 0.868 | 0.880 | 0.834 | 0.830 |
+| RAGTruth | 0.849 | 0.780 | 0.784 | 0.864 |
+| Reveal | 0.963 | 0.940 | 0.902 | 0.941 |
+| TofuEval-MediaS | 0.714 | 0.800 | 0.663 | 0.691 |
+| TofuEval-MeetB | 0.901 | 0.780 | 0.801 | 0.890 |
+| Wice | 0.650 | 0.740 | 0.550 | 0.841 |
+
 ## What failed
 
 - Retrieval, lowest recall with hybrid + rerank: q34 (0.33), q25 (0.50), q16 (0.67), q21 (0.67), q26 (0.67), q33 (0.67).
