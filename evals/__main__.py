@@ -1,5 +1,7 @@
 """Entry point: `python -m evals <step>`. With no step, runs every step that needs no human.
 
+`python -m evals aggrefact --help` is the LLM-AggreFact run (D-037), started only by hand.
+
 Saved model outputs in `evals/runs/` are reused, so a second run only pays for what is missing.
 `--fresh` deletes them first, which makes every model call again.
 """
@@ -59,6 +61,11 @@ def main() -> None:
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
+    if args[:1] == ["aggrefact"]:  # has its own options; never part of the automatic steps
+        from evals.aggrefact import main as aggrefact
+
+        aggrefact(args[1:])
+        return
     if "--fresh" in args:
         args.remove("--fresh")
         forget_saved_outputs()

@@ -34,6 +34,8 @@ dev = [
 # Only the evaluation scripts under evals/ use these. The product does not import them.
 evals = [
     "deepeval==4.3.5",
+    "huggingface-hub==1.16.1",
+    "pyarrow==26.0.1",
 ]
 
 [tool.uv]
