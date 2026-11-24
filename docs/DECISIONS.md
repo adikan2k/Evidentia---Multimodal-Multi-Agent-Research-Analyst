@@ -266,3 +266,111 @@ which is the point of the project). A full-screen terminal UI (more code than th
 
 **Trade-off.** One more dependency for output only. The pipeline never imports it, so the API in
 M4 does not carry it.
+
+---
+
+The entries below cover milestone M2. **Approved by Aditya on 2026-11-24.**
+
+## D-012. The checker
+
+**What.** A new `check` node runs after the quote check. For each claim whose quote was found on
+the page, it makes one separate model call that is shown exactly two things: the claim and the
+quote. It never sees the question, the other claims, the passages, the source URL or anything the
+writer produced besides that one sentence. It returns one label and a one-sentence reason:
+
+- `supported`: the quote on its own states everything the claim says.
+- `partial`: the quote backs the main point, but the claim adds something the quote does not
+  state, such as a number, a date, a comparison or a cause.
+- `unsupported`: the quote does not back the main point, contradicts it, or is about something
+  else.
+
+The model is `claude-sonnet-5-5` at medium effort, set in `Settings`. The quote is web text, so it
+goes inside the same random-tag data block the writer uses. The calls run at the same time.
+
+**Why.** The writer chose the quote and wrote the claim, so it is the worst judge of its own work.
+A fresh call that sees only the two strings cannot be swayed by the writer's framing or by other
+claims. One call per claim also gives M3 a clean unit to label by hand: one claim, one quote, one
+verdict.
+
+**Considered.** One call for all claims (cheaper, but verdicts can influence each other and the
+checker would see the full answer). A different model as checker, such as Opus (possibly more
+independent; M3 can measure it, since the model is a setting). A smaller model (cheaper, likely
+weaker on subtle over-claims; also for M3 to measure).
+
+**Trade-off.** About eight extra model calls per run. Estimated at 2 to 3 cents; the first live run
+will give the real figure.
+
+## D-013. The repair loop
+
+**What.** After `check`, a claim has failed if its quote was not found on the page or the checker
+said `unsupported`. If any claim failed and no repair round has run yet, the graph takes one loop:
+
+1. `rewrite`: one `claude-haiku-5-5` call writes a new retrieval query for each failed claim,
+   using the claim and the reason it failed.
+2. `reretrieve`: each query runs the same hybrid search and rerank over the pages already fetched
+   for this run.
+3. `revise`: for each failed claim, the writer model gets the claim, the reason and the new
+   passages. It returns a corrected claim with a new quote, or says the passages do not back it.
+4. The revised claims go through the quote check and the checker again.
+
+A claim that still fails, or that the reviser could not back, is final: `unverified`. `partial`
+claims do not trigger the loop; they are shown as partial with the checker's reason.
+
+There is one repair round (`max_repair_rounds = 1`). The plan's diagram says "max 2 loops" and its
+M2 text says "one more retrieval"; this follows the M2 text and leaves the number as a setting.
+
+**Why.** A failed claim is often a retrieval miss: the fact is on a fetched page, but the first
+search for the whole question did not surface that passage. Searching again for the specific claim
+finds it. The loop is bounded so a run cannot spin and its worst-case cost is known.
+
+**Considered.** A new web search in the loop (could find pages the first search missed, but costs
+search credits and a second fetch-and-index pass; better judged with M3 numbers). Using the claim
+text itself as the query with no model call (free, but ignores why the claim failed). Also
+repairing `partial` claims by trimming them to what the quote says (would raise the supported
+count, but the plan treats partial as an honest final label, and M3 should measure before we
+change that).
+
+**Trade-off.** A fact that is true but not on any fetched page ends as `unverified`. That is the
+intended behaviour: the label describes our evidence, not the world.
+
+## D-014. Final labels
+
+**What.** Every claim ends with exactly one of three labels, shown in the report and the JSON:
+
+| Quote on the page | Checker verdict | Final label |
+|---|---|---|
+| yes | supported | `supported` |
+| yes | partial | `partial` |
+| yes | unsupported (after the repair round) | `unverified` |
+| no (after the repair round) | not run | `unverified` |
+
+Each claim also records the checker's reason and whether it was revised in the repair round. The
+report prints the reason under every `partial` and `unverified` claim, and a summary line with the
+three counts. M1's `verified` label goes away, because "the quote exists" is no longer the claim
+the report makes.
+
+**Why.** One label per claim keeps the report honest and simple to read, and it is the unit M3
+scores.
+
+**Considered.** Keeping `verified` as a fourth label (two overlapping words for the reader to
+decode). Hiding unverified claims (cleaner page, but hides exactly what the project is about).
+
+**Trade-off.** `unverified` covers two different failures: a bad quote and an unbacked claim. The
+reason line tells them apart.
+
+## D-015. The cost cap when calls run at the same time
+
+**What.** The ledger gains reservations. Before a call, its worst-case cost is reserved; the check
+is `spent + reserved + this call <= cap`. When the call returns, the reservation is released and
+the actual cost is recorded.
+
+**Why.** M1 made one paid call at a time, so checking `spent` was enough. The checker makes several
+calls at once. Without reservations, eight calls could each see room under the cap and together
+pass it.
+
+**Considered.** Running the checker calls one after another (keeps the old ledger, but makes every
+run slower for no accuracy gain). A lock around all paid calls (same slowdown).
+
+**Trade-off.** Reservations use worst-case prices, so near the cap a call can be refused even
+though the actual costs would have fitted. The cap staying hard matters more.
+
