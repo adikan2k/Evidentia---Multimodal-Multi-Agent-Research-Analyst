@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Badge } from "@/components/ui/badge";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -127,10 +126,7 @@ export default function AskPage() {
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-white font-semibold flex items-center">
                   <Zap className="w-5 h-5 mr-2 text-yellow-400 animate-pulse" />
-                  Trending Research Topics
-                  <Badge className="ml-2 bg-green-500/20 text-green-400 border-green-500/30 text-xs">
-                    Live Updates
-                  </Badge>
+                  Example topics
                 </h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -143,12 +139,9 @@ export default function AskPage() {
                     }}
                     className="text-left p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 hover:border-blue-400/30 transition-all duration-300 group"
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="text-white/80 group-hover:text-white text-sm">
-                        {topic}
-                      </span>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                    </div>
+                    <span className="text-white/80 group-hover:text-white text-sm">
+                      {topic}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -181,7 +174,7 @@ export default function AskPage() {
             )}
 
             {/* Main Content */}
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="max-w-3xl mx-auto">
               {/* Research Form */}
               <div className="space-y-6">
                 <GlassCard variant="strong" className="p-8">
@@ -308,33 +301,6 @@ export default function AskPage() {
                     <p className="text-white/60 text-sm">PDF, JSON, CSV formats</p>
                   </GlassCard>
                 </div>
-              </div>
-
-              {/* Examples Panel */}
-              <div className="space-y-6">
-                {/* Popular topics already shown at top, so this section is removed */}
-
-                <GlassCard variant="subtle" className="p-6">
-                  <h3 className="text-white font-semibold mb-4">Research Stats</h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/60 text-sm">Sources Analyzed</span>
-                      <span className="text-white font-semibold">10M+</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/60 text-sm">Research Reports</span>
-                      <span className="text-white font-semibold">50K+</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/60 text-sm">Active Users</span>
-                      <span className="text-white font-semibold">5K+</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/60 text-sm">Avg. Time Saved</span>
-                      <span className="text-white font-semibold">2.5 hrs</span>
-                    </div>
-                  </div>
-                </GlassCard>
               </div>
             </div>
           </div>
