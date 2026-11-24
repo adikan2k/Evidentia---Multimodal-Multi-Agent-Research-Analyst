@@ -947,3 +947,84 @@ stays honest.
   context window now stops at the edges of the quote's own pages.
 - On a narrow screen the run layout scrolled sideways; its single column is now capped at the
   screen width.
+
+# After M5: from research agent to auditor
+
+## D-034. Evidentia becomes an auditor of other AI tools' answers
+
+**What.** The main product changes from "a research agent that proves every sentence" to "an
+auditor that checks the citations in any AI answer". The research pipeline stays and keeps
+working, but the work from here goes into the auditor, in this order:
+
+1. Clean-up: the resolved-address guard (D-035), the old code removed, an accurate README,
+   `rebuild` merged into `main` (D-036).
+2. The auditor's core: split an answer into claims, fetch each cited page, find the exact words,
+   and label each claim supported, partial, not on the cited page, contradicted, or dead link.
+   A contradiction must also be an exact quote. Then a run on LLM-AggreFact, a public set of
+   claim and document pairs labelled by people.
+3. Audit mode on the site: paste an answer, see it marked up with a scorecard, try to break it.
+4. A real-world audit of AI tools' answers, with a results page.
+5. A citation repair loop, then the hybrid-search rerun on finding one sentence in a page.
+6. MCP tools (`check_claim`, `audit_answer`), then image evidence.
+
+Each new module still gets its own entry here before it is built.
+
+**Why.** Our own evals: the pipeline was no more accurate than one-shot RAG (0.928 against
+0.917, intervals overlapping) at about 3.5 times the cost, while the checker caught 49 of 50
+deliberately broken claims (`evals/results/`). On clean pages our writer rarely errs, so the
+checker has little to catch. Answers from other AI tools are where wrong citations are, and a
+reviewer pointed this out.
+
+**Considered.** Keep improving the research agent (more agents, better retrieval): the evals
+give no sign that it would beat plain RAG by much. A redesign of the site: it already works.
+
+**Trade-off.** The README and the pitch change, and the research pipeline becomes the second
+feature. Numbers about other tools must come from our own audit; published figures from other
+studies cannot appear on the site (rule 7).
+
+## D-035. Check the address a host name resolves to, at the moment of connecting
+
+**What.** The fetcher's HTTP client connects only to public addresses. Every connection,
+including robots.txt and every redirect hop, resolves the host name, refuses if any address it
+resolves to is not public (loopback, private ranges, link-local such as the cloud metadata
+address, and so on), and then connects to the address it checked. The existing check on the
+host name as written stays as a quick first filter.
+
+**Why.** Until now only the name as written was checked. A public domain whose DNS points at
+`127.0.0.1` or `169.254.169.254` passed. Search results could already contain such a name, and
+the auditor will fetch links that visitors paste, so this must hold before step 3.
+
+**How.** httpx 0.28.1 has no public setting for name resolution, so the fetcher's transport is
+given an httpcore connection pool (httpcore 1.0.9) with a wrapped network backend. Checking at
+connect time, then connecting to the checked address, also closes DNS rebinding (a name that
+answers with a public address when checked and a private one when used). TLS still checks the
+certificate against the host name. A test sends a real request through the client and fails if
+a library upgrade bypasses the wrapper. The fetcher stops reading proxy settings from the
+environment, because a proxy connection would otherwise be refused or would skip the check.
+
+**Considered.** Resolving once before each request and then letting httpx connect: simpler, but
+leaves the rebinding window open.
+
+**Trade-off.** The wrapper sets one private attribute of httpx's transport (`_pool`), so an httpx
+upgrade could break it. The test above turns that into a failing build rather than a silent
+hole.
+
+## D-036. Clean-up: old code removed, a README that describes today's code, `main` updated
+
+**What.**
+- Delete the first version: `backend/` (49 files), `ops/docker-compose.yml`, `QUICKSTART.md`,
+  `CONTRIBUTING.md` and `docs/DEVELOPER_GUIDE.md`. They describe or run a system that no longer
+  exists. Git history keeps all of it.
+- Replace `README.md` with a short one that describes only what the code does today, with every
+  number taken from `evals/results/`. It credits the first version's authors.
+- Merge `rebuild` into `main` through a pull request, only when Aditya says so.
+- Renaming the GitHub repository is Aditya's click in its settings; GitHub redirects the old
+  address. The crawler's User-Agent and the docs are updated to the new name afterwards.
+
+**Why.** Anyone opening the repository today sees a README for the old system, with features
+the code does not have. That breaks rule 7 on the default branch.
+
+**Considered.** Moving the old code to an `archive/` folder: it would still be read as part of
+the project.
+
+**Trade-off.** The README is written now and again after the auditor ships.

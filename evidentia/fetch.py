@@ -17,6 +17,7 @@ import httpx
 import trafilatura
 
 from evidentia.config import Settings
+from evidentia.netguard import BlockedAddress, guarded_transport
 from evidentia.pdf import Unreadable, read_pdf
 from evidentia.schemas import SearchHit, SkippedPage, Source
 from evidentia.tracing import Tracer
@@ -158,7 +159,9 @@ class Fetcher:
     ) -> None:
         self.settings = settings
         self.tracer = tracer
-        self.client = client or httpx.AsyncClient(timeout=settings.fetch_timeout_s)
+        self.client = client or httpx.AsyncClient(
+            timeout=settings.fetch_timeout_s, transport=guarded_transport(), trust_env=False
+        )
         self.client.headers["User-Agent"] = settings.user_agent
         self.limiter = limiter or HostLimiter(settings.per_host_interval_s)
         self.robots = Robots(self.client, self.limiter, settings.user_agent)
@@ -190,6 +193,9 @@ class Fetcher:
             except Skip as skip:
                 span.update(output={"skipped": skip.reason})
                 return skip
+            except BlockedAddress:
+                span.update(output={"skipped": "resolves to a non-public address"})
+                return Skip("not a public address")
             except httpx.HTTPError as err:
                 span.update(output={"skipped": type(err).__name__})
                 return Skip(f"network error ({type(err).__name__})")
