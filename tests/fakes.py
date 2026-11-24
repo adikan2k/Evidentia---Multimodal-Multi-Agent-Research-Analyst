@@ -6,7 +6,7 @@ from types import SimpleNamespace
 from typing import Any
 
 from evidentia.llm import LLM
-from evidentia.schemas import Claim, Draft, Judgement, Plan, RepairQueries, Revision
+from evidentia.schemas import Claim, Draft, Judgement, Plan, RepairQueries, Revision, Tightened
 
 
 def reply(parsed: Any, stop: str = "end_turn", tokens: tuple[int, int] = (1000, 200)) -> dict:
@@ -42,6 +42,7 @@ class ScriptedLLM(LLM):
         judge: Callable[[str], Judgement | None] = always_supported,
         revise: Callable[[str], Revision] = never_backed,
         repair_queries: list[str] | None = None,
+        tightened: str = "",
     ) -> None:
         super().__init__(settings, ledger)
         self.queries = queries
@@ -49,6 +50,7 @@ class ScriptedLLM(LLM):
         self.judge = judge
         self.revise = revise
         self.repair_queries = repair_queries or []
+        self.tightened = tightened
         self.calls: list[dict[str, str]] = []
 
     def calls_for(self, schema: type) -> list[dict[str, str]]:
@@ -67,6 +69,8 @@ class ScriptedLLM(LLM):
             return reply(RepairQueries(queries=self.repair_queries))
         if schema is Revision:
             return reply(self.revise(user))
+        if schema is Tightened:
+            return reply(Tightened(text=self.tightened))
         judgement = self.judge(user)
         return reply(judgement, stop="end_turn" if judgement else "refusal")
 
@@ -80,7 +84,12 @@ class FakeTavily:
 
 
 class FakeVoyage:
+    def __init__(self) -> None:
+        self.queries: list[str] = []  # every text embedded as a search query, in order
+
     async def embed(self, texts, **kwargs):
+        if kwargs.get("input_type") == "query":
+            self.queries += texts
         return SimpleNamespace(embeddings=[[float(len(t)), 1.0] for t in texts], total_tokens=500)
 
     async def rerank(self, query, documents, model, top_k):
@@ -94,7 +103,7 @@ class MemoryQdrant:
     def __init__(self) -> None:
         self.points: list[Any] = []
         self.created = False
-        self.queries: list[str] = []
+        self.searches: list[str] = []  # "hybrid" or "dense", one per search
 
     async def collection_exists(self, name: str) -> bool:
         return self.created
@@ -108,9 +117,10 @@ class MemoryQdrant:
     async def upsert(self, name: str, points, wait: bool) -> None:
         self.points += points
 
-    async def query_points(self, name: str, prefetch, limit: int, **kwargs):
-        self.queries.append(prefetch[1].query.text)
-        run_id = prefetch[0].filter.must[0].match.value
+    async def query_points(self, name: str, limit: int, prefetch=None, query_filter=None, **kw):
+        self.searches.append("hybrid" if prefetch else kw["using"])
+        only_this_run = prefetch[0].filter if prefetch else query_filter
+        run_id = only_this_run.must[0].match.value
         mine = [p for p in self.points if p.payload["run_id"] == run_id]
         found = [SimpleNamespace(id=p.id, score=0.5, payload=p.payload) for p in mine[:limit]]
         return SimpleNamespace(points=found)

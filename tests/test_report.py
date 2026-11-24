@@ -90,6 +90,7 @@ def test_each_node_gets_a_plain_sentence() -> None:
     assert describe("quote_check", {"checked": ALL}) == "2 of 3 quotes found word for word"
     assert describe("check", {"checked": ALL}) == "1 supported, 1 partial, 1 unverified"
     assert describe("rewrite", {"repairs": repairs}) == "1 claim failed; wrote a new query for each"
+    assert describe("rewrite", {"repairs": []}) == "no claim failed; tightening partial claims only"
     assert describe("reretrieve", {"repairs": repairs}) == (
         "searched the fetched pages again, 2 passages to re-read"
     )

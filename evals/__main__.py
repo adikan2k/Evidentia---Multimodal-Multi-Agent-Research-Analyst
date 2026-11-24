@@ -18,6 +18,7 @@ STEPS = {
     "corpus": ("evals.corpus", "fetch_pages"),
     "gold": ("evals.corpus", "draft_gold"),
     "retrieval": ("evals.retrieval", "run"),
+    "unanswerable": ("evals.unanswerable", "run"),
     "systems": ("evals.systems", "run"),
     "pairs": ("evals.pairs", "run"),
     "label": ("evals.label", "run"),
@@ -27,7 +28,16 @@ STEPS = {
     "report": ("evals.report", "run"),
 }
 # `label` is Aditya's step and `pairs` must not be rebuilt once labelling has started.
-AUTOMATIC = ["corpus", "retrieval", "systems", "agreement", "judge", "nasty", "report"]
+AUTOMATIC = [
+    "corpus",
+    "retrieval",
+    "unanswerable",
+    "systems",
+    "agreement",
+    "judge",
+    "nasty",
+    "report",
+]
 
 
 def run_step(name: str) -> None:

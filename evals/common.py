@@ -42,6 +42,8 @@ class Question(BaseModel):
     kind: str  # "factual" or "contested"
     pages: list[str]
     gold: list[GoldSnippet] = []
+    # Only on unanswerable questions: matches the well-known answer the corpus does not hold.
+    answer_pattern: str = ""
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -66,8 +68,8 @@ def write_result(name: str, body: dict[str, Any]) -> Path:
     return path
 
 
-def load_questions() -> list[Question]:
-    return [Question(**row) for row in read_jsonl(QUESTIONS)]
+def load_questions(path: Path = QUESTIONS) -> list[Question]:
+    return [Question(**row) for row in read_jsonl(path)]
 
 
 def save_questions(questions: list[Question]) -> None:

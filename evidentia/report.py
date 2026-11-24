@@ -59,12 +59,14 @@ def describe(node: str, update: dict[str, Any]) -> str:
     if node == "check":
         return count_labels(update["checked"])
     if node == "rewrite":
+        if not update["repairs"]:
+            return "no claim failed; tightening partial claims only"
         return f"{_plural(len(update['repairs']), 'claim')} failed; wrote a new query for each"
     if node == "reretrieve":
         passages = sum(len(r.passages) for r in update["repairs"])
         return f"searched the fetched pages again, {_plural(passages, 'passage')} to re-read"
     if node == "revise":
-        rewritten = sum(c.revised and c.quote_found is None for c in update["checked"])
+        rewritten = sum(c.revised and c.verdict is None for c in update["checked"])
         return f"rewrote {_plural(rewritten, 'claim')} from the new passages"
     return ""
 

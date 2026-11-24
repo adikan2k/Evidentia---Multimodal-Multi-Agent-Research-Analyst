@@ -31,6 +31,7 @@ from evidentia.llm import (
     PLAN_SYSTEM,
     REVISE_SYSTEM,
     REWRITE_SYSTEM,
+    TIGHTEN_SYSTEM,
     WRITE_SYSTEM,
     ModelStopped,
     check_prompt,
@@ -38,6 +39,7 @@ from evidentia.llm import (
     plan_prompt,
     revise_prompt,
     rewrite_prompt,
+    tighten_prompt,
     with_tag,
     write_prompt,
 )
@@ -52,6 +54,7 @@ from evidentia.schemas import (
     RepairQueries,
     Revision,
     RunState,
+    Tightened,
 )
 from evidentia.search import Searcher
 from evidentia.store import Store
@@ -128,9 +131,13 @@ class Nodes:
         return {"passages_indexed": len(passages)}
 
     async def _find(self, node: str, run_id: str, query: str, top_k: int) -> list[Passage]:
-        """Hybrid search over this run's passages, then rerank and keep the best `top_k`."""
+        """Search this run's passages, then rerank and keep the best `top_k`."""
         vector = await self.d.embedder.embed_query(node, query)
-        candidates = await self.d.store.hybrid(run_id, query, vector, self.s.retrieve_limit)
+        limit = self.s.retrieve_limit
+        if self.s.keyword_search:
+            candidates = await self.d.store.hybrid(run_id, query, vector, limit)
+        else:
+            candidates = await self.d.store.single(run_id, query, vector, limit, using="dense")
         return await self.d.embedder.rerank(node, query, candidates, top_k)
 
     async def retrieve(self, state: RunState) -> dict[str, Any]:
@@ -190,12 +197,18 @@ class Nodes:
         return claim.model_copy(update={"verdict": judgement.label, "reason": reason})
 
     def route(self, state: RunState) -> str:
-        """After the checker: repair failed claims once, otherwise finish."""
+        """After the checker: one repair round if any claim needs it, otherwise finish."""
         rounds_left = state.round < self.s.max_repair_rounds
-        return "rewrite" if rounds_left and any(c.failed for c in state.checked) else END
+        needs_repair = any(c.failed or self._to_tighten(c) for c in state.checked)
+        return "rewrite" if rounds_left and needs_repair else END
+
+    def _to_tighten(self, claim: CheckedClaim) -> bool:
+        return self.s.tighten_partial and claim.verdict == "partial" and not claim.revised
 
     async def rewrite(self, state: RunState, config: RunnableConfig) -> dict[str, Any]:
         failed = [i for i, c in enumerate(state.checked) if c.failed]
+        if not failed:  # the round is only tightening partial claims; nothing to search for
+            return {"repairs": [], "round": state.round + 1}
         answer = await self.d.llm.structured(
             node="rewrite",
             model=self.s.reader_model,
@@ -233,7 +246,33 @@ class Nodes:
         checked = list(state.checked)
         for repair, claim in zip(state.repairs, revised, strict=True):
             checked[repair.index] = claim
+        partial = [i for i, c in enumerate(checked) if self._to_tighten(c)]
+        tightened = await asyncio.gather(*(self._tighten(checked[i], config) for i in partial))
+        for i, claim in zip(partial, tightened, strict=True):
+            checked[i] = claim
         return {"checked": checked}
+
+    async def _tighten(self, claim: CheckedClaim, config: RunnableConfig) -> CheckedClaim:
+        """Same quote, narrower claim, to be checked again. On failure the claim stays partial."""
+        tag = new_tag("quote")
+        try:
+            result = await self.d.llm.structured(
+                node="revise",
+                model=self.s.writer_model,
+                effort="low",
+                max_tokens=1_000,
+                system=with_tag(TIGHTEN_SYSTEM, tag),
+                user=tighten_prompt(claim, tag),
+                schema=Tightened,
+                config=config,
+            )
+        except ModelStopped:
+            return claim
+        if not result.text.strip():
+            return claim
+        # The quote is unchanged and already found on the page; only the verdict is reset.
+        fresh = {"text": result.text.strip(), "verdict": None, "reason": "", "revised": True}
+        return claim.model_copy(update=fresh)
 
     async def _revise(
         self, claim: CheckedClaim, repair: Repair, config: RunnableConfig

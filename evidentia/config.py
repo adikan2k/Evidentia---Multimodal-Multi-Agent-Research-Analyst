@@ -48,6 +48,11 @@ class Settings(BaseSettings):
     reviser_max_tokens: int = 4_000
     max_repair_rounds: int = 1
     repair_top_k: int = 6
+    # Rewrite a claim the checker calls partial so it says only what its quote says (D-023).
+    tighten_partial: bool = False
+    # Also search by keywords (BM25) and fuse with dense search. Off: the evals found it added
+    # nothing once the reranker is used (D-023). Passages are indexed for both either way.
+    keyword_search: bool = False
 
     embed_model: str = "voyage-4-large"
     embed_dim: int = 1024

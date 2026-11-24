@@ -9,7 +9,7 @@ from evidentia.cost import BudgetExceeded, Ledger
 from evidentia.embed import Embedder
 from evidentia.fetch import Fetcher
 from evidentia.graph import MAIN_PATH, NO_BACKING, REPAIR_PATH, Deps, run_question
-from evidentia.schemas import Claim, Draft, Judgement, RepairQueries, Revision
+from evidentia.schemas import Claim, Draft, Judgement, RepairQueries, Revision, Tightened
 from evidentia.search import Searcher
 from evidentia.store import Store
 from evidentia.tracing import NoopTracer
@@ -137,14 +137,14 @@ def test_repair_uses_the_cheap_model_for_queries_and_searches_per_claim(settings
     assert "quote is not an exact span of the source" in rewrite["user"]
     assert "The quote says nothing about cost." in rewrite["user"]
     assert BACKED.text not in rewrite["user"] and OVERREACH.text not in rewrite["user"]
-    assert deps.store.client.queries == [QUESTION, "panel price trend", "solar cost ranking"]
+    assert deps.embedder.client.queries == [QUESTION, "panel price trend", "solar cost ranking"]
     assert len(deps.llm.calls_for(Revision)) == 2
 
 
 def test_missing_repair_query_falls_back_to_the_claim_text(settings) -> None:
     deps = make_deps(settings, repair_queries=["panel price trend"])
     run(deps)
-    assert deps.store.client.queries == [QUESTION, "panel price trend", OFF_TOPIC.text]
+    assert deps.embedder.client.queries == [QUESTION, "panel price trend", OFF_TOPIC.text]
 
 
 def test_no_repair_round_when_nothing_failed(settings) -> None:
@@ -229,3 +229,45 @@ def test_checker_calls_running_together_cannot_pass_the_cap(settings) -> None:
         run(deps)
     assert len(deps.llm.calls_for(Judgement)) == 1
     assert deps.ledger.spent <= 0.20
+
+
+def test_search_is_dense_only_unless_keyword_search_is_switched_on(settings) -> None:
+    dense = make_deps(settings, claims=[BACKED])
+    run(dense)
+    assert dense.store.client.searches == ["dense"]
+    hybrid = make_deps(settings.model_copy(update={"keyword_search": True}), claims=[BACKED])
+    run(hybrid)
+    assert hybrid.store.client.searches == ["hybrid"]
+
+
+def test_partial_claims_are_left_alone_by_default(settings) -> None:
+    deps, seen = make_deps(settings, claims=[BACKED, OVERREACH], tightened="Solar grew 24%."), []
+    state = run(deps, seen)
+    assert seen == MAIN_PATH and deps.llm.calls_for(Tightened) == []
+    assert state.checked[1].label == "partial" and state.checked[1].revised is False
+
+
+def test_tightening_rewrites_a_partial_claim_on_the_same_quote_and_rechecks_it(settings) -> None:
+    on = settings.model_copy(update={"tighten_partial": True})
+    deps, seen = make_deps(on, claims=[BACKED, OVERREACH], tightened="Solar grew 24% in 2023."), []
+    state = run(deps, seen)
+
+    assert seen == [*MAIN_PATH, *REPAIR_PATH, "quote_check", "check"]
+    assert deps.llm.calls_for(RepairQueries) == []  # nothing failed, so nothing to search for
+    (call,) = deps.llm.calls_for(Tightened)
+    assert OVERREACH.text in call["user"] and "does not mention wind" in call["user"]
+
+    untouched, tightened = state.checked
+    assert untouched.revised is False
+    assert tightened.text == "Solar grew 24% in 2023." and tightened.quote == FACT
+    assert tightened.revised is True and tightened.label == "supported"
+    assert state.sources[0].text[tightened.start : tightened.end] == FACT
+
+
+def test_a_claim_still_partial_after_tightening_is_not_tightened_again(settings) -> None:
+    on = settings.model_copy(update={"tighten_partial": True})
+    stubborn = "Solar grew 24% in 2023, more than wind did."  # the fake checker still says partial
+    deps, seen = make_deps(on, claims=[OVERREACH], tightened=stubborn), []
+    state = run(deps, seen)
+    assert seen.count("revise") == 1 and len(deps.llm.calls_for(Tightened)) == 1
+    assert state.checked[0].label == "partial" and state.checked[0].revised is True

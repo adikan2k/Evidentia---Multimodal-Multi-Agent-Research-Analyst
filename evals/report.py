@@ -94,41 +94,69 @@ def agreement_section(d: dict | None) -> list[str]:
     return out
 
 
+SYSTEM_NAMES = {
+    "baseline": "Baseline (one-shot RAG), Sonnet writer",
+    "pipeline": "Pipeline, Sonnet writer and checker",
+    "baseline_haiku": "Baseline, Haiku writer",
+    "pipeline_haiku": "Pipeline, Haiku writer and checker",
+    "pipeline_tighten": "Pipeline with partial claims tightened",
+}
+
+
 def accuracy_section(d: dict | None) -> list[str]:
-    out = ["## Baseline against the full pipeline", ""]
+    out = ["## Baselines against pipelines", ""]
     if d is None:
         return [*out, "Not run yet: `evals/results/citation_accuracy.json` does not exist.", ""]
-    out += [f"{d['what']} Judge: {d['judge']}", ""]
-    systems = {
-        "Baseline (one-shot RAG), all claims": d["baseline"],
-        "Pipeline, claims labelled supported": d["pipeline_claims_labelled_supported"],
-        "Pipeline, all claims": d["pipeline_all_claims"],
-    }
-    rows = [
-        [
-            name,
-            with_ci(s["citation_accuracy"], "value"),
-            with_ci(s["main_point_backed"], "value"),
-            with_ci(s["claims_per_question"]),
-            with_ci(s["questions_with_a_fully_backed_claim"]),
-        ]
-        for name, s in systems.items()
-    ]
-    header = ["System", "Fully backed", "Main point backed", "Claims per question"]
-    out += table([*header, "Questions with a fully backed claim"], rows)
-    diff = d["accuracy_difference_supported_minus_baseline"]
     out += [
-        "",
-        "Fully backed, pipeline claims labelled supported minus baseline, per question: "
-        f"{signed(diff)} over {diff['n']} questions.",
-        "",
-        f"Pipeline labels: {d['pipeline_labels']}.",
+        f"{d['what']} Judge: {d['judge']} Shown as backed means: {d['presented_as_backed']}.",
         "",
     ]
+    rows = []
+    for name, s in d["systems"].items():
+        shown = s["presented_as_backed"]
+        cost = s.get("cost_per_question_usd")
+        rows.append(
+            [
+                SYSTEM_NAMES.get(name, name),
+                with_ci(shown["citation_accuracy"], "value"),
+                f"{shown['claims_per_question']['mean']:.2f}",
+                f"{s['all_claims']['claims_per_question']['mean']:.2f}",
+                str(s["evidence_chars_median"]),
+                "n/a" if cost is None else f"${cost:.4f}",
+            ]
+        )
+    header = ["System", "Shown as backed that are fully backed", "Shown as backed per question"]
+    header += ["All claims per question", "Characters to read per claim", "Cost per question"]
+    out += [*table(header, rows), ""]
+    out += ["Fully backed, each system minus the Sonnet baseline, per question:", ""]
+    rows = [
+        [SYSTEM_NAMES.get(name, name), signed(diff), str(diff["n"])]
+        for name, diff in d["accuracy_difference_from_baseline"].items()
+    ]
+    out += [*table(["System", "Difference", "Questions"], rows), ""]
     if d.get("deepeval_faithfulness"):
         scores = ", ".join(f"{k} {with_ci(v)}" for k, v in d["deepeval_faithfulness"].items())
         out += [f"DeepEval faithfulness (stock metric, same judge model): {scores}.", ""]
     return out
+
+
+def unanswerable_section(d: dict | None) -> list[str]:
+    out = ["## Questions the corpus cannot answer", ""]
+    if d is None:
+        return [*out, "Not run yet: `evals/results/unanswerable.json` does not exist.", ""]
+    out += [f"{d['what']} {d['caveat']}", ""]
+    rows = [
+        [
+            SYSTEM_NAMES.get(name.removeprefix("unanswerable_"), name),
+            f"{s['presented_no_backed_claim']} of {s['questions']}",
+            f"{s['gave_the_answer_from_memory']} of {s['questions']}",
+            str(s["claims_presented_as_backed"]),
+            str(s["of_those_fully_backed_by_their_evidence"]),
+        ]
+        for name, s in d["systems"].items()
+    ]
+    header = ["System", "Stayed quiet", "Answered from memory", "Claims shown as backed"]
+    return [*out, *table([*header, "Of those, fully backed"], rows), ""]
 
 
 def nasty_section(d: dict | None) -> list[str]:
@@ -176,6 +204,11 @@ def failures_section(results: dict[str, dict | None]) -> list[str]:
                 f"{r['checker']}. {r['claim']}"
                 for r in rows[:5]
             ]
+    unanswerable = results["unanswerable"]
+    if unanswerable:
+        for name, system in unanswerable["systems"].items():
+            for leak in system["answers_from_memory"]:
+                out += [f"- {name} answered from memory: {leak['question']} -> {leak['claim']}"]
     if nasty:
         for name, case in nasty["cases"].items():
             for run in case["runs"]:
@@ -187,7 +220,7 @@ def failures_section(results: dict[str, dict | None]) -> list[str]:
 
 
 def run() -> None:
-    names = ["retrieval", "checker_agreement", "citation_accuracy", "nasty"]
+    names = ["retrieval", "checker_agreement", "citation_accuracy", "unanswerable", "nasty"]
     results = {name: load(name) for name in names}
     lines = [
         "# Evaluation report",
@@ -201,6 +234,7 @@ def run() -> None:
         *retrieval_section(results["retrieval"]),
         *agreement_section(results["checker_agreement"]),
         *accuracy_section(results["citation_accuracy"]),
+        *unanswerable_section(results["unanswerable"]),
         *nasty_section(results["nasty"]),
         *failures_section(results),
     ]

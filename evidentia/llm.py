@@ -99,6 +99,19 @@ that version with a quote and set backed to true.
 empty."""
 
 
+TIGHTEN_SYSTEM = f"""You tighten one research claim so that its quote backs all of it. You are \
+given the claim, the quote, and what a checker said the quote does not state. The quote is \
+inside <{{tag}}> ... </{{tag}}> tags.
+
+{DATA_RULE}
+
+Rewrite the claim so that every fact in it is stated in the quote:
+- Remove or correct each specific the quote does not contain, such as a number, a date, a name, \
+who said it, or a cause.
+- Keep everything the quote does state. Do not make the claim vaguer than it needs to be.
+- Add nothing new. One factual sentence."""
+
+
 class ModelStopped(RuntimeError):
     """The model refused, ran out of tokens, or did not return the expected shape."""
 
@@ -138,6 +151,11 @@ def rewrite_prompt(question: str, failed: list[CheckedClaim]) -> str:
     return (
         f"Research question: {question}\n\nFailed claims:\n{claims}\n\nWrite one query per claim."
     )
+
+
+def tighten_prompt(claim: CheckedClaim, tag: str) -> str:
+    quote = f"<{tag}>\n{claim.quote}\n</{tag}>"
+    return f"Claim: {claim.text}\n\nWhat the checker said: {claim.reason}\n\nQuote:\n{quote}"
 
 
 def revise_prompt(claim: CheckedClaim, passages: list[Passage], tag: str) -> str:

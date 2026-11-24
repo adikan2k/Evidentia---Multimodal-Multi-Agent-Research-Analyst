@@ -6,7 +6,16 @@ import pytest
 
 from evals import report
 from evals.common import GoldSnippet, Question
-from evals.judge import paired, per_question, ratio, ratio_summary, score
+from evals.judge import (
+    describe_system,
+    paired,
+    per_question,
+    presented,
+    ratio,
+    ratio_summary,
+    score,
+    unanswerable_summary,
+)
 from evals.label import KEYS
 from evals.nasty import (
     CANARY,
@@ -18,6 +27,7 @@ from evals.nasty import (
 from evals.pairs import BUILT, NATURAL, wrong_quote
 from evals.retrieval import relevant_ids
 from evals.retrieval import score as retrieval_score
+from evals.unanswerable import CANDIDATES, absent_from_corpus
 from evidentia.schemas import CheckedClaim, Passage, RunState
 
 
@@ -142,7 +152,7 @@ def test_report_says_what_has_not_been_run_instead_of_inventing_numbers(
     monkeypatch.setattr(report, "REPORT", tmp_path / "REPORT.md")
     report.run()
     text = (tmp_path / "REPORT.md").read_text(encoding="utf-8")
-    assert text.count("Not run yet") == 4
+    assert text.count("Not run yet") == 5
     assert "Nothing has been run yet." in text
     assert not any(ch.isdigit() for ch in text.split("## Retrieval")[1])
 
@@ -163,3 +173,64 @@ def test_the_planted_instruction_survives_extraction_so_the_model_really_sees_it
 
     page = next(iter(CASES[0].pages.values()))
     assert CANARY in extract_text(page.encode())
+
+
+def claim_item(question_id: str, label: str, judge: str, claim: str = "c", evidence: str = "e"):
+    row = {"question_id": question_id, "label": label, "judge": judge}
+    return row | {"claim": claim, "evidence": evidence}
+
+
+def test_presented_means_all_baseline_claims_but_only_supported_pipeline_claims() -> None:
+    items = [
+        claim_item("q1", "presented", "supported"),
+        claim_item("q1", "supported", "supported"),
+        claim_item("q1", "partial", "partial"),
+        claim_item("q1", "unverified", "unsupported"),
+    ]
+    assert [i["label"] for i in presented(items)] == ["presented", "supported"]
+
+
+def test_system_description_reports_evidence_size_and_cost_per_question() -> None:
+    items = [
+        claim_item("q1", "supported", "supported", evidence="x" * 100),
+        claim_item("q1", "supported", "partial", evidence="x" * 300),
+        claim_item("q2", "partial", "partial", evidence="x" * 9000),
+    ]
+    result = describe_system(items, ["q1", "q2"], cost=0.5)
+    assert result["evidence_chars_median"] == 200  # only claims shown as backed count
+    assert result["cost_per_question_usd"] == 0.25
+    assert result["labels"] == {"supported": 2, "partial": 1}
+    assert result["presented_as_backed"]["citation_accuracy"]["value"] == 0.5
+    assert result["all_claims"]["claims_per_question"]["mean"] == 1.5
+
+
+def unanswerable(qid: str, pattern: str) -> Question:
+    return Question(id=qid, question=f"Question {qid}?", kind="unanswerable", pages=[]).model_copy(
+        update={"answer_pattern": pattern}
+    )
+
+
+def test_unanswerable_summary_counts_silence_and_answers_from_memory() -> None:
+    questions = [
+        unanswerable("u1", "Leonardo"),
+        unanswerable("u2", "8,611"),
+        unanswerable("u3", "Salk"),
+    ]
+    items = [
+        claim_item("u1", "presented", "unsupported", claim="Leonardo da Vinci painted it."),
+        claim_item("u2", "presented", "supported", claim="Everest is 8,848 m tall."),
+        claim_item("u3", "partial", "partial", claim="Jonas Salk developed it."),  # not shown
+    ]
+    result = unanswerable_summary(items, questions)
+    assert result["presented_no_backed_claim"] == 1  # u3: its only claim was not shown as backed
+    assert result["gave_the_answer_from_memory"] == 1  # u1
+    assert result["claims_presented_as_backed"] == 2
+    assert result["of_those_fully_backed_by_their_evidence"] == 1
+    assert result["answers_from_memory"][0]["question"] == "Question u1?"
+
+
+def test_a_question_counts_as_unanswerable_only_if_its_answer_is_nowhere_in_the_corpus() -> None:
+    texts = ["Everest is the highest mountain.", "K2 stands at 8,611 metres."]
+    assert absent_from_corpus("Aconcagua", texts) is True
+    assert absent_from_corpus(r"8[,.]?611", texts) is False
+    assert len(CANDIDATES) >= 20

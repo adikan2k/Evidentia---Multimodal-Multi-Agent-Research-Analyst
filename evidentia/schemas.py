@@ -102,6 +102,12 @@ class Revision(BaseModel):
     source_id: str = Field(description="The source_id of that passage, or empty.")
 
 
+class Tightened(BaseModel):
+    """What the tighten step returns for one partial claim."""
+
+    text: str = Field(description="The claim rewritten to say only what the quote says.")
+
+
 class Repair(BaseModel):
     """One failed claim's trip through the repair round."""
 

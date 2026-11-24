@@ -1,16 +1,22 @@
-"""Answer the 40 questions with two systems on the same indexed corpus and save what they said.
+"""Answer the eval questions with several systems on the same indexed corpus and save the output.
 
-- pipeline: the real graph, started at `retrieve` because the corpus is already indexed.
+Two kinds of system:
 - baseline: "one-shot RAG". Dense top 10, one writer call, a passage number per claim. No quote,
   no quote check, no checker, no repair.
+- pipeline: the real graph, started at `retrieve` because the corpus is already indexed.
+
+Variants change one or two settings, such as a cheaper writer (D-022) or tightening (D-023).
 """
 
 import asyncio
 import json
+from dataclasses import replace
+from pathlib import Path
 
 from pydantic import BaseModel, Field
 
 from evals.common import (
+    QUESTIONS,
     RUNS_DIR,
     Question,
     corpus_sources,
@@ -21,12 +27,37 @@ from evals.common import (
     write_jsonl,
 )
 from evals.retrieval import TOP_K, corpus_passages, corpus_run_id, ensure_indexed
+from evals.unanswerable import UNANSWERABLE
 from evidentia.graph import Deps, run_question
 from evidentia.llm import DATA_RULE, new_tag, with_tag
 from evidentia.schemas import RunState, Source
 
-PIPELINE_RUNS = RUNS_DIR / "pipeline.jsonl"
-BASELINE_RUNS = RUNS_DIR / "baseline.jsonl"
+HAIKU = "claude-haiku-5-5"
+# name -> (kind, settings that differ from the defaults)
+VARIANTS: dict[str, tuple[str, dict]] = {
+    "baseline": ("baseline", {}),
+    # Saved before keyword search was switched off by default, so it is pinned on here. The
+    # retrieval eval found the two give the same top 10 once the reranker is used.
+    "pipeline": ("pipeline", {"keyword_search": True}),
+    "baseline_haiku": ("baseline", {"writer_model": HAIKU}),
+    "pipeline_haiku": ("pipeline", {"writer_model": HAIKU, "checker_model": HAIKU}),
+    "pipeline_tighten": ("pipeline", {"tighten_partial": True}),
+}
+# question set -> (file, variants run on it)
+SETS: dict[str, tuple[Path, list[str]]] = {
+    "main": (QUESTIONS, list(VARIANTS)),
+    "unanswerable": (UNANSWERABLE, ["baseline", "pipeline", "baseline_haiku", "pipeline_haiku"]),
+}
+COSTS = RUNS_DIR / "cost.json"
+
+
+def runs_path(set_name: str, variant: str) -> Path:
+    name = variant if set_name == "main" else f"{set_name}_{variant}"
+    return RUNS_DIR / f"{name}.jsonl"
+
+
+BASELINE_RUNS = runs_path("main", "baseline")
+PIPELINE_RUNS = runs_path("main", "pipeline")
 
 BASELINE_SYSTEM = f"""You answer research questions from passages taken from web pages. Each \
 passage is wrapped in <{{tag}}> ... </{{tag}}> tags and has a number.
@@ -85,19 +116,15 @@ async def run_baseline(deps: Deps, run_id: str, q: Question) -> dict:
     claims = []
     for claim in draft.claims[: s.max_claims]:
         cited = passages[claim.passage - 1] if 1 <= claim.passage <= len(passages) else None
-        claims.append(
-            {
-                "text": claim.text,
-                "evidence": cited.text if cited else "",
-                "url": cited.url if cited else "",
-            }
-        )
+        evidence = {"evidence": cited.text if cited else "", "url": cited.url if cited else ""}
+        claims.append({"text": claim.text} | evidence)
     return {"id": q.id, "question": q.question, "claims": claims}
 
 
-async def run_all(path, questions: list[Question], one) -> float:
-    """Run `one` for every question not already saved in `path`, a few at a time."""
+async def run_all(path: Path, questions: list[Question], one) -> int:
+    """Run `one` for every question not already saved in `path`. Returns how many it ran."""
     done = {row["id"]: row for row in read_jsonl(path)}
+    todo = [q for q in questions if q.id not in done]
     limit = asyncio.Semaphore(4)
 
     async def guarded(q: Question) -> None:
@@ -106,21 +133,35 @@ async def run_all(path, questions: list[Question], one) -> float:
         # Save after every question so an interrupted run loses nothing.
         write_jsonl(path, [done[key] for key in sorted(done)])
 
-    await asyncio.gather(*(guarded(q) for q in questions if q.id not in done))
-    return len(done)
+    await asyncio.gather(*(guarded(q) for q in todo))
+    return len(todo)
+
+
+def record_cost(name: str, usd: float) -> None:
+    costs = json.loads(COSTS.read_text(encoding="utf-8")) if COSTS.exists() else {}
+    costs[name] = round(usd, 4)
+    COSTS.write_text(json.dumps(costs, indent=2, sort_keys=True), encoding="utf-8")
 
 
 async def run() -> None:
-    pages, questions = load_pages(), load_questions()
+    pages = load_pages()
     run_id = corpus_run_id(pages)
     sources = corpus_sources()
-    async with eval_deps("eval.systems") as deps:
-        await ensure_indexed(deps, corpus_passages(pages, run_id), run_id)
-        await run_all(BASELINE_RUNS, questions, lambda q: run_baseline(deps, run_id, q))
-        baseline_cost = deps.ledger.spent
-        await run_all(PIPELINE_RUNS, questions, lambda q: run_pipeline(deps, run_id, sources, q))
-        costs = {"baseline_usd": round(baseline_cost, 4)}
-        costs["pipeline_usd"] = round(deps.ledger.spent - baseline_cost, 4)
-    if any(costs.values()):  # a rerun that found everything saved spends nothing; keep old costs
-        (RUNS_DIR / "cost.json").write_text(json.dumps(costs, indent=2), encoding="utf-8")
-    print(f"systems: answers saved for {len(questions)} questions; this run cost {costs}")
+    async with eval_deps("eval.systems") as base:
+        await ensure_indexed(base, corpus_passages(pages, run_id), run_id)
+        for set_name, (file, variants) in SETS.items():
+            questions = load_questions(file)
+            for variant in variants:
+                kind, overrides = VARIANTS[variant]
+                deps = replace(base, settings=base.settings.model_copy(update=overrides))
+                before = base.ledger.spent
+                if kind == "baseline":
+                    one = lambda q, d=deps: run_baseline(d, run_id, q)  # noqa: E731
+                else:
+                    one = lambda q, d=deps: run_pipeline(d, run_id, sources, q)  # noqa: E731
+                path = runs_path(set_name, variant)
+                ran = await run_all(path, questions, one)
+                spent = base.ledger.spent - before
+                if ran == len(questions):  # a partial rerun would understate the cost
+                    record_cost(path.stem, spent)
+                print(f"systems: {path.stem}: ran {ran} of {len(questions)} (${spent:.2f})")
