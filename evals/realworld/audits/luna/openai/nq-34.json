@@ -1,0 +1,102 @@
+{
+ "id": "nq-34",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Net profit (also called net income) is reported on the income statement, usually at the bottom. On the balance sheet, it’s reflected in retained earnings under shareholders’ equity, rather than usually appearing as a separate line.\nRetained earnings are cumulative. In a simple case: Ending retained earnings = Beginning retained earnings + Net profit − Dividends. So if you’re looking for this period’s profit, use the income statement, not the retained earnings balance.",
+  "claims": [
+   {
+    "sentence": "Net profit (also called net income) is reported on the income statement, usually at the bottom.",
+    "start": 0,
+    "end": 95,
+    "claim": "Net profit (also called net income) is reported on the income statement, usually at the bottom.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "On the balance sheet, it’s reflected in retained earnings under shareholders’ equity, rather than usually appearing as a separate line.",
+    "start": 96,
+    "end": 231,
+    "claim": "On the balance sheet, net profit is reflected in retained earnings under shareholders’ equity, rather than usually appearing as a separate line.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Retained earnings are cumulative.",
+    "start": 232,
+    "end": 265,
+    "claim": "Retained earnings are cumulative.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "In a simple case: Ending retained earnings = Beginning retained earnings + Net profit − Dividends.",
+    "start": 266,
+    "end": 364,
+    "claim": "In a simple case, ending retained earnings equal beginning retained earnings plus net profit minus dividends.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "So if you’re looking for this period’s profit, use the income statement, not the retained earnings balance.",
+    "start": 365,
+    "end": 472,
+    "claim": "To find this period's profit, use the income statement rather than the retained earnings balance.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 5
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000287,
+   "usd_per_claim": 5.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

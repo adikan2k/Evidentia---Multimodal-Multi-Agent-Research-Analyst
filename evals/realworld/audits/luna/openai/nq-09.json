@@ -1,0 +1,130 @@
+{
+ "id": "nq-09",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Jourdan Miller won Cycle 20 of *America’s Next Top Model: Guys & Girls*. Marvin Cortes was the runner-up. (realitytvworld.com)",
+  "claims": [
+   {
+    "sentence": "Jourdan Miller won Cycle 20 of *America’s Next Top Model: Guys & Girls*.",
+    "start": 0,
+    "end": 72,
+    "claim": "Jourdan Miller won Cycle 20 of America's Next Top Model: Guys & Girls.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.realitytvworld.com/news/top-model-guys-%26-girls-crowns-jourdan-miller-winner-defeating-male-model-marvin-cortes-15572.php?utm_source=openai",
+      "host": "realitytvworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "America's Next Top Model crowned female model Jourdan Miller the twentieth season's winner during The CW's Friday night finale broadcast of the first-ever Guys & Girls edition.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Jourdan Miller was crowned winner of the twentieth season, the first-ever Guys & Girls edition, which matches the claim that she won Cycle 20 of America's Next Top Model: Guys & Girls.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jourdan Miller was crowned the winner of the twentieth season of America's Next Top Model: Guys & Girls."
+     }
+    ]
+   },
+   {
+    "sentence": "Marvin Cortes was the runner-up. (realitytvworld.com)",
+    "start": 73,
+    "end": 126,
+    "claim": "Marvin Cortes was the runner-up of Cycle 20 of America's Next Top Model: Guys & Girls.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.realitytvworld.com/news/top-model-guys-%26-girls-crowns-jourdan-miller-winner-defeating-male-model-marvin-cortes-15572.php?utm_source=openai",
+      "host": "realitytvworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "defeated runner-up Marvin Cortes, a 6' 1\" 20-year-old sales associate from Bronx, NY",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Marvin Cortes was the runner-up, but it never mentions Cycle 20 or the show America's Next Top Model: Guys & Girls.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jourdan Miller defeated runner-up Marvin Cortes in the twentieth season of America’s Next Top Model."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001191,
+   "usd_per_claim": 0.000596
+  },
+  "cost": {
+   "total_usd": 0.0012,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

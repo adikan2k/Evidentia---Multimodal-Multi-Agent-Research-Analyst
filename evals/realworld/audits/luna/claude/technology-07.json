@@ -1,0 +1,623 @@
+{
+ "id": "technology-07",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Cause\nThe outage began on October 19–20, 2025, in AWS's US-EAST-1 (Northern Virginia) region. AWS's post-incident report put the root cause down to a latent race condition in DynamoDB's automated DNS management system.[1]\nHow the DNS system works: DynamoDB's DNS records are maintained by automation with two roles. A DNS Planner generates new plans, and DNS Enactors apply them.[2]\nWhat went wrong: Two DNS Enactors ran concurrently. A stale-plan check let an old plan overwrite a newer one, and cleanup automation then deleted that plan.[3] The result was an incorrect empty DNS record for the regional endpoint (dynamodb.us-east-1.amazonaws.com), which the automation couldn't repair.[4]\nImmediate effect: Customers and AWS services that depended on DynamoDB couldn't establish new connections to it.[4]\nWhy it spread\nThe roughly three-hour DynamoDB outage triggered cascading failures in dependent systems. These persisted even after DynamoDB connectivity was restored.[1] The failures spread to core services such as EC2, Lambda, NLB, ECS/EKS, and dozens of downstream services.[5] A backlog in Network Manager, which propagates network state, added more than 5 hours of recovery time.[3] Overall, the disruption lasted around 14–15 hours.\nWhat it disrupted\nFrom the search results, the AWS-side impact included:\nDynamoDB, with API errors and connection failures.\nEC2 instance launches, Lambda, and Network Load Balancer health checks.\nCore services that rely on US-EAST-1 for coordination, from IAM to CloudFront.[6]\nThe results don't list affected consumer services. From my general recollection of the news coverage, the outage hit many popular apps and sites, including Snapchat, Reddit, Fortnite, Roblox, Venmo, Coinbase, Ring/Alexa, and Duolingo, as well as some banking and airline services. I haven't verified that list here, so treat it as less certain than the technical details above.\nAWS's response\nAWS disabled the DynamoDB DNS Planner and DNS Enactor automation worldwide.[4] For NLB, it is adding a velocity control mechanism to limit how much capacity a single NLB can remove when health check failures cause AZ failover.[4]",
+  "claims": [
+   {
+    "sentence": "The outage began on October 19–20, 2025, in AWS's US-EAST-1 (Northern Virginia) region.",
+    "start": 6,
+    "end": 93,
+    "claim": "The outage began on October 19–20, 2025, in AWS's US-EAST-1 (Northern Virginia) region.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "AWS's post-incident report put the root cause down to a latent race condition in DynamoDB's automated DNS management system.[1]",
+    "start": 94,
+    "end": 221,
+    "claim": "AWS's post-incident report put the root cause down to a latent race condition in DynamoDB's automated DNS management system.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "DynamoDB's DNS records are maintained by automation with two roles.",
+    "start": 248,
+    "end": 315,
+    "claim": "DynamoDB's DNS records are maintained by automation with two roles.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://outagecost.com/case-studies/aws-october-2025",
+      "host": "outagecost.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans and DNS Enactors that apply them.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that DynamoDB's DNS records are maintained by an automated system with two roles (DNS Planner and DNS Enactors), which matches the claim's wording and count.",
+      "page_judged": "supported",
+      "page_reason": "The page says DynamoDB’s DNS records are maintained by an automated system with two roles: DNS Planners and DNS Enactors."
+     }
+    ]
+   },
+   {
+    "sentence": "A DNS Planner generates new plans, and DNS Enactors apply them.[2]",
+    "start": 316,
+    "end": 382,
+    "claim": "In DynamoDB's DNS automation, a DNS Planner generates new plans.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://outagecost.com/case-studies/aws-october-2025",
+      "host": "outagecost.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans and DNS Enactors that apply them.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that DynamoDB's DNS automation includes a DNS Planner that generates new plans, which is exactly what the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page states that DynamoDB’s automated DNS system has a DNS Planner that generates new plans."
+     }
+    ]
+   },
+   {
+    "sentence": "A DNS Planner generates new plans, and DNS Enactors apply them.[2]",
+    "start": 316,
+    "end": 382,
+    "claim": "In DynamoDB's DNS automation, DNS Enactors apply the plans.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://outagecost.com/case-studies/aws-october-2025",
+      "host": "outagecost.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans and DNS Enactors that apply them.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that DynamoDB's DNS automation has DNS Enactors that apply the plans, which is exactly what the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page states that DNS Enactors apply the plans generated by the DNS Planner."
+     }
+    ]
+   },
+   {
+    "sentence": "Two DNS Enactors ran concurrently.",
+    "start": 400,
+    "end": 434,
+    "claim": "Two DNS Enactors ran concurrently.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.techupkeep.dev/blog/aws-outage-october-2025-analysis",
+      "host": "techupkeep.dev",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A stale-plan check let an old plan overwrite a newer one, and cleanup automation then deleted that plan.[3]",
+    "start": 435,
+    "end": 542,
+    "claim": "A stale-plan check let an old plan overwrite a newer one.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.techupkeep.dev/blog/aws-outage-october-2025-analysis",
+      "host": "techupkeep.dev",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A stale-plan check let an old plan overwrite a newer one, and cleanup automation then deleted that plan.[3]",
+    "start": 435,
+    "end": 542,
+    "claim": "Cleanup automation then deleted the old plan.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.techupkeep.dev/blog/aws-outage-october-2025-analysis",
+      "host": "techupkeep.dev",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The result was an incorrect empty DNS record for the regional endpoint (dynamodb.us-east-1.amazonaws.com), which the automation couldn't repair.[4]",
+    "start": 543,
+    "end": 690,
+    "claim": "The result was an incorrect empty DNS record for the regional endpoint dynamodb.us-east-1.amazonaws.com.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The result was an incorrect empty DNS record for the regional endpoint (dynamodb.us-east-1.amazonaws.com), which the automation couldn't repair.[4]",
+    "start": 543,
+    "end": 690,
+    "claim": "The automation could not repair the incorrect empty DNS record for dynamodb.us-east-1.amazonaws.com.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Immediate effect: Customers and AWS services that depended on DynamoDB couldn't establish new connections to it.[4]",
+    "start": 691,
+    "end": 806,
+    "claim": "Customers and AWS services that depended on DynamoDB couldn't establish new connections to DynamoDB.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The roughly three-hour DynamoDB outage triggered cascading failures in dependent systems.",
+    "start": 821,
+    "end": 910,
+    "claim": "The DynamoDB outage lasted roughly three hours.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "These persisted even after DynamoDB connectivity was restored.[1]",
+    "start": 911,
+    "end": 976,
+    "claim": "The cascading failures in dependent systems persisted even after DynamoDB connectivity was restored.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The failures spread to core services such as EC2, Lambda, NLB, ECS/EKS, and dozens of downstream services.[5]",
+    "start": 977,
+    "end": 1086,
+    "claim": "The failures spread to core services such as EC2, Lambda, NLB, ECS/EKS, and dozens of downstream services.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://medium.com/@leela.kumili/aws-outage-root-cause-analysis-bd88ffcab160",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A backlog in Network Manager, which propagates network state, added more than 5 hours of recovery time.[3]",
+    "start": 1087,
+    "end": 1193,
+    "claim": "A backlog in Network Manager, which propagates network state, added more than 5 hours of recovery time.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.techupkeep.dev/blog/aws-outage-october-2025-analysis",
+      "host": "techupkeep.dev",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Overall, the disruption lasted around 14–15 hours.",
+    "start": 1194,
+    "end": 1244,
+    "claim": "Overall, the disruption lasted around 14–15 hours.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "DynamoDB, with API errors and connection failures.",
+    "start": 1318,
+    "end": 1368,
+    "claim": "The AWS-side impact included API errors and connection failures in DynamoDB.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "EC2 instance launches, Lambda, and Network Load Balancer health checks.",
+    "start": 1369,
+    "end": 1440,
+    "claim": "The AWS-side impact included EC2 instance launches, Lambda, and Network Load Balancer health checks.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Core services that rely on US-EAST-1 for coordination, from IAM to CloudFront.[6]",
+    "start": 1441,
+    "end": 1522,
+    "claim": "Core services that rely on US-EAST-1 for coordination, from IAM to CloudFront, were affected.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://deployflow.co/blog/aws-outage-october-2025-what-caused-future-proof-business/",
+      "host": "deployflow.co",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Many core AWS services, from Identity and Access Management to CloudFront, rely on US-EAST-1 for coordination.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that IAM through CloudFront rely on US-EAST-1 for coordination, but it does not state that these services were affected, which the claim asserts.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says IAM and CloudFront rely on US-EAST-1 for coordination and describes widespread disruption, but does not state that those named services were affected."
+     }
+    ]
+   },
+   {
+    "sentence": "AWS disabled the DynamoDB DNS Planner and DNS Enactor automation worldwide.[4]",
+    "start": 1916,
+    "end": 1994,
+    "claim": "AWS disabled the DynamoDB DNS Planner and DNS Enactor automation worldwide.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "For NLB, it is adding a velocity control mechanism to limit how much capacity a single NLB can remove when health check failures cause AZ failover.[4]",
+    "start": 1995,
+    "end": 2145,
+    "claim": "AWS is adding a velocity control mechanism for NLB to limit how much capacity a single NLB can remove when health check failures cause AZ failover.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 3,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 4,
+    "unchecked": 10,
+    "uncited": 3
+   },
+   "cited_claims": 18,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.1667,
+   "pages_cited": 6,
+   "pages_read": 2,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003697,
+   "usd_per_claim": 0.000176
+  },
+  "cost": {
+   "total_usd": 0.0037,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0012
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.001
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

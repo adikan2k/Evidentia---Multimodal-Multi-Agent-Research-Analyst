@@ -1,0 +1,142 @@
+{
+ "id": "nq-20",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "If you mean the Supreme Court of India, two of its judges went on to serve on the International Court of Justice (ICJ):\nR. S. Pathak, a former Chief Justice of India, served on the ICJ from 1989 to 1991. (sci.gov.in)\nDalveer Bhandari joined the ICJ in 2012 and began a second term in 2018. (sci.gov.in)",
+  "claims": [
+   {
+    "sentence": "If you mean the Supreme Court of India, two of its judges went on to serve on the International Court of Justice (ICJ):",
+    "start": 0,
+    "end": 119,
+    "claim": "Two judges of the Supreme Court of India went on to serve on the International Court of Justice (ICJ).",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "R. S. Pathak, a former Chief Justice of India, served on the ICJ from 1989 to 1991. (sci.gov.in)",
+    "start": 120,
+    "end": 216,
+    "claim": "R. S. Pathak, a former Chief Justice of India, served on the ICJ from 1989 to 1991.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sci.gov.in/judge/justice-r-s-pathak/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Dalveer Bhandari joined the ICJ in 2012 and began a second term in 2018. (sci.gov.in)",
+    "start": 217,
+    "end": 302,
+    "claim": "Dalveer Bhandari joined the ICJ in 2012.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.sci.gov.in/judge/justice-dalveer-bhandari/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Dalveer Bhandari joined the ICJ in 2012 and began a second term in 2018. (sci.gov.in)",
+    "start": 217,
+    "end": 302,
+    "claim": "Dalveer Bhandari began a second term on the ICJ in 2018.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.sci.gov.in/judge/justice-dalveer-bhandari/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "uncited": 1
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000275,
+   "usd_per_claim": 6.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

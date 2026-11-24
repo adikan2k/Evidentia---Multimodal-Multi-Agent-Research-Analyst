@@ -1,0 +1,285 @@
+{
+ "id": "science-08",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Solar Orbiter captured the first clear images of the Sun’s south pole in March 2025. Its magnetic maps revealed patches of both north and south magnetic polarity side by side, rather than one dominant polarity. ESA released the images on June 11, 2025. (esa.int)\nThat patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+  "claims": [
+   {
+    "sentence": "Solar Orbiter captured the first clear images of the Sun’s south pole in March 2025.",
+    "start": 0,
+    "end": 84,
+    "claim": "Solar Orbiter captured the first clear images of the Sun’s south pole in March 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Thanks to its newly tilted orbit around the Sun, the European Space Agency-led Solar Orbiter spacecraft is the first to image the Sun’s poles from outside the ecliptic plane.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The video above compares Solar Orbiter’s view (in yellow) with the one from Earth (grey), on 23 March 2025. At the time, Solar Orbiter was viewing the Sun from an angle of 17° below the solar equator, enough to directly see the Sun’s south pole.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The collage above shows the Sun’s south pole as recorded on 16–17 March 2025, when Solar Orbiter was viewing the Sun from an angle of 15° below the solar equator.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Solar Orbiter imaged the Sun's south pole in March 2025 from below the solar equator, but they never state that these were the first clear images of the south pole specifically, though they do say it was the first to image the poles from outside the ecliptic plane.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Solar Orbiter is the first to image the Sun's poles from outside the ecliptic, shows south pole images recorded 16–17 March 2025 and a view on 23 March 2025, and calls them humankind's first-ever views of the pole, though it does not explicitly say they are 'clear' images."
+     }
+    ]
+   },
+   {
+    "sentence": "Its magnetic maps revealed patches of both north and south magnetic polarity side by side, rather than one dominant polarity.",
+    "start": 85,
+    "end": 210,
+    "claim": "Solar Orbiter's magnetic maps revealed patches of both north and south magnetic polarity side by side, rather than one dominant polarity.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the PHI instrument’s magnetic field measurements show that both north and south polarity magnetic fields are present at the Sun’s south pole.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Meanwhile, both the Sun’s south and north poles are speckled with red and blue patches.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the mixed north and south patches seen by the PHI instrument (speckled red and blue patches), but they never say that one polarity is not dominant, which is the claim's contrast.",
+      "page_judged": "supported",
+      "page_reason": "The page states that PHI's magnetic field measurements show both north and south polarity magnetic fields present at the Sun's south pole, and that the poles are speckled with red and blue patches, which supports the claim that both polarities appear together rather than one dominating."
+     }
+    ]
+   },
+   {
+    "sentence": "ESA released the images on June 11, 2025. (esa.int)",
+    "start": 211,
+    "end": 262,
+    "claim": "ESA released the Solar Orbiter south pole images on June 11, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page contains no release date for the south pole images; it mentions dates such as 23 March 2025, 16–17 March 2025, and October 2025 as expected data arrival, but never states June 11, 2025 as the release date."
+     }
+    ]
+   },
+   {
+    "sentence": "That patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+    "start": 263,
+    "end": 416,
+    "claim": "The patchwork of mixed magnetic polarity seen at the Sun's south pole is characteristic of solar maximum.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "both north and south polarity magnetic fields are present at the Sun’s south pole.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This happens only for a short time during each solar cycle, at solar maximum, when the Sun’s magnetic field flips and is at its most active.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that mixed north and south polarity appears at the Sun's south pole and happens at solar maximum, but they never describe it as a 'patchwork' or state that it is characteristic of solar maximum specifically.",
+      "page_judged": "supported",
+      "page_reason": "The page says that finding both north and south polarity magnetic fields at the south pole happens only for a short time during each solar cycle, at solar maximum, when the field flips and is most active."
+     }
+    ]
+   },
+   {
+    "sentence": "That patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+    "start": 263,
+    "end": 416,
+    "claim": "Solar maximum is the active phase of the Sun’s roughly 11-year cycle.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This happens only for a short time during each solar cycle, at solar maximum, when the Sun’s magnetic field flips and is at its most active.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "These groundbreaking new observations are also key to understanding the Sun’s magnetic field and why it flips roughly every 11 years, coinciding with a peak in solar activity.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that solar maximum is when the Sun is at its most active, that the magnetic field flips roughly every 11 years, and that this coincides with a peak in solar activity, which together back the claim that solar maximum is the active phase of the roughly 11-year cycle.",
+      "page_judged": "supported",
+      "page_reason": "The page says the magnetic field flips roughly every 11 years coinciding with a peak in solar activity and that mixed polarity happens 'at solar maximum, when the Sun's magnetic field flips and is at its most active', which supports the claim that solar maximum is the active phase of the roughly 11-year cycle, though it does not explicitly call it 'solar maximum is the active phase' in those exact words."
+     }
+    ]
+   },
+   {
+    "sentence": "That patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+    "start": 263,
+    "end": 416,
+    "claim": "During solar maximum the Sun's global magnetic field reverses.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This happens only for a short time during each solar cycle, at solar maximum, when the Sun’s magnetic field flips and is at its most active.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at solar maximum the Sun's magnetic field flips, which backs the claim's main point that the global field reverses during solar maximum.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Sun's magnetic field flips roughly every 11 years, coinciding with a peak in solar activity, and that the flip happens at solar maximum when the field is most active."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.3333,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003424,
+   "usd_per_claim": 0.000571
+  },
+  "cost": {
+   "total_usd": 0.0034,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0012
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

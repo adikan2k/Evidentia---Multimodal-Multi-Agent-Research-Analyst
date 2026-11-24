@@ -1,0 +1,174 @@
+{
+ "id": "sport_culture-02",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings. It was Pogačar’s fourth Tour title. (letour.fr)",
+  "claims": [
+   {
+    "sentence": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings.",
+    "start": 0,
+    "end": 139,
+    "claim": "Tadej Pogačar won the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With a fourth Tour de France victory, Tadej Pogacar has matched Chris Froome’s record",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2025 edition could serve as a textbook example of the Pogacar method",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say Pogacar won a fourth Tour de France and the 2025 edition is mentioned, but no quote states that the fourth victory came in 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page describes Pogačar’s 2025 Tour de France triumph and says he claimed his fourth Tour victory."
+     }
+    ]
+   },
+   {
+    "sentence": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings.",
+    "start": 0,
+    "end": 139,
+    "claim": "Tadej Pogačar finished 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings of the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After his time trial win at Peyragudes, Pogacar’s lead over Vingegaard stood at 4’07’’, increasing by only 17 more seconds over the final eight stages.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives a lead of 4'07'' over Vingegaard that grew by 17 seconds over the final eight stages, which sums to 4'24'', matching the claimed final gap.",
+      "page_judged": "supported",
+      "page_reason": "The page says Pogacar led Vingegaard by 4′07″ after the Peyragudes time trial and gained 17 more seconds over the final eight stages, amounting to a 4′24″ overall lead."
+     }
+    ]
+   },
+   {
+    "sentence": "It was Pogačar’s fourth Tour title. (letour.fr)",
+    "start": 140,
+    "end": 187,
+    "claim": "The 2025 Tour de France was Tadej Pogačar's fourth Tour de France title.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With a fourth Tour de France victory, Tadej Pogacar has matched Chris Froome’s record",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2025 edition could serve as a textbook example of the Pogacar method",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Pogacar won a fourth Tour de France, but they never state that this fourth victory came in 2025; the only 2025 reference is \"The 2025 edition\" in a separate sentence about his method.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the 2025 Tour de France and says Pogačar won his fourth Tour de France victory."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002448,
+   "usd_per_claim": 0.000816
+  },
+  "cost": {
+   "total_usd": 0.0024,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,766 @@
+{
+ "id": "technology-08",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Nvidia announced both chip families at GTC on March 18, 2025, and gave more detail on Rubin later in the year.\nBlackwell Ultra\nCEO Jensen Huang revealed Blackwell Ultra, a family of chips shipping later this year.[1] Nvidia said the chips are better for reasoning models[1].\nIt comes in a GB300 version, with two GPUs paired to an Nvidia Arm CPU, and a B300 version with just the GPU.[1]\nA single Ultra chip offers the same 20 petaflops of AI performance as Blackwell, but with 288GB of memory, up from 192GB.[2]\nNvidia claimed the GB300 NVL72 rack has 1.5x the AI performance of the GB200 NVL72.[3]\nNvidia said cloud providers could make as much as 50 times the revenue from the new chips as from the Hopper generation.[1]\nServer partners include Cisco, Dell, HPE, Lenovo and Supermicro, among others.[4]\nLater in 2025, on Aug 27, Nvidia said Blackwell Ultra production was ramping at full speed.[3]\nVera Rubin\nNvidia expects to start shipping Vera Rubin systems in the second half of 2026.[5]\nThe system has two main components: a CPU called Vera and a new GPU design called Rubin.[5] Nvidia said the custom Vera CPU will be twice as fast as the CPU used in the Grace Blackwell chips.[5]\nPaired with Vera, Rubin can manage up to 50 petaflops of inference, versus 20 petaflops for current Blackwell chips.[2]\nNvidia is also changing what it calls a GPU: Rubin is actually two GPUs.[5] It will ship in a rack called Vera Rubin NVL144, where previous racks were called NVL72.[1]\nLater roadmap\nRubin Ultra follows in the second half of 2027, with four GPUs in a single package delivering up to 100 petaflops.[2]\nFeynman, the successor to Rubin, is planned for 2028.[2]\nIn September 2025, at the AI Infra Summit, Nvidia detailed Rubin CPX, a new class of GPU purpose-built for massive-context inference.[6]\nThe sources don't fully agree on some figures. For example, the 288GB memory number comes from TechCrunch's GTC coverage, and some roadmap analyses give different rack naming and specs.",
+  "claims": [
+   {
+    "sentence": "Nvidia announced both chip families at GTC on March 18, 2025, and gave more detail on Rubin later in the year.",
+    "start": 0,
+    "end": 110,
+    "claim": "Nvidia announced both chip families at GTC on March 18, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Nvidia announced both chip families at GTC on March 18, 2025, and gave more detail on Rubin later in the year.",
+    "start": 0,
+    "end": 110,
+    "claim": "Nvidia gave more detail on Rubin later in 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "CEO Jensen Huang revealed Blackwell Ultra, a family of chips shipping later this year.[1]",
+    "start": 127,
+    "end": 216,
+    "claim": "CEO Jensen Huang revealed Blackwell Ultra, a family of chips shipping later this year.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "CEO Jensen Huang revealed Blackwell Ultra, a family of chips shipping in the second half of this year",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that CEO Jensen Huang revealed Blackwell Ultra, a family of chips shipping in the second half of this year, which matches the claim's 'shipping later this year' in substance.",
+      "page_judged": "supported",
+      "page_reason": "The page says CEO Jensen Huang revealed Blackwell Ultra, a family of chips shipping in the second half of this year."
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia said the chips are better for reasoning models[1].",
+    "start": 217,
+    "end": 274,
+    "claim": "Nvidia said the Blackwell Ultra chips are better for reasoning models.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The new Blackwell Ultra chips are better for reasoning models, Nvidia said.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Nvidia said the new Blackwell Ultra chips are better for reasoning models, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that “The new Blackwell Ultra chips are better for reasoning models, Nvidia said.”"
+     }
+    ]
+   },
+   {
+    "sentence": "It comes in a GB300 version, with two GPUs paired to an Nvidia Arm CPU, and a B300 version with just the GPU.[1]",
+    "start": 275,
+    "end": 387,
+    "claim": "Blackwell Ultra comes in a GB300 version, with two GPUs paired to an Nvidia Arm CPU.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Blackwell Ultra will come in a version with two paired to an Nvidia Arm CPU, called GB300, and a version with just the GPU, called B300.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Blackwell Ultra comes in a GB300 version with two GPUs paired to an Nvidia Arm CPU, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Blackwell Ultra will include a GB300 version “with two paired to an Nvidia Arm CPU,” supporting the claim that it pairs two GPUs with that CPU."
+     }
+    ]
+   },
+   {
+    "sentence": "It comes in a GB300 version, with two GPUs paired to an Nvidia Arm CPU, and a B300 version with just the GPU.[1]",
+    "start": 275,
+    "end": 387,
+    "claim": "Blackwell Ultra comes in a B300 version with just the GPU.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Blackwell Ultra will come in a version with two paired to an Nvidia Arm CPU, called GB300, and a version with just the GPU, called B300.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Blackwell Ultra comes in a version with just the GPU called B300, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Blackwell Ultra comes in a B300 version with just the GPU."
+     }
+    ]
+   },
+   {
+    "sentence": "A single Ultra chip offers the same 20 petaflops of AI performance as Blackwell, but with 288GB of memory, up from 192GB.[2]",
+    "start": 388,
+    "end": 512,
+    "claim": "A single Blackwell Ultra chip offers the same 20 petaflops of AI performance as Blackwell.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A single Ultra chip offers the same 20 petaflops of AI performance as Blackwell, but with 288GB of memory, up from 192GB.[2]",
+    "start": 388,
+    "end": 512,
+    "claim": "A single Blackwell Ultra chip has 288GB of memory, up from 192GB.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia claimed the GB300 NVL72 rack has 1.5x the AI performance of the GB200 NVL72.[3]",
+    "start": 513,
+    "end": 599,
+    "claim": "Nvidia claimed the GB300 NVL72 rack has 1.5x the AI performance of the GB200 NVL72.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://whatledto.com/events/nvidia-datacenter-gpu-roadmap",
+      "host": "whatledto.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nvidia announced Blackwell Ultra and the GB300 NVL72 rack, claiming 1.5x the AI performance of the GB200 NVL72.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Nvidia claimed the GB300 NVL72 rack has 1.5x the AI performance of the GB200 NVL72, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nvidia announced the GB300 NVL72 rack and claimed it had 1.5x the AI performance of the GB200 NVL72."
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia said cloud providers could make as much as 50 times the revenue from the new chips as from the Hopper generation.[1]",
+    "start": 600,
+    "end": 723,
+    "claim": "Nvidia said cloud providers could make as much as 50 times the revenue from the new Blackwell Ultra chips as from the Hopper generation.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nvidia says that means that cloud providers can use Blackwell Ultra to offer a premium AI service for time-sensitive applications, allowing them to make as much as 50 times the revenue from the new chips as the Hopper generation, which shipped in 2023.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Nvidia says cloud providers can make as much as 50 times the revenue from Blackwell Ultra chips as from the Hopper generation, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nvidia claims cloud providers can make as much as 50 times the revenue from Blackwell Ultra chips as from the Hopper generation."
+     }
+    ]
+   },
+   {
+    "sentence": "Server partners include Cisco, Dell, HPE, Lenovo and Supermicro, among others.[4]",
+    "start": 724,
+    "end": 805,
+    "claim": "Server partners for Blackwell Ultra include Cisco, Dell, HPE, Lenovo and Supermicro.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.fiercesensors.com/ai/nvidia-announces-blackwell-ultra-rubin-roadmap-plans-gtc",
+      "host": "fiercesensors.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Later in 2025, on Aug 27, Nvidia said Blackwell Ultra production was ramping at full speed.[3]",
+    "start": 806,
+    "end": 900,
+    "claim": "On Aug 27, 2025, Nvidia said Blackwell Ultra production was ramping at full speed.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://whatledto.com/events/nvidia-datacenter-gpu-roadmap",
+      "host": "whatledto.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NVIDIA · Aug 27, 2025 · Blackwell is the AI platform the world has been waiting for, delivering an exceptional generational leap — production of Blackwell Ultra is ramping at full speed, and demand is extraordinary.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote, dated Aug 27, 2025 and attributed to NVIDIA, states that production of Blackwell Ultra is ramping at full speed, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Nvidia’s August 27, 2025 statement that Blackwell Ultra production was “ramping at full speed.”"
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia expects to start shipping Vera Rubin systems in the second half of 2026.[5]",
+    "start": 912,
+    "end": 994,
+    "claim": "Nvidia expects to start shipping Vera Rubin systems in the second half of 2026.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nbclosangeles.com/news/business/money-report/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips/3657565/",
+      "host": "nbclosangeles.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nvidia expects to start shipping systems on its next-generation GPU family in the second half of 2026.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs Nvidia expecting to start shipping systems in the second half of 2026, but it names only a 'next-generation GPU family' and never mentions Vera Rubin, which the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Nvidia expects to start shipping systems on its Vera Rubin GPU family in the second half of 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "The system has two main components: a CPU called Vera and a new GPU design called Rubin.[5]",
+    "start": 995,
+    "end": 1086,
+    "claim": "The Vera Rubin system has two main components: a CPU called Vera and a new GPU design called Rubin.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nbclosangeles.com/news/business/money-report/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips/3657565/",
+      "host": "nbclosangeles.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The system has two main components: a CPU, called Vera, and a new GPU design, called Rubin.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the system has two main components, a CPU called Vera and a new GPU design called Rubin, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Vera Rubin system has two main components: a CPU called Vera and a new GPU design called Rubin."
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia said the custom Vera CPU will be twice as fast as the CPU used in the Grace Blackwell chips.[5]",
+    "start": 1087,
+    "end": 1189,
+    "claim": "Nvidia said the custom Vera CPU will be twice as fast as the CPU used in the Grace Blackwell chips.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nbclosangeles.com/news/business/money-report/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips/3657565/",
+      "host": "nbclosangeles.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The custom Vera design will be twice as fast as the CPU used in last year's Grace Blackwell chips, the company said.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim that Nvidia said the custom Vera CPU will be twice as fast as the Grace Blackwell CPU, but it does not name Nvidia as the speaker explicitly beyond 'the company', which is an acceptable reading, so the core is supported; however the claim's identification of the comparison target as 'the CPU used in the Grace Blackwell chips' matches the quote, meaning the quote fully covers the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nvidia stated that its custom Vera design will be twice as fast as the CPU used in last year's Grace Blackwell chips."
+     }
+    ]
+   },
+   {
+    "sentence": "Paired with Vera, Rubin can manage up to 50 petaflops of inference, versus 20 petaflops for current Blackwell chips.[2]",
+    "start": 1190,
+    "end": 1309,
+    "claim": "Paired with Vera, Rubin can manage up to 50 petaflops of inference.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Paired with Vera, Rubin can manage up to 50 petaflops of inference, versus 20 petaflops for current Blackwell chips.[2]",
+    "start": 1190,
+    "end": 1309,
+    "claim": "Current Blackwell chips deliver 20 petaflops of inference.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia is also changing what it calls a GPU: Rubin is actually two GPUs.[5]",
+    "start": 1310,
+    "end": 1385,
+    "claim": "Nvidia says Rubin is actually two GPUs.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nbclosangeles.com/news/business/money-report/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips/3657565/",
+      "host": "nbclosangeles.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nvidia is also making a change to what it calls a GPU. Rubin is actually two GPUs, Nvidia said.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Nvidia said Rubin is actually two GPUs, which matches the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Nvidia said Rubin is actually two GPUs."
+     }
+    ]
+   },
+   {
+    "sentence": "It will ship in a rack called Vera Rubin NVL144, where previous racks were called NVL72.[1]",
+    "start": 1386,
+    "end": 1477,
+    "claim": "Vera Rubin will ship in a rack called Vera Rubin NVL144, where previous racks were called NVL72.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnbc.com/2025/03/18/nvidia-announces-blackwell-ultra-and-vera-rubin-ai-chips-.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nvidia said that will come in a rack called Vera Rubin NVL144. Previous versions of Nvidia's rack were called NVL72.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the rack will be called Vera Rubin NVL144 and that previous versions were called NVL72, covering every fact in the claim; the word 'ship' is a minor rewording of 'will come in'.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the later Rubin Next chip will come in a Vera Rubin NVL144 rack, not that Vera Rubin generally will ship in that rack."
+     }
+    ]
+   },
+   {
+    "sentence": "Rubin Ultra follows in the second half of 2027, with four GPUs in a single package delivering up to 100 petaflops.[2]",
+    "start": 1492,
+    "end": 1609,
+    "claim": "Rubin Ultra follows in the second half of 2027.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Rubin Ultra follows in the second half of 2027, with four GPUs in a single package delivering up to 100 petaflops.[2]",
+    "start": 1492,
+    "end": 1609,
+    "claim": "Rubin Ultra has four GPUs in a single package delivering up to 100 petaflops.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Feynman, the successor to Rubin, is planned for 2028.[2]",
+    "start": 1610,
+    "end": 1666,
+    "claim": "Feynman, the successor to Rubin, is planned for 2028.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://techcrunch.com/2025/03/18/nvidia-announces-new-gpus-at-gtc-2025-including-rubin",
+      "host": "techcrunch.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "In September 2025, at the AI Infra Summit, Nvidia detailed Rubin CPX, a new class of GPU purpose-built for massive-context inference.[6]",
+    "start": 1667,
+    "end": 1803,
+    "claim": "In September 2025, at the AI Infra Summit, Nvidia detailed Rubin CPX, a new class of GPU purpose-built for massive-context inference.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.storagereview.com/news/nvidia-unveils-roadmap-at-ai-infra-summit-from-blackwell-ultra-to-vera-rubin-cpx-architecture",
+      "host": "storagereview.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At the AI Infra Summit 2025, NVIDIA showcased momentum on two fronts: impressive new MLPerf Inference results from its Blackwell Ultra systems and, more significantly, a detailed roadmap for the 2026 Vera Rubin generation, including Rubin CPX, a new class of GPU purpose-built for massive-context inference.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The announcement of Rubin CPX, planned for availability in late 2026, is NVIDIA’s architectural response to one of the most pressing challenges in LLM inference",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that NVIDIA detailed Rubin CPX, described as a new class of GPU purpose-built for massive-context inference, at the AI Infra Summit 2025, but they never state the September 2025 date.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says that NVIDIA detailed Rubin CPX at the AI Infra Summit 2025 and describes it as purpose-built for long-context inference, but it does not state that the summit was in September."
+     }
+    ]
+   },
+   {
+    "sentence": "The sources don't fully agree on some figures. For example, the 288GB memory number comes from TechCrunch's GTC coverage, and some roadmap analyses give different rack naming and specs.",
+    "start": 1804,
+    "end": 1989,
+    "claim": "The sources don't fully agree on some figures, including the 288GB memory number from TechCrunch's GTC coverage.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 24,
+   "labels": {
+    "supported": 9,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 8,
+    "uncited": 3
+   },
+   "cited_claims": 21,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.4286,
+   "pages_cited": 6,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.0097,
+   "usd_per_claim": 0.000404
+  },
+  "cost": {
+   "total_usd": 0.0097,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 15,
+     "usd": 0.0038
+    },
+    {
+     "node": "page_check",
+     "calls": 13,
+     "usd": 0.003
+    },
+    {
+     "node": "check",
+     "calls": 13,
+     "usd": 0.0017
+    }
+   ]
+  }
+ }
+}

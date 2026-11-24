@@ -1,0 +1,516 @@
+{
+ "id": "science-08",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "In 2025, Solar Orbiter gave us the first direct views of the Sun's south pole and showed that its magnetic field was in a messy state.\nFirst images of a pole. Until now, every image of the Sun was taken from near its equator, because Earth, the other planets and all other operational spacecraft orbit in the flat ecliptic plane.[1] Scientists tilted Solar Orbiter's trajectory out of that plane, which let it view the south pole directly.[2] A flyby of Venus tilted the orbit significantly.[3] Three instruments took the images: PHI (Polarimetric and Helioseismic Imager), EUI (Extreme Ultraviolet Imager) and SPICE (Spectral Imaging of the Coronal Environment).[1] The images were captured around 16–17 March 2025 and released on 11 June.\nA messy magnetic field. PHI showed both north and south magnetic polarities at the south pole.[3] ESA explained that this happens only briefly in each solar cycle, at solar maximum, when the Sun's magnetic field flips.[3] The observations indicate there is currently no dominant polarity at either pole.[2] Scientists hope the data will help explain these magnetic flips, which aren't fully understood yet[3].\nMagnetic field moving faster than expected. Analysis of data from the south pole region revealed a surprise: the magnetic field is carried toward the pole faster than expected.[4]\nSolar wind clues. SPICE Doppler measurements track how fast clumps of solar material move. These can show how the Sun flings particles into space as solar wind.[3]\nThe mission also imaged the north pole. Researchers expected data from that flyby, and from the first full \"pole-to-pole\" orbit, by October.[2] I haven't looked for results from that later dataset.",
+  "claims": [
+   {
+    "sentence": "In 2025, Solar Orbiter gave us the first direct views of the Sun's south pole and showed that its magnetic field was in a messy state.",
+    "start": 0,
+    "end": 134,
+    "claim": "In 2025, Solar Orbiter gave the first direct views of the Sun's south pole.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "In 2025, Solar Orbiter gave us the first direct views of the Sun's south pole and showed that its magnetic field was in a messy state.",
+    "start": 0,
+    "end": 134,
+    "claim": "Solar Orbiter showed that the Sun's magnetic field was in a messy state.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Until now, every image of the Sun was taken from near its equator, because Earth, the other planets and all other operational spacecraft orbit in the flat ecliptic plane.[1]",
+    "start": 159,
+    "end": 332,
+    "claim": "Until now, every image of the Sun was taken from near its equator.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sci.news/astronomy/solar-orbiter-images-suns-poles-13983.html",
+      "host": "sci.news",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Any image we have ever seen of the Sun was taken from around the Sun’s equator.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that every image of the Sun ever seen was taken from around the Sun's equator, which matches the claim's 'until now' and 'near its equator' wording without adding new facts.",
+      "page_judged": "supported",
+      "page_reason": "The page states that every image of the Sun seen before Solar Orbiter’s new views was taken from around the Sun’s equator."
+     }
+    ]
+   },
+   {
+    "sentence": "Until now, every image of the Sun was taken from near its equator, because Earth, the other planets and all other operational spacecraft orbit in the flat ecliptic plane.[1]",
+    "start": 159,
+    "end": 332,
+    "claim": "Earth, the other planets and all other operational spacecraft orbit in the flat ecliptic plane.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sci.news/astronomy/solar-orbiter-images-suns-poles-13983.html",
+      "host": "sci.news",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Earth, the other planets, and all other operational spacecraft orbit the Sun within a flat disk around the Sun called the ecliptic plane.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Earth, the other planets and all other operational spacecraft orbit the Sun within a flat disk called the ecliptic plane, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Earth, the other planets, and all other operational spacecraft orbit the Sun within a flat disk called the ecliptic plane."
+     }
+    ]
+   },
+   {
+    "sentence": "Scientists tilted Solar Orbiter's trajectory out of that plane, which let it view the south pole directly.[2]",
+    "start": 333,
+    "end": 442,
+    "claim": "Scientists tilted Solar Orbiter's trajectory out of the ecliptic plane, which let it view the Sun's south pole directly.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.smithsonianmag.com/smart-news/see-the-first-ever-direct-images-of-the-suns-south-pole-captured-by-the-solar-orbiter-spacecraft-180986788/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A flyby of Venus tilted the orbit significantly.[3]",
+    "start": 443,
+    "end": 494,
+    "claim": "A flyby of Venus tilted Solar Orbiter's orbit significantly.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tech.yahoo.com/science/articles/solar-orbiter-captures-images-suns-123047783.html",
+      "host": "tech.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Three instruments took the images: PHI (Polarimetric and Helioseismic Imager), EUI (Extreme Ultraviolet Imager) and SPICE (Spectral Imaging of the Coronal Environment).[1]",
+    "start": 495,
+    "end": 666,
+    "claim": "Three instruments took the images: PHI, EUI and SPICE.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sci.news/astronomy/solar-orbiter-images-suns-poles-13983.html",
+      "host": "sci.news",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The images were taken by three of Solar Orbiter’s scientific instruments: the Polarimetric and Helioseismic Imager (PHI), the Extreme Ultraviolet Imager (EUI), and the Spectral Imaging of the Coronal Environment (SPICE) instrument.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the images were taken by three instruments, PHI, EUI and SPICE, matching the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the images were taken by three Solar Orbiter instruments: PHI, EUI, and SPICE."
+     }
+    ]
+   },
+   {
+    "sentence": "The images were captured around 16–17 March 2025 and released on 11 June.",
+    "start": 667,
+    "end": 740,
+    "claim": "The images were captured around 16–17 March 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The images were captured around 16–17 March 2025 and released on 11 June.",
+    "start": 667,
+    "end": 740,
+    "claim": "The images were released on 11 June.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "A messy magnetic field. PHI showed both north and south magnetic polarities at the south pole.[3]",
+    "start": 741,
+    "end": 838,
+    "claim": "PHI showed both north and south magnetic polarities at the south pole.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tech.yahoo.com/science/articles/solar-orbiter-captures-images-suns-123047783.html",
+      "host": "tech.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "ESA explained that this happens only briefly in each solar cycle, at solar maximum, when the Sun's magnetic field flips.[3]",
+    "start": 839,
+    "end": 962,
+    "claim": "ESA explained that mixed magnetic polarities at the pole happen only briefly in each solar cycle, at solar maximum, when the Sun's magnetic field flips.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tech.yahoo.com/science/articles/solar-orbiter-captures-images-suns-123047783.html",
+      "host": "tech.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The observations indicate there is currently no dominant polarity at either pole.[2]",
+    "start": 963,
+    "end": 1047,
+    "claim": "The observations indicate there is currently no dominant magnetic polarity at either pole.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.smithsonianmag.com/smart-news/see-the-first-ever-direct-images-of-the-suns-south-pole-captured-by-the-solar-orbiter-spacecraft-180986788/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Scientists hope the data will help explain these magnetic flips, which aren't fully understood yet[3].",
+    "start": 1048,
+    "end": 1150,
+    "claim": "Scientists hope the data will help explain the Sun's magnetic flips, which are not yet fully understood.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tech.yahoo.com/science/articles/solar-orbiter-captures-images-suns-123047783.html",
+      "host": "tech.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Magnetic field moving faster than expected. Analysis of data from the south pole region revealed a surprise: the magnetic field is carried toward the pole faster than expected.[4]",
+    "start": 1151,
+    "end": 1330,
+    "claim": "Analysis of data from the south pole region revealed that the magnetic field is carried toward the pole faster than expected.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mps.mpg.de/first-images-of-the-sun-s-south-pole",
+      "host": "mps.mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the south-pole magnetic field is in turmoil, but does not state that it is carried toward the pole faster than expected."
+     }
+    ]
+   },
+   {
+    "sentence": "Solar wind clues. SPICE Doppler measurements track how fast clumps of solar material move.",
+    "start": 1331,
+    "end": 1421,
+    "claim": "SPICE Doppler measurements track how fast clumps of solar material move.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tech.yahoo.com/science/articles/solar-orbiter-captures-images-suns-123047783.html",
+      "host": "tech.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "These can show how the Sun flings particles into space as solar wind.[3]",
+    "start": 1422,
+    "end": 1494,
+    "claim": "SPICE Doppler measurements can show how the Sun flings particles into space as solar wind.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tech.yahoo.com/science/articles/solar-orbiter-captures-images-suns-123047783.html",
+      "host": "tech.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The mission also imaged the north pole. Researchers expected data from that flyby, and from the first full \"pole-to-pole\" orbit, by October.[2]",
+    "start": 1495,
+    "end": 1638,
+    "claim": "The mission also imaged the north pole.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.smithsonianmag.com/smart-news/see-the-first-ever-direct-images-of-the-suns-south-pole-captured-by-the-solar-orbiter-spacecraft-180986788/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The mission also imaged the north pole. Researchers expected data from that flyby, and from the first full \"pole-to-pole\" orbit, by October.[2]",
+    "start": 1495,
+    "end": 1638,
+    "claim": "Researchers expected data from the north pole flyby and from the first full pole-to-pole orbit by October.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.smithsonianmag.com/smart-news/see-the-first-ever-direct-images-of-the-suns-south-pole-captured-by-the-solar-orbiter-spacecraft-180986788/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 18,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 6,
+    "unchecked": 4,
+    "uncited": 4
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2143,
+   "pages_cited": 4,
+   "pages_read": 2,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002917,
+   "usd_per_claim": 0.000162
+  },
+  "cost": {
+   "total_usd": 0.0029,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0008
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

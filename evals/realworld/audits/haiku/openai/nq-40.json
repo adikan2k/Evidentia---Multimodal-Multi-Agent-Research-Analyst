@@ -1,0 +1,203 @@
+{
+ "id": "nq-40",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The NFL’s London games are played at Tottenham Hotspur Stadium or Wembley Stadium, depending on the matchup. In 2026, Tottenham hosted Colts–Commanders on October 4 and Eagles–Jaguars on October 11. Wembley hosted Texans–Jaguars on October 18. (operations.nfl.com)",
+  "claims": [
+   {
+    "sentence": "The NFL’s London games are played at Tottenham Hotspur Stadium or Wembley Stadium, depending on the matchup.",
+    "start": 0,
+    "end": 108,
+    "claim": "The NFL’s London games are played at Tottenham Hotspur Stadium or Wembley Stadium, depending on the matchup.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 4 (Week 4) | Indianapolis Colts vs. Washington Commanders | Tottenham Hotspur Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Oct. 18 (Week 6) | Houston Texans vs. Jacksonville Jaguars | Wembley Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show London games played at Tottenham Hotspur Stadium (Colts vs. Commanders) and at Wembley Stadium (Texans vs. Jaguars), which backs the two-venue point, but nothing states that the venue depends on the matchup or that these are the only London venues.",
+      "page_judged": "supported",
+      "page_reason": "The schedule table lists London games at Tottenham Hotspur Stadium (Oct. 4 and Oct. 11) and at Wembley Stadium (Oct. 18), so the page supports that London games are played at one of these two stadiums depending on the matchup."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2026, Tottenham hosted Colts–Commanders on October 4 and Eagles–Jaguars on October 11.",
+    "start": 109,
+    "end": 198,
+    "claim": "In 2026, Tottenham hosted Colts–Commanders on October 4.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 4 (Week 4) | Indianapolis Colts vs. Washington Commanders | Tottenham Hotspur Stadium London, U.K. | 9:30 a.m. ET (2:30 p.m. London time) |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the Colts vs. Commanders game was on Oct. 4 at Tottenham Hotspur Stadium, but it gives no year, so the claim's 2026 is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The table lists the Indianapolis Colts vs. Washington Commanders game on Oct. 4 (Week 4) at Tottenham Hotspur Stadium in London, which matches the claim that Tottenham hosted it on October 4, though the page describes this as a scheduled game rather than one already played."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2026, Tottenham hosted Colts–Commanders on October 4 and Eagles–Jaguars on October 11.",
+    "start": 109,
+    "end": 198,
+    "claim": "In 2026, Tottenham hosted Eagles–Jaguars on October 11.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 11 (Week 5) | Philadelphia Eagles vs. Jacksonville Jaguars | Tottenham Hotspur Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the October 11 date, the Eagles vs. Jaguars matchup, and the Tottenham Hotspur Stadium venue, but it does not state the year 2026.",
+      "page_judged": "supported",
+      "page_reason": "The table lists Philadelphia Eagles vs. Jacksonville Jaguars on Oct. 11 (Week 5) at Tottenham Hotspur Stadium in London, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Wembley hosted Texans–Jaguars on October 18. (operations.nfl.com)",
+    "start": 199,
+    "end": 264,
+    "claim": "Wembley hosted Texans–Jaguars on October 18.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 18 (Week 6) | Houston Texans vs. Jacksonville Jaguars | Wembley Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists a game on Oct. 18 (Week 6) between the Houston Texans and Jacksonville Jaguars at Wembley Stadium, London, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page's schedule table lists Houston Texans vs. Jacksonville Jaguars on Oct. 18 (Week 6) at Wembley Stadium London, U.K., so the claim is fully supported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002079,
+   "usd_per_claim": 0.00052
+  },
+  "cost": {
+   "total_usd": 0.0021,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

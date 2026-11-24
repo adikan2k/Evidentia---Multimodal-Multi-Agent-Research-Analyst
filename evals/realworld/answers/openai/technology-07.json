@@ -1,0 +1,11 @@
+{
+ "id": "technology-07",
+ "tool": "web search",
+ "question": "What caused the Amazon Web Services outage in October 2025, and what did it disrupt?",
+ "model": "gpt-6.2-sol",
+ "made_at": "2026-11-24T20:45:13+00:00",
+ "text": "The **October 20, 2025 AWS outage** was caused by a bug in the automated system that manages DNS for **Amazon DynamoDB** in AWS’s Northern Virginia region (`us-east-1`). Two automated updates ran in an unexpected order—a *race condition*—leaving the database service’s regional address with an empty DNS record. Services that depended on that address could no longer connect to DynamoDB. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\nThe failure then cascaded: AWS had trouble launching new **EC2 virtual servers**, and some **Network Load Balancers** had connection failures. Those problems continued for hours after the original DNS issue was fixed. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\nAlthough the fault began in one AWS region, users worldwide saw disruptions. Affected services included **Snapchat, Reddit, Signal, Slack, Roblox, Fortnite, and Venmo**, as well as Amazon’s own **Ring and Alexa**. ([pbs.org](https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai))",
+ "citations": 2,
+ "ended": "completed",
+ "usd": 0.0408
+}

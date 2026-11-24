@@ -482,3 +482,18 @@ def test_the_checker_rules_are_added_only_when_switched_on(settings) -> None:
     audit(deps, ANSWER)
     check = next(c for c in fake.calls if c["schema"] == "AuditJudgement")
     assert "The same thing." in check["system"] and "The same scope." in check["system"]
+
+
+def test_a_very_long_page_is_shortlisted_by_shared_words_before_reranking() -> None:
+    from evidentia.audit.graph import shortlist
+    from evidentia.schemas import Passage
+
+    texts = ["nothing relevant here"] * 300 + ["the tariff rate on imports was raised"]
+    passages = [
+        Passage(id=str(i), source_id="S1", url="u", start=i, end=i + 1, text=t)
+        for i, t in enumerate(texts)
+    ]
+    kept = shortlist("The tariff rate on imports was raised in April.", passages, 10)
+    assert len(kept) == 10 and kept[-1].text.startswith("the tariff rate")
+    assert [p.start for p in kept] == sorted(p.start for p in kept)
+    assert shortlist("claim", passages[:5], 10) == passages[:5]

@@ -1,0 +1,623 @@
+{
+ "id": "technology-09",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "In 2025, Google's main Willow report was a claim of \"verifiable quantum advantage\" on October 22.\nThe claim: Google's 105-qubit Willow processor was used to demonstrate a \"verifiable quantum advantage.\"[1] The algorithm is called Quantum Echoes. It uses out-of-time-order correlators (OTOCs), which work like quantum \"echo\" signals, to probe chaotic dynamics on a 65-qubit subsystem of the chip.[1]\nSpeed: Google said it ran 13,000 times faster than the world's best supercomputer could manage.[2] One write-up says certain data points would take an estimated 3+ years each to simulate on Frontier, while the quantum chip produced them in seconds.[1]\nVerifiability: The results were published in *Nature*. Google says the algorithm is verifiable, meaning another quantum computer can repeat it.[2]\nApplications: Google said the result clears a path for useful applications within five years.[2] It pointed to possible uses in medicine and materials science.[2]\nContext: The Willow chip itself is older than these results. Google launched it in December 2024.[3] That launch centered on error correction. Google said errors fall exponentially as the chip scales up.[4] It described this as cracking a key challenge the field had pursued for almost 30 years.[4]\nThe advantage claim comes from Google. HPCwire's coverage put it conditionally: \"If it pans out,\" it would be the first time a quantum computer has achieved quantum advantage.[3] Independent scrutiny and the practical usefulness of the task are still open questions.",
+  "claims": [
+   {
+    "sentence": "In 2025, Google's main Willow report was a claim of \"verifiable quantum advantage\" on October 22.",
+    "start": 0,
+    "end": 97,
+    "claim": "In 2025, Google's main Willow report was a claim of \"verifiable quantum advantage\" on October 22.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The claim: Google's 105-qubit Willow processor was used to demonstrate a \"verifiable quantum advantage.\"[1]",
+    "start": 98,
+    "end": 205,
+    "claim": "Google's 105-qubit Willow processor was used to demonstrate a \"verifiable quantum advantage.\"",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://postquantum.com/quantum-research/googles-quantum-advantage/",
+      "host": "postquantum.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Google Quantum AI has unveiled a major milestone in quantum computing: its Willow superconducting quantum processor has achieved the first-ever “verifiable quantum advantage”.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "to probe chaotic dynamics on a 65-qubit subsystem of the 105-qubit Willow chip.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Google's 105-qubit Willow chip achieved a \"verifiable quantum advantage\", which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Google’s 105-qubit Willow chip achieved a verifiable quantum advantage using a 65-qubit subsystem."
+     }
+    ]
+   },
+   {
+    "sentence": "The algorithm is called Quantum Echoes.",
+    "start": 206,
+    "end": 245,
+    "claim": "The algorithm is called Quantum Echoes.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://postquantum.com/quantum-research/googles-quantum-advantage/",
+      "host": "postquantum.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Google Quantum AI has unveiled a major milestone in quantum computing: its Willow superconducting quantum processor has achieved the first-ever “verifiable quantum advantage”. In an announcement, Google’s researchers introduced a new algorithm called Quantum Echoes",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote explicitly states that Google's researchers introduced a new algorithm called Quantum Echoes, which matches the claim's sole assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page explicitly names the new algorithm “Quantum Echoes.”"
+     }
+    ]
+   },
+   {
+    "sentence": "It uses out-of-time-order correlators (OTOCs), which work like quantum \"echo\" signals, to probe chaotic dynamics on a 65-qubit subsystem of the chip.[1]",
+    "start": 246,
+    "end": 398,
+    "claim": "Quantum Echoes uses out-of-time-order correlators (OTOCs), which work like quantum \"echo\" signals, to probe chaotic dynamics on a 65-qubit subsystem of the chip.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://postquantum.com/quantum-research/googles-quantum-advantage/",
+      "host": "postquantum.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Google Quantum AI has unveiled a major milestone in quantum computing: its Willow superconducting quantum processor has achieved the first-ever “verifiable quantum advantage”. In an announcement, Google’s researchers introduced a new algorithm called Quantum Echoes that leverages out-of-time-order correlators (OTOCs) – essentially quantum “echo” signals – to probe chaotic dynamics on a 65-qubit subsystem of the 105-qubit Willow chip.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Quantum Echoes leverages OTOCs, described as quantum echo signals, to probe chaotic dynamics on a 65-qubit subsystem of the chip, so every fact in the claim is backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Quantum Echoes uses out-of-time-order correlators (OTOCs), described as quantum “echo” signals, to probe chaotic dynamics on a 65-qubit subsystem."
+     }
+    ]
+   },
+   {
+    "sentence": "Speed: Google said it ran 13,000 times faster than the world's best supercomputer could manage.[2]",
+    "start": 399,
+    "end": 497,
+    "claim": "Google said the Willow chip ran 13,000 times faster than the world's best supercomputer could manage.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bloomberg.com/news/articles/2025-10-22/google-unveils-quantum-computing-breakthrough-with-willow-chip",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "One write-up says certain data points would take an estimated 3+ years each to simulate on Frontier, while the quantum chip produced them in seconds.[1]",
+    "start": 498,
+    "end": 650,
+    "claim": "One write-up says certain data points would take an estimated 3+ years each to simulate on Frontier.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://postquantum.com/quantum-research/googles-quantum-advantage/",
+      "host": "postquantum.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In fact, certain data points from the Quantum Echoes experiment would take an estimated 3+ years each to simulate on Frontier, one of the world’s fastest supercomputers, whereas the quantum chip generated them in seconds.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that certain data points from the Quantum Echoes experiment would take an estimated 3+ years each to simulate on Frontier, which matches the claim's wording and figure.",
+      "page_judged": "supported",
+      "page_reason": "The page says certain Quantum Echoes data points were estimated to take more than three years each to simulate on Frontier, specifying 3.2 years per data point in its analysis."
+     }
+    ]
+   },
+   {
+    "sentence": "One write-up says certain data points would take an estimated 3+ years each to simulate on Frontier, while the quantum chip produced them in seconds.[1]",
+    "start": 498,
+    "end": 650,
+    "claim": "One write-up says the quantum chip produced those data points in seconds.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://postquantum.com/quantum-research/googles-quantum-advantage/",
+      "host": "postquantum.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "whereas the quantum chip generated them in seconds.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the quantum chip generated the data points in seconds, which is exactly what the claim says one write-up reports.",
+      "page_judged": "supported",
+      "page_reason": "The page says the data points that would take an estimated 3+ years each to simulate on Frontier were generated by the quantum chip in seconds."
+     }
+    ]
+   },
+   {
+    "sentence": "Verifiability: The results were published in *Nature*.",
+    "start": 651,
+    "end": 705,
+    "claim": "The Willow advantage results were published in Nature.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bloomberg.com/news/articles/2025-10-22/google-unveils-quantum-computing-breakthrough-with-willow-chip",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Google says the algorithm is verifiable, meaning another quantum computer can repeat it.[2]",
+    "start": 706,
+    "end": 797,
+    "claim": "Google says the Quantum Echoes algorithm is verifiable, meaning another quantum computer can repeat it.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bloomberg.com/news/articles/2025-10-22/google-unveils-quantum-computing-breakthrough-with-willow-chip",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Applications: Google said the result clears a path for useful applications within five years.[2]",
+    "start": 798,
+    "end": 894,
+    "claim": "Google said the result clears a path for useful applications within five years.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bloomberg.com/news/articles/2025-10-22/google-unveils-quantum-computing-breakthrough-with-willow-chip",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It pointed to possible uses in medicine and materials science.[2]",
+    "start": 895,
+    "end": 960,
+    "claim": "Google pointed to possible uses of the result in medicine and materials science.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bloomberg.com/news/articles/2025-10-22/google-unveils-quantum-computing-breakthrough-with-willow-chip",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Context: The Willow chip itself is older than these results.",
+    "start": 961,
+    "end": 1021,
+    "claim": "The Willow chip is older than the October 2025 advantage results.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hpcwire.com/2025/10/22/google-claims-quantum-advantage-with-willow-chip/",
+      "host": "hpcwire.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Google launched it in December 2024.[3]",
+    "start": 1022,
+    "end": 1061,
+    "claim": "Google launched the Willow chip in December 2024.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hpcwire.com/2025/10/22/google-claims-quantum-advantage-with-willow-chip/",
+      "host": "hpcwire.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "That launch centered on error correction.",
+    "start": 1062,
+    "end": 1103,
+    "claim": "The December 2024 Willow launch centered on error correction.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page emphasizes Willow’s error-correction achievements but does not state that its launch was in December 2024."
+     }
+    ]
+   },
+   {
+    "sentence": "Google said errors fall exponentially as the chip scales up.[4]",
+    "start": 1104,
+    "end": 1167,
+    "claim": "Google said errors fall exponentially as the Willow chip scales up.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Willow can reduce errors exponentially as we scale up using more qubits.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we were able to cut the error rate in half. In other words, we achieved an exponential reduction in the error rate.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Willow can reduce errors exponentially as qubits are scaled up, which matches the claim that errors fall exponentially as the chip scales, and the claim's attribution to Google is consistent with the quoted text.",
+      "page_judged": "supported",
+      "page_reason": "The page says Willow reduces errors exponentially as more qubits are used and that the error rate was cut in half at each larger array size."
+     }
+    ]
+   },
+   {
+    "sentence": "It described this as cracking a key challenge the field had pursued for almost 30 years.[4]",
+    "start": 1168,
+    "end": 1259,
+    "claim": "Google described error correction scaling as cracking a key challenge the field had pursued for almost 30 years.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This cracks a key challenge in quantum error correction that the field has pursued for almost 30 years.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the work cracks a key quantum error correction challenge pursued for almost 30 years, which matches the claim's main point, though it does not explicitly attribute the description to Google or name the speaker, a detail the quote does not show but the claim's framing is consistent with.",
+      "page_judged": "supported",
+      "page_reason": "The page says Willow’s exponential error reduction “cracks a key challenge in quantum error correction” pursued “for almost 30 years.”"
+     }
+    ]
+   },
+   {
+    "sentence": "The advantage claim comes from Google.",
+    "start": 1260,
+    "end": 1298,
+    "claim": "The verifiable quantum advantage claim comes from Google.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hpcwire.com/2025/10/22/google-claims-quantum-advantage-with-willow-chip/",
+      "host": "hpcwire.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "HPCwire's coverage put it conditionally: \"If it pans out,\" it would be the first time a quantum computer has achieved quantum advantage.[3]",
+    "start": 1299,
+    "end": 1438,
+    "claim": "HPCwire's coverage said that, if it pans out, it would be the first time a quantum computer has achieved quantum advantage.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hpcwire.com/2025/10/22/google-claims-quantum-advantage-with-willow-chip/",
+      "host": "hpcwire.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Independent scrutiny and the practical usefulness of the task are still open questions.",
+    "start": 1439,
+    "end": 1526,
+    "claim": "Independent scrutiny of the advantage claim is still an open question.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Independent scrutiny and the practical usefulness of the task are still open questions.",
+    "start": 1439,
+    "end": 1526,
+    "claim": "The practical usefulness of the task is still an open question.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 20,
+   "labels": {
+    "supported": 7,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 9,
+    "uncited": 3
+   },
+   "cited_claims": 17,
+   "claims_with_a_verdict": 8,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.125,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.4118,
+   "pages_cited": 4,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.006169,
+   "usd_per_claim": 0.000308
+  },
+  "cost": {
+   "total_usd": 0.0062,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0019
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0026
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

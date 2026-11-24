@@ -1,0 +1,485 @@
+{
+ "id": "health-03",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The 2025 West Texas measles outbreak was the largest in Texas in years. It had 762 confirmed cases and two deaths.\nCases: The outbreak was declared over on August 18, 2025, 42 days after rash onset in the last case. By then, 762 confirmed cases, 99 hospitalizations and two deaths had been reported.[1] It began in January, and more than two-thirds of cases were in children.[2]\nDeaths: The first death was reported on February 26, an unvaccinated school-aged child with no known underlying conditions. A second unvaccinated school-aged child died on April 6.[3]\nWider impact: The Texas outbreak was linked with outbreaks in New Mexico, Oklahoma and Kansas.[3] It drove the U.S. to its highest annual measles case count since 1992.[4]",
+  "claims": [
+   {
+    "sentence": "The 2025 West Texas measles outbreak was the largest in Texas in years.",
+    "start": 0,
+    "end": 71,
+    "claim": "The 2025 West Texas measles outbreak was the largest in Texas in years.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It had 762 confirmed cases and two deaths.",
+    "start": 72,
+    "end": 114,
+    "claim": "The 2025 West Texas measles outbreak had 762 confirmed cases.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It had 762 confirmed cases and two deaths.",
+    "start": 72,
+    "end": 114,
+    "claim": "The 2025 West Texas measles outbreak had two deaths.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Cases: The outbreak was declared over on August 18, 2025, 42 days after rash onset in the last case.",
+    "start": 115,
+    "end": 215,
+    "claim": "The West Texas measles outbreak was declared over on August 18, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cdc.gov/mmwr/volumes/75/wr/mm7520a1.htm",
+      "host": "cdc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 2025 west Texas measles outbreak was declared over on August 18, 2025, 42 days after rash onset in the patient with the last case.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the 2025 West Texas measles outbreak was declared over on August 18, 2025, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the 2025 west Texas measles outbreak was declared over on August 18, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Cases: The outbreak was declared over on August 18, 2025, 42 days after rash onset in the last case.",
+    "start": 115,
+    "end": 215,
+    "claim": "The West Texas measles outbreak was declared over 42 days after rash onset in the last case.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cdc.gov/mmwr/volumes/75/wr/mm7520a1.htm",
+      "host": "cdc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 2025 west Texas measles outbreak was declared over on August 18, 2025, 42 days after rash onset in the patient with the last case.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the West Texas outbreak was declared over 42 days after rash onset in the patient with the last case, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the West Texas measles outbreak was declared over on August 18, 2025, 42 days after rash onset in the patient with the last case."
+     }
+    ]
+   },
+   {
+    "sentence": "By then, 762 confirmed cases, 99 hospitalizations and two deaths had been reported.[1]",
+    "start": 216,
+    "end": 302,
+    "claim": "By August 18, 2025, 762 confirmed measles cases had been reported in the West Texas outbreak.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cdc.gov/mmwr/volumes/75/wr/mm7520a1.htm",
+      "host": "cdc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 2025 west Texas measles outbreak was declared over on August 18, 2025, 42 days after rash onset in the patient with the last case. As of that date, 762 confirmed cases, 99 hospitalizations, and two deaths had been reported.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that as of August 18, 2025 the West Texas outbreak had 762 confirmed cases reported, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that by the outbreak’s end on August 18, 2025, 762 confirmed measles cases had been reported."
+     }
+    ]
+   },
+   {
+    "sentence": "By then, 762 confirmed cases, 99 hospitalizations and two deaths had been reported.[1]",
+    "start": 216,
+    "end": 302,
+    "claim": "By August 18, 2025, 99 hospitalizations from the West Texas measles outbreak had been reported.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cdc.gov/mmwr/volumes/75/wr/mm7520a1.htm",
+      "host": "cdc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of that date, 762 confirmed cases, 99 hospitalizations, and two deaths had been reported.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 99 hospitalizations figure and the reporting-as-of-date idea, but it does not name the West Texas outbreak or explicitly tie the date to August 18, 2025 beyond the phrase 'as of that date' with no date visible in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that as of August 18, 2025, 99 hospitalizations had been reported in the 2025 west Texas measles outbreak."
+     }
+    ]
+   },
+   {
+    "sentence": "By then, 762 confirmed cases, 99 hospitalizations and two deaths had been reported.[1]",
+    "start": 216,
+    "end": 302,
+    "claim": "By August 18, 2025, two deaths from the West Texas measles outbreak had been reported.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cdc.gov/mmwr/volumes/75/wr/mm7520a1.htm",
+      "host": "cdc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of that date, 762 confirmed cases, 99 hospitalizations, and two deaths had been reported.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that two deaths had been reported as of an unnamed date alongside 762 cases, but it does not name August 18, 2025 or the West Texas outbreak.",
+      "page_judged": "supported",
+      "page_reason": "The page states that by the outbreak’s end on August 18, 2025, two deaths had been reported."
+     }
+    ]
+   },
+   {
+    "sentence": "It began in January, and more than two-thirds of cases were in children.[2]",
+    "start": 303,
+    "end": 378,
+    "claim": "The West Texas measles outbreak began in January.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://publications.aap.org/aapnews/news/32846/Texas-declares-measles-outbreak-over-after-99",
+      "host": "publications.aap.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It began in January, and more than two-thirds of cases were in children.[2]",
+    "start": 303,
+    "end": 378,
+    "claim": "More than two-thirds of West Texas measles outbreak cases were in children.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://publications.aap.org/aapnews/news/32846/Texas-declares-measles-outbreak-over-after-99",
+      "host": "publications.aap.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Deaths: The first death was reported on February 26, an unvaccinated school-aged child with no known underlying conditions.",
+    "start": 379,
+    "end": 502,
+    "claim": "The first death in the West Texas measles outbreak was reported on February 26.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tephi.texas.gov/training/selected-outbreaks/measles",
+      "host": "tephi.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Texas reported its first death on February 26 (an unvaccinated school-aged child with no known underlying conditions)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Texas reported its first measles death on February 26, which backs the claim's date and that it was the first death, though it does not explicitly tie it to the West Texas outbreak by name, the quote's context of Texas outbreak makes this a reasonable match.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Texas reported its first measles-outbreak death on February 26."
+     }
+    ]
+   },
+   {
+    "sentence": "Deaths: The first death was reported on February 26, an unvaccinated school-aged child with no known underlying conditions.",
+    "start": 379,
+    "end": 502,
+    "claim": "The first death in the West Texas measles outbreak was an unvaccinated school-aged child with no known underlying conditions.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tephi.texas.gov/training/selected-outbreaks/measles",
+      "host": "tephi.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Texas reported its first death on February 26 (an unvaccinated school-aged child with no known underlying conditions)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the first Texas measles death was an unvaccinated school-aged child with no known underlying conditions, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Texas reported its first death on February 26 and describes the child as unvaccinated, school-aged, and having no known underlying conditions."
+     }
+    ]
+   },
+   {
+    "sentence": "A second unvaccinated school-aged child died on April 6.[3]",
+    "start": 503,
+    "end": 562,
+    "claim": "A second unvaccinated school-aged child died from measles in the West Texas outbreak on April 6.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tephi.texas.gov/training/selected-outbreaks/measles",
+      "host": "tephi.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Texas reported its first death on February 26 (an unvaccinated school-aged child with no known underlying conditions), and a second on April 6, also an unvaccinated school-aged child.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states a second death on April 6 of an unvaccinated school-aged child in Texas, matching the claim's date, sequence, and details, though it does not explicitly name the West Texas outbreak, which is a minor framing gap.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Texas reported a second death on April 6, also an unvaccinated school-aged child, in its account of the West Texas outbreak."
+     }
+    ]
+   },
+   {
+    "sentence": "Wider impact: The Texas outbreak was linked with outbreaks in New Mexico, Oklahoma and Kansas.[3]",
+    "start": 563,
+    "end": 660,
+    "claim": "The Texas measles outbreak was linked with outbreaks in New Mexico, Oklahoma and Kansas.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tephi.texas.gov/training/selected-outbreaks/measles",
+      "host": "tephi.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Texas outbreak was linked with outbreaks in New Mexico, Oklahoma, and Kansas.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Texas outbreak was linked with outbreaks in New Mexico, Oklahoma, and Kansas, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Texas outbreak was linked with outbreaks in New Mexico, Oklahoma, and Kansas."
+     }
+    ]
+   },
+   {
+    "sentence": "It drove the U.S. to its highest annual measles case count since 1992.[4]",
+    "start": 661,
+    "end": 734,
+    "claim": "The Texas outbreak drove the U.S. to its highest annual measles case count since 1992.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.washingtonpost.com/health/2025/08/18/texas-measles-outbreak-over/",
+      "host": "washingtonpost.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "network error (ReadTimeout)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 15,
+   "labels": {
+    "supported": 7,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "uncited": 3
+   },
+   "cited_claims": 12,
+   "claims_with_a_verdict": 7,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5833,
+   "pages_cited": 4,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00768,
+   "usd_per_claim": 0.000512
+  },
+  "cost": {
+   "total_usd": 0.0077,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 9,
+     "usd": 0.002
+    },
+    {
+     "node": "page_check",
+     "calls": 9,
+     "usd": 0.0039
+    },
+    {
+     "node": "check",
+     "calls": 9,
+     "usd": 0.0011
+    }
+   ]
+  }
+ }
+}

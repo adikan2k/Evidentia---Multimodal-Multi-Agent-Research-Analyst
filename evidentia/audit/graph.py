@@ -10,6 +10,7 @@ the fields it filled in, as in the research pipeline.
 """
 
 import asyncio
+import re
 import uuid
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -127,6 +128,23 @@ def match_quotes(offered: list[str], source: Source, min_chars: int) -> list[Quo
                 text=source.text[start:end], start=start, end=end, pages=source.pages_of(*span)
             )
     return list(quotes.values())
+
+
+MAX_RERANKED = 100  # passages of one long page sent to the reranker for one claim
+
+
+def shortlist(claim: str, passages: list[Passage], limit: int) -> list[Passage]:
+    """For a very long page, the passages sharing the most words with the claim, in page order.
+
+    Done in code, for free, before the reranker. A law's full text runs to over a thousand
+    passages, and reranking them all for each claim is slow, costly and hits rate limits.
+    """
+    if len(passages) <= limit:
+        return passages
+    words = {w for w in re.findall(r"[a-z0-9]+", claim.lower()) if len(w) > 3}
+    score = lambda p: len(words & set(re.findall(r"[a-z0-9]+", p.text.lower())))  # noqa: E731
+    best = sorted(passages, key=score, reverse=True)[:limit]
+    return sorted(best, key=lambda p: p.start)
 
 
 def quote_context(source: Source, quote: Quote, limit: int) -> str:
@@ -325,8 +343,11 @@ class AuditNodes:
                 text=source.text,
             )
             return [whole]
-        passages = make_passages(source, run_id)
-        best = await self.d.embedder.rerank("find", claim, passages, self.s.audit_top_passages)
+        passages = shortlist(claim, make_passages(source, run_id), MAX_RERANKED)
+        # Under the same gate as the model calls: a long page reranked for many claims at once
+        # went past Voyage's 2M tokens a minute in the real-world audit (D-042).
+        async with self.gate:
+            best = await self.d.embedder.rerank("find", claim, passages, self.s.audit_top_passages)
         return sorted(best, key=lambda p: p.start)
 
     async def find_evidence(

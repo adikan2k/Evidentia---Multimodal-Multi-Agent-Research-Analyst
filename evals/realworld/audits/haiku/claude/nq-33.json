@@ -1,0 +1,146 @@
+{
+ "id": "nq-33",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "MSC stands for Mediterranean Shipping Company. MSC Cruises is the cruise division of the Swiss-based MSC Group. The group began as a container shipping business founded by Gianluigi Aponte in 1970. MSC Cruises grew out of the company's 1990s acquisition of the Italian cruise line Lauro Lines, which was later renamed MSC Cruises.",
+  "claims": [
+   {
+    "sentence": "MSC stands for Mediterranean Shipping Company.",
+    "start": 0,
+    "end": 46,
+    "claim": "MSC stands for Mediterranean Shipping Company.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "MSC Cruises is the cruise division of the Swiss-based MSC Group.",
+    "start": 47,
+    "end": 111,
+    "claim": "MSC Cruises is the cruise division of the MSC Group.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "MSC Cruises is the cruise division of the Swiss-based MSC Group.",
+    "start": 47,
+    "end": 111,
+    "claim": "The MSC Group is Swiss-based.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The group began as a container shipping business founded by Gianluigi Aponte in 1970.",
+    "start": 112,
+    "end": 197,
+    "claim": "The MSC Group began as a container shipping business.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The group began as a container shipping business founded by Gianluigi Aponte in 1970.",
+    "start": 112,
+    "end": 197,
+    "claim": "The MSC Group's container shipping business was founded by Gianluigi Aponte.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The group began as a container shipping business founded by Gianluigi Aponte in 1970.",
+    "start": 112,
+    "end": 197,
+    "claim": "The MSC Group's container shipping business was founded in 1970.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "MSC Cruises grew out of the company's 1990s acquisition of the Italian cruise line Lauro Lines, which was later renamed MSC Cruises.",
+    "start": 198,
+    "end": 330,
+    "claim": "MSC Cruises grew out of the company's acquisition of the Italian cruise line Lauro Lines in the 1990s.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "MSC Cruises grew out of the company's 1990s acquisition of the Italian cruise line Lauro Lines, which was later renamed MSC Cruises.",
+    "start": 198,
+    "end": 330,
+    "claim": "Lauro Lines was an Italian cruise line.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "MSC Cruises grew out of the company's 1990s acquisition of the Italian cruise line Lauro Lines, which was later renamed MSC Cruises.",
+    "start": 198,
+    "end": 330,
+    "claim": "Lauro Lines was later renamed MSC Cruises.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 9,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 9
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00042,
+   "usd_per_claim": 4.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,208 @@
+{
+ "id": "nq-40",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The NFL’s London games are played at Tottenham Hotspur Stadium or Wembley Stadium, depending on the matchup. In 2026, Tottenham hosted Colts–Commanders on October 4 and Eagles–Jaguars on October 11. Wembley hosted Texans–Jaguars on October 18. (operations.nfl.com)",
+  "claims": [
+   {
+    "sentence": "The NFL’s London games are played at Tottenham Hotspur Stadium or Wembley Stadium, depending on the matchup.",
+    "start": 0,
+    "end": 108,
+    "claim": "The NFL's London games are played at Tottenham Hotspur Stadium or Wembley Stadium, depending on the matchup. (operations.nfl.com)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Tottenham Hotspur Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Wembley Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes list Tottenham Hotspur Stadium and Wembley Stadium as London venues, backing the stadium names, but nothing in them says the choice depends on the matchup.",
+      "page_judged": "supported",
+      "page_reason": "The 2026 schedule lists London games at Tottenham Hotspur Stadium and Wembley Stadium, with the venue varying by matchup."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2026, Tottenham hosted Colts–Commanders on October 4 and Eagles–Jaguars on October 11.",
+    "start": 109,
+    "end": 198,
+    "claim": "In 2026, Tottenham Hotspur Stadium hosted the Colts–Commanders game on October 4.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 4 (Week 4) | Indianapolis Colts vs. Washington Commanders | Tottenham Hotspur Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the venue, date (Oct. 4), and Colts vs. Commanders matchup at Tottenham Hotspur Stadium, but it does not state the year 2026.",
+      "page_judged": "supported",
+      "page_reason": "The 2026 slate lists the Colts–Commanders game on October 4 at Tottenham Hotspur Stadium in London."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2026, Tottenham hosted Colts–Commanders on October 4 and Eagles–Jaguars on October 11.",
+    "start": 109,
+    "end": 198,
+    "claim": "In 2026, Tottenham Hotspur Stadium hosted the Eagles–Jaguars game on October 11.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 11 (Week 5) | Philadelphia Eagles vs. Jacksonville Jaguars | Tottenham Hotspur Stadium London, U.K. | 9:30 a.m. ET (2:30 p.m. London time) |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote confirms that the Eagles vs. Jaguars game was listed for Oct. 11 (Week 5) at Tottenham Hotspur Stadium, but it does not state the year 2026.",
+      "page_judged": "supported",
+      "page_reason": "The 2026 slate lists the Philadelphia Eagles vs. Jacksonville Jaguars game on Oct. 11 at Tottenham Hotspur Stadium in London."
+     }
+    ]
+   },
+   {
+    "sentence": "Wembley hosted Texans–Jaguars on October 18.",
+    "start": 199,
+    "end": 243,
+    "claim": "In 2026, Wembley Stadium hosted the Texans–Jaguars game on October 18.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://operations.nfl.com/platforms-initiatives/international-growth/nfl-international-games?utm_source=openai",
+      "host": "operations.nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Oct. 18 (Week 6) | Houston Texans vs. Jacksonville Jaguars | Wembley Stadium London, U.K.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Houston Texans vs. Jacksonville Jaguars | Wembley Stadium London, U.K. | 9:30 a.m. ET (2:30 p.m. London time)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the Texans vs. Jaguars game at Wembley Stadium on Oct. 18 (Week 6), but no quote states the year 2026.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Texans–Jaguars at Wembley Stadium on October 18, 2026, as scheduled, but does not state that the game was actually hosted there."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002427,
+   "usd_per_claim": 0.000607
+  },
+  "cost": {
+   "total_usd": 0.0024,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

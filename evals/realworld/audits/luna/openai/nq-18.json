@@ -1,0 +1,152 @@
+{
+ "id": "nq-18",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "If someone sticks their tongue out between the two fingers, it’s usually a crude gesture suggesting oral sex, specifically cunnilingus. (en.wiktionary.org)\nIf they’re just holding a V near their lips, especially in a selfie, it may simply be a playful peace-sign pose. The placement alone doesn’t make it sexual. (vice.com)",
+  "claims": [
+   {
+    "sentence": "If someone sticks their tongue out between the two fingers, it’s usually a crude gesture suggesting oral sex, specifically cunnilingus. (en.wiktionary.org)",
+    "start": 0,
+    "end": 155,
+    "claim": "Sticking the tongue out between two fingers is usually a crude gesture suggesting oral sex, specifically cunnilingus.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wiktionary.org/wiki/Appendix%3AGestures?utm_source=openai",
+      "host": "en.wiktionary.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "V-sign around tongue (perform the V-sign with a finger on either side of your extended tongue, indicates cunnilingus)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the tongue-between-fingers gesture indicates cunnilingus, but it does not state that the gesture is usually crude or that it suggests oral sex in general.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the V-sign around an extended tongue indicates cunnilingus, but it does not describe the gesture as usually crude."
+     }
+    ]
+   },
+   {
+    "sentence": "If they’re just holding a V near their lips, especially in a selfie, it may simply be a playful peace-sign pose. The placement alone doesn’t make it sexual. (vice.com)",
+    "start": 156,
+    "end": 323,
+    "claim": "Holding a V near the lips, especially in a selfie, may simply be a playful peace-sign pose.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.vice.com/en/article/v-sign-fingers-peace-vagina-pose-photo/?utm_source=openai",
+      "host": "vice.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes V-signs as common selfie poses and mentions playful or cute variations, but it does not say that holding one near the lips is simply a playful peace-sign pose; it instead associates a V below the mouth with sexual references."
+     }
+    ]
+   },
+   {
+    "sentence": "If they’re just holding a V near their lips, especially in a selfie, it may simply be a playful peace-sign pose. The placement alone doesn’t make it sexual. (vice.com)",
+    "start": 156,
+    "end": 323,
+    "claim": "The placement of a V near the lips alone does not make the gesture sexual.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.vice.com/en/article/v-sign-fingers-peace-vagina-pose-photo/?utm_source=openai",
+      "host": "vice.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a V positioned just below the mouth with the tongue sticking out can reference sex, but it does not state whether placing a V near the lips alone makes the gesture sexual."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.6667,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003317,
+   "usd_per_claim": 0.001106
+  },
+  "cost": {
+   "total_usd": 0.0033,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0017
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0012
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

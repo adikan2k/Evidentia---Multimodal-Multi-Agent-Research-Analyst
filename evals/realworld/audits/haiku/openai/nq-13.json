@@ -1,0 +1,69 @@
+{
+ "id": "nq-13",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Total cost is the sum of fixed costs and variable costs at a given level of production.\nTotal cost = Fixed costs + Variable costs",
+  "claims": [
+   {
+    "sentence": "Total cost is the sum of fixed costs and variable costs at a given level of production.",
+    "start": 0,
+    "end": 87,
+    "claim": "Total cost is the sum of fixed costs and variable costs at a given level of production.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Total cost = Fixed costs + Variable costs",
+    "start": 88,
+    "end": 129,
+    "claim": "Total cost equals fixed costs plus variable costs.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 2
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000154,
+   "usd_per_claim": 7.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "id": "nq-11",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The part of the cytoskeleton made from actin is called microfilaments, also known as actin filaments. They are the thinnest of the three cytoskeletal fiber types, at about 7 nm in diameter. They help with cell shape, muscle contraction, cell movement, and cytokinesis (the division of the cytoplasm).",
+  "claims": [
+   {
+    "sentence": "The part of the cytoskeleton made from actin is called microfilaments, also known as actin filaments.",
+    "start": 0,
+    "end": 101,
+    "claim": "The part of the cytoskeleton made from actin is called microfilaments.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The part of the cytoskeleton made from actin is called microfilaments, also known as actin filaments.",
+    "start": 0,
+    "end": 101,
+    "claim": "Microfilaments are also known as actin filaments.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They are the thinnest of the three cytoskeletal fiber types, at about 7 nm in diameter.",
+    "start": 102,
+    "end": 189,
+    "claim": "Microfilaments are the thinnest of the three cytoskeletal fiber types.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They are the thinnest of the three cytoskeletal fiber types, at about 7 nm in diameter.",
+    "start": 102,
+    "end": 189,
+    "claim": "Microfilaments are about 7 nm in diameter.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They help with cell shape, muscle contraction, cell movement, and cytokinesis (the division of the cytoplasm).",
+    "start": 190,
+    "end": 300,
+    "claim": "Microfilaments help with cell shape.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They help with cell shape, muscle contraction, cell movement, and cytokinesis (the division of the cytoplasm).",
+    "start": 190,
+    "end": 300,
+    "claim": "Microfilaments help with muscle contraction.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They help with cell shape, muscle contraction, cell movement, and cytokinesis (the division of the cytoplasm).",
+    "start": 190,
+    "end": 300,
+    "claim": "Microfilaments help with cell movement.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They help with cell shape, muscle contraction, cell movement, and cytokinesis (the division of the cytoplasm).",
+    "start": 190,
+    "end": 300,
+    "claim": "Microfilaments help with cytokinesis, the division of the cytoplasm.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 8
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000377,
+   "usd_per_claim": 4.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

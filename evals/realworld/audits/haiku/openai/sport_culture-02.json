@@ -1,0 +1,179 @@
+{
+ "id": "sport_culture-02",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings. It was Pogačar’s fourth Tour title. (letour.fr)",
+  "claims": [
+   {
+    "sentence": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings.",
+    "start": 0,
+    "end": 139,
+    "claim": "Tadej Pogačar won the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With a fourth Tour de France victory, Tadej Pogacar has matched Chris Froome’s record",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2025 edition could serve as a textbook example of the Pogacar method",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This year, the Maillot Jaune revealed several sides of himself",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state Pogacar won a fourth Tour de France and mention the 2025 edition, but none explicitly says he won the 2025 race, so that link is not directly backed.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the 2025 edition as Pogačar's fourth Tour de France victory, a sustained lead to a \"final victory\" in yellow, and says he is one win from five, so it supports him winning the 2025 Tour."
+     }
+    ]
+   },
+   {
+    "sentence": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings.",
+    "start": 0,
+    "end": 139,
+    "claim": "Tadej Pogačar finished 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings of the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After his time trial win at Peyragudes, Pogacar’s lead over Vingegaard stood at 4’07’’, increasing by only 17 more seconds over the final eight stages.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives a lead of 4'07'' over Vingegaard after Peyragudes plus a further 17 seconds over the final eight stages, which sums to the claimed 4 minutes 24 seconds, though the quote never states the 4'24'' final figure outright.",
+      "page_judged": "supported",
+      "page_reason": "The page says Pogačar's lead over Vingegaard was 4'07'' after the Peyragudes time trial and grew by only 17 seconds over the final eight stages, which sums to 4'24'' for the 2025 Tour, with Vingegaard as the chief rival."
+     }
+    ]
+   },
+   {
+    "sentence": "It was Pogačar’s fourth Tour title. (letour.fr)",
+    "start": 140,
+    "end": 187,
+    "claim": "The 2025 Tour de France was Tadej Pogačar's fourth Tour de France title.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With a fourth Tour de France victory, Tadej Pogacar has matched Chris Froome’s record",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2025 edition could serve as a textbook example of the Pogacar method",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Pogacar's fourth Tour de France victory matched Froome's record and separately mention the 2025 edition, but they never explicitly tie the fourth victory to the 2025 race.",
+      "page_judged": "supported",
+      "page_reason": "The page states that with a fourth Tour de France victory Pogačar matched Chris Froome's record and is one win away from five-time winners, and describes the 2025 edition as his dominant ride, so it supports that this was his fourth title."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002639,
+   "usd_per_claim": 0.00088
+  },
+  "cost": {
+   "total_usd": 0.0026,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

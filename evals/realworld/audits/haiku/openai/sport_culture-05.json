@@ -1,0 +1,75 @@
+{
+ "id": "sport_culture-05",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "David Szalay won the 2025 Booker Prize for his novel *Flesh*. (thebookerprizes.com)",
+  "claims": [
+   {
+    "sentence": "David Szalay won the 2025 Booker Prize for his novel *Flesh*. (thebookerprizes.com)",
+    "start": 0,
+    "end": 83,
+    "claim": "David Szalay won the 2025 Booker Prize for his novel Flesh.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://thebookerprizes.com/media-centre/press-releases/flesh-by-david-szalay-wins-the-booker-prize-2025?utm_source=openai",
+      "host": "thebookerprizes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 1,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "uncited": 0
+   },
+   "cited_claims": 1,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000137,
+   "usd_per_claim": 0.000137
+  },
+  "cost": {
+   "total_usd": 0.0001,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

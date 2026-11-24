@@ -1,0 +1,278 @@
+{
+ "id": "health-06",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Baby KJ Muldoon received a personalised CRISPR base-editing therapy designed to correct a single DNA letter in his *CPS1* gene. The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up. He received his first dose on February 25, 2025. (med.upenn.edu)",
+  "claims": [
+   {
+    "sentence": "Baby KJ Muldoon received a personalised CRISPR base-editing therapy designed to correct a single DNA letter in his *CPS1* gene.",
+    "start": 0,
+    "end": 127,
+    "claim": "Baby KJ Muldoon received a personalised CRISPR base-editing therapy designed to correct a single DNA letter in his CPS1 gene.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we immediately began to develop a customized lipid nanoparticle–delivered base-editing therapy.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "we developed a base-editing therapy, delivered in vivo to hepatocytes through lipid nanoparticles, for a single patient who at birth received a diagnosis of neonatal-onset carbamoyl-phosphate synthetase 1 (CPS1) deficiency,",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "Reliable assessment of base editing of the CPS1 Q335X variant would ideally use human hepatocytes with the variant",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       },
+       {
+        "text": "We administered the customized therapy to our patient twice, at approximately 7 and 8 months of age",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back a customized base-editing therapy for a single CPS1 deficiency patient, but they never mention CRISPR or state that the therapy corrects a single DNA letter.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a personalized base-editing therapy targeting the patient’s CPS1 Q335X variant, but it does not identify the patient as Baby KJ Muldoon."
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up.",
+    "start": 128,
+    "end": 322,
+    "claim": "The treatment was delivered to Baby KJ Muldoon's liver cells in lipid nanoparticles.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we developed a base-editing therapy, delivered in vivo to hepatocytes through lipid nanoparticles, for a single patient who at birth received a diagnosis of neonatal-onset carbamoyl-phosphate synthetase 1 (CPS1) deficiency",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the base-editing therapy was delivered in vivo to hepatocytes (liver cells) through lipid nanoparticles for a single neonatal patient, which backs every fact in the claim, though the quote does not name the patient as Baby KJ Muldoon.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a patient-specific therapy was delivered to hepatocytes through lipid nanoparticles, but it does not identify the patient as Baby KJ Muldoon."
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up.",
+    "start": 128,
+    "end": 322,
+    "claim": "The treatment was designed to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we developed a base-editing therapy, delivered in vivo to hepatocytes through lipid nanoparticles, for a single patient who at birth received a diagnosis of neonatal-onset carbamoyl-phosphate synthetase 1 (CPS1) deficiency",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "After a neonate had re - ceived a diagnosis of severe carbamoyl-phosphate synthetase 1 deficiency, a dis - ease with an estimated 50% mortality in early infancy, we immediately began to develop a customized lipid nanoparticle–delivered base-editing therapy.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the therapy was developed for a neonate diagnosed with severe, neonatal-onset CPS1 deficiency, which backs the claim that it was designed to address severe CPS1 deficiency.",
+      "page_judged": "supported",
+      "page_reason": "The page describes a customized base-editing therapy developed for a patient diagnosed with severe CPS1 deficiency."
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up.",
+    "start": 128,
+    "end": 322,
+    "claim": "Carbamoyl phosphate synthetase 1 (CPS1) deficiency is a rare disorder that causes toxic ammonia to build up.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "CPS1 deficiency affects 1 in 1,300,000 persons10 and has an estimated mor - tality of 50% in early infancy.",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       },
+       {
+        "text": "Measurement of blood ammonia revealed a level greater than 1000 μmol per liter",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that CPS1 deficiency is rare (1 in 1,300,000) and report blood ammonia above 1000 μmol per liter, but they do not explicitly state that the deficiency causes this ammonia buildup or that the measured patient had CPS1 deficiency.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies CPS1 deficiency as an ultrarare urea-cycle disorder and describes severe elevated blood ammonia and hyperammonemic crises associated with it."
+     }
+    ]
+   },
+   {
+    "sentence": "He received his first dose on February 25, 2025.",
+    "start": 323,
+    "end": 371,
+    "claim": "Baby KJ Muldoon received his first dose of the treatment on February 25, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the patient received the first dose on day 208 after birth, but it does not give the date February 25, 2025, or identify the patient as Baby KJ Muldoon."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 1,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.3333,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.008431,
+   "usd_per_claim": 0.001686
+  },
+  "cost": {
+   "total_usd": 0.0084,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0058
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0014
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

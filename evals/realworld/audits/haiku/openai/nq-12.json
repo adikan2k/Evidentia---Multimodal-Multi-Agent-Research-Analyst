@@ -1,0 +1,163 @@
+{
+ "id": "nq-12",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The Golden Nugget casino in Atlantic City is owned by Fertitta Entertainment, the holding company of Tilman and Paige Fertitta. The casino’s licensed operator is Golden Nugget Atlantic City, LLC. (nj.gov)",
+  "claims": [
+   {
+    "sentence": "The Golden Nugget casino in Atlantic City is owned by Fertitta Entertainment, the holding company of Tilman and Paige Fertitta.",
+    "start": 0,
+    "end": 127,
+    "claim": "The Golden Nugget casino in Atlantic City is owned by Fertitta Entertainment.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://nj.gov/casinos/services/info/?utm_source=openai",
+      "host": "nj.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Casino Licensee: Golden Nugget Atlantic City, LLC",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Parent Company: Fertitta Entertainment Holdings, LLC",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes name the casino licensee as Golden Nugget Atlantic City, LLC and its parent company as Fertitta Entertainment Holdings, LLC, which backs the ownership claim, though 'Fertitta Entertainment' is a shortened form of the quoted 'Fertitta Entertainment Holdings, LLC'.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Golden Nugget Atlantic City, LLC with Parent Company Fertitta Entertainment Holdings, LLC, which supports the claim that it is owned by Fertitta Entertainment."
+     }
+    ]
+   },
+   {
+    "sentence": "The Golden Nugget casino in Atlantic City is owned by Fertitta Entertainment, the holding company of Tilman and Paige Fertitta.",
+    "start": 0,
+    "end": 127,
+    "claim": "Fertitta Entertainment is the holding company of Tilman and Paige Fertitta.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://nj.gov/casinos/services/info/?utm_source=openai",
+      "host": "nj.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Fertitta Entertainment Holdings, LLC as the parent company of Golden Nugget Atlantic City, LLC and names Paige F. Fertitta as president, but it says nothing about Fertitta Entertainment being the holding company of Tilman and Paige Fertitta or about Tilman Fertitta."
+     }
+    ]
+   },
+   {
+    "sentence": "The casino’s licensed operator is Golden Nugget Atlantic City, LLC. (nj.gov)",
+    "start": 128,
+    "end": 204,
+    "claim": "The Golden Nugget casino in Atlantic City's licensed operator is Golden Nugget Atlantic City, LLC.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://nj.gov/casinos/services/info/?utm_source=openai",
+      "host": "nj.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Casino Licensee: Golden Nugget Atlantic City, LLC",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists 'Golden Nugget Atlantic City, LLC' as the Casino Licensee, which backs the claim's operator name, though it does not explicitly name the Golden Nugget casino itself in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page lists 'Casino Licensee: Golden Nugget Atlantic City, LLC' with the Golden Nugget URL and address at Huron Ave. & Brigantine Blvd., which directly supports the claim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.3333,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6667,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001446,
+   "usd_per_claim": 0.000482
+  },
+  "cost": {
+   "total_usd": 0.0014,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0004
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

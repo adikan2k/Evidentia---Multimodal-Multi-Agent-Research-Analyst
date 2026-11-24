@@ -1,0 +1,311 @@
+{
+ "id": "technology-03",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "What DeepSeek-R1 was\nDeepSeek-R1 was a \"reasoning\" large language model released in January 2025 (around January 20) by DeepSeek, a Chinese AI lab based in Hangzhou. It was backed by the quant hedge fund High-Flyer. It was built to work through problems step by step using extended chain-of-thought, like OpenAI's o1 model. Its reported performance on math, coding, and reasoning benchmarks was comparable to o1.\nSeveral things made it stand out:\nTraining approach: DeepSeek used large-scale reinforcement learning to elicit reasoning behavior. This was described in a technical paper, and an R1-Zero variant was trained with RL and little supervised data.\nOpen weights: The model was released under the permissive MIT license, so anyone could download, run, and modify it. Smaller distilled versions based on Llama and Qwen were released too.\nLow cost: DeepSeek's earlier V3 base model was reported to have cost about $5.6 million in final-run GPU compute. That figure excluded research, prior experiments, and hardware costs, but it was still far below what US labs were believed to spend. API pricing for R1 was also much cheaper than OpenAI's.\nChip constraints: DeepSeek said it had used less advanced Nvidia chips (such as H800s), which are the kind allowed under US export controls. That suggested the controls were less limiting than assumed.\nConsumer traction: Its app rose to the top of Apple's US App Store free charts around that time.\nWhy it hit tech stocks\nThe market reaction came on Monday, January 27, 2025, as the news spread over the weekend.\n1. Questioning the AI spending thesis: Investors had priced in huge capital spending on data centers and GPUs, with hundreds of billions of dollars from Microsoft, Alphabet, Amazon, Meta, and the Stargate project. If comparable models could be built far more cheaply, demand for chips and infrastructure might be lower than expected.\n2. Nvidia's sell-off: Nvidia fell about 17% in one day, which erased roughly $590 billion in market value. That was the largest single-day loss in market-cap terms for any US company at the time. Other AI hardware and infrastructure names, such as Broadcom, TSMC, ASML, and power and data-center suppliers, also fell sharply, and the Nasdaq dropped about 3%.\n3. Competitive threat: A Chinese open-source model matching top US models challenged the view that US firms had a durable lead. It also threatened the margins of closed, premium-priced AI products.\n4. Doubts about export controls: The result raised questions about how effective US chip restrictions were.\nAftermath\nMany analysts argued the reaction was overdone. They pointed to the Jevons paradox, where cheaper AI would increase overall demand for compute. Others questioned DeepSeek's cost claims, noting that the figures left out much of the real spending. Nvidia and other stocks recovered much of their losses over the following months. Even so, the episode changed the discussion of AI efficiency, open-source models, and US–China tech competition.",
+  "claims": [
+   {
+    "sentence": "DeepSeek-R1 was a \"reasoning\" large language model released in January 2025 (around January 20) by DeepSeek, a Chinese AI lab based in Hangzhou.",
+    "start": 21,
+    "end": 165,
+    "claim": "DeepSeek-R1 was a \"reasoning\" large language model released in January 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "DeepSeek-R1 was a \"reasoning\" large language model released in January 2025 (around January 20) by DeepSeek, a Chinese AI lab based in Hangzhou.",
+    "start": 21,
+    "end": 165,
+    "claim": "DeepSeek-R1 was released around January 20, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "DeepSeek-R1 was a \"reasoning\" large language model released in January 2025 (around January 20) by DeepSeek, a Chinese AI lab based in Hangzhou.",
+    "start": 21,
+    "end": 165,
+    "claim": "DeepSeek is a Chinese AI lab based in Hangzhou.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was backed by the quant hedge fund High-Flyer.",
+    "start": 166,
+    "end": 215,
+    "claim": "DeepSeek-R1 was backed by the quant hedge fund High-Flyer.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was built to work through problems step by step using extended chain-of-thought, like OpenAI's o1 model.",
+    "start": 216,
+    "end": 323,
+    "claim": "DeepSeek-R1 was built to work through problems step by step using extended chain-of-thought, like OpenAI's o1 model.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Its reported performance on math, coding, and reasoning benchmarks was comparable to o1.",
+    "start": 324,
+    "end": 412,
+    "claim": "DeepSeek-R1's reported performance on math, coding, and reasoning benchmarks was comparable to OpenAI's o1.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Training approach: DeepSeek used large-scale reinforcement learning to elicit reasoning behavior.",
+    "start": 447,
+    "end": 544,
+    "claim": "DeepSeek used large-scale reinforcement learning to elicit reasoning behavior in R1.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "This was described in a technical paper, and an R1-Zero variant was trained with RL and little supervised data.",
+    "start": 545,
+    "end": 656,
+    "claim": "The R1 training approach was described in a technical paper.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "This was described in a technical paper, and an R1-Zero variant was trained with RL and little supervised data.",
+    "start": 545,
+    "end": 656,
+    "claim": "An R1-Zero variant was trained with reinforcement learning and little supervised data.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Open weights: The model was released under the permissive MIT license, so anyone could download, run, and modify it.",
+    "start": 657,
+    "end": 773,
+    "claim": "DeepSeek-R1 was released under the permissive MIT license.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Smaller distilled versions based on Llama and Qwen were released too.",
+    "start": 774,
+    "end": 843,
+    "claim": "Smaller distilled versions of DeepSeek-R1 based on Llama and Qwen were released.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Low cost: DeepSeek's earlier V3 base model was reported to have cost about $5.6 million in final-run GPU compute.",
+    "start": 844,
+    "end": 957,
+    "claim": "DeepSeek's earlier V3 base model was reported to have cost about $5.6 million in final-run GPU compute.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "That figure excluded research, prior experiments, and hardware costs, but it was still far below what US labs were believed to spend.",
+    "start": 958,
+    "end": 1091,
+    "claim": "The $5.6 million V3 figure excluded research, prior experiments, and hardware costs.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "API pricing for R1 was also much cheaper than OpenAI's.",
+    "start": 1092,
+    "end": 1147,
+    "claim": "API pricing for DeepSeek-R1 was much cheaper than OpenAI's.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Chip constraints: DeepSeek said it had used less advanced Nvidia chips (such as H800s), which are the kind allowed under US export controls.",
+    "start": 1148,
+    "end": 1288,
+    "claim": "DeepSeek said it had used less advanced Nvidia chips, such as H800s.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Consumer traction: Its app rose to the top of Apple's US App Store free charts around that time.",
+    "start": 1350,
+    "end": 1446,
+    "claim": "DeepSeek's app rose to the top of Apple's US App Store free charts around that time.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The market reaction came on Monday, January 27, 2025, as the news spread over the weekend.",
+    "start": 1470,
+    "end": 1560,
+    "claim": "The market reaction to DeepSeek came on Monday, January 27, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Nvidia fell about 17% in one day, which erased roughly $590 billion in market value.",
+    "start": 1917,
+    "end": 2001,
+    "claim": "Nvidia fell about 17% in one day, erasing roughly $590 billion in market value.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "That was the largest single-day loss in market-cap terms for any US company at the time.",
+    "start": 2002,
+    "end": 2090,
+    "claim": "The Nvidia loss was the largest single-day market-cap loss for any US company at the time.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Other AI hardware and infrastructure names, such as Broadcom, TSMC, ASML, and power and data-center suppliers, also fell sharply, and the Nasdaq dropped about 3%.",
+    "start": 2091,
+    "end": 2253,
+    "claim": "The Nasdaq dropped about 3% in the market reaction.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Many analysts argued the reaction was overdone.",
+    "start": 2570,
+    "end": 2617,
+    "claim": "Many analysts argued the market reaction was overdone.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "They pointed to the Jevons paradox, where cheaper AI would increase overall demand for compute.",
+    "start": 2618,
+    "end": 2713,
+    "claim": "Analysts pointed to the Jevons paradox, where cheaper AI would increase overall demand for compute.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Others questioned DeepSeek's cost claims, noting that the figures left out much of the real spending.",
+    "start": 2714,
+    "end": 2815,
+    "claim": "Others questioned DeepSeek's cost claims as leaving out much of the real spending.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Nvidia and other stocks recovered much of their losses over the following months.",
+    "start": 2816,
+    "end": 2897,
+    "claim": "Nvidia and other stocks recovered much of their losses over the following months.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 24,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 24
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00113,
+   "usd_per_claim": 4.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0011,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    }
+   ]
+  }
+ }
+}

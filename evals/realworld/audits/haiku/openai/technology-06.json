@@ -1,0 +1,570 @@
+{
+ "id": "technology-06",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "ToolShell was a chain of Microsoft SharePoint Server vulnerabilities exploited in July 2025. It let attackers run code on vulnerable servers remotely without signing in. Attackers could steal cryptographic keys to retain access, and Microsoft observed some attackers deploying ransomware. The original chain combined CVE-2025-49706 and CVE-2025-49704; the July response also addressed the critical zero-day CVE-2025-53770 and the related CVE-2025-53771. (content.govdelivery.com)\nWho was affected: Organizations running on-premises SharePoint Server, especially servers exposed to the internet. Affected versions included SharePoint Server 2016, 2019, and Subscription Edition. SharePoint Online in Microsoft 365 was not affected. (cert.europa.eu)\nEye Security identified more than 400 compromised systems worldwide—a count of systems, not organizations. Victims spanned government, education, and private industry. The U.S. Department of Energy confirmed that it was affected, including the National Nuclear Security Administration, and said the impact was limited. *The Washington Post* also reported that the National Institutes of Health was hit. (labs.eye.security)",
+  "claims": [
+   {
+    "sentence": "ToolShell was a chain of Microsoft SharePoint Server vulnerabilities exploited in July 2025.",
+    "start": 0,
+    "end": 92,
+    "claim": "ToolShell was a chain of Microsoft SharePoint Server vulnerabilities exploited in July 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Cyber threat actors have chained CVE-2025-49704 and CVE-2025-49706 (in an exploit chain publicly known as “ToolShell”) to gain unauthorized access to on-premises SharePoint servers.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "CISA added CVE-2025-49704 and CVE-2025-49706 to its Known Exploited Vulnerabilities Catalog on July 22, 2025, and CVE-2025-53770 on July 20, 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the core claim that ToolShell was an exploit chain of CVE-2025-49704 and CVE-2025-49706 against on-premises SharePoint servers, with CISA catalog additions in July 2025, but they never state that the flaws are Microsoft's or that exploitation itself occurred in July.",
+      "page_judged": "supported",
+      "page_reason": "The page states that CVE-2025-49704 and CVE-2025-49706 were chained in an exploit chain publicly known as ToolShell to gain unauthorized access to on-premises SharePoint servers, and that these were added to KEV on July 22, 2025, which supports the claim's July 2025 exploitation, though the page does not explicitly say the exploitation occurred in July."
+     }
+    ]
+   },
+   {
+    "sentence": "It let attackers run code on vulnerable servers remotely without signing in.",
+    "start": 93,
+    "end": 169,
+    "claim": "ToolShell let attackers run code on vulnerable servers remotely without signing in.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Cyber threat actors have chained CVE-2025-49704 and CVE-2025-49706 (in an exploit chain publicly known as “ToolShell”) to gain unauthorized access to on-premises SharePoint servers.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "CVE-2025-49704 [CWE-94: Code Injection],",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that ToolShell is an exploit chain giving attackers unauthorized access to on-premises SharePoint servers and that CVE-2025-49704 is code injection (CWE-94), but they never explicitly say the attack runs code remotely or requires no sign-in.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says ToolShell was chained to gain unauthorized access to on-premises SharePoint servers and that malware could execute PowerShell, but it never states that ToolShell itself allowed remote code execution or that no sign-in was needed."
+     }
+    ]
+   },
+   {
+    "sentence": "Attackers could steal cryptographic keys to retain access, and Microsoft observed some attackers deploying ransomware.",
+    "start": 170,
+    "end": 288,
+    "claim": "Attackers could steal cryptographic keys to retain access to ToolShell-affected servers.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Cyber threat actors could leverage this malware to steal cryptographic keys and execute a Base64-encoded PowerShell command to fingerprint host system and exfiltrate data.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Cyber threat actors have chained CVE-2025-49704 and CVE-2025-49706 (in an exploit chain publicly known as “ToolShell”) to gain unauthorized access to on-premises SharePoint servers.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say threat actors could use malware to steal cryptographic keys and separately that ToolShell gained unauthorized access to SharePoint servers, but they do not link the key theft to ToolShell-affected servers or state that it was used to retain access.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says threat actors could use the malware to steal cryptographic keys and to run a PowerShell command for fingerprinting and exfiltration, but it never says the key theft is meant to retain access to affected servers."
+     }
+    ]
+   },
+   {
+    "sentence": "Attackers could steal cryptographic keys to retain access, and Microsoft observed some attackers deploying ransomware.",
+    "start": 170,
+    "end": 288,
+    "claim": "Microsoft observed some attackers deploying ransomware in ToolShell attacks.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes CISA's malware analysis of SharePoint exploit files, including a key stealer and web shells, but never mentions Microsoft or ransomware being deployed in ToolShell attacks."
+     }
+    ]
+   },
+   {
+    "sentence": "The original chain combined CVE-2025-49706 and CVE-2025-49704; the July response also addressed the critical zero-day CVE-2025-53770 and the related CVE-2025-53771.",
+    "start": 289,
+    "end": 453,
+    "claim": "The original ToolShell chain combined CVE-2025-49706 and CVE-2025-49704.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Cyber threat actors have chained CVE-2025-49704 and CVE-2025-49706 (in an exploit chain publicly known as “ToolShell”) to gain unauthorized access to on-premises SharePoint servers.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that CVE-2025-49704 and CVE-2025-49706 were chained in the exploit chain publicly known as ToolShell, which backs every fact in the claim, though the quote does not explicitly say 'original'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that threat actors chained CVE-2025-49704 and CVE-2025-49706 in an exploit chain publicly known as ToolShell, which matches the claim that the ToolShell chain combined these two CVEs, though it does not explicitly say 'original'."
+     }
+    ]
+   },
+   {
+    "sentence": "The original chain combined CVE-2025-49706 and CVE-2025-49704; the July response also addressed the critical zero-day CVE-2025-53770 and the related CVE-2025-53771.",
+    "start": 289,
+    "end": 453,
+    "claim": "The July response to ToolShell also addressed the critical zero-day CVE-2025-53770.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists CVE-2025-53770 and says CISA added it to the KEV catalog on July 20, 2025, but it says nothing about a July response to ToolShell addressing it, nor does it describe the CVE as a critical zero-day."
+     }
+    ]
+   },
+   {
+    "sentence": "The original chain combined CVE-2025-49706 and CVE-2025-49704; the July response also addressed the critical zero-day CVE-2025-53770 and the related CVE-2025-53771.",
+    "start": 289,
+    "end": 453,
+    "claim": "The July response to ToolShell also addressed the related CVE-2025-53771.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai",
+      "host": "content.govdelivery.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists CVE-2025-53771 among the SharePoint vulnerabilities covered by the MAR and gives KEV dates for CVE-2025-49704, CVE-2025-49706, and CVE-2025-53770, but it does not say that a July response to ToolShell addressed CVE-2025-53771 or link that CVE to the ToolShell chain."
+     }
+    ]
+   },
+   {
+    "sentence": "Who was affected: Organizations running on-premises SharePoint Server, especially servers exposed to the internet.",
+    "start": 480,
+    "end": 594,
+    "claim": "Organizations running on-premises SharePoint Server were affected by ToolShell, especially servers exposed to the internet.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://cert.europa.eu/publications/security-advisories/2025-027/pdf",
+      "host": "cert.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "These vulnerabilities apply to on-premises SharePoint Servers only.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "These critical ﬂaws are actively being exploited in the wild since at least 18th of July 2025 [4].",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "It is recommended isolating vulnerable system from the Internet, but also from internal systems, and running a compromise assessment before updating.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that on-premises SharePoint Servers are affected and actively exploited, and advise isolating them from the Internet, but they never name ToolShell or state that internet-exposed servers were especially affected.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes critical SharePoint on-premises vulnerabilities being actively exploited and recommends isolating vulnerable systems from the Internet, but it never uses the name 'ToolShell' and does not explicitly state that internet-exposed servers were especially affected."
+     }
+    ]
+   },
+   {
+    "sentence": "Affected versions included SharePoint Server 2016, 2019, and Subscription Edition.",
+    "start": 595,
+    "end": 677,
+    "claim": "Affected ToolShell versions included SharePoint Server 2016, 2019, and Subscription Edition.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://cert.europa.eu/publications/security-advisories/2025-027/pdf",
+      "host": "cert.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The vulnerabilities CVE-2025-53770 and CVE-2025-53771 affect: • Microsoft SharePoint Server Subscription Edition • Microsoft SharePoint Server 2019 • Microsoft SharePoint Enterprise Server 2016",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016 as affected by the ToolShell CVEs, which covers every version named in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page lists the affected products for CVE-2025-53770 and CVE-2025-53771 as SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016, which matches the claim's versions, though the page never uses the name 'ToolShell'."
+     }
+    ]
+   },
+   {
+    "sentence": "SharePoint Online in Microsoft 365 was not affected.",
+    "start": 678,
+    "end": 730,
+    "claim": "SharePoint Online in Microsoft 365 was not affected by ToolShell.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://cert.europa.eu/publications/security-advisories/2025-027/pdf",
+      "host": "cert.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "These vulnerabilities apply to on-premises SharePoint Servers only. SharePoint Online in Microsoft 365 is not impacted.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the vulnerabilities apply only to on-premises SharePoint Servers and that SharePoint Online in Microsoft 365 is not impacted, which backs the claim that SharePoint Online was not affected by ToolShell (the quote does not name ToolShell itself, but the vulnerabilities it refers to are the same subject).",
+      "page_judged": "supported",
+      "page_reason": "The page states that the vulnerabilities apply to on-premises SharePoint Servers only and that SharePoint Online in Microsoft 365 is not impacted, which supports the claim (the page does not name the attack as 'ToolShell', but describes these same SharePoint vulnerabilities being exploited)."
+     }
+    ]
+   },
+   {
+    "sentence": "Eye Security identified more than 400 compromised systems worldwide—a count of systems, not organizations.",
+    "start": 748,
+    "end": 854,
+    "claim": "Eye Security identified more than 400 compromised systems worldwide.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://labs.eye.security/sharepoint-under-siege/?utm_source=openai",
+      "host": "labs.eye.security",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In total, we discovered more then 400 systems actively compromised during four confirmed waves of attack:",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the more-than-400 compromised systems figure, but it uses 'we' without naming Eye Security and does not mention 'worldwide'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that after scanning over 23000 SharePoint servers worldwide, Eye Security discovered more than 400 systems actively compromised, so the claim is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Victims spanned government, education, and private industry.",
+    "start": 855,
+    "end": 915,
+    "claim": "ToolShell victims spanned government, education, and private industry.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://labs.eye.security/sharepoint-under-siege/?utm_source=openai",
+      "host": "labs.eye.security",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses ToolShell compromises and exposed servers but never mentions victims across government, education, or private industry sectors."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. Department of Energy confirmed that it was affected, including the National Nuclear Security Administration, and said the impact was limited.",
+    "start": 916,
+    "end": 1066,
+    "claim": "The U.S. Department of Energy confirmed it was affected by ToolShell, including the National Nuclear Security Administration.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://labs.eye.security/sharepoint-under-siege/?utm_source=openai",
+      "host": "labs.eye.security",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses ToolShell exploitation generally but never mentions the U.S. Department of Energy or the National Nuclear Security Administration, so the claim is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. Department of Energy confirmed that it was affected, including the National Nuclear Security Administration, and said the impact was limited.",
+    "start": 916,
+    "end": 1066,
+    "claim": "The U.S. Department of Energy said the impact of ToolShell on it was limited.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://labs.eye.security/sharepoint-under-siege/?utm_source=openai",
+      "host": "labs.eye.security",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses ToolShell, Microsoft's patches, and exploitation scope, but never mentions the U.S. Department of Energy or any statement by it about the impact being limited."
+     }
+    ]
+   },
+   {
+    "sentence": "*The Washington Post* also reported that the National Institutes of Health was hit.",
+    "start": 1067,
+    "end": 1150,
+    "claim": "The Washington Post reported that the National Institutes of Health was hit by ToolShell.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://labs.eye.security/sharepoint-under-siege/?utm_source=openai",
+      "host": "labs.eye.security",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses ToolShell and SharePoint exploitation but never mentions The Washington Post or the National Institutes of Health, so the claim is not supported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 15,
+   "labels": {
+    "supported": 3,
+    "partial": 3,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 7,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 15,
+   "claims_with_a_verdict": 13,
+   "failed_citations": 7,
+   "failed_share_of_verdicts": 0.5385,
+   "partly_backed": 3,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.012143,
+   "usd_per_claim": 0.00081
+  },
+  "cost": {
+   "total_usd": 0.0121,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 20,
+     "usd": 0.0065
+    },
+    {
+     "node": "page_check",
+     "calls": 15,
+     "usd": 0.0032
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0017
+    }
+   ]
+  }
+ }
+}

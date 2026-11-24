@@ -1,0 +1,353 @@
+{
+ "id": "technology-09",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "On October 22, 2025, Google reported that its Willow quantum chip ran an algorithm called Quantum Echoes in about two hours. Google estimated that the best known classical method would take 13,000 times as long on one of the world’s fastest supercomputers. The results were published in *Nature*. (research.google)\nGoogle called it the first verifiable quantum advantage: a comparably capable quantum computer could repeat the calculation and check the result. The speedup was for one specific task—measuring how a disturbance spreads through a quantum system—not a claim that Willow is faster than supercomputers at everything. Google also reported a separate proof-of-concept experiment using the technique to study molecular structure. (blog.google)",
+  "claims": [
+   {
+    "sentence": "On October 22, 2025, Google reported that its Willow quantum chip ran an algorithm called Quantum Echoes in about two hours.",
+    "start": 0,
+    "end": 124,
+    "claim": "On October 22, 2025, Google reported that its Willow quantum chip ran an algorithm called Quantum Echoes in about two hours.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://research.google/blog/a-verifiable-quantum-advantage/?utm_source=openai",
+      "host": "research.google",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we introduce and experimentally demonstrate a quantum algorithm which we call Quantum Echoes",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Our experiments on Willow took approximately 2 hours, a task estimated to require 13,000 times longer on a classical supercomputer.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the Quantum Echoes algorithm and the roughly two-hour run on Willow, but nothing in them states the October 22, 2025 date or that Google itself reported it.",
+      "page_judged": "supported",
+      "page_reason": "The page is dated October 22, 2025, identifies the authors as Google Quantum AI research scientists, and says the experiments running Quantum Echoes on Willow took approximately two hours."
+     }
+    ]
+   },
+   {
+    "sentence": "Google estimated that the best known classical method would take 13,000 times as long on one of the world’s fastest supercomputers.",
+    "start": 125,
+    "end": 256,
+    "claim": "Google estimated that the best known classical method would take 13,000 times as long as Willow's run on one of the world's fastest supercomputers.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://research.google/blog/a-verifiable-quantum-advantage/?utm_source=openai",
+      "host": "research.google",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Our experiments on Willow took approximately 2 hours, a task estimated to require 13,000 times longer on a classical supercomputer.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 13,000-times estimate for a classical supercomputer, but it does not say the comparison used the best known classical method or one of the world's fastest supercomputers.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the Willow experiment took about two hours and was estimated to take 13,000 times longer on a classical supercomputer, but it does not identify that computer as one of the world’s fastest or call the estimate the best known classical method."
+     }
+    ]
+   },
+   {
+    "sentence": "The results were published in *Nature*.",
+    "start": 257,
+    "end": 296,
+    "claim": "The results of Google's Willow Quantum Echoes experiment were published in Nature.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://research.google/blog/a-verifiable-quantum-advantage/?utm_source=openai",
+      "host": "research.google",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In our latest Nature publication, we introduce a new quantum computational task measuring Out-of-Time-Order Correlators (OTOCs).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In “Observation of constructive interference at the edge of quantum ergodicity”, featured on the cover of Nature, we introduce and experimentally demonstrate a quantum algorithm which we call Quantum Echoes.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that a Google Quantum Echoes paper was published in Nature, but they never name the Willow chip or explicitly connect the Quantum Echoes work to the Willow experiment, so that link is not established.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Quantum Echoes algorithm was experimentally demonstrated in a Nature publication and reports running it on the Willow quantum chip."
+     }
+    ]
+   },
+   {
+    "sentence": "Google called it the first verifiable quantum advantage: a comparably capable quantum computer could repeat the calculation and check the result.",
+    "start": 315,
+    "end": 460,
+    "claim": "Google called the Quantum Echoes result the first verifiable quantum advantage.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.google/innovation-and-ai/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/?authuser=96",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we have demonstrated the first-ever verifiable quantum advantage running the out-of-order time correlator (OTOC) algorithm, which we call Quantum Echoes.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote shows Google describing Quantum Echoes as the first-ever verifiable quantum advantage, which matches the claim's wording and attribution.",
+      "page_judged": "not_supported",
+      "page_reason": "The page calls Quantum Echoes the “first-ever verifiable quantum advantage,” but the provided text does not identify Google as the speaker."
+     }
+    ]
+   },
+   {
+    "sentence": "Google called it the first verifiable quantum advantage: a comparably capable quantum computer could repeat the calculation and check the result.",
+    "start": 315,
+    "end": 460,
+    "claim": "In Google's verifiable quantum advantage, a comparably capable quantum computer could repeat the calculation and check the result.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.google/innovation-and-ai/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/?authuser=96",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Quantum verifiability means the result can be repeated on our quantum computer — or any other of the same caliber — to get the same answer, confirming the result.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This is why we call it “quantum verifiable,” meaning the result can be cross-benchmarked and verified by another quantum computer of similar quality.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the result can be repeated on the quantum computer or another of the same caliber, or verified by another quantum computer of similar quality, which matches the claim that a comparably capable quantum computer could repeat the calculation and check the result.",
+      "page_judged": "supported",
+      "page_reason": "The page says the result can be repeated on the same quantum computer or another of similar caliber to get the same answer and confirm it."
+     }
+    ]
+   },
+   {
+    "sentence": "The speedup was for one specific task—measuring how a disturbance spreads through a quantum system—not a claim that Willow is faster than supercomputers at everything.",
+    "start": 461,
+    "end": 628,
+    "claim": "The speedup was for one specific task: measuring how a disturbance spreads through a quantum system.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.google/innovation-and-ai/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/?authuser=96",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we’ve demonstrated it runs 13,000 times faster on Willow than the best classical algorithm on one of the world’s fastest supercomputers.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The signal's overlap reveals how a disturbance spreads across the Willow chip.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes mention a 13,000x speedup on Willow and a signal revealing how a disturbance spreads across the chip, but they never state that the speedup was for that task or that it was the only one.",
+      "page_judged": "supported",
+      "page_reason": "The page says Quantum Echoes ran 13,000 times faster than the best classical algorithm and that its measured signal reveals how a disturbance spreads across the Willow chip."
+     }
+    ]
+   },
+   {
+    "sentence": "The speedup was for one specific task—measuring how a disturbance spreads through a quantum system—not a claim that Willow is faster than supercomputers at everything.",
+    "start": 461,
+    "end": 628,
+    "claim": "Google did not claim that Willow is faster than supercomputers at everything.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.google/innovation-and-ai/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/?authuser=96",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "supported",
+      "page_reason": "The page describes Willow as 13,000 times faster for the Quantum Echoes algorithm than the best classical algorithm, not as faster than supercomputers at everything."
+     }
+    ]
+   },
+   {
+    "sentence": "Google also reported a separate proof-of-concept experiment using the technique to study molecular structure.",
+    "start": 629,
+    "end": 738,
+    "claim": "Google also reported a separate proof-of-concept experiment using the technique to study molecular structure.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.google/innovation-and-ai/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/?authuser=96",
+      "host": "blog.google",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In a separate, proof-of-principle experiment Quantum computation of molecular geometry via many-body nuclear spin echoes (to be posted on arXiv later today), we showed how our new technique — a “molecular ruler” — can measure longer distances than today’s methods, using data from Nuclear Magnetic Resonance (NMR) to gain more information about chemical structure.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In a proof-of-principle experiment in partnership with The University of California, Berkeley, we ran the Quantum Echoes algorithm on our Willow chip to study two molecules, one with 15 atoms and another with 28 atoms, to verify this approach.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Google ran a separate proof-of-principle experiment using its molecular ruler technique to gain more information about chemical structure, which matches the claim's main point and adds no unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page reports a separate proof-of-principle experiment using the Quantum Echoes technique to study two molecules and gain information about their structure."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 2,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 5,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.005813,
+   "usd_per_claim": 0.000727
+  },
+  "cost": {
+   "total_usd": 0.0058,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0019
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0022
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

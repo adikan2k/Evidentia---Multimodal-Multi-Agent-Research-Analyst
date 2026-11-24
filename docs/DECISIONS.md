@@ -2075,3 +2075,66 @@ only a check of the pipeline.
 **Full run estimate, from the measured costs.** The other 90 questions × 2 tools: about $6.70 for
 answers and $1.50 for the two audits of each. About $8.20 in all, under a $12 cap. It needs
 Aditya's yes.
+
+### The full run (D-042)
+
+All 100 questions × 2 tools were answered, and each answer audited twice, for $7.24. Finishing
+one audit cost another $0.21; that answer had twice hit Voyage's limit of 2 million rerank tokens
+a minute. The pilot answers were reused. Every number below is in `evals/results/realworld.json`.
+
+**Two engineering changes made during the run.**
+
+- **The reranker now runs under the same four-at-a-time gate as the model calls.**
+- **Very long pages are shortlisted first.** For a page over about 100 passages, the 100 passages
+  sharing the most words with the claim are picked in code, then reranked. This came from an
+  answer citing the full text of a law, over a megabyte.
+- **Where it applies.** Only that one audit (economy-06, OpenAI) ran with the shortlist. It
+  changes nothing for pages under about 120,000 characters.
+
+**Results with the page judge as shipped (Haiku).** The headline counts only claims whose own
+sentence carries a citation.
+
+| | OpenAI `gpt-6.2-sol` + web search | Claude Sonnet 5.5 + web search |
+|---|---|---|
+| Own-cited claims that fail outright | **38.0%** (29.1% to 46.4%), of 187 | **7.9%** (4.5% to 11.9%), of 382 |
+| Paragraph-cited claims that fail | 43.4%, of 99 | 17.0%, of 59 |
+| Claims with no citation at all | 13.0% | 44.0% |
+| Cited claims whose page could not be read | 32.1% | 19.3% |
+| Claims per answer / cited pages per answer | 6.5 / 1.6 | 15.2 / 2.9 |
+| Contradicted claims (all 100 answers) | 5 | 7 |
+| Cost per answer / per audit | $0.033 / $0.004 | $0.032 / $0.004 |
+
+- **The difference.** OpenAI minus Claude on the headline is **30.1 points**, interval 21.1 to 38.3,
+  paired by question.
+- **With the GPT page judge.** 45.3% against 7.8%, a difference of 37.5 points (27.1 to 47.1). So the
+  gap is not the Claude judges favouring Claude: the judge from OpenAI's own maker is harder on
+  OpenAI's answers.
+- **Both question sources show it.** On the 2025–2026 questions: 37.3% against 8.1%. On Natural
+  Questions: 40.0% against 6.0%, on fewer claims, 45 and 50.
+- **Uncited claims.** Claude leaves far more claims uncited: 44% against 13%. On the Natural
+  Questions half, 76% of Claude's claims cite nothing, because it often answers without
+  searching. So the two tools fail in different ways. OpenAI cites more of what it says, but its
+  citations often do not hold it. Claude cites less, but what it cites mostly holds.
+
+**Spot check.** Ten of OpenAI's failed own-cited claims, drawn with a fixed seed, were checked
+against the re-fetched pages. All ten pages had been read in full (2,000 to 30,000 characters),
+and the claim's facts are not on them. Some examples:
+
+- "ended new Grad PLUS loans" cited to an IRS FAQ about energy credits;
+- "the chance peaked at 2.8% according to ESA on February 18" cited to a NASA page saying NASA
+  put it at 3.1% on that day;
+- an "extension in August" cited to the May joint statement.
+
+This check was made by Claude Code, a model, not by a person.
+
+**Limits, for the README and the Findings page.**
+
+- These are API answers, not the consumer apps.
+- Each question was asked once per tool.
+- Half the questions were written by this project; they were fixed and committed before any
+  answer existed.
+- The auditor's flags are right about 81% of the time on the benchmark (D-040). No person has
+  checked these flags.
+- Pages that could not be read (32% and 19% of cited claims) are left out of the headline.
+- **Tracing.** Langfuse accepted this run's traces, despite the free tier being used up this
+  month.
