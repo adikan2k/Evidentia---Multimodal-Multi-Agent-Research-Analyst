@@ -72,11 +72,9 @@ class Settings(BaseSettings):
     rerank_top_k: int = 10
 
     # Sites such as Wikipedia refuse crawlers that do not say who runs them. The address is the
-    # project's public repository; Aditya approved sending it on 2026-11-24.
-    user_agent: str = (
-        "EvidentiaBot/0.1 "
-        "(+https://github.com/adikan2k/Evidentia---Multimodal-Multi-Agent-Research-Analyst)"
-    )
+    # project's public repository (renamed to `evidentia` on 2026-11-26); Aditya approved
+    # sending it on 2026-11-24.
+    user_agent: str = "EvidentiaBot/0.1 (+https://github.com/adikan2k/evidentia)"
     fetch_timeout_s: float = 15.0
     fetch_max_bytes: int = 2_000_000
     pdf_max_bytes: int = 15_000_000
