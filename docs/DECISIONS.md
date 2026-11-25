@@ -3182,3 +3182,86 @@ Built and checked locally, then held. It is pushed only when one of these is tru
   loading line until a frame is drawn, because the browser holds back drawing in a hidden tab.
   They show at once when drawn, with the marks level with their sentences.
 
+
+## D-049. The auditor reads the rest of the page, not only the article (after D-044)
+
+Approved by Aditya on 25 November 2026, with the re-audit and its cost.
+
+**What.** The auditor keeps the article text it reads today. After it, it adds the rest of the
+page's visible text, one block per line: headers with their dates, image captions, stat boxes and
+side tables. Then the saved answers are audited again with the new reader (no new answers), and a
+fresh blind hand check is run on a new sample.
+
+- **Only the auditor changes.** The research agent keeps its reader, so its evals stay valid.
+- **No made-up text is stored.** Every character added is page text, so a quote is still an exact
+  span of the page (rule 8). The source records where the article ends, so the site can show the
+  two parts apart.
+- **Dropped:** scripts, styles, forms, buttons, frames, and elements marked `hidden` or
+  `aria-hidden`. Lines already in the article are not repeated.
+- **The 2,000-character rule (D-047) counts the article only.** Otherwise a paywall teaser would
+  pass on the strength of its menus.
+
+**Why.** D-044's diagnosis: in 5 of the 6 flags Aditya rejected, the evidence was in the page's
+HTML but `trafilatura` with `favor_precision=True` had dropped it.
+
+- **Tried on those 5 pages:** `trafilatura`'s default and `favor_recall` settings recovered none
+  of the 5 facts. The article plus the rest of the page recovered all 5. It also kept the facts behind
+  the 2 "supported" marks on HTML pages; the third is a PDF, which is read as before.
+- **Across the main run** (fetched again on 25 November, no model calls): of 101 flags, 15 cite a
+  page where a number in the claim is missing from the article text but present elsewhere on the
+  page: 5 of OpenAI's 71 and 10 of Claude's 30. This is a rough test. Some matches are a year in
+  a menu, and claims without numbers and pages that cannot be read now were not tested.
+- **The added text is a median 55% of the article's length.**
+
+**Considered.**
+
+- **Other `trafilatura` settings.** Recovered none of the 5.
+- **A line with the page's metadata date.** Made-up text that a quote could then cite. And the
+  metadata date is often a "last reviewed" date, not when the thing happened.
+- **The whole page as one block** (`html2txt`). It recovers the facts but loses every line break,
+  so quotes cannot be shown in their paragraph, and it mixes the article with the menus.
+- **The browser reader (D-046).** These facts were in the served HTML, not built by scripts, and
+  the browser is slower.
+- **Telling the judges that a past record does not contradict a later one** (the CoinMarketCap
+  case). A prompt change moves the benchmark score too, so it needs its own benchmark run. Left
+  for a later decision.
+
+**Trade-off.**
+
+- **More noise.** Menus, related-story headlines and old FAQ text can give a wrong "supported" or
+  "contradicted". The benchmark cannot measure this, because it hands the auditor clean text. Only
+  the fresh hand check can, which is why it is part of this decision.
+- **Text a person cannot see.** Text hidden by stylesheets, not by the `hidden` attribute, is still
+  read, including some paywalled text.
+- **Pages have moved on.** The re-audit reads each page as it is now, a day or more after the
+  answer was written. Live pages such as prices will differ more. Each audit records when it read
+  the page.
+
+### The re-audit
+
+- **Runs:** the main run with both page judges (Haiku as shipped, and `gpt-6-luna`), and the 20
+  re-ask questions over all four asks. Saved answers are reused.
+- **Cost:** the old audits cost $0.81 (Haiku), $0.83 (luna) and $0.44 (re-ask). With about 50%
+  more text, about $3.10 in all. Hard cap of $5 in code. Aditya says yes to the run first.
+- **Kept apart:** results go to new files, and the old audits stay as they are. D-046 and D-047
+  were measured on the old reader, so their figures are not carried over to the new one.
+
+### The fresh hand check, fixed now, before any label
+
+- **The sample:** 40 claims from the new Haiku audits, 10 from each of the four groups, as before,
+  with a new seed, 20261204. The 40 claims already labelled are left out. The item list is
+  committed before the first label.
+- **The rule:** the comparison is shown only if at least 70% of the flags Aditya settles are upheld,
+  both tools together, **and** neither tool's 95% interval for flags upheld lies wholly below 70%.
+  The second part is the per-tool guard drafted above, adopted here before any label of this
+  check.
+- **About 45 minutes of Aditya's time.** Same blind command, same rubric.
+
+### Tests
+
+- The reader keeps the article first and adds the rest, with no repeated lines and nothing from
+  scripts, styles, or hidden elements.
+- A quote found in the rest of the page passes the exact-span check.
+- The thin-page rule counts the article's characters only.
+- The research agent's reader is unchanged.
+- The new sample is the same every time, has 10 per group, and contains none of the old 40.
