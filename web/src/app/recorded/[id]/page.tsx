@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { AuditPicker } from "@/components/AuditPicker";
+import { RecordBand } from "@/components/RecordBand";
 import { SHELL } from "@/lib/site";
 
 // One address per recorded audit, so an audit can be linked and previewed (D-045).
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PageProps<"/recorded/[id]">):
 async function Recorded({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   if (!(await entries()).some((e) => e.id === id)) notFound();
-  return <AuditPicker initial={id} />;
+  return <AuditPicker initial={id} band={<RecordBand />} />;
 }
 
 export default function Page({ params }: PageProps<"/recorded/[id]">) {

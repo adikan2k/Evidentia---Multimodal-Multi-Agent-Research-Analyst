@@ -3563,7 +3563,7 @@ All figures are in `evals/results/open_web.json`. The run cost $3.78, under the 
 
 ## D-053. The design, finished against five award galleries (after D-045)
 
-Drafted 26 November 2026. Waiting for Aditya's approval.
+Approved by Aditya on 26 November 2026.
 
 **What.** Aditya asked for the design to be checked against five references before it is called
 final: Awwwards (and its Site of the Day), the 2026 Webby winners for websites, Web Design Awards'
@@ -3643,3 +3643,25 @@ headline reveal, parallax or cursor effect. All of it is off for reduced motion.
 - At 390, 1024, 1440 and 1920 pixels: no sideways scroll, no text under 12 pixels, contrast at
   least 4.5 to 1 (including on the ink band), and the reduced-motion version of each animation.
 - Every number on the new band and charts comes from the site's data file, never typed in.
+
+### As built (26 November 2026)
+
+- **The first screen.** The sheet beside the headline replays the recorded CRISPR audit at three
+  times its real timings, and says so under the sheet. **One correction to the plan:** the marks
+  do not arrive one by one. In every recording the verdicts arrive together, when the two judges'
+  results are combined, so the sheet shows what happened: sentences underlined with "checking"
+  marks when the splitter returns, then every mark drawn at once. "Paste your own" is the second
+  tab. Clicking a sentence, or "See the evidence", goes to the full recorded audit below.
+- **The ink band** (`RecordBand`) is rendered on the server, so the eval data never ships to the
+  browser. It shows flags right and supported right on the benchmark, and both hand checks on one
+  track with the 70% bar drawn and named where it sits.
+- **Charts with notes.** The findings page has both checks against the bar, each row saying how
+  many flags short it fell. The evals page has recall at 1, 3, 5 and 10 as an emphasis chart: the
+  shipped search in ink, the others in grey with their own dash, the best possible dashed. Its
+  greys are 3.2 to 1 against the desk. On a phone it keeps its drawn size and scrolls in its own
+  box, so its text stays at 12 pixels.
+- **The logo** is the margin's tick. **Headlines** are about a third larger (110 pixels at 1,920).
+- **Measured** at 375, 1,024, 1,440 and 1,920 pixels on the home, findings and evals pages: no
+  sideways scroll, no text under 12 pixels. Text on the ink band is at least 8 to 1.
+- **Not judged here.** The browser pane I work in is hidden and small, which slows the replay and
+  scales pages down. Aditya looks at the pages on his own screen before anything is pushed.

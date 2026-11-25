@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { IntervalChart } from "@/components/IntervalChart";
 import { PageIndex } from "@/components/PageIndex";
+import { RecallChart } from "@/components/RecallChart";
 import {
   caught,
   checkerModel,
@@ -547,6 +548,23 @@ export default function EvalsPage() {
         </div>
 
         <Section title="Recall at k">
+          <RecallChart
+            ks={KS}
+            series={[
+              { key: "bm25", label: "Keyword only", dash: "2 4", values: KS.map((k) => retrieval.retrievers.bm25[`recall_at_${k}`].mean) },
+              { key: "hybrid", label: "Hybrid", dash: "9 5", values: KS.map((k) => retrieval.retrievers.hybrid[`recall_at_${k}`].mean) },
+              { key: "dense", label: "Dense only", values: KS.map((k) => retrieval.retrievers.dense[`recall_at_${k}`].mean) },
+              {
+                key: "dense_rerank",
+                label: "Dense + rerank (shipped)",
+                emphasis: true,
+                values: KS.map((k) => shippedSearch[`recall_at_${k}`].mean),
+              },
+            ]}
+            ceiling={KS.map((k) => best[`recall_at_${k}`])}
+            caption={`Share of the relevant passages found in the top k, on ${retrieval.questions} questions. Hybrid + rerank scores the same as the shipped search, so it is left off the chart; it is in the table.`}
+          />
+          <div className="mt-10" />
           <Table
             head={["Retriever", ...KS.map((k) => `Recall@${k}`)]}
             rows={Object.entries(RETRIEVERS).map(([key, label]) => {

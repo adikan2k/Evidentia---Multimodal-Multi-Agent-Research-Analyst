@@ -10,6 +10,8 @@ export type IntervalRow = {
   high?: number;
   /** Shown in the hover note, e.g. "282 of 305 claims". */
   detail?: string;
+  /** Written on the chart under the name, always visible: the point of this row (D-053). */
+  note?: string;
 };
 
 type Props = {
@@ -21,13 +23,15 @@ type Props = {
   /** How many decimal places to print. */
   decimals?: number;
   caption: string;
+  /** A line drawn across every row at one value, with its label, e.g. a bar set in advance. */
+  threshold?: { value: number; label: string };
 };
 
 /**
  * One measure for a handful of named things, each with its 95% interval. A single series, so it
  * is drawn in ink with no legend; names are on the rows and values in the right-hand column.
  */
-export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption }: Props) {
+export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption, threshold }: Props) {
   const format = (value: number) => value.toFixed(decimals);
   const [hovered, setHovered] = useState<number | null>(null);
   const [min, max] = domain;
@@ -55,7 +59,10 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
             tabIndex={0}
             aria-label={`${row.label}: ${format(row.value)}${intervalOf(row)}`}
           >
-            <span className="col-span-full pl-2 text-[0.9375rem] leading-snug text-ink sm:col-span-1">{row.label}</span>
+            <span className="col-span-full pl-2 text-[0.9375rem] leading-snug text-ink sm:col-span-1">
+              {row.label}
+              {row.note && <span className="label block font-normal text-ink-soft">{row.note}</span>}
+            </span>
             <span className="relative ml-2 block h-6 sm:ml-0">
               {ticks.map((tick) => (
                 <span
@@ -64,6 +71,12 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
                   style={{ left: at(tick) }}
                 />
               ))}
+              {threshold && (
+                <span
+                  className="absolute inset-y-[-0.625rem] border-l-2 border-dashed border-ink"
+                  style={{ left: at(threshold.value) }}
+                />
+              )}
               {mark === "bar" && (
                 <span
                   className="absolute top-1 h-3 rounded-r bg-ink"
@@ -91,6 +104,14 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
         ))}
         <span className="hidden sm:block" />
         <span className="relative mt-1 ml-2 block h-5 sm:ml-0">
+          {threshold && (
+            <span
+              className="label absolute top-6 -translate-x-1/2 whitespace-nowrap text-ink"
+              style={{ left: at(threshold.value) }}
+            >
+              {threshold.label}
+            </span>
+          )}
           {ticks.map((tick) => (
             <span
               key={tick}
