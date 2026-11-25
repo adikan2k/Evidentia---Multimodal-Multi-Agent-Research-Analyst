@@ -2667,7 +2667,7 @@ page streams.
 
 ## D-046. A second reader for pages built by scripts (D-043, phase 1d)
 
-**Status: draft, waiting for Aditya's approval. Nothing is built.**
+**Status: approved by Aditya on 24 November 2026, built and run. The result is at the end of this entry: the reader works, and it barely changes anything.**
 
 ### The problem
 
@@ -2785,3 +2785,53 @@ stored text. Each source records which reader read it, and the audit shows it.
   is not installed.
 - The eval's bookkeeping with made-up audits: only stranded claims change, and the before and
   after figures add up.
+
+### As built and run (24 November 2026)
+
+**Built as drafted.** `evidentia/render.py` is the reader and `evals/reread.py` the eval. The
+point left to confirm held: the browser renders with every request answered by our code and a
+dead proxy behind it. In that test a request our code let through failed at the proxy, and so did
+a WebSocket. A real-browser test also shows the page's own scripts see Evidentia's user agent.
+
+**One addition.** Pages the fetcher had skipped as "no readable text" (under 200 characters) were
+tried too, since they also answered and gave too little text.
+
+**The result.** Figures are in `evals/results/realworld_rendered.json`.
+
+| | Main run | Re-ask run |
+|---|---|---|
+| Thin pages tried | 62 | 19 |
+| Gave 2,000 characters or more in the browser | 5 | 2 |
+| Still too little text | 49 | 14 |
+| No readable text at all | 6 | 2 |
+| Other (not HTML; one 403) | 2 | 1 |
+
+| Main run, own-cited claims that fail | Before | After |
+|---|---|---|
+| OpenAI | 38.0% of 187 | 39.1% of 197 |
+| Claude | 7.9% of 382 | 7.8% of 386 |
+| OpenAI minus Claude | 30 points (21 to 38) | 31 points (23 to 39) |
+
+- 17 claims gained a verdict in the main run: 13 of OpenAI's (8 not on the page, 4 supported, 1
+  partly backed) and 4 of Claude's (all supported). Two more went to a person.
+- The bounds hardly narrowed: OpenAI 23% to 64%, Claude 5% to 44%.
+- Cost: $0.02 of model calls, because so few pages could be judged.
+
+**Why so little.** The premise was wrong. On a sample of 14 of these pages, 12 gave exactly the
+same text in the browser as in a plain fetch. They are not built by scripts. They are:
+
+- short real pages: an arXiv abstract (1,937 characters), a NASA blog post (1,175), a news brief
+  (954);
+- paywall teasers (Japan Times, Bloomberg);
+- pages with no article at all, such as a video page.
+
+So the cause is the 2,000-character minimum set in D-042, not scripts. The label the auditor
+shows, "the page may need a browser to show it", was a guess from the pilot. It is wrong for
+most of these pages and should be reworded.
+
+**What stays.** The reader stays in the code, off by default. It did what it was built to do on
+the 7 pages that needed it. It is not worth putting on the server.
+
+**What this leaves open.** Whether short pages should be judged. A size limit cannot tell a
+short real article from a paywall teaser, and judging a teaser would blame the tool for text we
+could not see. That is a new decision, not part of this one.
