@@ -5,6 +5,8 @@
     uv run python -m evals realworld summary --set pilot           # free
     uv run python -m evals realworld reask --cap 5                 # paid; ask first (D-043, 1c)
     uv run python -m evals realworld reask-summary                 # free
+    uv run python -m evals realworld reread --cap 1                # paid; ask first (D-046)
+    uv run python -m evals realworld reread-summary                # free
 
 Every answer and every audit is saved, so a rerun only pays for what is missing. Each answer is
 audited twice: with the page judge as shipped (Haiku) and with OpenAI's gpt-6-luna as the page
@@ -577,8 +579,11 @@ def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
 
 def main(argv: list[str]) -> None:
     parser = argparse.ArgumentParser(prog="python -m evals realworld")
-    parser.add_argument("step", choices=["questions", "run", "summary", "reask", "reask-summary"])
-    parser.add_argument("--limit", type=int, help="reask: only the first N items, as a trial")
+    steps = ["questions", "run", "summary", "reask", "reask-summary", "reread", "reread-summary"]
+    parser.add_argument("step", choices=steps)
+    parser.add_argument(
+        "--limit", type=int, help="reask and reread: only the first N items, as a trial"
+    )
     parser.add_argument("--set", choices=["pilot", "all"], default="pilot", dest="which")
     parser.add_argument("--tools", default=",".join(TOOLS))
     parser.add_argument("--cap", type=float, default=3.0, help="US dollars for the whole command")
@@ -591,6 +596,11 @@ def main(argv: list[str]) -> None:
         path = write_result(name, summarise(args.which))
         print(f"wrote {path.name}")
         return
+    if args.step == "reread-summary":
+        from evals.reread import write_summary  # imported here: reread imports this module
+
+        write_summary()
+        return
     if args.step == "reask-summary":
         path = write_result("realworld_reask", summarise_reask())
         print(f"wrote {path.name}")
@@ -598,6 +608,16 @@ def main(argv: list[str]) -> None:
     settings = load_settings(cost_cap_usd=args.cap)
     tracer = LangfuseTracer(settings)
     tools = [t for t in args.tools.split(",") if t in TOOLS]
+    if args.step == "reread":
+        from evals.reread import Rereader
+
+        print(f"  reading thin pages again in a browser, cap ${args.cap:.2f}")
+        try:
+            with tracer.span("realworld.reread", "span", {}):
+                asyncio.run(Rereader(settings, args.cap, tracer).run(args.limit))
+        finally:
+            tracer.flush()
+        return
     if args.step == "reask":
         # Audited with the page judge as shipped only: the question here is how much the
         # answers move, and the second judge would double the audits' cost.
