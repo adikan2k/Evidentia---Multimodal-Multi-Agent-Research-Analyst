@@ -26,6 +26,8 @@ class Source(BaseModel):
     kind: Literal["html", "pdf"] = "html"
     page_starts: list[int] = []  # PDFs only: where each page begins in `text`
     pages_total: int | None = None  # PDFs only: pages in the document, read or not
+    # "render": the text was read after a headless browser ran the page's scripts (D-046).
+    read_by: Literal["fetch", "render"] = "fetch"
 
     def pages_of(self, start: int, end: int) -> tuple[int, int] | None:
         """First and last page (counting from 1) that the span `text[start:end]` lies on."""

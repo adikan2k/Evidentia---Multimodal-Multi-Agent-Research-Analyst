@@ -40,8 +40,14 @@ evals = [
     "pyarrow==26.0.1",
 ]
 
+# The second page reader (D-046): a headless browser for pages built by scripts. Used by the
+# real-world eval on a developer's machine. The server image does not install it.
+render = [
+    "playwright==1.65.2",
+]
+
 [tool.uv]
-default-groups = ["dev", "evals"]
+default-groups = ["dev", "evals", "render"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["evidentia"]

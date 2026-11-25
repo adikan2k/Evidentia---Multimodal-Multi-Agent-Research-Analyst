@@ -129,6 +129,12 @@ class Settings(BaseSettings):
     audit_checker_rules: bool = False
     # A sentence with no citation of its own takes the one that closes its paragraph (D-041).
     audit_paragraph_citations: bool = True
+    # D-046: read a page that gave too little text again, in a headless browser. Off by
+    # default: only the real-world eval turns it on, and the server has no browser installed.
+    audit_render_thin_pages: bool = False
+    render_max_requests: int = 40  # for one page, the document included
+    render_timeout_s: float = 20.0
+    render_request_interval_s: float = 0.25  # between requests to one site inside a page load
     # Send the page as a cached prefix, so other claims on the same page read it cheaply (D-039).
     # Off in the benchmark, where no two rows share a document and a cache write costs 1.25x.
     audit_prompt_cache: bool = True

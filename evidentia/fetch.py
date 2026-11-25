@@ -34,6 +34,7 @@ class Skip(Exception):
 
 
 NO_SUCH_NAME = "name does not resolve"
+NO_READABLE_TEXT = "no readable text"
 
 
 def does_not_resolve(err: httpx.HTTPError) -> bool:
@@ -198,7 +199,7 @@ class Fetcher:
                 else:
                     text = await asyncio.to_thread(extract_text, body.data)
                     if len(text) < self.settings.min_page_chars:
-                        raise Skip("no readable text")
+                        raise Skip(NO_READABLE_TEXT)
                     source = Source(id="", url=hit.url, title=hit.title, text=text)
             except Skip as skip:
                 span.update(output={"skipped": skip.reason})

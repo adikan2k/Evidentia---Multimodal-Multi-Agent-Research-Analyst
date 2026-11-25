@@ -52,10 +52,11 @@ from evidentia.chunk import make_passages
 from evidentia.config import Settings
 from evidentia.cost import Ledger
 from evidentia.embed import Embedder
-from evidentia.fetch import Fetcher
+from evidentia.fetch import NO_READABLE_TEXT, Fetcher
 from evidentia.llm import LLM, ModelStopped, new_tag
 from evidentia.openai_llm import OpenAILLM, is_openai_model
 from evidentia.quote_check import collapse_whitespace, find_quote
+from evidentia.render import Renderer
 from evidentia.schemas import Passage, SearchHit, SkippedPage, Source
 from evidentia.tracing import Tracer
 
@@ -113,6 +114,7 @@ class AuditDeps:
     fetcher: Fetcher
     embedder: Embedder
     openai: OpenAILLM | None = None  # made when a configured model is an OpenAI one
+    renderer: Renderer | None = None  # the second reader (D-046); the server has none
 
 
 def match_quotes(offered: list[str], source: Source, min_chars: int) -> list[Quote]:
@@ -225,6 +227,8 @@ class AuditNodes:
             [SearchHit(url=u) for u in wanted[:limit]]
         )
         skipped += [SkippedPage(url=u, reason=OVER_LIMIT) for u in wanted[limit:]]
+        if self.s.audit_render_thin_pages and self.d.renderer is not None:
+            sources, skipped = await self.second_read(sources, skipped)
         # A page we read only a few lines of is usually one built in the browser by scripts. Its
         # claims would wrongly look "not on the cited page", so it counts as not read (D-042).
         thin = [s for s in sources if len(s.text) < self.s.audit_min_page_chars]
@@ -237,6 +241,31 @@ class AuditNodes:
             for cid in claim.citation_ids
         ]
         return {"sources": sources, "skipped": skipped, "results": results}
+
+    async def second_read(
+        self, sources: list[Source], skipped: list[SkippedPage]
+    ) -> tuple[list[Source], list[SkippedPage]]:
+        """Pages that answered with too little text are read again in a browser (D-046).
+
+        The browser's text is kept only when it is longer. Pages that refused are not retried.
+        """
+        renderer = self.d.renderer
+        assert renderer is not None
+        read: list[Source] = []
+        for source in sources:
+            if source.kind == "html" and len(source.text) < self.s.audit_min_page_chars:
+                again = await renderer.render(source.url, source.title)
+                if isinstance(again, Source) and len(again.text) > len(source.text):
+                    source = again.model_copy(update={"id": source.id})
+            read.append(source)
+        still_skipped: list[SkippedPage] = []
+        for page in skipped:
+            again = await renderer.render(page.url) if page.reason == NO_READABLE_TEXT else None
+            if isinstance(again, Source):
+                read.append(again.model_copy(update={"id": f"S{len(read) + 1}"}))
+            else:
+                still_skipped.append(page)
+        return read, still_skipped
 
     async def find(self, state: AuditState, config: RunnableConfig) -> dict[str, Any]:
         by_url = {s.url: s for s in state.sources}
