@@ -2835,3 +2835,90 @@ the 7 pages that needed it. It is not worth putting on the server.
 **What this leaves open.** Whether short pages should be judged. A size limit cannot tell a
 short real article from a paywall teaser, and judging a teaser would blame the tool for text we
 could not see. That is a new decision, not part of this one.
+
+## D-047. Judge the short pages too, as a third reading (sensitivity check)
+
+**Status: draft, waiting for Aditya's approval. Nothing is built.**
+
+### The problem
+
+D-046 found that most "too little text" pages are not built by scripts. They are short: an arXiv
+abstract, a blog post, a news brief, or a paywall teaser. The auditor leaves their claims without
+a verdict because of the 2,000-character minimum set after the pilot (D-042).
+
+Claims still stranded on pages with 200 to 1,999 characters, after the browser re-read:
+
+| | OpenAI | Claude |
+|---|---|---|
+| Main run: short pages | 16 | 33 |
+| Main run: own-cited claims stranded | 35 | 89 |
+| Re-ask run: short pages | 5 | 9 |
+| Re-ask run: own-cited claims stranded | 35 | 43 |
+
+The main run's headline rests on 197 and 386 own-cited claims, so Claude's 89 in particular could
+move it.
+
+### What is proposed
+
+Judge those stranded claims against the short text as it was fetched, with both judges as
+shipped, and report the result as a **third reading** beside the headline. The headline itself
+does not change, and neither does the 2,000-character rule on the live site.
+
+- **Only the stranded pairs are judged.** Every other claim keeps the label it has, as in D-046.
+- **The short text is fetched again** with the plain fetcher, under the same robots.txt check and
+  rate limit, since the saved audits do not keep page text.
+- **Each short page is recorded with its length**, so the report can say how many were under
+  1,000 characters.
+- **Saved apart**, under `evals/realworld/short/`, and summarised in
+  `evals/results/realworld_short.json`:
+  - the headline as it stands, the third reading, and the difference, with intervals, for each
+    tool;
+  - the claims that gained a verdict, by label;
+  - the same for the re-ask run.
+
+**How it is read, fixed now before any claim is judged:**
+
+- If the gap between the tools stays clearly apart from zero in the third reading, the finding
+  does not rest on the 2,000-character rule, and the findings page says so in one line.
+- If the gap shrinks a lot or its interval reaches zero, the findings page leads with that.
+- Either way, the third reading is shown, not hidden.
+
+### Why not simply lower the minimum
+
+A size limit cannot tell a short real article from a paywall teaser. On a teaser, a claim the full
+article supports would be marked "not on the cited page", which blames the tool for text we could
+not see. That is why the result is a sensitivity reading and not a new headline.
+
+### Also proposed: a truer label
+
+The auditor tells a reader that a page gave "too little text read (the page may need a browser to
+show it)". D-046 showed the second half is usually wrong. Proposed instead: **"too little text
+read (a short page, a paywall, or a page built by scripts)"**. The reason text is all that
+changes; the label, the rule and the figures stay as they are. The saved audits keep the old
+wording, so the eval code will match both.
+
+### Cost
+
+About 220 claim-and-page pairs in the two runs, judged by Haiku. Under $0.50. No search calls.
+
+### Considered
+
+- **Lowering the minimum to 1,000 characters for everyone.** It still cannot tell a teaser from
+  an article, and it changes the live site on the strength of one look at 14 pages.
+- **Having a person sort the 63 short pages into "real article" and "teaser" first.** The
+  strongest option, about an hour of Aditya's time. It can be added later and the third reading
+  split by it.
+- **Doing nothing.** The bounds already cover these claims, but they are wide (OpenAI 23% to 64%,
+  Claude 5% to 44%), and a reader is left not knowing which end is likely.
+
+### Trade-off
+
+The third reading mixes real verdicts on short articles with unfair ones on teasers, so it is a
+check on the headline, not a better headline. It costs little and answers the question the
+review would ask next: does the result depend on a threshold we picked?
+
+### Tests
+
+- The pairs chosen: only claims still stranded after D-046 on pages of 200 to 1,999 characters.
+- The bookkeeping: only those claims change, and the before and after figures add up.
+- The new reason text, and that the eval still recognises the old one.
