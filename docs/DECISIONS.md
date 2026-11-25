@@ -2899,13 +2899,13 @@ wording, so the eval code will match both.
 
 ### Cost
 
-About 220 claim-and-page pairs in the two runs, judged by Haiku. Under $0.50. No search calls.
+About 240 claim-and-page pairs in the two runs (51 and 102 in the main run, 36 and 50 in the re-ask), judged by Haiku. Under $0.50. No search calls.
 
 ### Considered
 
 - **Lowering the minimum to 1,000 characters for everyone.** It still cannot tell a teaser from
   an article, and it changes the live site on the strength of one look at 14 pages.
-- **Having a person sort the 63 short pages into "real article" and "teaser" first.** The
+- **Having a person sort the short pages (63 across both runs and tools, some cited more than once) into "real article" and "teaser" first.** The
   strongest option, about an hour of Aditya's time. It can be added later and the third reading
   split by it.
 - **Doing nothing.** The bounds already cover these claims, but they are wide (OpenAI 23% to 64%,
