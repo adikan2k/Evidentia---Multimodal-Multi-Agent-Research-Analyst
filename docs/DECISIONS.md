@@ -3348,3 +3348,84 @@ were committed before they were scored (`hand_check_2_labels.jsonl`).
     model call; it would move up to 13 OpenAI flags out of the flags. The name and misreading
     errors are judge errors, and a prompt change for them would need its own decision and a
     fresh check.
+
+## D-050. The auditor reads long PDFs to the end, and says when it could not (after D-049)
+
+Drafted 25 November 2026. Waiting for Aditya's approval, with the re-audit and its cost.
+
+**What.** Three changes, all in how the auditor reads, none in how it judges.
+
+- **Read up to 300 pages of a PDF, not 40.** For the auditor only (`audit_pdf_max_pages`). The
+  research agent keeps 40, so its evals stay valid. The 15 MB and 20-second limits stay.
+- **A page cut short cannot be "not on the page".** If a PDF still has pages past the limit and
+  the judges find nothing in the pages read, that page is marked "could not check", with the
+  reason "read only the first 300 of N pages". A "supported", "partly supported" or
+  "contradicted" from the pages read stands, because the evidence for it was read. The claim's
+  label follows the existing order, in which "could not check" ranks above "not on the page".
+- **Saved audits record each page as it was read.** The real-world runner never gave the fetched
+  pages to the report, so every saved page says "html" with no title and no quote context. The
+  runner now hands them over, as the live API already does. Labels are not affected.
+
+**Why.** D-049's diagnosis: one of the 4 flags Aditya rejected cites the AI Act, a 144-page PDF
+on EUR-Lex. The first 40 pages are recitals; Article 4 is on page 51. Fetched again with no model
+calls:
+
+- **4 PDFs behind flags in the re-audit run past 40 pages:** EUR-Lex (144), an APHIS report (85),
+  NASA's inspector general (50) and the Labor Department's (44). They carry 13 of OpenAI's flagged
+  citations and none of Claude's. 11 other flagged PDFs were read whole.
+- **Reading them to the end is cheap.** The 144-page Act takes 2.3 seconds, against 0.9 at 40
+  pages, and is 596,000 characters. The free word-match shortlist still sends at most 100 passages
+  to the reranker, and the judges still see 6, so the cost per claim does not change.
+- **It reaches the evidence.** With the whole Act read, the passage holding Article 4's wording is
+  in the shortlist for the claim Aditya checked. For the 13 flags, between 4 and 76 of the 100
+  shortlisted passages now come from past page 40.
+
+**Considered.**
+
+- **Only marking cut PDFs "could not check".** No model calls and no re-audit of the judges, but
+  it gives up on the 13 citations instead of checking them. Kept as the backstop above 300 pages.
+- **Only reading further.** Leaves a document over the new limit marked "not on the page" when the
+  evidence may be past it.
+- **No limit.** One huge PDF could hold up a live run. 300 pages covers every flagged PDF here.
+- **Re-auditing only the 4 answers that cite these PDFs.** A few cents, but their claims would be
+  split again and judged on a different day from the rest of the run. Re-auditing everything, as
+  D-049 did, keeps one run read one way.
+
+**Trade-off.**
+
+- **This moves only OpenAI's figures.** All 13 are OpenAI flags, so its failure rate can only go
+  down. That is the direction a reader suspicious of bias would ask for, but it is still a change
+  made after looking at labels, and it is recorded as that.
+- **More pages, more noise.** A long document has more passages that share words with a claim.
+  The reranker and the judges only ever see the best 6.
+- **Live runs.** A long PDF adds a few seconds to a live audit and a few MB of memory on the
+  1 GB Cloud Run instance.
+
+### The re-audit
+
+- **Runs:** the same three as D-049, from the saved answers: the main run with both page judges,
+  and the re-asks. Results go to a new folder, `evals/realworld/full_pdf/`; D-049's audits stay.
+- **Cost:** D-049's audits cost $0.93 (Haiku), $0.96 (luna) and $0.49 (re-ask), $2.38 in all.
+  These pages add no judge tokens, so about $2.40. Hard cap of $4 in code. Aditya says yes first.
+
+### What it does not do
+
+- **The second hand check stands as scored.** Its EUR-Lex item would now leave the flags, but a
+  check is scored on the auditor it was drawn from. Re-scoring it after a fix would be moving the
+  bar.
+- **No third hand check, and the comparison stays withheld.** All 14 of Claude's own-cited flags
+  in D-049's audits have now been seen by Aditya, 7 in each check, so a third blind check of
+  these answers has almost no Claude flags to draw. A third check would need new answers, and
+  that is a decision of its own.
+- **No judge change.** The other 3 disagreements were judge errors: a name carried in from the
+  answer ("Q1") that the page does not use, and a misread. A prompt change moves the benchmark
+  score and needs its own decision.
+
+### Tests
+
+- The auditor reads past page 40 of a long PDF; the research agent stops at 40.
+- A PDF over the auditor's limit with nothing found is "could not check", with the pages read
+  and the total in the reason. One that is supported or contradicted from the pages read keeps
+  that label.
+- A PDF read to its end, and every web page, are labelled as before.
+- A saved real-world audit records each page's kind and title, and its quotes' context.
