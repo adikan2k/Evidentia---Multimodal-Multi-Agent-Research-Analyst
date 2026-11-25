@@ -87,6 +87,20 @@ Agreement is with a stronger model from the same family, not with a person.
 
 Source: `evals/results/citation_accuracy.json`, `checker_agreement.json`, `unanswerable.json`, `nasty.json`.
 
+### The research agent on the open web
+
+20 of the questions, asked from the start on live web search. Plain RAG answered from the pages the agent fetched for each question. Same judge as above. Search results change, so this run cannot be repeated exactly.
+
+| System | Claims shown as backed that are fully backed | Claims | Cost per question |
+|---|---|---|---|
+| Plain RAG, same pages | 0.906 (0.844 to 0.956) | 145 of 160 | $0.0144 |
+| **Evidentia (shipped)** | 0.942 (0.902 to 0.975) | 146 of 155 | $0.0919 |
+
+- Difference per question, Evidentia minus plain RAG: +0.035 (-0.020 to +0.096).
+- Pages read: 154 from 105 sites, 6% from Wikipedia; 86 could not be read.
+
+Source: `evals/results/open_web.json`.
+
 <!-- results:end -->
 
 ## Architecture
@@ -282,9 +296,9 @@ copied from `evals/results/`, with 95% intervals.
 
 The figures are in "Results at a glance" above. What they say:
 
-- **Accuracy is not better than plain RAG.** The intervals overlap. What the pipeline adds is
-  evidence you can check quickly (a short quote instead of a whole passage) and a checker that
-  catches mistakes, at a higher cost.
+- **Accuracy is not better than plain RAG,** on the saved pages or on the open web. The
+  intervals overlap. What the pipeline adds is evidence you can check quickly (a short quote
+  instead of a whole passage) and a checker that catches mistakes, at a higher cost (D-052).
 - **The checker catches broken claims.** Claims were broken on purpose (wrong quote, one fact
   changed, or a detail added), and each checker model refused nearly all of them.
 - **Keyword search did not help retrieval here.** Dense search alone beat dense plus BM25 before

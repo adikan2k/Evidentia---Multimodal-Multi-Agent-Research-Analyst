@@ -167,7 +167,7 @@ def test_report_says_what_has_not_been_run_instead_of_inventing_numbers(
     monkeypatch.setattr(report.readme, "README", tmp_path / "README.md")
     report.run()
     text = (tmp_path / "REPORT.md").read_text(encoding="utf-8")
-    assert text.count("Not run yet") == 7
+    assert text.count("Not run yet") == 8
     assert "Nothing has been run yet." in text
     assert not (tmp_path / "evals.json").exists()  # no results, so no site data
     assert not (tmp_path / "README.md").exists()  # nor a README block

@@ -35,6 +35,7 @@ STEPS = {
     "hand-check-2-draw": ("evals.hand_check", "draw_second"),  # D-049, before any label
     "hand-check-2": ("evals.hand_check", "run_second"),  # Aditya's step (D-049)
     "hand-check-2-score": ("evals.hand_check", "score_second"),
+    "open-web": ("evals.open_web", "run"),  # paid, about $5 (D-052)
 }
 # `label` is Aditya's step and `pairs` must not be rebuilt once labelling has started.
 AUTOMATIC = [

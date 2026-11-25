@@ -104,8 +104,10 @@ says so), or **open** (known, not addressed).
 
 - **What happens.** Two Claude Haiku calls can share a blind spot. Agreement between them is
   weaker evidence than agreement between two different models.
-- **How we know.** A judge from another provider was tried and did not hold up on rows it was not
-  tuned on (D-038 to D-040).
+- **What was tried.** An OpenAI page judge made no clear difference on the benchmark's practice
+  rows and was dropped by a rule set in advance (D-038). Sonnet as the judges was no better and
+  cost far more (D-039). The real-world audit was also run with the OpenAI page judge, as a
+  check on this blind spot (D-042, D-049).
 - **Status: open.**
 
 ## The auditor on real answers
@@ -124,17 +126,22 @@ says so), or **open** (known, not addressed).
 
 ### It is not more accurate than plain RAG
 
-- **What happens.** On the saved corpus, the share of claims shown as backed that a judge found
-  fully backed is the same for the pipeline and for plain RAG, within the intervals
+- **What happens.** On the saved corpus and on the open web, the share of claims shown as backed
+  that a judge found fully backed is the same for the pipeline and for plain RAG, within the
+  intervals
   (`citation_accuracy.json`). What it adds is a short exact quote and a checker, at a higher
   cost per question (same file).
 - **Status: open, and the reason the project became an auditor** (D-034).
 
-### Measured on clean pages only
+### Measured on clean pages, and on the open web only once
 
-- **What happens.** The corpus is mostly Wikipedia, cleaner than the open web, and the search
-  test's gold passages were drafted by a model (then checked word for word by code).
-- **Status: open.** Scores are likely kinder than real use; the README and site say so.
+- **What happens.** The main corpus is mostly Wikipedia, cleaner than the open web, and the search
+  test's gold passages were drafted by a model (then checked word for word by code). On the open
+  web the agent was asked 20 questions, once (`open_web.json`); it was again not clearly more
+  accurate than plain RAG on the same pages (D-052). Search results change, so that run cannot be
+  repeated exactly.
+- **Status: open.** There are no retrieval scores on the open web, since live pages have no gold
+  passages.
 
 ### No person has labelled the checker
 

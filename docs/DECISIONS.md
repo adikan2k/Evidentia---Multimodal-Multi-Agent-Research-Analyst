@@ -3476,3 +3476,87 @@ who waits for the server to sleep gets a fresh budget. Each run is still capped 
 - A store that cannot be read at start refuses live runs; one that fails to write keeps the
   total in memory and tries again.
 - No IP address is written to the store.
+
+## D-052. The research agent on the open web
+
+Drafted 25 November 2026. Waiting for Aditya's approval, with its cost.
+
+**What.** Ask the research agent the same 40 questions again, this time from the start: it plans,
+searches the live web, fetches and reads what it finds, as the site does. Plain RAG answers each
+question from the same pages the agent fetched, so the two still see the same evidence. The same
+judge as before (Opus, with the checker's rubric) scores both. Results go to a new file,
+`evals/results/open_web.json`; the clean-corpus results stay as they are.
+
+Measured, for each system: the share of claims shown as backed that the judge finds fully
+backed (the same measure as on the clean pages), the share whose main point is backed, claims per
+question, and cost per question. For the agent only: the share of its claims labelled
+unverified, and how many pages it fetched, read and could not read, by reason.
+
+Shown on the evals page and in the README's results block beside the clean-corpus figures. The
+"not measured on the open web" item comes off the "What was not done" list, replaced by what the
+run found.
+
+**Why.** Every research-agent figure so far comes from 50 saved pages, mostly Wikipedia, which
+are cleaner than the open web. The open web has paywalls, script-built pages, refusals, near
+duplicates and pages that disagree. That is where a checker should matter more, if it matters
+at all.
+
+**Considered.**
+
+- **New questions.** The same 40 keep the comparison with the clean pages direct.
+- **Scoring the agent's answers with the auditor.** The auditor has not passed its own hand
+  check on real answers, so it cannot be the measure here.
+- **The agent alone, with no plain RAG.** Then there is nothing to compare against. Giving plain
+  RAG the agent's own fetched pages keeps the comparison about writing and checking, not search.
+- **Retrieval scores on the open web.** They need gold passages, and there are none for pages
+  found live. Left out.
+
+**Trade-off.**
+
+- **It cannot be repeated exactly.** Search results and pages change. The run saves the
+  addresses it fetched and when, so it can be inspected, not replayed.
+- **The questions were written around Wikipedia pages,** so search will often find Wikipedia
+  again. The result reports the share of fetched pages from wikipedia.org, so a reader can see
+  how open the "open web" really was.
+- **The judge is a model,** from the same family as the writer, as on the clean pages. No person
+  checks it, and the page says so.
+- **One run of 40 questions,** so the intervals will be wide.
+
+### Cost
+
+On the clean pages the shipped agent cost $1.96 for 40 questions, and plain RAG $0.56. The open
+web adds search, more pages to read and to embed, and possibly a repair round more often. About
+$5 in all, judge included. Hard cap of $8 in code. Aditya says yes first.
+
+### Tests
+
+- The open-web runner starts the graph at "plan", not "retrieve".
+- Plain RAG answers from the pages the agent fetched for the same question, and from no others.
+- The result file records each fetched address, when it was read, and why any page was not.
+- The evals page and the README block read the new file, and say so when it does not exist.
+
+**Changed on 26 November, after a 2-question trial and before the run: 20 questions, not 40.**
+The trial cost about $0.41 for 2 questions, judge included, so all 40 would be about $8 to $9,
+over the $5 approved. Aditya chose 20. They are drawn with a fixed seed (20261126) in the
+corpus's own mix, 15 factual and 5 contested, because the first 20 questions are all factual and
+contested questions are where pages disagree. The sample is fixed in code before any of the 20
+is asked. Cap $6. The trial's figures are kept apart (`open_web_trial.json`) and are not
+reported.
+
+### D-052 result (26 November 2026): on the open web too, not clearly more accurate
+
+All figures are in `evals/results/open_web.json`. The run cost $3.78, under the $4.50 approved.
+
+- **The open web was open.** The agent read 154 pages from 105 sites; 6% were Wikipedia. 86 more
+  could not be read, most often disallowed by robots.txt or refused by the site.
+- **Fully backed, among claims shown as backed:** Evidentia 0.942 (0.902 to 0.975), plain RAG on
+  the same pages 0.906 (0.844 to 0.956). Per question, Evidentia minus plain RAG is +0.035, with
+  an interval from -0.020 to +0.096. As on the clean pages, the agent is not clearly more
+  accurate. It is about six times the cost per question, and it points at a short quote where
+  plain RAG points at a passage.
+- **Every question had a repair round,** and no claim ended up unverified. On the clean pages
+  the two systems scored about the same as here, so the messier pages did not hurt either one
+  much on these questions.
+- **What changed on the site.** The evals page shows the run beside the clean-corpus result. The
+  "not measured on the open web" item is replaced by the run's own limits: 20 questions, once,
+  not repeatable.

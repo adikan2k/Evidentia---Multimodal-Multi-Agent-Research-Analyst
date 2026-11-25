@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-11-25T23:13:56+00:00",
+  "what": "The research agent from plan on the live web, and plain RAG over the pages the agent fetched for each question. The same questions and judge as the clean-corpus evals (D-052).",
+  "judge": "claude-opus-5-5 with the checker's rubric.",
+  "presented_as_backed": "all claims for plain RAG; claims labelled supported for the agent",
+  "interval": "95% bootstrap over questions, 2000 resamples",
+  "not_repeatable": "Search results and pages change; the fetched addresses and when they were read are in evals/runs/open_web_pipeline.jsonl.",
+  "systems": {
+    "open_web_baseline": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 0.625,
+          "ci_low": 0.625,
+          "ci_high": 0.625,
+          "correct": 10,
+          "claims": 16
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 16,
+          "claims": 16
+        },
+        "claims_per_question": {
+          "mean": 8.0,
+          "ci_low": 8.0,
+          "ci_high": 8.0,
+          "n": 2
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 2
+        },
+        "judge_labels": {
+          "supported": 10,
+          "partial": 6,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.625,
+          "ci_low": 0.625,
+          "ci_high": 0.625,
+          "correct": 10,
+          "claims": 16
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 16,
+          "claims": 16
+        },
+        "claims_per_question": {
+          "mean": 8.0,
+          "ci_low": 8.0,
+          "ci_high": 8.0,
+          "n": 2
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 2
+        },
+        "judge_labels": {
+          "supported": 10,
+          "partial": 6,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "labels": {
+        "presented": 16
+      },
+      "evidence_chars_median": 1133
+    },
+    "open_web_pipeline": {
+      "presented_as_backed": {
+        "citation_accuracy": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 15,
+          "claims": 15
+        },
+        "main_point_backed": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "correct": 15,
+          "claims": 15
+        },
+        "claims_per_question": {
+          "mean": 7.5,
+          "ci_low": 7.0,
+          "ci_high": 8.0,
+          "n": 2
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 2
+        },
+        "judge_labels": {
+          "supported": 15,
+          "partial": 0,
+          "unsupported": 0,
+          "none": 0
+        }
+      },
+      "all_claims": {
+        "citation_accuracy": {
+          "value": 0.9375,
+          "ci_low": 0.875,
+          "ci_high": 1.0,
+          "correct": 15,
+          "claims": 16
+        },
+        "main_point_backed": {
+          "value": 0.9375,
+          "ci_low": 0.875,
+          "ci_high": 1.0,
+          "correct": 15,
+          "claims": 16
+        },
+        "claims_per_question": {
+          "mean": 8.0,
+          "ci_low": 8.0,
+          "ci_high": 8.0,
+          "n": 2
+        },
+        "questions_with_a_fully_backed_claim": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 2
+        },
+        "judge_labels": {
+          "supported": 15,
+          "partial": 0,
+          "unsupported": 1,
+          "none": 0
+        }
+      },
+      "labels": {
+        "supported": 15,
+        "unverified": 1
+      },
+      "evidence_chars_median": 240
+    }
+  },
+  "accuracy_difference_from_baseline": {
+    "open_web_pipeline": {
+      "mean": 0.375,
+      "ci_low": 0.375,
+      "ci_high": 0.375,
+      "n": 2
+    }
+  },
+  "unverified_share_of_agent_claims": 0.0625,
+  "pages": {
+    "pages_read": 16,
+    "pages_not_read": 8,
+    "not_read_by_reason": {
+      "disallowed by robots.txt": 5,
+      "HTTP 403": 2,
+      "no readable text": 1
+    },
+    "pdfs_read": 1,
+    "wikipedia_share_of_pages_read": 0.0625,
+    "different_sites_read": 16,
+    "pages_read_per_question_median": 8.0,
+    "questions_with_a_repair_round": 2
+  },
+  "questions": 2,
+  "read_between": [
+    "2026-11-25T23:13:03+00:00",
+    "2026-11-25T23:13:20+00:00"
+  ],
+  "cost_usd": 0.0389
+}

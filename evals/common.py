@@ -90,9 +90,9 @@ def corpus_sources() -> list[Source]:
 
 
 @asynccontextmanager
-async def eval_deps(span_name: str, **setting_overrides: Any):
+async def eval_deps(span_name: str, cap_usd: float = EVAL_CAP_USD, **setting_overrides: Any):
     """Real services with tracing on and one cost cap for the whole command."""
-    settings = load_settings(cost_cap_usd=EVAL_CAP_USD, **setting_overrides)
+    settings = load_settings(cost_cap_usd=cap_usd, **setting_overrides)
     tracer = LangfuseTracer(settings)
     deps: Deps = build_deps(settings, Ledger(settings.cost_cap_usd), tracer)
     try:

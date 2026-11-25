@@ -255,6 +255,56 @@ def nasty_section(d: dict | None) -> list[str]:
     return [*out, d["caveat"], "", *table(["Case", "Passed"], rows), ""]
 
 
+def open_web_section(d: dict | None) -> list[str]:
+    out = ["## The research agent on the open web", ""]
+    if d is None:
+        return [*out, "Not run yet: `evals/results/open_web.json` does not exist.", ""]
+    names = {"open_web_baseline": "Plain RAG, same pages", "open_web_pipeline": "Evidentia"}
+    rows = []
+    for key, label in names.items():
+        system = d["systems"][key]
+        shown = system["presented_as_backed"]
+        cost = system.get("cost_per_question_usd")
+        rows.append(
+            [
+                label,
+                with_ci(shown["citation_accuracy"], "value"),
+                with_ci(shown["main_point_backed"], "value"),
+                f"{shown['claims_per_question']['mean']:.2f}",
+                f"${cost:.4f}" if cost is not None else "not measured",
+            ]
+        )
+    pages = d["pages"]
+    reasons = ", ".join(f"{reason} {n}" for reason, n in pages["not_read_by_reason"].items())
+    diff = d["accuracy_difference_from_baseline"]["open_web_pipeline"]
+    out += [
+        f"{d['questions']} questions, asked from the start on the live web between "
+        f"{d['read_between'][0]} and {d['read_between'][1]}. {d['not_repeatable']}",
+        "",
+        *table(
+            [
+                "System",
+                "Fully backed",
+                "Main point backed",
+                "Claims per question",
+                "Cost per question",
+            ],
+            rows,
+        ),
+        "",
+        f"Difference per question, Evidentia minus plain RAG: {signed(diff)}.",
+        "",
+        f"- Pages read: {pages['pages_read']} from {pages['different_sites_read']} sites; "
+        f"{pages['wikipedia_share_of_pages_read']:.0%} from Wikipedia.",
+        f"- Pages not read: {pages['pages_not_read']} ({reasons}).",
+        f"- Questions with a repair round: {pages['questions_with_a_repair_round']} of "
+        f"{d['questions']}. Agent claims labelled unverified: "
+        f"{d['unverified_share_of_agent_claims']:.0%}.",
+        "",
+    ]
+    return out
+
+
 def bacc(stat: dict[str, Any]) -> str:
     return with_ci(stat, "mean_bacc")
 
@@ -492,6 +542,7 @@ def failures_section(results: dict[str, dict | None]) -> list[str]:
 
 def run() -> None:
     names = ["retrieval", "checker_agreement", "citation_accuracy", "unanswerable", "nasty"]
+    names += ["open_web"]
     names += ["aggrefact_test_haiku", "aggrefact_test_sonnet"]
     results = {name: load(name) for name in names}
     aggrefact = {k: v for k, v in results.items() if k.startswith("aggrefact_")}
@@ -513,6 +564,7 @@ def run() -> None:
         *accuracy_section(results["citation_accuracy"]),
         *unanswerable_section(results["unanswerable"]),
         *nasty_section(results["nasty"]),
+        *open_web_section(results["open_web"]),
         *aggrefact_section(aggrefact),
         *two_judges_section(two_judges),
         *failures_section(results),
