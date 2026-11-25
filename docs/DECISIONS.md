@@ -3542,3 +3542,21 @@ corpus's own mix, 15 factual and 5 contested, because the first 20 questions are
 contested questions are where pages disagree. The sample is fixed in code before any of the 20
 is asked. Cap $6. The trial's figures are kept apart (`open_web_trial.json`) and are not
 reported.
+
+### D-052 result (26 November 2026): on the open web too, not clearly more accurate
+
+All figures are in `evals/results/open_web.json`. The run cost $3.78, under the $4.50 approved.
+
+- **The open web was open.** The agent read 154 pages from 105 sites; 6% were Wikipedia. 86 more
+  could not be read, most often disallowed by robots.txt or refused by the site.
+- **Fully backed, among claims shown as backed:** Evidentia 0.942 (0.902 to 0.975), plain RAG on
+  the same pages 0.906 (0.844 to 0.956). Per question, Evidentia minus plain RAG is +0.035, with
+  an interval from -0.020 to +0.096. As on the clean pages, the agent is not clearly more
+  accurate. It is about six times the cost per question, and it points at a short quote where
+  plain RAG points at a passage.
+- **Every question had a repair round,** and no claim ended up unverified. On the clean pages
+  the two systems scored about the same as here, so the messier pages did not hurt either one
+  much on these questions.
+- **What changed on the site.** The evals page shows the run beside the clean-corpus result. The
+  "not measured on the open web" item is replaced by the run's own limits: 20 questions, once,
+  not repeatable.

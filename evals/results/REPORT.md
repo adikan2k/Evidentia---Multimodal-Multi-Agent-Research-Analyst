@@ -108,6 +108,21 @@ Hand-made cases show behaviour on these cases only. This is evidence, not a secu
 | paywall | 5 of 5 |
 | contradiction | 5 of 5 |
 
+## The research agent on the open web
+
+20 questions, asked from the start on the live web between 2026-11-25T23:19:22+00:00 and 2026-11-25T23:21:21+00:00. Search results and pages change; the fetched addresses and when they were read are in evals/runs/open_web_pipeline.jsonl.
+
+| System | Fully backed | Main point backed | Claims per question | Cost per question |
+|---|---|---|---|---|
+| Plain RAG, same pages | 0.906 (0.844 to 0.956) | 0.994 (0.981 to 1.000) | 8.00 | $0.0144 |
+| Evidentia | 0.942 (0.902 to 0.975) | 1.000 (1.000 to 1.000) | 7.75 | $0.0919 |
+
+Difference per question, Evidentia minus plain RAG: +0.035 (-0.020 to +0.096).
+
+- Pages read: 154 from 105 sites; 6% from Wikipedia.
+- Pages not read: 86 (disallowed by robots.txt 34, HTTP 403 21, no readable text 20, PDF is larger than the size limit 3, HTTP 404 2, could not read the PDF 2, page is larger than the size limit 1, robots.txt could not be read 1, HTTP 403 after a redirect 1, HTTP 503 1).
+- Questions with a repair round: 20 of 20. Agent claims labelled unverified: 0%.
+
 ## The auditor on LLM-AggreFact
 
 LLM-AggreFact pairs a claim with a document and a person's label: supported or not. The sample is 50 test rows from each of its 11 sub-datasets. Balanced accuracy is computed per sub-dataset, then averaged, with a 95% interval. The auditor finds quotes, checks them by code, then a checker sees only the claim and the quotes; only 'supported' counts as supported. The direct baseline is the same model shown the whole document and asked yes or no. Prompts were fixed on dev rows before this run.

@@ -144,6 +144,15 @@ export default function EvalsPage() {
   // What a perfect ranking would score, given how few relevant passages each question has.
   const best = retrieval.best_possible;
   const ceiling = (k: (typeof KS)[number]) => best[`precision_at_${k}`];
+  const web = evals.open_web;
+  const webSystems = [
+    { label: "Plain RAG, same pages", s: web.systems.open_web_baseline },
+    { label: "Evidentia (as shipped)", s: web.systems.open_web_pipeline },
+  ];
+  const webDiff = web.accuracy_difference_from_baseline.open_web_pipeline;
+  const webCostRatio = (
+    web.systems.open_web_pipeline.cost_per_question_usd / web.systems.open_web_baseline.cost_per_question_usd
+  ).toFixed(1);
   const agreementModels = Object.entries(evals.checker_agreement.references.second_model.models).map(
     ([model, m]) => [model, m.all as unknown as { agreement: Stat; cohen_kappa: Stat }] as const,
   );
@@ -387,6 +396,48 @@ export default function EvalsPage() {
           </Prose>
         </Section>
 
+        <Section title="And on the open web?">
+          <IntervalChart
+            mark="dot"
+            domain={[0.8, 1]}
+            ticks={[0.8, 0.85, 0.9, 0.95, 1]}
+            decimals={2}
+            rows={webSystems.map(({ label, s }) => {
+              const a = s.presented_as_backed.citation_accuracy;
+              return {
+                label,
+                value: a.value,
+                low: a.ci_low,
+                high: a.ci_high,
+                detail: `${a.correct} of ${a.claims} claims`,
+              };
+            })}
+            caption={`Share of the claims each system shows as backed that the same judge found fully backed, on ${web.questions} questions asked on live web search. Lines are 95% intervals. The axis starts at 0.80.`}
+          />
+          <div className="mt-8">
+            <Table
+              head={["System", "Backed claims / question", "Characters to read", "Cost / question"]}
+              rows={webSystems.map(({ label, s }) => [
+                label,
+                s.presented_as_backed.claims_per_question.mean.toFixed(2),
+                s.evidence_chars_median,
+                `$${s.cost_per_question_usd.toFixed(3)}`,
+              ])}
+            />
+          </div>
+          <Prose>
+            {web.questions} of the questions were asked again from the start: the agent searched the
+            live web and read {web.pages.pages_read} pages from {web.pages.different_sites_read}{" "}
+            sites, {percent(web.pages.wikipedia_share_of_pages_read)} of them from Wikipedia.{" "}
+            {web.pages.pages_not_read} more could not be read, most often because robots.txt
+            disallowed it or the site refused. Plain RAG answered from the same pages. The agent
+            scored {three(webDiff.mean)} higher per question, but the interval runs from{" "}
+            {three(webDiff.ci_low)} to {three(webDiff.ci_high)}, so on the open web too it is not
+            clearly more accurate. It costs about {webCostRatio} times as much. Search results
+            change, so this run cannot be repeated exactly.
+          </Prose>
+        </Section>
+
         <Section title="Does the checker catch errors?">
           <Table
             head={["Checker model", ...Object.values(BROKEN)]}
@@ -576,8 +627,9 @@ export default function EvalsPage() {
             then verified word for word by code.
           </li>
           <li>
-            <span className="font-medium text-ink">The research agent was not measured on the open web,</span>{" "}
-            where pages are messier.
+            <span className="font-medium text-ink">On the open web, the research agent was asked {web.questions} questions, once.</span>{" "}
+            Search results change, so that run cannot be repeated exactly, and its intervals are
+            wide.
           </li>
         </ul>
       </Part>

@@ -261,6 +261,56 @@ def research_agent() -> list[str]:
     ]
 
 
+def open_web() -> list[str]:
+    if not (RESULTS_DIR / "open_web.json").exists():
+        return []
+    d = load("open_web")
+    rows = []
+    for key, label in (
+        ("open_web_baseline", "Plain RAG, same pages"),
+        ("open_web_pipeline", "**Evidentia (shipped)**"),
+    ):
+        s = d["systems"][key]
+        backed = s["presented_as_backed"]["citation_accuracy"]
+        cost = s.get("cost_per_question_usd")
+        rows.append(
+            [
+                label,
+                f"{three(backed['value'])} ({interval(backed)})",
+                f"{backed['correct']} of {backed['claims']}",
+                f"${cost:.4f}" if cost is not None else "not measured",
+            ]
+        )
+    pages = d["pages"]
+    diff = d["accuracy_difference_from_baseline"]["open_web_pipeline"]
+    return [
+        "### The research agent on the open web",
+        "",
+        f"{d['questions']} of the questions, asked from the start on live web search. Plain RAG "
+        "answered from the pages the agent fetched for each question. Same judge as above. "
+        "Search results change, so this run cannot be repeated exactly.",
+        "",
+        *table(
+            [
+                "System",
+                "Claims shown as backed that are fully backed",
+                "Claims",
+                "Cost per question",
+            ],
+            rows,
+        ),
+        "",
+        f"- Difference per question, Evidentia minus plain RAG: {diff['mean']:+.3f} "
+        f"({diff['ci_low']:+.3f} to {diff['ci_high']:+.3f}).",
+        f"- Pages read: {pages['pages_read']} from {pages['different_sites_read']} sites, "
+        f"{pct(pages['wikipedia_share_of_pages_read'])} from Wikipedia; "
+        f"{pages['pages_not_read']} could not be read.",
+        "",
+        "Source: `evals/results/open_web.json`.",
+        "",
+    ]
+
+
 def block() -> str:
     lines = [
         START,
@@ -274,6 +324,7 @@ def block() -> str:
         *hand_checks(),
         *search(),
         *research_agent(),
+        *open_web(),
         END,
     ]
     return "\n".join(lines)

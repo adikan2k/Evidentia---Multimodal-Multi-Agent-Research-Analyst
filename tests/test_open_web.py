@@ -132,3 +132,22 @@ def test_the_sample_is_fixed_and_keeps_the_mix_of_kinds() -> None:
     assert [q.id for q in first] == [q.id for q in again]
     kinds = [q.kind for q in first]
     assert kinds.count("factual") == 15 and kinds.count("contested") == 5
+
+
+def test_the_report_shows_both_systems_from_the_result_file() -> None:
+    from evals import report
+
+    pipeline = [agent_row()]
+    baseline = [{"id": "q01", "claims": [{"text": "A.", "evidence": "p", "url": "u"}]}]
+    verdicts = {
+        "open_web_pipeline:q01:0": {"judge": "supported"},
+        "open_web_pipeline:q01:1": {"judge": "unsupported"},
+        "open_web_baseline:q01:0": {"judge": "partial"},
+    }
+    d = open_web.summarise(pipeline, baseline, verdicts, {"open_web_pipeline": 0.2})
+    d["not_repeatable"] = "Pages change."
+    text = "\n".join(report.open_web_section(d))
+    assert "Plain RAG, same pages" in text and "Evidentia" in text
+    assert "not measured" in text  # plain RAG's cost was not recorded in this example
+    assert "50% from Wikipedia" in text and "HTTP 403 1" in text
+    assert "Not run yet" in "\n".join(report.open_web_section(None))
