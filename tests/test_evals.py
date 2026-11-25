@@ -242,6 +242,8 @@ def test_a_question_counts_as_unanswerable_only_if_its_answer_is_nowhere_in_the_
 def test_site_data_keeps_the_numbers_and_drops_the_long_lists() -> None:
     result = {"what": "x", "per_question": [1, 2], "systems": {"a": {"runs": [1], "value": 0.9}}}
     assert report.slim(result) == {"what": "x", "systems": {"a": {"value": 0.9}}}
+    figures = {"runs": {"main": {"value": 0.38}}}
+    assert report.slim(figures) == figures  # per-run figures are kept, only long lists go
 
 
 def test_the_sites_limits_are_the_settings_defaults() -> None:

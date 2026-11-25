@@ -21,12 +21,29 @@ TOO_LONG_FOR_THE_SITE = {
     "confusion_reference_rows_checker_columns",
     "lowest_recall_questions",
 }
+# The real-world audit (D-042 to D-048), for the findings page. Absent files are left out, and the
+# page says what is missing instead of showing a number.
+REALWORLD = (
+    "realworld",
+    "realworld_reask",
+    "realworld_rendered",
+    "realworld_short",
+    "realworld_hand_check",
+)
+
+
+def too_long(key: str, value: Any) -> bool:
+    # "runs" is a long list in the nasty test, but in the real-world results it holds the
+    # figures for each run (a dict), which the findings page shows.
+    if key == "runs":
+        return isinstance(value, list)
+    return key in TOO_LONG_FOR_THE_SITE
 
 
 def slim(value: Any) -> Any:
     """A copy without the long lists, so the site ships numbers and not megabytes."""
     if isinstance(value, dict):
-        return {k: slim(v) for k, v in value.items() if k not in TOO_LONG_FOR_THE_SITE}
+        return {k: slim(v) for k, v in value.items() if not too_long(k, v)}
     if isinstance(value, list):
         return [slim(v) for v in value]
     return value
@@ -476,5 +493,5 @@ def run() -> None:
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines), encoding="utf-8", newline="\n")
-    write_site_data(results)
+    write_site_data(results | {name: load(name) for name in REALWORLD})
     print(f"report: wrote {REPORT}")
