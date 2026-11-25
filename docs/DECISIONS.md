@@ -2838,7 +2838,7 @@ could not see. That is a new decision, not part of this one.
 
 ## D-047. Judge the short pages too, as a third reading (sensitivity check)
 
-**Status: draft, waiting for Aditya's approval. Nothing is built.**
+**Status: approved by Aditya on 24 November 2026, built and run. Results at the end of this entry: the gap between the tools holds in every reading.**
 
 ### The problem
 
@@ -2922,3 +2922,56 @@ review would ask next: does the result depend on a threshold we picked?
 - The pairs chosen: only claims still stranded after D-046 on pages of 200 to 1,999 characters.
 - The bookkeeping: only those claims change, and the before and after figures add up.
 - The new reason text, and that the eval still recognises the old one.
+
+### As built and run (24 November 2026)
+
+`evals/short.py`; figures in `evals/results/realworld_short.json`; reports in
+`evals/realworld/short/`. Cost: $0.07 of model calls, against "under $0.50".
+
+**One addition, made after a two-answer trial and before the full results were seen.** In the
+trial, a 311-character page failed all four claims judged against it, which is what a teaser
+looks like. So a fourth reading was added: the same as the third, but pages under 1,000
+characters left unjudged, as before. It was not in the approved draft, and is labelled as added.
+
+**Pages.** Main run: 57 short pages tried, 51 read, 24 of them under 1,000 characters, 6 with no
+readable text. Re-ask run: 17 tried, 15 read, 8 under 1,000 characters.
+
+**Main run, own-cited claims that fail:**
+
+| Reading | OpenAI | Claude | OpenAI minus Claude |
+|---|---|---|---|
+| As saved (the headline) | 38.0% of 187 | 7.9% of 382 | 30 points (21 to 38) |
+| With the browser re-read (D-046) | 39.1% of 197 | 7.8% of 386 | 31 points (23 to 39) |
+| With short pages judged | 43.6% of 227 | 10.4% of 461 | 33 points (23 to 42) |
+| The same, pages under 1,000 characters left out | 41.7% of 211 | 8.4% of 431 | 33 points (24 to 42) |
+
+**Main run, share of all claims verified against a cited page:**
+
+| Reading | OpenAI | Claude | OpenAI minus Claude |
+|---|---|---|---|
+| As saved | 18.5% | 24.6% | -6 points (-13 to +1) |
+| With short pages judged | 20.3% | 28.5% | -8 points (-15 to -1) |
+| The same, under 1,000 left out | 19.7% | 27.6% | -8 points (-15 to -1) |
+
+**Re-ask run** (repeats pooled), own-cited claims that fail: OpenAI 59% as saved, 70% with short
+pages judged, 59% with pages under 1,000 characters left out; Claude 5%, 8% and 6%. Almost all of
+OpenAI's new failures here came from pages under 1,000 characters.
+
+**How it reads, by the rule fixed in the draft.** The gap between the tools stays clearly apart
+from zero in every reading, and barely moves (30 to 33 points). **The finding does not rest on
+the 2,000-character rule**, and the findings page says so in one line.
+
+**Also seen.**
+
+- Judging short pages raises both tools' failure rates, and the shortest pages raise them most.
+  That fits the worry that teasers are judged as if complete. It is why the headline stays as
+  saved.
+- On the second reading, Claude's lead in verified claims becomes clear of zero once short pages
+  are judged (8 points, 1 to 15). It was not clear as saved. Worth one line on the findings page,
+  as a reading that depends on the short pages.
+- The bounds narrow: OpenAI 30% to 61%, Claude 8% to 34%, with short pages judged.
+
+**The label.** The reason shown for a thin page now reads "too little text read (a short page, a
+paywall, or a page built by scripts)". It reaches the live site with the next deploy. Saved and
+recorded audits keep the old wording.
+
