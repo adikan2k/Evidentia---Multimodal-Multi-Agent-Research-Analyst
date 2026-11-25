@@ -104,8 +104,10 @@ says so), or **open** (known, not addressed).
 
 - **What happens.** Two Claude Haiku calls can share a blind spot. Agreement between them is
   weaker evidence than agreement between two different models.
-- **How we know.** A judge from another provider was tried and did not hold up on rows it was not
-  tuned on (D-038 to D-040).
+- **What was tried.** An OpenAI page judge made no clear difference on the benchmark's practice
+  rows and was dropped by a rule set in advance (D-038). Sonnet as the judges was no better and
+  cost far more (D-039). The real-world audit was also run with the OpenAI page judge, as a
+  check on this blind spot (D-042, D-049).
 - **Status: open.**
 
 ## The auditor on real answers

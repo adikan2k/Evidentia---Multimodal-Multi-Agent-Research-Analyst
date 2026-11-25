@@ -562,8 +562,10 @@ export default function EvalsPage() {
             both fell short of the bar, so the two AI tools are not compared.
           </li>
           <li>
-            <span className="font-medium text-ink">Both of the auditor&apos;s judges are the same model.</span>{" "}
-            Their agreement is weaker evidence than agreement between two different models.
+            <span className="font-medium text-ink">Both of the auditor&apos;s judges are the same model,</span>{" "}
+            so they can share a blind spot. Others were tried on the benchmark and not kept: an
+            OpenAI page judge made no clear difference, and Sonnet was no better at many times the
+            cost. The real-world audit was also run with the OpenAI page judge, as a check.
           </li>
           <li>
             <span className="font-medium text-ink">No person has checked the research agent&apos;s checker.</span>{" "}
