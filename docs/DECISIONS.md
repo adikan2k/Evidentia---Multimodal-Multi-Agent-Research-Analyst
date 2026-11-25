@@ -2664,3 +2664,124 @@ sideways scroll, no text under 12 pixels, no text under 4.5 to 1 contrast. Conte
 **Not done here.** The home page does not show the real-world finding; that waits for phase 1.
 An unknown `/recorded/<id>` shows the not-found page but answers with status 200, because the
 page streams.
+
+## D-046. A second reader for pages built by scripts (D-043, phase 1d)
+
+**Status: draft, waiting for Aditya's approval. Nothing is built.**
+
+### The problem
+
+The fetcher downloads a page's HTML and reads the text in it. Some pages hold almost no text
+until scripts run in a browser. The auditor marks those "too little text read" and gives their
+claims no verdict.
+
+| Saved audits (Haiku page judge) | OpenAI | Claude |
+|---|---|---|
+| Main run: pages with too little text | 18 | 34 |
+| Main run: answers that cite one | 15 | 21 |
+| Main run: own-cited claims left without a verdict | 36 | 90 |
+| Re-ask run: pages with too little text | 7 | 10 |
+| Re-ask run: own-cited claims left without a verdict | 39 | 47 |
+
+The main run's headline rests on 187 and 382 own-cited claims. So 36 and 90 more are enough to
+move it, and the review was right to ask.
+
+### What is proposed
+
+A second reader, `evidentia/render.py`, that opens a page in a headless browser, lets its scripts
+run, and reads the text of what results. It is used only for a page that answered and gave fewer
+than 2,000 characters. Every other page is read as it is today.
+
+**It stays a crawler that says who it is.** These rules are the point of the design:
+
+1. **Same name.** The browser sends Evidentia's own user agent, not a browser's.
+2. **The browser never touches the network itself.** Every request the page makes is handed to
+   our code. Our code makes it with the fetcher's own client and passes the answer back. So each
+   request, and each redirect of it, goes through the same checks as today:
+   - robots.txt for that address, read once for each site;
+   - the guard that refuses private and internal addresses.
+   As a second lock, the browser is given a proxy address that leads nowhere, so anything that
+   slips past our code fails instead of going out.
+3. **Reading only.** GET requests only. A page that needs a POST to load its text stays unread.
+   Nothing is clicked, no consent banner is accepted, no form is filled.
+4. **Less load, not more.** Images, video, fonts and stylesheets are not fetched. One page may
+   make at most 40 requests and take at most 20 seconds.
+5. **Nothing kept.** A fresh browser profile for each page: no cookies, no storage, no
+   downloads, no service workers.
+6. **Refusals stay refusals.** A page that answered 403, or that robots.txt disallows, is never
+   sent to this reader.
+
+**What happens to the text.** The rendered HTML goes through the same text extraction as a
+fetched page and is stored as the source text. Quotes are still checked by code against that
+stored text. Each source records which reader read it, and the audit shows it.
+
+**If the page is still thin** after rendering (a paywall, a consent wall, a bot check), it stays
+"too little text read". No further attempt is made.
+
+### Where it runs
+
+- **Only in the eval, on Aditya's machine.** A setting, `audit_render_thin_pages`, off by default.
+- **Not on the live site.** The server image is unchanged. The site keeps marking these pages
+  "too little text read", and the method page keeps saying so.
+- **Why not the server yet.** A browser needs about 300 MB more in the image and more memory
+  than the service has. Running untrusted scripts on the server also deserves its own decision.
+
+### How the result is measured
+
+- **Only the stranded claims are judged.** For each saved audit, the claims left without a
+  verdict because of a thin page are judged against the rendered page. Every other claim keeps
+  the label it already has. Re-auditing whole answers would mix the reader's effect with the
+  judges' run-to-run noise.
+- **Saved apart.** New files under `evals/realworld/rendered/`. The original audits are not
+  changed.
+- **Reported in `evals/results/realworld_rendered.json`:**
+  - pages tried, pages that gave enough text, pages still thin, and why;
+  - claims that gained a verdict, by label, for each tool;
+  - the headline and the bounds before and after, with intervals, for the main run;
+  - the same for the re-ask run.
+- **Fixed now, before any page is rendered:** whatever comes out is reported, whichever tool it
+  favours. Pages still unread stay in the bounds.
+
+### What it needs from Aditya
+
+- **A yes to one new dependency:** `playwright` 1.65.2, in a group the server does not install,
+  and its headless Chromium build, a download of a few hundred MB from Playwright's own servers.
+  This is a browser, not a model, so rule 12 is not broken, but it is the heaviest tool the
+  project would have.
+- **A yes to the cost:** under $1 of model calls, for about 250 claims in the main run and the
+  re-ask run (212 with their own citation, the rest citing through their paragraph). No search calls.
+- **A yes to rule 4,** which is a judgement call: a rendered page makes up to 40 requests to a
+  site where a fetch makes one. Requests inside one page load are spaced 0.25 seconds apart for
+  each site, not the 2 seconds kept between page loads.
+
+### Considered
+
+- **A reader service that renders pages for you.** It fetches under its own name, ignores our
+  robots.txt check and our rate limit, and sends every address to a third party. No.
+- **Reading the data a page ships inside its HTML** (`__NEXT_DATA__`, JSON-LD). No browser is
+  needed, but each framework needs its own code and the text is not what a reader sees.
+- **Letting the browser load pages itself and watching its requests.** Simpler, but the checks
+  would see only the first address of each request, not its redirects. A redirect to an internal
+  address would get through.
+- **Leaving these pages to the bounds.** That is today's state. The bounds are wide (21% to 65%
+  and 5% to 45%) and these pages are the largest single reason.
+
+### Trade-off
+
+- A browser running scripts from pages the tools chose to cite is the riskiest code in the
+  project, even with the network held by our own client. It is why this stays off the server.
+- The yield is unknown. Some of these pages (69 across the two runs) are thin for other reasons, and GET-only and
+  robots.txt will leave more unread. It may move the headline a little or not at all.
+- The live site and the eval will read pages differently. The findings page must say so.
+- One point to confirm while building: that the browser works with every request answered by
+  our code and a dead proxy behind it. If it does not, the design comes back here before any
+  page is rendered.
+
+### Tests
+
+- The reader's rules, with a fake browser: the user agent, GET only, the request cap, blocked
+  resource types, a refused robots.txt, a private address.
+- One real render of a local page whose text is written by a script, skipped where the browser
+  is not installed.
+- The eval's bookkeeping with made-up audits: only stranded claims change, and the before and
+  after figures add up.
