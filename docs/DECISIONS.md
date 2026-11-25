@@ -2975,3 +2975,106 @@ the 2,000-character rule**, and the findings page says so in one line.
 paywall, or a page built by scripts)". It reaches the live site with the next deploy. Saved and
 recorded audits keep the old wording.
 
+
+## D-048. The findings page (D-043, phase 1e)
+
+**Status: draft, waiting for Aditya's approval. Nothing is built.**
+
+### What it is for
+
+One page that states what the real-world audit found, both ways it can be read, how far each
+number can be trusted, and what was done to try to break it. It answers review items 1 to 3 on
+the page itself, not only in this log. No model calls: every number is already in a results file.
+
+### The first screen
+
+What a visitor sees before scrolling, at 1280 pixels and up:
+
+1. **A headline that states the difference, not a verdict on a company.** Proposed: "Asked the
+   same 100 questions, two AI search tools cited very differently." Under it, one line naming
+   them: OpenAI's `gpt-6.2-sol` with web search, and Anthropic's Claude Sonnet 5.5 with web
+   search, as answered in November 2026.
+2. **A stacked bar for each tool over all its claims, all nine labels** (review item 2). Each
+   segment carries the label's mark as well as its colour, so colour is never the only signal.
+   Built with the dataviz method, and its colours checked by its validator.
+3. **Both readings, side by side, with intervals:**
+   - Of claims cited in their own sentence that got a verdict, the share that fail: OpenAI 38.0%,
+     Claude 7.9%, a gap of 30 points (21 to 38).
+   - Of everything each tool said, the share verified against a page it cited: OpenAI 18.5%,
+     Claude 24.6%, a gap of 6 points that could be zero.
+4. **The plain statement** that they fail differently: OpenAI cites most claims, and many of
+   those citations do not hold. Claude's citations hold more often, but it leaves 44% of its
+   claims uncited.
+5. **The hand-check line.** Read from `evals/results/realworld_hand_check.json`: "N flags checked
+   by hand, X% upheld". Until that file exists it says "No flag has been checked by a person yet".
+6. **Three limits**, in one line each:
+   - the auditor is right about 81% of the time on flags, measured on a benchmark;
+   - both of its judges are Claude models judging a Claude product, and a GPT judge was run as a
+     check (next section);
+   - one answer per question, so the size of a tool's figure moves between asks.
+
+### Below: what was done to try to break it
+
+Each a short block with its numbers, all read from results files:
+
+- **Another judge.** With OpenAI's `gpt-6-luna` as the page judge: 45.3% against 7.8%. The
+  Claude judge was not kinder to Claude. (`realworld.json`)
+- **Asking again.** 20 questions asked three more times: the direction held every time, OpenAI's
+  figure moved between 46% and 65%. (`realworld_reask.json`)
+- **Pages that could not be read.** The bounds if every unread page had backed its claim, and if
+  none had. Rendering thin pages in a browser rescued 7 of 81. Judging short pages anyway moved
+  the gap from 30 to 33 points. (`realworld.json`, `realworld_rendered.json`,
+  `realworld_short.json`)
+- **Was it fair to each tool?** Claude ran on the older search tool, because the newer one returns
+  no citation data. Both were capped at 5 searches and no answer reached the cap. OpenAI's
+  citation markers are the links it wrote itself. Many answers used no search at all.
+- **What it cost:** the model and search spend of each run, from the results files.
+
+### Below that: examples, each with its own address
+
+- **Chosen by the rule fixed in D-042, before any answer existed:** every contradicted claim
+  (5 OpenAI, 7 Claude), then 5 "not on the cited page" claims for each tool, drawn with a fixed
+  seed. No example is picked by hand.
+- **Each opens on its own page,** `/findings/<tool>/<question>`, with the answer on the sheet, its
+  marks in the margin, and the chosen claim selected with its evidence. The same pieces as a
+  recorded audit, drawn from the saved report without a replay.
+- **Written by code:** a command copies the chosen reports into `web/public/findings/`. Quotes
+  keep only the context the audits already hold, never whole pages.
+
+### Elsewhere
+
+- **The header** gets "Findings". **The home page** gets one line linking to it.
+- **`evals/report.py`** writes the real-world results into the site's data file, as it does for
+  the other evals.
+- **The README's** real-world section gets the two readings, the hand-check line and the limits.
+
+### When it goes live
+
+Built and checked locally, then held. It is pushed only when one of these is true:
+
+- Aditya's 40 hand-check labels are in, and the page shows the result, whatever it is; or
+- Aditya decides to publish without them. The first screen then says "No flag has been checked
+  by a person yet", as D-043 set out.
+
+### Considered
+
+- **Leading with the 38% figure alone.** It is the more striking number, and showing it alone is
+  what review item 2 warned against.
+- **A single "trust score" per tool.** It would hide the two different ways the tools fail.
+- **Picking good examples by hand.** Easier to read, and exactly the cherry-picking the fixed rule
+  is there to prevent.
+- **Showing the examples inline only.** They could not be linked, which review item 13 asked for.
+
+### Trade-off
+
+- Naming two companies' products makes this the most visible claim the project makes. Hence
+  both readings, the limits and the hand-check line on the first screen, not below it.
+- It is long. The first screen carries the finding; everything after it is evidence for people
+  who want it.
+
+### Tests
+
+- The examples are chosen by the fixed rule and seed, and the same every time.
+- The site's data file carries the real-world figures and nothing hand-typed.
+- The hand-check line in both states: with no result file, and with one.
+- Built and measured in the browser at 390, 1280, 1440 and 1920 pixels, as for D-045.
