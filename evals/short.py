@@ -13,6 +13,7 @@ backs would be marked "not on the cited page". The saved audits are not changed.
 """
 
 import asyncio
+import copy
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -39,6 +40,7 @@ from evals.reread import (
     gained,
     items,
     judge_stranded,
+    relabel,
     rendered_path,
     root_of,
     thin_pages,
@@ -122,7 +124,7 @@ class ShortReader:
                 embedder=Embedder(self.s, ledger, self.tracer, client=self.voyage),
             )
             run_id = f"short-{run}-{tool}-{item['id']}"
-            judged = await judge_stranded(deps, report, sources, run_id, "fetch (short page)")
+            judged = await judge_stranded(deps, report, sources, run_id, READ_SHORT)
         save(
             short_path(run, tool, item["id"]),
             {
@@ -165,7 +167,27 @@ class ShortReader:
 
 # Summarising.
 
-READINGS = ("saved", "after_browser", "with_short_pages")
+READINGS = ("saved", "after_browser", "with_short_pages", "with_short_pages_over_1000")
+READ_SHORT = "fetch (short page)"
+
+
+def without_shortest(browser: dict, short: dict, chars: dict[str, int]) -> dict:
+    """The third reading with pages under `UNDER` characters left unjudged, as before.
+
+    Added after the trial, before the full results were seen: on the shortest pages a teaser is
+    most likely, and the trial's 311-character page failed every claim it was asked about.
+    """
+    new = copy.deepcopy(short)
+
+    def tiny(page: dict) -> bool:
+        return page.get("read_by") == READ_SHORT and chars.get(page["url"], 0) < UNDER
+
+    for claim, was in zip(new["claims"], browser["claims"], strict=True):
+        if any(tiny(p) for p in claim["pages"]):
+            old = {p["url"]: p for p in was["pages"]}
+            claim["pages"] = [old[p["url"]] if tiny(p) else p for p in claim["pages"]]
+            claim["label"] = relabel(claim)
+    return new
 
 
 def figures(rows: list[dict]) -> dict[str, Any]:
@@ -193,7 +215,10 @@ def summarise_run(run: str) -> dict[str, Any]:
             browser = base_report(run, tool, item["id"]) or saved
             again = load(short_path(run, tool, item["id"]))
             short = again["report"] if again else browser
-            for reading, report in zip(READINGS, (saved, browser, short), strict=True):
+            chars = {p["url"]: p["chars"] for p in again["pages"] if p["read"]} if again else {}
+            over = without_shortest(browser, short, chars) if again else browser
+            reports = (saved, browser, short, over)
+            for reading, report in zip(READINGS, reports, strict=True):
                 rows[tool][reading].append({"id": item["of"], "answer_usd": 0.0} | counts(report))
             if again:
                 usd += again["usd"]
@@ -238,6 +263,8 @@ def summarise() -> dict[str, Any]:
             "after_browser": "with pages a headless browser could read judged (D-046)",
             "with_short_pages": "and claims on pages of 200 to 1,999 characters judged too "
             "(D-047). A check on the headline, not a new one: teasers are judged as if complete.",
+            "with_short_pages_over_1000": "the same, but pages under 1,000 characters left "
+            "unjudged. Added after the trial, before the full results were seen.",
         },
         "note": "In the re-ask run a question's repeats are pooled.",
         "runs": {run: summarise_run(run) for run in RUNS},

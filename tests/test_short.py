@@ -2,6 +2,7 @@
 
 from evals.realworld import counts
 from evals.reread import OLD_TOO_LITTLE_TEXT, gained, stranded, with_new_pages
+from evals.short import READ_SHORT, without_shortest
 from evidentia.audit.graph import TOO_LITTLE_TEXT
 from evidentia.schemas import Source
 
@@ -56,3 +57,15 @@ def test_the_third_reading_changes_only_the_stranded_claims() -> None:
     was, now = counts(before), counts(after)
     assert (was["verdict_own"], was["failed_own"]) == (1, 0)
     assert (now["verdict_own"], now["failed_own"]) == (2, 1)
+
+
+def test_the_shortest_pages_can_be_left_out_of_the_third_reading() -> None:
+    before = report()
+    judged = {
+        (0, SHORT): page(SHORT, "not_found") | {"read_by": READ_SHORT},
+        (1, GONE): page(GONE, "supported") | {"read_by": READ_SHORT},
+    }
+    after = with_new_pages(before, judged, read=2)
+    kept = without_shortest(before, after, {SHORT: 311, GONE: 1500})
+    assert [c["label"] for c in kept["claims"]][:2] == ["unchecked", "supported"]
+    assert kept["claims"][0]["pages"][0]["skipped"] == OLD_TOO_LITTLE_TEXT
