@@ -3257,6 +3257,18 @@ HTML but `trafilatura` with `favor_precision=True` had dropped it.
   check.
 - **About 45 minutes of Aditya's time.** Same blind command, same rubric.
 
+**Changed on 25 November, before the sample was drawn and before any result of the re-audit was
+looked at: 24 items, not 40.** Aditya could not give 45 minutes. The rule rests on the flags, so
+they are kept:
+
+- **10 flags per tool**, 20 in all, as planned, in pairs of one from each tool, so stopping early
+  leaves the tools balanced.
+- **2 "supported" claims per tool**, 4 in all, put in at places drawn by the seed, so that not
+  every item is a flag.
+- **The cost of this.** Aditya knows most items are flags, which may lean him towards "yes, the
+  page says it". The "supported" figure rests on 4 claims and is reported, not judged. The rule is
+  unchanged. About 25 minutes.
+
 ### Tests
 
 - The reader keeps the article first and adds the rest, with no repeated lines and nothing from
@@ -3264,4 +3276,5 @@ HTML but `trafilatura` with `favor_precision=True` had dropped it.
 - A quote found in the rest of the page passes the exact-span check.
 - The thin-page rule counts the article's characters only.
 - The research agent's reader is unchanged.
-- The new sample is the same every time, has 10 per group, and contains none of the old 40.
+- The new sample is the same every time, has 10 flags and 2 supported claims per tool, keeps the
+  tools' flags balanced wherever labelling stops, and contains no sentence from the old 40.

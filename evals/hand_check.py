@@ -51,10 +51,15 @@ class Check:
     # D-049: also withhold when one tool's interval for flags upheld lies wholly below the line.
     per_tool_guard: bool = False
     leave_out: Path | None = None  # an earlier check's items, already seen by the labeller
+    # Per tool: how many claims the auditor failed, and how many it called supported. None is
+    # the first check's design, PER_GROUP of each in blocks of four.
+    flags_and_supported: tuple[int, int] | None = None
 
 
 FIRST = Check("realworld_hand_check", ITEMS, LABELS, SEED, HERE)
-# D-049: fixed before any label of this check.
+# D-049: fixed before any label of this check. Aditya could give about 25 minutes, so the
+# rule's flags are kept (10 per tool) and "supported" claims shrink to 2 per tool, mixed in so
+# that not every item is a flag.
 SECOND = Check(
     "realworld_hand_check_2",
     HERE / "hand_check_2_items.json",
@@ -63,6 +68,7 @@ SECOND = Check(
     REST,
     per_tool_guard=True,
     leave_out=ITEMS,
+    flags_and_supported=(10, 2),
 )
 
 RUBRIC = """The cited page opens in your browser. Read it, then answer for the claim shown.
@@ -159,11 +165,39 @@ def choose_items(pools: dict[tuple[str, str], list[dict]], seed: int = SEED) -> 
     return items
 
 
+def choose_flags_first(
+    pools: dict[tuple[str, str], list[dict]], seed: int, flags: int, supported: int
+) -> list[dict]:
+    """`flags` failed and `supported` supported claims per tool (D-049's second check).
+
+    The failed claims come in pairs, one from each tool, so stopping early leaves the tools
+    balanced. The supported claims are put in at places drawn by the seed.
+    """
+    rng = random.Random(seed)
+
+    def draw(tool: str, group: str, n: int) -> list[dict]:
+        return rng.sample(sorted(pools[(tool, group)], key=lambda x: x["item"]), n)
+
+    failed = {tool: draw(tool, "failed", flags) for tool in sorted(TOOLS)}
+    items: list[dict] = []
+    for n in range(flags):
+        pair = [failed[tool][n] for tool in sorted(TOOLS)]
+        rng.shuffle(pair)
+        items += pair
+    for item in [x for tool in sorted(TOOLS) for x in draw(tool, "supported", supported)]:
+        items.insert(rng.randrange(len(items) + 1), item)
+    return items
+
+
 def load_items(check: Check = FIRST) -> list[dict]:
     """The check's fixed sample, drawn and written once, before its first label."""
     if not check.items.exists():
         seen = seen_sentences(check.leave_out) if check.leave_out else frozenset()
-        chosen = choose_items(candidates(check.audits, seen), check.seed)
+        pools = candidates(check.audits, seen)
+        if check.flags_and_supported is None:
+            chosen = choose_items(pools, check.seed)
+        else:
+            chosen = choose_flags_first(pools, check.seed, *check.flags_and_supported)
         check.items.write_text(
             json.dumps(chosen, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
         )

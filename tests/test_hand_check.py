@@ -168,3 +168,24 @@ def test_sentences_the_labeller_has_seen_are_left_out(tmp_path, monkeypatch) -> 
     assert seen == {("openai", "q1", "Seen before.")}
     pool = hc.candidates(new, seen)[("openai", "failed")]
     assert [p["claim"] for p in pool] == ["New."]
+
+
+def test_the_second_sample_keeps_the_flags_and_mixes_in_a_few_supported_claims() -> None:
+    from collections import Counter
+
+    from evals.hand_check import SECOND, choose_flags_first
+
+    flags, supported = SECOND.flags_and_supported
+    items = choose_flags_first(pools(), SECOND.seed, flags, supported)
+    assert items == choose_flags_first(pools(), SECOND.seed, flags, supported)
+    assert len(items) == 24 and len({it["item"] for it in items}) == 24
+    assert Counter((it["tool"], it["group"]) for it in items) == {
+        ("claude", "failed"): 10,
+        ("openai", "failed"): 10,
+        ("claude", "supported"): 2,
+        ("openai", "supported"): 2,
+    }
+    # Stopping early leaves the tools' flags balanced to within one.
+    for stop in range(len(items) + 1):
+        done = Counter(it["tool"] for it in items[:stop] if it["group"] == "failed")
+        assert abs(done["claude"] - done["openai"]) <= 1
