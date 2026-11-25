@@ -1,0 +1,668 @@
+{
+ "id": "technology-05",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:53:50+00:00",
+ "report": {
+  "answer_text": "Liquid Glass is Apple’s glass-like software design, unveiled at WWDC on June 9, 2025. It’s not a physical material: buttons, menus, and other interface elements are rendered as translucent layers that subtly bend the image behind them, pick up colors from their surroundings, and shift their highlights as they move. (apple.com)\nThe design also changes how controls behave. On iPhone, for example, some tab bars shrink as you scroll down to give content more room, then expand when you scroll back up. The glass effect also appears in places like Control Center, the Lock Screen, app icons, and widgets. (apple.com)\nInspired by visionOS, Liquid Glass was introduced across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26. Apple’s aim was to give those platforms a more consistent look while keeping the focus on what you’re viewing. (apple.com)",
+  "claims": [
+   {
+    "sentence": "Liquid Glass is Apple’s glass-like software design, unveiled at WWDC on June 9, 2025.",
+    "start": 0,
+    "end": 85,
+    "claim": "Liquid Glass is Apple’s glass-like software design.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It’s crafted with a new material called Liquid Glass. This translucent material reflects and refracts its surroundings",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The new material, Liquid Glass, is translucent and behaves like glass in the real world.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "It combines the optical qualities of glass with a fluidity only Apple can achieve, as it transforms depending on your content or context.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Liquid Glass is a translucent material that behaves like glass and is tied to Apple, but they never describe it as a software design.",
+      "page_judged": "supported",
+      "page_reason": "The page describes Liquid Glass as Apple’s new software design material, saying it is translucent, behaves like real-world glass, and combines glass’s optical qualities with fluidity."
+     }
+    ]
+   },
+   {
+    "sentence": "Liquid Glass is Apple’s glass-like software design, unveiled at WWDC on June 9, 2025.",
+    "start": 0,
+    "end": 85,
+    "claim": "Liquid Glass was unveiled at WWDC on June 9, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page dates Apple’s announcement of Liquid Glass to June 9, 2025, but does not say it was unveiled at WWDC."
+     }
+    ]
+   },
+   {
+    "sentence": "It’s not a physical material: buttons, menus, and other interface elements are rendered as translucent layers that subtly bend the image behind them, pick up colors from their surroundings, and shift their highlights as they move. (apple.com)",
+    "start": 86,
+    "end": 328,
+    "claim": "Liquid Glass is not a physical material.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Liquid Glass as a translucent software-design material but does not state that it is not a physical material."
+     }
+    ]
+   },
+   {
+    "sentence": "It’s not a physical material: buttons, menus, and other interface elements are rendered as translucent layers that subtly bend the image behind them, pick up colors from their surroundings, and shift their highlights as they move. (apple.com)",
+    "start": 86,
+    "end": 328,
+    "claim": "In Liquid Glass, buttons, menus, and other interface elements are rendered as translucent layers that subtly bend the image behind them.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This translucent material reflects and refracts its surroundings, while dynamically transforming to help bring greater focus to content",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This gorgeous new material extends from the smallest elements users interact with every day — like buttons, switches, sliders, text, and media controls — to larger elements, including tab bars and sidebars for navigating apps.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "They refract the content behind them",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Liquid Glass is a translucent material that reflects and refracts what is behind it, and that it extends to buttons, switches, sliders, media controls, tab bars and sidebars, so the claim's translucent layers bending the image behind interface elements is backed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Liquid Glass is translucent and refracts its surroundings, and that controls such as buttons use it, but it does not state that menus and all other interface elements are translucent layers that subtly bend the image behind them."
+     }
+    ]
+   },
+   {
+    "sentence": "It’s not a physical material: buttons, menus, and other interface elements are rendered as translucent layers that subtly bend the image behind them, pick up colors from their surroundings, and shift their highlights as they move. (apple.com)",
+    "start": 86,
+    "end": 328,
+    "claim": "In Liquid Glass, buttons, menus, and other interface elements pick up colors from their surroundings.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Its color is informed by surrounding content and intelligently adapts between light and dark environments.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This gorgeous new material extends from the smallest elements users interact with every day — like buttons, switches, sliders, text, and media controls — to larger elements, including tab bars and sidebars for navigating apps.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Liquid Glass's color is informed by surrounding content and that the material extends to buttons, switches, sliders, tab bars and sidebars, which together back the claim that these elements take color from their surroundings.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Liquid Glass takes its color from surrounding content and is used for buttons and controls, but it does not state that menus also pick up surrounding colors."
+     }
+    ]
+   },
+   {
+    "sentence": "It’s not a physical material: buttons, menus, and other interface elements are rendered as translucent layers that subtly bend the image behind them, pick up colors from their surroundings, and shift their highlights as they move. (apple.com)",
+    "start": 86,
+    "end": 328,
+    "claim": "In Liquid Glass, buttons, menus, and other interface elements shift their highlights as they move.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Liquid Glass uses real-time rendering and dynamically reacts to movement with specular highlights.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The new material, Liquid Glass, is translucent and behaves like glass in the real world.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Liquid Glass reacts to movement with specular highlights, but they never mention buttons, menus, or other interface elements specifically.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Liquid Glass dynamically reacts to movement with specular highlights and is used for buttons and other interface elements, but it does not specifically state that menus or those elements’ highlights shift as they move."
+     }
+    ]
+   },
+   {
+    "sentence": "The design also changes how controls behave. On iPhone, for example, some tab bars shrink as you scroll down to give content more room, then expand when you scroll back up.",
+    "start": 329,
+    "end": 501,
+    "claim": "In the Liquid Glass design, some iPhone tab bars shrink as you scroll down to give content more room.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In iOS 26, when users scroll, tab bars shrink to bring focus to the content while keeping navigation instantly accessible.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that tab bars shrink on scrolling in iOS 26 to give content focus, but it never mentions Liquid Glass or iPhone, and it doesn't say 'some' tab bars.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in iOS 26, tab bars shrink when users scroll to bring focus to content, then expand when users scroll back up."
+     }
+    ]
+   },
+   {
+    "sentence": "The design also changes how controls behave. On iPhone, for example, some tab bars shrink as you scroll down to give content more room, then expand when you scroll back up.",
+    "start": 329,
+    "end": 501,
+    "claim": "In the Liquid Glass design, some iPhone tab bars expand when you scroll back up.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In iOS 26, when users scroll, tab bars shrink to bring focus to the content while keeping navigation instantly accessible. The moment users scroll back up, tab bars fluidly expand.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that tab bars expand when users scroll back up in iOS 26, but it never mentions iPhone specifically or names the Liquid Glass design.",
+      "page_judged": "supported",
+      "page_reason": "The page says that in iOS 26, tab bars shrink while users scroll and fluidly expand when users scroll back up."
+     }
+    ]
+   },
+   {
+    "sentence": "The glass effect also appears in places like Control Center, the Lock Screen, app icons, and widgets. (apple.com)",
+    "start": 502,
+    "end": 615,
+    "claim": "The Liquid Glass glass effect appears in Control Center.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It also shines in system experiences, such as the Lock Screen, Home Screen, notifications, Control Center, and more.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Liquid Glass shines in system experiences including Control Center, which backs the claim that the glass effect appears there.",
+      "page_judged": "supported",
+      "page_reason": "The page says Liquid Glass appears in system experiences including Control Center."
+     }
+    ]
+   },
+   {
+    "sentence": "The glass effect also appears in places like Control Center, the Lock Screen, app icons, and widgets. (apple.com)",
+    "start": 502,
+    "end": 615,
+    "claim": "The Liquid Glass glass effect appears on the Lock Screen.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It also shines in system experiences, such as the Lock Screen, Home Screen, notifications, Control Center, and more.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "To maintain the focus on the subject of photo wallpapers on the Lock Screen, the time is now crafted out of Liquid Glass and fluidly adapts to fit elegantly behind the subject.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states Liquid Glass shines in system experiences such as the Lock Screen, which directly backs the claim that the glass effect appears there.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Lock Screen is among the system experiences using Liquid Glass and that the Lock Screen time is crafted from Liquid Glass."
+     }
+    ]
+   },
+   {
+    "sentence": "The glass effect also appears in places like Control Center, the Lock Screen, app icons, and widgets. (apple.com)",
+    "start": 502,
+    "end": 615,
+    "claim": "The Liquid Glass glass effect appears on app icons.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On the Home Screen and desktop, the Dock, app icons, and widgets have all been crafted from multiple layers of Liquid Glass.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "macOS Tahoe 26 lets users customize the desktop and Dock with new looks for app icons and widgets crafted from multiple layers of Liquid Glass.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that app icons are crafted from multiple layers of Liquid Glass, which backs the claim that the Liquid Glass effect appears on app icons.",
+      "page_judged": "supported",
+      "page_reason": "The page says app icons are crafted from multiple layers of Liquid Glass."
+     }
+    ]
+   },
+   {
+    "sentence": "The glass effect also appears in places like Control Center, the Lock Screen, app icons, and widgets. (apple.com)",
+    "start": 502,
+    "end": 615,
+    "claim": "The Liquid Glass glass effect appears in widgets.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Dock, app icons, and widgets have all been crafted from multiple layers of Liquid Glass.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that widgets have been crafted from multiple layers of Liquid Glass, which backs the claim that the Liquid Glass effect appears in widgets.",
+      "page_judged": "supported",
+      "page_reason": "The page states that widgets are crafted from multiple layers of Liquid Glass."
+     }
+    ]
+   },
+   {
+    "sentence": "Inspired by visionOS, Liquid Glass was introduced across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.",
+    "start": 616,
+    "end": 732,
+    "claim": "Liquid Glass is inspired by visionOS.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Inspired by the depth and dimensionality of visionOS, the new design takes advantage of Apple’s powerful advances in hardware, silicon, and graphics technologies.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the new design is inspired by visionOS, which is the claim's only assertion, though it does not name the design as Liquid Glass explicitly.",
+      "page_judged": "supported",
+      "page_reason": "The page says the new design is inspired by the depth and dimensionality of visionOS and identifies Liquid Glass as its new material."
+     }
+    ]
+   },
+   {
+    "sentence": "Inspired by visionOS, Liquid Glass was introduced across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.",
+    "start": 616,
+    "end": 732,
+    "claim": "Liquid Glass was introduced across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "For the very first time, the new design extends across platforms — iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 261 — to establish even more harmony while maintaining the distinct qualities that make each unique.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The new design extends across iOS, iPadOS, macOS, watchOS, and tvOS, with updates to system experiences like the Lock Screen, Home Screen, desktop, and Dock.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states the new design extends across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26, which covers every platform named in the claim, and the second quote corroborates the same platform list.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies Liquid Glass as the new material in a design that extends across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple’s aim was to give those platforms a more consistent look while keeping the focus on what you’re viewing. (apple.com)",
+    "start": 733,
+    "end": 855,
+    "claim": "Apple’s aim with Liquid Glass was to give iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26 a more consistent look.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "For the very first time, the new design extends across platforms — iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 261 — to establish even more harmony while maintaining the distinct qualities that make each unique.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A universal design across platforms brings more focus to content and a new level of vitality while maintaining the familiarity of Apple’s software",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the new design extends across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26 to establish more harmony, and describe a universal design across platforms, which backs the claim's consistent-look aim (the quotes do not name 'Liquid Glass' explicitly, but describe the new design).",
+      "page_judged": "supported",
+      "page_reason": "The page says the new Liquid Glass design extends across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26 to establish greater harmony among the platforms."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple’s aim was to give those platforms a more consistent look while keeping the focus on what you’re viewing. (apple.com)",
+    "start": 733,
+    "end": 855,
+    "claim": "Apple’s aim with Liquid Glass was to keep the focus on what the user is viewing.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=openai",
+      "host": "apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A universal design across platforms brings more focus to content and a new level of vitality while maintaining the familiarity of Apple’s software",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Driven by the goal of bringing greater focus to content that’s instantly familiar, Apple’s design team considered every aspect of Apple’s platforms to identify improvements that could be made across the board.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say the goal of the universal design was greater focus on content, which backs the focus aim, but neither quote names Liquid Glass, so the claim's link to that specific design is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page says the new Liquid Glass design dynamically transforms to bring greater focus to content and describes the design goal as bringing greater focus to content."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 16,
+   "labels": {
+    "supported": 7,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 6,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.2,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.4375,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.010805,
+   "usd_per_claim": 0.000675
+  },
+  "cost": {
+   "total_usd": 0.0108,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 16,
+     "usd": 0.0029
+    },
+    {
+     "node": "page_check",
+     "calls": 16,
+     "usd": 0.0047
+    },
+    {
+     "node": "check",
+     "calls": 14,
+     "usd": 0.0023
+    }
+   ]
+  }
+ }
+}

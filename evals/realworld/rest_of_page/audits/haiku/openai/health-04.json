@@ -1,0 +1,349 @@
+{
+ "id": "health-04",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:49:02+00:00",
+ "report": {
+  "answer_text": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine “for their discoveries concerning peripheral immune tolerance.” (nobelprize.org)\nSakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+  "claims": [
+   {
+    "sentence": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine “for their discoveries concerning peripheral immune tolerance.” (nobelprize.org)",
+    "start": 0,
+    "end": 187,
+    "claim": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine for their discoveries concerning peripheral immune tolerance.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Nobel Assembly at Karolinska Institutet has decided to award the Nobel Prize in Physiology or Medicine 2025 to: Mary E. Brunkow Fred Ramsdell Shimon Sakaguchi",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "Mary E. Brunkow, Fred Ramsdell and Shimon Sakaguchi are awarded the Nobel Prize in Physiology or Medicine 2025 for their groundbreaking discoveries concerning peripheral immune tolerance",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes name Brunkow, Ramsdell and Sakaguchi as the 2025 Nobel Prize in Physiology or Medicine recipients for discoveries concerning peripheral immune tolerance, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the 2025 Nobel Prize in Physiology or Medicine was awarded to Brunkow, Ramsdell and Sakaguchi 'for their discoveries concerning peripheral immune tolerance', and the prize amount is to be shared equally between them."
+     }
+    ]
+   },
+   {
+    "sentence": "Sakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+    "start": 188,
+    "end": 517,
+    "claim": "Sakaguchi discovered regulatory T cells.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Sakaguchi showed that the immune system is more complex and discovered a previously unknown class of immune cells, which protect the body from autoimmune diseases.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "These cells, now known as regulatory T cells, monitor other immune cells and ensure that our immune system tolerates our own tissues.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote says Sakaguchi discovered a previously unknown class of immune cells, and the second says these cells are now known as regulatory T cells, so together they back the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Sakaguchi discovered a previously unknown class of immune cells in 1995, and that these cells, which he later linked to Foxp3, are now known as regulatory T cells."
+     }
+    ]
+   },
+   {
+    "sentence": "Sakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+    "start": 188,
+    "end": 517,
+    "claim": "Regulatory T cells help prevent the immune system from attacking the body's own tissues.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The laureates identiﬁed the immune system’s security guards, regulatory T cells, which prevent immune cells from a>acking our own body.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "These cells, now known as regulatory T cells, monitor other immune cells and ensure that our immune system tolerates our own tissues.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that regulatory T cells prevent immune cells from attacking our own body and ensure the immune system tolerates our own tissues, which backs the claim's main point with no extra specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that regulatory T cells are the immune system's security guards that prevent immune cells from attacking our own body and ensure the immune system tolerates our own tissues."
+     }
+    ]
+   },
+   {
+    "sentence": "Sakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+    "start": 188,
+    "end": 517,
+    "claim": "Brunkow and Ramsdell identified the FOXP3 gene.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Mary Brunkow and Fred Ramsdell made the other key discovery in 2001, when they presented the explanation for why a speciﬁc mouse strain was particularly vulnerable to autoimmune diseases.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "They had discovered that the mice have a mutation in a gene that they named Foxp3.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Brunkow and Ramsdell discovered a mutation in a gene they named Foxp3, which backs their identification of the FOXP3 gene, with only capitalization and the mouse context differing.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Brunkow and Ramsdell discovered a mutation in a mouse gene that they named Foxp3, and that mutations in the human equivalent cause IPEX, which supports the claim that they identified the gene."
+     }
+    ]
+   },
+   {
+    "sentence": "Sakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+    "start": 188,
+    "end": 517,
+    "claim": "Brunkow and Ramsdell linked mutations in the FOXP3 gene to severe autoimmune disease.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Mary Brunkow and Fred Ramsdell made the other key discovery in 2001, when they presented the explanation for why a speciﬁc mouse strain was particularly vulnerable to autoimmune diseases.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "They had discovered that the mice have a mutation in a gene that they named Foxp3.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "They also showed that mutations in the human equivalent of this gene cause a serious autoimmune disease, IPEX.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Brunkow and Ramsdell discovered a mutation in the gene named Foxp3 and showed that mutations in the human equivalent cause a serious autoimmune disease (IPEX), which backs the claim's main point and its FOXP3 and severe autoimmune disease details.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Brunkow and Ramsdell showed mutations in the human equivalent of the Foxp3 gene cause a serious autoimmune disease, IPEX, which matches the claim's substance even though the page credits Sakaguchi with the later link to regulatory T cells."
+     }
+    ]
+   },
+   {
+    "sentence": "Sakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+    "start": 188,
+    "end": 517,
+    "claim": "Sakaguchi showed that the FOXP3 gene is essential for the development of regulatory T cells.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Two years after this, Shimon Sakaguchi was able to link these discoveries. He proved that the Foxp3 gene governs the development of the cells he identiﬁed in 1995.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "These cells, now known as regulatory T cells, monitor other immune cells and ensure that our immune system tolerates our own tissues.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote says Sakaguchi proved that the Foxp3 gene governs the development of the cells identified in 1995, which the second quote identifies as regulatory T cells, so the claim's point is backed, with 'governs' reasonably rendering 'essential for'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2003 Sakaguchi proved the Foxp3 gene governs the development of the cells he identified in 1995, which are now known as regulatory T cells, which supports the claim that Foxp3 is essential for their development, though 'essential' is not stated verbatim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 6,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 1.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004099,
+   "usd_per_claim": 0.000683
+  },
+  "cost": {
+   "total_usd": 0.0041,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0013
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

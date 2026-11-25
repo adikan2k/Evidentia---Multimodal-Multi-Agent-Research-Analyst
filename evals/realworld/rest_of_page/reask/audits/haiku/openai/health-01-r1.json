@@ -1,0 +1,422 @@
+{
+ "id": "health-01-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:04:34+00:00",
+ "report": {
+  "answer_text": "Lenacapavir is a long-acting antiretroviral drug. It targets the HIV-1 capsid—the protein shell that encloses the virus’s genetic material—and disrupts the virus’s ability to multiply. (accessdata.fda.gov)\nOn June 18, 2025, the U.S. FDA approved lenacapavir under the brand name Yeztugo for pre-exposure prophylaxis (PrEP) to reduce the risk of getting HIV-1 through sex. It’s approved for at-risk adults and adolescents who weigh at least 35 kg (77 lb) and test negative for HIV-1 before starting. After the starting doses, it’s given by injection every six months. (accessdata.fda.gov)\nThe 2025 approval was for prevention. Lenacapavir had already been approved in 2022 as Sunlenca for use with other antiretroviral drugs to treat certain adults with drug-resistant HIV-1. (fda.gov)",
+  "claims": [
+   {
+    "sentence": "Lenacapavir is a long-acting antiretroviral drug.",
+    "start": 0,
+    "end": 49,
+    "claim": "Lenacapavir is a long-acting antiretroviral drug.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220020s000lbl.pdf?_sp=bb69ec9d-c2f6-4f5f-8707-dde8bb63783c&utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It targets the HIV-1 capsid—the protein shell that encloses the virus’s genetic material—and disrupts the virus’s ability to multiply. (accessdata.fda.gov)",
+    "start": 50,
+    "end": 205,
+    "claim": "Lenacapavir targets the HIV-1 capsid, the protein shell that encloses the virus's genetic material.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220020s000lbl.pdf?_sp=bb69ec9d-c2f6-4f5f-8707-dde8bb63783c&utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It targets the HIV-1 capsid—the protein shell that encloses the virus’s genetic material—and disrupts the virus’s ability to multiply. (accessdata.fda.gov)",
+    "start": 50,
+    "end": 205,
+    "claim": "Lenacapavir disrupts the HIV-1 virus's ability to multiply.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220020s000lbl.pdf?_sp=bb69ec9d-c2f6-4f5f-8707-dde8bb63783c&utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "On June 18, 2025, the U.S. FDA approved lenacapavir under the brand name Yeztugo for pre-exposure prophylaxis (PrEP) to reduce the risk of getting HIV-1 through sex.",
+    "start": 206,
+    "end": 371,
+    "claim": "On June 18, 2025, the U.S. FDA approved lenacapavir under the brand name Yeztugo.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220020Orig1s000Approv.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "On June 18, 2025, the U.S. FDA approved lenacapavir under the brand name Yeztugo for pre-exposure prophylaxis (PrEP) to reduce the risk of getting HIV-1 through sex.",
+    "start": 206,
+    "end": 371,
+    "claim": "The FDA approved lenacapavir (Yeztugo) for pre-exposure prophylaxis (PrEP) to reduce the risk of getting HIV-1 through sex.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220020Orig1s000Approv.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It’s approved for at-risk adults and adolescents who weigh at least 35 kg (77 lb) and test negative for HIV-1 before starting.",
+    "start": 372,
+    "end": 498,
+    "claim": "Yeztugo is approved for at-risk adults and adolescents who weigh at least 35 kg (77 lb).",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220020Orig1s000Approv.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It’s approved for at-risk adults and adolescents who weigh at least 35 kg (77 lb) and test negative for HIV-1 before starting.",
+    "start": 372,
+    "end": 498,
+    "claim": "Yeztugo is approved for at-risk adults and adolescents who test negative for HIV-1 before starting.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220020Orig1s000Approv.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "After the starting doses, it’s given by injection every six months. (accessdata.fda.gov)",
+    "start": 499,
+    "end": 587,
+    "claim": "After the starting doses, Yeztugo is given by injection every six months.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220020Orig1s000Approv.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The 2025 approval was for prevention.",
+    "start": 588,
+    "end": 625,
+    "claim": "The 2025 approval of lenacapavir was for prevention.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-sunlenca?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SUNLENCA is a drug that is used with other drugs for the treatment of human immunodeficiency virus-1 (HIV-1) infection in adults who:",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Original Approval date: December 22, 2022",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes only show SUNLENCA's treatment indication and its original approval date of December 22, 2022, with nothing about a 2025 approval or prevention, so the claim is neither backed nor contradicted.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states SUNLENCA was originally approved on December 22, 2022, for treating HIV-1 infection in heavily treatment-experienced adults, and says nothing about a 2025 approval or prevention use."
+     }
+    ]
+   },
+   {
+    "sentence": "Lenacapavir had already been approved in 2022 as Sunlenca for use with other antiretroviral drugs to treat certain adults with drug-resistant HIV-1. (fda.gov)",
+    "start": 626,
+    "end": 784,
+    "claim": "Lenacapavir was approved in 2022 as Sunlenca.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-sunlenca?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Original Approval date: December 22, 2022",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "SUNLENCA (lenacapavir)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes give an original approval date of December 22, 2022 and name SUNLENCA (lenacapavir), which together back every fact in the claim that lenacapavir was approved in 2022 as Sunlenca.",
+      "page_judged": "supported",
+      "page_reason": "The page states SUNLENCA (lenacapavir) has an Original Approval date of December 22, 2022, which supports the claim that it was approved in 2022 under the name Sunlenca."
+     }
+    ]
+   },
+   {
+    "sentence": "Lenacapavir had already been approved in 2022 as Sunlenca for use with other antiretroviral drugs to treat certain adults with drug-resistant HIV-1. (fda.gov)",
+    "start": 626,
+    "end": 784,
+    "claim": "Sunlenca was approved for use with other antiretroviral drugs to treat certain adults with drug-resistant HIV-1.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-sunlenca?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SUNLENCA is a drug that is used with other drugs for the treatment of human immunodeficiency virus-1 (HIV-1) infection in adults who:",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "have HIV-1 virus that is not responding to many antiretroviral medicines, and",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Original Approval date: December 22, 2022",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state Sunlenca is used with other drugs to treat HIV-1 in adults whose virus does not respond to many antiretrovirals, and give an original approval date, which together back the claim's approval and treatment context.",
+      "page_judged": "supported",
+      "page_reason": "The page states SUNLENCA is used with other antiretroviral drugs for HIV-1 in adults who have received several prior antiretrovirals, have virus not responding to many antiretrovirals, and are failing current therapy, which matches the claim's 'certain adults with drug-resistant HIV-1.'"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 8,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.3333,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.1818,
+   "pages_cited": 3,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003131,
+   "usd_per_claim": 0.000285
+  },
+  "cost": {
+   "total_usd": 0.0031,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0009
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

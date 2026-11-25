@@ -1,0 +1,540 @@
+{
+ "id": "economy-01-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:03:20+00:00",
+ "report": {
+  "answer_text": "On April 2, 2025, which President Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs under Executive Order 14257: (whitehouse.gov)\nA 10% baseline tariff on most U.S. goods imports, effective April 5, 2025. (whitehouse.gov)\nHigher “reciprocal” tariffs for dozens of trading partners, originally scheduled for April 9, 2025. These rates replaced the 10% baseline for those partners; they were not added on top of it. (whitehouse.gov)\n| Trading partner | Rate announced April 2 |\n|---|---:|\n| European Union | 20% |\n| Japan | 24% |\n| South Korea | 25% |\n| India | 26% |\n| Taiwan | 32% |\n| China | 34% |\n| Vietnam | 46% |\n| Cambodia | 49% |\n| Lesotho | 50% |\nThe full list was published in Annex I of the order. Canada and Mexico remained under separate tariff rules, and the new tariffs excluded certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already subject to separate sectoral tariffs. (whitehouse.gov)\nThese were the originally announced rates. China’s rate was raised before the scheduled April 9 start, and most other higher rates were paused effective April 10, leaving the 10% baseline in place for most partners. (usitc.gov)",
+  "claims": [
+   {
+    "sentence": "On April 2, 2025, which President Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs under Executive Order 14257: (whitehouse.gov)",
+    "start": 0,
+    "end": 161,
+    "claim": "On April 2, 2025, the U.S. announced two tiers of new import tariffs under Executive Order 14257.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/04/fact-sheet-president-donald-j-trump-declares-national-emergency-to-increase-our-competitive-edge-protect-our-sovereignty-and-strengthen-our-national-and-economic-security/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Using his IEEPA authority, President Trump will impose a 10% tariff on all countries.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "President Trump will impose an individualized reciprocal higher tariff on the countries with which the United States has the largest trade deficits.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the two-tier structure of a 10% baseline tariff on all countries and an individualized higher tariff on large-deficit countries, but neither quote states the April 2, 2025 date or the Executive Order 14257 number.",
+      "page_judged": "not_supported",
+      "page_reason": "The page is dated April 2, 2025 and describes two tiers, a 10% baseline tariff effective April 5 and higher individualized reciprocal tariffs effective April 9, but it never mentions Executive Order 14257 by number."
+     }
+    ]
+   },
+   {
+    "sentence": "A 10% baseline tariff on most U.S. goods imports, effective April 5, 2025. (whitehouse.gov)",
+    "start": 162,
+    "end": 253,
+    "claim": "A 10% baseline tariff on most U.S. goods imports was effective April 5, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2025/04/eo-14257.pdf?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Such rates of duty shall apply with respect to goods entered for consumption, or withdrawn from warehouse for consumption, on or after 12:01 a.m.",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       },
+       {
+        "text": "eastern daylight time on April 5, 2025, except that goods loaded onto a vessel",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       },
+       {
+        "text": "all articles imported into the customs territory of the United States shall be, consistent with law, subject to an additional ad valorem rate of duty of 10 percent.",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state a 10 percent ad valorem additional duty on all articles imported into the U.S. customs territory, effective for goods entered on or after 12:01 a.m. eastern daylight time on April 5, 2025, which backs the claim's tariff rate and effective date, with 'most U.S. goods' read as consistent with 'all articles' under the stated exceptions.",
+      "page_judged": "supported",
+      "page_reason": "The page states that an additional 10 percent ad valorem duty on all articles imported into the U.S. applies to goods entered on or after 12:01 a.m. EDT on April 5, 2025, with exceptions for goods in transit and for Annex II products, which supports the claim that a 10% baseline tariff on most imports was effective April 5, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher “reciprocal” tariffs for dozens of trading partners, originally scheduled for April 9, 2025. These rates replaced the 10% baseline for those partners; they were not added on top of it. (whitehouse.gov)",
+    "start": 254,
+    "end": 462,
+    "claim": "Higher “reciprocal” tariffs for dozens of trading partners were originally scheduled for April 9, 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?cst=&facet=app&mode=light&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Furthermore, except as otherwise provided in this order, at 12:01 a.m. eastern daylight time on April 9, 2025, all articles from trading partners enumerated in Annex I to this order imported into the customs territory of the United States shall be, consistent with law, subject to the country-specific ad valorem rates of duty specified in Annex I to this order.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that country-specific ad valorem duties on articles from trading partners listed in Annex I take effect at 12:01 a.m. EDT on April 9, 2025, which backs the claim that the higher reciprocal tariffs were originally scheduled for that date, though the quote does not explicitly say 'dozens' or 'originally'.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that the country-specific ad valorem rates in Annex I of the order apply to goods entered on or after 12:01 a.m. EDT on April 9, 2025, and that the rates apply to trading partners enumerated in Annex I, which supports the scheduling claim, though it does not explicitly say 'dozens' of partners."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher “reciprocal” tariffs for dozens of trading partners, originally scheduled for April 9, 2025. These rates replaced the 10% baseline for those partners; they were not added on top of it. (whitehouse.gov)",
+    "start": 254,
+    "end": 462,
+    "claim": "The higher reciprocal tariff rates replaced the 10% baseline for those partners and were not added on top of it.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?cst=&facet=app&mode=light&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The additional ad valorem duty on all imports from all trading partners shall start at 10 percent and shortly thereafter, the additional ad valorem duty shall increase for trading partners enumerated in Annex I to this order at the rates set forth in Annex I to this order.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says the duty starts at 10% for all partners and then increases for Annex I partners to the Annex I rates, which implies a replacement, but it does not explicitly state that the higher rates replaced rather than stacked on top of the 10% baseline.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the reciprocal tariff starts at 10 percent and increases to Annex I rates for enumerated partners, but it never says the higher rates replaced the 10% baseline rather than being added to it; the Canada/Mexico passage only addresses non-stacking with other orders, which is not the same point."
+     }
+    ]
+   },
+   {
+    "sentence": "| European Union | 20% |",
+    "start": 519,
+    "end": 543,
+    "claim": "The rate announced April 2, 2025 for the European Union was 20%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Japan | 24% |",
+    "start": 544,
+    "end": 559,
+    "claim": "The rate announced April 2, 2025 for Japan was 24%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| South Korea | 25% |",
+    "start": 560,
+    "end": 581,
+    "claim": "The rate announced April 2, 2025 for South Korea was 25%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| India | 26% |",
+    "start": 582,
+    "end": 597,
+    "claim": "The rate announced April 2, 2025 for India was 26%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Taiwan | 32% |",
+    "start": 598,
+    "end": 614,
+    "claim": "The rate announced April 2, 2025 for Taiwan was 32%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| China | 34% |",
+    "start": 615,
+    "end": 630,
+    "claim": "The rate announced April 2, 2025 for China was 34%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Vietnam | 46% |",
+    "start": 631,
+    "end": 648,
+    "claim": "The rate announced April 2, 2025 for Vietnam was 46%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Cambodia | 49% |",
+    "start": 649,
+    "end": 667,
+    "claim": "The rate announced April 2, 2025 for Cambodia was 49%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Lesotho | 50% |",
+    "start": 668,
+    "end": 685,
+    "claim": "The rate announced April 2, 2025 for Lesotho was 50%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The full list was published in Annex I of the order. Canada and Mexico remained under separate tariff rules, and the new tariffs excluded certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already subject to separate sectoral tariffs. (whitehouse.gov)",
+    "start": 686,
+    "end": 975,
+    "claim": "The full list of reciprocal tariff rates was published in Annex I of Executive Order 14257.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://whitehouse.gov/wp-content/uploads/2025/04/Annex-I.pdf",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The full list was published in Annex I of the order. Canada and Mexico remained under separate tariff rules, and the new tariffs excluded certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already subject to separate sectoral tariffs. (whitehouse.gov)",
+    "start": 686,
+    "end": 975,
+    "claim": "Canada and Mexico remained under separate tariff rules under the new tariffs.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://whitehouse.gov/wp-content/uploads/2025/04/Annex-I.pdf",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The full list was published in Annex I of the order. Canada and Mexico remained under separate tariff rules, and the new tariffs excluded certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already subject to separate sectoral tariffs. (whitehouse.gov)",
+    "start": 686,
+    "end": 975,
+    "claim": "The new tariffs excluded certain goods, including pharmaceuticals and semiconductors.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://whitehouse.gov/wp-content/uploads/2025/04/Annex-I.pdf",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The full list was published in Annex I of the order. Canada and Mexico remained under separate tariff rules, and the new tariffs excluded certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already subject to separate sectoral tariffs. (whitehouse.gov)",
+    "start": 686,
+    "end": 975,
+    "claim": "The new tariffs excluded steel, aluminum, and autos already subject to separate sectoral tariffs.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://whitehouse.gov/wp-content/uploads/2025/04/Annex-I.pdf",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "These were the originally announced rates. China’s rate was raised before the scheduled April 9 start, and most other higher rates were paused effective April 10, leaving the 10% baseline in place for most partners. (usitc.gov)",
+    "start": 976,
+    "end": 1203,
+    "claim": "The rates listed were the originally announced rates.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.usitc.gov/publications/332/pub5818.pdf?utm_source=openai",
+      "host": "usitc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes tariff rates changing over 2025 (e.g., China tariffs reduced temporarily after bilateral negotiations, and the effective rate rising steadily) but never states that listed rates were the originally announced ones, and the claim refers to 'the rates listed' which do not appear in the excerpts."
+     }
+    ]
+   },
+   {
+    "sentence": "These were the originally announced rates. China’s rate was raised before the scheduled April 9 start, and most other higher rates were paused effective April 10, leaving the 10% baseline in place for most partners. (usitc.gov)",
+    "start": 976,
+    "end": 1203,
+    "claim": "China’s rate was raised before the scheduled April 9 start.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.usitc.gov/publications/332/pub5818.pdf?utm_source=openai",
+      "host": "usitc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China's IEEPA tariffs rose through a series of announcements and that a 10 percent duty on all imports took effect April 5, 2025, but it never mentions an April 9 scheduled start or a China-specific rate increase before that date."
+     }
+    ]
+   },
+   {
+    "sentence": "These were the originally announced rates. China’s rate was raised before the scheduled April 9 start, and most other higher rates were paused effective April 10, leaving the 10% baseline in place for most partners. (usitc.gov)",
+    "start": 976,
+    "end": 1203,
+    "claim": "Most other higher reciprocal rates were paused effective April 10, leaving the 10% baseline in place for most partners.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.usitc.gov/publications/332/pub5818.pdf?utm_source=openai",
+      "host": "usitc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that the President imposed an additional 10 percent duty on all imports effective April 5, 2025, and mentions country-specific IEEPA rates announced April 2, but nowhere mentions a pause of higher reciprocal rates effective April 10 or a 10% baseline remaining for most partners."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 20,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 9
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.0909,
+   "pages_cited": 5,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.013915,
+   "usd_per_claim": 0.000696
+  },
+  "cost": {
+   "total_usd": 0.0139,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 13,
+     "usd": 0.0093
+    },
+    {
+     "node": "page_check",
+     "calls": 7,
+     "usd": 0.003
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "id": "nq-35",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:40:52+00:00",
+ "report": {
+  "answer_text": "The baby in *Ghostbusters II* (1989) was Oscar Barrett, Dana Barrett’s son. Identical twins William “Will” Deutschendorf and Henry “Hank” Deutschendorf II shared the role. (catalog.afi.com)",
+  "claims": [
+   {
+    "sentence": "The baby in *Ghostbusters II* (1989) was Oscar Barrett, Dana Barrett’s son.",
+    "start": 0,
+    "end": 75,
+    "claim": "The baby in Ghostbusters II (1989) was Oscar Barrett, Dana Barrett's son.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://catalog.afi.com/Film/67913-GHOSTBUSTERS-II?utm_source=openai",
+      "host": "catalog.afi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Identical twins William “Will” Deutschendorf and Henry “Hank” Deutschendorf II shared the role. (catalog.afi.com)",
+    "start": 76,
+    "end": 189,
+    "claim": "Identical twins William \"Will\" Deutschendorf and Henry \"Hank\" Deutschendorf II shared the role of the baby in Ghostbusters II.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://catalog.afi.com/Film/67913-GHOSTBUSTERS-II?utm_source=openai",
+      "host": "catalog.afi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000206,
+   "usd_per_claim": 0.000103
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

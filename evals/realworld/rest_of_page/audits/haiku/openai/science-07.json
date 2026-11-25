@@ -1,0 +1,255 @@
+{
+ "id": "science-07",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:45:49+00:00",
+ "report": {
+  "answer_text": "On March 19, 2025, the European Space Agency released Euclid’s first batch of survey data. It included three image mosaics previewing the telescope’s deep fields, where Euclid detected about 26 million galaxies in just one week of observations. The release also included shape classifications for more than 380,000 galaxies and about 500 potential gravitational lenses. (esa.int)",
+  "claims": [
+   {
+    "sentence": "On March 19, 2025, the European Space Agency released Euclid’s first batch of survey data.",
+    "start": 0,
+    "end": 90,
+    "claim": "The European Space Agency released Euclid’s first batch of survey data on March 19, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_opens_data_treasure_trove_offers_glimpse_of_deep_fields?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 19 March 2025, the European Space Agency’s Euclid mission released its first batch of survey data, including a preview of its deep fields.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that on 19 March 2025 ESA's Euclid mission released its first batch of survey data, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on 19 March 2025 ESA's Euclid mission released its first batch of survey data, which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It included three image mosaics previewing the telescope’s deep fields, where Euclid detected about 26 million galaxies in just one week of observations.",
+    "start": 91,
+    "end": 244,
+    "claim": "The first batch of Euclid survey data included three image mosaics previewing the telescope’s deep fields.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_opens_data_treasure_trove_offers_glimpse_of_deep_fields?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Covering a huge area of the sky in three mosaics, the data release also includes numerous galaxy clusters",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "On 19 March 2025, the European Space Agency’s Euclid mission released its first batch of survey data, including a preview of its deep fields.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the first data batch included a preview of the deep fields and covered a large sky area in three mosaics, but they do not say the three mosaics were the deep-field previews themselves.",
+      "page_judged": "supported",
+      "page_reason": "The page states the data release covers the three deep fields 'in three mosaics' ('Covering a huge area of the sky in three mosaics') and describes the first data release as previewing the deep fields, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "It included three image mosaics previewing the telescope’s deep fields, where Euclid detected about 26 million galaxies in just one week of observations.",
+    "start": 91,
+    "end": 244,
+    "claim": "Euclid detected about 26 million galaxies in just one week of observations.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_opens_data_treasure_trove_offers_glimpse_of_deep_fields?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In just one week of observations, with one scan of each region so far, Euclid already spotted 26 million galaxies.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that in one week of observations Euclid spotted 26 million galaxies, matching the claim's number and timeframe.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in just one week of observations, with one scan of each region so far, Euclid already spotted 26 million galaxies, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The release also included shape classifications for more than 380,000 galaxies and about 500 potential gravitational lenses.",
+    "start": 245,
+    "end": 369,
+    "claim": "The release included shape classifications for more than 380,000 galaxies.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_opens_data_treasure_trove_offers_glimpse_of_deep_fields?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the first classification survey of more than 380 000 galaxies and 500 gravitational lens candidates compiled through combined artificial intelligence and citizen science efforts",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A major milestone in this effort is the first detailed catalogue of more than 380 000 galaxies, which have been classified according to features such as spiral arms, central bars, and tidal tails that infer merging galaxies.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the first classification survey or catalogue covers more than 380,000 galaxies classified by features such as spiral arms, central bars, and tidal tails, which backs the claim that the release included shape classifications for over 380,000 galaxies.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the first detailed catalogue contains more than 380,000 galaxies classified according to features such as spiral arms, central bars, and tidal tails, which matches the claim that the release included shape classifications for over 380,000 galaxies."
+     }
+    ]
+   },
+   {
+    "sentence": "The release also included shape classifications for more than 380,000 galaxies and about 500 potential gravitational lenses.",
+    "start": 245,
+    "end": 369,
+    "claim": "The release included about 500 potential gravitational lenses.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_opens_data_treasure_trove_offers_glimpse_of_deep_fields?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Euclid shows itself once again to be the ultimate discovery machine",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "a first catalogue of 500 galaxy-galaxy strong lens candidates is released today",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The second quote states that a first catalogue of 500 galaxy-galaxy strong lens candidates was released, which backs the claim of about 500 potential gravitational lenses in the release.",
+      "page_judged": "supported",
+      "page_reason": "The page states the data release included a first catalogue of 500 galaxy-galaxy strong lens candidates, which supports the claim that it included about 500 potential gravitational lenses."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.8,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002672,
+   "usd_per_claim": 0.000534
+  },
+  "cost": {
+   "total_usd": 0.0027,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0009
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

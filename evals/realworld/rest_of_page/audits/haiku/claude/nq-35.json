@@ -1,0 +1,110 @@
+{
+ "id": "nq-35",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:40:57+00:00",
+ "report": {
+  "answer_text": "In *Ghostbusters II* (1989), the baby is Oscar, the son of Dana Barrett (Sigourney Weaver). The villain Vigo the Carpathian wants to possess his body so he can live again.\nOscar was reportedly played by twins, as is common with infant roles. I recall the credits listing William T. and Hannah Deutsch, but I'm going from memory and haven't checked it, so verify it on IMDb if you need it for certain. The baby isn't a real-world celebrity, so there's not much more public information about him or her.",
+  "claims": [
+   {
+    "sentence": "In *Ghostbusters II* (1989), the baby is Oscar, the son of Dana Barrett (Sigourney Weaver).",
+    "start": 0,
+    "end": 91,
+    "claim": "In Ghostbusters II (1989), the baby is Oscar, the son of Dana Barrett (Sigourney Weaver).",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The villain Vigo the Carpathian wants to possess his body so he can live again.",
+    "start": 92,
+    "end": 171,
+    "claim": "The villain Vigo the Carpathian wants to possess the baby's body so he can live again.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Oscar was reportedly played by twins, as is common with infant roles.",
+    "start": 172,
+    "end": 241,
+    "claim": "Oscar was reportedly played by twins in Ghostbusters II.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "I recall the credits listing William T. and Hannah Deutsch, but I'm going from memory and haven't checked it, so verify it on IMDb if you need it for certain.",
+    "start": 242,
+    "end": 400,
+    "claim": "The credits for Ghostbusters II list William T. and Hannah Deutsch as the twins who played Oscar.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The baby isn't a real-world celebrity, so there's not much more public information about him or her.",
+    "start": 401,
+    "end": 501,
+    "claim": "The baby who plays Oscar is not a real-world celebrity, so there is not much more public information about the baby.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 5
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000316,
+   "usd_per_claim": 6.3e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

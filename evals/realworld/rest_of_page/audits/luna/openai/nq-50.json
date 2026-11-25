@@ -1,0 +1,293 @@
+{
+ "id": "nq-50",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:43:29+00:00",
+ "report": {
+  "answer_text": "The captain, also called the master, has overall command of the ship and is responsible for its safe operation and the safety of its crew, passengers, and cargo. Officers carry out many day-to-day tasks, but the captain retains overall responsibility. (bls.gov)\n| Main duty | What it involves |\n|---|---|\n| Navigate safely | Approve the voyage plan, oversee bridge watches, and adjust course or speed for weather, traffic, and other hazards. (onetonline.org) |\n| Lead the crew | Give clear orders, assign duties through officers, and make sure the crew knows what to do in routine operations and emergencies. (bls.gov) |\n| Keep the ship fit for the voyage | Oversee the ship’s condition and safety equipment, and ensure cargo is safely loaded and secured without compromising stability. (onetonline.org) |\n| Prepare for and lead emergencies | Ensure drills are held and direct the response to fires, flooding, medical emergencies, or evacuation. (wwwcdn.imo.org) |\n| Prevent pollution and ensure compliance | Implement the ship’s safety and pollution-prevention procedures, oversee required records, and ensure incidents are reported. (wwwcdn.imo.org) |\nA key point: the captain has overriding authority to make decisions about safety and pollution prevention. For example, the captain can delay departure if conditions make sailing unsafe. (wwwcdn.imo.org)",
+  "claims": [
+   {
+    "sentence": "Officers carry out many day-to-day tasks, but the captain retains overall responsibility. (bls.gov)",
+    "start": 162,
+    "end": 261,
+    "claim": "Officers carry out many day-to-day tasks on a ship, but the captain retains overall responsibility.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.bls.gov/OOH/transportation-and-material-moving/water-transportation-occupations.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Navigate safely | Approve the voyage plan, oversee bridge watches, and adjust course or speed for weather, traffic, and other hazards. (onetonline.org) |",
+    "start": 305,
+    "end": 460,
+    "claim": "The captain's main duty of navigating safely involves approving the voyage plan, overseeing bridge watches, and adjusting course or speed for weather, traffic, and other hazards.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.onetonline.org/link/summary/53-5021.00?utm_source=openai",
+      "host": "onetonline.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says pilots direct courses and speeds based on weather and hazards and stand watches, but it does not state that captains approve voyage plans or oversee bridge watches."
+     }
+    ]
+   },
+   {
+    "sentence": "| Lead the crew | Give clear orders, assign duties through officers, and make sure the crew knows what to do in routine operations and emergencies. (bls.gov) |",
+    "start": 461,
+    "end": 620,
+    "claim": "The captain's main duty of leading the crew involves giving clear orders, assigning duties through officers, and making sure the crew knows what to do in routine operations and emergencies.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.bls.gov/OOH/transportation-and-material-moving/water-transportation-occupations.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Keep the ship fit for the voyage | Oversee the ship’s condition and safety equipment, and ensure cargo is safely loaded and secured without compromising stability. (onetonline.org) |",
+    "start": 621,
+    "end": 805,
+    "claim": "The captain's main duty of keeping the ship fit for the voyage involves overseeing the ship's condition and safety equipment, and ensuring cargo is safely loaded and secured without compromising stability.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.onetonline.org/link/summary/53-5021.00?utm_source=openai",
+      "host": "onetonline.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions inspecting vessels and equipment, maintaining safety equipment, and observing cargo handling, but it does not say this is the captain’s main duty or that cargo must be secured without compromising stability."
+     }
+    ]
+   },
+   {
+    "sentence": "| Prepare for and lead emergencies | Ensure drills are held and direct the response to fires, flooding, medical emergencies, or evacuation. (wwwcdn.imo.org) |",
+    "start": 806,
+    "end": 964,
+    "claim": "The captain's main duty of preparing for and leading emergencies involves ensuring drills are held and directing the response to fires, flooding, medical emergencies, or evacuation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.741%2818%29.pdf?utm_source=openai",
+      "host": "wwwcdn.imo.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page assigns emergency procedures and drills to the Company and says the master has overriding authority on safety decisions, but it does not state that the captain leads responses to fires, flooding, medical emergencies, or evacuation."
+     }
+    ]
+   },
+   {
+    "sentence": "| Prevent pollution and ensure compliance | Implement the ship’s safety and pollution-prevention procedures, oversee required records, and ensure incidents are reported. (wwwcdn.imo.org) |",
+    "start": 965,
+    "end": 1153,
+    "claim": "The captain's main duty of preventing pollution and ensuring compliance involves implementing the ship's safety and pollution-prevention procedures, overseeing required records, and ensuring incidents are reported.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.741%2818%29.pdf?utm_source=openai",
+      "host": "wwwcdn.imo.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "5.1 The Company should clearly define an\\l document the master's responsibility with regard to: .1 implementing the safety and environmental protection policy of the Company; .2 motivating the crew in the observation of that policy; .3 issuing appropriate orders and instructions in a clear and simple manner; .4 verifying that specified requirements are observed; and .5 reviewing the SMS and reporting its deficiencies to the shore based management.",
+        "pages": [
+         7,
+         7
+        ],
+        "context": null
+       },
+       {
+        "text": "9.1 The SMS should include procedures ensuring that non-conformities, accidents and hazardous situations are reported to the Company, investigated and analysed with the objective of improving safety and pollution prevention.",
+        "pages": [
+         9,
+         9
+        ],
+        "context": null
+       },
+       {
+        "text": "10.2 In meeting these requirements the Company should ensure that: .1 inspections are held at appropriate intervals; .2 any non-conformity is reported with its possible cause, if known; .3 appropriate corrective action is taken; and .4 records of these activities are maintained.",
+        "pages": [
+         9,
+         9
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the master's responsibility for implementing the safety and environmental policy and verifying compliance, but they assign record-keeping (10.2.4) and incident reporting (9.1) to the Company and SMS rather than to the captain, so the claim's specific attribution of records and reporting to the captain is not stated.",
+      "page_judged": "not_supported",
+      "page_reason": "The page assigns the master responsibility for implementing company policy and reviewing the SMS, but it does not say the captain oversees required records or ensures incidents are reported."
+     }
+    ]
+   },
+   {
+    "sentence": "For example, the captain can delay departure if conditions make sailing unsafe. (wwwcdn.imo.org)",
+    "start": 1261,
+    "end": 1357,
+    "claim": "The captain can delay departure if conditions make sailing unsafe.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/AssemblyDocuments/A.741%2818%29.pdf?utm_source=openai",
+      "host": "wwwcdn.imo.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives the master overriding authority to make decisions about safety and pollution prevention, but it does not state that the captain can delay departure when sailing is unsafe."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 7,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 4,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 7,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 0.8,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.006051,
+   "usd_per_claim": 0.000864
+  },
+  "cost": {
+   "total_usd": 0.0061,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 7,
+     "usd": 0.0031
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.002
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

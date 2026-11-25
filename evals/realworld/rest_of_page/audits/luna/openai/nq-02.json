@@ -1,0 +1,137 @@
+{
+ "id": "nq-02",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:36:27+00:00",
+ "report": {
+  "answer_text": "The most recent Christmas Day I could verify snow falling in England was 25 December 2021, in the Yorkshire Dales. The UK had an official white Christmas in 2023, but that year’s recorded Christmas Day snowfall was all in Scotland. (itv.com)\nIf you mean widespread snow on the ground, that was Christmas Day 2010. Much of England was already covered in snow. (metoffice.gov.uk)",
+  "claims": [
+   {
+    "sentence": "The most recent Christmas Day I could verify snow falling in England was 25 December 2021, in the Yorkshire Dales.",
+    "start": 0,
+    "end": 114,
+    "claim": "The most recent Christmas Day snow falling in England that the answer could verify was on 25 December 2021, in the Yorkshire Dales.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.itv.com/news/2021-12-25/white-christmas-expected-in-pockets-of-uk?utm_source=openai",
+      "host": "itv.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The UK had an official white Christmas in 2023, but that year’s recorded Christmas Day snowfall was all in Scotland. (itv.com)",
+    "start": 115,
+    "end": 241,
+    "claim": "The UK had an official white Christmas in 2023.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.itv.com/news/2021-12-25/white-christmas-expected-in-pockets-of-uk?utm_source=openai",
+      "host": "itv.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The UK had an official white Christmas in 2023, but that year’s recorded Christmas Day snowfall was all in Scotland. (itv.com)",
+    "start": 115,
+    "end": 241,
+    "claim": "The recorded Christmas Day snowfall in 2023 was all in Scotland.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.itv.com/news/2021-12-25/white-christmas-expected-in-pockets-of-uk?utm_source=openai",
+      "host": "itv.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000239,
+   "usd_per_claim": 8e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 0.3,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

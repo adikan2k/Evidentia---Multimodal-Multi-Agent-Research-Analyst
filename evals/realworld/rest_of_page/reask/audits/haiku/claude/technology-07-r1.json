@@ -1,0 +1,849 @@
+{
+ "id": "technology-07-r1",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:09:44+00:00",
+ "report": {
+  "answer_text": "Cause\nThe outage began in AWS's US-EAST-1 region in Northern Virginia and was not a cyberattack. It was a fault inside AWS itself.[1]\nTrigger: AWS's post-incident report said the root cause was a latent race condition in DynamoDB's automated DNS management system.[2] The system has a \"Planner\" that decides what changes to make and an \"Enactor\" that applies them.[3] A race condition let an older version overwrite a newer one, which left the DNS records inconsistent.[3]\nResult: The automation left the DynamoDB address record empty, so anything trying to reach DynamoDB in that region couldn't find it.[1]\nCascade: Services that depend on DynamoDB also began failing, including the system that launches new servers and the load balancers that spread traffic.[1] DynamoDB was reachable again by 2:40 AM Pacific on Monday. The knock-on problems with launching servers and load balancers lasted until 2:20 PM Pacific that afternoon.[1]\nAftermath: AWS disabled the DNS Planner and Enactor automation worldwide while it added safeguards.[4]\nTimeline\nAWS's own summary puts the start at 11:48 PM Pacific on Sunday, October 19.[1] By 3:01 PM PDT on October 20, AWS announced that all services had returned to normal.[5]\nWhat it disrupted\nAmazon's own services: Amazon.com went dark, along with several Amazon subsidiary services and AWS customer support operations.[5] Alexa requests such as asking for the weather or turning off lights failed too.[6] Ring was also affected.\nSocial and communication apps: Zoom and Slack were hit.[7] Snapchat was among the most visible casualties, and Reddit was also affected.\nFinance: Coinbase, Venmo and Robinhood were among the services with problems.[8] In the UK, Lloyds Bank, Halifax, Bank of Scotland and HM Revenue & Customs were affected.[7]\nGaming: Fortnite, Wordle and Roblox were affected.[9]\nStreaming and media: Disney+, Prime Video and Hulu were hit.[10]\nOther sectors: Banks, airlines, media, delivery apps and many other websites and apps were affected.[11]\nThe outage lasted several hours and affected over 1,000 businesses.[7] It showed how many services depend on a single AWS region.",
+  "claims": [
+   {
+    "sentence": "The outage began in AWS's US-EAST-1 region in Northern Virginia and was not a cyberattack.",
+    "start": 6,
+    "end": 96,
+    "claim": "The outage began in AWS's US-EAST-1 region in Northern Virginia.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Where: AWS's US-EAST-1 region in Northern Virginia.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the outage involved AWS's US-EAST-1 region in Northern Virginia as the 'Where', but it does not say the outage began there, only that it is listed as the location.",
+      "page_judged": "supported",
+      "page_reason": "The page states the outage was in AWS's US-EAST-1 region in Northern Virginia, which directly supports the claim that it began there."
+     }
+    ]
+   },
+   {
+    "sentence": "The outage began in AWS's US-EAST-1 region in Northern Virginia and was not a cyberattack.",
+    "start": 6,
+    "end": 96,
+    "claim": "The outage was not a cyberattack.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It wasn't a cyberattack. It was a fault inside AWS itself, and it took most of the day to fully clear.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "No hack, no ransomware. An internal automation bug in one region was enough.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state directly that the outage was not a cyberattack, attributing it to an internal AWS fault and an automation bug, which matches the claim's sole assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the AWS outage 'wasn't a cyberattack' and was 'a fault inside AWS itself,' with 'No hack, no ransomware,' directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It was a fault inside AWS itself.[1]",
+    "start": 97,
+    "end": 133,
+    "claim": "The outage was a fault inside AWS itself.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It wasn't a cyberattack. It was a fault inside AWS itself, and it took most of the day to fully clear.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the outage was a fault inside AWS itself, which is exactly what the claim says, with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states the outage was 'a fault inside AWS itself' and not a cyberattack, caused by a latent defect (race condition) in AWS's DNS automation for DynamoDB."
+     }
+    ]
+   },
+   {
+    "sentence": "Trigger: AWS's post-incident report said the root cause was a latent race condition in DynamoDB's automated DNS management system.[2]",
+    "start": 134,
+    "end": 267,
+    "claim": "AWS's post-incident report said the root cause was a latent race condition in DynamoDB's automated DNS management system.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The system has a \"Planner\" that decides what changes to make and an \"Enactor\" that applies them.[3]",
+    "start": 268,
+    "end": 367,
+    "claim": "The DNS management system has a \"Planner\" that decides what changes to make.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://medium.com/@leela.kumili/aws-outage-root-cause-analysis-bd88ffcab160",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The system has a \"Planner\" that decides what changes to make and an \"Enactor\" that applies them.[3]",
+    "start": 268,
+    "end": 367,
+    "claim": "The DNS management system has an \"Enactor\" that applies the changes.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://medium.com/@leela.kumili/aws-outage-root-cause-analysis-bd88ffcab160",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A race condition let an older version overwrite a newer one, which left the DNS records inconsistent.[3]",
+    "start": 368,
+    "end": 472,
+    "claim": "A race condition let an older version overwrite a newer one, which left the DNS records inconsistent.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://medium.com/@leela.kumili/aws-outage-root-cause-analysis-bd88ffcab160",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Result: The automation left the DynamoDB address record empty, so anything trying to reach DynamoDB in that region couldn't find it.[1]",
+    "start": 473,
+    "end": 608,
+    "claim": "The automation left the DynamoDB address record empty, so anything trying to reach DynamoDB in that region couldn't find it.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The automation left the DynamoDB address record empty, so anything trying to reach DynamoDB in that region couldn't find it.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the automation left the DynamoDB address record empty so anything trying to reach DynamoDB in that region could not find it, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the automation managing DNS records for DynamoDB left the DynamoDB address record empty, so anything trying to reach DynamoDB in that region couldn't find it, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Cascade: Services that depend on DynamoDB also began failing, including the system that launches new servers and the load balancers that spread traffic.[1]",
+    "start": 609,
+    "end": 764,
+    "claim": "Services that depend on DynamoDB also began failing, including the system that launches new servers and the load balancers that spread traffic.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "AWS services that depend on DynamoDB started failing too, including the system that launches new servers and the load balancers that spread traffic.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that AWS services depending on DynamoDB started failing, naming the server-launch system and the load balancers, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that AWS services depending on DynamoDB started failing as a knock-on effect, explicitly naming the system that launches new servers and the load balancers that spread traffic."
+     }
+    ]
+   },
+   {
+    "sentence": "DynamoDB was reachable again by 2:40 AM Pacific on Monday.",
+    "start": 765,
+    "end": 823,
+    "claim": "DynamoDB was reachable again by 2:40 AM Pacific on Monday.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "When: AWS's own summary of the outage puts the start at 11:48 PM Pacific time on Sunday, October 19. DynamoDB was reachable again by 2:40 AM on Monday, but knock-on problems with launching servers and load balancers ran until 2:20 PM Pacific that afternoon.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs DynamoDB being reachable again by 2:40 AM on Monday, but it states that time without a time zone, so the 'Pacific' in the claim is not stated for that time.",
+      "page_judged": "supported",
+      "page_reason": "The page states that AWS's own summary says DynamoDB was reachable again by 2:40 AM on Monday, but it does not specify the time zone explicitly in that sentence, though the surrounding text gives all times in Pacific time, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The knock-on problems with launching servers and load balancers lasted until 2:20 PM Pacific that afternoon.[1]",
+    "start": 824,
+    "end": 935,
+    "claim": "The knock-on problems with launching servers and load balancers lasted until 2:20 PM Pacific that afternoon.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "DynamoDB was reachable again by 2:40 AM on Monday, but knock-on problems with launching servers and load balancers ran until 2:20 PM Pacific that afternoon.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that knock-on problems with launching servers and load balancers ran until 2:20 PM Pacific that afternoon, matching the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that knock-on problems with launching servers and load balancers ran until 2:20 PM Pacific that afternoon, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Aftermath: AWS disabled the DNS Planner and Enactor automation worldwide while it added safeguards.[4]",
+    "start": 936,
+    "end": 1038,
+    "claim": "AWS disabled the DNS Planner and Enactor automation worldwide while it added safeguards.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://deployflow.co/blog/aws-outage-october-2025-what-caused-future-proof-business/",
+      "host": "deployflow.co",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "AWS disabled the DNS Planner and Enactor automation worldwide while it added safeguards.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that AWS disabled the DNS Planner and Enactor automation worldwide while adding safeguards, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that AWS's post-event summary said it disabled the DNS Planner and Enactor automation worldwide while it added safeguards, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "AWS's own summary puts the start at 11:48 PM Pacific on Sunday, October 19.[1]",
+    "start": 1048,
+    "end": 1126,
+    "claim": "AWS's own summary puts the start of the outage at 11:48 PM Pacific on Sunday, October 19.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.managednerds.tech/blog/when-the-cloud-goes-dark-what-the-aws-outage-means-for-your-business",
+      "host": "managednerds.tech",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "AWS's own summary of the outage puts the start at 11:48 PM Pacific time on Sunday, October 19.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that AWS's own summary puts the outage start at 11:48 PM Pacific on Sunday, October 19, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that AWS's own summary of the outage puts the start at 11:48 PM Pacific time on Sunday, October 19, which matches the claim exactly."
+     }
+    ]
+   },
+   {
+    "sentence": "By 3:01 PM PDT on October 20, AWS announced that all services had returned to normal.[5]",
+    "start": 1127,
+    "end": 1215,
+    "claim": "By 3:01 PM PDT on October 20, AWS announced that all services had returned to normal.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://cyberpress.org/amazon-aws-internet-outage/",
+      "host": "cyberpress.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "By 3:01 PM PDT on October 20, AWS announced that all services had returned to normal operations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that by 3:01 PM PDT on October 20, AWS announced all services had returned to normal operations, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that by 3:01 PM PDT on October 20, AWS announced all services had returned to normal operations, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Amazon's own services: Amazon.com went dark, along with several Amazon subsidiary services and AWS customer support operations.[5]",
+    "start": 1234,
+    "end": 1364,
+    "claim": "Amazon.com went dark during the outage.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://cyberpress.org/amazon-aws-internet-outage/",
+      "host": "cyberpress.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Amazon.com itself went dark during the incident, along with numerous Amazon subsidiary services and even AWS customer support operations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Amazon.com itself went dark during the incident, which matches the claim's only assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'Amazon.com itself went dark during the incident,' which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Amazon's own services: Amazon.com went dark, along with several Amazon subsidiary services and AWS customer support operations.[5]",
+    "start": 1234,
+    "end": 1364,
+    "claim": "Several Amazon subsidiary services and AWS customer support operations were also affected.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://cyberpress.org/amazon-aws-internet-outage/",
+      "host": "cyberpress.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Amazon.com itself went dark during the incident, along with numerous Amazon subsidiary services and even AWS customer support operations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that numerous Amazon subsidiary services and AWS customer support operations went dark during the incident, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Amazon.com went dark along with numerous Amazon subsidiary services and even AWS customer support operations, which fully supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Alexa requests such as asking for the weather or turning off lights failed too.[6]",
+    "start": 1365,
+    "end": 1447,
+    "claim": "Alexa requests such as asking for the weather or turning off lights failed.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.engadget.com/big-tech/amazons-aws-outage-has-knocked-services-like-alexa-snapchat-fortnite-venmo-and-more-offline-142935812.html",
+      "host": "engadget.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of 1:15PM ET on October 20, multiple services were unavailable, including asking Alexa for the weather or to turn off lights in your home.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that asking Alexa for the weather or to turn off lights in your home was unavailable, which matches the claim that such requests failed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that as of 1:15PM ET on October 20, multiple services were unavailable, including asking Alexa for the weather or to turn off lights in your home, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Ring was also affected.",
+    "start": 1448,
+    "end": 1471,
+    "claim": "Ring was affected.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Social and communication apps: Zoom and Slack were hit.[7]",
+    "start": 1472,
+    "end": 1530,
+    "claim": "Zoom and Slack were hit.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://techradar.com/news/live/amazon-web-services-alexa-ring-snapchat-fortnite-down-october-2025",
+      "host": "techradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Snapchat was among the most visible casualties, and Reddit was also affected.",
+    "start": 1531,
+    "end": 1608,
+    "claim": "Snapchat was among the most visible casualties.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Snapchat was among the most visible casualties, and Reddit was also affected.",
+    "start": 1531,
+    "end": 1608,
+    "claim": "Reddit was also affected.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Finance: Coinbase, Venmo and Robinhood were among the services with problems.[8]",
+    "start": 1609,
+    "end": 1689,
+    "claim": "Coinbase, Venmo and Robinhood were among the services with problems.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.newsweek.com/amazon-web-services-down-full-list-of-sites-impacted-10904177",
+      "host": "newsweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Snapchat, Roblox, Fortnite, Ring, Coinbase, Venmo, Robinhood, Hinge, and Reddit, and others, are among the many services with issues",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "services like Coinbase, Perplexity, Flickr, PlayStation, and even Amazon itself displaying error messages",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Robinhood Markets, Inc. confirmed Monday that its services were affected by a broader Amazon Web Services outage",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote explicitly lists Coinbase, Venmo and Robinhood among the many services with issues, which states the claim's full content.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Coinbase and Venmo among affected services in the Downdetector list and says Robinhood confirmed its services were affected by the AWS outage, so all three are stated as having problems."
+     }
+    ]
+   },
+   {
+    "sentence": "In the UK, Lloyds Bank, Halifax, Bank of Scotland and HM Revenue & Customs were affected.[7]",
+    "start": 1690,
+    "end": 1782,
+    "claim": "In the UK, Lloyds Bank, Halifax, Bank of Scotland and HM Revenue & Customs were affected.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://techradar.com/news/live/amazon-web-services-alexa-ring-snapchat-fortnite-down-october-2025",
+      "host": "techradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Gaming: Fortnite, Wordle and Roblox were affected.[9]",
+    "start": 1783,
+    "end": 1836,
+    "claim": "Fortnite, Wordle and Roblox were affected.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://techradar.com/news/live/amazon-web-services-down-outage-gaming-fortnite-rooblox-wordle-october-2025",
+      "host": "techradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Games of all types, from Fortnite to Wordle to Roblox were affected by the AWS outage.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Right now, we can see that the likes of Fortnite, Roblox, Wordle, and the Epic Game Store - and many, many more - have been affected.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes explicitly state that Fortnite, Wordle and Roblox were affected, which is the entire claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Fortnite, Roblox, and Wordle were affected by the AWS outage, directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Streaming and media: Disney+, Prime Video and Hulu were hit.[10]",
+    "start": 1837,
+    "end": 1901,
+    "claim": "Disney+, Prime Video and Hulu were hit.",
+    "citation_ids": [
+     "c10"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c10",
+      "url": "https://www.tomsguide.com/news/live/amazon-outage-october-2025",
+      "host": "tomsguide.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 13,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 7,
+    "citation_unread": 0,
+    "uncited": 3
+   },
+   "cited_claims": 22,
+   "claims_with_a_verdict": 13,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5909,
+   "pages_cited": 10,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 3,
+   "usd": 0.010328,
+   "usd_per_claim": 0.000413
+  },
+  "cost": {
+   "total_usd": 0.0103,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 17,
+     "usd": 0.0041
+    },
+    {
+     "node": "page_check",
+     "calls": 15,
+     "usd": 0.0031
+    },
+    {
+     "node": "check",
+     "calls": 15,
+     "usd": 0.0019
+    }
+   ]
+  }
+ }
+}

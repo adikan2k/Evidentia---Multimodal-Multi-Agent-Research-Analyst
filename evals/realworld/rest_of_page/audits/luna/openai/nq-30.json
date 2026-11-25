@@ -1,0 +1,108 @@
+{
+ "id": "nq-30",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:40:36+00:00",
+ "report": {
+  "answer_text": "Hakainde Hichilema is the president of the Republic of Zambia. He was sworn in for his second term on September 1, 2026. (pbo.parliament.gov.zm)",
+  "claims": [
+   {
+    "sentence": "Hakainde Hichilema is the president of the Republic of Zambia.",
+    "start": 0,
+    "end": 62,
+    "claim": "Hakainde Hichilema is the president of the Republic of Zambia.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://pbo.parliament.gov.zm/sites/default/files/images/publication_docs/2027%20Budget%20Speech_Final.pdf?utm_source=openai",
+      "host": "pbo.parliament.gov.zm",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He was sworn in for his second term on September 1, 2026. (pbo.parliament.gov.zm)",
+    "start": 63,
+    "end": 144,
+    "claim": "Hakainde Hichilema was sworn in for his second term on September 1, 2026.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://pbo.parliament.gov.zm/sites/default/files/images/publication_docs/2027%20Budget%20Speech_Final.pdf?utm_source=openai",
+      "host": "pbo.parliament.gov.zm",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000168,
+   "usd_per_claim": 8.4e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

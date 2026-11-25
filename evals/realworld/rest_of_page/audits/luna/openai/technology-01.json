@@ -1,0 +1,461 @@
+{
+ "id": "technology-01",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:52:04+00:00",
+ "report": {
+  "answer_text": "GPT‑5 is a family of AI models that OpenAI released on August 7, 2025, in ChatGPT and through its API. Its biggest change in ChatGPT was automatic switching: instead of making users choose between a fast model and a reasoning model, GPT‑5 could answer routine questions quickly and route harder problems to GPT‑5 Thinking. A GPT‑5 Pro option could spend more time reasoning on especially difficult tasks. (openai.com)\nIts other main improvements were:\nBetter coding, reasoning, and tool use. GPT‑5 was better at tasks such as debugging code, working through math problems, following detailed instructions, and using tools across multiple steps. OpenAI also reported improvements in writing and in interpreting images, charts, and diagrams. (openai.com)\nMore reliable answers. In OpenAI’s evaluations, GPT‑5 made fewer factual errors and was less likely to agree with a user just to be agreeable. It could still make mistakes. (openai.com)\nMore control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, a context window of up to 400,000 tokens, and controls for how much effort the model spent reasoning and how detailed its final answer was. (openai.com)",
+  "claims": [
+   {
+    "sentence": "GPT‑5 is a family of AI models that OpenAI released on August 7, 2025, in ChatGPT and through its API. Its biggest change in ChatGPT was automatic switching: instead of making users choose between a fast model and a reasoning model, GPT‑5 could answer routine questions quickly and route harder problems to GPT‑5 Thinking. A GPT‑5 Pro option could spend more time reasoning on especially difficult tasks. (openai.com)",
+    "start": 0,
+    "end": 417,
+    "claim": "GPT‑5 is a family of AI models that OpenAI released on August 7, 2025, in ChatGPT and through its API.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?k=EAIaIQobChMIv-DY8f-b9QIVSOvjBx0PJAOcEAAYAiAAEgK71_D_BwE&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page dates GPT‑5’s introduction to August 7, 2025, and describes multiple GPT‑5 models and ChatGPT access, but it does not say GPT‑5 was released through the API."
+     }
+    ]
+   },
+   {
+    "sentence": "GPT‑5 is a family of AI models that OpenAI released on August 7, 2025, in ChatGPT and through its API. Its biggest change in ChatGPT was automatic switching: instead of making users choose between a fast model and a reasoning model, GPT‑5 could answer routine questions quickly and route harder problems to GPT‑5 Thinking. A GPT‑5 Pro option could spend more time reasoning on especially difficult tasks. (openai.com)",
+    "start": 0,
+    "end": 417,
+    "claim": "GPT‑5's biggest change in ChatGPT was automatic switching, under which it could answer routine questions quickly and route harder problems to GPT‑5 Thinking instead of users choosing between a fast model and a reasoning model.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?k=EAIaIQobChMIv-DY8f-b9QIVSOvjBx0PJAOcEAAYAiAAEgK71_D_BwE&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is a unified system with a smart, efficient model that answers most questions, a deeper reasoning model (GPT‑5 thinking) for harder problems, and a real‑time router that quickly decides which to use based on conversation type, complexity, tool needs, and your explicit intent",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Just open ChatGPT and type your question; GPT‑5 handles the rest, applying reasoning automatically when the response would benefit from it.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Paid users can still select “GPT‑5 Thinking” from the model picker",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the automatic routing between a fast model for most questions and GPT-5 Thinking for harder problems, but nothing says this was GPT-5's biggest change in ChatGPT.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says GPT‑5 automatically routes questions between an efficient model and GPT‑5 Thinking, but does not call this the biggest change or state that users previously chose between a fast model and a reasoning model."
+     }
+    ]
+   },
+   {
+    "sentence": "GPT‑5 is a family of AI models that OpenAI released on August 7, 2025, in ChatGPT and through its API. Its biggest change in ChatGPT was automatic switching: instead of making users choose between a fast model and a reasoning model, GPT‑5 could answer routine questions quickly and route harder problems to GPT‑5 Thinking. A GPT‑5 Pro option could spend more time reasoning on especially difficult tasks. (openai.com)",
+    "start": 0,
+    "end": 417,
+    "claim": "A GPT‑5 Pro option could spend more time reasoning on especially difficult tasks.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?k=EAIaIQobChMIv-DY8f-b9QIVSOvjBx0PJAOcEAAYAiAAEgK71_D_BwE&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "For the most challenging, complex tasks, we are also releasing GPT‑5 pro, replacing OpenAI o3‑pro, a variant of GPT‑5 that thinks for ever longer, using scaled but efficient parallel test-time compute, to provide the highest quality and most comprehensive answers.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states GPT-5 pro is released for the most challenging, complex tasks and is a variant that thinks for ever longer, which backs the claim that it could spend more time reasoning on especially difficult tasks.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 pro is for the most challenging, complex tasks and thinks for ever longer using extended reasoning."
+     }
+    ]
+   },
+   {
+    "sentence": "Better coding, reasoning, and tool use. GPT‑5 was better at tasks such as debugging code, working through math problems, following detailed instructions, and using tools across multiple steps. OpenAI also reported improvements in writing and in interpreting images, charts, and diagrams. (openai.com)",
+    "start": 452,
+    "end": 752,
+    "claim": "GPT‑5 was better at tasks such as debugging code, working through math problems, following detailed instructions, and using tools across multiple steps.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?k=EAIaIQobChMIv-DY8f-b9QIVSOvjBx0PJAOcEAAYAiAAEgK71_D_BwE&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It shows particular improvements in complex front‑end generation and debugging larger repositories.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "It sets a new state of the art across math (94.6% on AIME 2025 without tools), real-world coding (74.9% on SWE-bench Verified, 88% on Aider Polyglot), multimodal understanding (84.2% on MMMU), and health (46.2% on HealthBench Hard)—and those gains show up in everyday use.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 shows significant gains in benchmarks that test instruction following and agentic tool use, the kinds of capabilities that let it reliably carry out multi-step requests, coordinate across different tools, and adapt to changes in context.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back debugging (improvements in debugging larger repositories), math (new state of the art on AIME 2025), following detailed instructions (significant gains on instruction-following benchmarks), and multi-step tool use (agentic tool use gains across multiple steps and tools), so every part of the claim is covered without extra specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 improved at debugging larger repositories and math, follows instructions more faithfully, and better handles multi-step requests using tools."
+     }
+    ]
+   },
+   {
+    "sentence": "Better coding, reasoning, and tool use. GPT‑5 was better at tasks such as debugging code, working through math problems, following detailed instructions, and using tools across multiple steps. OpenAI also reported improvements in writing and in interpreting images, charts, and diagrams. (openai.com)",
+    "start": 452,
+    "end": 752,
+    "claim": "OpenAI reported improvements in GPT‑5's writing and in its interpretation of images, charts, and diagrams.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?k=EAIaIQobChMIv-DY8f-b9QIVSOvjBx0PJAOcEAAYAiAAEgK71_D_BwE&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is our most capable writing collaborator yet, able to help you steer and translate rough ideas into compelling, resonant writing with literary depth and rhythm.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Stronger multimodal performance means ChatGPT can reason more accurately over images and other non-text inputs—whether that’s interpreting a chart, summarizing a photo of a presentation, or answering questions about a diagram.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states GPT‑5 is a more capable writing collaborator, and the second states stronger multimodal performance in interpreting charts and diagrams from images, which together back both reported improvements in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page describes GPT‑5 as a more capable writing collaborator and says it can reason more accurately over images, including interpreting charts and answering questions about diagrams."
+     }
+    ]
+   },
+   {
+    "sentence": "More reliable answers. In OpenAI’s evaluations, GPT‑5 made fewer factual errors and was less likely to agree with a user just to be agreeable. It could still make mistakes. (openai.com)",
+    "start": 753,
+    "end": 938,
+    "claim": "In OpenAI's evaluations, GPT‑5 made fewer factual errors.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://openai.com/index/gpt-5-system-card/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says GPT‑5 has advances in reducing hallucinations, but does not state that OpenAI’s evaluations found it made fewer factual errors."
+     }
+    ]
+   },
+   {
+    "sentence": "More reliable answers. In OpenAI’s evaluations, GPT‑5 made fewer factual errors and was less likely to agree with a user just to be agreeable. It could still make mistakes. (openai.com)",
+    "start": 753,
+    "end": 938,
+    "claim": "In OpenAI's evaluations, GPT‑5 was less likely to agree with a user just to be agreeable.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://openai.com/index/gpt-5-system-card/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says GPT‑5 made advances in minimizing sycophancy, but does not state that OpenAI’s evaluations found it less likely to agree with users just to be agreeable."
+     }
+    ]
+   },
+   {
+    "sentence": "More reliable answers. In OpenAI’s evaluations, GPT‑5 made fewer factual errors and was less likely to agree with a user just to be agreeable. It could still make mistakes. (openai.com)",
+    "start": 753,
+    "end": 938,
+    "claim": "GPT‑5 could still make mistakes.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://openai.com/index/gpt-5-system-card/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says GPT‑5 has made advances in reducing hallucinations, but it does not state that GPT‑5 can still make mistakes."
+     }
+    ]
+   },
+   {
+    "sentence": "More control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, a context window of up to 400,000 tokens, and controls for how much effort the model spent reasoning and how detailed its final answer was. (openai.com)",
+    "start": 939,
+    "end": 1177,
+    "claim": "The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We’re releasing GPT‑5 in three sizes in the API—gpt-5, gpt-5-mini, and gpt-5-nano—to give developers more flexibility to trade off performance, cost, and latency.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 is available now in the API platform in three sizes: gpt-5, gpt-5-mini, and gpt-5-nano.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that GPT-5, GPT-5 mini (gpt-5-mini), and GPT-5 nano (gpt-5-nano) were released in the API, which covers everything the claim says; the quotes do not explicitly use the word 'launched' but describe the same release.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 is available in the API in three sizes: gpt‑5, gpt‑5‑mini, and gpt‑5‑nano."
+     }
+    ]
+   },
+   {
+    "sentence": "More control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, a context window of up to 400,000 tokens, and controls for how much effort the model spent reasoning and how detailed its final answer was. (openai.com)",
+    "start": 939,
+    "end": 1177,
+    "claim": "The GPT‑5 API offered a context window of up to 400,000 tokens.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In the API, all GPT‑5 models can accept a maximum of 272,000 input tokens and emit a maximum of 128,000 reasoning & output tokens, for a total context length of 400,000 tokens.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the GPT-5 API models have a total context length of 400,000 tokens, which matches the claim's up-to-400,000 figure (the input and output limits are extra detail the claim does not contradict).",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT‑5 API models accept up to 272,000 input tokens and emit up to 128,000 reasoning and output tokens, for a total context length of 400,000 tokens."
+     }
+    ]
+   },
+   {
+    "sentence": "More control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, a context window of up to 400,000 tokens, and controls for how much effort the model spent reasoning and how detailed its final answer was. (openai.com)",
+    "start": 939,
+    "end": 1177,
+    "claim": "The GPT‑5 API offered controls for how much effort the model spent reasoning and how detailed its final answer was.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Developers can control GPT‑5’s thinking time via the reasoning_effort parameter in the API.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "To help steer the default length of GPT‑5’s answers, we’ve introduced a new API parameter verbosity, which takes values of low, medium (default), and high.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the API had a reasoning_effort parameter controlling GPT‑5's thinking time and a verbosity parameter (low/medium/high) steering the default length of its answers, which together match the claimed controls over reasoning effort and answer detail.",
+      "page_judged": "supported",
+      "page_reason": "The page says developers can set reasoning_effort to control GPT‑5’s thinking time and verbosity to control answer length and detail."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 6,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 4,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 11,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 0.3636,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.5455,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.011839,
+   "usd_per_claim": 0.001076
+  },
+  "cost": {
+   "total_usd": 0.0118,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 19,
+     "usd": 0.0074
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.0025
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.001
+    }
+   ]
+  }
+ }
+}

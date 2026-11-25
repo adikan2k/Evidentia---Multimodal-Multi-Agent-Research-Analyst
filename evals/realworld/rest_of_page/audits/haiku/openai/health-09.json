@@ -1,0 +1,679 @@
+{
+ "id": "health-09",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:51:32+00:00",
+ "report": {
+  "answer_text": "In 2025, H5N1 bird flu sickened dairy cows and disrupted milk production on affected farms, but it hit poultry much harder: more than 50 million birds were in affected flocks, and losses among laying hens helped drive egg prices to a record high. (aphis.usda.gov)\nDairy cattle: USDA recorded 171 herd detections in 2025, down from 917 in 2024, the first year H5N1 was detected in U.S. dairy cattle. Sick cows could lose their appetite and produce sharply less milk, but herds generally weren’t culled as poultry flocks were. USDA used bulk-milk testing to track infections and identified separate wildlife spillovers into herds in Nevada, Arizona, and Wisconsin. Despite losses on affected farms, total U.S. milk production rose 2.6% from 2024, and FDA testing supported the safety of pasteurized milk. (aphis.usda.gov)\nPoultry: The virus struck commercial and backyard flocks, with about 45 million birds affected by the end of June alone. Infected flocks were generally culled to stop the spread, so the number of birds affected is not a count of birds that died from the virus itself. Egg-laying hens were especially hard hit: U.S. table-egg production fell about 4% from 2024, and the average retail price reached a record $6.23 per dozen in March 2025 before easing. (aphis.usda.gov)",
+  "claims": [
+   {
+    "sentence": "In 2025, H5N1 bird flu sickened dairy cows and disrupted milk production on affected farms, but it hit poultry much harder: more than 50 million birds were in affected flocks, and losses among laying hens helped drive egg prices to a record high. (aphis.usda.gov)",
+    "start": 0,
+    "end": 263,
+    "claim": "In 2025, H5N1 bird flu sickened dairy cows and disrupted milk production on affected farms.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.aphis.usda.gov/sites/default/files/status-report-livestock-edition-508.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page covers only events through September 30, 2024 and never mentions 2025, so it cannot support a claim about 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, H5N1 bird flu sickened dairy cows and disrupted milk production on affected farms, but it hit poultry much harder: more than 50 million birds were in affected flocks, and losses among laying hens helped drive egg prices to a record high. (aphis.usda.gov)",
+    "start": 0,
+    "end": 263,
+    "claim": "In 2025, H5N1 bird flu hit poultry much harder than dairy cows.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.aphis.usda.gov/sites/default/files/status-report-livestock-edition-508.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page covers dairy cattle and poultry detections only through September 30, 2024 and says nothing about 2025 or about comparing the severity of impact on poultry versus dairy cows."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, H5N1 bird flu sickened dairy cows and disrupted milk production on affected farms, but it hit poultry much harder: more than 50 million birds were in affected flocks, and losses among laying hens helped drive egg prices to a record high. (aphis.usda.gov)",
+    "start": 0,
+    "end": 263,
+    "claim": "More than 50 million birds were in flocks affected by H5N1 in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.aphis.usda.gov/sites/default/files/status-report-livestock-edition-508.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a September 30, 2024 report covering livestock detections through that date and says nothing about bird numbers or flock impacts in 2025, so the claim about more than 50 million birds in 2025 is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, H5N1 bird flu sickened dairy cows and disrupted milk production on affected farms, but it hit poultry much harder: more than 50 million birds were in affected flocks, and losses among laying hens helped drive egg prices to a record high. (aphis.usda.gov)",
+    "start": 0,
+    "end": 263,
+    "claim": "Losses among laying hens helped drive U.S. egg prices to a record high in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.aphis.usda.gov/sites/default/files/status-report-livestock-edition-508.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a September 2024 APHIS report on H5N1 in livestock and poultry and says nothing about laying-hen losses driving U.S. egg prices to a record high in 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Dairy cattle: USDA recorded 171 herd detections in 2025, down from 917 in 2024, the first year H5N1 was detected in U.S. dairy cattle.",
+    "start": 264,
+    "end": 398,
+    "claim": "USDA recorded 171 H5N1 herd detections in U.S. dairy cattle in 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Dairy cattle: USDA recorded 171 herd detections in 2025, down from 917 in 2024, the first year H5N1 was detected in U.S. dairy cattle.",
+    "start": 264,
+    "end": 398,
+    "claim": "USDA recorded 917 H5N1 herd detections in 2024.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Dairy cattle: USDA recorded 171 herd detections in 2025, down from 917 in 2024, the first year H5N1 was detected in U.S. dairy cattle.",
+    "start": 264,
+    "end": 398,
+    "claim": "2024 was the first year H5N1 was detected in U.S. dairy cattle.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Sick cows could lose their appetite and produce sharply less milk, but herds generally weren’t culled as poultry flocks were.",
+    "start": 399,
+    "end": 524,
+    "claim": "Sick cows could lose their appetite and produce sharply less milk.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Sick cows could lose their appetite and produce sharply less milk, but herds generally weren’t culled as poultry flocks were.",
+    "start": 399,
+    "end": 524,
+    "claim": "Dairy herds generally were not culled as poultry flocks were.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "USDA used bulk-milk testing to track infections and identified separate wildlife spillovers into herds in Nevada, Arizona, and Wisconsin.",
+    "start": 525,
+    "end": 662,
+    "claim": "USDA used bulk-milk testing to track H5N1 infections in dairy herds.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "USDA used bulk-milk testing to track infections and identified separate wildlife spillovers into herds in Nevada, Arizona, and Wisconsin.",
+    "start": 525,
+    "end": 662,
+    "claim": "USDA identified separate wildlife spillovers of H5N1 into dairy herds in Nevada, Arizona, and Wisconsin.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Despite losses on affected farms, total U.S. milk production rose 2.6% from 2024, and FDA testing supported the safety of pasteurized milk. (aphis.usda.gov)",
+    "start": 663,
+    "end": 819,
+    "claim": "Total U.S. milk production rose 2.6% from 2024.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Despite losses on affected farms, total U.S. milk production rose 2.6% from 2024, and FDA testing supported the safety of pasteurized milk. (aphis.usda.gov)",
+    "start": 663,
+    "end": 819,
+    "claim": "FDA testing supported the safety of pasteurized milk.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Poultry: The virus struck commercial and backyard flocks, with about 45 million birds affected by the end of June alone.",
+    "start": 820,
+    "end": 940,
+    "claim": "The H5N1 virus struck both commercial and backyard poultry flocks.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The production types affected include 786 WOAH poultry [commercial], 185 WOAH poultry [backyard]",
+        "pages": [
+         6,
+         6
+        ],
+        "context": null
+       },
+       {
+        "text": "have confirmed Eurasian clade 2.3.4.4b H5N1 highly pathogenic avian influenza (HPAI) in 1,707 premises across all 50 States and Puerto Rico.",
+        "pages": [
+         6,
+         6
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the affected production types include 786 commercial and 185 backyard WOAH poultry, and that H5N1 HPAI was confirmed in 1,707 premises, which together back the claim that H5N1 struck both commercial and backyard poultry flocks.",
+      "page_judged": "supported",
+      "page_reason": "The page reports 786 WOAH poultry [commercial] and 185 WOAH poultry [backyard] premises affected by Eurasian clade 2.3.4.4b H5N1 HPAI since February 2022, so both commercial and backyard poultry flocks were struck."
+     }
+    ]
+   },
+   {
+    "sentence": "Poultry: The virus struck commercial and backyard flocks, with about 45 million birds affected by the end of June alone.",
+    "start": 820,
+    "end": 940,
+    "claim": "About 45 million poultry birds were affected by the end of June 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Approximately 45 million birds have been affected in 2025, a greater number when compared to the same month span in past years of the current HPAI event.",
+        "pages": [
+         7,
+         7
+        ],
+        "context": null
+       },
+       {
+        "text": "During the current reporting period, the event has impacted 43 States and affected 331 premises and approximately 45 million birds.",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the figure of approximately 45 million birds affected in 2025, but they do not state the 'end of June 2025' timing or specify that the birds are poultry.",
+      "page_judged": "supported",
+      "page_reason": "The page states that during the reporting period January 1 to June 30, 2025, approximately 45 million birds were affected, which matches the claim's figure of about 45 million birds by end of June 2025, though it refers to birds affected rather than specifically poultry birds, and the page does not explicitly say 'by the end of June' beyond the reporting period ending June 30, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Infected flocks were generally culled to stop the spread, so the number of birds affected is not a count of birds that died from the virus itself.",
+    "start": 941,
+    "end": 1087,
+    "claim": "Infected poultry flocks were generally culled to stop the spread of H5N1.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports HPAI premises counts, birds affected, genotypes, and surveillance, but nowhere states that infected poultry flocks were culled or that culling was used to stop the spread."
+     }
+    ]
+   },
+   {
+    "sentence": "Infected flocks were generally culled to stop the spread, so the number of birds affected is not a count of birds that died from the virus itself.",
+    "start": 941,
+    "end": 1087,
+    "claim": "The number of birds affected by H5N1 is not a count of birds that died from the virus itself.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that over 175 million birds have been affected by the event, but it does not say whether those counts reflect deaths caused by the virus or include birds culled, so it neither confirms nor refutes the claim that the count is not a count of virus deaths."
+     }
+    ]
+   },
+   {
+    "sentence": "Egg-laying hens were especially hard hit: U.S. table-egg production fell about 4% from 2024, and the average retail price reached a record $6.23 per dozen in March 2025 before easing. (aphis.usda.gov)",
+    "start": 1088,
+    "end": 1288,
+    "claim": "U.S. table-egg production fell about 4% from 2024.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports HPAI detections and affected premises/birds in 2025 but says nothing about U.S. table-egg production volume or any year-over-year production change, so the claim of a roughly 4% fall from 2024 is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Egg-laying hens were especially hard hit: U.S. table-egg production fell about 4% from 2024, and the average retail price reached a record $6.23 per dozen in March 2025 before easing. (aphis.usda.gov)",
+    "start": 1088,
+    "end": 1288,
+    "claim": "The average retail price of eggs reached a record $6.23 per dozen in March 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is an APHIS epidemiologic report on HPAI detections in poultry and says nothing about retail egg prices or any $6.23 per dozen figure."
+     }
+    ]
+   },
+   {
+    "sentence": "Egg-laying hens were especially hard hit: U.S. table-egg production fell about 4% from 2024, and the average retail price reached a record $6.23 per dozen in March 2025 before easing. (aphis.usda.gov)",
+    "start": 1088,
+    "end": 1288,
+    "claim": "The average retail egg price eased after March 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aphis.usda.gov/sites/default/files/hpai-epi-report-fy25-q3.pdf?utm_source=openai",
+      "host": "aphis.usda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page covers HPAI detections in poultry flocks and premises counts but says nothing about retail egg prices, so the claim about average retail egg price easing after March 2025 is not supported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 20,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 9,
+    "dead_link": 0,
+    "unchecked": 9,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 9,
+   "failed_share_of_verdicts": 0.9,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.05,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.017359,
+   "usd_per_claim": 0.000868
+  },
+  "cost": {
+   "total_usd": 0.0174,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 22,
+     "usd": 0.0119
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.004
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

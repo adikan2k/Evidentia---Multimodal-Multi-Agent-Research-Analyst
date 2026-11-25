@@ -1,0 +1,780 @@
+{
+ "id": "economy-09",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:00:10+00:00",
+ "report": {
+  "answer_text": "In 2025, Japanese Prime Minister Sanae Takaichi proposed tax cuts and subsidies to ease the cost of living, alongside public investment to spur long-term growth. She outlined the agenda in her October 24 address to parliament, and her cabinet approved a ¥21.3 trillion economic package on November 21. The total rose to ¥25.5 trillion when government investment and loan programs were included. (japan.kantei.go.jp)\nLower household bills. She proposed scrapping the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, giving local governments grants for cost-of-living relief, and providing a one-time ¥20,000 payment per eligible child. (japan.kantei.go.jp)\nRaise take-home pay. She pledged to raise the income-tax threshold associated with the old ¥1.03 million “income wall.” The tax plan approved by the cabinet on December 26 proposed a ¥1.78 million threshold and a mechanism to adjust key deductions for inflation. Her government also began designing a refundable tax credit for low- and middle-income earners. (japan.kantei.go.jp)\nInvest in strategic industries and support wage growth. She proposed using public funding to attract private investment across 17 priority fields, including AI, semiconductors, shipbuilding, quantum technology, biotechnology, and aerospace. The plan also called for strengthening critical supply chains and helping smaller businesses invest in productivity so they could raise wages. (japan.kantei.go.jp)\nThe November package also included a defense and diplomacy pillar, with plans to bring forward defense-related spending to 2% of GDP in fiscal 2025. On monetary policy, Takaichi called for close coordination with the Bank of Japan to achieve its 2% inflation target alongside wage growth, while leaving interest-rate decisions to the central bank. (kantei.go.jp)",
+  "claims": [
+   {
+    "sentence": "In 2025, Japanese Prime Minister Sanae Takaichi proposed tax cuts and subsidies to ease the cost of living, alongside public investment to spur long-term growth.",
+    "start": 0,
+    "end": 161,
+    "claim": "In 2025, Japanese Prime Minister Sanae Takaichi proposed tax cuts and subsidies to ease the cost of living.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "First of all, we will endeavor to pass a bill during the current Diet session that abolishes the so-called provisional tax rate on gasoline, through discussions among the various political parties.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we will contend with the drop in prices by making use of subsidies until we have succeeded in abolishing these provisional tax rates.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we will raise the income limit [qualifying for dependent deductions] to 1.60 million yen during the year-end adjustment for 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This is the unshakable policy of the Takaichi Cabinet.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the proposed gasoline provisional-tax abolition, subsidies against price drops, and the 2025 dependent-deduction income-limit increase, but they never state that Sanae Takaichi is prime minister, only referring to the \"Takaichi Cabinet\".",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes tax-rate abolitions and subsidies intended to address rising prices, but it does not identify Sanae Takaichi as prime minister or explicitly date the proposal to 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, Japanese Prime Minister Sanae Takaichi proposed tax cuts and subsidies to ease the cost of living, alongside public investment to spur long-term growth.",
+    "start": 0,
+    "end": 161,
+    "claim": "In 2025, Japanese Prime Minister Sanae Takaichi proposed public investment to spur long-term growth.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Strategic investments that enhance resilience against potential crises are the core focus of the Takaichi Cabinet's growth strategy.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "These are strategic investments that the public and private sector will implement preemptively, working hand in hand, to address various risks and social issues",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the Takaichi Cabinet's growth strategy centred on strategic investments by the public and private sectors, but they do not state the year 2025, describe the investment as public rather than joint public-private, or mention long-term growth.",
+      "page_judged": "not_supported",
+      "page_reason": "The speech proposes public-private strategic investments to promote medium- to long-term growth, but the page does not state that it was in 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "She outlined the agenda in her October 24 address to parliament, and her cabinet approved a ¥21.3 trillion economic package on November 21.",
+    "start": 162,
+    "end": 301,
+    "claim": "Sanae Takaichi outlined the agenda in her October 24 address to parliament.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Policy Speech by Prime Minister TAKAICHI Sanae to the 219th Session of the Diet",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "My cabinet will mount responses to the rising prices facing the Japanese people, as a matter of the highest priority.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Strategic investments that enhance resilience against potential crises are the core focus of the Takaichi Cabinet's growth strategy.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show a policy speech by Prime Minister Takaichi to the 219th Diet session that sets out priorities such as rising prices and growth strategy, but none of the quotes state the October 24 date.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies the speech as Takaichi Sanae’s address to the 219th Diet session on October 24, 2025, and outlines its policy agenda, including economic, fiscal, and rising-price measures."
+     }
+    ]
+   },
+   {
+    "sentence": "She outlined the agenda in her October 24 address to parliament, and her cabinet approved a ¥21.3 trillion economic package on November 21.",
+    "start": 162,
+    "end": 301,
+    "claim": "Takaichi's cabinet approved a ¥21.3 trillion economic package on November 21.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the cabinet began formulating economic measures and would submit a supplementary budget, but it does not state that a ¥21.3 trillion package was approved on November 21."
+     }
+    ]
+   },
+   {
+    "sentence": "The total rose to ¥25.5 trillion when government investment and loan programs were included.",
+    "start": 302,
+    "end": 394,
+    "claim": "The total of Takaichi's economic package rose to ¥25.5 trillion when government investment and loan programs were included.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses economic measures and strategic investments but does not state that the package totaled ¥25.5 trillion or that this figure included government investment and loan programs."
+     }
+    ]
+   },
+   {
+    "sentence": "She proposed scrapping the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, giving local governments grants for cost-of-living relief, and providing a one-time ¥20,000 payment per eligible child.",
+    "start": 439,
+    "end": 677,
+    "claim": "Takaichi proposed scrapping the temporary gasoline and diesel tax surcharges.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/ongoingtopics/sogokeizaitaisaku2025/index.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With regard to gasoline, by December 11, 2025 we will increase subsidies to a level equivalent to the amount prices will drop in the future once the so-called provisional tax rate is abolished, and we will take steps to ensure that the provisional tax rate is abolished in a smooth manner.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the provisional gasoline tax rate is to be abolished, but it does not mention diesel surcharges and does not explicitly say Takaichi proposed it.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the provisional tax rate on gasoline will be abolished, but it does not mention diesel surcharges or attribute the proposal to Takaichi."
+     }
+    ]
+   },
+   {
+    "sentence": "She proposed scrapping the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, giving local governments grants for cost-of-living relief, and providing a one-time ¥20,000 payment per eligible child.",
+    "start": 439,
+    "end": 677,
+    "claim": "Takaichi proposed subsidizing winter electricity and gas bills.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/ongoingtopics/sogokeizaitaisaku2025/index.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says assistance will reduce electricity and natural-gas bills during the winter, but it does not identify Takaichi as the person proposing it."
+     }
+    ]
+   },
+   {
+    "sentence": "She proposed scrapping the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, giving local governments grants for cost-of-living relief, and providing a one-time ¥20,000 payment per eligible child.",
+    "start": 439,
+    "end": 677,
+    "claim": "Takaichi proposed giving local governments grants for cost-of-living relief.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/ongoingtopics/sogokeizaitaisaku2025/index.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will expand the Priority Support Local Allocation Grant to support local cost-of-living measures, but it does not attribute the proposal to Takaichi."
+     }
+    ]
+   },
+   {
+    "sentence": "She proposed scrapping the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, giving local governments grants for cost-of-living relief, and providing a one-time ¥20,000 payment per eligible child.",
+    "start": 439,
+    "end": 677,
+    "claim": "Takaichi proposed a one-time ¥20,000 payment per eligible child.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/ongoingtopics/sogokeizaitaisaku2025/index.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "To support child-rearing households, which have been significantly impacted by rising prices, we will provide to each child up to senior high school age a 20,000 yen child-rearing support allowance as a response to rising prices.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs a 20,000 yen child-rearing allowance for each child up to senior high school age, but it does not say the payment is one-time or name Takaichi as its proposer.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says it will provide a ¥20,000 allowance to each child up to senior high school age, but does not state that the payment is one-time."
+     }
+    ]
+   },
+   {
+    "sentence": "She pledged to raise the income-tax threshold associated with the old ¥1.03 million “income wall.”",
+    "start": 720,
+    "end": 818,
+    "claim": "Takaichi pledged to raise the income-tax threshold associated with the old ¥1.03 million “income wall.”",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Furthermore, while listening to the opinions from the opposition parties, we will also raise the so-called “barrier of 1.03 million yen” (the income threshold for second earners above which tax benefits decrease).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the so-called 1.03 million yen barrier (the income threshold above which second-earner tax benefits decrease) will be raised, which backs the claim's pledge and its ¥1.03 million figure, though the quote does not name Takaichi as the speaker.",
+      "page_judged": "supported",
+      "page_reason": "Takaichi said her government would raise the so-called “barrier of 1.03 million yen,” which the page describes as an income threshold where tax benefits decrease."
+     }
+    ]
+   },
+   {
+    "sentence": "The tax plan approved by the cabinet on December 26 proposed a ¥1.78 million threshold and a mechanism to adjust key deductions for inflation.",
+    "start": 819,
+    "end": 961,
+    "claim": "The tax plan approved by the cabinet on December 26 proposed a ¥1.78 million income-tax threshold.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the Cabinet intended to raise the ¥1.03 million income threshold, but it does not mention a December 26 tax plan or a ¥1.78 million threshold."
+     }
+    ]
+   },
+   {
+    "sentence": "The tax plan approved by the cabinet on December 26 proposed a ¥1.78 million threshold and a mechanism to adjust key deductions for inflation.",
+    "start": 819,
+    "end": 961,
+    "claim": "The tax plan approved by the cabinet on December 26 proposed a mechanism to adjust key deductions for inflation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses raising the 1.03 million yen income threshold but does not mention a December 26 tax plan or inflation adjustments to key deductions."
+     }
+    ]
+   },
+   {
+    "sentence": "Her government also began designing a refundable tax credit for low- and middle-income earners.",
+    "start": 962,
+    "end": 1057,
+    "claim": "Takaichi's government began designing a refundable tax credit for low- and middle-income earners.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses abolishing the provisional gasoline tax rate and raising the 1.03-million-yen income threshold, but does not state that the government began designing a refundable tax credit for low- and middle-income earners."
+     }
+    ]
+   },
+   {
+    "sentence": "She proposed using public funding to attract private investment across 17 priority fields, including AI, semiconductors, shipbuilding, quantum technology, biotechnology, and aerospace.",
+    "start": 1135,
+    "end": 1319,
+    "claim": "Takaichi proposed using public funding to attract private investment across 17 priority fields.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We have designated 17 strategic fields, including AI (artificial intelligence), semiconductors, shipbuilding, quantum technology, biotechnology, aerospace, and cybersecurity.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "By implementing comprehensive support measures from multiple perspectives such as the promotion of bold investments, support for global expansion, development of human resources, promotion of startups, research and development, industry-academia collaboration, establishment of international standards, and other programs, we will attract proactive investments from both public and private sectors.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "These are strategic investments undertaken proactively through public-private collaboration to address various risks and societal challenges",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 17 strategic fields and attracting both public and private investment through public-private collaboration, but they never name Takaichi as the proposer.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Japan designated 17 strategic fields and would use comprehensive support measures to attract investment from public and private sectors, but it does not specifically state that public funding would be used."
+     }
+    ]
+   },
+   {
+    "sentence": "She proposed using public funding to attract private investment across 17 priority fields, including AI, semiconductors, shipbuilding, quantum technology, biotechnology, and aerospace.",
+    "start": 1135,
+    "end": 1319,
+    "claim": "The 17 priority fields include AI, semiconductors, shipbuilding, quantum technology, biotechnology, and aerospace.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We have designated 17 strategic fields, including AI (artificial intelligence), semiconductors, shipbuilding, quantum technology, biotechnology, aerospace, and cybersecurity.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states there are 17 strategic fields including AI, semiconductors, shipbuilding, quantum technology, biotechnology, and aerospace, so every fact in the claim is backed (the quote calls them strategic fields rather than priority fields, which is only a rewording).",
+      "page_judged": "supported",
+      "page_reason": "The page says Japan designated 17 strategic fields, including AI, semiconductors, shipbuilding, quantum technology, biotechnology, and aerospace."
+     }
+    ]
+   },
+   {
+    "sentence": "The plan also called for strengthening critical supply chains and helping smaller businesses invest in productivity so they could raise wages.",
+    "start": 1320,
+    "end": 1462,
+    "claim": "The plan called for strengthening critical supply chains.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Government of Japan will further strengthen measures to enhance the resilience of supply chains, including revitalizing shipbuilding capacity that underpins international shipping and establishing alternative supply routes for rare earths and other critical minerals.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the government will strengthen measures to enhance the resilience of supply chains, which covers the claim that the plan called for strengthening critical supply chains.",
+      "page_judged": "supported",
+      "page_reason": "The page says the government would further strengthen measures to enhance supply-chain resilience, including alternative supply routes for rare earths and other critical minerals."
+     }
+    ]
+   },
+   {
+    "sentence": "The plan also called for strengthening critical supply chains and helping smaller businesses invest in productivity so they could raise wages.",
+    "start": 1320,
+    "end": 1462,
+    "claim": "The plan called for helping smaller businesses invest in productivity so they could raise wages.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses businesses investing in human capital and R&D and supporting sustainable wage increases, but it does not specify smaller businesses or a plan to help them invest in productivity."
+     }
+    ]
+   },
+   {
+    "sentence": "The November package also included a defense and diplomacy pillar, with plans to bring forward defense-related spending to 2% of GDP in fiscal 2025.",
+    "start": 1484,
+    "end": 1632,
+    "claim": "The November package included a defense and diplomacy pillar.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.kantei.go.jp/jp/104/statement/2025/1121kaiken.html?utm_source=openai",
+      "host": "kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "第３の柱として、防衛力と外交力の強化を図り、国民の皆様の安全と国の繁栄を支えます。",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says a third pillar strengthens defense and diplomatic power, which backs the defense and diplomacy pillar, but it does not mention any November package or its date.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies the third pillar of the economic package as strengthening defense capabilities and diplomatic power."
+     }
+    ]
+   },
+   {
+    "sentence": "The November package also included a defense and diplomacy pillar, with plans to bring forward defense-related spending to 2% of GDP in fiscal 2025.",
+    "start": 1484,
+    "end": 1632,
+    "claim": "The November package planned to bring forward defense-related spending to 2% of GDP in fiscal 2025.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.kantei.go.jp/jp/104/statement/2025/1121kaiken.html?utm_source=openai",
+      "host": "kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "これにより国家安全保障戦略に定める、対ＧＤＰ比２パーセント水準につきましては、当初予算と合わせて２０２５年度中に１１兆円程度を前倒しして措置します。",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the core claim that the 2% of GDP level from the National Security Strategy is being brought forward into FY2025 (about 11 trillion yen), but it never mentions a November package or describes the measure as defense-related spending in those words.",
+      "page_judged": "supported",
+      "page_reason": "The page says the package would bring forward measures totaling about ¥11 trillion during fiscal 2025, including an additional ¥1.1 trillion, toward the national security strategy’s 2%-of-GDP defense level."
+     }
+    ]
+   },
+   {
+    "sentence": "On monetary policy, Takaichi called for close coordination with the Bank of Japan to achieve its 2% inflation target alongside wage growth, while leaving interest-rate decisions to the central bank.",
+    "start": 1633,
+    "end": 1831,
+    "claim": "Takaichi called for close coordination with the Bank of Japan to achieve its 2% inflation target alongside wage growth.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.kantei.go.jp/jp/104/statement/2025/1121kaiken.html?utm_source=openai",
+      "host": "kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses wage growth and a 2% defense-spending-to-GDP level, but does not mention coordination with the Bank of Japan or a 2% inflation target."
+     }
+    ]
+   },
+   {
+    "sentence": "On monetary policy, Takaichi called for close coordination with the Bank of Japan to achieve its 2% inflation target alongside wage growth, while leaving interest-rate decisions to the central bank.",
+    "start": 1633,
+    "end": 1831,
+    "claim": "Takaichi left interest-rate decisions to the Bank of Japan.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.kantei.go.jp/jp/104/statement/2025/1121kaiken.html?utm_source=openai",
+      "host": "kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses economic measures and fiscal policy but does not state that Takaichi left interest-rate decisions to the Bank of Japan."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 3,
+    "partial": 5,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 10,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 21,
+   "claims_with_a_verdict": 18,
+   "failed_citations": 10,
+   "failed_share_of_verdicts": 0.5556,
+   "partly_backed": 5,
+   "supported_share_of_cited": 0.1429,
+   "pages_cited": 5,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.016709,
+   "usd_per_claim": 0.000796
+  },
+  "cost": {
+   "total_usd": 0.0167,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 26,
+     "usd": 0.0071
+    },
+    {
+     "node": "page_check",
+     "calls": 21,
+     "usd": 0.0062
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0022
+    }
+   ]
+  }
+ }
+}

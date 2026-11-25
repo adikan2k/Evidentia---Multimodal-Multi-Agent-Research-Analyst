@@ -1,0 +1,473 @@
+{
+ "id": "sport_culture-03",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:01:06+00:00",
+ "report": {
+  "answer_text": "The Oklahoma City Thunder won the 2025 NBA championship. They beat the Indiana Pacers in seven games.[1] The Thunder won Game 7 by 103–91 at Paycom Center.[2] It was the franchise's first NBA championship[3] in Oklahoma City.\nShai Gilgeous-Alexander was Finals MVP. He averaged 30.3 points, 4.6 rebounds and 5.6 assists in the series.[4] He was the first Canadian to win the award.[1] He also became the fourth player in NBA history to win the league MVP, Finals MVP and scoring title in the same season.[5]",
+  "claims": [
+   {
+    "sentence": "The Oklahoma City Thunder won the 2025 NBA championship.",
+    "start": 0,
+    "end": 56,
+    "claim": "The Oklahoma City Thunder won the 2025 NBA championship.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_NBA_Finals",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The best-of-seven series ended with the Western Conference champion Oklahoma City Thunder defeating the Eastern Conference champion Indiana Pacers in seven games.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Oklahoma City Thunder defeated the Indiana Pacers in a best-of-seven series, which is the NBA Finals framing, so the claim that they won the championship is backed, though the quote does not explicitly name the 2025 season or the word 'championship'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Oklahoma City Thunder defeated the Indiana Pacers in the 2025 NBA Finals and identifies them as the 2024–25 NBA champions."
+     }
+    ]
+   },
+   {
+    "sentence": "They beat the Indiana Pacers in seven games.[1]",
+    "start": 57,
+    "end": 104,
+    "claim": "The Oklahoma City Thunder beat the Indiana Pacers in seven games.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_NBA_Finals",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The best-of-seven series ended with the Western Conference champion Oklahoma City Thunder defeating the Eastern Conference champion Indiana Pacers in seven games.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Oklahoma City Thunder defeated the Indiana Pacers in seven games, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Thunder defeated the Pacers in seven games, with Game 7 ending 103–91."
+     }
+    ]
+   },
+   {
+    "sentence": "The Thunder won Game 7 by 103–91 at Paycom Center.[2]",
+    "start": 105,
+    "end": 158,
+    "claim": "The Oklahoma City Thunder won Game 7 of the 2025 NBA Finals by 103–91.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://bleacherreport.com/articles/25211732-shai-gilgeous-alexander-wins-nba-finals-2025-mvp-full-stats-highlights-and-reaction",
+      "host": "bleacherreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Shai Gilgeous-Alexander was named the 2025 NBA Finals MVP after leading the Oklahoma City Thunder to a 103–91 Game 7 victory over the Indiana Pacers on Sunday night at Paycom Center.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Thunder won Game 7 of the 2025 NBA Finals 103–91 over the Pacers, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Oklahoma City won a 103–91 Game 7 victory over Indiana in the 2025 NBA Finals."
+     }
+    ]
+   },
+   {
+    "sentence": "The Thunder won Game 7 by 103–91 at Paycom Center.[2]",
+    "start": 105,
+    "end": 158,
+    "claim": "Game 7 of the 2025 NBA Finals was played at Paycom Center.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://bleacherreport.com/articles/25211732-shai-gilgeous-alexander-wins-nba-finals-2025-mvp-full-stats-highlights-and-reaction",
+      "host": "bleacherreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "leading the Oklahoma City Thunder to a 103–91 Game 7 victory over the Indiana Pacers on Sunday night at Paycom Center.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Oklahoma City Thunder won a 103–91 Game 7 over the Indiana Pacers at Paycom Center, which backs the claim's venue and game-number facts fully.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Thunder won Game 7 at Paycom Center."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the franchise's first NBA championship[3] in Oklahoma City.",
+    "start": 159,
+    "end": 225,
+    "claim": "The 2025 championship was the Oklahoma City Thunder franchise's first NBA championship.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nba.com/news/nba-finals-mvp-2025",
+      "host": "nba.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was the franchise's first NBA championship[3] in Oklahoma City.",
+    "start": 159,
+    "end": 225,
+    "claim": "The Oklahoma City Thunder's 2025 NBA championship was won in Oklahoma City.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nba.com/news/nba-finals-mvp-2025",
+      "host": "nba.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Shai Gilgeous-Alexander was Finals MVP.",
+    "start": 226,
+    "end": 265,
+    "claim": "Shai Gilgeous-Alexander was the 2025 NBA Finals MVP.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.basketball-reference.com/playoffs/NBA_2025.html",
+      "host": "basketball-reference.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Finals MVP: Shai Gilgeous-Alexander (30.3 / 4.6 / 5.6)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists Shai Gilgeous-Alexander as Finals MVP with stat line, but it does not state the year 2025, so the date in the claim is not backed by the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies Shai Gilgeous-Alexander as the 2025 Playoffs Finals MVP."
+     }
+    ]
+   },
+   {
+    "sentence": "He averaged 30.3 points, 4.6 rebounds and 5.6 assists in the series.[4]",
+    "start": 266,
+    "end": 337,
+    "claim": "Shai Gilgeous-Alexander averaged 30.3 points in the 2025 NBA Finals series.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.basketball-reference.com/playoffs/NBA_2025.html",
+      "host": "basketball-reference.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Finals MVP: Shai Gilgeous-Alexander (30.3 / 4.6 / 5.6)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists Shai Gilgeous-Alexander as Finals MVP with 30.3 points, but it does not explicitly say these are his averages in the 2025 NBA Finals series, only a stat line without a series label.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Shai Gilgeous-Alexander’s 30.3 points per game as the Finals MVP statistic, but does not state that this was his average specifically in the Finals series."
+     }
+    ]
+   },
+   {
+    "sentence": "He averaged 30.3 points, 4.6 rebounds and 5.6 assists in the series.[4]",
+    "start": 266,
+    "end": 337,
+    "claim": "Shai Gilgeous-Alexander averaged 4.6 rebounds in the 2025 NBA Finals series.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.basketball-reference.com/playoffs/NBA_2025.html",
+      "host": "basketball-reference.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Finals MVP: Shai Gilgeous-Alexander (30.3 / 4.6 / 5.6)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists Shai Gilgeous-Alexander as Finals MVP with a stat line of 30.3 / 4.6 / 5.6, and the claim's 4.6 rebounds average matches the middle figure, though the quote does not explicitly label that figure as rebounds or the series as the 2025 Finals.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Shai Gilgeous-Alexander’s Finals MVP line as 30.3 / 4.6 / 5.6 but does not say those are his averages in the Finals series."
+     }
+    ]
+   },
+   {
+    "sentence": "He averaged 30.3 points, 4.6 rebounds and 5.6 assists in the series.[4]",
+    "start": 266,
+    "end": 337,
+    "claim": "Shai Gilgeous-Alexander averaged 5.6 assists in the 2025 NBA Finals series.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.basketball-reference.com/playoffs/NBA_2025.html",
+      "host": "basketball-reference.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Finals MVP: Shai Gilgeous-Alexander (30.3 / 4.6 / 5.6)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote shows a Finals MVP stat line for Gilgeous-Alexander with a 5.6 figure, but it does not label that number as assists, as an average, or as the 2025 Finals.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Shai Gilgeous-Alexander’s Finals MVP line as 30.3 / 4.6 / 5.6 but does not say that the 5.6 assists were his average in the Finals series."
+     }
+    ]
+   },
+   {
+    "sentence": "He was the first Canadian to win the award.[1]",
+    "start": 338,
+    "end": 384,
+    "claim": "Shai Gilgeous-Alexander was the first Canadian to win the NBA Finals MVP award.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_NBA_Finals",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Thunder's Shai Gilgeous-Alexander was voted the NBA Finals Most Valuable Player (MVP), becoming the first Canadian to win the award.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Shai Gilgeous-Alexander won NBA Finals MVP and became the first Canadian to win the award, which matches the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Shai Gilgeous-Alexander was the first Canadian to win the NBA Finals MVP award."
+     }
+    ]
+   },
+   {
+    "sentence": "He also became the fourth player in NBA history to win the league MVP, Finals MVP and scoring title in the same season.[5]",
+    "start": 385,
+    "end": 507,
+    "claim": "Shai Gilgeous-Alexander became the fourth player in NBA history to win the league MVP, Finals MVP and scoring title in the same season.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He became the fourth player in NBA history, after Kareem Abdul-Jabbar, Michael Jordan, and Shaquille O'Neal, to achieve the distinction of winning the MVP award, Finals MVP award, and scoring title all in the same season.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states he became the fourth player in NBA history to win the MVP, Finals MVP and scoring title in the same season, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Gilgeous-Alexander became the fourth player in NBA history to win the MVP award, Finals MVP award, and scoring title all in the same season."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 12,
+   "labels": {
+    "supported": 6,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 12,
+   "claims_with_a_verdict": 8,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 5,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.018223,
+   "usd_per_claim": 0.001519
+  },
+  "cost": {
+   "total_usd": 0.0182,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 18,
+     "usd": 0.0135
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.0028
+    },
+    {
+     "node": "check",
+     "calls": 10,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

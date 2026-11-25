@@ -1,0 +1,726 @@
+{
+ "id": "economy-04",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:57:24+00:00",
+ "report": {
+  "answer_text": "The United States and China agreed to temporarily roll back tariffs, first for 90 days in May 2025 and then for about a year under a broader deal in October. Neither agreement eliminated all tariffs. (whitehouse.gov)\nMay 12, 2025 — Geneva. Starting May 14, the U.S. cut its recently imposed tariffs on most Chinese goods from 145% to 30%, and China cut its retaliatory tariffs on most U.S. goods from 125% to 10%. The U.S. rate still included a 20% fentanyl-related tariff, and older duties remained in place. China also agreed to suspend or remove certain non-tariff countermeasures, and both sides agreed to keep negotiating. They extended the pause for another 90 days in August. (whitehouse.gov)\nOctober 30, 2025 — Busan. Presidents Donald Trump and Xi Jinping agreed to keep the higher tariffs on hold for about a year. The U.S. cut its fentanyl-related tariff from 20% to 10%, while China agreed to cooperate on curbing shipments of chemicals used to make fentanyl, suspend new rare-earth export controls for a year, and resume buying U.S. soybeans and other farm products. The White House said China committed to buying at least 12 million metric tons of U.S. soybeans in the last two months of 2025 and 25 million metric tons annually from 2026 through 2028. Both sides also agreed to pause certain shipping-related measures. (govinfo.gov)",
+  "claims": [
+   {
+    "sentence": "The United States and China agreed to temporarily roll back tariffs, first for 90 days in May 2025 and then for about a year under a broader deal in October.",
+    "start": 0,
+    "end": 157,
+    "claim": "The United States and China agreed to temporarily roll back tariffs, first for 90 days in May 2025 and then for about a year under a broader deal in October.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Parties commit to take the following actions by May 14, 2025:",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "by suspending 24 percentage points of that rate for an initial period of 90 days, while retaining the remaining ad valorem rate of 10 percent on those articles pursuant to the terms of said Order",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "China will (i) modify accordingly the application of the additional ad valorem rate of duty on articles of the United States set forth in Announcement of the Customs Tariff Commission of the State Council No. 4 of 2025, by suspending 24 percentage points of that rate for an initial period of 90 days",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the May 2025 temporary 90-day suspension of 24 percentage points of China's tariff, but nothing in them mentions an October broader deal or a roughly one-year duration.",
+      "page_judged": "not_supported",
+      "page_reason": "The page supports the 90-day suspension agreed in the May 2025 Geneva statement, but it says nothing about an October deal or a roughly one-year rollback, and its related links point to August and November 2025 actions instead."
+     }
+    ]
+   },
+   {
+    "sentence": "Neither agreement eliminated all tariffs.",
+    "start": 158,
+    "end": 199,
+    "claim": "Neither the May 2025 agreement nor the October 2025 agreement between the United States and China eliminated all tariffs.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "while retaining the remaining ad valorem rate of 10 percent on those articles pursuant to the terms of said Order",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "while retaining the remaining additional ad valorem rate of 10 percent on those articles",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show a 10 percent ad valorem tariff was retained on certain articles, which backs that not all tariffs were eliminated, but they never mention the May 2025 or October 2025 agreements or tie the retained rate to either one.",
+      "page_judged": "not_supported",
+      "page_reason": "The page shows the May 2025 Geneva arrangement kept a 10 percent additional tariff on each side after suspending 24 points, so it did not eliminate all tariffs, but the page says nothing about the content or tariff effects of any October 2025 agreement, only listing a related November 2025 executive order by title."
+     }
+    ]
+   },
+   {
+    "sentence": "May 12, 2025 — Geneva.",
+    "start": 217,
+    "end": 239,
+    "claim": "The United States and China reached an agreement in Geneva on May 12, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Joint Statement on U.S.-China Economic and Trade Meeting in Geneva",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote names a joint statement on a U.S.-China economic and trade meeting in Geneva, which backs a Geneva meeting but does not state an agreement was reached or give the May 12, 2025 date.",
+      "page_judged": "supported",
+      "page_reason": "The page is titled 'Joint Statement on U.S.-China Economic and Trade Meeting in Geneva' and is dated May 12, 2025, and its text sets out commitments by both parties, which supports the claim that an agreement was reached in Geneva on that date, though the page does not explicitly use the word 'agreement' in the body."
+     }
+    ]
+   },
+   {
+    "sentence": "Starting May 14, the U.S. cut its recently imposed tariffs on most Chinese goods from 145% to 30%, and China cut its retaliatory tariffs on most U.S. goods from 125% to 10%.",
+    "start": 240,
+    "end": 413,
+    "claim": "Starting May 14, 2025, the U.S. cut its recently imposed tariffs on most Chinese goods from 145% to 30%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the U.S. suspends 24 percentage points of the Executive Order 14257 additional rate for 90 days, retaining 10%, and removes the EO 14259 and 14266 rates, but it never mentions a 145% rate, a 30% resulting rate, or 'most Chinese goods'."
+     }
+    ]
+   },
+   {
+    "sentence": "Starting May 14, the U.S. cut its recently imposed tariffs on most Chinese goods from 145% to 30%, and China cut its retaliatory tariffs on most U.S. goods from 125% to 10%.",
+    "start": 240,
+    "end": 413,
+    "claim": "Starting May 14, 2025, China cut its retaliatory tariffs on most U.S. goods from 125% to 10%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Parties commit to take the following actions by May 14, 2025:",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "China will (i) modify accordingly the application of the additional ad valorem rate of duty on articles of the United States set forth in Announcement of the Customs Tariff Commission of the State Council No. 4 of 2025, by suspending 24 percentage points of that rate for an initial period of 90 days, while retaining the remaining additional ad valorem rate of 10 percent on those articles",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the core change of retaining a 10% additional rate while suspending 24 percentage points for 90 days, but they do not mention the 125% starting rate, the phrase 'most U.S. goods,' or May 14 as the date the cut takes effect rather than the deadline for the parties' commitments.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China will suspend 24 percentage points of its additional tariff on U.S. articles for 90 days and retain 10 percent, but it never mentions a 125% rate, says nothing about \"most\" U.S. goods, and only sets a commitment \"by May 14, 2025\" rather than a start date."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. rate still included a 20% fentanyl-related tariff, and older duties remained in place.",
+    "start": 414,
+    "end": 509,
+    "claim": "The U.S. tariff rate on Chinese goods after the May 2025 cut still included a 20% fentanyl-related tariff.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the U.S. retained a 10% additional ad valorem rate from Executive Order 14257 and removed the modified rates from Executive Orders 14259 and 14266, but it never mentions a fentanyl-related tariff or a 20% rate, so the claim is not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. rate still included a 20% fentanyl-related tariff, and older duties remained in place.",
+    "start": 414,
+    "end": 509,
+    "claim": "Older U.S. duties on Chinese goods remained in place after the May 2025 agreement.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "while retaining the remaining ad valorem rate of 10 percent on those articles pursuant to the terms of said Order",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote shows a 10 percent ad valorem rate retained on certain articles under an order, which backs that some duties remained, but it does not mention the May 2025 agreement or which older duties on Chinese goods stayed in place.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes only the May 2025 modifications to the April 2025 reciprocal tariff orders (EO 14257, 14259, 14266) and says nothing about older U.S. duties on Chinese goods remaining in place."
+     }
+    ]
+   },
+   {
+    "sentence": "China also agreed to suspend or remove certain non-tariff countermeasures, and both sides agreed to keep negotiating.",
+    "start": 510,
+    "end": 627,
+    "claim": "China agreed in May 2025 to suspend or remove certain non-tariff countermeasures.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China will (i) modify accordingly the application of the additional ad valorem rate of duty on articles of the United States set forth in Announcement of the Customs Tariff Commission of the State Council No. 4 of 2025",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "adopt all necessary administrative measures to suspend or remove the non-tariff countermeasures taken against the United States since April 2, 2025",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The Parties commit to take the following actions by May 14, 2025:",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show China committing to adopt measures to suspend or remove non-tariff countermeasures against the United States since April 2, 2025, with the commitments due by May 14, 2025, which backs the claim's May 2025 agreement and its non-tariff suspension/removal.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China will adopt all necessary administrative measures to suspend or remove the non-tariff countermeasures taken against the United States since April 2, 2025, in a joint statement dated May 12, 2025, which supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "China also agreed to suspend or remove certain non-tariff countermeasures, and both sides agreed to keep negotiating.",
+    "start": 510,
+    "end": 627,
+    "claim": "In May 2025, both the United States and China agreed to keep negotiating.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After taking the aforementioned actions, the Parties will establish a mechanism to continue discussions about economic and trade relations.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Joint Statement on U.S.-China Economic and Trade Meeting in Geneva",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that the parties will establish a mechanism to continue discussions on economic and trade relations, but they do not state the May 2025 date.",
+      "page_judged": "supported",
+      "page_reason": "The page states the parties agreed to establish a mechanism to continue discussions about economic and trade relations, dated May 12, 2025 in the joint statement, which supports the claim that both sides agreed to keep negotiating."
+     }
+    ]
+   },
+   {
+    "sentence": "They extended the pause for another 90 days in August.",
+    "start": 628,
+    "end": 682,
+    "claim": "The United States and China extended the tariff pause for another 90 days in August 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/briefings-statements/2025/05/joint-statement-on-u-s-china-economic-and-trade-meeting-in-geneva/?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the May 2025 Geneva joint statement's 90-day suspension and lists a related August 11, 2025 Stockholm joint statement only as a title, without stating that the tariff pause was extended for another 90 days in August 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "October 30, 2025 — Busan.",
+    "start": 700,
+    "end": 725,
+    "claim": "Presidents Donald Trump and Xi Jinping met in Busan on October 30, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "I had a truly great meeting with President Xi of China.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Statement on the President's Meeting With President Xi Jinping of China in Busan, South Korea",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Trump met with Xi in Busan, South Korea, but nothing in them states the meeting date of October 30, 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page is a statement dated October 30, 2025 about a meeting with President Xi of China, and its categories and locations list 'President's meeting in Busan, South Korea' and 'Busan, South Korea', so the meeting, date, and place are all stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Presidents Donald Trump and Xi Jinping agreed to keep the higher tariffs on hold for about a year.",
+    "start": 726,
+    "end": 824,
+    "claim": "Presidents Donald Trump and Xi Jinping agreed in October 2025 to keep the higher tariffs on hold for about a year.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the October 30, 2025 Trump-Xi meeting, covering soybean purchases, rare earth flows, fentanyl, and energy purchases, but never mentions tariffs or any one-year hold on higher tariffs."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. cut its fentanyl-related tariff from 20% to 10%, while China agreed to cooperate on curbing shipments of chemicals used to make fentanyl, suspend new rare-earth export controls for a year, and resume buying U.S. soybeans and other farm products.",
+    "start": 825,
+    "end": 1079,
+    "claim": "The U.S. cut its fentanyl-related tariff on Chinese goods from 20% to 10% in October 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China agreed to work to stop fentanyl flow and mentions farm, energy, and mineral deals, but it says nothing about the U.S. cutting any fentanyl-related tariff from 20% to 10%."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. cut its fentanyl-related tariff from 20% to 10%, while China agreed to cooperate on curbing shipments of chemicals used to make fentanyl, suspend new rare-earth export controls for a year, and resume buying U.S. soybeans and other farm products.",
+    "start": 825,
+    "end": 1079,
+    "claim": "China agreed in October 2025 to cooperate on curbing shipments of chemicals used to make fentanyl.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China has strongly stated that they will work diligently with us to stop the flow of fentanyl into our country.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "They will help us end the fentanyl crisis.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the general point that China will work with the US to stop fentanyl flow, but they do not mention October 2025, chemical precursors, or shipments of chemicals used to make fentanyl.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that China 'has strongly stated that they will work diligently with us to stop the flow of fentanyl into our country,' which supports cooperation on curbing fentanyl, though it does not specifically mention chemicals or precursors used to make fentanyl, and it is a statement by the U.S. President rather than a direct Chinese agreement text."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. cut its fentanyl-related tariff from 20% to 10%, while China agreed to cooperate on curbing shipments of chemicals used to make fentanyl, suspend new rare-earth export controls for a year, and resume buying U.S. soybeans and other farm products.",
+    "start": 825,
+    "end": 1079,
+    "claim": "China agreed in October 2025 to suspend new rare-earth export controls for a year.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China agreed to continue the flow of rare earths, critical minerals and magnets openly and freely, but it says nothing about suspending new rare-earth export controls or any one-year suspension."
+     }
+    ]
+   },
+   {
+    "sentence": "The U.S. cut its fentanyl-related tariff from 20% to 10%, while China agreed to cooperate on curbing shipments of chemicals used to make fentanyl, suspend new rare-earth export controls for a year, and resume buying U.S. soybeans and other farm products.",
+    "start": 825,
+    "end": 1079,
+    "claim": "China agreed in October 2025 to resume buying U.S. soybeans and other farm products.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "I was extremely honored by the fact that President Xi authorized China to begin the purchase of massive amounts of soybeans, sorghum, and other farm products.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "I had a truly great meeting with President Xi of China.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that China agreed to begin purchasing U.S. soybeans and other farm products, but nothing in them states the October 2025 date the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The page states Trump said President Xi authorized China to begin purchasing massive amounts of soybeans, sorghum, and other farm products at an October 30, 2025 meeting in Busan, which supports the claim's substance, though it does not explicitly use the word 'resume' and the claim's 'agreed' is attributed only to Trump's account."
+     }
+    ]
+   },
+   {
+    "sentence": "The White House said China committed to buying at least 12 million metric tons of U.S. soybeans in the last two months of 2025 and 25 million metric tons annually from 2026 through 2028.",
+    "start": 1080,
+    "end": 1266,
+    "claim": "The White House said China committed to buying at least 12 million metric tons of U.S. soybeans in the last two months of 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China was authorized to begin purchasing massive amounts of soybeans, sorghum, and other farm products, but it gives no figure of 12 million metric tons and no time frame of the last two months of 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The White House said China committed to buying at least 12 million metric tons of U.S. soybeans in the last two months of 2025 and 25 million metric tons annually from 2026 through 2028.",
+    "start": 1080,
+    "end": 1266,
+    "claim": "The White House said China committed to buying 25 million metric tons of U.S. soybeans annually from 2026 through 2028.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Xi authorized China to begin purchasing massive amounts of soybeans, sorghum, and other farm products, but it does not mention 25 million metric tons, annual quantities, or the 2026 through 2028 period."
+     }
+    ]
+   },
+   {
+    "sentence": "Both sides also agreed to pause certain shipping-related measures.",
+    "start": 1267,
+    "end": 1333,
+    "claim": "In October 2025, the United States and China agreed to pause certain shipping-related measures.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202501079/html/DCPD-202501079.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Trump's October 30, 2025 meeting with Xi covering soybean and farm purchases, rare earths, fentanyl, and energy purchases, but it never mentions pausing shipping-related measures."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 19,
+   "labels": {
+    "supported": 1,
+    "partial": 5,
+    "contradicted": 0,
+    "needs_human": 4,
+    "not_found": 9,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 19,
+   "claims_with_a_verdict": 15,
+   "failed_citations": 9,
+   "failed_share_of_verdicts": 0.6,
+   "partly_backed": 5,
+   "supported_share_of_cited": 0.0526,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.008849,
+   "usd_per_claim": 0.000466
+  },
+  "cost": {
+   "total_usd": 0.0088,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "page_check",
+     "calls": 19,
+     "usd": 0.0026
+    },
+    {
+     "node": "find",
+     "calls": 19,
+     "usd": 0.0034
+    },
+    {
+     "node": "check",
+     "calls": 10,
+     "usd": 0.0019
+    }
+   ]
+  }
+ }
+}

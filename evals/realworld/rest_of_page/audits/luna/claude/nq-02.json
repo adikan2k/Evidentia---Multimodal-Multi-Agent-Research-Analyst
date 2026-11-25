@@ -1,0 +1,473 @@
+{
+ "id": "nq-02",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:37:01+00:00",
+ "report": {
+  "answer_text": "The last technical white Christmas in the UK was 2023, as far as I can find. The Met Office counts a white Christmas if a single snowflake is seen falling somewhere in the UK on 25 December. In 2023, 11% of stations recorded snow falling, although none reported any snow lying on the ground.[1] The sources I found don't break this down for England specifically, so I can't confirm that any of that snow fell there.\nWidespread snow on the ground is much rarer. The last time was 2010, when 83% of stations reported snow on the ground, the highest percentage ever recorded.[2] Since 1960 that has happened only four times: 1981, 1995, 2009 and 2010.[2]\nThe sources I found were published before Christmas 2025, and 2023 was still listed as the latest white Christmas in them. I couldn't confirm what happened on Christmas Day 2025, so check the Met Office's White Christmas page for the latest record.",
+  "claims": [
+   {
+    "sentence": "The last technical white Christmas in the UK was 2023, as far as I can find.",
+    "start": 0,
+    "end": 76,
+    "claim": "The last technical white Christmas in the UK was 2023.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/snow/white-christmas",
+      "host": "weather.metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Technically, 2023 was the last white Christmas in the UK with 11% of stations recording snow falling, although none reported any snow lying on the ground.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that 2023 was the last technical white Christmas in the UK, matching the claim's main fact, and the claim adds no extra specifics beyond that.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 2023 was technically the last white Christmas in the UK."
+     }
+    ]
+   },
+   {
+    "sentence": "The Met Office counts a white Christmas if a single snowflake is seen falling somewhere in the UK on 25 December.",
+    "start": 77,
+    "end": 190,
+    "claim": "The Met Office counts a white Christmas if a single snowflake is seen falling somewhere in the UK on 25 December.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/snow/white-christmas",
+      "host": "weather.metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "a single snowflake has to be observed falling on the 24 hours of 25 December, by either an official Met Office observer or by a Met Office automated weather station",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the core rule that a single snowflake falling during the 24 hours of 25 December counts, but it limits observation to Met Office observers or automated stations and never mentions 'somewhere in the UK'.",
+      "page_judged": "supported",
+      "page_reason": "The page defines a white Christmas as a single snowflake observed falling during the 24 hours of 25 December by an official Met Office observer or automated station, in the UK context."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2023, 11% of stations recorded snow falling, although none reported any snow lying on the ground.[1]",
+    "start": 191,
+    "end": 294,
+    "claim": "In 2023, 11% of stations recorded snow falling on Christmas Day.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/snow/white-christmas",
+      "host": "weather.metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Technically, 2023 was the last white Christmas in the UK with 11% of stations recording snow falling, although none reported any snow lying on the ground.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that in 2023 11% of stations recorded snow falling on Christmas, matching the claim's figure, year and event, while the claim's omission of the 'none reported snow lying' caveat does not add any unsupported fact.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2023, 11% of stations recorded snow falling on Christmas Day."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2023, 11% of stations recorded snow falling, although none reported any snow lying on the ground.[1]",
+    "start": 191,
+    "end": 294,
+    "claim": "In 2023, no stations reported any snow lying on the ground on Christmas Day.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/snow/white-christmas",
+      "host": "weather.metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Technically, 2023 was the last white Christmas in the UK with 11% of stations recording snow falling, although none reported any snow lying on the ground.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that no stations reported snow lying on the ground in 2023 but refers to the UK and says 11% of stations recorded snow falling, which the claim does not mention, and it does not explicitly tie the no-lying-snow finding to Christmas Day.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2023, 11% of stations recorded snow falling, but none reported snow lying on the ground."
+     }
+    ]
+   },
+   {
+    "sentence": "Widespread snow on the ground is much rarer.",
+    "start": 416,
+    "end": 460,
+    "claim": "Widespread snow on the ground on Christmas Day is much rarer than a technical white Christmas.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://uk.news.yahoo.com/uk-snow-white-christmas-met-office-weather-forecast-103224754.html",
+      "host": "uk.news.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since 1960, about one in two Christmases has seen at least 5% of the Met Office station network record snow falling, meaning a technical white Christmas is still quite common.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "However, there has only been a widespread covering of snow on the ground on Christmas Day four times since 1960 – in 1981, 1995, 2009 and 2010.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that a technical white Christmas (at least 5% of stations recording snow falling) occurs in about one in two Christmases since 1960, while widespread snow on the ground has occurred only four times since 1960, so the comparison of rarity is backed.",
+      "page_judged": "supported",
+      "page_reason": "The page says a technical white Christmas has occurred in about one in two Christmases since 1960, while widespread snow on the ground occurred only four times in that period."
+     }
+    ]
+   },
+   {
+    "sentence": "The last time was 2010, when 83% of stations reported snow on the ground, the highest percentage ever recorded.[2]",
+    "start": 461,
+    "end": 575,
+    "claim": "The last time widespread snow was on the ground at Christmas was 2010.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://uk.news.yahoo.com/uk-snow-white-christmas-met-office-weather-forecast-103224754.html",
+      "host": "uk.news.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The last time there was widespread snow on Christmas Day in the UK was in 2010, when there was snow on the ground at an unprecedented 83% of stations – the highest percentage ever recorded.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The last time there was widespread snow on the ground on Christmas Day in the UK was in 2010. (Getty Images)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the last time there was widespread snow on the ground on Christmas Day in the UK was 2010, which matches the claim's wording and scope.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the last widespread snow on the ground on Christmas Day in the UK was in 2010."
+     }
+    ]
+   },
+   {
+    "sentence": "The last time was 2010, when 83% of stations reported snow on the ground, the highest percentage ever recorded.[2]",
+    "start": 461,
+    "end": 575,
+    "claim": "In 2010, 83% of stations reported snow on the ground at Christmas.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://uk.news.yahoo.com/uk-snow-white-christmas-met-office-weather-forecast-103224754.html",
+      "host": "uk.news.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The last time there was widespread snow on Christmas Day in the UK was in 2010, when there was snow on the ground at an unprecedented 83% of stations – the highest percentage ever recorded.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that in 2010 snow was on the ground at 83% of stations at Christmas, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on Christmas Day in 2010, snow was on the ground at 83% of Met Office stations."
+     }
+    ]
+   },
+   {
+    "sentence": "The last time was 2010, when 83% of stations reported snow on the ground, the highest percentage ever recorded.[2]",
+    "start": 461,
+    "end": 575,
+    "claim": "83% of stations reporting snow on the ground at Christmas is the highest percentage ever recorded.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://uk.news.yahoo.com/uk-snow-white-christmas-met-office-weather-forecast-103224754.html",
+      "host": "uk.news.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The last time there was widespread snow on Christmas Day in the UK was in 2010, when there was snow on the ground at an unprecedented 83% of stations – the highest percentage ever recorded.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that snow was on the ground at 83% of stations on Christmas Day, described as the highest percentage ever recorded, which matches the claim's figure and superlative.",
+      "page_judged": "supported",
+      "page_reason": "The page says that in 2010 snow was on the ground at an unprecedented 83% of stations, the highest percentage ever recorded."
+     }
+    ]
+   },
+   {
+    "sentence": "Since 1960 that has happened only four times: 1981, 1995, 2009 and 2010.[2]",
+    "start": 576,
+    "end": 651,
+    "claim": "Since 1960, widespread snow on the ground at Christmas has happened only four times.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://uk.news.yahoo.com/uk-snow-white-christmas-met-office-weather-forecast-103224754.html",
+      "host": "uk.news.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "However, there has only been a widespread covering of snow on the ground on Christmas Day four times since 1960 – in 1981, 1995, 2009 and 2010.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that there has only been a widespread covering of snow on the ground on Christmas Day four times since 1960, matching the claim's count and time frame.",
+      "page_judged": "supported",
+      "page_reason": "The page states that a widespread covering of snow on the ground on Christmas Day has occurred only four times since 1960."
+     }
+    ]
+   },
+   {
+    "sentence": "Since 1960 that has happened only four times: 1981, 1995, 2009 and 2010.[2]",
+    "start": 576,
+    "end": 651,
+    "claim": "The four years since 1960 with widespread snow on the ground at Christmas were 1981, 1995, 2009 and 2010.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://uk.news.yahoo.com/uk-snow-white-christmas-met-office-weather-forecast-103224754.html",
+      "host": "uk.news.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "However, there has only been a widespread covering of snow on the ground on Christmas Day four times since 1960 – in 1981, 1995, 2009 and 2010.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states there has been widespread snow on the ground on Christmas Day four times since 1960, in 1981, 1995, 2009 and 2010, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that widespread snow on the ground on Christmas Day occurred four times since 1960: in 1981, 1995, 2009 and 2010."
+     }
+    ]
+   },
+   {
+    "sentence": "The sources I found don't break this down for England specifically, so I can't confirm that any of that snow fell there.",
+    "start": 295,
+    "end": 415,
+    "claim": "The sources found do not break down the 2023 Christmas snowfall figures for England specifically.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The sources I found were published before Christmas 2025, and 2023 was still listed as the latest white Christmas in them.",
+    "start": 652,
+    "end": 774,
+    "claim": "The sources found were published before Christmas 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The sources I found were published before Christmas 2025, and 2023 was still listed as the latest white Christmas in them.",
+    "start": 652,
+    "end": 774,
+    "claim": "The sources found listed 2023 as the latest white Christmas.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "I couldn't confirm what happened on Christmas Day 2025, so check the Met Office's White Christmas page for the latest record.",
+    "start": 775,
+    "end": 900,
+    "claim": "The Met Office has a White Christmas page with the latest record.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 8,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 4
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 8,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.8,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00687,
+   "usd_per_claim": 0.000491
+  },
+  "cost": {
+   "total_usd": 0.0069,
+   "cap_usd": 0.3,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0019
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.003
+    },
+    {
+     "node": "check",
+     "calls": 10,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

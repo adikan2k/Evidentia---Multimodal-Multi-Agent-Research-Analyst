@@ -1,0 +1,250 @@
+{
+ "id": "science-09",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:47:17+00:00",
+ "report": {
+  "answer_text": "It was the first confirmed footage of a colossal squid alive in its natural habitat, a century after the species was first identified. Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)\nIt was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+  "claims": [
+   {
+    "sentence": "Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)",
+    "start": 135,
+    "end": 237,
+    "claim": "The squid filmed was a juvenile.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 30-centimeter juvenile squid (nearly one foot long) was captured on video at a depth of 600 meters (1968 feet) by the Institute’s remotely operated vehicle (ROV) SuBastian.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote explicitly describes the squid captured on video as a juvenile, so the claim that the filmed squid was a juvenile is fully backed.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies the 30-centimeter squid filmed as a juvenile colossal squid."
+     }
+    ]
+   },
+   {
+    "sentence": "Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)",
+    "start": 135,
+    "end": 237,
+    "claim": "The squid filmed was about 30 centimeters (1 foot) long.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 30-centimeter juvenile squid (nearly one foot long) was captured on video at a depth of 600 meters (1968 feet) by the Institute’s remotely operated vehicle (ROV) SuBastian.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the filmed squid was a 30-centimeter juvenile, described as nearly one foot long, which matches the claimed length of about 30 centimeters (1 foot).",
+      "page_judged": "supported",
+      "page_reason": "The page says the filmed juvenile colossal squid was 30 centimeters long, nearly one foot."
+     }
+    ]
+   },
+   {
+    "sentence": "It was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+    "start": 238,
+    "end": 396,
+    "claim": "The squid was filmed on March 9, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The sighting occurred on March 9 on an expedition near the South Sandwich Islands in the South Atlantic Ocean.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This year (2025) is the 100-year anniversary of the identification of the colossal squid",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the sighting occurred on March 9 but do not give the year 2025 for that date, which is only implied by the separate statement that this year is 2025 and the sighting is described without a year.",
+      "page_judged": "supported",
+      "page_reason": "The page says the colossal squid sighting occurred on March 9 and identifies 2025 as the year of the report."
+     }
+    ]
+   },
+   {
+    "sentence": "It was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+    "start": 238,
+    "end": 396,
+    "claim": "The squid was filmed about 600 meters (2,000 feet) below the surface.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 30-centimeter juvenile squid (nearly one foot long) was captured on video at a depth of 600 meters (1968 feet) by the Institute’s remotely operated vehicle (ROV) SuBastian.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 600-meter depth and that the squid was filmed, but it gives 1968 feet rather than the claim's 2,000 feet, which is a rounded figure not stated in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page says the squid was filmed at 600 meters (1,968 feet), which is about 2,000 feet."
+     }
+    ]
+   },
+   {
+    "sentence": "It was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+    "start": 238,
+    "end": 396,
+    "claim": "The squid was filmed off the South Sandwich Islands in the South Atlantic Ocean.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "waters off the South Sandwich Islands.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The sighting occurred on March 9 on an expedition near the South Sandwich Islands in the South Atlantic Ocean.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the squid was sighted in waters off the South Sandwich Islands in the South Atlantic Ocean, backing the claim's location, though the word 'filmed' is not explicitly stated and is a reasonable rewording of the sighting.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the colossal squid was filmed during an expedition near the South Sandwich Islands in the South Atlantic Ocean."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.003263,
+   "usd_per_claim": 0.000653
+  },
+  "cost": {
+   "total_usd": 0.0033,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0013
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,335 @@
+{
+ "id": "science-09",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:47:06+00:00",
+ "report": {
+  "answer_text": "It was the first confirmed footage of a colossal squid alive in its natural habitat, a century after the species was first identified. Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)\nIt was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+  "claims": [
+   {
+    "sentence": "It was the first confirmed footage of a colossal squid alive in its natural habitat, a century after the species was first identified. Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)",
+    "start": 0,
+    "end": 237,
+    "claim": "The footage was the first confirmed footage of a colossal squid alive in its natural habitat.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This is the first confirmed live observation of the colossal squid, Mesonychoteuthis hamiltoni, in its natural habitat.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "One hundred years after its discovery, the colossal squid has been filmed alive in its environment for the first time",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the footage is the first confirmed live observation or filming of a colossal squid in its natural habitat, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the team filmed the colossal squid in its natural environment for the first time and describes it as the first confirmed live observation of the colossal squid in its natural habitat, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the first confirmed footage of a colossal squid alive in its natural habitat, a century after the species was first identified. Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)",
+    "start": 0,
+    "end": 237,
+    "claim": "The footage was captured a century after the colossal squid species was first identified.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "One hundred years after its discovery, the colossal squid has been filmed alive in its environment for the first time",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This year is the 100-year anniversary of the identification and formal naming of the colossal squid",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the footage was filmed one hundred years after the colossal squid's discovery and that this year marks the 100-year anniversary of its identification and naming, so the claim is fully backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 2025 is the 100-year anniversary of the identification and formal naming of the colossal squid and that the footage was captured during this year, so the footage was taken a century after the species was identified."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the first confirmed footage of a colossal squid alive in its natural habitat, a century after the species was first identified. Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)",
+    "start": 0,
+    "end": 237,
+    "claim": "The filmed colossal squid was a juvenile.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 30-centimeter juvenile squid (nearly one foot long) was captured on video at a depth of 600 meters (1968 feet) by the Institute’s remotely operated vehicle (ROV) SuBastian.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "It’s exciting to see the first in situ footage of a juvenile colossal and humbling to think that they have no idea that humans exist,",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the filmed colossal squid was a 30-centimeter juvenile captured on video by the ROV SuBastian, fully backing the claim that it was a juvenile.",
+      "page_judged": "supported",
+      "page_reason": "The page states the filmed colossal squid was a 30-centimeter juvenile squid, described as 'a baby' in the press release heading and as 'a juvenile colossal' in the quoted remarks, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the first confirmed footage of a colossal squid alive in its natural habitat, a century after the species was first identified. Despite its name, the squid was a juvenile only about 30 centimeters (1 foot) long. (schmidtocean.org)",
+    "start": 0,
+    "end": 237,
+    "claim": "The filmed squid was about 30 centimeters (1 foot) long.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 30-centimeter juvenile squid (nearly one foot long) was captured on video at a depth of 600 meters",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the filmed juvenile squid was 30 centimeters, nearly one foot long, which matches the claim's length of about 30 centimeters (1 foot).",
+      "page_judged": "supported",
+      "page_reason": "The page states the filmed juvenile colossal squid was 30 centimeters (nearly one foot) long, which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+    "start": 238,
+    "end": 396,
+    "claim": "The colossal squid footage was filmed on March 9, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The sighting occurred on March 9 on an expedition near the South Sandwich Islands in the South Atlantic Ocean.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This year (2025) is the 100-year anniversary of the identification of the colossal squid",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the sighting occurred on March 9 and mention 2025 only as the current year of a centenary, so the March 9 date is backed but the claim's year of 2025 is not explicitly tied to the footage's filming in the quotes.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the colossal squid sighting occurred on March 9 during an expedition, but does not give the year of the sighting; the press release is dated April 15, 2025 and mentions 2025 only as the centenary year of identification, so the year 2025 for the filming is not explicitly stated."
+     }
+    ]
+   },
+   {
+    "sentence": "It was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+    "start": 238,
+    "end": 396,
+    "claim": "The colossal squid footage was filmed about 600 meters (2,000 feet) below the surface.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "captured on video at a depth of 600 meters (1968 feet)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the footage was captured at a depth of 600 meters (1968 feet), which matches the claim's 'about 600 meters (2,000 feet)' once the hedge 'about' and the rounding of 1968 feet to 2,000 feet are allowed.",
+      "page_judged": "supported",
+      "page_reason": "The page states the colossal squid was filmed at a depth of 600 meters (1968 feet), which matches the claim's figures once 1968 feet is rounded to about 2,000 feet."
+     }
+    ]
+   },
+   {
+    "sentence": "It was filmed on March 9, 2025, about 600 meters (2,000 feet) below the surface off the South Sandwich Islands in the South Atlantic Ocean. (schmidtocean.org)",
+    "start": 238,
+    "end": 396,
+    "claim": "The colossal squid footage was filmed off the South Sandwich Islands in the South Atlantic Ocean.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://schmidtocean.org/first-colossal-squid-footage/?ck_subscriber_id=2538359195&utm_source=openai",
+      "host": "schmidtocean.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the colossal squid has been filmed alive in its environment for the first time by a team on board Schmidt Ocean Institute’s R/V Falkor (too) in waters off the South Sandwich Islands.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The sighting occurred on March 9 on an expedition near the South Sandwich Islands in the South Atlantic Ocean.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the colossal squid was filmed alive in waters off the South Sandwich Islands in the South Atlantic Ocean, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the colossal squid was filmed by the Falkor (too) ROV during an expedition near the South Sandwich Islands in the South Atlantic Ocean, which matches the claim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 7,
+   "labels": {
+    "supported": 6,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 7,
+   "claims_with_a_verdict": 7,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.8571,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003408,
+   "usd_per_claim": 0.000487
+  },
+  "cost": {
+   "total_usd": 0.0034,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 7,
+     "usd": 0.001
+    },
+    {
+     "node": "page_check",
+     "calls": 7,
+     "usd": 0.001
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

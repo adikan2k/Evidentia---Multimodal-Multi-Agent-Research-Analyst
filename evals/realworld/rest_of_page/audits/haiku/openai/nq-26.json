@@ -1,0 +1,150 @@
+{
+ "id": "nq-26",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:40:17+00:00",
+ "report": {
+  "answer_text": "Jacques Cartier led an expedition for King Francis I of France in 1534 to search for the Northwest Passage to Asia. Giovanni da Verrazzano had led an earlier French-sponsored search in 1524. (heritage.bnf.fr)",
+  "claims": [
+   {
+    "sentence": "Jacques Cartier led an expedition for King Francis I of France in 1534 to search for the Northwest Passage to Asia.",
+    "start": 0,
+    "end": 115,
+    "claim": "Jacques Cartier led an expedition for King Francis I of France in 1534 to search for the Northwest Passage to Asia.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://heritage.bnf.fr/france-ameriques/en/jacques-cartier-1534-1542?utm_source=openai",
+      "host": "heritage.bnf.fr",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Ten years later, the King decided to outfit another expedition under the direction of Captain Jacques Cartier, hoping to find a northern and western sea route to the riches of the Asia-Pacific World.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "During his three voyages (1534, 1535-1536 and 1541-1542) Cartier explored the mouth of the Saint Lawrence River",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The first two expeditions fell short of their expected goal – finding a “Northwest Passage” to Asia –",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back every element of the claim: Cartier led the 1534 voyage (one of three voyages listed with 1534 first), it was under the direction of the King, and its aim was a northern and western sea route, i.e., the Northwest Passage to Asia, though the quotes do not explicitly name Francis I, the claim's only other specific beyond what is stated, is named as King without a name.",
+      "page_judged": "supported",
+      "page_reason": "The page says Francis I commissioned Cartier's three voyages (1534-1542) to find a route to Asia and that the first two fell short of finding a 'Northwest Passage' to Asia, which supports the 1534 voyage aiming at that passage, though it does not explicitly state the 1534 voyage was commanded under Francis I for that specific aim in those exact words."
+     }
+    ]
+   },
+   {
+    "sentence": "Giovanni da Verrazzano had led an earlier French-sponsored search in 1524.",
+    "start": 116,
+    "end": 190,
+    "claim": "Giovanni da Verrazzano led a French-sponsored search for a passage in 1524, earlier than Cartier's 1534 expedition.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://heritage.bnf.fr/france-ameriques/en/jacques-cartier-1534-1542?utm_source=openai",
+      "host": "heritage.bnf.fr",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "François I did not even wait for an answer before sending an expedition, commanded by Verrazano, to explore the eastern coasts of North America in 1524.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Ten years later, the King decided to outfit another expedition under the direction of Captain Jacques Cartier",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back a French-sponsored 1524 expedition under Verrazano that came before Cartier's expedition ten years later, but they say it explored the eastern coasts and never mention a search for a passage.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says François I sent an expedition commanded by Verrazano in 1524 to explore the eastern coasts of North America, which is earlier than Cartier's 1534 voyage, but it does not explicitly say the expedition searched for a passage, and it names him only as 'Verrazano' rather than Giovanni da Verrazzano."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 1,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001534,
+   "usd_per_claim": 0.000767
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0005
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

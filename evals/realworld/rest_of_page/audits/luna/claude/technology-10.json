@@ -1,0 +1,384 @@
+{
+ "id": "technology-10",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:55:49+00:00",
+ "report": {
+  "answer_text": "Nvidia was the first company to reach a $5 trillion market value. It did so on Wednesday, October 29, 2025.\nNvidia's shares rose 3% to close at $207.04 that day, which gave it a market value of $5.03 trillion.[1]\nIt crossed the threshold less than four months after it reached $4 trillion in July.[2]\nAI chip demand drove the rise. It came shortly after CEO Jensen Huang said Nvidia expects $500 billion in AI chip orders.[3]\nNvidia didn't stay above $5 trillion. One tracker reports that Apple is now the most valuable company at roughly $5.2 trillion, ahead of Nvidia at roughly $4.2 trillion[4]. Those figures are from November 11, 2026.",
+  "claims": [
+   {
+    "sentence": "Nvidia was the first company to reach a $5 trillion market value.",
+    "start": 0,
+    "end": 65,
+    "claim": "Nvidia was the first company to reach a $5 trillion market value.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It did so on Wednesday, October 29, 2025.",
+    "start": 66,
+    "end": 107,
+    "claim": "Nvidia reached a $5 trillion market value on Wednesday, October 29, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Nvidia's shares rose 3% to close at $207.04 that day, which gave it a market value of $5.03 trillion.[1]",
+    "start": 108,
+    "end": 212,
+    "claim": "Nvidia's shares rose 3% to close at $207.04 on October 29, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/nvidia-becomes-first-company-hit-5-trillion-market-valuation-ai-boom-drives-historic-growth",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Shares of the leading AI chipmaker rose 3% to close at $207.04 on Wednesday, giving the company a market value of $5.03 trillion.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 3% rise to a $207.04 close on a Wednesday, but it never names Nvidia or gives the date October 29, 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nvidia’s shares rose 3% to close at $207.04 on Wednesday, and the report was published October 31, 2025, making that Wednesday October 29."
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia's shares rose 3% to close at $207.04 that day, which gave it a market value of $5.03 trillion.[1]",
+    "start": 108,
+    "end": 212,
+    "claim": "Nvidia's market value was $5.03 trillion when its shares closed at $207.04 on October 29, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/nvidia-becomes-first-company-hit-5-trillion-market-valuation-ai-boom-drives-historic-growth",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Shares of the leading AI chipmaker rose 3% to close at $207.04 on Wednesday, giving the company a market value of $5.03 trillion.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Nvidia on Wednesday became the first company in history to reach a $5 trillion market valuation",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the $207.04 close and the $5.03 trillion market value, but they only say 'Wednesday' and never state the date October 29, 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nvidia closed at $207.04 with a $5.03 trillion market value on Wednesday, and its October 31, 2025 publication date identifies that Wednesday as October 29."
+     }
+    ]
+   },
+   {
+    "sentence": "It crossed the threshold less than four months after it reached $4 trillion in July.[2]",
+    "start": 213,
+    "end": 300,
+    "claim": "Nvidia crossed the $5 trillion threshold less than four months after it reached $4 trillion in July.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.cbsnews.com/news/nvidia-5-trillion-nvda-stock-market-cap-valuation-ai-chips/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The company crossed the new threshold less than four months after it had reached a market value of $4 trillion in July.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Nvidia crossed the new threshold less than four months after reaching $4 trillion in July, which backs every fact in the claim, though it says 'new threshold' rather than naming $5 trillion explicitly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Nvidia crossed the $5 trillion threshold less than four months after reaching a $4 trillion market value in July."
+     }
+    ]
+   },
+   {
+    "sentence": "AI chip demand drove the rise.",
+    "start": 301,
+    "end": 331,
+    "claim": "AI chip demand drove Nvidia's rise to $5 trillion.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/10/29/nvidia-on-track-to-hit-historic-5-trillion-valuation-amid-ai-rally.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It came shortly after CEO Jensen Huang said Nvidia expects $500 billion in AI chip orders.[3]",
+    "start": 332,
+    "end": 425,
+    "claim": "Nvidia's rise came shortly after CEO Jensen Huang said Nvidia expects $500 billion in AI chip orders.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/10/29/nvidia-on-track-to-hit-historic-5-trillion-valuation-amid-ai-rally.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Nvidia didn't stay above $5 trillion.",
+    "start": 426,
+    "end": 463,
+    "claim": "Nvidia did not stay above $5 trillion.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://itrillion.com/trillion-companies/",
+      "host": "itrillion.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nvidia was the first company to pass the $5T mark (October 2025) but has since slipped back below it",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Nvidia remains the first company to pass the $5 trillion mark (October 2025), but has since slipped back below it.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Nvidia passed the $5 trillion mark in October 2025 and has since slipped back below it, which backs the claim that it did not stay above $5 trillion.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nvidia was the first company to pass $5 trillion in October 2025 but has since slipped back below it."
+     }
+    ]
+   },
+   {
+    "sentence": "One tracker reports that Apple is now the most valuable company at roughly $5.2 trillion, ahead of Nvidia at roughly $4.2 trillion[4].",
+    "start": 464,
+    "end": 598,
+    "claim": "One tracker reports that Apple is the most valuable company at roughly $5.2 trillion.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://itrillion.com/trillion-companies/",
+      "host": "itrillion.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "By approximate market capitalization, Apple is currently the most valuable company in the world at roughly $5.2 trillion, well ahead of Nvidia at roughly $4.2 trillion.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Apple is the most valuable company at roughly $5.2 trillion by approximate market capitalization, but it does not attribute this to any tracker or source, which the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The tracker says Apple is the most valuable company in the world at roughly $5.2 trillion."
+     }
+    ]
+   },
+   {
+    "sentence": "One tracker reports that Apple is now the most valuable company at roughly $5.2 trillion, ahead of Nvidia at roughly $4.2 trillion[4].",
+    "start": 464,
+    "end": 598,
+    "claim": "One tracker reports that Nvidia is at roughly $4.2 trillion in market value, behind Apple.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://itrillion.com/trillion-companies/",
+      "host": "itrillion.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "By approximate market capitalization, Apple is currently the most valuable company in the world at roughly $5.2 trillion, well ahead of Nvidia at roughly $4.2 trillion.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 2 | NVDA Nvidia | ~$4.2T | May 2023 | Semiconductors / AI |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states that Nvidia is at roughly $4.2 trillion by approximate market capitalization, well behind Apple, and the second quote lists NVDA at about $4.2T ranked second, so the figure and the ranking behind Apple are both backed.",
+      "page_judged": "supported",
+      "page_reason": "The tracker says Apple is worth roughly $5.2 trillion and Nvidia roughly $4.2 trillion, with Apple currently the most valuable company."
+     }
+    ]
+   },
+   {
+    "sentence": "Those figures are from November 11, 2026.",
+    "start": 599,
+    "end": 640,
+    "claim": "The Apple and Nvidia market value figures are from November 11, 2026.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 3
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.375,
+   "pages_cited": 4,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004896,
+   "usd_per_claim": 0.000445
+  },
+  "cost": {
+   "total_usd": 0.0049,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0015
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0017
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0011
+    }
+   ]
+  }
+ }
+}

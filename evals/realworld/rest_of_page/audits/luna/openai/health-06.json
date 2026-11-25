@@ -1,0 +1,262 @@
+{
+ "id": "health-06",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:50:15+00:00",
+ "report": {
+  "answer_text": "Baby KJ Muldoon received a personalised CRISPR base-editing therapy designed to correct a single DNA letter in his *CPS1* gene. The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up. He received his first dose on February 25, 2025. (med.upenn.edu)",
+  "claims": [
+   {
+    "sentence": "Baby KJ Muldoon received a personalised CRISPR base-editing therapy designed to correct a single DNA letter in his *CPS1* gene.",
+    "start": 0,
+    "end": 127,
+    "claim": "Baby KJ Muldoon received a personalised CRISPR base-editing therapy designed to correct a single DNA letter in his CPS1 gene.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After a neonate had re - ceived a diagnosis of severe carbamoyl-phosphate synthetase 1 deficiency, a dis - ease with an estimated 50% mortality in early infancy, we immediately began to develop a customized lipid nanoparticle–delivered base-editing therapy.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs a customized, lipid-nanoparticle-delivered base-editing therapy for a neonate with severe CPS1 deficiency, but it does not name KJ Muldoon, state that he received the therapy, mention CRISPR, or say it corrects a single DNA letter.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a personalized base-editing therapy targeting the patient’s CPS1 Q335X variant, but it does not identify the baby as KJ Muldoon or explicitly call the therapy CRISPR."
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up.",
+    "start": 128,
+    "end": 322,
+    "claim": "The CRISPR base-editing treatment given to Baby KJ Muldoon was delivered to his liver cells in lipid nanoparticles.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "More specifically, we developed a base-editing therapy, delivered in vivo to hepatocytes through lipid nanoparticles, for a single patient who at birth received a diagnosis of neonatal-onset carbamoyl-phosphate synthetase 1 (CPS1) deficiency",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the base-editing therapy was delivered in vivo to hepatocytes (liver cells) through lipid nanoparticles for a single neonatal patient with CPS1 deficiency, which backs the claim's delivery route and target tissue.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the patient received lipid-nanoparticle-delivered base editing intended for hepatocytes, but it does not identify the patient as Baby KJ Muldoon."
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up.",
+    "start": 128,
+    "end": 322,
+    "claim": "The treatment addresses severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After a neonate had re - ceived a diagnosis of severe carbamoyl-phosphate synthetase 1 deficiency, a dis - ease with an estimated 50% mortality in early infancy, we immediately began to develop a customized lipid nanoparticle–delivered base-editing therapy.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "CPS1 deficiency affects 1 in 1,300,000 persons10 and has an estimated mor - tality of 50% in early infancy.11",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the treatment is for a neonate with severe CPS1 deficiency, and that the disease is rare (affecting 1 in 1,300,000 persons), so the claim's facts are all backed.",
+      "page_judged": "supported",
+      "page_reason": "The page describes a customized gene-editing therapy for a patient with severe, ultrarare CPS1 deficiency and states that the condition affects about 1 in 1,300,000 people."
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment was delivered to his liver cells in lipid nanoparticles to address severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that causes toxic ammonia to build up.",
+    "start": 128,
+    "end": 322,
+    "claim": "Severe CPS1 deficiency is a rare disorder that causes toxic ammonia to build up.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "CPS1 deficiency affects 1 in 1,300,000 persons",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       },
+       {
+        "text": "Measurement of blood ammonia revealed a level greater than 1000 μmol per liter",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that CPS1 deficiency is rare (1 in 1,300,000) and that blood ammonia can reach over 1000 μmol per liter, but they never describe the condition as severe or explicitly say the ammonia is toxic.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes CPS1 deficiency as an ultrarare urea-cycle disorder and reports severely elevated blood ammonia, but it does not state that toxic ammonia builds up."
+     }
+    ]
+   },
+   {
+    "sentence": "He received his first dose on February 25, 2025.",
+    "start": 323,
+    "end": 371,
+    "claim": "Baby KJ Muldoon received his first dose of the therapy on February 25, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.med.upenn.edu/cstr/assets/user-content/Fall%202025/Patient-Specific%20In%20Vivo%20Gene%20Editing%20to%20Treat%20a%20Rare%20Genetic%20Disease.pdf?utm_source=openai",
+      "host": "med.upenn.edu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the patient received the initial dose on day 208 after birth, but it does not give the date February 25, 2025, or identify the patient as Baby KJ Muldoon."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00826,
+   "usd_per_claim": 0.001652
+  },
+  "cost": {
+   "total_usd": 0.0083,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0057
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0013
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,791 @@
+{
+ "id": "technology-07-r3",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:10:00+00:00",
+ "report": {
+  "answer_text": "Cause\nThe outage began in AWS's US-EAST-1 region (Northern Virginia) late on October 19 Pacific time and ran into October 20, 2025. AWS's post-incident report found the root cause was a latent race condition in DynamoDB's automated DNS management system.[1]\nHow the system works: DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans, and DNS Enactors that apply them.[2]\nWhat went wrong: Two DNS Enactor processes ran concurrently, and a stale plan check let an old plan overwrite a newer one. Cleanup automation then deleted that plan, wiping all of DynamoDB's DNS records.[3]\nResult: The race condition left an empty DNS record for the regional endpoint (dynamodb.us-east-1.amazonaws.com), and the automation failed to repair it.[4] With no IP addresses behind that name, every client lost its connection, including AWS's own internal services.[5]\nWhy it lasted so long\nDynamoDB itself was impaired for about three hours, but the damage spread. The three-hour DynamoDB outage triggered cascading failures in dependent systems, and these effects persisted after DynamoDB connectivity was restored.[1] The failure cascaded across core services such as EC2, Lambda, NLB, ECS/EKS, and dozens of downstream services.[6] Overall, the disruption lasted more than 14 hours.[6]\nAWS's response included disabling the DynamoDB DNS Planner and DNS Enactor automation worldwide.[4] For NLB, AWS is adding a velocity control mechanism to limit how much capacity a single NLB can remove when health check failures trigger AZ failover.[4] Early on, AWS said the outage was likely \"not\" a cyberattack.[7]\nWhat it disrupted\nSocial and messaging: Snapchat and Reddit were hit.[8] Pinterest users also reported issues.[8]\nGaming: Fortnite, Roblox, Clash Royale and Clash of Clans were among the games that went down.[8]\nFinance: Coinbase and Robinhood attributed their outages to AWS.[8] Venmo and Chime also had problems.[8] UK banks such as Lloyds and Halifax showed spikes in reports too.[9]\nAmazon's own services: Amazon's shopping site, Prime Video, and Alexa all had issues.[8] As of 1:15 PM ET on October 20, asking Alexa for the weather or to turn off lights still didn't work.[10] Ring was also affected.\nOther services: Reports also named Duolingo, Canva, Zoom-adjacent tools, Life360, McDonald's app, Wordle and others.[11] In the UK, government websites were affected.[11]\nScale: Downdetector reported more than 11 million reports of connectivity issues, with over 2,500 companies seeing increased reports.[7] Amazon announced by 6:53 PM ET on October 20 that it had resolved the \"increased error rates and latencies.\"[10]",
+  "claims": [
+   {
+    "sentence": "The outage began in AWS's US-EAST-1 region (Northern Virginia) late on October 19 Pacific time and ran into October 20, 2025.",
+    "start": 6,
+    "end": 131,
+    "claim": "The outage began in AWS's US-EAST-1 region (Northern Virginia) late on October 19 Pacific time and ran into October 20, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "AWS's post-incident report found the root cause was a latent race condition in DynamoDB's automated DNS management system.[1]",
+    "start": 132,
+    "end": 257,
+    "claim": "AWS's post-incident report found the root cause was a latent race condition in DynamoDB's automated DNS management system.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "How the system works: DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans, and DNS Enactors that apply them.[2]",
+    "start": 258,
+    "end": 433,
+    "claim": "DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans, and DNS Enactors that apply them.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://outagecost.com/case-studies/aws-october-2025",
+      "host": "outagecost.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "DynamoDB's DNS records are maintained by an automated system with two roles: a DNS Planner that generates new plans and DNS Enactors that apply them.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that DynamoDB's DNS records are maintained by an automated system with two roles, a DNS Planner generating plans and DNS Enactors applying them, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that DynamoDB's DNS records are maintained by an automated system with a DNS Planner that generates new plans and DNS Enactors that apply them, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "What went wrong: Two DNS Enactor processes ran concurrently, and a stale plan check let an old plan overwrite a newer one.",
+    "start": 434,
+    "end": 556,
+    "claim": "Two DNS Enactor processes ran concurrently, and a stale plan check let an old plan overwrite a newer one.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.techupkeep.dev/blog/aws-outage-october-2025-analysis",
+      "host": "techupkeep.dev",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Cleanup automation then deleted that plan, wiping all of DynamoDB's DNS records.[3]",
+    "start": 557,
+    "end": 640,
+    "claim": "Cleanup automation deleted the old plan, wiping all of DynamoDB's DNS records.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.techupkeep.dev/blog/aws-outage-october-2025-analysis",
+      "host": "techupkeep.dev",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Result: The race condition left an empty DNS record for the regional endpoint (dynamodb.us-east-1.amazonaws.com), and the automation failed to repair it.[4]",
+    "start": 641,
+    "end": 797,
+    "claim": "The race condition left an empty DNS record for the regional endpoint dynamodb.us-east-1.amazonaws.com, and the automation failed to repair it.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "With no IP addresses behind that name, every client lost its connection, including AWS's own internal services.[5]",
+    "start": 798,
+    "end": 912,
+    "claim": "With no IP addresses behind the dynamodb.us-east-1.amazonaws.com name, every client lost its connection, including AWS's own internal services.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://deployflow.co/blog/aws-outage-october-2025-what-caused-future-proof-business/",
+      "host": "deployflow.co",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With no IP addresses behind dynamodb.us-east-1.amazonaws.com, every client lost its connection, AWS’s own internal services included.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that with no IP addresses behind dynamodb.us-east-1.amazonaws.com every client lost its connection, including AWS's own internal services, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that with no IP addresses behind dynamodb.us-east-1.amazonaws.com, every client lost its connection, AWS's own internal services included."
+     }
+    ]
+   },
+   {
+    "sentence": "DynamoDB itself was impaired for about three hours, but the damage spread.",
+    "start": 935,
+    "end": 1009,
+    "claim": "DynamoDB itself was impaired for about three hours.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The three-hour DynamoDB outage triggered cascading failures in dependent systems, and these effects persisted after DynamoDB connectivity was restored.[1]",
+    "start": 1010,
+    "end": 1164,
+    "claim": "The three-hour DynamoDB outage triggered cascading failures in dependent systems, and these effects persisted after DynamoDB connectivity was restored.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The failure cascaded across core services such as EC2, Lambda, NLB, ECS/EKS, and dozens of downstream services.[6]",
+    "start": 1165,
+    "end": 1279,
+    "claim": "The failure cascaded across core services such as EC2, Lambda, NLB, ECS/EKS, and dozens of downstream services.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://medium.com/@leela.kumili/aws-outage-root-cause-analysis-bd88ffcab160",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Overall, the disruption lasted more than 14 hours.[6]",
+    "start": 1280,
+    "end": 1333,
+    "claim": "Overall, the disruption lasted more than 14 hours.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://medium.com/@leela.kumili/aws-outage-root-cause-analysis-bd88ffcab160",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "AWS's response included disabling the DynamoDB DNS Planner and DNS Enactor automation worldwide.[4]",
+    "start": 1334,
+    "end": 1433,
+    "claim": "AWS's response included disabling the DynamoDB DNS Planner and DNS Enactor automation worldwide.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "For NLB, AWS is adding a velocity control mechanism to limit how much capacity a single NLB can remove when health check failures trigger AZ failover.[4]",
+    "start": 1434,
+    "end": 1587,
+    "claim": "For NLB, AWS is adding a velocity control mechanism to limit how much capacity a single NLB can remove when health check failures trigger AZ failover.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.forbes.com/sites/kateoflahertyuk/2025/10/23/aws-outage-new-analysis-explains-what-went-wrong-and-why/",
+      "host": "forbes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Early on, AWS said the outage was likely \"not\" a cyberattack.[7]",
+    "start": 1588,
+    "end": 1652,
+    "claim": "Early on, AWS said the outage was likely not a cyberattack.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.aljazeera.com/amp/news/liveblog/2025/10/20/live-snapchat-other-apps-sites-down-as-outage-hits-amazon-web-services",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page attributes the 'probably not a cyberattack' view to Bryson Bort, CEO of threat emulation firm Scythe, not to AWS, and nothing on the page shows AWS saying this."
+     }
+    ]
+   },
+   {
+    "sentence": "Social and messaging: Snapchat and Reddit were hit.[8]",
+    "start": 1671,
+    "end": 1725,
+    "claim": "Snapchat and Reddit were hit by the outage.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.cbc.ca/news/world/amazon-web-services-outage-9.6944889",
+      "host": "cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Pinterest users also reported issues.[8]",
+    "start": 1726,
+    "end": 1766,
+    "claim": "Pinterest users reported issues during the outage.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.cbc.ca/news/world/amazon-web-services-outage-9.6944889",
+      "host": "cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Gaming: Fortnite, Roblox, Clash Royale and Clash of Clans were among the games that went down.[8]",
+    "start": 1767,
+    "end": 1864,
+    "claim": "Fortnite, Roblox, Clash Royale and Clash of Clans were among the games that went down.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.cbc.ca/news/world/amazon-web-services-outage-9.6944889",
+      "host": "cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Finance: Coinbase and Robinhood attributed their outages to AWS.[8]",
+    "start": 1865,
+    "end": 1932,
+    "claim": "Coinbase and Robinhood attributed their outages to AWS.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.cbc.ca/news/world/amazon-web-services-outage-9.6944889",
+      "host": "cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Venmo and Chime also had problems.[8]",
+    "start": 1933,
+    "end": 1970,
+    "claim": "Venmo and Chime also had problems.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.cbc.ca/news/world/amazon-web-services-outage-9.6944889",
+      "host": "cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "UK banks such as Lloyds and Halifax showed spikes in reports too.[9]",
+    "start": 1971,
+    "end": 2039,
+    "claim": "UK banks such as Lloyds and Halifax showed spikes in reports.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://techradar.com/news/live/amazon-web-services-alexa-ring-snapchat-fortnite-down-october-2025",
+      "host": "techradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Amazon's own services: Amazon's shopping site, Prime Video, and Alexa all had issues.[8]",
+    "start": 2040,
+    "end": 2128,
+    "claim": "Amazon's shopping site, Prime Video, and Alexa all had issues.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.cbc.ca/news/world/amazon-web-services-outage-9.6944889",
+      "host": "cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "As of 1:15 PM ET on October 20, asking Alexa for the weather or to turn off lights still didn't work.[10]",
+    "start": 2129,
+    "end": 2234,
+    "claim": "As of 1:15 PM ET on October 20, asking Alexa for the weather or to turn off lights still didn't work.",
+    "citation_ids": [
+     "c10"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c10",
+      "url": "https://www.engadget.com/big-tech/amazons-aws-outage-has-knocked-services-like-alexa-snapchat-fortnite-venmo-and-more-offline-142935812.html",
+      "host": "engadget.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of 1:15PM ET on October 20, multiple services were unavailable, including asking Alexa for the weather or to turn off lights in your home.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that as of 1:15PM ET on October 20, asking Alexa for the weather or to turn off lights was unavailable, which backs the claim that these requests still didn't work at that time.",
+      "page_judged": "supported",
+      "page_reason": "The page states that as of 1:15PM ET on October 20, multiple services including asking Alexa for the weather or to turn off lights were unavailable, which supports the claim that these functions still didn't work at that time."
+     }
+    ]
+   },
+   {
+    "sentence": "Ring was also affected.",
+    "start": 2235,
+    "end": 2258,
+    "claim": "Ring was also affected.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Reports also named Duolingo, Canva, Zoom-adjacent tools, Life360, McDonald's app, Wordle and others.[11]",
+    "start": 2275,
+    "end": 2379,
+    "claim": "Reports also named Duolingo, Canva, Zoom-adjacent tools, Life360, McDonald's app, Wordle and others.",
+    "citation_ids": [
+     "c11"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c11",
+      "url": "https://americanbazaaronline.com/2025/10/20/amazon-web-services-outage-disrupts-snapchat-reddit-alexa-468965/",
+      "host": "americanbazaaronline.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "over the page limit for one audit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "In the UK, government websites were affected.[11]",
+    "start": 2380,
+    "end": 2429,
+    "claim": "In the UK, government websites were affected.",
+    "citation_ids": [
+     "c11"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c11",
+      "url": "https://americanbazaaronline.com/2025/10/20/amazon-web-services-outage-disrupts-snapchat-reddit-alexa-468965/",
+      "host": "americanbazaaronline.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "over the page limit for one audit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 2,
+    "unchecked": 18,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 24,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.125,
+   "pages_cited": 11,
+   "pages_read": 4,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 3,
+   "usd": 0.006042,
+   "usd_per_claim": 0.000242
+  },
+  "cost": {
+   "total_usd": 0.006,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0013
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0024
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

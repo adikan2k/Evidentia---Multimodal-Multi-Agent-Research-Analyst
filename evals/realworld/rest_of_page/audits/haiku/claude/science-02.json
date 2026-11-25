@@ -1,0 +1,615 @@
+{
+ "id": "science-02",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:44:12+00:00",
+ "report": {
+  "answer_text": "The Mars flyby (March 1, 2025)\nGravity assist: Europa Clipper passed just 550 miles (884 km) above Mars' surface. The maneuver bent its trajectory to set up the next leg of its trip to the Jupiter system.[1] It was moving at about 24.5 km/s relative to the Sun at closest approach and left at about 22.5 km/s.[2] Mars' gravity slowed it and reshaped its solar orbit.\nThermal imaging: For about 18 minutes, the E-THEMIS thermal imager captured one image of Mars per second.[3] The flyby was used to calibrate the infrared imager and carry out other science tests.[3]\nRadar test: The spacecraft also tested the components of its radar instrument together for the first time.[3] The REASON radar bounced signals off Mars. This was the first full test of an antenna system too large to try on the ground.[4]\nArrival at Jupiter\nEuropa Clipper is due to reach Jupiter in April 2030. Several sources give April 11, 2030[5] as the date. Before that, it will make an Earth gravity assist in December 2026[6], planned for December 3. After arrival, the flybys of Europa are planned to start in 2031[6], and the mission will make 49 close passes of the moon.",
+  "claims": [
+   {
+    "sentence": "Gravity assist: Europa Clipper passed just 550 miles (884 km) above Mars' surface.",
+    "start": 31,
+    "end": 113,
+    "claim": "Europa Clipper passed just 550 miles (884 km) above Mars' surface.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://phys.org/news/2025-02-nasa-europa-clipper-mars-distance.html",
+      "host": "phys.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On March 1, NASA's Europa Clipper will streak just 550 miles (884 kilometers) above the surface of Mars for what's known as a gravity assist",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 550 miles (884 km) altitude above Mars, but it describes a future flyby ('will streak') and does not state that the spacecraft actually passed at that distance.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the spacecraft will streak 550 miles (884 kilometers) above Mars' surface on March 1, which is future tense as a planned flyby, and it does not confirm the flyby actually happened, though the distance itself matches."
+     }
+    ]
+   },
+   {
+    "sentence": "The maneuver bent its trajectory to set up the next leg of its trip to the Jupiter system.[1]",
+    "start": 114,
+    "end": 207,
+    "claim": "The Mars gravity assist maneuver bent Europa Clipper's trajectory to set up the next leg of its trip to the Jupiter system.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://phys.org/news/2025-02-nasa-europa-clipper-mars-distance.html",
+      "host": "phys.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "a maneuver to bend the spacecraft's trajectory and position it for a critical leg of its long voyage to the Jupiter system",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The flyby sets up Europa Clipper for its second gravity assist—a close encounter with Earth in December 2026",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "the gravity from Mars acts on the spacecraft to bend its path",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that a Mars gravity-assist flyby bent Europa Clipper's path to position it for the next critical leg of its voyage to the Jupiter system, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Mars flyby is a gravity assist that bends the spacecraft's trajectory and positions it for a critical leg of its voyage to the Jupiter system, and that the flyby sets up the next gravity assist with Earth, so the claim is supported, though the page describes the bend as planned rather than confirmed as completed."
+     }
+    ]
+   },
+   {
+    "sentence": "It was moving at about 24.5 km/s relative to the Sun at closest approach and left at about 22.5 km/s.[2]",
+    "start": 208,
+    "end": 312,
+    "claim": "Europa Clipper was moving at about 24.5 km/s relative to the Sun at closest approach to Mars.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://spacedaily.com/nasas-europa-clipper-leverages-mars-for-critical-gravity-assist-999/",
+      "host": "spacedaily.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At its closest approach to Mars at 12:57 p.m. EST, Europa Clipper will be moving at approximately 15.2 miles per second (24.5 kilometers per second) relative to the Sun.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at closest approach to Mars Europa Clipper will be moving at approximately 24.5 kilometers per second relative to the Sun, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that at closest approach to Mars at 12:57 p.m. EST, Europa Clipper will be moving at approximately 15.2 miles per second (24.5 kilometers per second) relative to the Sun, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It was moving at about 24.5 km/s relative to the Sun at closest approach and left at about 22.5 km/s.[2]",
+    "start": 208,
+    "end": 312,
+    "claim": "Europa Clipper left the Mars flyby at about 22.5 km/s.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://spacedaily.com/nasas-europa-clipper-leverages-mars-for-critical-gravity-assist-999/",
+      "host": "spacedaily.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After the encounter, Europa Clipper will depart at around 14 miles per second (22.5 kilometers per second).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 22.5 km/s departure speed, but it describes a planned future departure after an unnamed 'encounter' rather than a completed departure from a Mars flyby, which the quote never mentions.",
+      "page_judged": "supported",
+      "page_reason": "The page states that after the encounter Europa Clipper will depart at around 14 miles per second (22.5 kilometers per second), which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Mars' gravity slowed it and reshaped its solar orbit.",
+    "start": 313,
+    "end": 366,
+    "claim": "Mars' gravity slowed Europa Clipper and reshaped its solar orbit.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Thermal imaging: For about 18 minutes, the E-THEMIS thermal imager captured one image of Mars per second.[3]",
+    "start": 367,
+    "end": 475,
+    "claim": "For about 18 minutes during the Mars flyby, the E-THEMIS thermal imager captured one image of Mars per second.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/europa-clipper-mars",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "For about 18 minutes during the Mars flyby on 1 March 2025, Europa Clipper's E-THEMIS captured one image of the Red Planet per second.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 18-minute duration, the one-image-per-second rate, the E-THEMIS instrument and the Mars flyby, but they never describe E-THEMIS as a thermal imager.",
+      "page_judged": "supported",
+      "page_reason": "The page states that for about 18 minutes during the Mars flyby on 1 March 2025, E-THEMIS captured one image of the Red Planet per second, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The flyby was used to calibrate the infrared imager and carry out other science tests.[3]",
+    "start": 476,
+    "end": 565,
+    "claim": "The Mars flyby was used to calibrate the infrared imager and carry out other science tests.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/europa-clipper-mars",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The spacecraft's view of Mars came during a flyby of the Red Planet on 1 March 2025, that was used to calibrate its infrared imaging instrument and carry out other science tests.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Mars flyby was used to calibrate the infrared imaging instrument and carry out other science tests, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the spacecraft's view of Mars came during a flyby on 1 March 2025 that was used to calibrate its infrared imaging instrument and carry out other science tests, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Radar test: The spacecraft also tested the components of its radar instrument together for the first time.[3]",
+    "start": 566,
+    "end": 675,
+    "claim": "During the Mars flyby, Europa Clipper tested the components of its radar instrument together for the first time.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/europa-clipper-mars",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Europa Clipper also used the Mars flyby to test the components of its radar instrument in unison for the first time.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Europa Clipper used the Mars flyby to test the radar instrument's components together in unison for the first time, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that during the Mars flyby Europa Clipper used the flyby to test the components of its radar instrument in unison for the first time, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The REASON radar bounced signals off Mars.",
+    "start": 676,
+    "end": 718,
+    "claim": "The REASON radar bounced signals off Mars during the flyby.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://supernovatribune.com/missions/europa-clipper/",
+      "host": "supernovatribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "During the March 1, 2025, flyby, the REASON radar bounced signals off Mars, the first full test of an antenna system too large to try on the ground.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that during the flyby the REASON radar bounced signals off Mars, which is the claim's entire assertion, with the flyby being the same event the claim references.",
+      "page_judged": "supported",
+      "page_reason": "The page states that during the March 1, 2025, Mars flyby the REASON radar bounced signals off Mars, and that NASA reported it worked as expected."
+     }
+    ]
+   },
+   {
+    "sentence": "This was the first full test of an antenna system too large to try on the ground.[4]",
+    "start": 719,
+    "end": 803,
+    "claim": "The REASON radar test was the first full test of an antenna system too large to try on the ground.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://supernovatribune.com/missions/europa-clipper/",
+      "host": "supernovatribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Radar test at Mars. During the March 1, 2025, flyby, the REASON radar bounced signals off Mars, the first full test of an antenna system too large to try on the ground.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the REASON radar test was the first full test of an antenna system too large to try on the ground, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that during the March 1, 2025 Mars flyby the REASON radar bounced signals off Mars, which was the first full test of an antenna system too large to try on the ground, and that NASA reported it worked as expected."
+     }
+    ]
+   },
+   {
+    "sentence": "Europa Clipper is due to reach Jupiter in April 2030.",
+    "start": 823,
+    "end": 876,
+    "claim": "Europa Clipper is due to reach Jupiter in April 2030.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://theskylive.com/europaclipper-info",
+      "host": "theskylive.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Several sources give April 11, 2030[5] as the date.",
+    "start": 877,
+    "end": 928,
+    "claim": "Several sources give April 11, 2030 as the date Europa Clipper is due to reach Jupiter.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://theskylive.com/europaclipper-info",
+      "host": "theskylive.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Before that, it will make an Earth gravity assist in December 2026[6], planned for December 3.",
+    "start": 929,
+    "end": 1023,
+    "claim": "Europa Clipper will make an Earth gravity assist in December 2026.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "will use an assist from Earth in December 2026.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "On February 10, 2021, it was announced that the mission would use a 5.5-year trajectory to the Jovian system, with gravity-assist maneuvers involving Mars (March 1, 2025) and Earth (December 3, 2026).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Europa Clipper will use an Earth assist in December 2026, with the second quote giving the specific date of December 3, 2026, which covers the claim's month and year.",
+      "page_judged": "supported",
+      "page_reason": "The page states the mission will use an Earth gravity assist on December 3, 2026 (infobox and text say 'will use an assist from Earth in December 2026' and the timeline lists 2026-12-03 Earth as planned gravity-assist transfer)."
+     }
+    ]
+   },
+   {
+    "sentence": "Before that, it will make an Earth gravity assist in December 2026[6], planned for December 3.",
+    "start": 929,
+    "end": 1023,
+    "claim": "The Earth gravity assist is planned for December 3.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On February 10, 2021, it was announced that the mission would use a 5.5-year trajectory to the Jovian system, with gravity-assist maneuvers involving Mars (March 1, 2025) and Earth (December 3, 2026).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The trajectory of Europa Clipper started with a gravity assist from Mars on March 1, 2025,[9] causing the probe to slow down a little (speed reduced by 2 km/s) and modifying its orbit around the Sun such that it will allow the spacecraft to fly by Earth on December 3, 2026, gaining additional speed.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the Earth gravity assist is scheduled for December 3, 2026, matching the claim's date and event.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Europa Clipper's Earth gravity assist is planned for December 3, 2026 (closest approach December 3, 2026 4:15 PM EST, and the timeline lists 2026-12-03 Earth as Planned), which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "After arrival, the flybys of Europa are planned to start in 2031[6], and the mission will make 49 close passes of the moon.",
+    "start": 1024,
+    "end": 1147,
+    "claim": "Flybys of Europa are planned to start in 2031.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the probe is planned to enter Jupiter orbit in April 2030 and conduct a series of flybys of Europa from March 2031.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "2031-03-06 | Europa | Planned | First science",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that a series of Europa flybys is planned from March 2031, which backs the claim that flybys are planned to start in 2031.",
+      "page_judged": "supported",
+      "page_reason": "The page's flyby timeline lists the first Europa science flyby as planned for 2031-03-06, and the text says a series of flybys of Europa begins from March 2031, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "After arrival, the flybys of Europa are planned to start in 2031[6], and the mission will make 49 close passes of the moon.",
+    "start": 1024,
+    "end": 1147,
+    "claim": "The Europa Clipper mission will make 49 close passes of Europa.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Europa Clipper will not orbit Europa, but will instead orbit Jupiter and conduct 49 flybys of Europa, each at altitudes ranging from 25 to 2,700 km (16 to 1,678 mi) during its 3.5-year mission.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Europa Clipper will conduct 49 flybys of Europa, which matches the claim's 49 close passes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Europa Clipper will conduct 49 flybys (close flybys) of Europa, which matches the claim that it will make 49 close passes of Europa."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 16,
+   "labels": {
+    "supported": 10,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 15,
+   "claims_with_a_verdict": 11,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.6667,
+   "pages_cited": 6,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.016749,
+   "usd_per_claim": 0.001047
+  },
+  "cost": {
+   "total_usd": 0.0167,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 17,
+     "usd": 0.0101
+    },
+    {
+     "node": "page_check",
+     "calls": 13,
+     "usd": 0.004
+    },
+    {
+     "node": "check",
+     "calls": 13,
+     "usd": 0.0019
+    }
+   ]
+  }
+ }
+}

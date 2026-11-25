@@ -1,0 +1,108 @@
+{
+ "id": "nq-01",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:36:09+00:00",
+ "report": {
+  "answer_text": "The central idea of Oliver Goldsmith’s *The Deserted Village* is that a country is not truly prosperous when the rich grow wealthier at the expense of ordinary people. Goldsmith contrasts the once-lively village of Auburn with its deserted present to show what is lost when poor villagers are driven from their homes. (poetryfoundation.org)\nIf you mean a specific set of lines, paste them here and I’ll explain the central idea of that excerpt.",
+  "claims": [
+   {
+    "sentence": "The central idea of Oliver Goldsmith’s *The Deserted Village* is that a country is not truly prosperous when the rich grow wealthier at the expense of ordinary people.",
+    "start": 0,
+    "end": 167,
+    "claim": "The central idea of Oliver Goldsmith's The Deserted Village is that a country is not truly prosperous when the rich grow wealthier at the expense of ordinary people.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.poetryfoundation.org/poems/44292/the-deserted-village?utm_source=openai",
+      "host": "poetryfoundation.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Goldsmith contrasts the once-lively village of Auburn with its deserted present to show what is lost when poor villagers are driven from their homes. (poetryfoundation.org)",
+    "start": 168,
+    "end": 340,
+    "claim": "Goldsmith contrasts the once-lively village of Auburn with its deserted present to show what is lost when poor villagers are driven from their homes.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.poetryfoundation.org/poems/44292/the-deserted-village?utm_source=openai",
+      "host": "poetryfoundation.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000232,
+   "usd_per_claim": 0.000116
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 0.3,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

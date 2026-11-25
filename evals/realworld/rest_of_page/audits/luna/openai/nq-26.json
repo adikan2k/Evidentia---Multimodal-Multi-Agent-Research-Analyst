@@ -1,0 +1,150 @@
+{
+ "id": "nq-26",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:40:25+00:00",
+ "report": {
+  "answer_text": "Jacques Cartier led an expedition for King Francis I of France in 1534 to search for the Northwest Passage to Asia. Giovanni da Verrazzano had led an earlier French-sponsored search in 1524. (heritage.bnf.fr)",
+  "claims": [
+   {
+    "sentence": "Jacques Cartier led an expedition for King Francis I of France in 1534 to search for the Northwest Passage to Asia.",
+    "start": 0,
+    "end": 115,
+    "claim": "Jacques Cartier led an expedition for King Francis I of France in 1534 to search for the Northwest Passage to Asia.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://heritage.bnf.fr/france-ameriques/en/jacques-cartier-1534-1542?utm_source=openai",
+      "host": "heritage.bnf.fr",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "King François I of France entrusted Jacques Cartier with three Atlantic voyages (1534-1542), hoping to contest the Spanish naval monopoly and find a new route to the riches of Asia.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "During his three voyages (1534, 1535-1536 and 1541-1542) Cartier explored the mouth of the Saint Lawrence River",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The first two expeditions fell short of their expected goal – finding a “Northwest Passage” to Asia –",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say Francis I entrusted Cartier with three voyages from 1534 to 1542 to find a route to Asia, and that the first two, including the 1534 one, aimed to find a Northwest Passage to Asia.",
+      "page_judged": "supported",
+      "page_reason": "The page says François I sent an expedition under Jacques Cartier in 1534 hoping to find a northern and western sea route to Asia, and identifies the Northwest Passage as the goal of the first two voyages."
+     }
+    ]
+   },
+   {
+    "sentence": "Giovanni da Verrazzano had led an earlier French-sponsored search in 1524.",
+    "start": 116,
+    "end": 190,
+    "claim": "Giovanni da Verrazzano led a French-sponsored search for the Northwest Passage in 1524, earlier than Cartier's 1534 expedition.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://heritage.bnf.fr/france-ameriques/en/jacques-cartier-1534-1542?utm_source=openai",
+      "host": "heritage.bnf.fr",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "François I did not even wait for an answer before sending an expedition, commanded by Verrazano, to explore the eastern coasts of North America in 1524.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "During his three voyages (1534, 1535-1536 and 1541-1542) Cartier explored the mouth of the Saint Lawrence River",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the French-sponsored 1524 Verrazano expedition to explore North American coasts and Cartier's 1534 first voyage, but nothing in them says the expedition was a search for the Northwest Passage.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says François I sent an expedition commanded by Verrazano to explore North America’s eastern coasts in 1524, but it does not say that expedition sought the Northwest Passage."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 1,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001931,
+   "usd_per_claim": 0.000965
+  },
+  "cost": {
+   "total_usd": 0.0019,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0005
+    }
+   ]
+  }
+ }
+}

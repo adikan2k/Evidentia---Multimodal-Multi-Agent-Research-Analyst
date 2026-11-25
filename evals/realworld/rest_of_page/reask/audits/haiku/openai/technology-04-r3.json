@@ -1,0 +1,205 @@
+{
+ "id": "technology-04-r3",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:08:46+00:00",
+ "report": {
+  "answer_text": "TikTok briefly went dark in the U.S. in January 2025, then stayed online while the Trump administration delayed enforcement of a federal divest-or-ban law. ByteDance signed a deal in December to give up control of key U.S. operations, but the deal didn’t close until January 22, 2026. (everycrsreport.com)\nJanuary–February 2025: On January 17, the Supreme Court upheld the law, which barred companies from distributing or supporting TikTok in the U.S. unless ByteDance completed a qualifying divestiture. TikTok shut off U.S. access on the evening of January 18 and restored it on January 19 after Trump promised to delay enforcement. Apple and Google didn’t restore the app to their stores until February 13. (supremecourt.gov)\nSeptember–December 2025: After several enforcement delays, Trump approved a proposed divestiture framework on September 25. On December 18, TikTok and ByteDance told employees they had signed binding agreements with Oracle, Silver Lake, and Abu Dhabi-based MGX to form a U.S. joint venture. (govinfo.gov)\nWhen the deal closed, ByteDance kept a 19.9% stake in the majority-American-owned TikTok USDS Joint Venture. Oracle, Silver Lake, and MGX each took 15%. The venture took responsibility for U.S. user data, recommendation-algorithm security, and content moderation, while TikTok’s global business retained roles in advertising and e-commerce. U.S. users could still use the same app and see content from around the world. (axios.com)",
+  "claims": [
+   {
+    "sentence": "ByteDance signed a deal in December to give up control of key U.S. operations, but the deal didn’t close until January 22, 2026. (everycrsreport.com)",
+    "start": 156,
+    "end": 305,
+    "claim": "ByteDance signed a deal in December to give up control of key U.S. operations.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.everycrsreport.com/reports/R48023.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a 2021 investment and board seat in Beijing Douyin, a 2020 divestiture order, and PAFACAA's 270-day divestiture window, but it never states that ByteDance signed a deal in December to give up control of key U.S. operations."
+     }
+    ]
+   },
+   {
+    "sentence": "ByteDance signed a deal in December to give up control of key U.S. operations, but the deal didn’t close until January 22, 2026. (everycrsreport.com)",
+    "start": 156,
+    "end": 305,
+    "claim": "The ByteDance deal to give up control of key U.S. operations did not close until January 22, 2026.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.everycrsreport.com/reports/R48023.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses executive orders, legal challenges, and the PAFACAA divestiture requirement, but nowhere states that the ByteDance divestiture deal closed on January 22, 2026, so the claim's specific date and closing are not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple and Google didn’t restore the app to their stores until February 13. (supremecourt.gov)",
+    "start": 635,
+    "end": 728,
+    "claim": "Apple and Google did not restore the TikTok app to their stores until February 13, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.supremecourt.gov/opinions/24pdf/24-656_new_3dq3.pdf?utm_source=openai",
+      "host": "supremecourt.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is excerpts from the Supreme Court per curiam opinion and Sotomayor concurrence on the TikTok Act, and it says nothing about Apple, Google, app stores, or any restoration date of February 13, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "On December 18, TikTok and ByteDance told employees they had signed binding agreements with Oracle, Silver Lake, and Abu Dhabi-based MGX to form a U.S. joint venture. (govinfo.gov)",
+    "start": 853,
+    "end": 1033,
+    "claim": "On December 18, 2025, TikTok and ByteDance told employees they had signed binding agreements with Oracle, Silver Lake, and Abu Dhabi-based MGX to form a U.S. joint venture.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202500957/html/DCPD-202500957.htm?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is the September 25, 2025 executive order and says nothing about any December 18, 2025 employee communication or binding agreements with Oracle, Silver Lake, or MGX; it only mentions unnamed 'Investor Parties' and a framework agreement."
+     }
+    ]
+   },
+   {
+    "sentence": "U.S. users could still use the same app and see content from around the world. (axios.com)",
+    "start": 1375,
+    "end": 1465,
+    "claim": "U.S. users could still use the same app and see content from around the world after the deal.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.axios.com/2026/01/23/tiktok-deal-trump-app-ban?utm_source=openai",
+      "host": "axios.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 4,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 4,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 11,
+   "claims_over_limit": 0,
+   "usd": 0.007252,
+   "usd_per_claim": 0.00145
+  },
+  "cost": {
+   "total_usd": 0.0073,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 7,
+     "usd": 0.0046
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0016
+    }
+   ]
+  }
+ }
+}

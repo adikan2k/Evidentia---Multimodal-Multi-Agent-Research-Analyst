@@ -1,0 +1,187 @@
+{
+ "id": "nq-38",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:41:20+00:00",
+ "report": {
+  "answer_text": "The President’s Daily Brief (PDB) goes to the U.S. president, the vice president, and a small group of senior officials chosen by the president. That list can vary by administration, but it has often included the national security adviser and the secretaries of state and defense. (cia.gov)\nMembers of Congress do not routinely receive the PDB. It is highly classified, though some historical briefs have been declassified and released to the public. (cia.gov)",
+  "claims": [
+   {
+    "sentence": "That list can vary by administration, but it has often included the national security adviser and the secretaries of state and defense. (cia.gov)",
+    "start": 145,
+    "end": 290,
+    "claim": "The list of recipients of the President’s Daily Brief can vary by administration.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the President’s Daily Brief is given to the President, Vice President, and select senior officials designated by the President, but it does not state that the recipient list varies by administration."
+     }
+    ]
+   },
+   {
+    "sentence": "That list can vary by administration, but it has often included the national security adviser and the secretaries of state and defense. (cia.gov)",
+    "start": 145,
+    "end": 290,
+    "claim": "The list of recipients of the President’s Daily Brief has often included the national security adviser and the secretaries of state and defense.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the PDB is given to the President, Vice President, and a select group of senior officials designated by the President, but it does not identify the national security adviser or the secretaries of state and defense as recipients."
+     }
+    ]
+   },
+   {
+    "sentence": "It is highly classified, though some historical briefs have been declassified and released to the public. (cia.gov)",
+    "start": 345,
+    "end": 460,
+    "claim": "The President’s Daily Brief is highly classified.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The DA also contributes to the President’s Daily Brief (PDB), which is an Intelligence Community daily product overseen by the Office of the Director of National Intelligence (ODNI). Because information in these two publications is extremely sensitive, they are highly classified and have restricted readership.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the PDB is a daily intelligence product and that, along with a related publication, it is highly classified because its information is extremely sensitive, which backs the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the President’s Daily Brief is among the highly classified publications with restricted readership."
+     }
+    ]
+   },
+   {
+    "sentence": "It is highly classified, though some historical briefs have been declassified and released to the public. (cia.gov)",
+    "start": 345,
+    "end": 460,
+    "claim": "Some historical President’s Daily Briefs have been declassified and released to the public.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the PDB is highly classified and has restricted readership, but does not state that historical briefs have been declassified and released publicly."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.75,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.002245,
+   "usd_per_claim": 0.000561
+  },
+  "cost": {
+   "total_usd": 0.0022,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0011
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

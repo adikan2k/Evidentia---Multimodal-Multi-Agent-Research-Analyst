@@ -1,0 +1,170 @@
+{
+ "id": "nq-04",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:37:24+00:00",
+ "report": {
+  "answer_text": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota, to more than 11 miles wide where it broadens into Lake Winnibigoshish. Its widest shipping channel is about 2 miles wide at Lake Pepin. (nps.gov)",
+  "claims": [
+   {
+    "sentence": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota, to more than 11 miles wide where it broadens into Lake Winnibigoshish.",
+    "start": 0,
+    "end": 161,
+    "claim": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At Lake Itasca, the river is between 20 and 30 feet wide, the narrowest stretch for its entire length.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at Lake Itasca the river is between 20 and 30 feet wide, which matches the claim's width range and source location.",
+      "page_judged": "supported",
+      "page_reason": "The page states that at Lake Itasca the river is between 20 and 30 feet wide, the narrowest stretch for its entire length, which matches the claim's width range at the source."
+     }
+    ]
+   },
+   {
+    "sentence": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota, to more than 11 miles wide where it broadens into Lake Winnibigoshish.",
+    "start": 0,
+    "end": 161,
+    "claim": "The Mississippi River is more than 11 miles wide where it broadens into Lake Winnibigoshish.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The widest part of the Mississippi can be found at Lake Winnibigoshish near Bena, MN, where it is wider than 11 miles.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the widest part of the Mississippi is at Lake Winnibigoshish and that it is wider than 11 miles, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the widest part of the Mississippi is at Lake Winnibigoshish near Bena, MN, where it is wider than 11 miles, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Its widest shipping channel is about 2 miles wide at Lake Pepin. (nps.gov)",
+    "start": 162,
+    "end": 236,
+    "claim": "The Mississippi River's widest shipping channel is about 2 miles wide at Lake Pepin.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The widest navigable section in the shipping channel of the Mississippi is Lake Pepin, where the channel is approximately 2 miles wide.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Lake Pepin is the widest navigable section of the Mississippi shipping channel and that the channel there is approximately 2 miles wide, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the widest navigable section in the shipping channel is Lake Pepin, where the channel is approximately 2 miles wide, which matches the claim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 1.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001871,
+   "usd_per_claim": 0.000624
+  },
+  "cost": {
+   "total_usd": 0.0019,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,98 @@
+{
+ "id": "nq-25",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:40:00+00:00",
+ "report": {
+  "answer_text": "Animals that are most active at dawn and dusk are called crepuscular. Examples include many rabbits, deer, and fireflies. Unlike nocturnal animals, they’re most active during twilight rather than in the middle of the night.",
+  "claims": [
+   {
+    "sentence": "Animals that are most active at dawn and dusk are called crepuscular.",
+    "start": 0,
+    "end": 69,
+    "claim": "Animals that are most active at dawn and dusk are called crepuscular.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Examples include many rabbits, deer, and fireflies.",
+    "start": 70,
+    "end": 121,
+    "claim": "Many rabbits, deer, and fireflies are examples of crepuscular animals.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Unlike nocturnal animals, they’re most active during twilight rather than in the middle of the night.",
+    "start": 122,
+    "end": 223,
+    "claim": "Crepuscular animals are most active during twilight rather than in the middle of the night.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Unlike nocturnal animals, they’re most active during twilight rather than in the middle of the night.",
+    "start": 122,
+    "end": 223,
+    "claim": "Nocturnal animals differ from crepuscular animals in that they are not most active during twilight.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 4
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000235,
+   "usd_per_claim": 5.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

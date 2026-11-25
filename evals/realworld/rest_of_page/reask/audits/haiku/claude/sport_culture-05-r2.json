@@ -1,0 +1,361 @@
+{
+ "id": "sport_culture-05-r2",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:08:22+00:00",
+ "report": {
+  "answer_text": "David Szalay won the 2025 Booker Prize for his novel *Flesh*.\n*Flesh* was named the winner at a ceremony in London on Monday, 10 November.[1]\nThe prize is worth £50,000.[2]\nSzalay is the first Hungarian-British writer to win the Booker Prize.[3]\nHe had been shortlisted once before, in 2016, for *All That Man Is*. This year he beat Susan Choi, Katie Kitamura, Ben Markovits, Andrew Miller and Kiran Desai.[2]\nThe judging panel was chaired by Roddy Doyle, who won the prize in 1993.[1]\nThe separate International Booker Prize for 2025 went to Banu Mushtaq and her translator Deepa Bhasthi. They won for *Heart Lamp*.[4]",
+  "claims": [
+   {
+    "sentence": "David Szalay won the 2025 Booker Prize for his novel *Flesh*.",
+    "start": 0,
+    "end": 61,
+    "claim": "David Szalay won the 2025 Booker Prize for his novel Flesh.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "*Flesh* was named the winner at a ceremony in London on Monday, 10 November.[1]",
+    "start": 62,
+    "end": 141,
+    "claim": "Flesh was named the winner of the 2025 Booker Prize at a ceremony in London on Monday, 10 November.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://thebookerprizes.com/the-booker-library/prize-years/2025",
+      "host": "thebookerprizes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The prize is worth £50,000.[2]",
+    "start": 142,
+    "end": 172,
+    "claim": "The Booker Prize is worth £50,000.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.abc.net.au/news/2025-11-11/booker-prize-2025-david-szalay-flesh/105984642",
+      "host": "abc.net.au",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Hungarian British author David Szalay has won the prestigious Booker Prize, worth 50,000 British pounds ($101,000), for his dark but strangely humorous book Flesh.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Booker Prize is worth 50,000 British pounds, which matches the claim's £50,000 value.",
+      "page_judged": "supported",
+      "page_reason": "The page states the Booker Prize is worth 50,000 British pounds ($101,000), which supports the claim that it is worth £50,000."
+     }
+    ]
+   },
+   {
+    "sentence": "Szalay is the first Hungarian-British writer to win the Booker Prize.[3]",
+    "start": 173,
+    "end": 245,
+    "claim": "David Szalay is the first Hungarian-British writer to win the Booker Prize.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://thebookerprizes.com/media-centre/press-releases/flesh-by-david-szalay-wins-the-booker-prize-2025",
+      "host": "thebookerprizes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He had been shortlisted once before, in 2016, for *All That Man Is*.",
+    "start": 246,
+    "end": 314,
+    "claim": "David Szalay had been shortlisted for the Booker Prize once before, in 2016, for All That Man Is.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.abc.net.au/news/2025-11-11/booker-prize-2025-david-szalay-flesh/105984642",
+      "host": "abc.net.au",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "First shortlisted for the Booker in 2016 for a collection of linked stories, All That Man Is, Szalay this year bested American authors Susan Choi, Katie Kitamura and Ben Markovits",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 2016 Booker shortlisting for All That Man Is and calls it his first shortlisting, but it never states that there was exactly one prior shortlisting, so the 'once before' detail is not explicitly confirmed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Szalay was first shortlisted for the Booker in 2016 for the linked-story collection All That Man Is, and that he was shortlisted in 2016 (missing out to Paul Beatty) before winning in 2025, which supports the claim that he had been shortlisted once before."
+     }
+    ]
+   },
+   {
+    "sentence": "This year he beat Susan Choi, Katie Kitamura, Ben Markovits, Andrew Miller and Kiran Desai.[2]",
+    "start": 315,
+    "end": 409,
+    "claim": "In 2025, David Szalay beat Susan Choi, Katie Kitamura, Ben Markovits, Andrew Miller and Kiran Desai for the Booker Prize.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.abc.net.au/news/2025-11-11/booker-prize-2025-david-szalay-flesh/105984642",
+      "host": "abc.net.au",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Szalay this year bested American authors Susan Choi, Katie Kitamura and Ben Markovits; English author Andrew Miller, who was shortlisted in 2001; and the 2006 winner, Indian author Kiran Desai.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "David Szalay has won the 2025 Booker Prize for his novel Flesh",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state Szalay won the 2025 Booker Prize and bested Susan Choi, Katie Kitamura, Ben Markovits, Andrew Miller and Kiran Desai, covering every named author in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Szalay won the Booker Prize for Flesh, beating American authors Susan Choi, Katie Kitamura and Ben Markovits, English author Andrew Miller and Indian author Kiran Desai, and the announcement was made at a ceremony in London, though it does not explicitly say the year is 2025 in the article text, the ABC headline and shortlist section confirm 'Booker Prize 2025'."
+     }
+    ]
+   },
+   {
+    "sentence": "The judging panel was chaired by Roddy Doyle, who won the prize in 1993.[1]",
+    "start": 410,
+    "end": 485,
+    "claim": "The 2025 Booker Prize judging panel was chaired by Roddy Doyle.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://thebookerprizes.com/the-booker-library/prize-years/2025",
+      "host": "thebookerprizes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The judging panel was chaired by Roddy Doyle, who won the prize in 1993.[1]",
+    "start": 410,
+    "end": 485,
+    "claim": "Roddy Doyle won the Booker Prize in 1993.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://thebookerprizes.com/the-booker-library/prize-years/2025",
+      "host": "thebookerprizes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The separate International Booker Prize for 2025 went to Banu Mushtaq and her translator Deepa Bhasthi.",
+    "start": 486,
+    "end": 589,
+    "claim": "The International Booker Prize for 2025 went to Banu Mushtaq and her translator Deepa Bhasthi.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://johncabot.libguides.com/LiteraryAwards/man-booker",
+      "host": "johncabot.libguides.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page names Banu Mushtaq as the 2025 International Booker Prize winner but never mentions her translator, Deepa Bhasthi, so the claim's translator detail is unsupported."
+     }
+    ]
+   },
+   {
+    "sentence": "They won for *Heart Lamp*.[4]",
+    "start": 590,
+    "end": 619,
+    "claim": "Banu Mushtaq and Deepa Bhasthi won the International Booker Prize for 2025 for Heart Lamp.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://johncabot.libguides.com/LiteraryAwards/man-booker",
+      "host": "johncabot.libguides.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Banu Mushtaq as the 2025 International Booker Prize winner only by name and photo with no title given, and it never mentions Deepa Bhasthi or the book Heart Lamp, so the claim's translator and title details are unsupported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2222,
+   "pages_cited": 4,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004223,
+   "usd_per_claim": 0.000422
+  },
+  "cost": {
+   "total_usd": 0.0042,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0017
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0014
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,158 @@
+{
+ "id": "nq-36-r3",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:07:20+00:00",
+ "report": {
+  "answer_text": "Jim proposes to Pam in “Weight Loss, Part 2” (Season 5, Episode 2) of *The Office*. He pops the question in the rain at a gas station halfway between Scranton and New York. The two-part season premiere originally aired on September 25, 2008. (peacocktv.com)",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam in “Weight Loss, Part 2” (Season 5, Episode 2) of *The Office*.",
+    "start": 0,
+    "end": 83,
+    "claim": "Jim proposes to Pam in “Weight Loss, Part 2” (Season 5, Episode 2) of The Office.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.peacocktv.com/watch-online/tv/the-office/4902514835143843112/seasons/5/episodes/weight-loss-part-2-episode-2/b6f829d6-5ff3-38ac-a42a-473d60e71bfa?utm_source=openai",
+      "host": "peacocktv.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Corporate ups the stakes in the weight-loss incentive program; as Michael gets closer to Holly, Jim pines for Pam.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote only says Jim pines for Pam in the weight-loss episode and says nothing about Jim proposing to Pam, the episode's season or number, or any proposal.",
+      "page_judged": "not_supported",
+      "page_reason": "The page's synopsis for Weight Loss Part 2 says Corporate ups the stakes in the weight-loss incentive program, Michael gets closer to Holly, and Jim pines for Pam, but it does not mention any proposal."
+     }
+    ]
+   },
+   {
+    "sentence": "He pops the question in the rain at a gas station halfway between Scranton and New York.",
+    "start": 84,
+    "end": 172,
+    "claim": "Jim pops the question to Pam in the rain at a gas station halfway between Scranton and New York.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.peacocktv.com/watch-online/tv/the-office/4902514835143843112/seasons/5/episodes/weight-loss-part-2-episode-2/b6f829d6-5ff3-38ac-a42a-473d60e71bfa?utm_source=openai",
+      "host": "peacocktv.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only summarizes Weight Loss Part 2 as Jim pining for Pam and says nothing about Jim proposing to Pam, rain, or a gas station, so the claim is not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The two-part season premiere originally aired on September 25, 2008. (peacocktv.com)",
+    "start": 173,
+    "end": 257,
+    "claim": "The two-part season premiere of The Office originally aired on September 25, 2008.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.peacocktv.com/watch-online/tv/the-office/4902514835143843112/seasons/5/episodes/weight-loss-part-2-episode-2/b6f829d6-5ff3-38ac-a42a-473d60e71bfa?utm_source=openai",
+      "host": "peacocktv.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Season 5 episodes and descriptions, including 'Weight Loss Part 2' as Season 5, Episode 2, but it does not state any air date, let alone September 25, 2008, or that the premiere was two-part."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.0015,
+   "usd_per_claim": 0.0005
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

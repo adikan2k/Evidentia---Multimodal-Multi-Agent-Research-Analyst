@@ -1,0 +1,140 @@
+{
+ "id": "nq-09",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:02+00:00",
+ "report": {
+  "answer_text": "Jourdan Miller won Cycle 20 of *America’s Next Top Model: Guys & Girls*. Marvin Cortes was the runner-up. (realitytvworld.com)",
+  "claims": [
+   {
+    "sentence": "Jourdan Miller won Cycle 20 of *America’s Next Top Model: Guys & Girls*.",
+    "start": 0,
+    "end": 72,
+    "claim": "Jourdan Miller won Cycle 20 of America's Next Top Model: Guys & Girls.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.realitytvworld.com/news/top-model-guys-%26-girls-crowns-jourdan-miller-winner-defeating-male-model-marvin-cortes-15572.php?utm_source=openai",
+      "host": "realitytvworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "America's Next Top Model crowned female model Jourdan Miller the twentieth season's winner during The CW's Friday night finale broadcast of the first-ever Guys & Girls edition.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Jourdan was declared the season's winner by Tyra, however the final scores which were displayed on-screen for Jourdan and Marvin appeared to be the exact same scores that were shown at the elimination which resulted in Cory's ouster.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Jourdan Miller was crowned winner of the twentieth season, the first Guys & Girls edition, which matches the claim's Cycle 20 and Guys & Girls details.",
+      "page_judged": "supported",
+      "page_reason": "The page states that America's Next Top Model crowned Jourdan Miller the twentieth season's winner in the Guys & Girls edition, which matches the claim that she won Cycle 20 of Guys & Girls."
+     }
+    ]
+   },
+   {
+    "sentence": "Marvin Cortes was the runner-up. (realitytvworld.com)",
+    "start": 73,
+    "end": 126,
+    "claim": "Marvin Cortes was the runner-up of Cycle 20 of America's Next Top Model: Guys & Girls.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.realitytvworld.com/news/top-model-guys-%26-girls-crowns-jourdan-miller-winner-defeating-male-model-marvin-cortes-15572.php?utm_source=openai",
+      "host": "realitytvworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jourdan, a 6' 0\" unemployed 19-year-old from Bend, OR, defeated runner-up Marvin Cortes, a 6' 1\" 20-year-old sales associate from Bronx, NY",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Marvin Cortes was the runner-up to Jourdan, but it never names America's Next Top Model: Guys & Girls or Cycle 20, so those specifics are not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jourdan Miller defeated runner-up Marvin Cortes to win the twentieth season of America's Next Top Model, which was the first Guys & Girls edition, so Marvin was the runner-up."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002066,
+   "usd_per_claim": 0.001033
+  },
+  "cost": {
+   "total_usd": 0.0021,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

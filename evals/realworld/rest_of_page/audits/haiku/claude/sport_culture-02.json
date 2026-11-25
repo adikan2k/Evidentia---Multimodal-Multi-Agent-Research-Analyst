@@ -1,0 +1,400 @@
+{
+ "id": "sport_culture-02",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:00:57+00:00",
+ "report": {
+  "answer_text": "Tadej Pogačar (UAE Team Emirates-XRG) won the 2025 Tour de France, his fourth title. He beat Jonas Vingegaard (Visma-Lease a Bike) by 4:24 in the final general classification.[1]\nFlorian Lipowitz (Red Bull-Bora-Hansgrohe) completed the podium.[1] He finished 11:00 behind Pogačar[1].\nThe 4:24 margin was Pogačar's second largest at the Tour, after the 6:17 he won by over Vingegaard in 2024.[2]\nThe race started in Lille on Saturday 5 July 2025 and finished in Paris on Sunday 27 July.[3]",
+  "claims": [
+   {
+    "sentence": "Tadej Pogačar (UAE Team Emirates-XRG) won the 2025 Tour de France, his fourth title.",
+    "start": 0,
+    "end": 84,
+    "claim": "Tadej Pogačar (UAE Team Emirates-XRG) won the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cyclingnews.com/news/the-current-gc-standings-at-the-tour-de-france-2025/",
+      "host": "cyclingnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Tadej Pogačar (UAE Team Emirates-XRG) won the Tour de France for the fourth time in 2025, beating Jonas Vingegaard (Visma-Lease a Bike) by 4:24 in the final GC standings.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 1 | Tadej Pogačar (Slo) UAE Team Emirates-XRG | 73:54:59 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Tadej Pogačar of UAE Team Emirates-XRG won the Tour de France in 2025 and finished first in the final GC standings, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page's final GC standings table lists Tadej Pogačar (UAE Team Emirates-XRG) in first place with a time of 73:54:59 after stage 21, and the article says he won the Tour de France for the fourth time in 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Tadej Pogačar (UAE Team Emirates-XRG) won the 2025 Tour de France, his fourth title.",
+    "start": 0,
+    "end": 84,
+    "claim": "The 2025 Tour de France was Tadej Pogačar's fourth Tour title.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cyclingnews.com/news/the-current-gc-standings-at-the-tour-de-france-2025/",
+      "host": "cyclingnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Tadej Pogačar (UAE Team Emirates-XRG) won the Tour de France for the fourth time in 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Pogačar won the Tour de France for the fourth time in 2025, which matches the claim that the 2025 Tour was his fourth title.",
+      "page_judged": "supported",
+      "page_reason": "The page states Pogačar won the Tour de France for the fourth time in 2025 and headlines 'Tadej Pogačar sails away to fourth overall victory in Paris', which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "He beat Jonas Vingegaard (Visma-Lease a Bike) by 4:24 in the final general classification.[1]",
+    "start": 85,
+    "end": 178,
+    "claim": "Tadej Pogačar beat Jonas Vingegaard (Visma-Lease a Bike) by 4:24 in the final general classification of the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cyclingnews.com/news/the-current-gc-standings-at-the-tour-de-france-2025/",
+      "host": "cyclingnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Tadej Pogačar (UAE Team Emirates-XRG) won the Tour de France for the fourth time in 2025, beating Jonas Vingegaard (Visma-Lease a Bike) by 4:24 in the final GC standings.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "2 | Jonas Vingegaard (Den) Visma-Lease a Bike | 00:04:24",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Pogačar beat Vingegaard (Visma-Lease a Bike) by 4:24 in the final GC standings of the 2025 Tour de France, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Pogačar beat Vingegaard by 4:24 in the final GC standings, and the table lists Vingegaard as Visma-Lease a Bike with a 00:04:24 gap, so the claim is fully supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Florian Lipowitz (Red Bull-Bora-Hansgrohe) completed the podium.[1]",
+    "start": 179,
+    "end": 246,
+    "claim": "Florian Lipowitz (Red Bull-Bora-Hansgrohe) completed the podium of the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cyclingnews.com/news/the-current-gc-standings-at-the-tour-de-france-2025/",
+      "host": "cyclingnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Florian Lipowitz (Red Bull-Bora-Hansgrohe) completed the podium after unsuccessfully going on the attack during the final stage",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 3 | Florian Lipowitz (Ger) Red Bull-Bora-Hansgrohe | 00:11:00 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Florian Lipowitz (Red Bull-Bora-Hansgrohe) completed the podium and finished third in the general classification, which backs the claim's sole point.",
+      "page_judged": "supported",
+      "page_reason": "The page states Florian Lipowitz (Red Bull-Bora-Hansgrohe) finished third in the final GC standings, which is the podium, behind Pogačar and Vingegaard."
+     }
+    ]
+   },
+   {
+    "sentence": "He finished 11:00 behind Pogačar[1].",
+    "start": 247,
+    "end": 283,
+    "claim": "Florian Lipowitz finished 11:00 behind Tadej Pogačar in the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cyclingnews.com/news/the-current-gc-standings-at-the-tour-de-france-2025/",
+      "host": "cyclingnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The German did enough to ensure he stayed in third overall at 11:00",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 3 | Florian Lipowitz (Ger) Red Bull-Bora-Hansgrohe | 00:11:00 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show Lipowitz placed third overall at 11:00, but they never name Pogačar as the rider he finished behind and never mention the 2025 Tour, so those specifics are not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page's GC table lists Florian Lipowitz in third place at 00:11:00, which is the time gap to the race leader Pogačar, so the claim that he finished 11:00 behind Pogačar is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The 4:24 margin was Pogačar's second largest at the Tour, after the 6:17 he won by over Vingegaard in 2024.[2]",
+    "start": 284,
+    "end": 394,
+    "claim": "The 4:24 margin was Pogačar's second largest winning margin at the Tour de France.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://cyclingarchives.com/tour-de-france-2025-results-pogacar-fourth-yellow-vingegaard-lipowitz-lille-paris-podium/",
+      "host": "cyclingarchives.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 4:24 winning margin was his second largest at the Tour after the 2024 edition (6:17 over Vingegaard)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the 4:24 winning margin was Pogačar's second largest at the Tour, which matches the claim's wording and figures.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the 4:24 winning margin was Pogačar's second largest at the Tour, after the 2024 edition's 6:17 margin over Vingegaard."
+     }
+    ]
+   },
+   {
+    "sentence": "The 4:24 margin was Pogačar's second largest at the Tour, after the 6:17 he won by over Vingegaard in 2024.[2]",
+    "start": 284,
+    "end": 394,
+    "claim": "Tadej Pogačar won the 2024 Tour de France by 6:17 over Jonas Vingegaard.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://cyclingarchives.com/tour-de-france-2025-results-pogacar-fourth-yellow-vingegaard-lipowitz-lille-paris-podium/",
+      "host": "cyclingarchives.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 4:24 winning margin was his second largest at the Tour after the 2024 edition (6:17 over Vingegaard)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the 2024 Tour edition was won by a margin of 6:17 over Vingegaard, which matches the claim's margin and rival, though the quote itself never names Pogačar and only refers to 'his' wins.",
+      "page_judged": "supported",
+      "page_reason": "The page states Pogačar's wins in 2020, 2021, 2024 and 2025, and that Vingegaard lost 2024 by 6:17 ('the 2024 edition (6:17 over Vingegaard)' and 'a 6:17 loss in 2024'), so combining these supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The race started in Lille on Saturday 5 July 2025 and finished in Paris on Sunday 27 July.[3]",
+    "start": 395,
+    "end": 488,
+    "claim": "The 2025 Tour de France started in Lille on Saturday 5 July 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cyclingstage.com/tour-de-france-2025-results/",
+      "host": "cyclingstage.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The race started on Saturday 5 July 2025 in Lille, and finished in Paris on Sunday the 27th.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the race started on Saturday 5 July 2025 in Lille, matching every fact in the claim (date, weekday, and city).",
+      "page_judged": "supported",
+      "page_reason": "The page states the race started on Saturday 5 July 2025 in Lille, and the stage table confirms stage 1 was Lille - Lille on 5 Jul."
+     }
+    ]
+   },
+   {
+    "sentence": "The race started in Lille on Saturday 5 July 2025 and finished in Paris on Sunday 27 July.[3]",
+    "start": 395,
+    "end": 488,
+    "claim": "The 2025 Tour de France finished in Paris on Sunday 27 July.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cyclingstage.com/tour-de-france-2025-results/",
+      "host": "cyclingstage.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The race started on Saturday 5 July 2025 in Lille, and finished in Paris on Sunday the 27th.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the race finished in Paris on Sunday the 27th, and the July month is given by the start date of 5 July 2025, so every fact in the claim is backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states the race started on Saturday 5 July 2025 in Lille and finished in Paris on Sunday the 27th, and the stage table lists stage 21 on 27 Jul ending in Paris, so the claim's date and location are supported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 9,
+   "labels": {
+    "supported": 8,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 8,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.8889,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.008563,
+   "usd_per_claim": 0.000951
+  },
+  "cost": {
+   "total_usd": 0.0086,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 11,
+     "usd": 0.0038
+    },
+    {
+     "node": "page_check",
+     "calls": 9,
+     "usd": 0.0027
+    },
+    {
+     "node": "check",
+     "calls": 9,
+     "usd": 0.0016
+    }
+   ]
+  }
+ }
+}

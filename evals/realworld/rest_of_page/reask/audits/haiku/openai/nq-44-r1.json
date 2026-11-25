@@ -1,0 +1,194 @@
+{
+ "id": "nq-44-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:07:35+00:00",
+ "report": {
+  "answer_text": "*The Shape of Water* is a romantic fantasy directed by Guillermo del Toro, set in Baltimore in 1962. Elisa, a mute woman who works as a cleaner at a secret government laboratory, discovers that the facility is holding an amphibious humanoid captive. She begins visiting him in secret, bringing him hard-boiled eggs and communicating through sign language. Over time, they fall in love.\nWhen Elisa learns that the officials plan to kill and dissect him, she enlists her friends to help smuggle him out and return him to the water. But the ruthless security officer who captured him is determined to get him back.\nIt’s part fairy tale, part Cold War thriller, and at its heart, a love story about two outsiders who understand each other without words.",
+  "claims": [
+   {
+    "sentence": "*The Shape of Water* is a romantic fantasy directed by Guillermo del Toro, set in Baltimore in 1962.",
+    "start": 0,
+    "end": 100,
+    "claim": "The Shape of Water is a romantic fantasy film directed by Guillermo del Toro.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "*The Shape of Water* is a romantic fantasy directed by Guillermo del Toro, set in Baltimore in 1962.",
+    "start": 0,
+    "end": 100,
+    "claim": "The Shape of Water is set in Baltimore in 1962.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Elisa, a mute woman who works as a cleaner at a secret government laboratory, discovers that the facility is holding an amphibious humanoid captive.",
+    "start": 101,
+    "end": 249,
+    "claim": "Elisa is a mute woman who works as a cleaner at a secret government laboratory.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Elisa, a mute woman who works as a cleaner at a secret government laboratory, discovers that the facility is holding an amphibious humanoid captive.",
+    "start": 101,
+    "end": 249,
+    "claim": "Elisa discovers that the secret government laboratory is holding an amphibious humanoid captive.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "She begins visiting him in secret, bringing him hard-boiled eggs and communicating through sign language.",
+    "start": 250,
+    "end": 355,
+    "claim": "Elisa begins visiting the amphibious humanoid captive in secret.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "She begins visiting him in secret, bringing him hard-boiled eggs and communicating through sign language.",
+    "start": 250,
+    "end": 355,
+    "claim": "Elisa brings the amphibious humanoid hard-boiled eggs.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "She begins visiting him in secret, bringing him hard-boiled eggs and communicating through sign language.",
+    "start": 250,
+    "end": 355,
+    "claim": "Elisa communicates with the amphibious humanoid through sign language.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Over time, they fall in love.",
+    "start": 356,
+    "end": 385,
+    "claim": "Elisa and the amphibious humanoid fall in love over time.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "When Elisa learns that the officials plan to kill and dissect him, she enlists her friends to help smuggle him out and return him to the water.",
+    "start": 386,
+    "end": 529,
+    "claim": "The officials plan to kill and dissect the amphibious humanoid.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "When Elisa learns that the officials plan to kill and dissect him, she enlists her friends to help smuggle him out and return him to the water.",
+    "start": 386,
+    "end": 529,
+    "claim": "Elisa enlists her friends to help smuggle the amphibious humanoid out of the laboratory and return him to the water.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "But the ruthless security officer who captured him is determined to get him back.",
+    "start": 530,
+    "end": 611,
+    "claim": "The ruthless security officer who captured the amphibious humanoid is determined to get him back.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It’s part fairy tale, part Cold War thriller, and at its heart, a love story about two outsiders who understand each other without words.",
+    "start": 612,
+    "end": 749,
+    "claim": "The Shape of Water is part fairy tale, part Cold War thriller, and at its heart a love story about two outsiders who understand each other without words.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 12,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 12
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000587,
+   "usd_per_claim": 4.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0006,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,377 @@
+{
+ "id": "science-06",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:45:52+00:00",
+ "report": {
+  "answer_text": "Tianwen-2 is China’s first asteroid sample-return mission. It launched from the Xichang Satellite Launch Center on May 29, 2025, Beijing time, with two targets: one to sample and one to study up close. (cnsa.gov.cn)\n1. 469219 Kamoʻoalewa (2016 HO₃) is a small near-Earth asteroid and a *quasi-satellite*: it stays near Earth as it orbits the Sun, but it is not a moon. Tianwen-2 reached it in July 2026. The plan is to collect surface material and deliver it to Earth in a capsule in late 2027. (english.www.gov.cn)\n2. 311P/PANSTARRS is an active asteroid, often called a *main-belt comet*, that sheds dust and forms comet-like tails. After releasing the sample capsule, the spacecraft will continue to 311P to study it with onboard instruments, without collecting samples. (cnsa.gov.cn)",
+  "claims": [
+   {
+    "sentence": "Tianwen-2 is China’s first asteroid sample-return mission.",
+    "start": 0,
+    "end": 58,
+    "claim": "Tianwen-2 is China’s first asteroid sample-return mission.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10676920/content.html?utm_source=openai",
+      "host": "cnsa.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It launched from the Xichang Satellite Launch Center on May 29, 2025, Beijing time, with two targets: one to sample and one to study up close. (cnsa.gov.cn)",
+    "start": 59,
+    "end": 215,
+    "claim": "Tianwen-2 launched from the Xichang Satellite Launch Center on May 29, 2025, Beijing time.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10676920/content.html?utm_source=openai",
+      "host": "cnsa.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It launched from the Xichang Satellite Launch Center on May 29, 2025, Beijing time, with two targets: one to sample and one to study up close. (cnsa.gov.cn)",
+    "start": 59,
+    "end": 215,
+    "claim": "Tianwen-2 has two targets: one to sample and one to study up close.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10676920/content.html?utm_source=openai",
+      "host": "cnsa.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "1. 469219 Kamoʻoalewa (2016 HO₃) is a small near-Earth asteroid and a *quasi-satellite*: it stays near Earth as it orbits the Sun, but it is not a moon. Tianwen-2 reached it in July 2026. The plan is to collect surface material and deliver it to Earth in a capsule in late 2027. (english.www.gov.cn)",
+    "start": 216,
+    "end": 515,
+    "claim": "469219 Kamoʻoalewa (2016 HO₃) is a small near-Earth asteroid.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://english.www.gov.cn/news/202406/28/content_WS667e515fc6d0868f4e8e8a73.html?utm_source=openai",
+      "host": "english.www.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "According to mission planners and scientists, Tianwen 2 will target 2016 HO3, the smallest and closest quasi-satellite to Earth.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2016 HO3, also known as 469219 Kamo'oalewa, was first spotted in April 2016 by an asteroid survey telescope at the Haleakala Observatories in Hawaii, the US.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes identify 469219 Kamo'oalewa as 2016 HO3 and call it the smallest and closest quasi-satellite to Earth, which supports it being small, but they never state it is a near-Earth asteroid.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies 2016 HO3 as the smallest and closest quasi-satellite to Earth, names it as 469219 Kamo'oalewa, and describes the mission target as a near-Earth asteroid."
+     }
+    ]
+   },
+   {
+    "sentence": "1. 469219 Kamoʻoalewa (2016 HO₃) is a small near-Earth asteroid and a *quasi-satellite*: it stays near Earth as it orbits the Sun, but it is not a moon. Tianwen-2 reached it in July 2026. The plan is to collect surface material and deliver it to Earth in a capsule in late 2027. (english.www.gov.cn)",
+    "start": 216,
+    "end": 515,
+    "claim": "Kamoʻoalewa is a quasi-satellite that stays near Earth as it orbits the Sun, and it is not a moon.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://english.www.gov.cn/news/202406/28/content_WS667e515fc6d0868f4e8e8a73.html?utm_source=openai",
+      "host": "english.www.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "According to mission planners and scientists, Tianwen 2 will target 2016 HO3, the smallest and closest quasi-satellite to Earth.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2016 HO3, also known as 469219 Kamo'oalewa, was first spotted in April 2016 by an asteroid survey telescope at the Haleakala Observatories in Hawaii, the US.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Kamoʻoalewa (2016 HO3) is a quasi-satellite close to Earth, but they never state that it is not a moon.",
+      "page_judged": "not_supported",
+      "page_reason": "The page identifies 2016 HO3 (469219 Kamo'oalewa) as a quasi-satellite to Earth but does not say that it orbits the Sun or that it is not a moon."
+     }
+    ]
+   },
+   {
+    "sentence": "1. 469219 Kamoʻoalewa (2016 HO₃) is a small near-Earth asteroid and a *quasi-satellite*: it stays near Earth as it orbits the Sun, but it is not a moon. Tianwen-2 reached it in July 2026. The plan is to collect surface material and deliver it to Earth in a capsule in late 2027. (english.www.gov.cn)",
+    "start": 216,
+    "end": 515,
+    "claim": "Tianwen-2 reached Kamoʻoalewa in July 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://english.www.gov.cn/news/202406/28/content_WS667e515fc6d0868f4e8e8a73.html?utm_source=openai",
+      "host": "english.www.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Tianwen 2 was scheduled to launch the year after June 2024 to retrieve samples from asteroid 2016 HO3, also known as Kamo'oalewa, but does not say it reached the asteroid in July 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "1. 469219 Kamoʻoalewa (2016 HO₃) is a small near-Earth asteroid and a *quasi-satellite*: it stays near Earth as it orbits the Sun, but it is not a moon. Tianwen-2 reached it in July 2026. The plan is to collect surface material and deliver it to Earth in a capsule in late 2027. (english.www.gov.cn)",
+    "start": 216,
+    "end": 515,
+    "claim": "The plan is for Tianwen-2 to collect surface material from Kamoʻoalewa and deliver it to Earth in a capsule in late 2027.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://english.www.gov.cn/news/202406/28/content_WS667e515fc6d0868f4e8e8a73.html?utm_source=openai",
+      "host": "english.www.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Tianwen-2 will collect dust from 2016 HO3 (Kamoʻoalewa) and return samples in a reentry module, but it gives no late-2027 delivery date and says the mission is scheduled to launch in 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "2. 311P/PANSTARRS is an active asteroid, often called a *main-belt comet*, that sheds dust and forms comet-like tails. After releasing the sample capsule, the spacecraft will continue to 311P to study it with onboard instruments, without collecting samples. (cnsa.gov.cn)",
+    "start": 516,
+    "end": 787,
+    "claim": "311P/PANSTARRS is an active asteroid, often called a main-belt comet, that sheds dust and forms comet-like tails.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10676920/content.html?utm_source=openai",
+      "host": "cnsa.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "2. 311P/PANSTARRS is an active asteroid, often called a *main-belt comet*, that sheds dust and forms comet-like tails. After releasing the sample capsule, the spacecraft will continue to 311P to study it with onboard instruments, without collecting samples. (cnsa.gov.cn)",
+    "start": 516,
+    "end": 787,
+    "claim": "After releasing the sample capsule, the Tianwen-2 spacecraft will continue to 311P/PANSTARRS to study it with onboard instruments.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10676920/content.html?utm_source=openai",
+      "host": "cnsa.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "2. 311P/PANSTARRS is an active asteroid, often called a *main-belt comet*, that sheds dust and forms comet-like tails. After releasing the sample capsule, the spacecraft will continue to 311P to study it with onboard instruments, without collecting samples. (cnsa.gov.cn)",
+    "start": 516,
+    "end": 787,
+    "claim": "The spacecraft will not collect samples from 311P/PANSTARRS.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10676920/content.html?utm_source=openai",
+      "host": "cnsa.gov.cn",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 6,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.6667,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002656,
+   "usd_per_claim": 0.000266
+  },
+  "cost": {
+   "total_usd": 0.0027,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0007
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

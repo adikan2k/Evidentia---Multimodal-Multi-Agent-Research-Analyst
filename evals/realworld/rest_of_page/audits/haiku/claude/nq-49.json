@@ -1,0 +1,780 @@
+{
+ "id": "nq-49",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:44:25+00:00",
+ "report": {
+  "answer_text": "Syria isn't in one single war right now. The large civil war ended, but several smaller conflicts are still going.\nBackground\nThe conflict began in 2011 as a civil uprising against President Bashar al-Assad, inspired by the Arab Spring protests.[1] It grew into a full civil war involving many factions and foreign powers.\nRebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule. The group's leader, Ahmed al-Sharaa, was named interim president in January 2025.[2]\nThe UN-mandated Commission of Inquiry says more than 580,000 people were killed and 13 million were forcibly displaced.[3]\nWho is fighting now, and why\n1. The government and the Kurdish-led SDF (northeast). The government wants to bring the SDF under the national army's command. Clashes erupted in Aleppo in January 2026 after talks stalled over a missed deadline for integrating the SDF into the army.[3] A US-mediated ceasefire followed on January 30, 2026, though integration is still being negotiated.[4] One tracker reports that SDF commander Mazloum Abdi declared his force dissolved into the national army on 25 August 2026.[2]\n2. Israel (south). Israeli forces have run a de facto buffer zone near the Golan Heights since December 8, 2024, moving beyond the 1974 disengagement line.[4] Israeli incursions into southern Syria have escalated since Assad fell.[3] Israeli raids continue in Quneitra and Deraa.[2]\n3. Communal and armed groups in the south. There is intermittent fighting between Druze, Bedouin and other armed groups.[3] Sweida has seen renewed violence.\n4. Islamic State remnants. Jordanian air strikes hit southern Syria on October 26, 2026. Syria says seven people were killed. Jordan says it killed more than 20 Islamic State militants.[2] Other sources describe a residual fight against IS, and Turkish security concerns also affect the northeast.\n5. Leftover Assad-era forces. Transitional authorities have been working to dissolve remnants of Assad's government.[3]\nSummary: Syria's government is not at war with another country in the conventional sense. Its main conflicts are with Kurdish-led forces over control and integration, and with Israeli military incursions in the south. It also faces internal sectarian violence and an ongoing counter-ISIS fight. Syria is better described as unstable than fully at peace.[5]\nI can go into more detail on any of these if you'd like.",
+  "claims": [
+   {
+    "sentence": "Syria isn't in one single war right now.",
+    "start": 0,
+    "end": 40,
+    "claim": "Syria is not in one single war right now.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The large civil war ended, but several smaller conflicts are still going.",
+    "start": 41,
+    "end": 114,
+    "claim": "The large civil war in Syria ended, but several smaller conflicts are still going.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The conflict began in 2011 as a civil uprising against President Bashar al-Assad, inspired by the Arab Spring protests.[1]",
+    "start": 126,
+    "end": 248,
+    "claim": "The Syrian conflict began in 2011 as a civil uprising against President Bashar al-Assad, inspired by the Arab Spring protests.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://euaa.europa.eu/country-guidance-syria-2024/1-introduction-situation-syria",
+      "host": "euaa.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It grew into a full civil war involving many factions and foreign powers.",
+    "start": 249,
+    "end": 322,
+    "claim": "The Syrian conflict grew into a full civil war involving many factions and foreign powers.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Rebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule.",
+    "start": 323,
+    "end": 412,
+    "claim": "Rebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that rebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that rebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule, matching every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The group's leader, Ahmed al-Sharaa, was named interim president in January 2025.[2]",
+    "start": 413,
+    "end": 497,
+    "claim": "Ahmed al-Sharaa, leader of Hayat Tahrir al-Sham, was named interim president of Syria in January 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rebels led by Hayat Tahrir al-Sham took Damascus on 8 December 2024, ending Assad's rule, and the group's leader, Ahmed al-Sharaa, was named interim president on 29 January 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that HTS leader Ahmed al-Sharaa was named interim president on 29 January 2025, which covers the claim's person, role, and January 2025 date.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Hayat Tahrir al-Sham's leader, Ahmed al-Sharaa, was named interim president on 29 January 2025, which matches every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The UN-mandated Commission of Inquiry says more than 580,000 people were killed and 13 million were forcibly displaced.[3]",
+    "start": 498,
+    "end": 620,
+    "claim": "The UN-mandated Commission of Inquiry says more than 580,000 people were killed in the Syrian conflict.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The UN-mandated Commission of Inquiry says more than 580,000 people were killed and 13 million were forcibly displaced.[3]",
+    "start": 498,
+    "end": 620,
+    "claim": "The UN-mandated Commission of Inquiry says 13 million people were forcibly displaced in the Syrian conflict.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The government wants to bring the SDF under the national army's command.",
+    "start": 705,
+    "end": 777,
+    "claim": "The Syrian government wants to bring the Kurdish-led SDF under the national army's command.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Clashes erupted in Aleppo in January 2026 after talks stalled over a missed deadline for integrating the SDF into the army.[3]",
+    "start": 778,
+    "end": 904,
+    "claim": "Clashes erupted in Aleppo in January 2026 after talks stalled over a missed deadline for integrating the SDF into the army.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A US-mediated ceasefire followed on January 30, 2026, though integration is still being negotiated.[4]",
+    "start": 905,
+    "end": 1007,
+    "claim": "A US-mediated ceasefire between the government and the SDF followed on January 30, 2026.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://armedconflicts.org/maps/syria-civil-war-map.html",
+      "host": "armedconflicts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Kurdish-led Autonomous Administration of North and East Syria transferred administrative control of Qamishli to the Syrian government under a US-mediated ceasefire reached January 30, 2026",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Largest city in Syria's Kurdish-majority northeast and former de facto capital of the Autonomous Administration of North and East Syria. Control: Syrian government (administrative control transferred from the Syrian Democratic Forces under a US-mediated ceasefire reached January 30, 2026)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that a US-mediated ceasefire was reached on January 30, 2026, and that administrative control of Qamishli passed from the SDF/Autonomous Administration to the Syrian government under it, which backs the claim's ceasefire, mediation, parties and date.",
+      "page_judged": "supported",
+      "page_reason": "The page says administrative control of Qamishli was transferred from the Syrian Democratic Forces to the Syrian government under a US-mediated ceasefire reached January 30, 2026, which supports the claim's parties, mediator, and date."
+     }
+    ]
+   },
+   {
+    "sentence": "A US-mediated ceasefire followed on January 30, 2026, though integration is still being negotiated.[4]",
+    "start": 905,
+    "end": 1007,
+    "claim": "SDF integration into the national army is still being negotiated after the January 30, 2026 ceasefire.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://armedconflicts.org/maps/syria-civil-war-map.html",
+      "host": "armedconflicts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "under a US-mediated ceasefire reached January 30, 2026, though the broader integration of Kurdish-led forces into a unified national army is still being negotiated.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a ceasefire was reached January 30, 2026 and that integration of Kurdish-led forces into a unified national army is still being negotiated, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the US-mediated ceasefire reached January 30, 2026 transferred administrative control of Qamishli, and that the broader integration of Kurdish-led forces into a unified national army is still being negotiated, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "One tracker reports that SDF commander Mazloum Abdi declared his force dissolved into the national army on 25 August 2026.[2]",
+    "start": 1008,
+    "end": 1133,
+    "claim": "One tracker reports that SDF commander Mazloum Abdi declared his force dissolved into the national army on 25 August 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SDF commander Mazloum Abdi declared his force dissolved into the national army on 25 August 2026.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "August 25, 2026\n— SDF commander Mazloum Abdi declares the force dissolved and its integration into the Syrian army complete.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that SDF commander Mazloum Abdi declared the force dissolved into the national (Syrian) army on 25 August 2026, covering every fact in the claim, though the attribution to 'one tracker' is not separately stated in the quotes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that SDF commander Mazloum Abdi declared his force dissolved into the national army on 25 August 2026, both in the background text and the timeline, so the claim is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Israeli forces have run a de facto buffer zone near the Golan Heights since December 8, 2024, moving beyond the 1974 disengagement line.[4]",
+    "start": 1153,
+    "end": 1292,
+    "claim": "Israeli forces have run a de facto buffer zone near the Golan Heights since December 8, 2024, moving beyond the 1974 disengagement line.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://armedconflicts.org/maps/syria-civil-war-map.html",
+      "host": "armedconflicts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Israeli forces have operated a de facto buffer zone in the Quneitra area near the Golan Heights since December 8, 2024, moving beyond the 1974 disengagement line.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Control: Israeli military, operating a de facto buffer zone established December 8, 2024",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Israeli forces have operated a de facto buffer zone near the Golan Heights since December 8, 2024, moving beyond the 1974 disengagement line, which covers every fact in the claim (the second quote adds only the same date and buffer zone).",
+      "page_judged": "supported",
+      "page_reason": "The page states that Israeli forces have operated a de facto buffer zone in the Quneitra area near the Golan Heights since December 8, 2024, moving beyond the 1974 disengagement line, which matches every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Israeli incursions into southern Syria have escalated since Assad fell.[3]",
+    "start": 1293,
+    "end": 1367,
+    "claim": "Israeli incursions into southern Syria have escalated since Assad fell.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Israeli raids continue in Quneitra and Deraa.[2]",
+    "start": 1368,
+    "end": 1416,
+    "claim": "Israeli raids continue in Quneitra and Deraa.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Israeli raids continue in Quneitra and Deraa",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Israeli raids continue in Quneitra and Deraa, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Israeli troops operate mainly in Quneitra and Deraa and that Israeli raids continue in Quneitra and Deraa, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "There is intermittent fighting between Druze, Bedouin and other armed groups.[3]",
+    "start": 1460,
+    "end": 1540,
+    "claim": "There is intermittent fighting between Druze, Bedouin and other armed groups in southern Syria.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Sweida has seen renewed violence.",
+    "start": 1541,
+    "end": 1574,
+    "claim": "Sweida has seen renewed violence.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jordanian air strikes hit southern Syria on October 26, 2026.",
+    "start": 1602,
+    "end": 1663,
+    "claim": "Jordanian air strikes hit southern Syria on October 26, 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 26 October, Jordanian air strikes in the south killed seven people, Syria said; Jordan said it hit Islamic State militants.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that Jordanian air strikes hit southern Syria on 26 October, but it gives no year, so the 2026 date in the claim is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on October 26, 2026 Jordanian air strikes hit southern Syria, with Syria saying seven people were killed and Jordan saying it hit Islamic State militants."
+     }
+    ]
+   },
+   {
+    "sentence": "Syria says seven people were killed.",
+    "start": 1664,
+    "end": 1700,
+    "claim": "Syria says seven people were killed in the Jordanian air strikes.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 26 October, Jordanian air strikes in the south killed seven people, Syria said; Jordan said it hit Islamic State militants.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Syria said Jordanian air strikes in the south killed seven people, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on 26 October 2026 Jordanian air strikes in the south killed seven people, according to Syria, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Jordan says it killed more than 20 Islamic State militants.[2]",
+    "start": 1701,
+    "end": 1763,
+    "claim": "Jordan says it killed more than 20 Islamic State militants in the air strikes.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.worldmonitor.app/crises/syria-conflict/",
+      "host": "worldmonitor.app",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "October 26, 2026\n— Jordanian air strikes hit southern Syria; Syria says seven people were killed, while Jordan says it killed more than 20 Islamic State militants. (al-monitor.com)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Jordan says it killed more than 20 Islamic State militants in air strikes in southern Syria, which matches the claim's attribution and figure.",
+      "page_judged": "supported",
+      "page_reason": "The timeline states that on October 26, 2026 Jordanian air strikes hit southern Syria, Syria says seven people were killed, while Jordan says it killed more than 20 Islamic State militants, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Other sources describe a residual fight against IS, and Turkish security concerns also affect the northeast.",
+    "start": 1764,
+    "end": 1872,
+    "claim": "Other sources describe a residual fight against Islamic State in Syria, and Turkish security concerns also affect the northeast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Transitional authorities have been working to dissolve remnants of Assad's government.[3]",
+    "start": 1903,
+    "end": 1992,
+    "claim": "Transitional authorities have been working to dissolve remnants of Assad's government.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.globalr2p.org/countries/syria/",
+      "host": "globalr2p.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Syria's government is not at war with another country in the conventional sense.",
+    "start": 2002,
+    "end": 2082,
+    "claim": "Syria's government is not at war with another country in the conventional sense.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://armedconflicts.org/syria-civil-war.html",
+      "host": "armedconflicts.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Syria's conflict as internal fragmentation among factions, foreign forces, and Israeli airstrikes, but never explicitly states whether Syria's government is or is not in conventional interstate war with another country, so the claim's qualifier is not directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Its main conflicts are with Kurdish-led forces over control and integration, and with Israeli military incursions in the south.",
+    "start": 2083,
+    "end": 2210,
+    "claim": "Syria's main conflicts are with Kurdish-led forces over control and integration, and with Israeli military incursions in the south.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://armedconflicts.org/syria-civil-war.html",
+      "host": "armedconflicts.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions Kurdish-led forces controlling the northeast, an Israeli-operated buffer zone in the Quneitra/Golan area, and Israeli airstrikes, but it does not describe the conflicts as being mainly with Kurdish forces over integration, nor frame Syria's main conflicts this way; it presents a broad fragmented landscape of factions, foreign forces, and ISIS."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 9,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 8,
+    "citation_unread": 0,
+    "uncited": 5
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 11,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.1818,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.45,
+   "pages_cited": 5,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 2,
+   "usd": 0.007625,
+   "usd_per_claim": 0.000305
+  },
+  "cost": {
+   "total_usd": 0.0076,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 12,
+     "usd": 0.0026
+    },
+    {
+     "node": "page_check",
+     "calls": 12,
+     "usd": 0.0026
+    },
+    {
+     "node": "check",
+     "calls": 10,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

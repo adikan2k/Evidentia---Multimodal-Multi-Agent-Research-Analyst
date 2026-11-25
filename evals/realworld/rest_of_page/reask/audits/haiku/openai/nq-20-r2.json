@@ -1,0 +1,166 @@
+{
+ "id": "nq-20-r2",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:06:25+00:00",
+ "report": {
+  "answer_text": "If you mean the Supreme Court of India, Justice Dalveer Bhandari joined the International Court of Justice (ICJ) on April 27, 2012, and was re-elected for a second term beginning in 2018. (sci.gov.in)\nJustice R. S. Pathak, a former Chief Justice of India, also served on the ICJ, from 1989 to 1991. (sci.gov.in)",
+  "claims": [
+   {
+    "sentence": "If you mean the Supreme Court of India, Justice Dalveer Bhandari joined the International Court of Justice (ICJ) on April 27, 2012, and was re-elected for a second term beginning in 2018. (sci.gov.in)",
+    "start": 0,
+    "end": 200,
+    "claim": "Justice Dalveer Bhandari joined the International Court of Justice (ICJ) on April 27, 2012.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sci.gov.in/judge/justice-dalveer-bhandari/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "If you mean the Supreme Court of India, Justice Dalveer Bhandari joined the International Court of Justice (ICJ) on April 27, 2012, and was re-elected for a second term beginning in 2018. (sci.gov.in)",
+    "start": 0,
+    "end": 200,
+    "claim": "Justice Dalveer Bhandari was re-elected to the International Court of Justice for a second term beginning in 2018.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sci.gov.in/judge/justice-dalveer-bhandari/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Justice R. S. Pathak, a former Chief Justice of India, also served on the ICJ, from 1989 to 1991. (sci.gov.in)",
+    "start": 201,
+    "end": 311,
+    "claim": "Justice R. S. Pathak was a former Chief Justice of India.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.sci.gov.in/judge/justice-r-s-pathak/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Justice R. S. Pathak, a former Chief Justice of India, also served on the ICJ, from 1989 to 1991. (sci.gov.in)",
+    "start": 201,
+    "end": 311,
+    "claim": "Justice R. S. Pathak served on the International Court of Justice from 1989 to 1991.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.sci.gov.in/judge/justice-r-s-pathak/?utm_source=openai",
+      "host": "sci.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000328,
+   "usd_per_claim": 8.2e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

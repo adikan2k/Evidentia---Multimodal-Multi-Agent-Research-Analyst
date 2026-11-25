@@ -1,0 +1,180 @@
+{
+ "id": "sport_culture-02",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:00:32+00:00",
+ "report": {
+  "answer_text": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings. It was Pogačar’s fourth Tour title. (letour.fr)",
+  "claims": [
+   {
+    "sentence": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings.",
+    "start": 0,
+    "end": 139,
+    "claim": "Tadej Pogačar won the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With a fourth Tour de France victory, Tadej Pogacar has matched Chris Froome’s record",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2025 edition could serve as a textbook example of the Pogacar method",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state Pogačar won a fourth Tour de France and that it matched Froome's record, but they never name the 2025 edition as the one he won, so the year is unverified.",
+      "page_judged": "supported",
+      "page_reason": "The page describes Pogacar's fourth Tour de France victory and his overall lead and dominance in the 2025 edition, including the Paris Champs-Elysees finish context, so it states he won the 2025 Tour."
+     }
+    ]
+   },
+   {
+    "sentence": "Tadej Pogačar won the 2025 Tour de France, finishing 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings.",
+    "start": 0,
+    "end": 139,
+    "claim": "Tadej Pogačar finished 4 minutes and 24 seconds ahead of runner-up Jonas Vingegaard in the overall standings of the 2025 Tour de France.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After his time trial win at Peyragudes, Pogacar’s lead over Vingegaard stood at 4’07’’, increasing by only 17 more seconds over the final eight stages.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives a lead of 4'07'' after Peyragudes that grew by 17 seconds over the final eight stages, which implies the 4'24'' margin over Vingegaard, but it never states the final figure or the 2025 year.",
+      "page_judged": "supported",
+      "page_reason": "The page says Pogačar's lead over Vingegaard was 4'07\" after the Peyragudes time trial and grew by only 17 more seconds over the final eight stages, which sums to 4'24\", though it never explicitly states the final gap or the runner-up placing."
+     }
+    ]
+   },
+   {
+    "sentence": "It was Pogačar’s fourth Tour title. (letour.fr)",
+    "start": 140,
+    "end": 187,
+    "claim": "The 2025 Tour de France was Tadej Pogačar’s fourth Tour de France title.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.letour.fr/en/news/2025/fourmidable-pogacar/1332891?utm_source=openai",
+      "host": "letour.fr",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With a fourth Tour de France victory, Tadej Pogacar has matched Chris Froome’s record",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The 2025 edition could serve as a textbook example of the Pogacar method",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Pogacar's fourth Tour de France victory matched Froome's record, but they never explicitly tie that fourth win to the 2025 edition, which only appears in a separate quote about the 'Pogacar method'.",
+      "page_judged": "supported",
+      "page_reason": "The page says Pogacar's fourth Tour victory matched Chris Froome's record and that he is one win away from five-time winners, and describes the 2025 race as a Pogacar triumph, so it supports that 2025 was his fourth title."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002725,
+   "usd_per_claim": 0.000908
+  },
+  "cost": {
+   "total_usd": 0.0027,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0009
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

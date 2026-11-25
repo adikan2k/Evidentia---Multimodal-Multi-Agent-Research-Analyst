@@ -1,0 +1,100 @@
+{
+ "id": "economy-07",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:58:23+00:00",
+ "report": {
+  "answer_text": "Bitcoin reached an all-time intraday high of $126,198.07 USD on October 6, 2025, according to CoinMarketCap. (coinmarketcap.com)",
+  "claims": [
+   {
+    "sentence": "Bitcoin reached an all-time intraday high of $126,198.07 USD on October 6, 2025, according to CoinMarketCap. (coinmarketcap.com)",
+    "start": 0,
+    "end": 128,
+    "claim": "Bitcoin reached an all-time intraday high of $126,198.07 USD on October 6, 2025, according to CoinMarketCap.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://coinmarketcap.com/currencies/bitcoin/?utm_source=openai",
+      "host": "coinmarketcap.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "All-time high\nOct 06, 2025 (1y ago)\n$126,198.07",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote shows an all-time high of $126,198.07 dated Oct 06, 2025, which backs the figure and date, but it does not say the high was intraday or name CoinMarketCap as the source.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists an 'All-time high' of $126,198.07 on Oct 06, 2025, but never describes it as an intraday high, so the claim's 'intraday' qualifier is unsupported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 1,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 1,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001488,
+   "usd_per_claim": 0.001488
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0008
+    },
+    {
+     "node": "page_check",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

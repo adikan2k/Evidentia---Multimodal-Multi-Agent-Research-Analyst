@@ -1,0 +1,590 @@
+{
+ "id": "economy-09-r3",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:04:15+00:00",
+ "report": {
+  "answer_text": "Sanae Takaichi’s 2025 economic agenda paired short-term relief from rising prices with longer-term public investment to raise wages and growth. She called this “responsible and proactive” fiscal policy: spend now on targeted measures, while aiming to lower Japan’s debt-to-GDP ratio by growing the economy faster than public debt. (japan.kantei.go.jp)\nCost-of-living relief. Her government proposed ending the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, paying ¥20,000 per child, and giving local governments more money to help households with rising food prices. (bf.emb-japan.go.jp)\nIncome-tax relief. In December, her government proposed raising the annual income-tax threshold from ¥1.6 million to ¥1.78 million and linking key deductions to inflation. It also began designing a refundable tax credit for low- and middle-income households. (investing.com)\nHigher wages and business investment. She proposed helping small businesses invest in labor-saving equipment and pass higher costs on to customers so they could afford wage increases. She also backed public-private investment in AI, semiconductors, shipbuilding, and quantum technology, along with stronger supply chains for critical materials. (japan.kantei.go.jp)\nThe centerpiece was the November 21, 2025 stimulus package: ¥21.3 trillion in new fiscal measures, including tax cuts, or ¥25.5 trillion once government investment and loan programs were included. (japan.kantei.go.jp)",
+  "claims": [
+   {
+    "sentence": "Sanae Takaichi’s 2025 economic agenda paired short-term relief from rising prices with longer-term public investment to raise wages and growth.",
+    "start": 0,
+    "end": 143,
+    "claim": "Sanae Takaichi’s 2025 economic agenda paired short-term relief from rising prices with longer-term public investment to raise wages and growth.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "My cabinet will mount responses to the rising prices facing the Japanese people, as a matter of the highest priority.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Strategic investments that enhance resilience against potential crises are the core focus of the Takaichi Cabinet's growth strategy.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The role of government lies in preparing an environment in which wage increases can be undertaken in a sustained manner.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the short-term price-response priority and strategic investment plus a government role in enabling sustained wage increases, but they do not explicitly state a 2025 date, a 'longer-term' framing, or that the investment is public and aimed at raising growth and wages together.",
+      "page_judged": "supported",
+      "page_reason": "The page describes price-relief measures, wage-increase support, and strategic investments for growth, which together match the claim's pairing of short-term relief with longer-term investment for wages and growth, though it does not explicitly frame these as 'public investment' in those exact terms and the investments are described as public and private."
+     }
+    ]
+   },
+   {
+    "sentence": "She called this “responsible and proactive” fiscal policy: spend now on targeted measures, while aiming to lower Japan’s debt-to-GDP ratio by growing the economy faster than public debt. (japan.kantei.go.jp)",
+    "start": 144,
+    "end": 351,
+    "claim": "Takaichi called her fiscal policy “responsible and proactive”.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "all in keeping with our approach of responsible and proactive public finances",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote contains the phrase \"responsible and proactive public finances\" as the speaker's approach, which backs the claim that Takaichi described her fiscal policy that way, though the quote does not name Takaichi explicitly.",
+      "page_judged": "supported",
+      "page_reason": "The page states the cabinet's approach is 'responsible and proactive public finances', which matches the claim that Takaichi called her fiscal policy 'responsible and proactive'."
+     }
+    ]
+   },
+   {
+    "sentence": "She called this “responsible and proactive” fiscal policy: spend now on targeted measures, while aiming to lower Japan’s debt-to-GDP ratio by growing the economy faster than public debt. (japan.kantei.go.jp)",
+    "start": 144,
+    "end": 351,
+    "claim": "Takaichi’s fiscal policy aims to lower Japan’s debt-to-GDP ratio by growing the economy faster than public debt.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Following this path, we will curb the rate of growth of Japan's outstanding debt balance so as not to exceed the rate of economic growth and lower Japan's ratio of outstanding government debt to GDP.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the core aim of lowering the debt-to-GDP ratio by keeping debt growth at or below economic growth, but it does not attribute this specifically to Takaichi or describe a faster-than-debt growth strategy beyond that wording, and the attribution to Takaichi is not stated in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page says the cabinet will curb the growth rate of outstanding debt so it does not exceed economic growth and lower the debt-to-GDP ratio, which matches the claim's core mechanism of growing the economy faster than debt, though 'growing faster than public debt' is a close paraphrase of curbing debt growth below economic growth."
+     }
+    ]
+   },
+   {
+    "sentence": "Cost-of-living relief. Her government proposed ending the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, paying ¥20,000 per child, and giving local governments more money to help households with rising food prices. (bf.emb-japan.go.jp)",
+    "start": 352,
+    "end": 632,
+    "claim": "Takaichi’s government proposed ending the temporary gasoline and diesel tax surcharges.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bf.emb-japan.go.jp/files/100943314.pdf",
+      "host": "bf.emb-japan.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Cost-of-living relief. Her government proposed ending the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, paying ¥20,000 per child, and giving local governments more money to help households with rising food prices. (bf.emb-japan.go.jp)",
+    "start": 352,
+    "end": 632,
+    "claim": "Takaichi’s government proposed subsidizing winter electricity and gas bills.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bf.emb-japan.go.jp/files/100943314.pdf",
+      "host": "bf.emb-japan.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Cost-of-living relief. Her government proposed ending the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, paying ¥20,000 per child, and giving local governments more money to help households with rising food prices. (bf.emb-japan.go.jp)",
+    "start": 352,
+    "end": 632,
+    "claim": "Takaichi’s government proposed paying ¥20,000 per child.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bf.emb-japan.go.jp/files/100943314.pdf",
+      "host": "bf.emb-japan.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Cost-of-living relief. Her government proposed ending the temporary gasoline and diesel tax surcharges, subsidizing winter electricity and gas bills, paying ¥20,000 per child, and giving local governments more money to help households with rising food prices. (bf.emb-japan.go.jp)",
+    "start": 352,
+    "end": 632,
+    "claim": "Takaichi’s government proposed giving local governments more money to help households with rising food prices.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bf.emb-japan.go.jp/files/100943314.pdf",
+      "host": "bf.emb-japan.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Income-tax relief. In December, her government proposed raising the annual income-tax threshold from ¥1.6 million to ¥1.78 million and linking key deductions to inflation. It also began designing a refundable tax credit for low- and middle-income households. (investing.com)",
+    "start": 633,
+    "end": 907,
+    "claim": "In December, Takaichi’s government proposed raising the annual income-tax threshold from ¥1.6 million to ¥1.78 million.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.investing.com/news/economy-news/japan-to-raise-taxfree-income-threshold-to-ease-inflation-squeeze-4414532?utm_source=openai",
+      "host": "investing.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Income-tax relief. In December, her government proposed raising the annual income-tax threshold from ¥1.6 million to ¥1.78 million and linking key deductions to inflation. It also began designing a refundable tax credit for low- and middle-income households. (investing.com)",
+    "start": 633,
+    "end": 907,
+    "claim": "In December, Takaichi’s government proposed linking key income-tax deductions to inflation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.investing.com/news/economy-news/japan-to-raise-taxfree-income-threshold-to-ease-inflation-squeeze-4414532?utm_source=openai",
+      "host": "investing.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Income-tax relief. In December, her government proposed raising the annual income-tax threshold from ¥1.6 million to ¥1.78 million and linking key deductions to inflation. It also began designing a refundable tax credit for low- and middle-income households. (investing.com)",
+    "start": 633,
+    "end": 907,
+    "claim": "Takaichi’s government began designing a refundable tax credit for low- and middle-income households.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.investing.com/news/economy-news/japan-to-raise-taxfree-income-threshold-to-ease-inflation-squeeze-4414532?utm_source=openai",
+      "host": "investing.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Higher wages and business investment. She proposed helping small businesses invest in labor-saving equipment and pass higher costs on to customers so they could afford wage increases. She also backed public-private investment in AI, semiconductors, shipbuilding, and quantum technology, along with stronger supply chains for critical materials. (japan.kantei.go.jp)",
+    "start": 908,
+    "end": 1273,
+    "claim": "Takaichi proposed helping small businesses invest in labor-saving equipment.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will protect SMEs from rising costs and strongly support wage increases and capital investment through productivity assistance, but it never mentions labor-saving equipment specifically."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher wages and business investment. She proposed helping small businesses invest in labor-saving equipment and pass higher costs on to customers so they could afford wage increases. She also backed public-private investment in AI, semiconductors, shipbuilding, and quantum technology, along with stronger supply chains for critical materials. (japan.kantei.go.jp)",
+    "start": 908,
+    "end": 1273,
+    "claim": "Takaichi proposed helping small businesses pass higher costs on to customers so they could afford wage increases.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will protect SMEs from rising costs and support wage increases through productivity assistance, succession, M&A, and fair transactions, but never states that small businesses should pass higher costs on to customers."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher wages and business investment. She proposed helping small businesses invest in labor-saving equipment and pass higher costs on to customers so they could afford wage increases. She also backed public-private investment in AI, semiconductors, shipbuilding, and quantum technology, along with stronger supply chains for critical materials. (japan.kantei.go.jp)",
+    "start": 908,
+    "end": 1273,
+    "claim": "Takaichi backed public-private investment in AI, semiconductors, shipbuilding, and quantum technology.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In strategic fields such as AI and semiconductors, shipbuilding, quantum technology, biotechnology, aviation and space, and cyber security, we will take comprehensive support measures from a multifaceted perspective that includes boldly promoting investment",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "By so doing, we will draw out proactive investment from both the public and the private sector.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that support measures including boldly promoting investment will be taken in AI and semiconductors, shipbuilding, and quantum technology, and that proactive investment will be drawn from both public and private sectors, covering every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the government will take comprehensive support measures including boldly promoting investment in strategic fields such as AI and semiconductors, shipbuilding, quantum technology, biotechnology, aviation and space, and cyber security, and that strategic investments will be implemented by the public and private sector working hand in hand, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher wages and business investment. She proposed helping small businesses invest in labor-saving equipment and pass higher costs on to customers so they could afford wage increases. She also backed public-private investment in AI, semiconductors, shipbuilding, and quantum technology, along with stronger supply chains for critical materials. (japan.kantei.go.jp)",
+    "start": 908,
+    "end": 1273,
+    "claim": "Takaichi backed stronger supply chains for critical materials.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?bsft_aaid=72bb9dec-3452-4075-a63c-0f8d60246a1e&bsft_clkid=6c18bd80-303b-4b98-82b0-10f2840e1d39&bsft_eid=a30f775d-a95b-4704-ba5b-9fcd5291f465&bsft_ek=2026-02-16T05%3A00%3A34Z&bsft_lx=6&bsft_mid=90fc3602-ddfd-451c-96a8-cc6e033e1f1c&bsft_mime_type=html&bsft_tv=1285&bsft_txnid=e39b4aa0-5748-470d-98fc-2b389a8e2054&bsft_uid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d&bsft_utid=54e33523-d5da-4f6c-adb8-c5cdeb30b16d-Newsletter_COR_WHATEVERITTAKES&utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions strategic investments in economic security and to \"fortify Japan's supply structure,\" but it never refers to critical materials or stronger supply chains for them, so the specific claim is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "The centerpiece was the November 21, 2025 stimulus package: ¥21.3 trillion in new fiscal measures, including tax cuts, or ¥25.5 trillion once government investment and loan programs were included. (japan.kantei.go.jp)",
+    "start": 1274,
+    "end": 1491,
+    "claim": "The November 21, 2025 stimulus package included ¥21.3 trillion in new fiscal measures, including tax cuts.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Adding tax cuts and Special Accounts, the national expenditure, or what we might call fresh fiscal injections, is expected to come to roughly 21.3 trillion yen in all.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "the overall scale of this economic package includes about 17.7 trillion yen from the General Account.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the ¥21.3 trillion figure as fresh fiscal injections including tax cuts, but they do not state the November 21, 2025 date.",
+      "page_judged": "supported",
+      "page_reason": "The page states that adding tax cuts and Special Accounts, the new fiscal injections are expected to come to roughly 21.3 trillion yen, and the page is dated November 21, 2025, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The centerpiece was the November 21, 2025 stimulus package: ¥21.3 trillion in new fiscal measures, including tax cuts, or ¥25.5 trillion once government investment and loan programs were included. (japan.kantei.go.jp)",
+    "start": 1274,
+    "end": 1491,
+    "claim": "The November 21, 2025 stimulus package totaled ¥25.5 trillion once government investment and loan programs were included.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After adding fiscal investment and loan programs to this approximately 21.3 trillion yen in new fiscal injections, the Government's fiscal measures will amount to some 25.5 trillion yen.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This structure demonstrates a careful regard for the sustainability of public finances.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the ¥25.5 trillion total after adding fiscal investment and loan programs, but they do not state the November 21, 2025 date of the package.",
+      "page_judged": "supported",
+      "page_reason": "The page states that after adding fiscal investment and loan programs to the approximately 21.3 trillion yen in new fiscal injections, the government's fiscal measures amount to some 25.5 trillion yen, and the page is dated November 21, 2025."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 16,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 4,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 7,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.6,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.125,
+   "pages_cited": 4,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.010609,
+   "usd_per_claim": 0.000663
+  },
+  "cost": {
+   "total_usd": 0.0106,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0013
+    },
+    {
+     "node": "find",
+     "calls": 16,
+     "usd": 0.0055
+    },
+    {
+     "node": "page_check",
+     "calls": 9,
+     "usd": 0.003
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

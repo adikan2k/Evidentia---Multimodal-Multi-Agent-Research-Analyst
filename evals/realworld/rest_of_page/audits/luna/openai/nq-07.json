@@ -1,0 +1,190 @@
+{
+ "id": "nq-07",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:07+00:00",
+ "report": {
+  "answer_text": "Season 2 of *Just Add Magic* is already out. It premiered on Prime Video on January 13, 2017, and the second half was released on January 19, 2018. (press.aboutamazon.com)",
+  "claims": [
+   {
+    "sentence": "Season 2 of *Just Add Magic* is already out.",
+    "start": 0,
+    "end": 44,
+    "claim": "Season 2 of Just Add Magic is already out.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://press.aboutamazon.com/2016/12/season-two-of-amazon-original-kids-series-just-add-magic-debuts-on-january-13-on-prime-video?utm_source=openai",
+      "host": "press.aboutamazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "is scheduled to premiere on Friday, January 13 on Prime Video in the US and UK",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we’re excited to debut another season next month",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Customers can watch the first season and recently released Just Add Magic Halloween special, rated 4.8 stars, today, before the second season debuts on January 13.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say Season 2 is scheduled to premiere on January 13 and will debut 'next month', which means it is not yet out, contradicting the claim that it is already out.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says season two was scheduled to premiere on January 13 and would be available then, rather than stating that it was already out."
+     }
+    ]
+   },
+   {
+    "sentence": "It premiered on Prime Video on January 13, 2017, and the second half was released on January 19, 2018. (press.aboutamazon.com)",
+    "start": 45,
+    "end": 171,
+    "claim": "Season 2 of Just Add Magic premiered on Prime Video on January 13, 2017.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://press.aboutamazon.com/2016/12/season-two-of-amazon-original-kids-series-just-add-magic-debuts-on-january-13-on-prime-video?utm_source=openai",
+      "host": "press.aboutamazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "season two of its original live-action kids series aimed at families and children aged 6 through 11, Just Add Magic, is scheduled to premiere on Friday, January 13 on Prime Video in the US and UK",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Customers can watch the first season and recently released Just Add Magic Halloween special, rated 4.8 stars, today, before the second season debuts on January 13.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the January 13 Prime Video premiere of season two, but they describe it as scheduled or upcoming and never state the year 2017.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says season two was scheduled to premiere on Prime Video on January 13, 2017, but does not state that it actually premiered then."
+     }
+    ]
+   },
+   {
+    "sentence": "It premiered on Prime Video on January 13, 2017, and the second half was released on January 19, 2018. (press.aboutamazon.com)",
+    "start": 45,
+    "end": 171,
+    "claim": "The second half of Season 2 of Just Add Magic was released on January 19, 2018.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://press.aboutamazon.com/2016/12/season-two-of-amazon-original-kids-series-just-add-magic-debuts-on-january-13-on-prime-video?utm_source=openai",
+      "host": "press.aboutamazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "season two of its original live-action kids series aimed at families and children aged 6 through 11, Just Add Magic, is scheduled to premiere on Friday, January 13 on Prime Video in the US and UK",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The second season of Just Add Magic will be available for Prime members to stream and enjoy using the Amazon Prime Video app",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say season two was scheduled to premiere on Friday, January 13 on Prime Video, but they never mention a second half of the season or a January 19 release, so the claim's specific date and half-season release are not backed or directly contradicted.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Season 2 was scheduled to premiere on January 13, 2017, but does not state when its second half was released."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 1,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.6667,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002699,
+   "usd_per_claim": 0.0009
+  },
+  "cost": {
+   "total_usd": 0.0027,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

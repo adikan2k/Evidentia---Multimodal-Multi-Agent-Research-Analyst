@@ -1,0 +1,887 @@
+{
+ "id": "technology-05",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:55:04+00:00",
+ "report": {
+  "answer_text": "Liquid Glass is Apple's software design language. Apple developed it as a unified visual theme for the graphical interfaces across its operating systems.[1] It was unveiled at the WWDC 2025 keynote. At the same event, Apple also moved to year-based naming for all its operating systems.[2]\nCore idea\nIt was the first time a single design language extended across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.[2] Apple's design talks also cover visionOS.\nAlan Dye, Apple's VP of Human Interface Design, called it \"our broadest software design update ever.\"[2]\nApple wanted to unify the look and feel of interface elements across devices with different window sizes and displays.[1]\nHow it looks and behaves\nApple describes the material as defined mainly by \"lensing.\" The warping and bending of light through a transparent object signals its presence, motion, and form.[3]\nElements bend light, respond to input with depth and fluidity, and adapt to the content behind them.[4]\nThe material can change shape and size. For example, a text selection tooltip expands to show all its options in a vertical list.[1]\nControls and toolbars were redesigned to be concentric with the rounded corners of modern hardware.[2]\nInfluences\nApple said it drew on:[1]\nmacOS's Aqua design language[1]\nthe real-time Gaussian blurring in iOS 7[1]\nthe motion design of iPhone X[1]\nthe Dynamic Island[1]\nthe glass-like UI of visionOS[1]\nGuidance for developers\nIt isn't meant for use everywhere. It works best for the navigation layer, and glass shouldn't be stacked on glass.[5]\nThere are two variants. Regular is the most versatile. Clear lacks the adaptive behaviors, so content below stays more visible.[5]\nLegibility is a concern. Elements using Liquid Glass need clear separation from content.[6] Low-vision users may have trouble with contrast when refracted light replaces solid backgrounds.[5]\nReception\nSome reviewers praised how it emulates the refraction and lensing of real glass, calling it visually sophisticated.[1] Accessibility and readability are the main concerns critics raise.",
+  "claims": [
+   {
+    "sentence": "Liquid Glass is Apple's software design language.",
+    "start": 0,
+    "end": 49,
+    "claim": "Liquid Glass is Apple's software design language.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Liquid Glass is a design language developed by Apple as a unified visual theme for the graphical user interfaces for its suite of operating systems.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Liquid Glass is a design language developed by Apple for the graphical user interfaces of its operating systems, which backs the claim that it is Apple's software design language.",
+      "page_judged": "supported",
+      "page_reason": "The page describes Liquid Glass as a design language developed by Apple for the graphical interfaces of its operating systems."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple developed it as a unified visual theme for the graphical interfaces across its operating systems.[1]",
+    "start": 50,
+    "end": 156,
+    "claim": "Apple developed Liquid Glass as a unified visual theme for the graphical interfaces across its operating systems.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Liquid Glass is a design language developed by Apple as a unified visual theme for the graphical user interfaces for its suite of operating systems.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Apple developed Liquid Glass as a unified visual theme for the graphical user interfaces of its operating systems, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Liquid Glass is a design language developed by Apple as a unified visual theme for the graphical interfaces of its operating systems."
+     }
+    ]
+   },
+   {
+    "sentence": "It was unveiled at the WWDC 2025 keynote.",
+    "start": 157,
+    "end": 198,
+    "claim": "Liquid Glass was unveiled at the WWDC 2025 keynote.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.iclarified.com/97566/apple-unveils-liquid-glass-its-new-universal-design-language",
+      "host": "iclarified.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This design refresh was unveiled at the WWDC 2025 keynote, where the company also announced its shift to a year-based naming convention for all its operating systems.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the design refresh was unveiled at the WWDC 2025 keynote, which matches the claim that Liquid Glass was unveiled there, with the quote's 'design refresh' understood as referring to Liquid Glass.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Liquid Glass design refresh was unveiled at the WWDC 2025 keynote."
+     }
+    ]
+   },
+   {
+    "sentence": "At the same event, Apple also moved to year-based naming for all its operating systems.[2]",
+    "start": 199,
+    "end": 289,
+    "claim": "At the WWDC 2025 event, Apple also moved to year-based naming for all its operating systems.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.iclarified.com/97566/apple-unveils-liquid-glass-its-new-universal-design-language",
+      "host": "iclarified.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This design refresh was unveiled at the WWDC 2025 keynote, where the company also announced its shift to a year-based naming convention for all its operating systems.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at the WWDC 2025 keynote Apple announced a shift to a year-based naming convention for all its operating systems, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says that at the WWDC 2025 keynote, Apple announced a shift to year-based naming for all its operating systems."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the first time a single design language extended across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.[2]",
+    "start": 300,
+    "end": 425,
+    "claim": "Liquid Glass was the first time a single design language extended across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.iclarified.com/97566/apple-unveils-liquid-glass-its-new-universal-design-language",
+      "host": "iclarified.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The company says the new look will be applied universally across its platforms, marking the first time a single design language will extend to iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the new look will be applied universally across platforms and marks the first time a single design language extends to iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26, matching every part of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Liquid Glass marks the first time a single design language will extend across iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, and tvOS 26."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple's design talks also cover visionOS.",
+    "start": 426,
+    "end": 467,
+    "claim": "Apple's design talks also cover visionOS.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Alan Dye, Apple's VP of Human Interface Design, called it \"our broadest software design update ever.\"[2]",
+    "start": 468,
+    "end": 572,
+    "claim": "Alan Dye, Apple's VP of Human Interface Design, called Liquid Glass \"our broadest software design update ever.\"[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.iclarified.com/97566/apple-unveils-liquid-glass-its-new-universal-design-language",
+      "host": "iclarified.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "\"This is our broadest software design update ever,\" said Alan Dye, Apple's vice president of Human Interface Design.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs Alan Dye, Apple's vice president of Human Interface Design, saying \"our broadest software design update ever,\" but it never mentions Liquid Glass, which the claim ties the remark to.",
+      "page_judged": "supported",
+      "page_reason": "The page attributes “This is our broadest software design update ever” to Alan Dye and identifies Liquid Glass as the material featured in the new design."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple wanted to unify the look and feel of interface elements across devices with different window sizes and displays.[1]",
+    "start": 573,
+    "end": 694,
+    "claim": "Apple wanted to unify the look and feel of interface elements across devices with different window sizes and displays.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Apple sought a new design language to unify the look and feel of interface elements across its devices, with their various window sizes and displays.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Apple sought to unify the look and feel of interface elements across devices with various window sizes and displays, which covers everything the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page says Apple sought to unify the look and feel of interface elements across its devices with their various window sizes and displays."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple describes the material as defined mainly by \"lensing.\" The warping and bending of light through a transparent object signals its presence, motion, and form.[3]",
+    "start": 720,
+    "end": 885,
+    "claim": "Apple describes the Liquid Glass material as defined mainly by \"lensing.\"[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://developer.apple.com/videos/play/wwdc2025/219/",
+      "host": "developer.apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The primary way Liquid Glass visually defines itself is through something called Lensing.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Liquid Glass visually defines itself primarily through lensing, which backs the claim that it is defined mainly by lensing, though the quote does not explicitly attribute the description to Apple by name.",
+      "page_judged": "supported",
+      "page_reason": "The page says the primary way Liquid Glass visually defines itself is through “Lensing,” and describes lensing as dynamically bending and concentrating light."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple describes the material as defined mainly by \"lensing.\" The warping and bending of light through a transparent object signals its presence, motion, and form.[3]",
+    "start": 720,
+    "end": 885,
+    "claim": "In Liquid Glass, the warping and bending of light through a transparent object signals its presence, motion, and form.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://developer.apple.com/videos/play/wwdc2025/219/",
+      "host": "developer.apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Through this experience we’ve all gained an intuitive understanding of how the warping and bending of light of a transparent object communicates to us its presence, its motion, and form.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The primary way Liquid Glass visually defines itself is through something called Lensing.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states that warping and bending of light through a transparent object communicates its presence, motion, and form, which matches every element of the claim, while the second quote merely names lensing as Liquid Glass's defining visual trait without adding any contradiction or extra specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page says that warping and bending light through a transparent object communicates its presence, motion, and form."
+     }
+    ]
+   },
+   {
+    "sentence": "Elements bend light, respond to input with depth and fluidity, and adapt to the content behind them.[4]",
+    "start": 886,
+    "end": 989,
+    "claim": "Liquid Glass elements bend light, respond to input with depth and fluidity, and adapt to the content behind them.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://medium.com/@LizLeCompte/liquid-glass-apples-new-design-language-and-what-it-signals-for-ux-ui-in-2025-7307109943b7",
+      "host": "medium.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The material can change shape and size. For example, a text selection tooltip expands to show all its options in a vertical list.[1]",
+    "start": 990,
+    "end": 1122,
+    "claim": "The Liquid Glass material can change shape and size.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The new design also allows the material to change its shape and size, such as the text selection tooltip expanding to show all options in a vertical list.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the new design allows the material to change its shape and size, which is exactly what the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Liquid Glass can change its shape and size, giving the text-selection tooltip as an example."
+     }
+    ]
+   },
+   {
+    "sentence": "The material can change shape and size. For example, a text selection tooltip expands to show all its options in a vertical list.[1]",
+    "start": 990,
+    "end": 1122,
+    "claim": "A Liquid Glass text selection tooltip expands to show all its options in a vertical list.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The new design also allows the material to change its shape and size, such as the text selection tooltip expanding to show all options in a vertical list.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the text selection tooltip expands to show all options in a vertical list, which matches the claim's wording; it does explicitly name Liquid Glass as the design, since it refers to 'the new design' and the material changing shape, so the link to Liquid Glass is implied rather than named in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the text selection tooltip can expand to show all options in a vertical list."
+     }
+    ]
+   },
+   {
+    "sentence": "Controls and toolbars were redesigned to be concentric with the rounded corners of modern hardware.[2]",
+    "start": 1123,
+    "end": 1225,
+    "claim": "Controls and toolbars were redesigned to be concentric with the rounded corners of modern hardware.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.iclarified.com/97566/apple-unveils-liquid-glass-its-new-universal-design-language",
+      "host": "iclarified.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Apple has also refined the look of its apps, with controls and toolbars redesigned to be \"perfectly concentric with the rounded corners of modern hardware.\"",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that controls and toolbars were redesigned to be concentric with the rounded corners of modern hardware, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Apple redesigned controls and toolbars to be “perfectly concentric with the rounded corners of modern hardware.”"
+     }
+    ]
+   },
+   {
+    "sentence": "Apple said it drew on:[1]",
+    "start": 1237,
+    "end": 1262,
+    "claim": "Apple said Liquid Glass drew on macOS's Aqua design language, the real-time Gaussian blurring in iOS 7, the motion design of iPhone X, the Dynamic Island, and the glass-like UI of visionOS.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In a video detailing the design change, Apple said the language was influenced by the Aqua design language of macOS, real-time Gaussian blurring in iOS 7, the motion in iPhone X, the Dynamic Island on the iPhone 14 Pro and later, and the glass-like UI of visionOS.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Apple's video said Liquid Glass was influenced by macOS Aqua, iOS 7 real-time Gaussian blurring, iPhone X motion, the Dynamic Island, and visionOS's glass-like UI, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Apple identified macOS Aqua, real-time Gaussian blurring in iOS 7, iPhone X motion, the Dynamic Island, and visionOS’s glass-like UI as influences on Liquid Glass."
+     }
+    ]
+   },
+   {
+    "sentence": "It isn't meant for use everywhere. It works best for the navigation layer, and glass shouldn't be stacked on glass.[5]",
+    "start": 1451,
+    "end": 1569,
+    "claim": "Liquid Glass isn't meant for use everywhere.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://css-tricks.com/getting-clarity-on-apples-liquid-glass/",
+      "host": "css-tricks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It is not meant to be used everywhere but is most effective for the navigation layer.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Liquid Glass is not meant to be used everywhere, which is the claim's entire point, with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Liquid Glass “is not meant to be used everywhere” and is most effective for the navigation layer."
+     }
+    ]
+   },
+   {
+    "sentence": "It isn't meant for use everywhere. It works best for the navigation layer, and glass shouldn't be stacked on glass.[5]",
+    "start": 1451,
+    "end": 1569,
+    "claim": "Liquid Glass works best for the navigation layer, and glass shouldn't be stacked on glass.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://css-tricks.com/getting-clarity-on-apples-liquid-glass/",
+      "host": "css-tricks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It is not meant to be used everywhere but is most effective for the navigation layer. And avoid using glass on glass.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Liquid Glass is most effective for the navigation layer and that glass should not be used on glass, which covers both parts of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Liquid Glass is most effective for the navigation layer and advises avoiding glass on glass."
+     }
+    ]
+   },
+   {
+    "sentence": "There are two variants. Regular is the most versatile. Clear lacks the adaptive behaviors, so content below stays more visible.[5]",
+    "start": 1570,
+    "end": 1700,
+    "claim": "Liquid Glass has two variants.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://css-tricks.com/getting-clarity-on-apples-liquid-glass/",
+      "host": "css-tricks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "There are two variants: regular (most versatile) and clear (does not have adaptive behaviors for allowing content to be more visible below the surface).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Liquid Glass has two variants, regular and clear, which matches the claim's count and its substance.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Liquid Glass has two variants: regular and clear."
+     }
+    ]
+   },
+   {
+    "sentence": "There are two variants. Regular is the most versatile. Clear lacks the adaptive behaviors, so content below stays more visible.[5]",
+    "start": 1570,
+    "end": 1700,
+    "claim": "The Regular variant of Liquid Glass is the most versatile.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://css-tricks.com/getting-clarity-on-apples-liquid-glass/",
+      "host": "css-tricks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "There are two variants: regular (most versatile) and clear (does not have adaptive behaviors for allowing content to be more visible below the surface).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the regular variant is the most versatile, which matches the claim's sole assertion, and the citation marker [5] is not a factual element to verify.",
+      "page_judged": "supported",
+      "page_reason": "The page says Liquid Glass has two variants and describes Regular as the most versatile."
+     }
+    ]
+   },
+   {
+    "sentence": "There are two variants. Regular is the most versatile. Clear lacks the adaptive behaviors, so content below stays more visible.[5]",
+    "start": 1570,
+    "end": 1700,
+    "claim": "The Clear variant of Liquid Glass lacks the adaptive behaviors, so content below stays more visible.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://css-tricks.com/getting-clarity-on-apples-liquid-glass/",
+      "host": "css-tricks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "There are two variants: regular (most versatile) and clear (does not have adaptive behaviors for allowing content to be more visible below the surface).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the clear variant does not have adaptive behaviors so that content below is more visible, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Clear variant does not have adaptive behaviors, allowing content below its surface to be more visible."
+     }
+    ]
+   },
+   {
+    "sentence": "Legibility is a concern. Elements using Liquid Glass need clear separation from content.[6]",
+    "start": 1701,
+    "end": 1792,
+    "claim": "Elements using Liquid Glass need clear separation from content.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://developer.apple.com/videos/play/wwdc2025/356/",
+      "host": "developer.apple.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "network error (ReadTimeout)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Low-vision users may have trouble with contrast when refracted light replaces solid backgrounds.[5]",
+    "start": 1793,
+    "end": 1892,
+    "claim": "Low-vision users may have trouble with contrast when refracted light replaces solid backgrounds.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://css-tricks.com/getting-clarity-on-apples-liquid-glass/",
+      "host": "css-tricks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Traditionally, we fill backgrounds with solid or opaque solid color to establish contrast between the foreground and background, but with refracted light, color plays less a role and it’s possible that highlighting or dimming a light source will not produce enough contrast, particularly for those with low-vision.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that with refracted light replacing solid color backgrounds, contrast may not be sufficient, particularly for people with low vision, which backs the claim's main point without adding unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page says refracted light can make contrast harder to establish than solid backgrounds and may not provide enough contrast, particularly for people with low vision."
+     }
+    ]
+   },
+   {
+    "sentence": "Some reviewers praised how it emulates the refraction and lensing of real glass, calling it visually sophisticated.[1]",
+    "start": 1903,
+    "end": 2021,
+    "claim": "Some reviewers praised how Liquid Glass emulates the refraction and lensing of real glass.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Some reviewers praised its attempt to emulate the refractive and lensing qualities of real glass, describing the design as visually sophisticated.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that some reviewers praised the design's attempt to emulate the refractive and lensing qualities of real glass, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says some reviewers praised Liquid Glass’s attempt to emulate the refractive and lensing qualities of real glass."
+     }
+    ]
+   },
+   {
+    "sentence": "Some reviewers praised how it emulates the refraction and lensing of real glass, calling it visually sophisticated.[1]",
+    "start": 1903,
+    "end": 2021,
+    "claim": "Some reviewers called Liquid Glass visually sophisticated.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Liquid_Glass",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Some reviewers praised its attempt to emulate the refractive and lensing qualities of real glass, describing the design as visually sophisticated.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that some reviewers described the design as visually sophisticated, which matches the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page says some reviewers praised Liquid Glass and described the design as visually sophisticated."
+     }
+    ]
+   },
+   {
+    "sentence": "Accessibility and readability are the main concerns critics raise.",
+    "start": 2022,
+    "end": 2088,
+    "claim": "Accessibility and readability are the main concerns critics raise about Liquid Glass.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 20,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 2
+   },
+   "cited_claims": 23,
+   "claims_with_a_verdict": 20,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.8696,
+   "pages_cited": 6,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.016673,
+   "usd_per_claim": 0.000667
+  },
+  "cost": {
+   "total_usd": 0.0167,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 23,
+     "usd": 0.0047
+    },
+    {
+     "node": "page_check",
+     "calls": 21,
+     "usd": 0.0083
+    },
+    {
+     "node": "check",
+     "calls": 21,
+     "usd": 0.0025
+    }
+   ]
+  }
+ }
+}

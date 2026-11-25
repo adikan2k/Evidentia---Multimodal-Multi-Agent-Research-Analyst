@@ -1,0 +1,572 @@
+{
+ "id": "health-06-r2",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:05:11+00:00",
+ "report": {
+  "answer_text": "KJ Muldoon received a bespoke CRISPR base-editing therapy. It was reportedly the first personalised gene-editing treatment given to a patient.\nCondition: KJ was born with a rare metabolic disease known as severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.[1] He was too young for a liver transplant, which is the standard treatment.[2]\nThe editing approach: The researchers used a newer version of CRISPR technology, called base editing, that can replace a single letter of DNA at a specific location.[3] The therapy was designed to find one of the incorrect letters in his CPS1 gene and replace it with a different letter. That change lets the full CPS1 protein be produced.[4]\nDelivery: KJ was given an IV infusion of the therapy packaged in lipid nanoparticles, which liver cells took up.[5]\nSpeed: Within six months, the team designed and manufactured the therapy.[1] The team came from CHOP and Penn and was led by Rebecca Ahrens-Nicklas and Kiran Musunuru.\nDosing: He received three doses of gradually increasing strength.[3] The first, low dose was given in February, with higher doses in March and April.[6]\nPublication: Details were published on May 15 in the *New England Journal of Medicine*.[6]\nOutcome: After 307 days in the hospital, KJ went home.[2] Early on, it was considered too soon to call the treatment a cure.[5]",
+  "claims": [
+   {
+    "sentence": "KJ Muldoon received a bespoke CRISPR base-editing therapy.",
+    "start": 0,
+    "end": 58,
+    "claim": "KJ Muldoon received a bespoke CRISPR base-editing therapy.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was reportedly the first personalised gene-editing treatment given to a patient.",
+    "start": 59,
+    "end": 142,
+    "claim": "The bespoke CRISPR base-editing therapy was reportedly the first personalised gene-editing treatment given to a patient.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Condition: KJ was born with a rare metabolic disease known as severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.[1]",
+    "start": 143,
+    "end": 266,
+    "claim": "KJ Muldoon was born with a rare metabolic disease known as severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He was too young for a liver transplant, which is the standard treatment.[2]",
+    "start": 267,
+    "end": 343,
+    "claim": "KJ Muldoon was too young for a liver transplant.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He was too young for a liver transplant, which is the standard treatment.[2]",
+    "start": 267,
+    "end": 343,
+    "claim": "A liver transplant is the standard treatment for severe CPS1 deficiency.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The researchers used a newer version of CRISPR technology, called base editing, that can replace a single letter of DNA at a specific location.[3]",
+    "start": 366,
+    "end": 512,
+    "claim": "The researchers used a newer version of CRISPR technology called base editing, which can replace a single letter of DNA at a specific location.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.technologyreview.com/2025/05/15/1116524/this-baby-boy-was-treated-with-the-first-personalized-gene-editing-drug/",
+      "host": "technologyreview.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The researchers used a new version of CRISPR technology, called base editing, that can replace a single letter of DNA at a specific location.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the researchers used a new version of CRISPR called base editing that can replace a single DNA letter at a specific location, which matches every fact in the claim (the word 'newer' is a rewording of 'new').",
+      "page_judged": "supported",
+      "page_reason": "The page states that the researchers used a new version of CRISPR technology called base editing that can replace a single letter of DNA at a specific location, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The therapy was designed to find one of the incorrect letters in his CPS1 gene and replace it with a different letter.",
+    "start": 513,
+    "end": 631,
+    "claim": "The therapy was designed to find one of the incorrect letters in KJ Muldoon's CPS1 gene and replace it with a different letter.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.scientificamerican.com/article/gene-editing-helped-one-baby-could-it-help-thousands/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The therapy KJ received was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the therapy KJ received was designed to find one of the incorrect letters in his CPS1 gene and replace it with a different letter, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the therapy KJ received was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced."
+     }
+    ]
+   },
+   {
+    "sentence": "That change lets the full CPS1 protein be produced.[4]",
+    "start": 632,
+    "end": 686,
+    "claim": "The letter change made by the therapy lets the full CPS1 protein be produced.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.scientificamerican.com/article/gene-editing-helped-one-baby-could-it-help-thousands/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The therapy KJ received was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the therapy was designed to replace an incorrect letter in the CPS1 gene with a different letter that would allow the full CPS1 protein to be produced, which matches the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the therapy was designed to find an incorrect DNA letter in KJ's CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced, directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "KJ was given an IV infusion of the therapy packaged in lipid nanoparticles, which liver cells took up.[5]",
+    "start": 697,
+    "end": 802,
+    "claim": "KJ Muldoon was given an IV infusion of the therapy packaged in lipid nanoparticles.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.smithsonianmag.com/smart-news/a-baby-with-a-rare-disease-is-the-first-to-receive-personalized-gene-therapy-180986652/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "KJ was given an IV infusion of the therapy packaged in lipid nanoparticles, which liver cells took up.[5]",
+    "start": 697,
+    "end": 802,
+    "claim": "The lipid nanoparticles were taken up by liver cells.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.smithsonianmag.com/smart-news/a-baby-with-a-rare-disease-is-the-first-to-receive-personalized-gene-therapy-180986652/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Within six months, the team designed and manufactured the therapy.[1]",
+    "start": 810,
+    "end": 879,
+    "claim": "The team designed and manufactured the therapy within six months.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The team came from CHOP and Penn and was led by Rebecca Ahrens-Nicklas and Kiran Musunuru.",
+    "start": 880,
+    "end": 970,
+    "claim": "The team came from CHOP and Penn.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The team came from CHOP and Penn and was led by Rebecca Ahrens-Nicklas and Kiran Musunuru.",
+    "start": 880,
+    "end": 970,
+    "claim": "The team was led by Rebecca Ahrens-Nicklas and Kiran Musunuru.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Dosing: He received three doses of gradually increasing strength.[3]",
+    "start": 971,
+    "end": 1039,
+    "claim": "KJ Muldoon received three doses of gradually increasing strength.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.technologyreview.com/2025/05/15/1116524/this-baby-boy-was-treated-with-the-first-personalized-gene-editing-drug/",
+      "host": "technologyreview.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The team says the boy, who hasn’t turned one yet, received three doses of the gene-editing treatment, of gradually increasing strength.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the boy received three doses of gradually increasing strength, which matches every fact in the claim, with the name KJ Muldoon implied by the reference to the boy in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states the team says the boy received three doses of the gene-editing treatment, of gradually increasing strength, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The first, low dose was given in February, with higher doses in March and April.[6]",
+    "start": 1040,
+    "end": 1123,
+    "claim": "The first, low dose of the therapy was given in February.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://cen.acs.org/biological-chemistry/gene-editing/baby-world39s-first-personalized-CRISPR/103/web/2025/05",
+      "host": "cen.acs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The first, low dose was given in February, with higher doses in March and April.[6]",
+    "start": 1040,
+    "end": 1123,
+    "claim": "Higher doses of the therapy were given in March and April.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://cen.acs.org/biological-chemistry/gene-editing/baby-world39s-first-personalized-CRISPR/103/web/2025/05",
+      "host": "cen.acs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Publication: Details were published on May 15 in the *New England Journal of Medicine*.[6]",
+    "start": 1124,
+    "end": 1214,
+    "claim": "Details of the treatment were published on May 15 in the New England Journal of Medicine.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://cen.acs.org/biological-chemistry/gene-editing/baby-world39s-first-personalized-CRISPR/103/web/2025/05",
+      "host": "cen.acs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Outcome: After 307 days in the hospital, KJ went home.[2]",
+    "start": 1215,
+    "end": 1272,
+    "claim": "KJ Muldoon went home after 307 days in the hospital.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Early on, it was considered too soon to call the treatment a cure.[5]",
+    "start": 1273,
+    "end": 1342,
+    "claim": "Early on, it was considered too soon to call the treatment a cure.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.smithsonianmag.com/smart-news/a-baby-with-a-rare-disease-is-the-first-to-receive-personalized-gene-therapy-180986652/",
+      "host": "smithsonianmag.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 19,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 11,
+    "citation_unread": 0,
+    "uncited": 4
+   },
+   "cited_claims": 15,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2667,
+   "pages_cited": 6,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003242,
+   "usd_per_claim": 0.000171
+  },
+  "cost": {
+   "total_usd": 0.0032,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.001
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0005
+    }
+   ]
+  }
+ }
+}
