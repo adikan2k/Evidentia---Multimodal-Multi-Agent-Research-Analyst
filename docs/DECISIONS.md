@@ -2529,8 +2529,26 @@ No page failed to open. The median item took 61 seconds.
   tools. D-044 says no comparison, so the page now shows the hand check instead: its figures, the
   rule, what it means and the data. The example pages stay, each with a note to read its mark
   with care.
-- **Not yet known.** Why a person upheld fewer flags on real answers than the 81% on the
-  benchmark. Every disagreement is listed by its id in the result file.
+- **Why, from the 9 disagreements** (looked at after scoring; the score above stands as labelled).
+  Each page was fetched again on 25 November with Evidentia's own fetcher, and the text it keeps
+  was compared with the raw page.
+  - **5 of the 6 flags Aditya rejected: the page reader threw the evidence away.** The fact was
+    in the page's HTML but not in the text the judges read. `trafilatura` with
+    `favor_precision=True` drops bylines and dates, stat boxes and side tables:
+    - GPT-5's release date (openai.com) and the FDA's approval date (fda.gov), both in the header;
+    - the 423 to 421 points (aljazeera.com);
+    - the Congressional Research Service's "42 full days" (governmentshutdowntracker.com);
+    - Bitcoin's $126,198 high (coinmarketcap.com). There the judges also read an old FAQ line about
+      a 2021 high and called the claim contradicted, though a past record does not contradict a
+      later one.
+  - **The 6th: a live price page.** cryptoclassic.org shows a price that updates by the hour.
+    It said one thing when the answer was written, another when it was audited, and neither
+    now.
+  - **The 3 "supported" marks he rejected** are still on the pages word for word, as the code
+    verified at the time: the LBMA high of $4,449 on 23 December (gold.org), Spikevax from 6
+    months (page 17 of an FDA PDF), and the Coordinating Financial Mechanism (who.int). The
+    auditor looks right on these, but the labels stand as made.
+  - **The 7 flags he was unsure on** have not been looked at.
 
 ### D-044 amendment, not adopted: a guard for each tool (drafted 2026-11-25, before any label)
 
