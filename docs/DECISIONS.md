@@ -3286,3 +3286,30 @@ sample was fixed. About 20 minutes.
 - The research agent's reader is unchanged.
 - The new sample is the same every time, has 10 flags and 2 supported claims per tool, keeps the
   tools' flags balanced wherever labelling stops, and contains no sentence from the old 40.
+
+### D-049 result (25 November 2026): closer, and still short, by one flag
+
+**The re-audit.** All 100 saved answers from each tool were audited again with both page judges,
+and the 120 re-asked answers with the shipped judge. It cost $2.38 in all ($0.02 trial, $1.87
+main, $0.49 re-asks), under the $3.10 approved. Results: `realworld_rest_of_page.json` and
+`realworld_rest_of_page_reask.json`. The old audits are untouched.
+
+**The second hand check.** Aditya labelled all 21 items between 19:16 and 20:07 UTC. The labels
+were committed before they were scored (`hand_check_2_labels.jsonl`).
+
+| | Upheld | 95% interval | Unsure |
+|---|---|---|---|
+| Flags, both tools | 9 of 13 settled, 69% | 42% to 87% | 4 of 17 |
+| "Supported", both tools | 4 of 4 | 51% to 100% | 0 of 4 |
+
+- **The rule is missed by one flag.** 69.2% is under 70%. Ten upheld of 13 would have met it. The
+  per-tool guard did not trip. So the page and the README still make no comparison, and say how
+  close it was. The bar is not moved after the labels.
+- **Up from 54%.** The fix helped, but this check is small, and the two intervals overlap widely.
+- **What the page shows now.** The second check governs, because it was run on the auditor as it
+  is now. The first check, the fix and the second check are told in that order. The example pages
+  still come from the first audit and say so.
+- **Not done.** The comparison page still reads the first audit's results. If a later check meets
+  the rule, that page must first be moved to the re-audit's results, and the "Trying to break it"
+  checks run again on the new reader where they depend on it.
+- **The 4 disagreements** (3 on Claude's answers, all "not on the page") have not been looked at.

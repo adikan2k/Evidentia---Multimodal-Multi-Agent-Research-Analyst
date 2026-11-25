@@ -108,25 +108,33 @@ Cost: $0.00069 per claim for both judges together.
 
 Full tables: `evals/results/REPORT.md`.
 
-### The real-world audit, and a hand check it did not pass
+### The real-world audit, and the hand checks it has not yet passed
 
 OpenAI's `gpt-6.2-sol` and Claude Sonnet 5.5, each with web search on, answered the same 100
-fixed questions, and Evidentia audited every answer (D-042 to D-047). Before publishing a
-comparison, Aditya checked a blind sample of the auditor's verdicts against the live pages
-(D-044). He saw each claim and its cited page, and not which tool wrote it or what the auditor
-said.
+fixed questions, and Evidentia audited every answer (D-042 to D-049). Before publishing a
+comparison, Aditya checked blind samples of the auditor's verdicts against the live pages. He saw
+each claim and its cited page, and not which tool wrote it or what the auditor said. The rule,
+fixed before any label: at least 70% of the flags he can settle must be upheld, or the tools are
+not compared.
 
-| Hand check, 40 claims | Upheld | 95% interval |
-|---|---|---|
-| Flags (not on the cited page, or contradicted) | 54%, 7 of the 13 he could settle | 29% to 77% |
-| "Supported" | 84%, 16 of 19 | 62% to 94% |
+| Hand check | Flags upheld | 95% interval | "Supported" upheld |
+|---|---|---|---|
+| First, 40 claims (D-044) | 54%, 7 of 13 | 29% to 77% | 84%, 16 of 19 |
+| Second, 21 claims, after the fix (D-049) | 69%, 9 of 13 | 42% to 87% | 4 of 4 |
 
-He was unsure on 7 of the 20 flags. The rule, fixed before the first label, was that at least
-70% of flags must be upheld for the two tools to be compared. They were not, so neither this
-README nor the site compares them. On the benchmark above, 81% of the auditor's flags are right;
-on real answers and live pages, fewer are, and why is not yet known.
+- **What the first check found.** Most of the flags he rejected had their evidence on the page,
+  in a header date, a caption or a stat box, but the page reader kept only the article, so the
+  judges never saw it.
+- **The fix (D-049).** The auditor now reads the rest of the page after the article, still as the
+  page's own text, so quotes are still checked word for word. The saved answers were audited again
+  and the second check was drawn from those audits, leaving out every sentence he had
+  already seen.
+- **The second check missed the bar by one flag.** The bar is not moved after the labels, so
+  neither this README nor the site compares the tools. The second check had 17 flags because
+  Claude had only 7 unseen flags left to draw, and he was unsure on 4 of them.
 
-The questions, answers, audits, labels and every figure are in `evals/realworld/` and
+On the benchmark above, 81% of the auditor's flags are right. The questions, answers, both sets
+of audits, the labels and every figure are in `evals/realworld/` and
 `evals/results/realworld*.json`, including the per-tool figures that are not compared here.
 
 ## The research agent

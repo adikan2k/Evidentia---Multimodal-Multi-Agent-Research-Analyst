@@ -89,15 +89,28 @@ export type HandCheck = {
   median_seconds_per_item: number | null;
   flags_upheld: Record<"both_tools" | Tool, Share>;
   supported_upheld: Record<"both_tools" | Tool, Share>;
-  rule: { flags_upheld_needed_both_tools: number; met: boolean };
+  rule: {
+    flags_upheld_needed_both_tools: number;
+    per_tool_guard?: { tools_clearly_below: Tool[] };
+    met: boolean;
+  };
 };
 
+// The audits as first run (D-042). The comparison page reads these. If a later hand check ever
+// meets the rule, that page must first be moved to the D-049 re-audit below (see D-049's result).
 export const realworld = data.realworld as RealWorld;
 export const reask = data.realworld_reask as Reask;
+/** The same saved answers audited again with the fixed page reader (D-049). */
+const restOfPage = data.realworld_rest_of_page as RealWorld | undefined;
+const restOfPageReask = data.realworld_rest_of_page_reask as Reask | undefined;
 export const reread = data.realworld_rendered as Reread;
 export const short = data.realworld_short as Short;
-/** Absent until Aditya's labels are scored (`python -m evals hand-check-score`). */
-export const handCheck = data.realworld_hand_check as HandCheck | undefined;
+/** The first check, on the audits as first run (D-044). The example pages come from these. */
+export const firstHandCheck = data.realworld_hand_check as HandCheck | undefined;
+/** The second check, on the audits after the page reader was fixed (D-049). */
+export const secondHandCheck = data.realworld_hand_check_2 as HandCheck | undefined;
+/** The check that governs the page: the latest one, on the auditor as it is now. */
+export const handCheck = secondHandCheck ?? firstHandCheck;
 /** D-044: when the hand check misses its rule, the site makes no comparison between the tools. */
 export const withheld = handCheck !== undefined && !handCheck.rule.met;
 
@@ -146,14 +159,24 @@ export function range(i: Interval): string {
 
 /** The whole study's model and search spend, added up from the result files. */
 export function studyCost(): number {
-  const main = TOOLS.reduce((sum, tool) => {
-    const both = Object.values(realworld.judges).reduce(
+  const audits = (run: RealWorld, tool: Tool) =>
+    Object.values(run.judges).reduce(
       (s, judge) => s + judge.tools[tool].usd_per_audit * judge.tools[tool].questions,
       0,
     );
-    return sum + shipped.tools[tool].usd_per_answer * shipped.tools[tool].questions + both;
-  }, 0);
-  const again = TOOLS.reduce((sum, t) => sum + reask.tools[t].usd.answers + reask.tools[t].usd.audits, 0);
+  const main = TOOLS.reduce(
+    (sum, tool) =>
+      sum +
+      shipped.tools[tool].usd_per_answer * shipped.tools[tool].questions +
+      audits(realworld, tool) +
+      (restOfPage ? audits(restOfPage, tool) : 0),
+    0,
+  );
+  const again = TOOLS.reduce(
+    (sum, t) =>
+      sum + reask.tools[t].usd.answers + reask.tools[t].usd.audits + (restOfPageReask?.tools[t].usd.audits ?? 0),
+    0,
+  );
   const pages = (["main", "reask"] as const).reduce(
     (sum, run) =>
       sum + TOOLS.reduce((s, t) => s + reread.runs[run].tools[t].usd + short.runs[run].tools[t].usd, 0),

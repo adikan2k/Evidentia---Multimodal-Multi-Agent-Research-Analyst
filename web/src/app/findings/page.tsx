@@ -8,6 +8,7 @@ import { auditorAccuracy } from "@/lib/evals";
 import {
   askedAgainRange,
   clearOfZero,
+  firstHandCheck,
   type HandCheck,
   handCheck,
   higher,
@@ -113,9 +114,15 @@ function Figure({ title, share, note }: { title: string; share: Upheld; note: st
   );
 }
 
+/** How many more upheld flags the rule needed, out of the flags the person settled. */
+function flagsShort(check: HandCheck): number {
+  const f = check.flags_upheld.both_tools;
+  return Math.max(Math.ceil(check.rule.flags_upheld_needed_both_tools * f.n - 1e-9) - f.hits, 0);
+}
+
 /**
- * The page when the hand check misses D-044's rule. It compares the tools nowhere: not in the
- * figures, the chart, the checks or the examples. The figures stay in the published data.
+ * The page when the hand check misses its rule (D-044, D-049). It compares the tools nowhere:
+ * not in the figures, a chart, the checks or the examples. The figures stay in the published data.
  */
 function Withheld({ check }: { check: HandCheck }) {
   const flags = check.flags_upheld.both_tools;
@@ -123,6 +130,10 @@ function Withheld({ check }: { check: HandCheck }) {
   const looked = (x: Upheld) => x.n + x.unsure + x.would_not_open;
   const unopened = flags.would_not_open + supported.would_not_open;
   const needed = pct(check.rule.flags_upheld_needed_both_tools, 0);
+  const first = check === firstHandCheck ? undefined : firstHandCheck;
+  const missing = flagsShort(check);
+  const by = missing === 1 ? "one flag" : `${missing} flags`;
+  const guard = check.rule.per_tool_guard;
   const whenWritten = new Date(realworld.generated_at).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
 
   return (
@@ -131,13 +142,16 @@ function Withheld({ check }: { check: HandCheck }) {
         <div>
           <p className="label text-ink-soft">Findings · {whenWritten}</p>
           <h1 className="display-1 mt-4 max-w-[60rem]">
-            Our auditor did not pass its own hand check, so we do not compare the tools.
+            Our auditor fell short of its own hand check, so we do not compare the tools.
           </h1>
           <p className="lead mt-6 max-w-[44rem]">
             {TOOLS.map((t) => TOOL_MODEL[t]).join(", and ")}, each answered the same{" "}
             {realworld.questions} fixed questions, and Evidentia audited every answer. Before
-            anything was published, a person checked a blind sample of its verdicts against the
-            cited pages. Too few of its flags held up.
+            anything was published, a person checked blind samples of its verdicts against the cited
+            pages.{" "}
+            {first
+              ? `The first check found a fault, which was fixed. The second fell short of the bar by ${by}.`
+              : "Too few of its flags held up."}
           </p>
         </div>
         <PageIndex
@@ -155,15 +169,23 @@ function Withheld({ check }: { check: HandCheck }) {
         </h2>
         <div className="grid gap-x-16 gap-y-12 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
           <dl className="sheet grid gap-10 p-5 sm:grid-cols-2 md:p-8">
-            <Figure title="Flags upheld" share={flags} note={`The rule, fixed before any label: at least ${needed}.`} />
-            <Figure title="“Supported” upheld" share={supported} note="No rule was set for these." />
+            <Figure
+              title={first ? "Flags upheld, second check" : "Flags upheld"}
+              share={flags}
+              note={`The rule, fixed before any label: at least ${needed}${guard ? ", and neither tool clearly below it" : ""}.`}
+            />
+            <Figure
+              title="“Supported” upheld"
+              share={supported}
+              note={first ? "Only a few were mixed in. No rule was set for these." : "No rule was set for these."}
+            />
           </dl>
           <div className="space-y-4 leading-relaxed text-ink-soft">
             <p>
               <span className="font-medium text-ink">The comparison is withheld.</span> A flag is the
               auditor saying a claim is not on the page it cites, or that the page says otherwise. A
               person agreed with {pct(flags.share, 0)} of the flags they could settle, under the{" "}
-              {needed} set in advance.
+              {needed} set in advance{missing > 0 && `: ${by} short`}.
             </p>
             <p>
               The check was blind. For each of {check.items_checked} claims the person saw the claim
@@ -185,28 +207,46 @@ function Withheld({ check }: { check: HandCheck }) {
           What it means
         </h2>
         <div className="mt-10 space-y-10">
-          <Block title="The flags">
+          {first && (
+            <>
+              <Block title="The first check">
+                <p>
+                  A first blind check, of {first.items_checked} claims, upheld{" "}
+                  {pct(first.flags_upheld.both_tools.share, 0)} of the auditor&apos;s flags (
+                  {pct(first.flags_upheld.both_tools.ci_low, 0)} to{" "}
+                  {pct(first.flags_upheld.both_tools.ci_high, 0)}). Going through the flags the person
+                  rejected showed why. The auditor&apos;s page reader kept a page&apos;s article and
+                  threw the rest away: the date in the header, image captions, stat boxes. So for most of
+                  those flags, the evidence was on the page, but the judges never saw it.
+                </p>
+              </Block>
+              <Block title="The fix">
+                <p>
+                  The auditor now reads the rest of the page after the article. Every character it adds
+                  is the page&apos;s own text, so quotes are still checked word for word. The same saved
+                  answers were audited again, and a fresh blind sample was drawn from the new audits,
+                  leaving out every sentence the person had already seen.
+                </p>
+              </Block>
+            </>
+          )}
+          <Block title={first ? "The second check" : "The flags"}>
             <p>
+              {first &&
+                `It upheld ${pct(flags.share, 0)} of flags, up from ${pct(first.flags_upheld.both_tools.share, 0)}, but under the bar. `}
               On the benchmark, with {auditorAccuracy.rows.toLocaleString("en")} claims labelled by
               people, the auditor is right on {pct(auditorAccuracy.flags.value, 0)} of its flags. On
-              these real answers and live pages a person upheld {pct(flags.share, 0)}. The sample is
-              small, so the true share could be anywhere from {pct(flags.ci_low, 0)} to{" "}
-              {pct(flags.ci_high, 0)}. Why the flags fall short here is not yet known.
-            </p>
-          </Block>
-          <Block title="The “supported” marks">
-            <p>
-              These held up better: a person agreed with {pct(supported.share, 0)} of them,{" "}
-              {pct(supported.ci_low, 0)} to {pct(supported.ci_high, 0)}. When the auditor says a page
-              backs a claim, it mostly does.
+              real answers and live pages the sample is small, so the true share could be anywhere from{" "}
+              {pct(flags.ci_low, 0)} to {pct(flags.ci_high, 0)}. The bar was fixed before the labels
+              and is not moved after them, even when the result is this close.
             </p>
           </Block>
           <Block title="What is not shown">
             <p>
               How often each tool&apos;s citations fail rests on the flags. That is not reliable
-              enough to set the tools side by side, so this page does not. The rule that decided this
-              was fixed before the first label. The figures stay in the published data, with every
-              item where the person and the auditor disagree listed by its id.
+              enough to set the tools side by side, so this page does not. The figures stay in the
+              published data, with every item where the person and the auditor disagree listed by its
+              id.
             </p>
           </Block>
         </div>
@@ -220,7 +260,7 @@ function Withheld({ check }: { check: HandCheck }) {
           <ul className="max-w-[46rem] space-y-3 leading-relaxed text-ink-soft">
             <li>
               <a href={DATA} target="_blank" rel="noreferrer" className="text-ink underline underline-offset-4">
-                The questions, every answer, every audit and the hand check&apos;s labels
+                The questions, every answer, both sets of audits and the hand checks&apos; labels
               </a>
               .
             </li>
@@ -234,10 +274,11 @@ function Withheld({ check }: { check: HandCheck }) {
               <a href={DECISIONS} target="_blank" rel="noreferrer" className="text-ink underline underline-offset-4">
                 The decision log
               </a>
-              , D-042 to D-048: the plan, the hand check and its rule (D-044), and each check that was run.
+              , D-042 to D-049: the plan, the hand checks and their rules (D-044, D-049), the fix, and
+              each check that was run.
             </li>
             <li>
-              ${studyCost().toFixed(2)} in model and search calls for the whole study. The hand check
+              ${studyCost().toFixed(2)} in model and search calls for the whole study. The hand checks
               cost nothing.
             </li>
           </ul>
