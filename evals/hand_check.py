@@ -2,6 +2,8 @@
 
     uv run python -m evals hand-check          # Aditya labels; stop and resume at any time
     uv run python -m evals hand-check-score    # free: writes realworld_hand_check.json
+    uv run python -m evals hand-check-2        # the second check, on the D-049 audits
+    uv run python -m evals hand-check-2-score  # free: writes realworld_hand_check_2.json
 
 40 own-cited claims: from each tool, 10 the auditor failed outright and 10 it called supported.
 The screen shows the claim and opens the cited page. It does not show which tool wrote the
@@ -16,7 +18,9 @@ import random
 import re
 import time
 import webbrowser
+from dataclasses import dataclass
 from datetime import UTC, datetime
+from pathlib import Path
 from statistics import median
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -26,7 +30,7 @@ from rich.panel import Panel
 from rich.text import Text
 
 from evals.common import read_jsonl, write_jsonl, write_result
-from evals.realworld import FAILED, HERE, TOOLS, audit_path, load, load_questions
+from evals.realworld import FAILED, HERE, REST, TOOLS, audit_path, load, load_questions
 
 ITEMS = HERE / "hand_check_items.json"  # the sample, fixed and committed before any label
 LABELS = HERE / "hand_check_labels.jsonl"  # made by a person; never by a model
@@ -35,6 +39,31 @@ PER_GROUP = 10  # per tool: 10 failed and 10 supported, so 40 items in all
 JUDGE = "haiku"  # the page judge as shipped
 KEYS = {"y": "yes", "n": "no", "u": "unsure", "x": "would_not_open"}
 UPHELD_NEEDED = 0.70  # D-044: below this, the findings page makes no comparison
+
+
+@dataclass(frozen=True)
+class Check:
+    result: str  # the result file's name
+    items: Path
+    labels: Path
+    seed: int
+    audits: Path  # where the audits the sample is drawn from are
+    # D-049: also withhold when one tool's interval for flags upheld lies wholly below the line.
+    per_tool_guard: bool = False
+    leave_out: Path | None = None  # an earlier check's items, already seen by the labeller
+
+
+FIRST = Check("realworld_hand_check", ITEMS, LABELS, SEED, HERE)
+# D-049: fixed before any label of this check.
+SECOND = Check(
+    "realworld_hand_check_2",
+    HERE / "hand_check_2_items.json",
+    HERE / "hand_check_2_labels.jsonl",
+    20261204,
+    REST,
+    per_tool_guard=True,
+    leave_out=ITEMS,
+)
 
 RUBRIC = """The cited page opens in your browser. Read it, then answer for the claim shown.
 Judge only from the page, not from what you know.
@@ -69,14 +98,32 @@ def neutral_url(url: str) -> str:
     return urlunsplit(parts._replace(query=urlencode(kept)))
 
 
-def candidates() -> dict[tuple[str, str], list[dict]]:
-    """Every own-cited claim the auditor failed or supported, by (tool, group)."""
+def seen_sentences(items_file: Path) -> set[tuple[str, str, str]]:
+    """(tool, question, sentence) for each item of an earlier check, from the audits it used."""
+    seen = set()
+    for it in json.loads(items_file.read_text(encoding="utf-8")):
+        tool, qid, index = it["item"].split(":")
+        audit = load(audit_path(JUDGE, tool, qid))
+        if audit:
+            seen.add((tool, qid, audit["report"]["claims"][int(index)]["sentence"]))
+    return seen
+
+
+def candidates(
+    audits: Path = HERE, leave_out: set[tuple[str, str, str]] = frozenset()
+) -> dict[tuple[str, str], list[dict]]:
+    """Every own-cited claim the auditor failed or supported, by (tool, group).
+
+    Claims from a sentence in `leave_out` are left out: the labeller has seen that sentence.
+    """
     pools: dict[tuple[str, str], list[dict]] = {}
     for tool in TOOLS:
         for q in load_questions("all"):
-            audit = load(audit_path(JUDGE, tool, q["id"]))
+            audit = load(audit_path(JUDGE, tool, q["id"], audits))
             for index, claim in enumerate(audit["report"]["claims"] if audit else []):
                 if claim.get("cited_by") != "sentence":
+                    continue
+                if (tool, q["id"], claim["sentence"]) in leave_out:
                     continue
                 group = "failed" if claim["label"] in FAILED else claim["label"]
                 if group not in ("failed", "supported"):
@@ -112,13 +159,15 @@ def choose_items(pools: dict[tuple[str, str], list[dict]], seed: int = SEED) -> 
     return items
 
 
-def load_items() -> list[dict]:
-    if not ITEMS.exists():
-        ITEMS.write_text(
-            json.dumps(choose_items(candidates()), indent=1, ensure_ascii=False) + "\n",
-            encoding="utf-8",
+def load_items(check: Check = FIRST) -> list[dict]:
+    """The check's fixed sample, drawn and written once, before its first label."""
+    if not check.items.exists():
+        seen = seen_sentences(check.leave_out) if check.leave_out else frozenset()
+        chosen = choose_items(candidates(check.audits, seen), check.seed)
+        check.items.write_text(
+            json.dumps(chosen, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
         )
-    return json.loads(ITEMS.read_text(encoding="utf-8"))
+    return json.loads(check.items.read_text(encoding="utf-8"))
 
 
 def show(console: Console, item: dict, position: int, total: int) -> None:
@@ -135,10 +184,10 @@ def open_pages(item: dict) -> None:
         webbrowser.open(url)
 
 
-def run() -> None:
+def run(check: Check = FIRST) -> None:
     console = Console()
-    items = load_items()
-    labels = {x["item"]: x for x in read_jsonl(LABELS)}
+    items = load_items(check)
+    labels = {x["item"]: x for x in read_jsonl(check.labels)}
     console.print(Panel(RUBRIC, title="How to check", title_align="left"))
     index = next((i for i, it in enumerate(items) if it["item"] not in labels), len(items))
     while index < len(items):
@@ -159,16 +208,17 @@ def run() -> None:
                 "labelled_at": datetime.now(UTC).isoformat(timespec="seconds"),
                 "seconds": round(time.monotonic() - started, 1),
             }
-            write_jsonl(LABELS, [labels[it["item"]] for it in items if it["item"] in labels])
+            write_jsonl(check.labels, [labels[it["item"]] for it in items if it["item"] in labels])
             index += 1
         elif answer == "b" and index > 0:
             index -= 1
         elif answer == "q":
             break
     done = sum(it["item"] in labels for it in items)
-    console.print(f"\n{done} of {len(items)} items checked. Saved to {LABELS.name}.")
+    console.print(f"\n{done} of {len(items)} items checked. Saved to {check.labels.name}.")
     if done:
-        console.print("To see the result: `uv run python -m evals hand-check-score`.")
+        score_cmd = "hand-check-score" if check == FIRST else "hand-check-2-score"
+        console.print(f"To see the result: `uv run python -m evals {score_cmd}`.")
 
 
 # Scoring.
@@ -209,9 +259,29 @@ def upheld(items: list[dict], labels: dict[str, dict], group: str, tool: str | N
     }
 
 
-def summarise(items: list[dict], labels: dict[str, dict]) -> dict[str, Any]:
+def rule(flags: dict[str, dict], per_tool_guard: bool) -> dict[str, Any]:
+    """D-044's rule, and for the second check D-049's guard for each tool."""
+    both = flags["both_tools"]
+    met = both["share"] is not None and both["share"] >= UPHELD_NEEDED
+    body: dict[str, Any] = {"flags_upheld_needed_both_tools": UPHELD_NEEDED}
+    if per_tool_guard:
+        tripped = [
+            t
+            for t in TOOLS
+            if flags[t]["ci_high"] is not None and flags[t]["ci_high"] < UPHELD_NEEDED
+        ]
+        body["per_tool_guard"] = {"tools_clearly_below": tripped}
+        met = met and not tripped
+    return body | {"met": met}
+
+
+def summarise(
+    items: list[dict], labels: dict[str, dict], per_tool_guard: bool = False
+) -> dict[str, Any]:
     done = [it for it in items if it["item"] in labels]
-    flags = upheld(items, labels, "failed", None)
+    flags_all = {"both_tools": upheld(items, labels, "failed", None)} | {
+        tool: upheld(items, labels, "failed", tool) for tool in TOOLS
+    }
     disagreements = [
         {"item": it["item"], "auditor": it["auditor_label"], "person": labels[it["item"]]["answer"]}
         for it in done
@@ -224,26 +294,24 @@ def summarise(items: list[dict], labels: dict[str, dict]) -> dict[str, Any]:
         "items_in_sample": len(items),
         "items_checked": len(done),
         "median_seconds_per_item": round(median(seconds), 1) if seconds else None,
-        "flags_upheld": {"both_tools": flags}
-        | {tool: upheld(items, labels, "failed", tool) for tool in TOOLS},
+        "flags_upheld": flags_all,
         "supported_upheld": {"both_tools": upheld(items, labels, "supported", None)}
         | {tool: upheld(items, labels, "supported", tool) for tool in TOOLS},
-        "rule": {
-            "flags_upheld_needed_both_tools": UPHELD_NEEDED,
-            "met": flags["share"] is not None and flags["share"] >= UPHELD_NEEDED,
-        },
+        "rule": rule(flags_all, per_tool_guard),
         "disagreements": disagreements,
     }
 
 
-def score() -> None:
-    items = load_items()
-    labels = {x["item"]: x for x in read_jsonl(LABELS)}
+def score(check: Check = FIRST) -> None:
+    items = load_items(check)
+    labels = {x["item"]: x for x in read_jsonl(check.labels)}
     if not labels:
-        print("No labels yet. Run `uv run python -m evals hand-check` first.")
+        print("No labels yet. Run the hand-check command first.")
         return
-    body = summarise(items, labels)
-    path = write_result("realworld_hand_check", body)
+    body = summarise(items, labels, check.per_tool_guard)
+    if check != FIRST:
+        body |= {"audits": "D-049 re-audit, reader: article and rest of page"}
+    path = write_result(check.result, body)
     print(f"wrote {path.name}")
     print(
         json.dumps(
@@ -251,3 +319,18 @@ def score() -> None:
             indent=1,
         )
     )
+
+
+def run_second() -> None:
+    run(SECOND)
+
+
+def score_second() -> None:
+    score(SECOND)
+
+
+def draw_second() -> None:
+    """Fix the second check's sample and say how it was drawn. Free; no labels involved."""
+    items = load_items(SECOND)
+    groups = {(it["tool"], it["group"]) for it in items}
+    print(f"{len(items)} items in {SECOND.items.name}, {len(groups)} groups, seed {SECOND.seed}")

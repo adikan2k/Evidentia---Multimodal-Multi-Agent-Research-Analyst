@@ -103,3 +103,68 @@ def test_a_flag_is_upheld_by_no_and_a_supported_verdict_by_yes() -> None:
     assert body["supported_upheld"]["both_tools"]["share"] == 1.0
     assert body["rule"]["met"] is False  # 1 of 2 flags upheld is under 70%
     assert body["disagreements"] == [{"item": "b", "auditor": "contradicted", "person": "yes"}]
+
+
+# D-049: the second check.
+
+
+def share(hits: int, n: int) -> dict:
+    return wilson(hits, n) | {"unsure": 0, "would_not_open": 0}
+
+
+def test_the_first_check_keeps_its_rule_and_the_second_adds_a_guard_for_each_tool() -> None:
+    from evals.hand_check import FIRST, SECOND, rule
+
+    # 14 of 20 upheld together, but one tool only 4 of 10: met under D-044, not under D-049.
+    flags = {"both_tools": share(14, 20), "openai": share(10, 10), "claude": share(4, 10)}
+    assert rule(flags, FIRST.per_tool_guard) == {"flags_upheld_needed_both_tools": 0.7, "met": True}
+    second = rule(flags, SECOND.per_tool_guard)
+    assert second["met"] is False
+    assert second["per_tool_guard"] == {"tools_clearly_below": ["claude"]}
+    # 5 of 10 is not clearly below 70%, so the guard does not trip on it.
+    flags = {"both_tools": share(15, 20), "openai": share(10, 10), "claude": share(5, 10)}
+    assert rule(flags, True)["met"] is True
+
+
+def test_the_second_check_is_drawn_from_the_new_audits_with_its_own_seed() -> None:
+    from evals.hand_check import FIRST, SECOND
+    from evals.realworld import REST
+
+    assert SECOND.audits == REST and FIRST.audits != REST
+    assert SECOND.seed != FIRST.seed and SECOND.leave_out == FIRST.items
+    assert SECOND.items != FIRST.items and SECOND.labels != FIRST.labels
+    assert choose_items(pools(), SECOND.seed) != choose_items(pools(), FIRST.seed)
+
+
+def test_sentences_the_labeller_has_seen_are_left_out(tmp_path, monkeypatch) -> None:
+    import json
+
+    import evals.hand_check as hc
+    from evals.realworld import audit_path
+
+    def write(root, tool, qid, claims):
+        path = audit_path("haiku", tool, qid, root)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"report": {"claims": claims}}), encoding="utf-8")
+
+    def claim(sentence, label):
+        return {
+            "sentence": sentence,
+            "claim": sentence,
+            "label": label,
+            "cited_by": "sentence",
+            "pages": [{"url": "https://a.example.org/"}],
+        }
+
+    old, new = tmp_path / "old", tmp_path / "new"
+    monkeypatch.setattr(hc, "load_questions", lambda which: [{"id": "q1"}])
+    monkeypatch.setattr(hc, "audit_path", lambda j, t, q, root=old: audit_path(j, t, q, root))
+    write(old, "openai", "q1", [claim("Seen before.", "not_found")])
+    write(new, "openai", "q1", [claim("Seen before.", "contradicted"), claim("New.", "not_found")])
+    items = tmp_path / "items.json"
+    items.write_text(json.dumps([{"item": "openai:q1:0"}]), encoding="utf-8")
+
+    seen = hc.seen_sentences(items)
+    assert seen == {("openai", "q1", "Seen before.")}
+    pool = hc.candidates(new, seen)[("openai", "failed")]
+    assert [p["claim"] for p in pool] == ["New."]

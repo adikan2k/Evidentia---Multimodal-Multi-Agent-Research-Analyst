@@ -10,6 +10,9 @@
     uv run python -m evals realworld short --cap 0.6               # paid; ask first (D-047)
     uv run python -m evals realworld short-summary                 # free
     uv run python -m evals realworld examples                      # free (D-048)
+    uv run python -m evals realworld reaudit --part main --cap 3.5 # paid; ask first (D-049)
+    uv run python -m evals realworld reaudit --part reask --cap 1.5
+    uv run python -m evals realworld reaudit-summary               # free
 
 Every answer and every audit is saved, so a rerun only pays for what is missing. Each answer is
 audited twice: with the page judge as shipped (Haiku) and with OpenAI's gpt-6-luna as the page
@@ -24,6 +27,7 @@ import re
 import statistics
 from collections import Counter
 from collections.abc import Callable
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -57,6 +61,10 @@ REASK_SEED = 20261202
 REASK_PER_SOURCE = 10
 REPEATS = 3
 SEARCH_CAP = 5  # the cap Claude's search tool already ran under (`max_uses`)
+# D-049: the saved answers audited again by an auditor that reads the rest of the page too.
+# The old audits stay where they are; these go apart.
+REST = HERE / "rest_of_page"
+REST_REASK = REST / "reask"
 
 
 def load_questions(which: str) -> list[dict]:
@@ -114,23 +122,28 @@ class Runner:
         root: Path = HERE,
         judges: tuple[str, ...] = tuple(JUDGES),
         max_searches: int | None = None,
+        answers_root: Path | None = None,
     ) -> None:
         self.s = settings
         self.tracer = tracer
         self.root = root
+        # Set when auditing saved answers again: answers are read from here and never asked for.
+        self.answers_root = answers_root
         self.judges = judges
         self.max_searches = max_searches  # OpenAI only; Claude's tool carries its own cap
         self.shared = Ledger(cap)
         # One fetcher for every audit, so the wait between requests to one site holds across all.
-        self.fetcher = Fetcher(settings, tracer)
+        self.fetcher = Fetcher(settings, tracer, rest_of_page=settings.audit_rest_of_page)
         self.voyage = Embedder(settings, self.shared, tracer).client
         self.gate = asyncio.Semaphore(CONCURRENT_QUESTIONS)
 
     async def answer(self, tool: str, q: dict) -> dict:
-        path = answer_path(tool, q["id"], self.root)
+        path = answer_path(tool, q["id"], self.answers_root or self.root)
         saved = load(path)
         if saved is not None:
             return saved
+        if self.answers_root is not None:
+            raise FileNotFoundError(f"no saved answer at {path}")
         ledger = RowLedger(self.shared)
         if tool == "openai":
             got = await answer_with_web_search(
@@ -159,7 +172,17 @@ class Runner:
         builder = AuditEventBuilder(ledger)
         state = await run_audit(answer["text"], deps, lambda node, update: None)
         report = builder.report(state)
-        save(path, {"id": q["id"], "tool": tool, "judge": JUDGES[judge], "report": report})
+        save(
+            path,
+            {
+                "id": q["id"],
+                "tool": tool,
+                "judge": JUDGES[judge],
+                "reader": "article and rest of page" if settings.audit_rest_of_page else "article",
+                "audited_at": datetime.now(UTC).isoformat(timespec="seconds"),
+                "report": report,
+            },
+        )
 
     async def one(self, q: dict, tools: list[str]) -> None:
         async with self.gate:
@@ -362,7 +385,7 @@ def pages_not_read(reports: list[dict]) -> dict[str, Any]:
     }
 
 
-def summarise(which: str) -> dict[str, Any]:
+def summarise(which: str, audits: Path = HERE) -> dict[str, Any]:
     questions = load_questions(which)
     source = {q["id"]: q["source"] for q in questions}
     body: dict[str, Any] = {"set": which, "questions": len(questions), "judges": {}}
@@ -372,7 +395,7 @@ def summarise(which: str) -> dict[str, Any]:
         for tool in TOOLS:
             rows, reports = [], []
             for q in questions:
-                audit = load(audit_path(judge, tool, q["id"]))
+                audit = load(audit_path(judge, tool, q["id"], audits))
                 answer = load(answer_path(tool, q["id"]))
                 if audit and answer:
                     reports.append(audit["report"])
@@ -497,24 +520,31 @@ def searches_used(answers: list[dict]) -> dict[str, Any]:
     }
 
 
-def reask_tool(tool: str, chosen: list[dict], judge: str) -> tuple[dict, dict, Counter]:
-    """One tool's rows for the first ask and each repeat, its summary, and its marker check."""
+def reask_tool(
+    tool: str, chosen: list[dict], judge: str, first: Path = HERE, repeats_at: Path = REASK
+) -> tuple[dict, dict, Counter]:
+    """One tool's rows for the first ask and each repeat, its summary, and its marker check.
+
+    `first` and `repeats_at` say where the audits are; answers are always the saved ones.
+    """
     names = ["first_ask"] + [f"r{n}" for n in range(1, REPEATS + 1)]
     rows: dict[str, list[dict]] = {name: [] for name in names}
     answers: list[dict] = []
     checks: Counter = Counter()
     for q in chosen:
         for name in names:
-            first = name == "first_ask"
-            qid, root = (q["id"], HERE) if first else (f"{q['id']}-{name}", REASK)
-            audit = load(audit_path(judge, tool, qid, root))
+            is_first = name == "first_ask"
+            qid, root, audits = (
+                (q["id"], HERE, first) if is_first else (f"{q['id']}-{name}", REASK, repeats_at)
+            )
+            audit = load(audit_path(judge, tool, qid, audits))
             answer = load(answer_path(tool, qid, root))
             if not (audit and answer):
                 continue
             rows[name].append(
                 {"id": q["id"], "answer_usd": answer["usd"]} | counts(audit["report"])
             )
-            if first:
+            if is_first:
                 continue
             answers.append(answer)
             if "annotations" in answer:
@@ -546,7 +576,9 @@ def reask_tool(tool: str, chosen: list[dict], judge: str) -> tuple[dict, dict, C
     return rows, summary, checks
 
 
-def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
+def summarise_reask(
+    judge: str = "haiku", first: Path = HERE, repeats_at: Path = REASK
+) -> dict[str, Any]:
     chosen = choose_reask(load_questions("all"))
     body: dict[str, Any] = {
         "seed": REASK_SEED,
@@ -560,7 +592,9 @@ def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
     }
     rows_by: dict[str, dict[str, list[dict]]] = {}
     for tool in TOOLS:
-        rows_by[tool], body["tools"][tool], checks = reask_tool(tool, chosen, judge)
+        rows_by[tool], body["tools"][tool], checks = reask_tool(
+            tool, chosen, judge, first, repeats_at
+        )
         if tool == "openai":
             body["openai_markers"] = dict(checks)
     runs = {name: (rows_by["openai"][name], rows_by["claude"][name]) for name in rows_by["openai"]}
@@ -583,12 +617,13 @@ def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
 def main(argv: list[str]) -> None:
     parser = argparse.ArgumentParser(prog="python -m evals realworld")
     steps = ["questions", "run", "summary", "reask", "reask-summary", "reread", "reread-summary"]
-    steps += ["short", "short-summary", "examples"]
+    steps += ["short", "short-summary", "examples", "reaudit", "reaudit-summary"]
     parser.add_argument("step", choices=steps)
     parser.add_argument(
         "--limit", type=int, help="reask, reread, short: only the first N items, as a trial"
     )
     parser.add_argument("--set", choices=["pilot", "all"], default="pilot", dest="which")
+    parser.add_argument("--part", choices=["main", "reask"], help="reaudit: which saved answers")
     parser.add_argument("--tools", default=",".join(TOOLS))
     parser.add_argument("--cap", type=float, default=3.0, help="US dollars for the whole command")
     args = parser.parse_args(argv)
@@ -614,6 +649,14 @@ def main(argv: list[str]) -> None:
         from evals.reread import write_summary  # imported here: reread imports this module
 
         write_summary()
+        return
+    if args.step == "reaudit-summary":
+        reader = {"reader": "article and rest of page (D-049)"}
+        for name, body in (
+            ("realworld_rest_of_page", summarise("all", REST)),
+            ("realworld_rest_of_page_reask", summarise_reask("haiku", REST, REST_REASK)),
+        ):
+            print(f"wrote {write_result(name, body | reader).name}")
         return
     if args.step == "reask-summary":
         path = write_result("realworld_reask", summarise_reask())
@@ -642,7 +685,21 @@ def main(argv: list[str]) -> None:
         finally:
             tracer.flush()
         return
-    if args.step == "reask":
+    if args.step == "reaudit":
+        if not settings.audit_rest_of_page:
+            raise SystemExit("audit_rest_of_page is off; D-049's re-audit needs it on")
+        if args.part == "reask":
+            questions = reask_items(load_questions("all"))[: args.limit]
+            runner = Runner(
+                settings, args.cap, tracer, REST_REASK, judges=("haiku",), answers_root=REASK
+            )
+        elif args.part == "main":
+            questions = load_questions("all")[: args.limit]
+            runner = Runner(settings, args.cap, tracer, REST, answers_root=HERE)
+        else:
+            raise SystemExit("reaudit needs --part main or --part reask")
+        name = f"realworld.reaudit.{args.part}"
+    elif args.step == "reask":
         # Audited with the page judge as shipped only: the question here is how much the
         # answers move, and the second judge would double the audits' cost.
         questions = reask_items(load_questions("all"))[: args.limit]
