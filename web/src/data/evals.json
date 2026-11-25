@@ -25152,6 +25152,76 @@
    }
   }
  },
+ "realworld_hand_check": {
+  "generated_at": "2026-11-25T18:14:00+00:00",
+  "what": "Aditya's own check of the auditor's verdicts on real answers (D-044)",
+  "labeller": "Aditya (a person)",
+  "items_in_sample": 40,
+  "items_checked": 40,
+  "median_seconds_per_item": 60.9,
+  "flags_upheld": {
+   "both_tools": {
+    "hits": 7,
+    "n": 13,
+    "share": 0.5385,
+    "ci_low": 0.2914,
+    "ci_high": 0.7679,
+    "unsure": 7,
+    "would_not_open": 0
+   },
+   "openai": {
+    "hits": 5,
+    "n": 6,
+    "share": 0.8333,
+    "ci_low": 0.4365,
+    "ci_high": 0.9699,
+    "unsure": 4,
+    "would_not_open": 0
+   },
+   "claude": {
+    "hits": 2,
+    "n": 7,
+    "share": 0.2857,
+    "ci_low": 0.0822,
+    "ci_high": 0.6411,
+    "unsure": 3,
+    "would_not_open": 0
+   }
+  },
+  "supported_upheld": {
+   "both_tools": {
+    "hits": 16,
+    "n": 19,
+    "share": 0.8421,
+    "ci_low": 0.6243,
+    "ci_high": 0.9448,
+    "unsure": 1,
+    "would_not_open": 0
+   },
+   "openai": {
+    "hits": 7,
+    "n": 9,
+    "share": 0.7778,
+    "ci_low": 0.4526,
+    "ci_high": 0.9368,
+    "unsure": 1,
+    "would_not_open": 0
+   },
+   "claude": {
+    "hits": 9,
+    "n": 10,
+    "share": 0.9,
+    "ci_low": 0.5958,
+    "ci_high": 0.9821,
+    "unsure": 0,
+    "would_not_open": 0
+   }
+  },
+  "rule": {
+   "flags_upheld_needed_both_tools": 0.7,
+   "met": false
+  }
+ },
  "auditor_limits": {
   "audit_max_claims": 25,
   "audit_max_pages": 10,
