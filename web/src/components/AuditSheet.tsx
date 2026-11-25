@@ -27,8 +27,9 @@ const GAP = 30; // least distance, in pixels, between two marks in the margin
 /**
  * The audited answer, set as a document on a sheet of paper. Each sentence the splitter took
  * claims from is underlined. Its verdict is drawn in the margin as a proofreader's mark with
- * its name, level with the sentence's first line. On a phone there is no margin, so the mark
- * sits at the end of the sentence.
+ * its name, level with the sentence's first line. When the sheet itself is narrow (a phone, or
+ * beside the evidence panel on a small laptop) there is no margin, so the mark sits at the end of
+ * the sentence. This goes by the sheet's width, not the screen's.
  */
 export function AuditSheet({ text, sentences, judged, selected, onSelect, caption, children }: Props) {
   const body = useRef<HTMLDivElement>(null);
@@ -92,7 +93,7 @@ export function AuditSheet({ text, sentences, judged, selected, onSelect, captio
       >
         {words}
         {label && (
-          <Mark kind={LABEL_MARK[label]} className={`ml-1 md:hidden ${LABEL_TONE[label]}`} />
+          <Mark kind={LABEL_MARK[label]} className={`ml-1 @xl:hidden ${LABEL_TONE[label]}`} />
         )}
       </span>,
     );
@@ -101,14 +102,14 @@ export function AuditSheet({ text, sentences, judged, selected, onSelect, captio
   if (pos < text.length) parts.push(text.slice(pos));
 
   return (
-    <article className="sheet">
+    <article className="sheet @container">
       <header className="label flex flex-wrap items-baseline justify-between gap-2 border-b border-rule px-5 py-3 text-ink-soft md:px-8">
         <span>{caption ?? "The answer under audit"}</span>
         <span className="text-ink-faint">Select a sentence to see its evidence</span>
       </header>
-      <div ref={body} className="relative px-5 py-7 md:py-9 md:pr-10 md:pl-[11.5rem]">
+      <div ref={body} className="relative px-5 py-7 md:py-9 @xl:pr-10 @xl:pl-[11.5rem]">
         {/* The margin: one mark per sentence, level with its first line. */}
-        <div className="absolute inset-y-0 left-0 hidden w-[11.5rem] border-r border-rule md:block" aria-hidden="true">
+        <div className="absolute inset-y-0 left-0 hidden w-[11.5rem] border-r border-rule @xl:block" aria-hidden="true">
           {sentences.map((sentence, index) => {
             const label = verdict(sentence);
             return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { IntervalChart } from "@/components/IntervalChart";
 import { PageIndex } from "@/components/PageIndex";
 import {
@@ -12,6 +13,7 @@ import {
   type SystemName,
   system,
 } from "@/lib/evals";
+import { firstHandCheck, pct, secondHandCheck } from "@/lib/findings";
 import { SHELL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -34,6 +36,8 @@ const BROKEN: Record<string, string> = {
 };
 
 type Stat = { value: number; ci_low: number; ci_high: number };
+const KS = [1, 3, 5, 10] as const;
+const percent = (value: number) => `${Math.round(value * 100)}%`;
 const three = (value: number) => value.toFixed(3);
 const range = (s: Stat) => `95% interval ${three(s.ci_low)} to ${three(s.ci_high)}.`;
 
@@ -79,8 +83,9 @@ function Table({ head, rows }: { head: string[]; rows: (string | number)[][] }) 
       <table className="w-full text-left">
         <thead>
           <tr className="border-b border-ink">
-            {head.map((cell) => (
-              <th key={cell} scope="col" className="data py-2.5 pr-6 font-normal text-ink-soft">
+            {head.map((cell, index) => (
+              // Two columns can share a heading ("95% interval"), so the position is part of the key.
+              <th key={`${index}-${cell}`} scope="col" className="data py-2.5 pr-6 font-normal text-ink-soft">
                 {cell}
               </th>
             ))}
@@ -131,6 +136,16 @@ export default function EvalsPage() {
   // Weakest first: the point of the chart is to show where the marks are least reliable.
   const datasets = Object.entries(two.per_dataset).sort((a, b) => a[1] - b[1]);
   const coverageBy = two.coverage_per_dataset as Record<string, number>;
+  const checks = [
+    { label: "First, before the fix", check: firstHandCheck },
+    { label: "Second, after the fix", check: secondHandCheck },
+  ].flatMap(({ label, check }) => (check ? [{ label, check }] : []));
+  const shippedSearch = retrieval.retrievers.dense_rerank;
+  // The best precision any ranking could reach, given how few relevant passages each question has.
+  const ceiling = (k: (typeof KS)[number]) => retrieval.best_possible_precision[`precision_at_${k}`];
+  const agreementModels = Object.entries(evals.checker_agreement.references.second_model.models).map(
+    ([model, m]) => [model, m.all as unknown as { agreement: Stat; cohen_kappa: Stat }] as const,
+  );
 
   return (
     <div className={SHELL}>
@@ -150,6 +165,7 @@ export default function EvalsPage() {
           items={[
             { href: "#auditor", text: "The auditor, against people's labels" },
             { href: "#research", text: "The research agent, against plain RAG" },
+            { href: "#search", text: "Search: recall and precision at k" },
             { href: "#not-done", text: "What was not done" },
           ]}
         />
@@ -160,7 +176,7 @@ export default function EvalsPage() {
           {pooled.rows.toLocaleString()} rows of LLM-AggreFact, each a claim, a document and a
           person&apos;s label. None was used to tune the auditor.
         </p>
-        <div className="mt-12 grid gap-10 sm:grid-cols-3">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
           <Tile
             value={three(asShipped.flag_precision.value)}
             label="of its flags are right"
@@ -172,11 +188,45 @@ export default function EvalsPage() {
             note={range(asShipped.supported_precision)}
           />
           <Tile
+            value={three(two.balanced_accuracy.value)}
+            label="balanced accuracy"
+            note={`On the claims that got a verdict. ${range(two.balanced_accuracy)} 0.500 is a guess.`}
+          />
+          <Tile
             value={toPerson}
             label="of claims get no verdict"
             note="The two judges disagreed, so the claim is passed to a person."
           />
         </div>
+
+        <Section title="On real answers: two blind hand checks">
+          <Table
+            head={["Hand check", "Claims", "Flags upheld", "95% interval", "Supported upheld", "Bar of 70% met"]}
+            rows={checks.map(({ label, check }) => {
+              const flags = check.flags_upheld.both_tools;
+              const backed = check.supported_upheld.both_tools;
+              return [
+                label,
+                check.items_checked,
+                `${pct(flags.share, 0)}, ${flags.hits} of ${flags.n}`,
+                `${pct(flags.ci_low, 0)} to ${pct(flags.ci_high, 0)}`,
+                `${backed.hits} of ${backed.n}`,
+                check.rule.met ? "Yes" : "No",
+              ];
+            })}
+          />
+          <Prose>
+            The benchmark hands the auditor clean text. So Aditya checked samples of its verdicts on
+            answers from two AI search tools against the live pages, blind to the tool and to the
+            verdict. A flag he could not settle is left out of the share. Between the checks, the
+            auditor was changed to read the whole page, not only the article. Both checks fell
+            short of the bar set before any label, so the two tools are not compared.{" "}
+            <Link href="/findings" className="text-ink underline underline-offset-4">
+              The findings page
+            </Link>{" "}
+            tells the whole story.
+          </Prose>
+        </Section>
 
         <Section title="Are two judges better than one?">
           <IntervalChart
@@ -352,6 +402,25 @@ export default function EvalsPage() {
             how many each checker refused to pass as supported. No person has labelled these
             pairs, so there is no agreement-with-a-human figure.
           </Prose>
+          <div className="mt-8">
+            <Table
+              head={["Checker model", "Agreement", "95% interval", "Cohen's kappa", "95% interval"]}
+              rows={agreementModels.map(([model, all]) => [
+                model === checkerModel ? `${model} (as shipped)` : model,
+                three(all.agreement.value),
+                `${three(all.agreement.ci_low)} to ${three(all.agreement.ci_high)}`,
+                three(all.cohen_kappa.value),
+                `${three(all.cohen_kappa.ci_low)} to ${three(all.cohen_kappa.ci_high)}`,
+              ])}
+            />
+          </div>
+          <Prose>
+            Agreement with a second, stronger model on{" "}
+            {evals.checker_agreement.references.second_model.pairs_labelled} claim-and-quote pairs.
+            This is not a person: it says the checker is consistent with another model from the
+            same family, not that either is right. Kappa corrects for agreement by chance: 0 is
+            chance and 1 is perfect.
+          </Prose>
         </Section>
 
         <Section title="Which search works?">
@@ -369,7 +438,11 @@ export default function EvalsPage() {
           <Prose>
             The reranker earns its place. Keyword search does not: fusing it with dense search
             scored lower than dense search alone, and adds nothing once the reranker is on. So it
-            is switched off.
+            is switched off. Recall, precision and the rest at each cut-off are in{" "}
+            <a href="#search" className="text-ink underline underline-offset-4">
+              Part 3
+            </a>
+            .
           </Prose>
         </Section>
 
@@ -391,12 +464,100 @@ export default function EvalsPage() {
         </Section>
       </Part>
 
-      <Part id="not-done" part="Part 3" title="What was not done">
+      <Part id="search" part="Part 3" title="Search: recall and precision at k">
+        <p className="lead mt-5 max-w-[44rem]">
+          {retrieval.questions} questions over {retrieval.corpus.passages.toLocaleString("en")}{" "}
+          passages from {retrieval.corpus.pages} saved pages. A passage counts as relevant if it
+          overlaps a gold snippet, checked word for word against the page. Each question has{" "}
+          {retrieval.relevant_per_question.mean.toFixed(1)} relevant passages on average.
+        </p>
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
+          <Tile
+            value={three(shippedSearch.recall_at_10.mean)}
+            label="recall at 10"
+            note={`Share of the relevant passages in the top 10, as shipped (dense + rerank). 95% interval ${three(shippedSearch.recall_at_10.ci_low)} to ${three(shippedSearch.recall_at_10.ci_high)}.`}
+          />
+          <Tile
+            value={three(shippedSearch.precision_at_1.mean)}
+            label="precision at 1"
+            note="How often the first passage returned is a relevant one."
+          />
+          <Tile
+            value={three(shippedSearch.mrr_at_10.mean)}
+            label="MRR at 10"
+            note="One over the rank of the first relevant passage, averaged. 1.000 means always first."
+          />
+          <Tile
+            value={three(shippedSearch.ndcg_at_10.mean)}
+            label="nDCG at 10"
+            note="Rewards relevant passages more the higher they rank. 1.000 is the best order."
+          />
+        </div>
+
+        <Section title="Recall at k">
+          <Table
+            head={["Retriever", ...KS.map((k) => `Recall@${k}`)]}
+            rows={Object.entries(RETRIEVERS).map(([key, label]) => {
+              const m = retrieval.retrievers[key as keyof typeof retrieval.retrievers];
+              return [label, ...KS.map((k) => three(m[`recall_at_${k}`].mean))];
+            })}
+          />
+          <Prose>
+            Of all the passages that hold the answer, the share found in the top k. The research
+            agent reads the top 10 after reranking, where the shipped search finds{" "}
+            {percent(shippedSearch.recall_at_10.mean)} of them.
+          </Prose>
+        </Section>
+
+        <Section title="Precision at k">
+          <Table
+            head={["Retriever", ...KS.map((k) => `Precision@${k}`)]}
+            rows={[
+              ...Object.entries(RETRIEVERS).map(([key, label]) => {
+                const m = retrieval.retrievers[key as keyof typeof retrieval.retrievers];
+                return [label, ...KS.map((k) => three(m[`precision_at_${k}`].mean))];
+              }),
+              ["Best possible", ...KS.map((k) => three(ceiling(k)))],
+            ]}
+          />
+          <Prose>
+            Of the top k passages returned, the share that is relevant. A question has only a few
+            relevant passages, so even a perfect ranking scores {three(ceiling(10))} at 10. The
+            last row is that ceiling, worked out from each question&apos;s count. Read against it,
+            the shipped search scores {three(shippedSearch.precision_at_10.mean)} of a possible{" "}
+            {three(ceiling(10))} at 10, and puts a relevant passage first{" "}
+            {percent(shippedSearch.precision_at_1.mean)} of the time.
+          </Prose>
+        </Section>
+
+        <Section title="MRR and nDCG">
+          <Table
+            head={["Retriever", "MRR@10", "95% interval", "nDCG@10", "95% interval"]}
+            rows={Object.entries(RETRIEVERS).map(([key, label]) => {
+              const m = retrieval.retrievers[key as keyof typeof retrieval.retrievers];
+              return [
+                label,
+                three(m.mrr_at_10.mean),
+                `${three(m.mrr_at_10.ci_low)} to ${three(m.mrr_at_10.ci_high)}`,
+                three(m.ndcg_at_10.mean),
+                `${three(m.ndcg_at_10.ci_low)} to ${three(m.ndcg_at_10.ci_high)}`,
+              ];
+            })}
+          />
+          <Prose>
+            Intervals are a {retrieval.interval}. The gold snippets were drafted by a model and
+            then checked word for word by code. The pages are mostly Wikipedia, so these scores
+            are likely kinder than the open web.
+          </Prose>
+        </Section>
+      </Part>
+
+      <Part id="not-done" part="Part 4" title="What was not done">
         <ul className="mt-8 grid max-w-[72rem] gap-x-16 gap-y-5 leading-relaxed text-ink-soft md:grid-cols-2">
           <li>
-            <span className="font-medium text-ink">No person has checked the auditor on real answers.</span>{" "}
-            Its marks were compared with people&apos;s labels on a benchmark, not on answers from
-            today&apos;s AI tools.
+            <span className="font-medium text-ink">The auditor has not passed its own hand check on real answers.</span>{" "}
+            Two blind checks, of {checks.map((c) => c.check.items_checked).join(" and ")} claims,
+            both fell short of the bar, so the two AI tools are not compared.
           </li>
           <li>
             <span className="font-medium text-ink">Both of the auditor&apos;s judges are the same model.</span>{" "}

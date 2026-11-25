@@ -113,8 +113,18 @@ def summarise(rows: list[dict]) -> dict:
         }
         for before, after in COMPARISONS
     }
-    relevant = summary([row["relevant_passages"] for row in rows])
-    return {"retrievers": table, "paired_differences": steps, "relevant_per_question": relevant}
+    counts = [row["relevant_passages"] for row in rows]
+    return {
+        "retrievers": table,
+        "paired_differences": steps,
+        "relevant_per_question": summary(counts),
+        # The best precision any ranking could score, since a question has only a few relevant
+        # passages: a perfect top 10 for a question with 2 of them scores 0.2.
+        "best_possible_precision": {
+            f"precision_at_{k}": round(sum(min(n, k) / k for n in counts) / len(counts), 4)
+            for k in KS
+        },
+    }
 
 
 async def run() -> None:

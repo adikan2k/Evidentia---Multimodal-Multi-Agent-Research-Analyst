@@ -69,7 +69,7 @@ async function Example({ params }: { params: Promise<{ id: string }> }) {
       <h1 className="display-2 mt-3 max-w-[60rem]">{answer.question}</h1>
       <p className="label mt-3 mb-8 font-normal text-ink-soft">
         Answered by {TOOL_MODEL[example.tool]}
-        {asked && `, on ${asked}`}. The claim this example is about is open on the right.
+        {asked && `, on ${asked}`}. The claim this example is about is open in the evidence panel.
       </p>
       <FindingExample
         report={answer.report}
