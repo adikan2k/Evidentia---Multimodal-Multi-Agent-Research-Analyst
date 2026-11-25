@@ -3312,4 +3312,39 @@ were committed before they were scored (`hand_check_2_labels.jsonl`).
 - **Not done.** The comparison page still reads the first audit's results. If a later check meets
   the rule, that page must first be moved to the re-audit's results, and the "Trying to break it"
   checks run again on the new reader where they depend on it.
-- **The 4 disagreements** (3 on Claude's answers, all "not on the page") have not been looked at.
+- **Why, from the 4 disagreements** (looked at after scoring; the score above stands as labelled).
+  Each page was fetched again on 25 November with the auditor's reader. All four were "not on the
+  page", and in all four Aditya found the claim backed. The reader is no longer the cause: the
+  evidence was in the text the judges read in three of them. Three causes, none of them the one
+  D-049 fixed:
+  - **A name the page does not use (2, both Claude, one answer about Euclid).** The answer named the
+    release "Q1" in its first sentence. The splitter carried that name into two later claims ("Q1
+    was a quick release...", "The Q1 release included a catalogue of more than 380,000
+    galaxies"), as it should, so each claim stands alone. Both pages say the rest almost word for
+    word, and one dates the release to 19 March, but neither page says "Q1". The shipped judge
+    held each claim to that name and said not found. The other judge did too on the first, and
+    sent the second to a person. On one page the finder's quote also missed by a character: the
+    page writes ‘quick’ with curly marks, and the quote check is exact (rule 8), so that miss is
+    correct as built.
+  - **The part of the PDF that holds the evidence was never read (1, OpenAI).** The claim cites
+    the AI Act on EUR-Lex, a 144-page PDF. The reader stops at 40 pages (`pdf_max_pages`), and
+    the first 40 are all recitals; Article 4, the duty the claim states, comes after them. The
+    judges read recitals about AI literacy and said not found. The auditor does not tell a
+    partly-read document from a whole one. Across the re-audit, 4 PDFs behind flags were cut
+    short at 40 pages, and they carry 13 of OpenAI's flagged citations (EUR-Lex 7, an APHIS
+    report of 85 pages 4, two inspector-general reports of over 40 pages 1 each). Some of those may
+    be right; a not found on pages that were never read is not a verdict either way.
+  - **A judge misread the page (1, Claude).** The claim: upside risks to inflation persisted at
+    the time of the Fed's September 2025 cut. CNBC's page says "upside threats to inflation
+    continued", in the article the old reader kept too. The finder quoted the minutes instead,
+    that these risks "had either diminished or not increased", and the judge read that as
+    against the claim. Not increased is not gone. The judge saw the backing sentence and weighed
+    it wrongly.
+  - **Found on the way.** The saved audits record every cited page as "html" with no title, PDFs
+    included, because the pages' text is not kept with them. The page judge's label is right; only
+    that field is wrong.
+  - **What this suggests, not decided.** Treat a PDF cut short as unchecked when nothing is found
+    in the pages read, or read further into long PDFs for the auditor. The first changes no
+    model call; it would move up to 13 OpenAI flags out of the flags. The name and misreading
+    errors are judge errors, and a prompt change for them would need its own decision and a
+    fresh check.
