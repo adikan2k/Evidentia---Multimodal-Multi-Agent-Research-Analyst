@@ -4,7 +4,14 @@ import asyncio
 import hashlib
 
 from evals.common import Question, eval_deps, load_pages, load_questions, write_result
-from evals.stats import ndcg_at_k, paired_difference, recall_at_k, reciprocal_rank, summary
+from evals.stats import (
+    ndcg_at_k,
+    paired_difference,
+    precision_at_k,
+    recall_at_k,
+    reciprocal_rank,
+    summary,
+)
 from evidentia.chunk import make_passages
 from evidentia.graph import Deps
 from evidentia.schemas import Passage, Source
@@ -18,8 +25,16 @@ COMPARISONS = [
     ("dense", "hybrid_rerank"),
     ("dense_rerank", "hybrid_rerank"),
 ]
+# The paired differences keep to these three; the table also has recall and precision at each k.
 METRICS = ["recall_at_10", "mrr_at_10", "ndcg_at_10"]
 TOP_K = 10
+KS = [1, 3, 5, 10]
+TABLE = [
+    *(f"recall_at_{k}" for k in KS),
+    *(f"precision_at_{k}" for k in KS),
+    "mrr_at_10",
+    "ndcg_at_10",
+]
 
 
 def corpus_run_id(pages: dict[str, dict]) -> str:
@@ -68,10 +83,12 @@ async def retrieve(deps: Deps, run_id: str, name: str, question: str, vector: li
 
 def score(ranked: list[Passage], relevant: set[str]) -> dict[str, float]:
     hits = [p.id in relevant for p in ranked]
-    return {
-        "recall_at_10": recall_at_k(hits, len(relevant), TOP_K),
+    scores = {f"recall_at_{k}": recall_at_k(hits, len(relevant), k) for k in KS}
+    scores |= {f"precision_at_{k}": precision_at_k(hits, k) for k in KS}
+    return scores | {
         "mrr_at_10": reciprocal_rank(hits, TOP_K),
         "ndcg_at_10": ndcg_at_k(hits, len(relevant), TOP_K),
+        "hits": hits,  # the top 10 in order, True where relevant: every score above comes from this
     }
 
 
@@ -87,7 +104,7 @@ async def evaluate(deps: Deps, run_id: str, question: Question, passages: list[P
 
 def summarise(rows: list[dict]) -> dict:
     table = {
-        name: {m: summary([row[name][m] for row in rows]) for m in METRICS} for name in RETRIEVERS
+        name: {m: summary([row[name][m] for row in rows]) for m in TABLE} for name in RETRIEVERS
     }
     steps = {
         f"{after}_minus_{before}": {
@@ -96,7 +113,8 @@ def summarise(rows: list[dict]) -> dict:
         }
         for before, after in COMPARISONS
     }
-    return {"retrievers": table, "paired_differences": steps}
+    relevant = summary([row["relevant_passages"] for row in rows])
+    return {"retrievers": table, "paired_differences": steps, "relevant_per_question": relevant}
 
 
 async def run() -> None:

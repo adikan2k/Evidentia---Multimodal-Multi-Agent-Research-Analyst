@@ -10,20 +10,30 @@ The corpus is a frozen set of openly licensed pages, mostly Wikipedia. Those pag
 
 | Retriever | Recall@10 | MRR@10 | nDCG@10 |
 |---|---|---|---|
-| bm25 | 0.571 (0.463 to 0.675) | 0.537 (0.408 to 0.657) | 0.455 (0.363 to 0.545) |
-| dense | 0.917 (0.850 to 0.967) | 0.740 (0.644 to 0.833) | 0.751 (0.675 to 0.821) |
-| hybrid | 0.858 (0.775 to 0.925) | 0.682 (0.571 to 0.794) | 0.673 (0.591 to 0.751) |
+| bm25 | 0.571 (0.463 to 0.675) | 0.533 (0.406 to 0.654) | 0.454 (0.363 to 0.543) |
+| dense | 0.917 (0.850 to 0.967) | 0.740 (0.644 to 0.833) | 0.750 (0.675 to 0.821) |
+| hybrid | 0.867 (0.783 to 0.933) | 0.666 (0.557 to 0.778) | 0.669 (0.585 to 0.748) |
 | dense_rerank | 0.938 (0.883 to 0.979) | 0.816 (0.725 to 0.900) | 0.804 (0.739 to 0.863) |
 | hybrid_rerank | 0.938 (0.883 to 0.979) | 0.817 (0.727 to 0.900) | 0.804 (0.740 to 0.863) |
+
+Recall and precision at each cut-off. A question has 2.5 relevant passages on average, so precision at 10 cannot come near 1.
+
+| Retriever | Recall@1 | Recall@3 | Recall@5 | Recall@10 | Precision@1 | Precision@3 | Precision@5 | Precision@10 |
+|---|---|---|---|---|---|---|---|---|
+| bm25 | 0.192 | 0.350 | 0.442 | 0.571 | 0.400 | 0.258 | 0.200 | 0.133 |
+| dense | 0.283 | 0.600 | 0.783 | 0.917 | 0.575 | 0.458 | 0.375 | 0.223 |
+| hybrid | 0.254 | 0.475 | 0.675 | 0.867 | 0.525 | 0.367 | 0.315 | 0.210 |
+| dense_rerank | 0.338 | 0.658 | 0.817 | 0.938 | 0.700 | 0.508 | 0.395 | 0.230 |
+| hybrid_rerank | 0.338 | 0.658 | 0.817 | 0.938 | 0.700 | 0.508 | 0.395 | 0.230 |
 
 Difference per question, second minus first:
 
 | Comparison | Recall@10 | MRR@10 | nDCG@10 |
 |---|---|---|---|
-| dense minus bm25 | +0.346 (+0.250 to +0.454) | +0.204 (+0.083 to +0.324) | +0.296 (+0.225 to +0.376) |
-| hybrid minus dense | -0.058 (-0.113 to -0.008) | -0.058 (-0.128 to +0.008) | -0.077 (-0.118 to -0.041) |
-| hybrid_rerank minus hybrid | +0.079 (+0.025 to +0.142) | +0.134 (+0.040 to +0.238) | +0.131 (+0.083 to +0.189) |
-| hybrid_rerank minus dense | +0.021 (-0.017 to +0.058) | +0.076 (+0.000 to +0.165) | +0.053 (+0.016 to +0.095) |
+| dense minus bm25 | +0.346 (+0.250 to +0.454) | +0.208 (+0.088 to +0.332) | +0.297 (+0.225 to +0.377) |
+| hybrid minus dense | -0.050 (-0.104 to -0.008) | -0.075 (-0.145 to -0.006) | -0.082 (-0.122 to -0.044) |
+| hybrid_rerank minus hybrid | +0.071 (+0.017 to +0.129) | +0.151 (+0.050 to +0.255) | +0.135 (+0.086 to +0.194) |
+| hybrid_rerank minus dense | +0.021 (-0.017 to +0.058) | +0.076 (+0.000 to +0.165) | +0.054 (+0.017 to +0.095) |
 | hybrid_rerank minus dense_rerank | +0.000 (+0.000 to +0.000) | +0.001 (+0.000 to +0.002) | +0.000 (+0.000 to +0.001) |
 
 Gold: Gold snippets were drafted by Claude from each question's pages and checked word for word against the page text. See evals/questions.jsonl.

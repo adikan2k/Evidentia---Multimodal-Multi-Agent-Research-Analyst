@@ -51,6 +51,12 @@ def recall_at_k(hits: Sequence[bool], total_relevant: int, k: int = 10) -> float
     return sum(hits[:k]) / total_relevant if total_relevant else 0.0
 
 
+def precision_at_k(hits: Sequence[bool], k: int = 10) -> float:
+    """Share of the top k that is relevant. A question with fewer than k relevant passages
+    cannot reach 1.0, so this is read next to the number of relevant passages."""
+    return sum(hits[:k]) / k
+
+
 def reciprocal_rank(hits: Sequence[bool], k: int = 10) -> float:
     for rank, hit in enumerate(hits[:k], start=1):
         if hit:

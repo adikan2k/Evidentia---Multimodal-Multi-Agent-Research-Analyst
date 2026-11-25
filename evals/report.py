@@ -111,9 +111,31 @@ def retrieval_section(d: dict | None) -> list[str]:
         for name, m in d["retrievers"].items()
     ]
     out += table(["Retriever", "Recall@10", "MRR@10", "nDCG@10"], rows)
+    ks = [k for k in (1, 3, 5, 10) if f"precision_at_{k}" in next(iter(d["retrievers"].values()))]
+    if ks:
+        rel = d["relevant_per_question"]
+        out += [
+            "",
+            f"Recall and precision at each cut-off. A question has {rel['mean']:.1f} relevant "
+            "passages on average, so precision at 10 cannot come near 1.",
+            "",
+        ]
+        rows = [
+            [
+                name,
+                *(f"{m[f'recall_at_{k}']['mean']:.3f}" for k in ks),
+                *(f"{m[f'precision_at_{k}']['mean']:.3f}" for k in ks),
+            ]
+            for name, m in d["retrievers"].items()
+        ]
+        head = [*(f"Recall@{k}" for k in ks), *(f"Precision@{k}" for k in ks)]
+        out += table(["Retriever", *head], rows)
     out += ["", "Difference per question, second minus first:", ""]
     rows = [
-        [name.replace("_minus_", " minus "), *(signed(m[k]) for k in m)]
+        [
+            name.replace("_minus_", " minus "),
+            *(signed(m[k]) for k in ("recall_at_10", "mrr_at_10", "ndcg_at_10")),
+        ]
         for name, m in d["paired_differences"].items()
     ]
     out += table(["Comparison", "Recall@10", "MRR@10", "nDCG@10"], rows)

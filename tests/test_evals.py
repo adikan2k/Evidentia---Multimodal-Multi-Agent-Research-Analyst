@@ -55,6 +55,18 @@ def test_retrieval_scores_for_one_question() -> None:
     assert 0 < scores["ndcg_at_10"] < 1
 
 
+def test_retrieval_scores_recall_and_precision_at_each_k() -> None:
+    ranked = [passage("first-half", "A", 0, 1), passage("x", "A", 0, 1)]
+    ranked += [passage(f"y{i}", "A", 0, 1) for i in range(2)]
+    ranked += [passage("second-half", "A", 0, 1)]
+    scores = retrieval_score(ranked, {"first-half", "second-half"})
+    assert scores["recall_at_1"] == 0.5 and scores["precision_at_1"] == 1.0
+    assert scores["recall_at_3"] == 0.5 and scores["precision_at_3"] == pytest.approx(1 / 3)
+    assert scores["recall_at_5"] == 1.0 and scores["precision_at_5"] == 0.4
+    assert scores["precision_at_10"] == 0.2
+    assert scores["hits"] == [True, False, False, False, True]
+
+
 def item(question_id: str, judge: str, label: str = "presented") -> dict:
     return {"question_id": question_id, "judge": judge, "label": label}
 
