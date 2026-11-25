@@ -23,6 +23,7 @@ dependencies = [
     "rich==14.3.4",
     "tavily-python==0.8.5",
     "trafilatura==2.4.0",
+    "lxml==6.1.3",  # D-049: read directly for the rest of the page
     "uvicorn==0.54.0",
     "voyageai==0.6.0",
 ]

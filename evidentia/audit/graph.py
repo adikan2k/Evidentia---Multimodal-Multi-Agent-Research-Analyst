@@ -232,8 +232,8 @@ class AuditNodes:
             sources, skipped = await self.second_read(sources, skipped)
         # A page we read only a few lines of is usually one built in the browser by scripts. Its
         # claims would wrongly look "not on the cited page", so it counts as not read (D-042).
-        thin = [s for s in sources if len(s.text) < self.s.audit_min_page_chars]
-        sources = [s for s in sources if len(s.text) >= self.s.audit_min_page_chars]
+        thin = [s for s in sources if s.article_length < self.s.audit_min_page_chars]
+        sources = [s for s in sources if s.article_length >= self.s.audit_min_page_chars]
         skipped += [SkippedPage(url=s.url, reason=TOO_LITTLE_TEXT) for s in thin]
         why = {s.url: s.reason for s in skipped}
         results = [
@@ -254,7 +254,7 @@ class AuditNodes:
         assert renderer is not None
         read: list[Source] = []
         for source in sources:
-            if source.kind == "html" and len(source.text) < self.s.audit_min_page_chars:
+            if source.kind == "html" and source.article_length < self.s.audit_min_page_chars:
                 again = await renderer.render(source.url, source.title)
                 if isinstance(again, Source) and len(again.text) > len(source.text):
                     source = again.model_copy(update={"id": source.id})

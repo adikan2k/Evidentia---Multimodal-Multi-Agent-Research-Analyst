@@ -28,6 +28,14 @@ class Source(BaseModel):
     pages_total: int | None = None  # PDFs only: pages in the document, read or not
     # "render": the text was read after a headless browser ran the page's scripts (D-046).
     read_by: Literal["fetch", "render"] = "fetch"
+    # D-049: where the article ends in `text`. What follows is the rest of the page's visible
+    # text. None when the whole text is the article.
+    article_chars: int | None = None
+
+    @property
+    def article_length(self) -> int:
+        """The article's length, which the thin-page rule counts (D-049)."""
+        return len(self.text) if self.article_chars is None else self.article_chars
 
     def pages_of(self, start: int, end: int) -> tuple[int, int] | None:
         """First and last page (counting from 1) that the span `text[start:end]` lies on."""

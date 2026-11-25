@@ -189,3 +189,35 @@ def test_searches_are_counted_against_the_cap() -> None:
     assert used["answers"] == 3 and used["mean"] == 4.33 and used["max"] == 6
     assert used["answers_at_or_over_the_cap"] == 2 and used["answers_with_no_search"] == 0
     assert searches_used([{"searches": 0}, {"searches": 1}])["answers_with_no_search"] == 1
+
+
+# D-049: the re-audit reuses saved answers and reads the rest of the page.
+
+
+def test_the_reaudit_never_asks_for_a_new_answer(settings, tmp_path) -> None:
+    import asyncio
+
+    import pytest
+
+    from evals.realworld import Runner
+    from evidentia.tracing import NoopTracer
+
+    runner = Runner(settings, 0.01, NoopTracer(), tmp_path / "new", answers_root=tmp_path / "old")
+    with pytest.raises(FileNotFoundError):
+        asyncio.run(runner.answer("openai", {"id": "q1", "question": "?"}))
+    assert runner.fetcher.rest_of_page is settings.audit_rest_of_page is True
+    asyncio.run(runner.fetcher.aclose())
+
+
+def test_the_auditor_reads_the_rest_of_the_page_and_the_research_agent_does_not(settings) -> None:
+    import asyncio
+
+    from evidentia.audit.cli import build_audit_deps
+    from evidentia.cost import Ledger
+    from evidentia.fetch import Fetcher
+    from evidentia.tracing import NoopTracer
+
+    deps = build_audit_deps(settings, Ledger(0.01), NoopTracer())
+    assert deps.fetcher.rest_of_page is True
+    assert Fetcher(settings, NoopTracer()).rest_of_page is False  # the research agent's
+    asyncio.run(deps.fetcher.aclose())

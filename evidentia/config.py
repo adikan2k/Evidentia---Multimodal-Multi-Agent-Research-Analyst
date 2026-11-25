@@ -132,6 +132,9 @@ class Settings(BaseSettings):
     # D-046: read a page that gave too little text again, in a headless browser. Off by
     # default: only the real-world eval turns it on, and the server has no browser installed.
     audit_render_thin_pages: bool = False
+    # D-049: the auditor reads the rest of the page after the article (dates, captions, stat
+    # boxes). The research agent keeps the article alone.
+    audit_rest_of_page: bool = True
     render_max_requests: int = 40  # for one page, the document included
     render_timeout_s: float = 20.0
     render_request_interval_s: float = 0.25  # between requests to one site inside a page load

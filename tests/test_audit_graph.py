@@ -316,3 +316,25 @@ def test_a_one_line_source_list_is_audited_like_one_on_separate_lines(settings) 
     assert [v["pages"][0]["url"] for v in views] == [GOOD, SECOND]
     assert [v["label"] for v in views] == ["supported", "supported"]
     assert "http" not in state.parsed.text
+
+
+def test_the_thin_page_rule_counts_the_article_not_the_rest_of_the_page(settings) -> None:
+    """D-049: a short article with long menus is still too little text to judge."""
+    from evidentia.audit.graph import TOO_LITTLE_TEXT
+
+    settings = settings.model_copy(update={"audit_min_page_chars": 2_000})
+    deps, fake = make_deps(settings)
+    menus = "".join(f"<nav>Section link number {n} of the site</nav>" for n in range(120))
+    paragraphs = "".join(f"<p>{FACT} {MORE} Paragraph {n}.</p>" for n in range(3))
+    short = f"<html><body>{menus}<article>{paragraphs}</article></body></html>"
+
+    def serve(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        return httpx.Response(200, headers={"content-type": "text/html"}, text=short)
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(serve))
+    deps.fetcher = Fetcher(settings, deps.tracer, client=client, rest_of_page=True)
+    view = claim_views(audit(deps, f"Solar capacity grew 24% in 2023 [1].\n[1] {GOOD}"))[0]
+    assert view["label"] == "unchecked" and view["pages"][0]["skipped"] == TOO_LITTLE_TEXT
+    assert not [c for c in fake.calls if c["schema"] in ("Evidence", "PageJudgement")]

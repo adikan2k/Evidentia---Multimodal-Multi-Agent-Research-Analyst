@@ -43,7 +43,7 @@ def build_audit_deps(settings: Settings, ledger: Ledger, tracer: Tracer) -> Audi
         ledger=ledger,
         tracer=tracer,
         llm=LLM(settings, ledger),
-        fetcher=Fetcher(settings, tracer),
+        fetcher=Fetcher(settings, tracer, rest_of_page=settings.audit_rest_of_page),
         embedder=Embedder(settings, ledger, tracer),
     )
 
