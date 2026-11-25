@@ -3534,3 +3534,11 @@ $5 in all, judge included. Hard cap of $8 in code. Aditya says yes first.
 - Plain RAG answers from the pages the agent fetched for the same question, and from no others.
 - The result file records each fetched address, when it was read, and why any page was not.
 - The evals page and the README block read the new file, and say so when it does not exist.
+
+**Changed on 26 November, after a 2-question trial and before the run: 20 questions, not 40.**
+The trial cost about $0.41 for 2 questions, judge included, so all 40 would be about $8 to $9,
+over the $5 approved. Aditya chose 20. They are drawn with a fixed seed (20261126) in the
+corpus's own mix, 15 factual and 5 contested, because the first 20 questions are all factual and
+contested questions are where pages disagree. The sample is fixed in code before any of the 20
+is asked. Cap $6. The trial's figures are kept apart (`open_web_trial.json`) and are not
+reported.

@@ -122,3 +122,13 @@ def test_summary_scores_both_systems_on_the_same_questions() -> None:
     assert out["unverified_share_of_agent_claims"] == 0.5
     assert out["systems"]["open_web_pipeline"]["cost_per_question_usd"] == pytest.approx(0.2)
     assert "cost_per_question_usd" not in out["systems"]["open_web_baseline"]
+
+
+def test_the_sample_is_fixed_and_keeps_the_mix_of_kinds() -> None:
+    from evals.common import load_questions
+
+    questions = load_questions()
+    first, again = open_web.sample(questions), open_web.sample(questions)
+    assert [q.id for q in first] == [q.id for q in again]
+    kinds = [q.kind for q in first]
+    assert kinds.count("factual") == 15 and kinds.count("contested") == 5

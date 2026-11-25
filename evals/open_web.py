@@ -1,17 +1,18 @@
 """The research agent on the open web (D-052).
 
-The same 40 questions as the clean-corpus evals, but the agent starts from "plan": it searches
+20 of the 40 clean-corpus questions, but the agent starts from "plan": it searches
 the live web and reads what it finds, as the site does. Plain RAG then answers each question from
 the passages the agent fetched and indexed for that question, so both see the same evidence. The
 same judge as on the clean pages scores both.
 
-    uv run python -m evals open-web        # paid: about $5, hard cap $8 (OPEN_WEB_CAP_USD)
+    uv run python -m evals open-web        # paid: about $4.50, hard cap $6 (OPEN_WEB_CAP_USD)
 
 Set OPEN_WEB_LIMIT to run only the first few questions, for a trial.
 """
 
 import asyncio
 import os
+import random
 import uuid
 from collections import Counter
 from collections.abc import Awaitable, Callable
@@ -34,8 +35,12 @@ from evals.systems import run_baseline
 from evidentia.graph import Deps, run_question
 from evidentia.schemas import RunState
 
-CAP_USD = float(os.environ.get("OPEN_WEB_CAP_USD", "8"))
-LIMIT = int(os.environ.get("OPEN_WEB_LIMIT", "0"))  # 0: every question
+CAP_USD = float(os.environ.get("OPEN_WEB_CAP_USD", "6"))
+LIMIT = int(os.environ.get("OPEN_WEB_LIMIT", "0"))  # a trial on the first few questions
+# 20 of the 40, as approved for cost (D-052), drawn with a fixed seed in the corpus's own mix of
+# 3 factual questions to 1 contested one.
+SAMPLE = {"factual": 15, "contested": 5}
+SEED = 20261126
 # A trial keeps its own files, so the full run measures each system's whole cost.
 NAME = "open_web_trial" if LIMIT else "open_web"
 PIPELINE_RUNS = RUNS_DIR / f"{NAME}_pipeline.jsonl"
@@ -164,10 +169,18 @@ def summarise(pipeline: list[dict], baseline: list[dict], verdicts: dict, costs:
     }
 
 
+def sample(questions: list[Question]) -> list[Question]:
+    """The fixed sample: the same questions every time, in the corpus's mix of kinds."""
+    rng = random.Random(SEED)
+    chosen = []
+    for kind, n in SAMPLE.items():
+        chosen += rng.sample([q for q in questions if q.kind == kind], n)
+    return sorted(chosen, key=lambda q: q.id)
+
+
 async def run() -> None:
     questions = load_questions()
-    if LIMIT:
-        questions = questions[:LIMIT]
+    questions = questions[:LIMIT] if LIMIT else sample(questions)
     async with eval_deps("eval.open_web", cap_usd=CAP_USD) as deps:
         costs: dict[str, float] = {}
 
