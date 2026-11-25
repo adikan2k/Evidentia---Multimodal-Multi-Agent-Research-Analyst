@@ -1,0 +1,173 @@
+{
+ "id": "nq-36-r1",
+ "tool": "openai",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+   "read": false,
+   "why_not": "no readable text"
+  }
+ ],
+ "usd": 0,
+ "report": {
+  "answer_text": "Jim proposes to Pam near the end of “Weight Loss,” the Season 5 premiere of *The Office*. He gets down on one knee in the rain at a gas station rest stop. The two-part premiere originally aired on September 25, 2008; if your streaming service splits it up, the proposal is in Part 2. (youtube.com)",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam near the end of “Weight Loss,” the Season 5 premiere of *The Office*.",
+    "start": 0,
+    "end": 89,
+    "claim": "Jim proposes to Pam near the end of “Weight Loss,” the Season 5 premiere of The Office.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He gets down on one knee in the rain at a gas station rest stop.",
+    "start": 90,
+    "end": 154,
+    "claim": "Jim gets down on one knee in the rain at a gas station rest stop when he proposes to Pam.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The two-part premiere originally aired on September 25, 2008; if your streaming service splits it up, the proposal is in Part 2. (youtube.com)",
+    "start": 155,
+    "end": 297,
+    "claim": "The two-part Season 5 premiere of The Office originally aired on September 25, 2008.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The two-part premiere originally aired on September 25, 2008; if your streaming service splits it up, the proposal is in Part 2. (youtube.com)",
+    "start": 155,
+    "end": 297,
+    "claim": "If a streaming service splits the two-part Season 5 premiere of The Office into separate parts, Jim's proposal to Pam is in Part 2.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000283,
+   "usd_per_claim": 7.1e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

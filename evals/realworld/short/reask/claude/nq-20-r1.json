@@ -1,0 +1,348 @@
+{
+ "id": "nq-20-r1",
+ "tool": "claude",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.dnaindia.com/india/report-meet-dalveer-bhandari-indian-judge-at-icj-who-supported-order-against-israel-on-rafah-in-gaza-3090972",
+   "read": true,
+   "chars": 1826
+  },
+  {
+   "url": "https://press.un.org/en/2012/sc10629.doc.htm",
+   "read": true,
+   "chars": 209
+  },
+  {
+   "url": "https://press.un.org/en/2017/ga11978.doc.htm",
+   "read": true,
+   "chars": 209
+  },
+  {
+   "url": "https://www.deccanherald.com/india/justice-dalveer-bhandari-indian-nominee-2313573",
+   "read": true,
+   "chars": 1728
+  }
+ ],
+ "usd": 0.002566,
+ "report": {
+  "answer_text": "The best-known example is Justice Dalveer Bhandari of India. Your question doesn't name a country, so I'm assuming you mean India.\nHe served as a senior judge of the Supreme Court of India for about seven years, then resigned in 2012.[1]\nThe UN Security Council elected him on 27 April 2012 to fill a vacancy on the ICJ.[2] The vacancy came from the resignation of Judge Awn Shawkat Al-Khasawneh of Jordan.\nIn 2017 the UN General Assembly re-elected him for a nine-year term beginning 6 February 2018.[3] That term is due to expire in early February 2027.\nOther Indian jurists have also served on the ICJ. Raghunandan Swarup Pathak, then Chief Justice of India, served on the ICJ during 1989–91.[4] Nagendra Singh and Benegal Narsing Rau also served on it. I'm adding those two from memory, so please verify them.\nIf you meant a judge from another country's Supreme Court, tell me which one and I'll look it up.",
+  "claims": [
+   {
+    "sentence": "The best-known example is Justice Dalveer Bhandari of India.",
+    "start": 0,
+    "end": 60,
+    "claim": "Justice Dalveer Bhandari of India is the best-known example of a judge who served on the ICJ after being a senior judge at a national supreme court.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "He served as a senior judge of the Supreme Court of India for about seven years, then resigned in 2012.[1]",
+    "start": 131,
+    "end": 237,
+    "claim": "Dalveer Bhandari served as a senior judge of the Supreme Court of India for about seven years.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dnaindia.com/india/report-meet-dalveer-bhandari-indian-judge-at-icj-who-supported-order-against-israel-on-rafah-in-gaza-3090972",
+      "host": "dnaindia.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He served as a senior judge of the Supreme Court of India for about seven years.",
+        "pages": null,
+        "context": {
+         "before": "was also part of the bench which gave the verdict. He has been a member of ICJ since April 2012. He was re-elected in February 2018 for a term of nine years.\nJustice Bhandari belongs to Jodhpur, Rajasthan and is a recipient of many national and international awards including Padma Bhushan (in 2014), the third highest civilian award in India. He is an esteemed jurist with a distinguished career. ",
+         "after": " Justice Bhandari resigned from his post in 2012. He was then appointed a judge in the International Court of Justice.\nThis is not the first time that Justice Dalveer Bhandari is in the news. Earlier, Justice Bhandari was also a part of the bench of ICJ, which gave a historic verdict in the case of Kulbhushan Jadhav, who is jailed in Pakistan. ICJ had held Pakistan guilty of violating the Vienna"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that he served as a senior judge of the Supreme Court of India for about seven years, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Justice Bhandari 'served as a senior judge of the Supreme Court of India for about seven years', which directly matches the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "He served as a senior judge of the Supreme Court of India for about seven years, then resigned in 2012.[1]",
+    "start": 131,
+    "end": 237,
+    "claim": "Dalveer Bhandari resigned from the Supreme Court of India in 2012.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dnaindia.com/india/report-meet-dalveer-bhandari-indian-judge-at-icj-who-supported-order-against-israel-on-rafah-in-gaza-3090972",
+      "host": "dnaindia.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Justice Bhandari resigned from his post in 2012.",
+        "pages": null,
+        "context": {
+         "before": "April 2012. He was re-elected in February 2018 for a term of nine years.\nJustice Bhandari belongs to Jodhpur, Rajasthan and is a recipient of many national and international awards including Padma Bhushan (in 2014), the third highest civilian award in India. He is an esteemed jurist with a distinguished career. He served as a senior judge of the Supreme Court of India for about seven years. ",
+         "after": " He was then appointed a judge in the International Court of Justice.\nThis is not the first time that Justice Dalveer Bhandari is in the news. Earlier, Justice Bhandari was also a part of the bench of ICJ, which gave a historic verdict in the case of Kulbhushan Jadhav, who is jailed in Pakistan. ICJ had held Pakistan guilty of violating the Vienna Convention.\nAfter graduation in law, he earned a"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that Justice Bhandari resigned from his post in 2012, which matches the claim's resignation and year, though it does not explicitly name the Supreme Court of India, so the court is taken as the referenced post.",
+      "page_judged": "supported",
+      "page_reason": "The page says he served as a senior judge of the Supreme Court of India for about seven years, then states that he 'resigned from his post in 2012' before being appointed to the ICJ, which together support the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The UN Security Council elected him on 27 April 2012 to fill a vacancy on the ICJ.[2]",
+    "start": 238,
+    "end": 323,
+    "claim": "The UN Security Council elected Dalveer Bhandari on 27 April 2012 to fill a vacancy on the ICJ.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://press.un.org/en/2012/sc10629.doc.htm",
+      "host": "press.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is only an error message about a site component failing to load and says nothing about Dalveer Bhandari, the UN Security Council, the ICJ, or any election date.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The vacancy came from the resignation of Judge Awn Shawkat Al-Khasawneh of Jordan.",
+    "start": 324,
+    "end": 406,
+    "claim": "The ICJ vacancy filled by Dalveer Bhandari came from the resignation of Judge Awn Shawkat Al-Khasawneh of Jordan.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "In 2017 the UN General Assembly re-elected him for a nine-year term beginning 6 February 2018.[3]",
+    "start": 407,
+    "end": 504,
+    "claim": "In 2017 the UN General Assembly re-elected Dalveer Bhandari to the ICJ for a nine-year term beginning 6 February 2018.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://press.un.org/en/2017/ga11978.doc.htm",
+      "host": "press.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only contains an error message about a site section failing to load and says nothing about Dalveer Bhandari, the UN General Assembly, the ICJ, or any election or term dates.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "That term is due to expire in early February 2027.",
+    "start": 505,
+    "end": 555,
+    "claim": "Dalveer Bhandari's ICJ term is due to expire in early February 2027.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Other Indian jurists have also served on the ICJ.",
+    "start": 556,
+    "end": 605,
+    "claim": "Other Indian jurists have also served on the ICJ.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.deccanherald.com/india/justice-dalveer-bhandari-indian-nominee-2313573",
+      "host": "deccanherald.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The last Indian representation to ICJ was the then Chief Justice of India Raghunandan Swarup Pathak during 1989-91.",
+        "pages": null,
+        "context": {
+         "before": "Supreme Court judge Dalveer Bhandari has been nominated as India's candidate for April election to the International Court of Justice.\nExperience a more refined e-paper today\n",
+         "after": "\nThe External Affairs Minister in an RTI response has said, \"Dalveer Bhandari has been nominated by the Indian National Group on the Permanent Court of Arbitration as the Indian candidate for the election to the ICJ.\"\nIn response to queries by Subhash Agrawal, the Ministry said as per the ICJ statutes, the nomination for election are made by National Groups in Permanent Court of Arbitration.\n\"The"
+        }
+       }
+      ],
+      "quote_reason": "The quote says Pathak was the last Indian representation to the ICJ, which implies earlier Indian judges served, though it does not name them.",
+      "page_judged": "not_supported",
+      "page_reason": "The page only mentions that Raghunandan Swarup Pathak served as the last Indian representation on the ICJ during 1989-91, and does not state that other Indian jurists have served on the ICJ; the claim's general statement is not established by the text.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Raghunandan Swarup Pathak, then Chief Justice of India, served on the ICJ during 1989–91.[4]",
+    "start": 606,
+    "end": 698,
+    "claim": "Raghunandan Swarup Pathak was Chief Justice of India and served on the ICJ during 1989–91.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.deccanherald.com/india/justice-dalveer-bhandari-indian-nominee-2313573",
+      "host": "deccanherald.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The last Indian representation to ICJ was the then Chief Justice of India Raghunandan Swarup Pathak during 1989-91.",
+        "pages": null,
+        "context": {
+         "before": "Supreme Court judge Dalveer Bhandari has been nominated as India's candidate for April election to the International Court of Justice.\nExperience a more refined e-paper today\n",
+         "after": "\nThe External Affairs Minister in an RTI response has said, \"Dalveer Bhandari has been nominated by the Indian National Group on the Permanent Court of Arbitration as the Indian candidate for the election to the ICJ.\"\nIn response to queries by Subhash Agrawal, the Ministry said as per the ICJ statutes, the nomination for election are made by National Groups in Permanent Court of Arbitration.\n\"The"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that Raghunandan Swarup Pathak was the then Chief Justice of India and was India's last representation to the ICJ during 1989-91, which matches the claim's role and dates, though it uses 'representation' rather than explicitly saying 'served on'.",
+      "page_judged": "supported",
+      "page_reason": "The page says Raghunandan Swarup Pathak was the then Chief Justice of India and the last Indian representation to the ICJ during 1989-91, which supports the claim that he was CJI and served on the ICJ in that period.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Nagendra Singh and Benegal Narsing Rau also served on it.",
+    "start": 699,
+    "end": 756,
+    "claim": "Nagendra Singh served on the ICJ.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Nagendra Singh and Benegal Narsing Rau also served on it.",
+    "start": 699,
+    "end": 756,
+    "claim": "Benegal Narsing Rau served on the ICJ.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 6,
+    "citation_unread": 0,
+    "uncited": 5
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 4,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000555,
+   "usd_per_claim": 5e-05
+  },
+  "cost": {
+   "total_usd": 0.0006,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "id": "nq-06",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?id=1036&utm_source=openai",
+   "read": true,
+   "chars": 992
+  }
+ ],
+ "usd": 0.001125,
+ "report": {
+  "answer_text": "John Cabot (Giovanni Caboto) led the 1497 voyage traditionally associated with Newfoundland. He sailed from Bristol, England, aboard the *Matthew*, though his exact landing site is uncertain. (pc.gc.ca)",
+  "claims": [
+   {
+    "sentence": "John Cabot (Giovanni Caboto) led the 1497 voyage traditionally associated with Newfoundland.",
+    "start": 0,
+    "end": 92,
+    "claim": "John Cabot (Giovanni Caboto) led the 1497 voyage traditionally associated with Newfoundland.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?id=1036&utm_source=openai",
+      "host": "pc.gc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In early May, 1497, John Cabot (Giovanni Caboto), a Venetian citizen bearing letters patent from Henry VII sailed from Bristol in the MATTHEW to seek a western passage to Asia.",
+        "pages": null,
+        "context": {
+         "before": "date unknown.)\nCabot's Landfall in the New World National Historic Event\nMultiple plaque locations, N/A\n- 1497 to 1497 (Significant)\n- Cabot's Landfall in the New World (Designation Name)\nImportance: Landing on June 24, 1497, beginning of British Empire overseas\nPlaque(s)\nExisting plaque: Cape Bonavista, Newfoundland and Labrador\nAdditional plaque: Bay St. Lawrence Road, Cape North, Nova Scotia\n",
+         "after": " On June 24, he made land somewhere on the east coast of Canada. Although the sources do not allow unequivocal identification of the site, local tradition records Cape Bonavista as the landfall. From this, the first official English voyage of exploration in the Western Ocean, derived Britain's subsequent claims in the New World and the beginnings of her overseas empire."
+        }
+       },
+       {
+        "text": "Although the sources do not allow unequivocal identification of the site, local tradition records Cape Bonavista as the landfall.",
+        "pages": null,
+        "context": {
+         "before": "Empire overseas\nPlaque(s)\nExisting plaque: Cape Bonavista, Newfoundland and Labrador\nAdditional plaque: Bay St. Lawrence Road, Cape North, Nova Scotia\nIn early May, 1497, John Cabot (Giovanni Caboto), a Venetian citizen bearing letters patent from Henry VII sailed from Bristol in the MATTHEW to seek a western passage to Asia. On June 24, he made land somewhere on the east coast of Canada. ",
+         "after": " From this, the first official English voyage of exploration in the Western Ocean, derived Britain's subsequent claims in the New World and the beginnings of her overseas empire."
+        }
+       },
+       {
+        "text": "Existing plaque: Cape Bonavista, Newfoundland and Labrador",
+        "pages": null,
+        "context": {
+         "before": "(© Parks Canada Agency / Agence Parcs Canada, date unknown.)\nCabot's Landfall in the New World National Historic Event\nMultiple plaque locations, N/A\n- 1497 to 1497 (Significant)\n- Cabot's Landfall in the New World (Designation Name)\nImportance: Landing on June 24, 1497, beginning of British Empire overseas\nPlaque(s)\n",
+         "after": "\nAdditional plaque: Bay St. Lawrence Road, Cape North, Nova Scotia\nIn early May, 1497, John Cabot (Giovanni Caboto), a Venetian citizen bearing letters patent from Henry VII sailed from Bristol in the MATTHEW to seek a western passage to Asia. On June 24, he made land somewhere on the east coast of Canada. Although the sources do not allow unequivocal identification of the site, local tradition"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back that Cabot sailed from Bristol in May 1497 and that local tradition names Cape Bonavista as landfall, but they never explicitly say he led the voyage traditionally associated with Newfoundland or that the landfall was in Newfoundland beyond the plaque label.",
+      "page_judged": "supported",
+      "page_reason": "The page states that John Cabot sailed from Bristol in 1497 and made landfall on the east coast of Canada, with local tradition recording Cape Bonavista as the landfall, which supports the claim that the voyage is traditionally associated with Newfoundland.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "He sailed from Bristol, England, aboard the *Matthew*, though his exact landing site is uncertain. (pc.gc.ca)",
+    "start": 93,
+    "end": 202,
+    "claim": "John Cabot sailed from Bristol, England, aboard the Matthew.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?id=1036&utm_source=openai",
+      "host": "pc.gc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In early May, 1497, John Cabot (Giovanni Caboto), a Venetian citizen bearing letters patent from Henry VII sailed from Bristol in the MATTHEW to seek a western passage to Asia.",
+        "pages": null,
+        "context": {
+         "before": "date unknown.)\nCabot's Landfall in the New World National Historic Event\nMultiple plaque locations, N/A\n- 1497 to 1497 (Significant)\n- Cabot's Landfall in the New World (Designation Name)\nImportance: Landing on June 24, 1497, beginning of British Empire overseas\nPlaque(s)\nExisting plaque: Cape Bonavista, Newfoundland and Labrador\nAdditional plaque: Bay St. Lawrence Road, Cape North, Nova Scotia\n",
+         "after": " On June 24, he made land somewhere on the east coast of Canada. Although the sources do not allow unequivocal identification of the site, local tradition records Cape Bonavista as the landfall. From this, the first official English voyage of exploration in the Western Ocean, derived Britain's subsequent claims in the New World and the beginnings of her overseas empire."
+        }
+       }
+      ],
+      "quote_reason": "The quote states that John Cabot sailed from Bristol in the Matthew, covering every fact in the claim (Bristol, the Matthew, and Cabot sailing from there).",
+      "page_judged": "supported",
+      "page_reason": "The page states that in early May 1497 John Cabot sailed from Bristol in the MATTHEW, so the claim that he sailed from Bristol aboard the Matthew is supported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "He sailed from Bristol, England, aboard the *Matthew*, though his exact landing site is uncertain. (pc.gc.ca)",
+    "start": 93,
+    "end": 202,
+    "claim": "The exact landing site of John Cabot's voyage is uncertain.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?id=1036&utm_source=openai",
+      "host": "pc.gc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Although the sources do not allow unequivocal identification of the site, local tradition records Cape Bonavista as the landfall.",
+        "pages": null,
+        "context": {
+         "before": "Empire overseas\nPlaque(s)\nExisting plaque: Cape Bonavista, Newfoundland and Labrador\nAdditional plaque: Bay St. Lawrence Road, Cape North, Nova Scotia\nIn early May, 1497, John Cabot (Giovanni Caboto), a Venetian citizen bearing letters patent from Henry VII sailed from Bristol in the MATTHEW to seek a western passage to Asia. On June 24, he made land somewhere on the east coast of Canada. ",
+         "after": " From this, the first official English voyage of exploration in the Western Ocean, derived Britain's subsequent claims in the New World and the beginnings of her overseas empire."
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the sources do not allow unequivocal identification of the landfall site, which backs the claim that the exact landing site is uncertain.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the sources do not allow unequivocal identification of the landfall site and that local tradition records Cape Bonavista, so the exact landing site is uncertain.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00023,
+   "usd_per_claim": 7.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

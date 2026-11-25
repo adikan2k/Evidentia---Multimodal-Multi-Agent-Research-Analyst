@@ -1,0 +1,245 @@
+{
+ "id": "nq-39",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.cambridge.org/core/books/abs/taming-of-the-shrew/stagehistory/D20C8F841FC199D1934CCF2059EFA63F?utm_source=openai",
+   "read": true,
+   "chars": 1269
+  }
+ ],
+ "usd": 0.001834,
+ "report": {
+  "answer_text": "The earliest possible performance of Shakespeare’s *The Taming of the Shrew* was on June 11, 1594, at Newington Butts Theatre. The diary that records it calls the play *The Taming of a Shrew*, so it’s unclear whether it was Shakespeare’s version. (shaxdoc.titania.folger.edu)\nThe earliest confirmed performance of Shakespeare’s version was on November 26, 1633, at St. James’s Palace before King Charles I and Queen Henrietta Maria. (cambridge.org)",
+  "claims": [
+   {
+    "sentence": "The earliest possible performance of Shakespeare’s *The Taming of the Shrew* was on June 11, 1594, at Newington Butts Theatre.",
+    "start": 0,
+    "end": 126,
+    "claim": "The earliest possible performance of Shakespeare’s The Taming of the Shrew was on June 11, 1594, at Newington Butts Theatre.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://shaxdoc.titania.folger.edu/node/553?utm_source=openai",
+      "host": "shaxdoc.titania.folger.edu",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The diary that records it calls the play *The Taming of a Shrew*, so it’s unclear whether it was Shakespeare’s version. (shaxdoc.titania.folger.edu)",
+    "start": 127,
+    "end": 275,
+    "claim": "The diary that records the June 11, 1594 performance calls the play The Taming of a Shrew.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://shaxdoc.titania.folger.edu/node/553?utm_source=openai",
+      "host": "shaxdoc.titania.folger.edu",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The diary that records it calls the play *The Taming of a Shrew*, so it’s unclear whether it was Shakespeare’s version. (shaxdoc.titania.folger.edu)",
+    "start": 127,
+    "end": 275,
+    "claim": "It is unclear whether the June 11, 1594 performance was Shakespeare’s version of the play.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://shaxdoc.titania.folger.edu/node/553?utm_source=openai",
+      "host": "shaxdoc.titania.folger.edu",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "name does not resolve",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The earliest confirmed performance of Shakespeare’s version was on November 26, 1633, at St. James’s Palace before King Charles I and Queen Henrietta Maria. (cambridge.org)",
+    "start": 276,
+    "end": 448,
+    "claim": "The earliest confirmed performance of Shakespeare’s version of The Taming of the Shrew was on November 26, 1633.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.cambridge.org/core/books/abs/taming-of-the-shrew/stagehistory/D20C8F841FC199D1934CCF2059EFA63F?utm_source=openai",
+      "host": "cambridge.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Sir Henry Herbert, Master of the Revels, recorded that The Taminge of the Shrew was acted at St James's before the King and Queen on November 26, 1633",
+        "pages": null,
+        "context": {
+         "before": "that ‘the tamynge of A Shrowe’ was one of the plays acted at Newington Butts in June, 1594, when the Admiral's and the Chamberlain's companies were there, is discussed elsewhere in this volume (pp. xiii, xxiii, 106). Sir E. K. Chambers (Elizabethan Stage, ii. 197) and others are inclined to think that Loue Labours Wonne, mentioned by Meres in Palladis Tamia (1598), is The Taming of the Shrew. ",
+         "after": ", and ‘likt’; and the performance of a ‘Revived Play Taminge the Shrew’ is mentioned in his rough accounts for 1663–64 (J. Q. Adams, Dramatic Records of Sir Henry Herbert, pp. 53 and 138). In the division of December, 1660, the play had fallen to Killigrew; and on April 9, 1667, Pepys saw at the King's house ‘The Tameing of a Shrew, which hath some very good pieces in it, but generally is but a"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs that Herbert recorded a performance of The Taminge of the Shrew at St James's on November 26, 1633, but it does not state that this was the earliest confirmed performance or that it was Shakespeare's version.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Henslowe noted 'the tamynge of A Shrowe' in 1594 and that Chambers and others think Loue Labours Wonne might be The Taming of the Shrew, so the 1633 performance is not established as the earliest confirmed performance of Shakespeare's version; the page does not state it was the earliest confirmed one.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The earliest confirmed performance of Shakespeare’s version was on November 26, 1633, at St. James’s Palace before King Charles I and Queen Henrietta Maria. (cambridge.org)",
+    "start": 276,
+    "end": 448,
+    "claim": "The November 26, 1633 performance of Shakespeare’s version took place at St. James’s Palace.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.cambridge.org/core/books/abs/taming-of-the-shrew/stagehistory/D20C8F841FC199D1934CCF2059EFA63F?utm_source=openai",
+      "host": "cambridge.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Taminge of the Shrew was acted at St James's before the King and Queen on November 26, 1633",
+        "pages": null,
+        "context": {
+         "before": "acted at Newington Butts in June, 1594, when the Admiral's and the Chamberlain's companies were there, is discussed elsewhere in this volume (pp. xiii, xxiii, 106). Sir E. K. Chambers (Elizabethan Stage, ii. 197) and others are inclined to think that Loue Labours Wonne, mentioned by Meres in Palladis Tamia (1598), is The Taming of the Shrew. Sir Henry Herbert, Master of the Revels, recorded that ",
+         "after": ", and ‘likt’; and the performance of a ‘Revived Play Taminge the Shrew’ is mentioned in his rough accounts for 1663–64 (J. Q. Adams, Dramatic Records of Sir Henry Herbert, pp. 53 and 138). In the division of December, 1660, the play had fallen to Killigrew; and on April 9, 1667, Pepys saw at the King's house ‘The Tameing of a Shrew, which hath some very good pieces in it, but generally is but a"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that 'The Taminge of the Shrew' was acted at St James's before the King and Queen on November 26, 1633, which matches the claim's date and venue, with the title identifying it as Shakespeare's play.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Herbert recorded The Taminge of the Shrew was acted at St James's before the King and Queen on November 26, 1633, but it does not say 'Palace' and does not explicitly identify that performance as Shakespeare's version, though the page does treat the play as The Taming of the Shrew.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The earliest confirmed performance of Shakespeare’s version was on November 26, 1633, at St. James’s Palace before King Charles I and Queen Henrietta Maria. (cambridge.org)",
+    "start": 276,
+    "end": 448,
+    "claim": "The November 26, 1633 performance was given before King Charles I and Queen Henrietta Maria.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.cambridge.org/core/books/abs/taming-of-the-shrew/stagehistory/D20C8F841FC199D1934CCF2059EFA63F?utm_source=openai",
+      "host": "cambridge.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says The Taminge of the Shrew was acted at St James's before the King and Queen on November 26, 1633, which matches the date and audience, but it never names the monarchs as Charles I and Henrietta Maria, so the identification is not stated on the page.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 3,
+    "unchecked": 3,
+    "uncited": 0
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000445,
+   "usd_per_claim": 7.4e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

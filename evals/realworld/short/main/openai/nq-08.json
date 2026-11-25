@@ -1,0 +1,270 @@
+{
+ "id": "nq-08",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://cactusleague.com/stadium.php?utm_source=openai",
+   "read": true,
+   "chars": 741
+  }
+ ],
+ "usd": 0.000734,
+ "report": {
+  "answer_text": "15 MLB teams play spring training in Arizona’s Cactus League, at 10 ballparks across the Phoenix metro area. Here’s where each team plays its home games. (cactusleague.com)\n| City | Ballpark | Teams |\n|---|---|---|\n| Glendale | Camelback Ranch | Chicago White Sox, Los Angeles Dodgers |\n| Goodyear | Goodyear Ballpark | Cincinnati Reds, Cleveland Guardians |\n| Mesa | Hohokam Stadium | Athletics |\n| Mesa | Sloan Park | Chicago Cubs |\n| Peoria | Peoria Sports Complex | San Diego Padres, Seattle Mariners |\n| Phoenix | American Family Fields of Phoenix | Milwaukee Brewers |\n| Scottsdale | Salt River Fields at Talking Stick | Arizona Diamondbacks, Colorado Rockies |\n| Scottsdale | Scottsdale Stadium | San Francisco Giants |\n| Surprise | Surprise Stadium | Kansas City Royals, Texas Rangers |\n| Tempe | Tempe Diablo Stadium | Los Angeles Angels |",
+  "claims": [
+   {
+    "sentence": "15 MLB teams play spring training in Arizona’s Cactus League, at 10 ballparks across the Phoenix metro area.",
+    "start": 0,
+    "end": 108,
+    "claim": "15 MLB teams play spring training in Arizona’s Cactus League.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://cactusleague.com/stadium.php?utm_source=openai",
+      "host": "cactusleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says there are ten ballparks with one or two big-league clubs each but never states a total count of 15 MLB teams, so the claim's specific number is not supported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "15 MLB teams play spring training in Arizona’s Cactus League, at 10 ballparks across the Phoenix metro area.",
+    "start": 0,
+    "end": 108,
+    "claim": "The Cactus League holds spring training at 10 ballparks across the Phoenix metro area.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://cactusleague.com/stadium.php?utm_source=openai",
+      "host": "cactusleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Spring training lives in ten ballparks scattered across the Valley of the Sun",
+        "pages": null,
+        "context": {
+         "before": "Cactus League Ballparks\nTen ballparks, one valley\n",
+         "after": " — every one within about an hour of the next, and each home to one or two big-league clubs each February and March. Pick a park below to find directions, its tenants and the games it hosts, or see them all on the stadium map.\nExplore all ten Cactus League ballparks\nKeep exploring\nMake more of spring\n- Discover AZ Find places to eat, stay and explore across Arizona.\n- The Dugout Stories, updates"
+        }
+       },
+       {
+        "text": "Explore all ten Cactus League ballparks",
+        "pages": null,
+        "context": {
+         "before": "Cactus League Ballparks\nTen ballparks, one valley\nSpring training lives in ten ballparks scattered across the Valley of the Sun — every one within about an hour of the next, and each home to one or two big-league clubs each February and March. Pick a park below to find directions, its tenants and the games it hosts, or see them all on the stadium map.\n",
+         "after": "\nKeep exploring\nMake more of spring\n- Discover AZ Find places to eat, stay and explore across Arizona.\n- The Dugout Stories, updates and local stops to plan your spring.\n- Stadium Map Directions, contact info, and details for all Cactus League ballparks.\n- Hall of Fame Honoring those that have left an indelible mark on spring training in Arizona."
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that ten Cactus League ballparks are spread across the Valley of the Sun, which is the same area the claim calls the Phoenix metro area, and that spring training happens in them.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says spring training takes place in ten ballparks across the Valley of the Sun and lists 'Explore all ten Cactus League ballparks,' but it never explicitly says 'Phoenix metro area' (it uses 'Valley of the Sun' and 'within about an hour'), so that part of the claim is only loosely supported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Here’s where each team plays its home games. (cactusleague.com)",
+    "start": 109,
+    "end": 172,
+    "claim": "The table lists where each Cactus League team plays its home spring training games, according to cactusleague.com.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://cactusleague.com/stadium.php?utm_source=openai",
+      "host": "cactusleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the ten Cactus League ballparks and mentions their tenant clubs in general terms, but it contains no table and does not list which team plays where.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Glendale | Camelback Ranch | Chicago White Sox, Los Angeles Dodgers |",
+    "start": 215,
+    "end": 286,
+    "claim": "Camelback Ranch is in Glendale and is used by the Chicago White Sox and Los Angeles Dodgers.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Goodyear | Goodyear Ballpark | Cincinnati Reds, Cleveland Guardians |",
+    "start": 287,
+    "end": 358,
+    "claim": "Goodyear Ballpark is in Goodyear and is used by the Cincinnati Reds and Cleveland Guardians.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Mesa | Hohokam Stadium | Athletics |",
+    "start": 359,
+    "end": 397,
+    "claim": "Hohokam Stadium is in Mesa and is used by the Athletics.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Mesa | Sloan Park | Chicago Cubs |",
+    "start": 398,
+    "end": 434,
+    "claim": "Sloan Park is in Mesa and is used by the Chicago Cubs.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Peoria | Peoria Sports Complex | San Diego Padres, Seattle Mariners |",
+    "start": 435,
+    "end": 506,
+    "claim": "Peoria Sports Complex is in Peoria and is used by the San Diego Padres and Seattle Mariners.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Phoenix | American Family Fields of Phoenix | Milwaukee Brewers |",
+    "start": 507,
+    "end": 574,
+    "claim": "American Family Fields of Phoenix is in Phoenix and is used by the Milwaukee Brewers.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Scottsdale | Salt River Fields at Talking Stick | Arizona Diamondbacks, Colorado Rockies |",
+    "start": 575,
+    "end": 667,
+    "claim": "Salt River Fields at Talking Stick is in Scottsdale and is used by the Arizona Diamondbacks and Colorado Rockies.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Scottsdale | Scottsdale Stadium | San Francisco Giants |",
+    "start": 668,
+    "end": 726,
+    "claim": "Scottsdale Stadium is in Scottsdale and is used by the San Francisco Giants.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Surprise | Surprise Stadium | Kansas City Royals, Texas Rangers |",
+    "start": 727,
+    "end": 794,
+    "claim": "Surprise Stadium is in Surprise and is used by the Kansas City Royals and Texas Rangers.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Tempe | Tempe Diablo Stadium | Los Angeles Angels |",
+    "start": 795,
+    "end": 848,
+    "claim": "Tempe Diablo Stadium is in Tempe and is used by the Los Angeles Angels.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 13,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "uncited": 10
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000651,
+   "usd_per_claim": 5e-05
+  },
+  "cost": {
+   "total_usd": 0.0007,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

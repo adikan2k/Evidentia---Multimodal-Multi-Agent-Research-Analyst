@@ -1,0 +1,906 @@
+{
+ "id": "science-01",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://rubinobservatory.org/gallery/image-releases/rubin-first-look",
+   "read": true,
+   "chars": 353
+  },
+  {
+   "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+   "read": true,
+   "chars": 539
+  }
+ ],
+ "usd": 0.001515,
+ "report": {
+  "answer_text": "What the first images showed (released June 23, 2025)\nThe NSF–DOE Vera C. Rubin Observatory team revealed the first images on June 23, 2025.[1] The \"First Look\" gallery included \"The Cosmic Treasure Chest,\" \"A Swarm of New Asteroids,\" \"Rhythms in the Stars,\" and the Trifid and Lagoon Nebulae.[1]\nVirgo Cluster: One image shows the Virgo galaxy cluster. It contains about 10 million galaxies, roughly 0.05% of the ~20 billion galaxies Rubin will capture over ten years.[2]\nTrifid and Lagoon Nebulae: This image combines 678 images taken in about 7 hours of observing time.[3]\nAsteroids and variable objects: The release also covered thousands of new asteroids[4], along with videos of a changing sky.\nScale: The images came from only about 10 hours of observations.[5] Each would need about 400 HD televisions to display at full detail.[5] They were taken with a 3,200-megapixel camera[4] on the 8.4-meter Simonyi Survey Telescope[6], in Chile.\nThe survey: the Legacy Survey of Space and Time (LSST)\nRubin's main mission is the LSST, a decade-long survey that repeatedly scans the southern night sky. It builds an ultra-wide, ultra-high-definition time-lapse record of the universe.[6]\nIt will image the entire southern sky every three to four days and produce about 20 terabytes of data each night.[7]\nIts science goals include dark matter and dark energy, distant galaxies, supernovae, and active galactic nuclei with supermassive black holes.[2] It is also expected to discover millions of new asteroids within the first two years.[3]\nThe sources I found from 2025 expected the LSST to start in late 2025. I didn't check whether it has formally begun.",
+  "claims": [
+   {
+    "sentence": "The NSF–DOE Vera C. Rubin Observatory team revealed the first images on June 23, 2025.[1]",
+    "start": 54,
+    "end": 143,
+    "claim": "The NSF–DOE Vera C. Rubin Observatory team revealed the first images on June 23, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://rubinobservatory.org/gallery/image-releases/rubin-first-look",
+      "host": "rubinobservatory.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Ever-changing Universe Revealed in First Imagery From NSF–DOE Vera C. Rubin Observatory",
+        "pages": null,
+        "context": {
+         "before": "Watch the recording of the First Look reveal event\nPress Release\n",
+         "after": "\nJune 23, 2025\nFrom distant stars and galaxies to asteroids whizzing through the Solar System, this next-generation facility unveils its first imagery and brings the night sky to life like never before"
+        }
+       }
+      ],
+      "quote_reason": "The quote's headline backs that the NSF–DOE Vera C. Rubin Observatory revealed its first imagery, but it does not state the June 23, 2025 date.",
+      "page_judged": "supported",
+      "page_reason": "The page is a press release dated June 23, 2025 titled 'Ever-changing Universe Revealed in First Imagery From NSF–DOE Vera C. Rubin Observatory' and says the facility 'unveils its first imagery', which supports the claim that the first images were revealed on that date.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The \"First Look\" gallery included \"The Cosmic Treasure Chest,\" \"A Swarm of New Asteroids,\" \"Rhythms in the Stars,\" and the Trifid and Lagoon Nebulae.[1]",
+    "start": 144,
+    "end": 296,
+    "claim": "The Rubin \"First Look\" gallery included \"The Cosmic Treasure Chest,\" \"A Swarm of New Asteroids,\" \"Rhythms in the Stars,\" and the Trifid and Lagoon Nebulae.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://rubinobservatory.org/gallery/image-releases/rubin-first-look",
+      "host": "rubinobservatory.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a press release excerpt that mentions first imagery of stars, galaxies and asteroids but does not list the gallery image titles 'The Cosmic Treasure Chest,' 'A Swarm of New Asteroids,' 'Rhythms in the Stars,' or the Trifid and Lagoon Nebulae.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Virgo Cluster: One image shows the Virgo galaxy cluster. It contains about 10 million galaxies, roughly 0.05% of the ~20 billion galaxies Rubin will capture over ten years.[2]",
+    "start": 297,
+    "end": 472,
+    "claim": "One Rubin image shows the Virgo galaxy cluster.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.mpg.de/24900555/first-images-of-the-vera-c-rubin-observatory",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The entire image above covers an area of about 70 full moons in the sky",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The latter depicts the entire Virgo galaxy cluster in three trillion pixels.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The second quote states that the image depicts the entire Virgo galaxy cluster, which backs the claim that a Rubin image shows the Virgo cluster, though the quotes do not explicitly name the telescope as Rubin.",
+      "page_judged": "supported",
+      "page_reason": "The page says the top image depicts the entire Virgo galaxy cluster in three trillion pixels and that a zoom-in shows a detail of it, so the claim that one Rubin image shows the Virgo cluster is stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Virgo Cluster: One image shows the Virgo galaxy cluster. It contains about 10 million galaxies, roughly 0.05% of the ~20 billion galaxies Rubin will capture over ten years.[2]",
+    "start": 297,
+    "end": 472,
+    "claim": "The Virgo galaxy cluster contains about 10 million galaxies.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.mpg.de/24900555/first-images-of-the-vera-c-rubin-observatory",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Only a few thousand of the 10 million galaxies in the overall image are bound together by their mutual gravitational pull to form the Virgo cluster.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says only a few thousand of the 10 million galaxies in the overall image are bound together to form the Virgo cluster, so the cluster does not contain about 10 million galaxies.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the overall image depicts the entire Virgo galaxy cluster and that 10 million galaxies appear in the overall image, but it also states only a few thousand of those galaxies are bound together to form the Virgo cluster, so the claim that the cluster contains about 10 million galaxies is contradicted."
+     }
+    ]
+   },
+   {
+    "sentence": "Virgo Cluster: One image shows the Virgo galaxy cluster. It contains about 10 million galaxies, roughly 0.05% of the ~20 billion galaxies Rubin will capture over ten years.[2]",
+    "start": 297,
+    "end": 472,
+    "claim": "The Virgo cluster's about 10 million galaxies are roughly 0.05% of the ~20 billion galaxies Rubin will capture over ten years.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.mpg.de/24900555/first-images-of-the-vera-c-rubin-observatory",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Only a few thousand of the 10 million galaxies in the overall image are bound together by their mutual gravitational pull to form the Virgo cluster.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Researchers expect a data set of around 40 billion celestial objects, including stars in the Milky Way, distant galaxies and even objects in our solar system such as asteroids.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote says only a few thousand of the 10 million galaxies in the image form the Virgo cluster, so the claim's assertion that the Virgo cluster has about 10 million galaxies is contradicted, and the second quote's 40 billion celestial objects (including stars and asteroids) does not back the 20 billion galaxies figure.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the overall image contains about 10 million galaxies, but only a few thousand of them form the Virgo cluster, and it gives about 40 billion celestial objects (not 20 billion galaxies) for the ten-year survey, so the claim's figures are not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Trifid and Lagoon Nebulae: This image combines 678 images taken in about 7 hours of observing time.[3]",
+    "start": 473,
+    "end": 575,
+    "claim": "The Trifid and Lagoon Nebulae image combines 678 images.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.energy.gov/node/4851569",
+      "host": "energy.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Rubin Observatory's first imagery, galaxies, stars and asteroids, but says nothing about the Trifid or Lagoon Nebulae or any image composed of 678 images."
+     }
+    ]
+   },
+   {
+    "sentence": "Trifid and Lagoon Nebulae: This image combines 678 images taken in about 7 hours of observing time.[3]",
+    "start": 473,
+    "end": 575,
+    "claim": "The Trifid and Lagoon Nebulae image was taken over about 7 hours of observing time.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.energy.gov/node/4851569",
+      "host": "energy.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses Rubin Observatory's first imagery and says it captured millions of galaxies and stars and thousands of asteroids in just over 10 hours of test observations, but it never mentions the Trifid and Lagoon Nebulae or a 7-hour exposure for any specific image."
+     }
+    ]
+   },
+   {
+    "sentence": "Asteroids and variable objects: The release also covered thousands of new asteroids[4], along with videos of a changing sky.",
+    "start": 576,
+    "end": 700,
+    "claim": "The Rubin release covered thousands of new asteroids.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "revealing millions of galaxies and thousands of new asteroids",
+        "pages": null,
+        "context": {
+         "before": "The Vera C. Rubin Observatory in Chile released its first images on June 23, 2025, showcasing its 3,200-megapixel camera’s capabilities. The images include the Trifid and Lagoon Nebulae, captured in 678 exposures, and sections of the Virgo Cluster, ",
+         "after": ". These test observations highlight Rubin’s ability to image faint and distant objects for its upcoming 10-year Legacy Survey of Space and Time, set to explore dark matter, dark energy, and potential discoveries like Planet Nine."
+        }
+       }
+      ],
+      "quote_reason": "The quote states the release revealed thousands of new asteroids, which matches the claim that it covered thousands of new asteroids.",
+      "page_judged": "supported",
+      "page_reason": "The page states the images revealed thousands of new asteroids, which directly matches the claim about the release covering thousands of new asteroids.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Asteroids and variable objects: The release also covered thousands of new asteroids[4], along with videos of a changing sky.",
+    "start": 576,
+    "end": 700,
+    "claim": "The Rubin release included videos of a changing sky.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes still images (Trifid and Lagoon Nebulae, Virgo Cluster sections) and mentions no videos or time-lapse footage of a changing sky.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: The images came from only about 10 hours of observations.[5] Each would need about 400 HD televisions to display at full detail.[5] They were taken with a 3,200-megapixel camera[4] on the 8.4-meter Simonyi Survey Telescope[6], in Chile.",
+    "start": 701,
+    "end": 944,
+    "claim": "The first images came from only about 10 hours of observations.",
+    "citation_ids": [
+     "c5",
+     "c4",
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.scientificamerican.com/article/rubin-observatorys-first-images-just-unveiled-the-universe-as-weve-never/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The new images come from only 10 hours of observations",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the new images come from only 10 hours of observations, which matches the claim's figure of about 10 hours, though it refers to 'new images' rather than explicitly 'the first images'.",
+      "page_judged": "supported",
+      "page_reason": "The page states the new images come from only 10 hours of observations, which matches the claim that the first images came from about 10 hours of observations."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists the release date, the 678 exposures and the targets, but never states how many hours of observation the first images took, so the claim about about 10 hours is not supported.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: The images came from only about 10 hours of observations.[5] Each would need about 400 HD televisions to display at full detail.[5] They were taken with a 3,200-megapixel camera[4] on the 8.4-meter Simonyi Survey Telescope[6], in Chile.",
+    "start": 701,
+    "end": 944,
+    "claim": "Each of the first images would need about 400 HD televisions to display at full detail.",
+    "citation_ids": [
+     "c5",
+     "c4",
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.scientificamerican.com/article/rubin-observatorys-first-images-just-unveiled-the-universe-as-weve-never/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Each of them would require 400 high-definition televisions, a space the size of a basketball court, to display at full detail.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim's figure of about 400 HD televisions per image needed for full detail, but it does not say the 400 televisions applies to the first images specifically, so that specific is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Rubin images are too enormous to grasp and that each of them would require 400 high-definition televisions to display at full detail."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the first images, the camera's 3,200-megapixel resolution, and the nebula and galaxy cluster subjects, but says nothing about HD televisions or how many would be needed to display an image at full detail.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: The images came from only about 10 hours of observations.[5] Each would need about 400 HD televisions to display at full detail.[5] They were taken with a 3,200-megapixel camera[4] on the 8.4-meter Simonyi Survey Telescope[6], in Chile.",
+    "start": 701,
+    "end": 944,
+    "claim": "The first images were taken with a 3,200-megapixel camera.",
+    "citation_ids": [
+     "c5",
+     "c4",
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.scientificamerican.com/article/rubin-observatorys-first-images-just-unveiled-the-universe-as-weve-never/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the first images as coming from 10 hours of observations and mentions the telescope's wide field of view, but it never states the camera's megapixel count (3,200), so the claim's specific figure is unsupported."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Vera C. Rubin Observatory in Chile released its first images on June 23, 2025, showcasing its 3,200-megapixel camera’s capabilities.",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " The images include the Trifid and Lagoon Nebulae, captured in 678 exposures, and sections of the Virgo Cluster, revealing millions of galaxies and thousands of new asteroids. These test observations highlight Rubin’s ability to image faint and distant objects for its upcoming 10-year Legacy Survey of Space and Time, set to explore dark matter, dark energy, and potential discoveries like Planet"
+        }
+       }
+      ],
+      "quote_reason": "The quote states the Vera C. Rubin Observatory released its first images using its 3,200-megapixel camera, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the observatory's 3,200-megapixel camera showcased its capabilities in the first images released June 23, 2025, which supports the claim that the first images were taken with that camera.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: The images came from only about 10 hours of observations.[5] Each would need about 400 HD televisions to display at full detail.[5] They were taken with a 3,200-megapixel camera[4] on the 8.4-meter Simonyi Survey Telescope[6], in Chile.",
+    "start": 701,
+    "end": 944,
+    "claim": "The first images were taken with the 8.4-meter Simonyi Survey Telescope.",
+    "citation_ids": [
+     "c5",
+     "c4",
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.scientificamerican.com/article/rubin-observatorys-first-images-just-unveiled-the-universe-as-weve-never/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the Rubin Observatory's first images and a telescope atop a Chilean mountain but never mentions the 8.4-meter Simonyi Survey Telescope or its mirror size, so the claim's specific details are not stated."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the observatory's 3,200-megapixel camera and first images but never mentions the 8.4-meter Simonyi Survey Telescope or its mirror size, so the claim's specific telescope identification is not stated.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: The images came from only about 10 hours of observations.[5] Each would need about 400 HD televisions to display at full detail.[5] They were taken with a 3,200-megapixel camera[4] on the 8.4-meter Simonyi Survey Telescope[6], in Chile.",
+    "start": 701,
+    "end": 944,
+    "claim": "The Simonyi Survey Telescope is located in Chile.",
+    "citation_ids": [
+     "c5",
+     "c4",
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.scientificamerican.com/article/rubin-observatorys-first-images-just-unveiled-the-universe-as-weve-never/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the Vera C. Rubin Observatory as a telescope perched atop a mountain in Chile, but it never mentions the Simonyi Survey Telescope by name or links that name to the observatory."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.spaceimaging.com/vera-c-rubin-observatorys-first-images-released/",
+      "host": "spaceimaging.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the Vera C. Rubin Observatory in Chile and its 3,200-megapixel camera but never names the Simonyi Survey Telescope or links it to the observatory's location, so the claim is not stated on the page.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Rubin's main mission is the LSST, a decade-long survey that repeatedly scans the southern night sky. It builds an ultra-wide, ultra-high-definition time-lapse record of the universe.[6]",
+    "start": 1000,
+    "end": 1185,
+    "claim": "Rubin's main mission is the LSST, a decade-long survey that repeatedly scans the southern night sky.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Rubin's main mission is the LSST, a decade-long survey that repeatedly scans the southern night sky. It builds an ultra-wide, ultra-high-definition time-lapse record of the universe.[6]",
+    "start": 1000,
+    "end": 1185,
+    "claim": "The LSST builds an ultra-wide, ultra-high-definition time-lapse record of the universe.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://news.ucsc.edu/2025/06/rubin-observatory-contributions/",
+      "host": "news.ucsc.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It will image the entire southern sky every three to four days and produce about 20 terabytes of data each night.[7]",
+    "start": 1186,
+    "end": 1302,
+    "claim": "The LSST will image the entire southern sky every three to four days.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.astronomy.com/science/first-ever-images-released-by-the-vera-c-rubin-observatory/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The observatory will complete a full survey of the entire visible Southern Hemisphere sky from its location every three to four days, and then start again.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the observatory will survey the entire visible Southern Hemisphere sky every three to four days, which matches every fact in the claim, with the LSST name being the only link not explicitly in the quote but the observatory described is the same.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the observatory will complete a full survey of the entire visible Southern Hemisphere sky every three to four days, which matches the claim's substance."
+     }
+    ]
+   },
+   {
+    "sentence": "It will image the entire southern sky every three to four days and produce about 20 terabytes of data each night.[7]",
+    "start": 1186,
+    "end": 1302,
+    "claim": "The LSST will produce about 20 terabytes of data each night.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.astronomy.com/science/first-ever-images-released-by-the-vera-c-rubin-observatory/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "once up and running the Rubin Observatory will produce on the order of 20 terabytes of data each night as it images the entire southern sky every three to four days during the Legacy Survey of Space and Time (LSST)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the LSST (via the Rubin Observatory) will produce on the order of 20 terabytes of data each night, which matches the claim's figure and nightly rate.",
+      "page_judged": "supported",
+      "page_reason": "The page states that once up and running the Rubin Observatory will produce on the order of 20 terabytes of data each night, which matches the claim's 'about 20 terabytes each night' and attributes it to the observatory's operation during LSST."
+     }
+    ]
+   },
+   {
+    "sentence": "Its science goals include dark matter and dark energy, distant galaxies, supernovae, and active galactic nuclei with supermassive black holes.[2]",
+    "start": 1303,
+    "end": 1448,
+    "claim": "The LSST's science goals include dark matter and dark energy, distant galaxies, supernovae, and active galactic nuclei with supermassive black holes.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.mpg.de/24900555/first-images-of-the-vera-c-rubin-observatory",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The scientific focus areas coincide with the research interests of several Max Planck Institutes and include, among others, the study of dark matter and dark energy, mapping the Milky Way, and observing short-lived phenomena such as star explosions, asteroids, and the incorporation of stars by supermassive galaxies.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The Observatory will not only investigate how active galactic nuclei flicker, but also observe how stars explode, known as supernovae.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Researchers hope that the data from the Vera C. Rubin Telescope will provide better clues as to how dark matter influences the evolution of galaxies and how dark energy influences the expansion of the universe.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "it will observe billions of galaxies across vast distances",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back dark matter and dark energy, distant galaxies, supernovae, and active galactic nuclei as focus areas, but they describe AGN as flickering and supermassive black holes only as galaxies incorporating stars, so the 'supermassive black holes' specific is not directly stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states the survey will investigate dark matter and dark energy, observe distant galaxies with growing black holes, study supernovae, and watch active galactic nuclei flicker, so every element of the claim is covered."
+     }
+    ]
+   },
+   {
+    "sentence": "It is also expected to discover millions of new asteroids within the first two years.[3]",
+    "start": 1449,
+    "end": 1537,
+    "claim": "The LSST is expected to discover millions of new asteroids within the first two years.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.energy.gov/node/4851569",
+      "host": "energy.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Rubin will find millions of unseen asteroids, comets and interstellar objects over its 10-year LSST, but it never says this will happen within the first two years."
+     }
+    ]
+   },
+   {
+    "sentence": "The sources I found from 2025 expected the LSST to start in late 2025. I didn't check whether it has formally begun.",
+    "start": 1538,
+    "end": 1654,
+    "claim": "Sources from 2025 expected the LSST to start in late 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 2,
+    "needs_human": 2,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 9,
+    "uncited": 1
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 9,
+   "failed_citations": 5,
+   "failed_share_of_verdicts": 0.5556,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 7,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.007238,
+   "usd_per_claim": 0.000345
+  },
+  "cost": {
+   "total_usd": 0.0072,
+   "cap_usd": 0.4,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 14,
+     "usd": 0.0025
+    },
+    {
+     "node": "page_check",
+     "calls": 14,
+     "usd": 0.0023
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

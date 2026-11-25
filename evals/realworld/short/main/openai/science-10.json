@@ -1,0 +1,844 @@
+{
+ "id": "science-10",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.spacex.com/launches/starship-flight-10?utm_source=openai",
+   "read": false,
+   "why_not": "no readable text"
+  },
+  {
+   "url": "https://www.spacex.com/launches/starship-flight-11?_bhlid=7909b9b7220031e3729093db2887a18eb6d8681f&utm_source=openai",
+   "read": false,
+   "why_not": "no readable text"
+  }
+ ],
+ "usd": 0,
+ "report": {
+  "answer_text": "SpaceX launched five Starship test flights from Starbase, Texas, in 2025. The Starship upper stage was lost on the first three flights, but the final two met their major objectives: deploying mock satellites, restarting an engine in space, and making controlled ocean splashdowns. (oig.nasa.gov)\n| Flight | What happened |\n|---|---|\n| 7 — January 16 | The launch tower caught the Super Heavy booster, but the redesigned Starship upper stage broke apart. Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware, causing propellant leaks and fires. Debris caused minor vehicle damage in the Turks and Caicos Islands; no injuries were reported. (new.spacex.com) |\n| 8 — March 6 | The tower caught the booster again, but the upper stage broke apart after a Raptor engine hardware failure caused propellants to mix and ignite. The FAA briefly restricted air traffic in response to falling debris. (new.spacex.com) |\n| 9 — May 27 | SpaceX flew a previously used Super Heavy booster for the first time. It completed ascent but was lost during its landing burn. The upper stage flew farther than on the previous two tests, but lost control of its orientation, skipped the mock-satellite deployment and engine restart, and broke up during reentry. (spacex.com) |\n| 10 — August 26 | The turnaround: Starship deployed eight Starlink simulators in its first successful payload demonstration, restarted a Raptor engine in space, and made a controlled splashdown in the Indian Ocean. Super Heavy also made its planned splashdown in the Gulf of Mexico. (spacex.com) |\n| 11 — October 13 | Starship repeated those milestones and tested a banking maneuver like the one it would need to return to Starbase. Super Heavy tested a new landing-burn sequence before splashing down off Texas. This was the final flight of the second-generation Starship upper stage. (spacex.com) |\nThere was also a separate ground-test accident on June 18: the ship originally slated for Flight 10 exploded while being fueled for a stationary engine firing. No injuries were reported. (new.spacex.com)",
+  "claims": [
+   {
+    "sentence": "SpaceX launched five Starship test flights from Starbase, Texas, in 2025.",
+    "start": 0,
+    "end": 73,
+    "claim": "SpaceX launched five Starship test flights from Starbase, Texas, in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf?emrc=6a1efbb623e05&utm_source=openai",
+      "host": "oig.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Starship Flights 7 through 11 with 2025 dates, which makes five flights, but it never says these test flights launched from Starbase, Texas; it mentions Starbase only as a tanker launch site."
+     }
+    ]
+   },
+   {
+    "sentence": "The Starship upper stage was lost on the first three flights, but the final two met their major objectives: deploying mock satellites, restarting an engine in space, and making controlled ocean splashdowns. (oig.nasa.gov)",
+    "start": 74,
+    "end": 295,
+    "claim": "The Starship upper stage was lost on the first three flights of 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf?emrc=6a1efbb623e05&utm_source=openai",
+      "host": "oig.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Flights 7, 8, and 9 all experienced mishaps resulting in loss of the",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       },
+       {
+        "text": "with each flight test ending with a loss of the Starship vehicle.",
+        "pages": [
+         19,
+         19
+        ],
+        "context": null
+       },
+       {
+        "text": "Flight 7 on January 16, 2025; Flight 8 on March 6, 2025; Flight 9 on May 27, 2025",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Flights 7, 8 and 9 in 2025 each ended with loss of the Starship vehicle, but they never specifically say the upper stage was the part lost.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Flights 7 (January 16, 2025), 8 (March 6, 2025), and 9 (May 27, 2025) as the 2025 flights that each ended in loss of the Starship vehicle, and it distinguishes Starship from the Super Heavy booster, so Starship is the upper stage."
+     }
+    ]
+   },
+   {
+    "sentence": "The Starship upper stage was lost on the first three flights, but the final two met their major objectives: deploying mock satellites, restarting an engine in space, and making controlled ocean splashdowns. (oig.nasa.gov)",
+    "start": 74,
+    "end": 295,
+    "claim": "The final two Starship test flights of 2025 met their major objectives: deploying mock satellites, restarting an engine in space, and making controlled ocean splashdowns.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf?emrc=6a1efbb623e05&utm_source=openai",
+      "host": "oig.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Flights 10 and 11 each ended with both Starship and the booster splashing down as planned, but it says nothing about deploying mock satellites or restarting an engine in space."
+     }
+    ]
+   },
+   {
+    "sentence": "| 7 — January 16 | The launch tower caught the Super Heavy booster, but the redesigned Starship upper stage broke apart. Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware, causing propellant leaks and fires. Debris caused minor vehicle damage in the Turks and Caicos Islands; no injuries were reported. (new.spacex.com) |",
+    "start": 333,
+    "end": 698,
+    "claim": "On Flight 7 (January 16), the launch tower caught the Super Heavy booster.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 7 — January 16 | The launch tower caught the Super Heavy booster, but the redesigned Starship upper stage broke apart. Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware, causing propellant leaks and fires. Debris caused minor vehicle damage in the Turks and Caicos Islands; no injuries were reported. (new.spacex.com) |",
+    "start": 333,
+    "end": 698,
+    "claim": "On Flight 7 (January 16), the redesigned Starship upper stage broke apart.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 7 — January 16 | The launch tower caught the Super Heavy booster, but the redesigned Starship upper stage broke apart. Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware, causing propellant leaks and fires. Debris caused minor vehicle damage in the Turks and Caicos Islands; no injuries were reported. (new.spacex.com) |",
+    "start": 333,
+    "end": 698,
+    "claim": "Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware on Flight 7, causing propellant leaks and fires.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 7 — January 16 | The launch tower caught the Super Heavy booster, but the redesigned Starship upper stage broke apart. Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware, causing propellant leaks and fires. Debris caused minor vehicle damage in the Turks and Caicos Islands; no injuries were reported. (new.spacex.com) |",
+    "start": 333,
+    "end": 698,
+    "claim": "Debris from Flight 7 caused minor vehicle damage in the Turks and Caicos Islands.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 7 — January 16 | The launch tower caught the Super Heavy booster, but the redesigned Starship upper stage broke apart. Investigators found that stronger-than-expected vibrations likely damaged propulsion hardware, causing propellant leaks and fires. Debris caused minor vehicle damage in the Turks and Caicos Islands; no injuries were reported. (new.spacex.com) |",
+    "start": 333,
+    "end": 698,
+    "claim": "No injuries were reported from the Flight 7 debris.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 8 — March 6 | The tower caught the booster again, but the upper stage broke apart after a Raptor engine hardware failure caused propellants to mix and ignite. The FAA briefly restricted air traffic in response to falling debris. (new.spacex.com) |",
+    "start": 699,
+    "end": 948,
+    "claim": "On Flight 8 (March 6), the tower caught the booster again.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 8 — March 6 | The tower caught the booster again, but the upper stage broke apart after a Raptor engine hardware failure caused propellants to mix and ignite. The FAA briefly restricted air traffic in response to falling debris. (new.spacex.com) |",
+    "start": 699,
+    "end": 948,
+    "claim": "On Flight 8, the upper stage broke apart after a Raptor engine hardware failure caused propellants to mix and ignite.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 8 — March 6 | The tower caught the booster again, but the upper stage broke apart after a Raptor engine hardware failure caused propellants to mix and ignite. The FAA briefly restricted air traffic in response to falling debris. (new.spacex.com) |",
+    "start": 699,
+    "end": 948,
+    "claim": "The FAA briefly restricted air traffic in response to falling debris from Flight 8.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 9 — May 27 | SpaceX flew a previously used Super Heavy booster for the first time. It completed ascent but was lost during its landing burn. The upper stage flew farther than on the previous two tests, but lost control of its orientation, skipped the mock-satellite deployment and engine restart, and broke up during reentry. (spacex.com) |",
+    "start": 949,
+    "end": 1291,
+    "claim": "On Flight 9 (May 27), SpaceX flew a previously used Super Heavy booster for the first time.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.spacex.com/updates?os=av..&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On May 27, 2025, Starship’s ninth flight test successfully lifted off at 6:36 p.m. CT from Starbase, Texas.",
+        "pages": null,
+        "context": {
+         "before": "with new state-of-the-art satellite technologies, exclusive spectrum, and Starship’s unprecedented payload capacity to low-Earth orbit in a single launch, Starlink Direct to Cell’s next generation service will deliver unparalleled performance to standard, unmodified cell phones and IoT devices – helping to close coverage gaps and ultimately eliminate mobile dead zones around the world.\nFlight 9\n",
+         "after": " The flight test began with the first Super Heavy booster to be reflown starting up successfully and completing a full-duration ascent burn with all 33 of its Raptor engines before separating from Starship’s upper stage in a hot-staging maneuver. During separation, Super Heavy performed the first ever deterministic flip followed by its boostback burn.\nAfter completing the boostback burn, Super"
+        }
+       },
+       {
+        "text": "The flight test began with the first Super Heavy booster to be reflown starting up successfully and completing a full-duration ascent burn with all 33 of its Raptor engines before separating from Starship’s upper stage in a hot-staging maneuver.",
+        "pages": null,
+        "context": {
+         "before": "capacity to low-Earth orbit in a single launch, Starlink Direct to Cell’s next generation service will deliver unparalleled performance to standard, unmodified cell phones and IoT devices – helping to close coverage gaps and ultimately eliminate mobile dead zones around the world.\nFlight 9\nOn May 27, 2025, Starship’s ninth flight test successfully lifted off at 6:36 p.m. CT from Starbase, Texas. ",
+         "after": " During separation, Super Heavy performed the first ever deterministic flip followed by its boostback burn.\nAfter completing the boostback burn, Super Heavy flew at a significantly higher angle of attack than previous flights during its descent back to Earth, reaching a peak angle of approximately 17 degrees. This trajectory was a flight experiment to gather data on the limits of the booster’s"
+        }
+       }
+      ],
+      "quote_reason": "The quotes confirm Flight 9 lifted off on May 27, 2025, and that its booster was the first Super Heavy booster to be reflown, which matches the claim that a previously used booster flew for the first time.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Flight 9 on May 27, 2025 featured the first Super Heavy booster to be reflown, which means it was a previously flown booster, so the claim is supported.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "| 9 — May 27 | SpaceX flew a previously used Super Heavy booster for the first time. It completed ascent but was lost during its landing burn. The upper stage flew farther than on the previous two tests, but lost control of its orientation, skipped the mock-satellite deployment and engine restart, and broke up during reentry. (spacex.com) |",
+    "start": 949,
+    "end": 1291,
+    "claim": "On Flight 9, the Super Heavy booster completed ascent but was lost during its landing burn.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.spacex.com/updates?os=av..&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The flight test began with the first Super Heavy booster to be reflown starting up successfully and completing a full-duration ascent burn with all 33 of its Raptor engines before separating from Starship’s upper stage in a hot-staging maneuver.",
+        "pages": null,
+        "context": {
+         "before": "capacity to low-Earth orbit in a single launch, Starlink Direct to Cell’s next generation service will deliver unparalleled performance to standard, unmodified cell phones and IoT devices – helping to close coverage gaps and ultimately eliminate mobile dead zones around the world.\nFlight 9\nOn May 27, 2025, Starship’s ninth flight test successfully lifted off at 6:36 p.m. CT from Starbase, Texas. ",
+         "after": " During separation, Super Heavy performed the first ever deterministic flip followed by its boostback burn.\nAfter completing the boostback burn, Super Heavy flew at a significantly higher angle of attack than previous flights during its descent back to Earth, reaching a peak angle of approximately 17 degrees. This trajectory was a flight experiment to gather data on the limits of the booster’s"
+        }
+       },
+       {
+        "text": "Shortly after the burn started, an energetic event was observed near the aft end of the vehicle followed by loss of telemetry.",
+        "pages": null,
+        "context": {
+         "before": "the boostback burn, Super Heavy flew at a significantly higher angle of attack than previous flights during its descent back to Earth, reaching a peak angle of approximately 17 degrees. This trajectory was a flight experiment to gather data on the limits of the booster’s performance. Once it reached the planned splashdown area, the booster relit 12 of the planned 13 engines for its landing burn. ",
+         "after": " Final data was received from the booster approximately 382 seconds into flight and at approximately 1 kilometer in altitude over the designated clear zone.\nThe most probable cause for the failure at landing burn was higher than predicted forces on the booster structure, specifically on the booster’s fuel transfer tube, due to the increased angle of attack experiment. Post-flight analysis showed"
+        }
+       },
+       {
+        "text": "Final data was received from the booster approximately 382 seconds into flight and at approximately 1 kilometer in altitude over the designated clear zone.",
+        "pages": null,
+        "context": {
+         "before": "Earth, reaching a peak angle of approximately 17 degrees. This trajectory was a flight experiment to gather data on the limits of the booster’s performance. Once it reached the planned splashdown area, the booster relit 12 of the planned 13 engines for its landing burn. Shortly after the burn started, an energetic event was observed near the aft end of the vehicle followed by loss of telemetry. ",
+         "after": "\nThe most probable cause for the failure at landing burn was higher than predicted forces on the booster structure, specifically on the booster’s fuel transfer tube, due to the increased angle of attack experiment. Post-flight analysis showed that vehicle loads exceeded the capabilities of the transfer tube which is believed to have experienced a structural failure, resulting in a mixing of"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back that the booster completed its full-duration ascent burn and then lost telemetry shortly after a burn started, but they never identify that burn as the landing burn.",
+      "page_judged": "supported",
+      "page_reason": "The page says Flight 9's booster completed a full-duration ascent burn and separated, then suffered an energetic event during its landing burn with loss of telemetry, supporting the claim that it was lost during the landing burn.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "| 9 — May 27 | SpaceX flew a previously used Super Heavy booster for the first time. It completed ascent but was lost during its landing burn. The upper stage flew farther than on the previous two tests, but lost control of its orientation, skipped the mock-satellite deployment and engine restart, and broke up during reentry. (spacex.com) |",
+    "start": 949,
+    "end": 1291,
+    "claim": "On Flight 9, the upper stage flew farther than on the previous two tests.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.spacex.com/updates?os=av..&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Flight 9's upper stage losing an engine and control and breaking up, but it gives no distance or range figures for Flight 9 or the previous two flights, so it cannot show that Flight 9 went farther.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "| 9 — May 27 | SpaceX flew a previously used Super Heavy booster for the first time. It completed ascent but was lost during its landing burn. The upper stage flew farther than on the previous two tests, but lost control of its orientation, skipped the mock-satellite deployment and engine restart, and broke up during reentry. (spacex.com) |",
+    "start": 949,
+    "end": 1291,
+    "claim": "On Flight 9, the upper stage lost control of its orientation, skipped the mock-satellite deployment and engine restart, and broke up during reentry.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.spacex.com/updates?os=av..&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The attitude error resulted in the ship automatically skipping the payload deploy objective",
+        "pages": null,
+        "context": {
+         "before": "were able to compensate for the drop in main tank pressure and completed the ascent burn, achieving the planned velocity and Second Stage Engine Cutoff (SECO).\nAfter engine shutdown, the elevated nosecone pressure combined with planned nosecone venting led to a large amount of attitude error, which continued to build up until the vehicle’s automatic fault systems disabled nosecone venting. ",
+         "after": ", which was also unable to be completed as the higher nosecone pressure resulted in adverse loads on the mechanism responsible for opening the payload door.\nThe vehicle was able to gradually decrease its attitude error using reaction control thrusters until nosecone venting was reenabled as planned. Roughly 40 seconds after nosecone vents were reenabled, onboard cameras showed liquid methane"
+        }
+       },
+       {
+        "text": "This eventually triggered automatic passivation commands on the vehicle, resulting in Starship skipping the in-space burn and venting all remaining propellant into space.",
+        "pages": null,
+        "context": {
+         "before": "loads on the mechanism responsible for opening the payload door.\nThe vehicle was able to gradually decrease its attitude error using reaction control thrusters until nosecone venting was reenabled as planned. Roughly 40 seconds after nosecone vents were reenabled, onboard cameras showed liquid methane entering the nosecone and temperatures on multiple sensors and controllers started dropping. ",
+         "after": "\nStarship reentered Earth’s atmosphere in an off-nominal attitude and communication was lost during entry. Final telemetry from Starship was received approximately 46 minutes into the flight test, while the vehicle was approximately 59 kilometers in altitude and inside the designated entry area over the Indian Ocean. There were no autonomous flight safety system mission rule violations or"
+        }
+       },
+       {
+        "text": "Starship reentered Earth’s atmosphere in an off-nominal attitude and communication was lost during entry.",
+        "pages": null,
+        "context": {
+         "before": "venting was reenabled as planned. Roughly 40 seconds after nosecone vents were reenabled, onboard cameras showed liquid methane entering the nosecone and temperatures on multiple sensors and controllers started dropping. This eventually triggered automatic passivation commands on the vehicle, resulting in Starship skipping the in-space burn and venting all remaining propellant into space.\n",
+         "after": " Final telemetry from Starship was received approximately 46 minutes into the flight test, while the vehicle was approximately 59 kilometers in altitude and inside the designated entry area over the Indian Ocean. There were no autonomous flight safety system mission rule violations or initiation of the flight termination system.\nSpaceX led the investigation efforts with oversight from the FAA and"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back the loss of attitude control and the skipped payload deploy and in-space burn, and show communication lost during reentry, but they never say the vehicle broke up and do not mention a mock satellite.",
+      "page_judged": "not_supported",
+      "page_reason": "The pages describe Flight 9's attitude error, skipped payload deploy, and skipped in-space burn, but they say only that communication was lost during entry and never state that the ship broke up during reentry or that the payload was a mock satellite.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "| 10 — August 26 | The turnaround: Starship deployed eight Starlink simulators in its first successful payload demonstration, restarted a Raptor engine in space, and made a controlled splashdown in the Indian Ocean. Super Heavy also made its planned splashdown in the Gulf of Mexico. (spacex.com) |",
+    "start": 1292,
+    "end": 1590,
+    "claim": "On Flight 10 (August 26), Starship deployed eight Starlink simulators in its first successful payload demonstration.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.spacex.com/launches/starship-flight-10?utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 10 — August 26 | The turnaround: Starship deployed eight Starlink simulators in its first successful payload demonstration, restarted a Raptor engine in space, and made a controlled splashdown in the Indian Ocean. Super Heavy also made its planned splashdown in the Gulf of Mexico. (spacex.com) |",
+    "start": 1292,
+    "end": 1590,
+    "claim": "On Flight 10, Starship restarted a Raptor engine in space.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.spacex.com/launches/starship-flight-10?utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 10 — August 26 | The turnaround: Starship deployed eight Starlink simulators in its first successful payload demonstration, restarted a Raptor engine in space, and made a controlled splashdown in the Indian Ocean. Super Heavy also made its planned splashdown in the Gulf of Mexico. (spacex.com) |",
+    "start": 1292,
+    "end": 1590,
+    "claim": "On Flight 10, Starship made a controlled splashdown in the Indian Ocean.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.spacex.com/launches/starship-flight-10?utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 10 — August 26 | The turnaround: Starship deployed eight Starlink simulators in its first successful payload demonstration, restarted a Raptor engine in space, and made a controlled splashdown in the Indian Ocean. Super Heavy also made its planned splashdown in the Gulf of Mexico. (spacex.com) |",
+    "start": 1292,
+    "end": 1590,
+    "claim": "On Flight 10, Super Heavy made its planned splashdown in the Gulf of Mexico.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.spacex.com/launches/starship-flight-10?utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 11 — October 13 | Starship repeated those milestones and tested a banking maneuver like the one it would need to return to Starbase. Super Heavy tested a new landing-burn sequence before splashing down off Texas. This was the final flight of the second-generation Starship upper stage. (spacex.com) |",
+    "start": 1591,
+    "end": 1893,
+    "claim": "On Flight 11 (October 13), Starship repeated the Flight 10 milestones and tested a banking maneuver like the one it would need to return to Starbase.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.spacex.com/launches/starship-flight-11?_bhlid=7909b9b7220031e3729093db2887a18eb6d8681f&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 11 — October 13 | Starship repeated those milestones and tested a banking maneuver like the one it would need to return to Starbase. Super Heavy tested a new landing-burn sequence before splashing down off Texas. This was the final flight of the second-generation Starship upper stage. (spacex.com) |",
+    "start": 1591,
+    "end": 1893,
+    "claim": "On Flight 11, Super Heavy tested a new landing-burn sequence before splashing down off Texas.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.spacex.com/launches/starship-flight-11?_bhlid=7909b9b7220031e3729093db2887a18eb6d8681f&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| 11 — October 13 | Starship repeated those milestones and tested a banking maneuver like the one it would need to return to Starbase. Super Heavy tested a new landing-burn sequence before splashing down off Texas. This was the final flight of the second-generation Starship upper stage. (spacex.com) |",
+    "start": 1591,
+    "end": 1893,
+    "claim": "Flight 11 was the final flight of the second-generation Starship upper stage.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.spacex.com/launches/starship-flight-11?_bhlid=7909b9b7220031e3729093db2887a18eb6d8681f&utm_source=openai",
+      "host": "spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "There was also a separate ground-test accident on June 18: the ship originally slated for Flight 10 exploded while being fueled for a stationary engine firing. No injuries were reported. (new.spacex.com)",
+    "start": 1894,
+    "end": 2097,
+    "claim": "On June 18, the ship originally slated for Flight 10 exploded while being fueled for a stationary engine firing in a separate ground-test accident.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "There was also a separate ground-test accident on June 18: the ship originally slated for Flight 10 exploded while being fueled for a stationary engine firing. No injuries were reported. (new.spacex.com)",
+    "start": 1894,
+    "end": 2097,
+    "claim": "No injuries were reported from the June 18 ground-test accident.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://new.spacex.com/updates?utm_source=openai",
+      "host": "new.spacex.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 24,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 21,
+    "uncited": 0
+   },
+   "cited_claims": 24,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 5,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.009005,
+   "usd_per_claim": 0.000375
+  },
+  "cost": {
+   "total_usd": 0.009,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0019
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0054
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0014
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

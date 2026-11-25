@@ -1,0 +1,181 @@
+{
+ "id": "nq-46",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.austintexas.gov/services/apply-apd-ride-along-program?utm_source=openai",
+   "read": true,
+   "chars": 759
+  }
+ ],
+ "usd": 0.00096,
+ "report": {
+  "answer_text": "Yes—if your local police department or sheriff’s office offers civilian ride-alongs, you can apply to accompany a patrol officer as an observer. You don’t have to be applying for a police job to join a civilian program. (austintexas.gov)\nSearch your department’s website for “ride-along,” or call its non-emergency number and ask how to apply. Requirements vary: you may need to sign a waiver, meet a minimum age, and apply a few weeks in advance. (austintexas.gov)\nWhat city and state are you in? I can help you find the right application.",
+  "claims": [
+   {
+    "sentence": "You don’t have to be applying for a police job to join a civilian program. (austintexas.gov)",
+    "start": 145,
+    "end": 237,
+    "claim": "A person does not have to be applying for a police job to join a civilian ride-along program.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.austintexas.gov/services/apply-apd-ride-along-program?utm_source=openai",
+      "host": "austintexas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a Police Observer ride-along program with age and frequency requirements but never states whether applicants must or need not be applying for a police job, so the claim is not stated.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Search your department’s website for “ride-along,” or call its non-emergency number and ask how to apply. Requirements vary: you may need to sign a waiver, meet a minimum age, and apply a few weeks in advance. (austintexas.gov)",
+    "start": 238,
+    "end": 465,
+    "claim": "Ride-along requirements vary by department and may include signing a waiver.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.austintexas.gov/services/apply-apd-ride-along-program?utm_source=openai",
+      "host": "austintexas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Austin Police Department's ride-along requirements (age 18+, one ride per calendar quarter, reading policy documents) but says nothing about requirements varying by department or about signing a waiver.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Search your department’s website for “ride-along,” or call its non-emergency number and ask how to apply. Requirements vary: you may need to sign a waiver, meet a minimum age, and apply a few weeks in advance. (austintexas.gov)",
+    "start": 238,
+    "end": 465,
+    "claim": "Ride-along requirements vary by department and may include meeting a minimum age.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.austintexas.gov/services/apply-apd-ride-along-program?utm_source=openai",
+      "host": "austintexas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Police Observers must be 18 years old or older",
+        "pages": null,
+        "context": {
+         "before": "Ride Along Program\nApply to ride along with an Austin Police officer in the Police Observer (Ride Along) program.\nWhat to know before you apply\nRequirements\n- Read both the APD Ride Along Policy (586 KB), and\n- Read the APD Police Observer program requirements (142 KB).\nThings to know\n- When selecting your ride date, please keep in mind that it takes 3-4 weeks to get a ride-along scheduled.\n- ",
+         "after": "\n- Riders may only ride ONCE per calendar quarter.\nHow to submit your form\nOnce you download and complete your APD Police Observer (Ride Along) form, you can submit it by:\n- Emailing APDridealong@austintexas.gov\n- In person at APD, 715 East 8th St. Austin, Texas 78701 (APD Public Information Office)"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs the minimum-age requirement (18 or older) but says nothing about requirements varying by department, so the variation part of the claim is not backed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that Police Observers must be 18 or older for the Austin Police ride-along program, but it does not say that requirements vary by department.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Search your department’s website for “ride-along,” or call its non-emergency number and ask how to apply. Requirements vary: you may need to sign a waiver, meet a minimum age, and apply a few weeks in advance. (austintexas.gov)",
+    "start": 238,
+    "end": 465,
+    "claim": "Ride-along requirements vary by department and may include applying a few weeks in advance.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.austintexas.gov/services/apply-apd-ride-along-program?utm_source=openai",
+      "host": "austintexas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says it takes 3-4 weeks to get a ride-along scheduled and lists APD-specific requirements, but it does not state that requirements vary by department, so the claim's variation part is unsupported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 4,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 1,
+   "claims_over_limit": 0,
+   "usd": 0.000377,
+   "usd_per_claim": 9.4e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

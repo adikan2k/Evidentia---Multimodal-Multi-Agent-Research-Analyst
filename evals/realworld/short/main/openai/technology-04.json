@@ -1,0 +1,365 @@
+{
+ "id": "technology-04",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.fidelity.com/news/article/company-news/202512182218RTRSNEWSCOMBINED_L4N3XP02E_1?utm_source=openai",
+   "read": true,
+   "chars": 431
+  }
+ ],
+ "usd": 0.0003,
+ "report": {
+  "answer_text": "TikTok briefly went dark in the U.S. in January 2025, then stayed online while the Trump administration repeatedly delayed enforcement of a federal divest-or-ban law. ByteDance signed a deal in December, but the ownership change didn’t close until January 22, 2026. (apnews.com)\nJanuary–February: The Supreme Court upheld the law on January 17. TikTok went offline late January 18 and restored service on January 19 after Trump promised to delay enforcement. He signed the order on January 20, but TikTok didn’t return to Apple’s and Google’s U.S. app stores until February 13. (supremecourt.gov)\nApril–September: Trump extended the enforcement pause several times. On September 25, he signed an executive order approving a framework for a majority American-owned U.S. joint venture and giving the parties more time to close the deal. (govinfo.gov)\nDecember and the closing: On December 18, TikTok told employees it had signed binding agreements with Oracle, Silver Lake, and MGX. When the deal closed in January 2026, those three investors each held 15% of TikTok USDS Joint Venture LLC, and ByteDance retained 19.9%. (fidelity.com)\nIt wasn’t a sale of TikTok worldwide. The joint venture took responsibility for U.S. user data, recommendation-algorithm security, and content moderation, while U.S. users remained connected to the global platform. TikTok’s global business also kept certain commercial functions, including advertising and e-commerce. (newsroom.tiktok.com)",
+  "claims": [
+   {
+    "sentence": "ByteDance signed a deal in December, but the ownership change didn’t close until January 22, 2026. (apnews.com)",
+    "start": 167,
+    "end": 278,
+    "claim": "ByteDance signed a deal in December.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apnews.com/article/bdc79b7ce741a81761f67ea56d410103?utm_source=openai",
+      "host": "apnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "ByteDance signed a deal in December, but the ownership change didn’t close until January 22, 2026. (apnews.com)",
+    "start": 167,
+    "end": 278,
+    "claim": "The ownership change for TikTok did not close until January 22, 2026.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apnews.com/article/bdc79b7ce741a81761f67ea56d410103?utm_source=openai",
+      "host": "apnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He signed the order on January 20, but TikTok didn’t return to Apple’s and Google’s U.S. app stores until February 13. (supremecourt.gov)",
+    "start": 459,
+    "end": 596,
+    "claim": "Trump signed the order delaying enforcement on January 20 (2025).",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.supremecourt.gov/opinions/24pdf/24-656_new_3dq3.pdf?utm_source=openai",
+      "host": "supremecourt.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the Act's January 19, 2025 effective date and the D.C. Circuit ruling but never mentions any order by Trump delaying enforcement or signing on January 20, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "He signed the order on January 20, but TikTok didn’t return to Apple’s and Google’s U.S. app stores until February 13. (supremecourt.gov)",
+    "start": 459,
+    "end": 596,
+    "claim": "TikTok did not return to Apple’s and Google’s U.S. app stores until February 13 (2025).",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.supremecourt.gov/opinions/24pdf/24-656_new_3dq3.pdf?utm_source=openai",
+      "host": "supremecourt.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a Supreme Court per curiam opinion and concurrence about the Protecting Americans from Foreign Adversary Controlled Applications Act and First Amendment issues; it says nothing about TikTok returning to Apple or Google app stores or any February 13 date."
+     }
+    ]
+   },
+   {
+    "sentence": "On September 25, he signed an executive order approving a framework for a majority American-owned U.S. joint venture and giving the parties more time to close the deal. (govinfo.gov)",
+    "start": 666,
+    "end": 848,
+    "claim": "On September 25 (2025), Trump signed an executive order approving a framework for a majority American-owned U.S. joint venture.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202500957/pdf/DCPD-202500957.pdf?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Executive Order 14352—Saving TikTok While Protecting National Security September 25, 2025",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "It will be majority-owned and controlled by United States persons and will no longer be controlled by any foreign adversary, since ByteDance Ltd. and its affiliates will own less than 20 percent of the entity",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "I have determined that the proposed divestiture would allow the millions of Americans who enjoy TikTok every day to continue using it while also protecting national security.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show an executive order dated September 25, 2025 (EO 14352, Saving TikTok) describing a majority United States-owned and controlled entity with ByteDance holding under 20 percent, which backs the claim's framework for a majority American-owned joint venture, though the quotes do not explicitly name Trump as signer or the word 'joint venture' or 'approving a framework'.",
+      "page_judged": "supported",
+      "page_reason": "The page states the executive order is dated September 25, 2025, and describes a Framework Agreement under which a newly established U.S.-based joint venture will be majority-owned and controlled by United States persons, with ByteDance and affiliates holding less than 20 percent, and the President determines the divestiture is a qualified divestiture."
+     }
+    ]
+   },
+   {
+    "sentence": "On September 25, he signed an executive order approving a framework for a majority American-owned U.S. joint venture and giving the parties more time to close the deal. (govinfo.gov)",
+    "start": 666,
+    "end": 848,
+    "claim": "The September 25 (2025) executive order gave the parties more time to close the deal.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-202500957/pdf/DCPD-202500957.pdf?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "To permit the contemplated divestiture to be completed, the Attorney General shall not take any action on behalf of the United States to enforce the Act for 120 days from the date of this order.",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the order gave a 120-day period to permit the divestiture to be completed, which matches the idea of more time, but it does not state the order's date of September 25 or describe it as giving parties more time to close a deal.",
+      "page_judged": "supported",
+      "page_reason": "Section 3(a) of the order bars the Attorney General from enforcing the Act for 120 days from the date of the order, stated as being done 'to permit the contemplated divestiture to be completed,' which supports the claim that it gave more time to complete the deal."
+     }
+    ]
+   },
+   {
+    "sentence": "When the deal closed in January 2026, those three investors each held 15% of TikTok USDS Joint Venture LLC, and ByteDance retained 19.9%. (fidelity.com)",
+    "start": 981,
+    "end": 1133,
+    "claim": "When the deal closed in January 2026, Oracle, Silver Lake, and MGX each held 15% of TikTok USDS Joint Venture LLC.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.fidelity.com/news/article/company-news/202512182218RTRSNEWSCOMBINED_L4N3XP02E_1?utm_source=openai",
+      "host": "fidelity.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a legal disclaimer about sending an email via a Fidelity service and says nothing about TikTok, Oracle, Silver Lake, MGX, or any ownership stakes.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "When the deal closed in January 2026, those three investors each held 15% of TikTok USDS Joint Venture LLC, and ByteDance retained 19.9%. (fidelity.com)",
+    "start": 981,
+    "end": 1133,
+    "claim": "When the deal closed in January 2026, ByteDance retained 19.9% of TikTok USDS Joint Venture LLC.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.fidelity.com/news/article/company-news/202512182218RTRSNEWSCOMBINED_L4N3XP02E_1?utm_source=openai",
+      "host": "fidelity.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a Fidelity email legal disclaimer about sending emails and says nothing about ByteDance, TikTok, a January 2026 deal closing, or a 19.9% stake.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "TikTok’s global business also kept certain commercial functions, including advertising and e-commerce. (newsroom.tiktok.com)",
+    "start": 1349,
+    "end": 1473,
+    "claim": "TikTok's global business kept certain commercial functions, including advertising and e-commerce.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://newsroom.tiktok.com/announcement-from-the-new-tiktok-usds-joint-venture-llc?lang=en&trk=article-ssr-frontend-pulse_little-text-block",
+      "host": "newsroom.tiktok.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "TikTok global's U.S. entities will manage global product interoperability and certain commercial activities, including e-commerce, advertising, and marketing.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that TikTok global's U.S. entities will manage certain commercial activities including e-commerce, advertising, and marketing, which backs the functions part but not that the global business itself kept them, since it refers to U.S. entities and future tense.",
+      "page_judged": "supported",
+      "page_reason": "The page states that TikTok global's U.S. entities will manage global product interoperability and certain commercial activities, including e-commerce, advertising, and marketing, which supports the claim that TikTok's global business retained these commercial functions."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 9,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 4,
+    "uncited": 0
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.6667,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.1111,
+   "pages_cited": 5,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 10,
+   "claims_over_limit": 0,
+   "usd": 0.006579,
+   "usd_per_claim": 0.000731
+  },
+  "cost": {
+   "total_usd": 0.0066,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 7,
+     "usd": 0.0032
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

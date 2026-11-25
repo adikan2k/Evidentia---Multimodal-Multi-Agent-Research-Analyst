@@ -1,0 +1,624 @@
+{
+ "id": "science-07",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Follow_the_reveal_of_Euclid_s_first_catalogue_on_19_March",
+   "read": true,
+   "chars": 1340
+  }
+ ],
+ "usd": 0.000801,
+ "report": {
+  "answer_text": "On 19 March 2025, ESA released Euclid's first batch of survey data, called Quick Data Release 1 (Q1).\nWhat it contained: ESA released the first catalogue of astronomical data from Euclid, including three new enormous image mosaics with zoom-ins.[1] The mosaics are previews of Euclid's deep fields. Together they cover 63 square degrees of sky, equivalent to more than 300 full Moons.[2]\nGalaxy numbers: In Deep Field South, Euclid spotted over 11 million galaxies in one observation.[3] The release also included a detailed catalogue of more than 380,000 galaxies, classified by features such as spiral arms, central bars, and tidal tails that suggest mergers.[4] Across the release, researchers reported 26 million galaxies.[4]\nScientific papers: A series of papers in *Astronomy & Astrophysics* described the images. They show a wealth of remote galaxies in three \"deep fields\" that Euclid will scan repeatedly during its six-year survey.[3]\nPurpose: This was a \"quick\" release of selected areas, meant to show what data to expect from future major releases.[3] The first large data release (DR1) is due in 2026, based on Euclid's first year of operation.[3]\nScale: Q1 is seven times larger than the earlier Early Release Observations. It is the largest contiguous area of sky ever observed with an optical/near-infrared space telescope.[5]",
+  "claims": [
+   {
+    "sentence": "On 19 March 2025, ESA released Euclid's first batch of survey data, called Quick Data Release 1 (Q1).",
+    "start": 0,
+    "end": 101,
+    "claim": "On 19 March 2025, ESA released Euclid's first batch of survey data, called Quick Data Release 1 (Q1).",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "What it contained: ESA released the first catalogue of astronomical data from Euclid, including three new enormous image mosaics with zoom-ins.[1]",
+    "start": 102,
+    "end": 248,
+    "claim": "ESA released the first catalogue of astronomical data from Euclid, including three new enormous image mosaics with zoom-ins.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/ESA_Multimedia/Videos/2025/03/Euclid_s_first_data_release_press_briefing/(lang)/en",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The mosaics are previews of Euclid's deep fields.",
+    "start": 249,
+    "end": 298,
+    "claim": "The mosaics are previews of Euclid's deep fields.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Follow_the_reveal_of_Euclid_s_first_catalogue_on_19_March",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Together, these previews of the Euclid deep fields make up 63 square degrees of the sky",
+        "pages": null,
+        "context": {
+         "before": "catalogue of astronomical data from the Euclid space telescope, including three new enormous image mosaics with zoom-ins. Follow the reveal live on Wednesday 19 March at 11:00 BST / 12:00 CET.\nFor this first data release of Euclid’s six-year survey, our dark Universe detective has scouted out the three patches of the sky where it will eventually make the deepest observations of its mission. ",
+         "after": ", the equivalent area of more than 300 times the full Moon. With these three images, Euclid opens its first treasure-trove of data that can be used by scientists to answer many open questions in astronomy.\nPress release and where to find the new images\nAn ESA press release including high-resolution versions of all images will be issued on 19 March on esa.int/euclid.\nTo explore the images in the"
+        }
+       }
+      ],
+      "quote_reason": "The quote explicitly says the mosaics are 'previews of the Euclid deep fields', which backs the claim's main point with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the three new image mosaics are previews of the Euclid deep fields, the three patches of sky where the telescope will make its deepest observations.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Together they cover 63 square degrees of sky, equivalent to more than 300 full Moons.[2]",
+    "start": 299,
+    "end": 387,
+    "claim": "Together the mosaics cover 63 square degrees of sky.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Follow_the_reveal_of_Euclid_s_first_catalogue_on_19_March",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Together, these previews of the Euclid deep fields make up 63 square degrees of the sky",
+        "pages": null,
+        "context": {
+         "before": "catalogue of astronomical data from the Euclid space telescope, including three new enormous image mosaics with zoom-ins. Follow the reveal live on Wednesday 19 March at 11:00 BST / 12:00 CET.\nFor this first data release of Euclid’s six-year survey, our dark Universe detective has scouted out the three patches of the sky where it will eventually make the deepest observations of its mission. ",
+         "after": ", the equivalent area of more than 300 times the full Moon. With these three images, Euclid opens its first treasure-trove of data that can be used by scientists to answer many open questions in astronomy.\nPress release and where to find the new images\nAn ESA press release including high-resolution versions of all images will be issued on 19 March on esa.int/euclid.\nTo explore the images in the"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the previews of the Euclid deep fields together make up 63 square degrees of the sky, which matches the claim's figure and subject.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the three previews of the Euclid deep fields together make up 63 square degrees of the sky, which matches the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Together they cover 63 square degrees of sky, equivalent to more than 300 full Moons.[2]",
+    "start": 299,
+    "end": 387,
+    "claim": "The 63 square degrees of sky covered by the mosaics is equivalent to more than 300 full Moons.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid/Follow_the_reveal_of_Euclid_s_first_catalogue_on_19_March",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Together, these previews of the Euclid deep fields make up 63 square degrees of the sky, the equivalent area of more than 300 times the full Moon.",
+        "pages": null,
+        "context": {
+         "before": "catalogue of astronomical data from the Euclid space telescope, including three new enormous image mosaics with zoom-ins. Follow the reveal live on Wednesday 19 March at 11:00 BST / 12:00 CET.\nFor this first data release of Euclid’s six-year survey, our dark Universe detective has scouted out the three patches of the sky where it will eventually make the deepest observations of its mission. ",
+         "after": " With these three images, Euclid opens its first treasure-trove of data that can be used by scientists to answer many open questions in astronomy.\nPress release and where to find the new images\nAn ESA press release including high-resolution versions of all images will be issued on 19 March on esa.int/euclid.\nTo explore the images in the highest resolution, visit ESASky:"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the 63 square degrees of sky equal the area of more than 300 full Moons, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the three Euclid deep field previews together make up 63 square degrees, which is the equivalent area of more than 300 times the full Moon, matching every part of the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Galaxy numbers: In Deep Field South, Euclid spotted over 11 million galaxies in one observation.[3]",
+    "start": 388,
+    "end": 487,
+    "claim": "In Deep Field South, Euclid spotted over 11 million galaxies in one observation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the three deep field images together contain 26 million galaxies and that one picture captures about 250,000 galaxies, but it does not mention a 'Deep Field South' or any single observation containing over 11 million galaxies."
+     }
+    ]
+   },
+   {
+    "sentence": "The release also included a detailed catalogue of more than 380,000 galaxies, classified by features such as spiral arms, central bars, and tidal tails that suggest mergers.[4]",
+    "start": 488,
+    "end": 664,
+    "claim": "The release included a detailed catalogue of more than 380,000 galaxies.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mpg.de/24349746/euclid-data-release",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A significant landmark in this effort is the first detailed catalogue of more than 380,000 galaxies, which have been characterized according to features such as spiral arms, central bars, and tidal tails that infer merging galaxies.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the release includes the first detailed catalogue of more than 380,000 galaxies, matching the claim's count and detail level.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the first detailed catalogue of more than 380,000 galaxies, characterized by features such as spiral arms and central bars, was released with the data, which supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The release also included a detailed catalogue of more than 380,000 galaxies, classified by features such as spiral arms, central bars, and tidal tails that suggest mergers.[4]",
+    "start": 488,
+    "end": 664,
+    "claim": "The galaxies in the 380,000-galaxy catalogue are classified by features such as spiral arms, central bars, and tidal tails that suggest mergers.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mpg.de/24349746/euclid-data-release",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A significant landmark in this effort is the first detailed catalogue of more than 380,000 galaxies, which have been characterized according to features such as spiral arms, central bars, and tidal tails that infer merging galaxies.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the catalogue contains more than 380,000 galaxies characterized by spiral arms, central bars, and tidal tails that infer merging, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the first detailed catalogue of more than 380,000 galaxies characterizes them by features such as spiral arms, central bars, and tidal tails that infer merging galaxies, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Across the release, researchers reported 26 million galaxies.[4]",
+    "start": 665,
+    "end": 729,
+    "claim": "Across the release, researchers reported 26 million galaxies.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mpg.de/24349746/euclid-data-release",
+      "host": "mpg.de",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After only a few years of operation, Euclid has already found 26 million galaxies.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In just one week of observations and one scan of each region so far, Euclid spotted already 26 million galaxies.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 26 million galaxies figure attributed to Euclid, but they never mention a release, so the 'across the release' framing is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Euclid has already found 26 million galaxies in its deep fields, so the claim that researchers reported 26 million galaxies in the release is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Scientific papers: A series of papers in *Astronomy & Astrophysics* described the images.",
+    "start": 730,
+    "end": 819,
+    "claim": "A series of papers in Astronomy & Astrophysics described the Q1 images.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The images released on 19 March 2025 – and described in a series of scientific papers in the European journal Astronomy & Astrophysics – reveal a wealth of remote galaxies in three ‘deep fields’",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that a series of scientific papers in Astronomy & Astrophysics described the images released on 19 March 2025, but it never names those images as Q1.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the images released on 19 March 2025 were described in a series of papers in Astronomy & Astrophysics and calls the release a 'quick' release, but it never uses the label 'Q1', so that part of the claim is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "They show a wealth of remote galaxies in three \"deep fields\" that Euclid will scan repeatedly during its six-year survey.[3]",
+    "start": 820,
+    "end": 944,
+    "claim": "The images show a wealth of remote galaxies in three deep fields.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The images released on 19 March 2025 – and described in a series of scientific papers in the European journal Astronomy & Astrophysics – reveal a wealth of remote galaxies in three ‘deep fields’ that will be scanned repeatedly during Euclid’s six-year survey of the sky.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The three deep field images are mosaics of numerous Euclid exposures.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the released images reveal a wealth of remote galaxies in three deep fields, matching the claim without adding any unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the released images reveal a wealth of remote galaxies in three 'deep fields' and that the three deep field images contain 26 million galaxies in total."
+     }
+    ]
+   },
+   {
+    "sentence": "They show a wealth of remote galaxies in three \"deep fields\" that Euclid will scan repeatedly during its six-year survey.[3]",
+    "start": 820,
+    "end": 944,
+    "claim": "Euclid will scan the three deep fields repeatedly during its six-year survey.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "reveal a wealth of remote galaxies in three ‘deep fields’ that will be scanned repeatedly during Euclid’s six-year survey of the sky.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that three deep fields will be scanned repeatedly during Euclid's six-year survey, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the three deep fields 'will be scanned repeatedly during Euclid's six-year survey of the sky', which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Purpose: This was a \"quick\" release of selected areas, meant to show what data to expect from future major releases.[3]",
+    "start": 945,
+    "end": 1064,
+    "claim": "Q1 was a quick release of selected areas, meant to show what data to expect from future major releases.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This is a ‘quick’ release from Euclid, of selected areas, to show what sort of data can be expected in future 'major' data releases.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states it was a 'quick' release of selected areas meant to show what sort of data can be expected in future major data releases, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the 19 March 2025 release was a 'quick' release of selected areas to show what sort of data can be expected in future 'major' data releases, which matches the claim (the 'Q1' label is not stated but refers to this first batch)."
+     }
+    ]
+   },
+   {
+    "sentence": "The first large data release (DR1) is due in 2026, based on Euclid's first year of operation.[3]",
+    "start": 1065,
+    "end": 1161,
+    "claim": "The first large data release (DR1) is due in 2026.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2026 the first large data release (DR1) will be published, based on Euclid’s first year of operation.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the first large data release (DR1) will be published in 2026, which matches the claim's sole fact about DR1 being due in 2026.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the first large data release (DR1) will be published in 2026, based on Euclid's first year of operation, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The first large data release (DR1) is due in 2026, based on Euclid's first year of operation.[3]",
+    "start": 1065,
+    "end": 1161,
+    "claim": "DR1 is based on Euclid's first year of operation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.skyatnightmagazine.com/news/euclid-quick-data-release-march-2025",
+      "host": "skyatnightmagazine.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2026 the first large data release (DR1) will be published, based on Euclid’s first year of operation.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that DR1 is based on Euclid's first year of operation, which matches the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2026 the first large data release (DR1) will be published, based on Euclid's first year of operation, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: Q1 is seven times larger than the earlier Early Release Observations.",
+    "start": 1162,
+    "end": 1238,
+    "claim": "Q1 is seven times larger than the earlier Early Release Observations.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.euclid-ec.org/public/press-releases/new-science-results-images-euclid-q1/",
+      "host": "euclid-ec.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It is the largest contiguous area of sky ever observed with an optical/near-infrared space telescope.[5]",
+    "start": 1239,
+    "end": 1343,
+    "claim": "Q1 is the largest contiguous area of sky ever observed with an optical/near-infrared space telescope.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.euclid-ec.org/public/press-releases/new-science-results-images-euclid-q1/",
+      "host": "euclid-ec.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 17,
+   "labels": {
+    "supported": 7,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 1,
+    "unchecked": 5,
+    "uncited": 1
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 9,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.1111,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.4375,
+   "pages_cited": 5,
+   "pages_read": 3,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.005254,
+   "usd_per_claim": 0.000309
+  },
+  "cost": {
+   "total_usd": 0.0053,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0017
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.0015
+    },
+    {
+     "node": "check",
+     "calls": 9,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

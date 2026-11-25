@@ -1,0 +1,870 @@
+{
+ "id": "economy-04",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.newsonair.gov.in/us-china-agree-to-extend-trade-truce-until-november-10",
+   "read": true,
+   "chars": 954
+  }
+ ],
+ "usd": 0.001008,
+ "report": {
+  "answer_text": "The 2025 truce came in three stages.\n1. Geneva, May 2025. The two sides agreed that Trump's 20% fentanyl-related tariff would stay in place. Most of the broader trade-war measures were relaxed temporarily, for 90 days, through August 12, 2025.[1]\n2. August 2025 extension. On August 11, Trump signed an executive order extending the truce by another 90 days, to November 10, 2025.[2] That stopped US tariffs from rising to 145% and Chinese tariffs from rising to 125%. Tariffs stayed at 30% on Chinese imports to the US and 10% on US exports to China.[3]\n3. Busan deal, October 30, 2025. After Trump and Xi met in South Korea, the main terms were:\nUS tariffs: The US cut the fentanyl-related tariff from 20% to 10%, which lowered the overall tariff rate on Chinese imports from 41% to 31%.[4]\nUS export controls and trade measures:\nThe US suspended for one year, from November 10, 2025, its rule extending export controls to affiliates of listed entities.[5]\nIt also suspended for one year its actions under the Section 301 investigation into China's maritime, logistics and shipbuilding sectors.[5]\nCertain Section 301 tariff exclusions were extended to November 10, 2026.[5]\nRare earths: China will suspend for one year its October 2025 export controls on rare earth materials.[6] The status of its earlier April 2025 controls remains ambiguous.\nAgriculture: China will buy at least 12 million metric tons of US soybeans in the last two months of 2025.[5] It also committed to buying at least 25 million metric tons in later years. China pledged to resume imports of soybeans and other US agricultural products.[7]\nCountermeasures: China will suspend or remove the non-tariff countermeasures it has taken against the US since March 4, 2025. These include listing certain American companies on its end-user and unreliable-entity lists.[5] The White House fact sheet also says China will end its investigations targeting US companies.\nFentanyl: The two sides agreed to strengthen cooperation against fentanyl.[7]\nAnalysts called it limited. One law-firm summary described it as \"a limited but meaningful thaw\"[6], and major disputes remain, particularly over semiconductors and rare earths.[4]\nMore recently, Treasury Secretary Bessent said the two countries agreed to extend what he called the \"Busan Agreement\"[8] to January 10. That gives them more time to decide whether to pursue a broader deal.",
+  "claims": [
+   {
+    "sentence": "The 2025 truce came in three stages.",
+    "start": 0,
+    "end": 36,
+    "claim": "The 2025 truce came in three stages.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "1. Geneva, May 2025. The two sides agreed that Trump's 20% fentanyl-related tariff would stay in place.",
+    "start": 37,
+    "end": 140,
+    "claim": "In the Geneva agreement of May 2025, the two sides agreed that Trump's 20% fentanyl-related tariff would stay in place.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.logisticsmgmt.com/article/u.s_china_trade_truce_extended_two_months_as_nations_seek_broader_deal_states_reports",
+      "host": "logisticsmgmt.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "And President Trump’s 20% fentanyl-related tariff would stay in place, but most of the broader trade war measures would be temporarily relaxed",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the 20% fentanyl-related tariff would stay in place, but it does not name the Geneva agreement or state that it was May 2025, and it says the two sides agreed nothing explicitly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that under the May 2025 Geneva agreement, 'President Trump's 20% fentanyl-related tariff would stay in place,' which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "2. August 2025 extension. On August 11, Trump signed an executive order extending the truce by another 90 days, to November 10, 2025.[2]",
+    "start": 247,
+    "end": 383,
+    "claim": "On August 11, 2025, Trump signed an executive order extending the truce by another 90 days, to November 10, 2025.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.china-briefing.com/news/us-china-tariff-truce-extended-90-days-2025/",
+      "host": "china-briefing.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "That stopped US tariffs from rising to 145% and Chinese tariffs from rising to 125%.",
+    "start": 384,
+    "end": 468,
+    "claim": "The August 2025 extension stopped US tariffs from rising to 145% and Chinese tariffs from rising to 125%.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.newsonair.gov.in/us-china-agree-to-extend-trade-truce-until-november-10",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The US will delay raising tariffs to 145 percent on Chinese goods, while China will hold off on 125 percent tariffs on US goods.",
+        "pages": null,
+        "context": {
+         "before": "The US and China have agreed to extend their trade truce until November 10, just hours before new tariffs were set to take effect today. In a joint statement, both countries said they will pause the planned tariff increases for another 90 days.\n",
+         "after": " Instead, current tariffs will remain 30 percent on Chinese imports to the US and 10 percent on American exports to China.\nUS President Donald Trump signed an executive order yesterday to extend the truce, giving both sides more time to continue negotiations on trade imbalances, unfair practices, market access, and national security concerns. The US highlighted a 300 billion US dollar trade"
+        }
+       },
+       {
+        "text": "The US and China have agreed to extend their trade truce until November 10, just hours before new tariffs were set to take effect today.",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " In a joint statement, both countries said they will pause the planned tariff increases for another 90 days.\nThe US will delay raising tariffs to 145 percent on Chinese goods, while China will hold off on 125 percent tariffs on US goods. Instead, current tariffs will remain 30 percent on Chinese imports to the US and 10 percent on American exports to China.\nUS President Donald Trump signed an"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back the core point that the US delayed raising tariffs to 145% and China held off on 125% tariffs, but neither quote states that the extension happened in August 2025.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the US will delay raising tariffs to 145% and China will hold off on 125% tariffs, but it never states that the extension happened in August 2025, so the claim's date is unsupported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Tariffs stayed at 30% on Chinese imports to the US and 10% on US exports to China.[3]",
+    "start": 469,
+    "end": 554,
+    "claim": "Tariffs stayed at 30% on Chinese imports to the US and 10% on US exports to China.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.newsonair.gov.in/us-china-agree-to-extend-trade-truce-until-november-10",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Instead, current tariffs will remain 30 percent on Chinese imports to the US and 10 percent on American exports to China.",
+        "pages": null,
+        "context": {
+         "before": "The US and China have agreed to extend their trade truce until November 10, just hours before new tariffs were set to take effect today. In a joint statement, both countries said they will pause the planned tariff increases for another 90 days.\nThe US will delay raising tariffs to 145 percent on Chinese goods, while China will hold off on 125 percent tariffs on US goods. ",
+         "after": "\nUS President Donald Trump signed an executive order yesterday to extend the truce, giving both sides more time to continue negotiations on trade imbalances, unfair practices, market access, and national security concerns. The US highlighted a 300 billion US dollar trade deficit with China in 2024, the largest with any country. Talks also cover issues like China’s purchase of Russian oil, access"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that tariffs will remain 30 percent on Chinese imports to the US and 10 percent on American exports to China, matching every figure and direction in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that current tariffs will remain 30 percent on Chinese imports to the US and 10 percent on American exports to China, matching the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "3. Busan deal, October 30, 2025. After Trump and Xi met in South Korea, the main terms were:",
+    "start": 555,
+    "end": 647,
+    "claim": "Trump and Xi met in South Korea before the Busan deal of October 30, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "US tariffs: The US cut the fentanyl-related tariff from 20% to 10%, which lowered the overall tariff rate on Chinese imports from 41% to 31%.[4]",
+    "start": 648,
+    "end": 792,
+    "claim": "Under the Busan deal, the US cut the fentanyl-related tariff from 20% to 10%.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.coface.com/news-economy-and-insights/us-china-trade-agreement-a-tactical-truce-not-a-strategic-shift",
+      "host": "coface.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The United States agreed to reduce customs duties on fentanyl1 from 20% to 10%, lowering the overall tariff rate on Chinese imports from 41% to 31%.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the US agreed to reduce the fentanyl-related duty from 20% to 10%, which matches the claim's specific figures and attribution to the Busan deal.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a Xi-Trump agreement reached at an APEC summit in South Korea and says the US agreed to cut fentanyl duties from 20% to 10%, but it never calls this the Busan deal and instead places the discussions in Kuala Lumpur, so the claim's label is not supported by the page."
+     }
+    ]
+   },
+   {
+    "sentence": "US tariffs: The US cut the fentanyl-related tariff from 20% to 10%, which lowered the overall tariff rate on Chinese imports from 41% to 31%.[4]",
+    "start": 648,
+    "end": 792,
+    "claim": "The cut in the fentanyl-related tariff lowered the overall tariff rate on Chinese imports from 41% to 31%.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.coface.com/news-economy-and-insights/us-china-trade-agreement-a-tactical-truce-not-a-strategic-shift",
+      "host": "coface.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The United States agreed to reduce customs duties on fentanyl1 from 20% to 10%, lowering the overall tariff rate on Chinese imports from 41% to 31%.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that reducing the fentanyl-related duty from 20% to 10% lowered the overall tariff rate on Chinese imports from 41% to 31%, matching every figure and the causal link in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the US agreed to reduce fentanyl-related customs duties from 20% to 10%, lowering the overall tariff rate on Chinese imports from 41% to 31%, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The US suspended for one year, from November 10, 2025, its rule extending export controls to affiliates of listed entities.[5]",
+    "start": 832,
+    "end": 958,
+    "claim": "The US suspended for one year, from November 10, 2025, its rule extending export controls to affiliates of listed entities.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The United States will suspend for one year, starting on November 10, 2025, the implementation of the interim final rule titled Expansion of End-User Controls to Cover Affiliates of Certain Listed Entities.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the US will suspend for one year starting November 10, 2025, the interim final rule Expansion of End-User Controls to Cover Affiliates of Certain Listed Entities, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the United States will suspend for one year, starting November 10, 2025, the implementation of the interim final rule titled 'Expansion of End-User Controls to Cover Affiliates of Certain Listed Entities', which matches the claim's description of extending export controls to affiliates of listed entities."
+     }
+    ]
+   },
+   {
+    "sentence": "It also suspended for one year its actions under the Section 301 investigation into China's maritime, logistics and shipbuilding sectors.[5]",
+    "start": 959,
+    "end": 1099,
+    "claim": "The US also suspended for one year its actions under the Section 301 investigation into China's maritime, logistics and shipbuilding sectors.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The United States will suspend for one year, starting on November 10, 2025, implementation of the responsive actions taken pursuant to the Section 301 investigation on China’s Targeting the Maritime, Logistics, and Shipbuilding Sectors for Dominance.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the US will suspend for one year, starting November 10, 2025, implementation of responsive actions under the Section 301 investigation into China's maritime, logistics and shipbuilding sectors, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the United States will suspend for one year, starting November 10, 2025, implementation of the responsive actions taken pursuant to the Section 301 investigation on China's Targeting the Maritime, Logistics, and Shipbuilding Sectors for Dominance, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Certain Section 301 tariff exclusions were extended to November 10, 2026.[5]",
+    "start": 1100,
+    "end": 1176,
+    "claim": "Certain Section 301 tariff exclusions were extended to November 10, 2026.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The United States will further extend the expiration of certain Section 301 tariff exclusions, currently due to expire on November 29, 2025, until November 10, 2026.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that certain Section 301 tariff exclusions were extended from November 29, 2025 until November 10, 2026, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the United States will further extend the expiration of certain Section 301 tariff exclusions, currently due to expire on November 29, 2025, until November 10, 2026, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Rare earths: China will suspend for one year its October 2025 export controls on rare earth materials.[6]",
+    "start": 1177,
+    "end": 1282,
+    "claim": "China will suspend for one year its October 2025 export controls on rare earth materials.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.mofo.com/resources/insights/251113-united-states-and-china-reach-trade-agreement",
+      "host": "mofo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China will suspend for one year its October 2025 export control measures on rare earth materials, but the status of its earlier April 2025 controls remains ambiguous.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Both the MOFCOM Remarks and White House Fact Sheet indicate that China will suspend its implementation of the October 9 measures for one year.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that China will suspend for one year its October 2025 rare earth export control measures, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China will suspend for one year its October 9, 2025 rare earth export control measures, matching the claim, though it notes ambiguity about the April 2025 controls which the claim does not address."
+     }
+    ]
+   },
+   {
+    "sentence": "The status of its earlier April 2025 controls remains ambiguous.",
+    "start": 1283,
+    "end": 1347,
+    "claim": "The status of China's earlier April 2025 rare earth controls remains ambiguous.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Agriculture: China will buy at least 12 million metric tons of US soybeans in the last two months of 2025.[5]",
+    "start": 1348,
+    "end": 1457,
+    "claim": "China will buy at least 12 million metric tons of US soybeans in the last two months of 2025.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China will purchase at least 12 million metric tons (MMT) of U.S. soybeans during the last two months of 2025 and also purchase at least 25 MMT of U.S. soybeans in each of 2026, 2027, and 2028.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states China will purchase at least 12 million metric tons of U.S. soybeans during the last two months of 2025, matching the claim's figure and timeframe.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China will purchase at least 12 million metric tons of U.S. soybeans during the last two months of 2025, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It also committed to buying at least 25 million metric tons in later years.",
+    "start": 1458,
+    "end": 1533,
+    "claim": "China committed to buying at least 25 million metric tons of US soybeans in later years.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://en.wikipedia.org/wiki/Busan_Summit",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China pledged to immediately and substantially or on a large scale resume purchasing US soybeans, and cites a 12 million ton figure for this season only in a reference title, but it nowhere states a commitment of at least 25 million metric tons in later years."
+     }
+    ]
+   },
+   {
+    "sentence": "China pledged to resume imports of soybeans and other US agricultural products.[7]",
+    "start": 1534,
+    "end": 1616,
+    "claim": "China pledged to resume imports of soybeans and other US agricultural products.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://en.wikipedia.org/wiki/Busan_Summit",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China pledged to immediately and substantially resume imports of soybeans and other agricultural products from the United States",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "As a gesture of goodwill and part of the agreement, China pledged to immediately and on a large scale resume purchasing U.S. soybeans and other agricultural products.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that China pledged to resume imports or purchases of soybeans and other agricultural products from the United States, matching the claim's main point without adding unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China pledged to immediately and on a large scale resume purchasing U.S. soybeans and other agricultural products, and also that China pledged to immediately and substantially resume imports of soybeans and other agricultural products from the United States, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Countermeasures: China will suspend or remove the non-tariff countermeasures it has taken against the US since March 4, 2025.",
+    "start": 1617,
+    "end": 1742,
+    "claim": "China will suspend or remove the non-tariff countermeasures it has taken against the US since March 4, 2025.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China will suspend or remove all of the retaliatory non-tariff countermeasures taken against the United States since March 4, 2025, including China’s listing of certain American companies on its end user and unreliable entity lists.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states China will suspend or remove all retaliatory non-tariff countermeasures taken against the US since March 4, 2025, matching the claim's core statement without adding unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China will suspend or remove all of the retaliatory non-tariff countermeasures taken against the United States since March 4, 2025, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "These include listing certain American companies on its end-user and unreliable-entity lists.[5]",
+    "start": 1743,
+    "end": 1839,
+    "claim": "China's non-tariff countermeasures include listing certain American companies on its end-user and unreliable-entity lists.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-strikes-deal-on-economic-and-trade-relations-with-china/",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "China will suspend or remove all of the retaliatory non-tariff countermeasures taken against the United States since March 4, 2025, including China’s listing of certain American companies on its end user and unreliable entity lists.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that China took retaliatory non-tariff countermeasures including listing certain American companies on its end user and unreliable entity lists, which matches the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China will suspend or remove all retaliatory non-tariff countermeasures since March 4, 2025, 'including China's listing of certain American companies on its end user and unreliable entity lists', which supports the claim that such listings are among China's non-tariff countermeasures."
+     }
+    ]
+   },
+   {
+    "sentence": "The White House fact sheet also says China will end its investigations targeting US companies.",
+    "start": 1840,
+    "end": 1934,
+    "claim": "The White House fact sheet says China will end its investigations targeting US companies.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Fentanyl: The two sides agreed to strengthen cooperation against fentanyl.[7]",
+    "start": 1935,
+    "end": 2012,
+    "claim": "The two sides agreed to strengthen cooperation against fentanyl.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://en.wikipedia.org/wiki/Busan_Summit",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In terms of cooperation, the two sides agreed to strengthen cooperation in the fight against fentanyl, and Trump said he believed that Xi Jinping would \"do everything in his power to stop\" fentanyl from flowing into the United States.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In terms of trade and cooperation, China pledged to immediately and substantially resume imports of soybeans and other agricultural products from the United States; the two sides also agreed to strengthen cooperation in the fight against fentanyl.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the two sides agreed to strengthen cooperation in the fight against fentanyl, which is the entirety of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in terms of cooperation, the two sides agreed to strengthen cooperation in the fight against fentanyl, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Analysts called it limited.",
+    "start": 2013,
+    "end": 2040,
+    "claim": "Analysts called the Busan deal limited.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.mofo.com/resources/insights/251113-united-states-and-china-reach-trade-agreement",
+      "host": "mofo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Agreement represents a limited but meaningful thaw in bilateral trade relations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote describes the agreement as \"limited but meaningful,\" which backs the claim that it was called limited, though the quote does not name the Busan deal or identify the speaker as analysts.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the Agreement as a 'limited but meaningful thaw' with implementation details unclear and substantial restrictions remaining, which supports the claim that the deal is limited."
+     }
+    ]
+   },
+   {
+    "sentence": "One law-firm summary described it as \"a limited but meaningful thaw\"[6], and major disputes remain, particularly over semiconductors and rare earths.[4]",
+    "start": 2041,
+    "end": 2193,
+    "claim": "One law-firm summary described the deal as \"a limited but meaningful thaw\".[6]",
+    "citation_ids": [
+     "c6",
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.mofo.com/resources/insights/251113-united-states-and-china-reach-trade-agreement",
+      "host": "mofo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Agreement represents a limited but meaningful thaw in bilateral trade relations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the phrase \"a limited but meaningful thaw\" and describes the Agreement as such, but it does not show that the source was a law-firm summary, since the quote carries no attribution to a law firm.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'The Agreement represents a limited but meaningful thaw in bilateral trade relations,' which matches the claim's quoted wording and attribution to a law-firm summary."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.coface.com/news-economy-and-insights/us-china-trade-agreement-a-tactical-truce-not-a-strategic-shift",
+      "host": "coface.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page contains no law-firm summary and no description of the deal as a 'limited but meaningful thaw'; it calls the agreement fragile and describes it as a tactical truce from an economic analysis."
+     }
+    ]
+   },
+   {
+    "sentence": "One law-firm summary described it as \"a limited but meaningful thaw\"[6], and major disputes remain, particularly over semiconductors and rare earths.[4]",
+    "start": 2041,
+    "end": 2193,
+    "claim": "Major disputes remain between the US and China, particularly over semiconductors and rare earths.[4]",
+    "citation_ids": [
+     "c6",
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.mofo.com/resources/insights/251113-united-states-and-china-reach-trade-agreement",
+      "host": "mofo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "substantial export and supply chain controls remain in place in both countries.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The United States continues to apply strict controls on persons designated to the Entity List, MEU List, and SDN List, and in critical sectors such as semiconductors and emerging technologies, while China’s controls under the ECL, UEL, and Anti-Foreign Sanctions Law remains intact.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "the underlying geostrategic competition between the United States and China over the future of AI continues to dominate the bilateral agenda.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "this language is absent from MOFCOM’s Remarks, which raises questions about whether China’s April 2025 controls on medium and heavy rare earth elements remain in effect.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that US-China disputes persist over semiconductors and rare earths (export controls in semiconductors, and questions about China's rare earth controls), but they do not explicitly describe these as 'major disputes' or state that the disputes 'remain' in the sense the claim implies.",
+      "page_judged": "supported",
+      "page_reason": "The page describes ongoing restrictions and unresolved issues in semiconductors (legacy chips, advanced AI chip export limits) and rare earths (April 2025 controls ambiguous, substantial restrictions remain), which broadly supports the claim that major disputes remain over these areas, though it does not use the word 'disputes' explicitly."
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.coface.com/news-economy-and-insights/us-china-trade-agreement-a-tactical-truce-not-a-strategic-shift",
+      "host": "coface.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the agreement remains fragile: several major disputes remain, particularly over semiconductors and rare earths",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that several major disputes remain between the parties, particularly over semiconductors and rare earths, which matches every element of the claim, though the quote does not explicitly name the US and China as the parties.",
+      "page_judged": "supported",
+      "page_reason": "The page states that several major disputes remain, particularly over semiconductors and rare earths, which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "More recently, Treasury Secretary Bessent said the two countries agreed to extend what he called the \"Busan Agreement\"[8] to January 10.",
+    "start": 2194,
+    "end": 2330,
+    "claim": "Treasury Secretary Bessent said the two countries agreed to extend what he called the \"Busan Agreement\" to January 10.[8]",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.yahoo.com/news/politics/articles/us-china-trade-truce-extended-000416853.html",
+      "host": "yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "That gives them more time to decide whether to pursue a broader deal.",
+    "start": 2331,
+    "end": 2400,
+    "claim": "The extension to January 10 gives the two countries more time to decide whether to pursue a broader deal.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 12,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 4,
+    "uncited": 5
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 13,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.0769,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6,
+   "pages_cited": 8,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 1,
+   "claims_over_limit": 0,
+   "usd": 0.010159,
+   "usd_per_claim": 0.000406
+  },
+  "cost": {
+   "total_usd": 0.0102,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0013
+    },
+    {
+     "node": "find",
+     "calls": 18,
+     "usd": 0.0035
+    },
+    {
+     "node": "page_check",
+     "calls": 18,
+     "usd": 0.0034
+    },
+    {
+     "node": "check",
+     "calls": 16,
+     "usd": 0.0019
+    }
+   ]
+  }
+ }
+}

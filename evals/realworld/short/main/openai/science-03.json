@@ -1,0 +1,621 @@
+{
+ "id": "science-03",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/07/nasa-continues-to-monitor-orbit-of-near-earth-asteroid-2024-yr4/?utm_source=openai",
+   "read": true,
+   "chars": 1175
+  },
+  {
+   "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/24/latest-calculations-conclude-asteroid-2024-yr4-now-poses-no-significant-threat-to-earth-in-2032-and-beyond/?utm_source=openai",
+   "read": true,
+   "chars": 1753
+  },
+  {
+   "url": "https://blogs.esa.int/rocketscience/2025/02/19/2024-yr4-surpasses-apophis-as-riskiest-asteroid-ever-detected/?utm_source=openai",
+   "read": true,
+   "chars": 1064
+  }
+ ],
+ "usd": 0.002693,
+ "report": {
+  "answer_text": "The estimated chance that asteroid 2024 YR4 would hit Earth on December 22, 2032 rose from about 1.2% in late January 2025 to a peak of 3.1% on February 18, then fell to nearly zero by the end of February. (assets.science.nasa.gov)\n| Date in 2025 | Estimated chance of an Earth impact |\n|---|---|\n| Late January | About 1.2%, above the 1% threshold for issuing a formal notification. (assets.science.nasa.gov) |\n| February 7 | NASA reported 2.3%. (science.nasa.gov) |\n| February 18 | The estimate peaked at 3.1% for NASA and 2.8% for the European Space Agency (ESA). (science.nasa.gov) |\n| February 24–25 | NASA reported 0.004% and ESA reported 0.001%. Both concluded the asteroid posed no significant threat to Earth. (science.nasa.gov) |\nThe asteroid’s path didn’t change; astronomers’ estimates of it did. Early observations narrowed the range of possible paths while Earth was still in that range, so a larger share of the remaining paths led to an impact. Further observations ruled out almost all of those paths. NASA’s later 2025 updates about a possible Moon impact did not raise the risk to Earth. (blogs.esa.int)",
+  "claims": [
+   {
+    "sentence": "The estimated chance that asteroid 2024 YR4 would hit Earth on December 22, 2032 rose from about 1.2% in late January 2025 to a peak of 3.1% on February 18, then fell to nearly zero by the end of February. (assets.science.nasa.gov)",
+    "start": 0,
+    "end": 231,
+    "claim": "The estimated chance that asteroid 2024 YR4 would hit Earth on December 22, 2032 rose from about 1.2% in late January 2025 to a peak of 3.1% on February 18, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/planetary-science-division/2025/2025-05%20Lessons%20Learned%202024%20YR4.pdf?utm_source=openai",
+      "host": "assets.science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The IP still did not decline as is typical with more observations. CNEOS subsequently estimated the IP at 0.5%, NEOCC at 0.99%, and NEODyS at 0.89%.",
+        "pages": [
+         18,
+         18
+        ],
+        "context": null
+       },
+       {
+        "text": "However, 2024 YR4’s IP increased over the 52 days after its discovery and reached a high of 3.1% on 18 Feb 2025 before finally falling below the 1% threshold on 20 Feb 2025.",
+        "pages": [
+         4,
+         4
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 3.1% peak on 18 February 2025 and a rise after discovery, but they never state the roughly 1.2% starting value in late January 2025.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the IP peaked at 3.1% on 18 Feb 2025 and was 0.99%-0.5% in late January, but never gives a figure of about 1.2% in late January 2025; the claim's starting value is not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The estimated chance that asteroid 2024 YR4 would hit Earth on December 22, 2032 rose from about 1.2% in late January 2025 to a peak of 3.1% on February 18, then fell to nearly zero by the end of February. (assets.science.nasa.gov)",
+    "start": 0,
+    "end": 231,
+    "claim": "The estimated chance that asteroid 2024 YR4 would hit Earth on December 22, 2032 fell to nearly zero by the end of February 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/planetary-science-division/2025/2025-05%20Lessons%20Learned%202024%20YR4.pdf?utm_source=openai",
+      "host": "assets.science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "However, 2024 YR4’s IP increased over the 52 days after its discovery and reached a high of 3.1% on 18 Feb 2025 before finally falling below the 1% threshold on 20 Feb 2025.",
+        "pages": [
+         4,
+         4
+        ],
+        "context": null
+       },
+       {
+        "text": "by 20 Feb 2025, it was well below 1%.",
+        "pages": [
+         25,
+         25
+        ],
+        "context": null
+       },
+       {
+        "text": "enabled the planetary defense community to successfully refine 2024 YR4’s IP down to nearly zero and determine it posed no threat to Earth for the next century.",
+        "pages": [
+         4,
+         4
+        ],
+        "context": null
+       },
+       {
+        "text": "this time telling them of the IP dropping to 0.004% and providing no significant potential for future impact.",
+        "pages": [
+         26,
+         26
+        ],
+        "context": null
+       },
+       {
+        "text": "ruling out the possibility 19 Appendix B – NASA Potential Impact Notifications for 2024 YR4 20 Appendix C – IAWN Potential Impact Notifications for 2024 YR4\n25 of Earth impact on 22 Dec 2032.",
+        "pages": [
+         26,
+         27
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the impact chance fell to nearly zero, and that it dropped below 1% on 20 Feb 2025, but none of them says the chance had reached nearly zero by the end of February 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page states the impact probability dropped below 1% by 20 Feb 2025, fell to 0.004% by 24 Feb 2025, and that observations ruled out impact on 22 Dec 2032, which supports the claim that the chance fell to nearly zero by end of February 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "| Late January | About 1.2%, above the 1% threshold for issuing a formal notification. (assets.science.nasa.gov) |",
+    "start": 297,
+    "end": 411,
+    "claim": "In late January 2025, the estimated chance of an Earth impact by asteroid 2024 YR4 was about 1.2%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/planetary-science-division/2025/2025-05%20Lessons%20Learned%202024%20YR4.pdf?utm_source=openai",
+      "host": "assets.science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the potential asteroid impact threat (1.2% IP)",
+        "pages": [
+         20,
+         20
+        ],
+        "context": null
+       },
+       {
+        "text": "The notification stated the object was 40-90 m (130-300 ft) in diameter and (at the time) had a 1.3% IP as calculated by CNEOS and NEOCC with NEODyS.",
+        "pages": [
+         21,
+         21
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the roughly 1.2% impact probability for 2024 YR4, but neither quote gives a late-January 2025 date, and the second quote gives 1.3% at the time of notification.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on 29 Jan 2025 Fast's notification described the asteroid's potential impact threat as '(1.2% IP)', which matches the claim's late-January figure of about 1.2%."
+     }
+    ]
+   },
+   {
+    "sentence": "| Late January | About 1.2%, above the 1% threshold for issuing a formal notification. (assets.science.nasa.gov) |",
+    "start": 297,
+    "end": 411,
+    "claim": "The 1% threshold is the level above which a formal notification is issued.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/planetary-science-division/2025/2025-05%20Lessons%20Learned%202024%20YR4.pdf?utm_source=openai",
+      "host": "assets.science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Because 2024 YR4 exceeded the 1% threshold\n2 probability of a future impact, the PDCO carried out required agency and interagency notifications.",
+        "pages": [
+         3,
+         4
+        ],
+        "context": null
+       },
+       {
+        "text": "The PDCO has notification responsibilities for NEOs once they reach notification thresholds established in NASA NPD 8740.1 (27 Jan 2017)",
+        "pages": [
+         19,
+         19
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote says that because 2024 YR4 exceeded the 1% threshold, the PDCO carried out required agency and interagency notifications, which backs the claim that exceeding 1% triggers a formal notification.",
+      "page_judged": "supported",
+      "page_reason": "The page says 2024 YR4 exceeded the 1% threshold and that notifications were then carried out, and that NPD 8740.1 sets notification thresholds, with the 1% IP threshold triggering notification, which broadly supports the claim that crossing 1% triggered formal notification; however it does not explicitly state the 1% level is the only or general level above which formal notification is issued, though the text does say the 1% crossing led to required notifications."
+     }
+    ]
+   },
+   {
+    "sentence": "| February 7 | NASA reported 2.3%. (science.nasa.gov) |",
+    "start": 412,
+    "end": 467,
+    "claim": "On February 7, 2025, NASA reported a 2.3% estimated chance of an Earth impact by asteroid 2024 YR4.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/07/nasa-continues-to-monitor-orbit-of-near-earth-asteroid-2024-yr4/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the impact probability rose to 2.3% for December 22, 2032, but it gives no date of February 7, 2025 for when NASA reported this figure, so the date qualifier in the claim is unsupported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| February 18 | The estimate peaked at 3.1% for NASA and 2.8% for the European Space Agency (ESA). (science.nasa.gov) |",
+    "start": 468,
+    "end": 587,
+    "claim": "On February 18, 2025, the estimated impact chance peaked at 3.1% according to NASA.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/19/dark-skies-bring-new-observations-of-asteroid-2024-yr4-lower-impact-probability/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "updated the impact probability of asteroid 2024 YR4 in 2032 to 3.1%",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "on Feb. 18, updated the impact probability",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the impact probability was updated to 3.1% on Feb. 18, but they do not name NASA as the source, do not say the figure was a peak, and do not state the year 2025.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says NASA updated the 2032 impact probability to 3.1% on Feb. 18 and calls it the highest NASA has recorded for an object of this size, but it does not give the year 2025 or state that 3.1% was the peak across all estimates, though the context implies it was the highest at that point."
+     }
+    ]
+   },
+   {
+    "sentence": "| February 18 | The estimate peaked at 3.1% for NASA and 2.8% for the European Space Agency (ESA). (science.nasa.gov) |",
+    "start": 468,
+    "end": 587,
+    "claim": "On February 18, 2025, the estimated impact chance peaked at 2.8% according to the European Space Agency (ESA).",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/19/dark-skies-bring-new-observations-of-asteroid-2024-yr4-lower-impact-probability/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NASA’s Center for Near-Earth Object Studies at the agency’s Jet Propulsion Laboratory in Southern California has incorporated the new observations reported to the Minor Planet Center and on Feb. 18, updated the impact probability of asteroid 2024 YR4 in 2032 to 3.1%.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This is the highest impact probability NASA has ever recorded for an object of this size or larger.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes attribute the February 18 impact probability update of 2024 YR4 to NASA's Center for Near-Earth Object Studies at 3.1%, not to ESA at 2.8%, so the claimed source and figure conflict with the quotes.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states NASA (not ESA) updated the impact probability to 3.1% on Feb. 18, so it does not support a 2.8% peak attributed to ESA."
+     }
+    ]
+   },
+   {
+    "sentence": "| February 24–25 | NASA reported 0.004% and ESA reported 0.001%. Both concluded the asteroid posed no significant threat to Earth. (science.nasa.gov) |",
+    "start": 588,
+    "end": 739,
+    "claim": "On February 24–25, 2025, NASA reported a 0.004% estimated chance of an Earth impact.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/24/latest-calculations-conclude-asteroid-2024-yr4-now-poses-no-significant-threat-to-earth-in-2032-and-beyond/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says NASA updated the 2032 Earth impact probability for asteroid 2024 YR4 to 0.004%, but it gives no date for that report, so it does not confirm the February 24–25, 2025 timing in the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| February 24–25 | NASA reported 0.004% and ESA reported 0.001%. Both concluded the asteroid posed no significant threat to Earth. (science.nasa.gov) |",
+    "start": 588,
+    "end": 739,
+    "claim": "On February 24–25, 2025, ESA reported a 0.001% estimated chance of an Earth impact.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/24/latest-calculations-conclude-asteroid-2024-yr4-now-poses-no-significant-threat-to-earth-in-2032-and-beyond/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports a 0.004% impact probability for 2032 and a 1.7% lunar impact chance attributed to NASA, but it does not mention ESA or any report dated February 24–25, 2025, nor a 0.001% figure.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| February 24–25 | NASA reported 0.004% and ESA reported 0.001%. Both concluded the asteroid posed no significant threat to Earth. (science.nasa.gov) |",
+    "start": 588,
+    "end": 739,
+    "claim": "On February 24–25, 2025, NASA and ESA both concluded that asteroid 2024 YR4 posed no significant threat to Earth.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://science.nasa.gov/blogs/planetary-defense/2025/02/24/latest-calculations-conclude-asteroid-2024-yr4-now-poses-no-significant-threat-to-earth-in-2032-and-beyond/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states NASA lowered the 2032 Earth impact probability to 0.004% and found no significant potential impact threat, but it does not mention any February 24–25, 2025 date, nor any ESA conclusion.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The asteroid’s path didn’t change; astronomers’ estimates of it did. Early observations narrowed the range of possible paths while Earth was still in that range, so a larger share of the remaining paths led to an impact. Further observations ruled out almost all of those paths. NASA’s later 2025 updates about a possible Moon impact did not raise the risk to Earth. (blogs.esa.int)",
+    "start": 740,
+    "end": 1122,
+    "claim": "The asteroid's actual path did not change; astronomers' estimates of it did.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://blogs.esa.int/rocketscience/2025/02/19/2024-yr4-surpasses-apophis-as-riskiest-asteroid-ever-detected/?utm_source=openai",
+      "host": "blogs.esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As more observations of the asteroid are made, the uncertainty region will continue to shrink and the impact probability may continue to rise.",
+        "pages": null,
+        "context": {
+         "before": "impact probability reached, and the longest time spent with an impact probability greater than 1%.\nIt is important to note that this rising impact probability is an expected result as we continue to improve our knowledge of the asteroid’s orbit.\nAs we narrow down where exactly 2024 YR4 will be located on 22 December 2032, Earth fills up a larger fraction of our shrinking uncertainty region.\n",
+         "after": " If we reach a point at which Earth is no longer inside this region, the impact probability will quickly drop to 0."
+        }
+       }
+      ],
+      "quote_reason": "The quote only says that more observations will shrink the uncertainty region and may change the impact probability, so it neither states that the asteroid's actual path stayed the same nor that only the estimates changed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the impact probability rose because astronomers' knowledge of the orbit improved and the uncertainty region shrank, which implies estimates changed, but it never explicitly states that the asteroid's actual path did not change.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The asteroid’s path didn’t change; astronomers’ estimates of it did. Early observations narrowed the range of possible paths while Earth was still in that range, so a larger share of the remaining paths led to an impact. Further observations ruled out almost all of those paths. NASA’s later 2025 updates about a possible Moon impact did not raise the risk to Earth. (blogs.esa.int)",
+    "start": 740,
+    "end": 1122,
+    "claim": "Early observations of asteroid 2024 YR4 narrowed the range of possible paths while Earth was still within that range, so a larger share of the remaining paths led to an impact.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://blogs.esa.int/rocketscience/2025/02/19/2024-yr4-surpasses-apophis-as-riskiest-asteroid-ever-detected/?utm_source=openai",
+      "host": "blogs.esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It is important to note that this rising impact probability is an expected result as we continue to improve our knowledge of the asteroid’s orbit.",
+        "pages": null,
+        "context": {
+         "before": "ESA’s Near-Earth Object Coordination Centre, rose to 2.8%.\nThis means that 2024 YR4 has now surpassed the 2.7% chance of impact briefly associated with the much larger asteroid (99942) Apophis back in 2004.\nFor asteroids larger than 30 metres in size, 2024 YR4 now holds the record for the highest impact probability reached, and the longest time spent with an impact probability greater than 1%.\n",
+         "after": "\nAs we narrow down where exactly 2024 YR4 will be located on 22 December 2032, Earth fills up a larger fraction of our shrinking uncertainty region.\nAs more observations of the asteroid are made, the uncertainty region will continue to shrink and the impact probability may continue to rise. If we reach a point at which Earth is no longer inside this region, the impact probability will quickly"
+        }
+       },
+       {
+        "text": "As we narrow down where exactly 2024 YR4 will be located on 22 December 2032, Earth fills up a larger fraction of our shrinking uncertainty region.",
+        "pages": null,
+        "context": {
+         "before": "with the much larger asteroid (99942) Apophis back in 2004.\nFor asteroids larger than 30 metres in size, 2024 YR4 now holds the record for the highest impact probability reached, and the longest time spent with an impact probability greater than 1%.\nIt is important to note that this rising impact probability is an expected result as we continue to improve our knowledge of the asteroid’s orbit.\n",
+         "after": "\nAs more observations of the asteroid are made, the uncertainty region will continue to shrink and the impact probability may continue to rise. If we reach a point at which Earth is no longer inside this region, the impact probability will quickly drop to 0."
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that as observations narrowed the uncertainty region, Earth filled a larger fraction of it, and that rising impact probability is an expected result of improved orbit knowledge, which together back the claim's logic that a larger share of remaining paths led to impact.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says that as the uncertainty region shrinks, Earth fills a larger fraction of it and the impact probability rises, which matches the claim's mechanism, but it does not explicitly describe early observations narrowing the paths or attribute the rise to early observations specifically; it mentions only that more observations will shrink the region.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The asteroid’s path didn’t change; astronomers’ estimates of it did. Early observations narrowed the range of possible paths while Earth was still in that range, so a larger share of the remaining paths led to an impact. Further observations ruled out almost all of those paths. NASA’s later 2025 updates about a possible Moon impact did not raise the risk to Earth. (blogs.esa.int)",
+    "start": 740,
+    "end": 1122,
+    "claim": "Further observations of asteroid 2024 YR4 ruled out almost all of the paths that led to an Earth impact.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://blogs.esa.int/rocketscience/2025/02/19/2024-yr4-surpasses-apophis-as-riskiest-asteroid-ever-detected/?utm_source=openai",
+      "host": "blogs.esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the uncertainty region will continue to shrink and that impact probability may keep rising, with Earth possibly leaving the region, but it does not state that further observations ruled out almost all impact paths.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The asteroid’s path didn’t change; astronomers’ estimates of it did. Early observations narrowed the range of possible paths while Earth was still in that range, so a larger share of the remaining paths led to an impact. Further observations ruled out almost all of those paths. NASA’s later 2025 updates about a possible Moon impact did not raise the risk to Earth. (blogs.esa.int)",
+    "start": 740,
+    "end": 1122,
+    "claim": "NASA's later 2025 updates about a possible Moon impact by asteroid 2024 YR4 did not raise the risk to Earth.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://blogs.esa.int/rocketscience/2025/02/19/2024-yr4-surpasses-apophis-as-riskiest-asteroid-ever-detected/?utm_source=openai",
+      "host": "blogs.esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only covers ESA's February 2025 assessment of Earth impact probability for 2024 YR4 and says nothing about NASA or any later 2025 updates regarding a Moon impact.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 1,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 8,
+    "uncited": 0
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.0714,
+   "pages_cited": 5,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.01237,
+   "usd_per_claim": 0.000884
+  },
+  "cost": {
+   "total_usd": 0.0124,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.008
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}
