@@ -1,0 +1,316 @@
+{
+ "id": "sport_culture-04",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Men's singles: Jannik Sinner won. He beat two-time defending champion Carlos Alcaraz in the final, 4–6, 6–4, 6–4, 6–4.[1] He became the first Italian to win a Wimbledon singles title.[1]\nWomen's singles: Iga Swiatek won. She beat Amanda Anisimova to become Poland's first Wimbledon singles champion.[2]\nThe tournament ran from June 30 to July 13, 2025.[2]",
+  "claims": [
+   {
+    "sentence": "Men's singles: Jannik Sinner won.",
+    "start": 0,
+    "end": 33,
+    "claim": "Jannik Sinner won the men's singles title.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jannik Sinner defeated two-time defending champion Carlos Alcaraz[1] in the final, 4–6, 6–4, 6–4, 6–4 to win the gentlemen's singles tennis title at the 2025 Wimbledon Championships.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Jannik Sinner defeated Carlos Alcaraz in the final to win the gentlemen's singles title, which backs the claim's main point with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jannik Sinner defeated Carlos Alcaraz in the final to win the gentlemen's singles title at the 2025 Wimbledon Championships, with Sinner listed as Champion."
+     }
+    ]
+   },
+   {
+    "sentence": "He beat two-time defending champion Carlos Alcaraz in the final, 4–6, 6–4, 6–4, 6–4.[1]",
+    "start": 34,
+    "end": 121,
+    "claim": "Jannik Sinner beat two-time defending champion Carlos Alcaraz in the final.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jannik Sinner defeated two-time defending champion Carlos Alcaraz[1] in the final, 4–6, 6–4, 6–4, 6–4 to win the gentlemen's singles tennis title at the 2025 Wimbledon Championships.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Sinner defeated two-time defending champion Carlos Alcaraz in the final, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page's first passage states Jannik Sinner defeated two-time defending champion Carlos Alcaraz in the 2025 Wimbledon men's singles final, 4–6, 6–4, 6–4, 6–4, which fully supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "He beat two-time defending champion Carlos Alcaraz in the final, 4–6, 6–4, 6–4, 6–4.[1]",
+    "start": 34,
+    "end": 121,
+    "claim": "The men's singles final score was 4–6, 6–4, 6–4, 6–4.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jannik Sinner defeated two-time defending champion Carlos Alcaraz[1] in the final, 4–6, 6–4, 6–4, 6–4 to win the gentlemen's singles tennis title at the 2025 Wimbledon Championships.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the men's singles final was won by Sinner over Alcaraz with the score 4–6, 6–4, 6–4, 6–4, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The first passage explicitly states the 2025 Wimbledon men's singles final score was 4–6, 6–4, 6–4, 6–4, matching the claim exactly."
+     }
+    ]
+   },
+   {
+    "sentence": "He became the first Italian to win a Wimbledon singles title.[1]",
+    "start": 122,
+    "end": 186,
+    "claim": "Jannik Sinner became the first Italian to win a Wimbledon singles title.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/2025_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "became the first Italian to win a Wimbledon singles title.[5]",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the first-Italian-Wimbledon-singles-title fact but never names Jannik Sinner as the person who achieved it, so the subject of the claim is not backed by the quotes.",
+      "page_judged": "supported",
+      "page_reason": "The first page passage states that Sinner 'became the first Italian to win a Wimbledon singles title' after defeating Alcaraz in the 2025 final, directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Women's singles: Iga Swiatek won.",
+    "start": 187,
+    "end": 220,
+    "claim": "Iga Swiatek won the women's singles title.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.espn.com.au/tennis/story/_/id/40453484/wimbledon-winners-mens-womens-singles-champions-list",
+      "host": "espn.com.au",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "2025: Jannik Sinner; Iga Swiatek",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists Iga Swiatek beside Jannik Sinner under 2025 but never says what the list is or that Swiatek won a women's singles title.",
+      "page_judged": "supported",
+      "page_reason": "The page's 2025 entry lists Iga Swiatek as the women's singles champion, which supports the claim that she won the women's singles title (in 2025)."
+     }
+    ]
+   },
+   {
+    "sentence": "She beat Amanda Anisimova to become Poland's first Wimbledon singles champion.[2]",
+    "start": 221,
+    "end": 302,
+    "claim": "Iga Swiatek beat Amanda Anisimova in the women's singles final.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.espn.com.au/tennis/story/_/id/40453484/wimbledon-winners-mens-womens-singles-champions-list",
+      "host": "espn.com.au",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Iga Swiatek as the 2025 women's champion but never names Amanda Anisimova or describes the final's opponent, so the claimed match is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "She beat Amanda Anisimova to become Poland's first Wimbledon singles champion.[2]",
+    "start": 221,
+    "end": 302,
+    "claim": "Iga Swiatek became Poland's first Wimbledon singles champion.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.espn.com.au/tennis/story/_/id/40453484/wimbledon-winners-mens-womens-singles-champions-list",
+      "host": "espn.com.au",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Iga Swiatek as the 2025 women's singles champion but does not state that she was Poland's first Wimbledon singles champion or mention her nationality or any Polish 'first' record."
+     }
+    ]
+   },
+   {
+    "sentence": "The tournament ran from June 30 to July 13, 2025.[2]",
+    "start": 303,
+    "end": 355,
+    "claim": "The Wimbledon tournament ran from June 30 to July 13, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.espn.com.au/tennis/story/_/id/40453484/wimbledon-winners-mens-womens-singles-champions-list",
+      "host": "espn.com.au",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the 2026 tournament ran June 29 through July 12 and lists 2025 champions, but it gives no dates for the 2025 tournament, so the claim of June 30 to July 13, 2025 is not stated."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.375,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.009472,
+   "usd_per_claim": 0.001184
+  },
+  "cost": {
+   "total_usd": 0.0095,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 12,
+     "usd": 0.0057
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0026
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

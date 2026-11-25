@@ -1,0 +1,1117 @@
+{
+ "id": "crispr",
+ "question": "What is CRISPR gene editing, and what was the first CRISPR-based therapy to be approved?",
+ "answer": {
+  "model": "gpt-6.2-sol",
+  "tool": "web search",
+  "made_at": "2026-11-24T19:44:24+00:00",
+  "text": "**CRISPR gene editing** is a way to change DNA at a chosen location. In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence. Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. ([medlineplus.gov](https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai))\n\n**Casgevy (exagamglogene autotemcel)** was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on **November 16, 2023**, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on **December 8, 2023**, and for transfusion-dependent beta thalassemia on **January 16, 2024**. ([gov.uk](https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai))\n\nCasgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. ([gov.uk](https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai))",
+  "usd": 0.0414
+ },
+ "recorded_at": "2026-11-24T19:44:42+00:00",
+ "duration_s": 18.42,
+ "judges": {
+  "quote": "claude-haiku-5-5",
+  "finder": "claude-haiku-5-5",
+  "page": "claude-haiku-5-5"
+ },
+ "events": [
+  {
+   "t": 0.02,
+   "node": "parse",
+   "summary": "found 2 cited addresses",
+   "cost_usd": 0,
+   "data": {
+    "answer_text": "CRISPR gene editing is a way to change DNA at a chosen location. In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence. Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)\nCasgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)\nCasgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+    "citations": [
+     {
+      "id": "c1",
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "medlineplus.gov"
+     },
+     {
+      "id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk"
+     }
+    ]
+   }
+  },
+  {
+   "t": 4.44,
+   "node": "split",
+   "summary": "split the answer into 10 claims",
+   "cost_usd": 0.0008,
+   "data": {
+    "claims": [
+     {
+      "index": 0,
+      "sentence": "CRISPR gene editing is a way to change DNA at a chosen location.",
+      "start": 0,
+      "end": 64,
+      "claim": "CRISPR gene editing is a way to change DNA at a chosen location.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 1,
+      "sentence": "In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence.",
+      "start": 65,
+      "end": 144,
+      "claim": "In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 2,
+      "sentence": "Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)",
+      "start": 145,
+      "end": 269,
+      "claim": "Cas9 cuts the DNA.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 3,
+      "sentence": "Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)",
+      "start": 145,
+      "end": 269,
+      "claim": "The cell's own repair process can be used to disable a gene or change its sequence after Cas9 cuts the DNA.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 4,
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 5,
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "The UK authorized Casgevy on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 6,
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "The U.S. FDA approved Casgevy for sickle cell disease on December 8, 2023.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 7,
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "The U.S. FDA approved Casgevy for transfusion-dependent beta thalassemia on January 16, 2024.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 8,
+      "sentence": "Casgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+      "start": 630,
+      "end": 821,
+      "claim": "Casgevy works by editing a patient's own blood-forming stem cells outside the body.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 9,
+      "sentence": "Casgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+      "start": 630,
+      "end": 821,
+      "claim": "Casgevy returns the edited blood-forming stem cells to the patient so they can produce red blood cells with more fetal hemoglobin.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     }
+    ],
+    "not_located": 0
+   }
+  },
+  {
+   "t": 7.12,
+   "node": "fetch",
+   "summary": "read 2 pages",
+   "cost_usd": 0.0008,
+   "data": {
+    "read": [
+     {
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "medlineplus.gov",
+      "title": "",
+      "kind": "html"
+     },
+     {
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html"
+     }
+    ],
+    "skipped": []
+   }
+  },
+  {
+   "t": 13.3,
+   "node": "page_check",
+   "summary": "page judge: 5 supported, 5 not_supported",
+   "cost_usd": 0.0033,
+   "data": {
+    "judged": 10
+   }
+  },
+  {
+   "t": 15.55,
+   "node": "find",
+   "summary": "found candidate quotes for 7 of 10 claim-page pairs",
+   "cost_usd": 0.0039,
+   "data": {}
+  },
+  {
+   "t": 15.55,
+   "node": "quote_check",
+   "summary": "7 pairs have quotes that are word for word on the page",
+   "cost_usd": 0.0039,
+   "data": {}
+  },
+  {
+   "t": 17.92,
+   "node": "check",
+   "summary": "quote judge: 6 supported, 3 not on the cited page, 1 contradicted",
+   "cost_usd": 0.0048,
+   "data": {
+    "quote_labels": [
+     {
+      "claim": 0,
+      "citation_id": "c1",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 1,
+      "citation_id": "c1",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 2,
+      "citation_id": "c1",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 3,
+      "citation_id": "c1",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 4,
+      "citation_id": "c2",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 5,
+      "citation_id": "c2",
+      "quote_label": "contradicted"
+     },
+     {
+      "claim": 6,
+      "citation_id": "c2",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 7,
+      "citation_id": "c2",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 8,
+      "citation_id": "c2",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 9,
+      "citation_id": "c2",
+      "quote_label": "not_found"
+     }
+    ]
+   }
+  },
+  {
+   "t": 17.92,
+   "node": "combine",
+   "summary": "both judges: 5 supported, 3 not on the cited page, 1 needs a human, 1 contradicted",
+   "cost_usd": 0.0048,
+   "data": {
+    "claims": [
+     {
+      "sentence": "CRISPR gene editing is a way to change DNA at a chosen location.",
+      "start": 0,
+      "end": 64,
+      "claim": "CRISPR gene editing is a way to change DNA at a chosen location.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+        "host": "medlineplus.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "These technologies allow genetic material to be added, removed, or altered at particular locations in the genome.",
+          "pages": null,
+          "context": {
+           "before": "Genome editing (also called gene editing) is a group of technologies that give scientists the ability to change an organism's DNA. ",
+           "after": " Several approaches to genome editing have been developed. A well-known one is called CRISPR-Cas9, which is short for clustered regularly interspaced short palindromic repeats and CRISPR-associated protein 9. The CRISPR-Cas9 system has generated a lot of excitement in the scientific community because it is faster, cheaper, more accurate, and more efficient than other genome editing"
+          }
+         },
+         {
+          "text": "They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA",
+          "pages": null,
+          "context": {
+           "before": "The CRISPR arrays allow the bacteria to \"remember\" the viruses (or closely related ones). If the viruses attack again, the bacteria produce RNA segments from the CRISPR arrays that recognize and attach to specific regions of the viruses' DNA. The bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.\nResearchers adapted this immune defense system to edit DNA. ",
+           "after": ", much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used."
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that these technologies allow genetic material to be added, removed, or altered at particular locations in the genome, and that a guide RNA binds a specific target sequence in DNA, which together back the claim that CRISPR changes DNA at a chosen location.",
+        "page_judged": "supported",
+        "page_reason": "The page states that genome editing technologies allow genetic material to be added, removed, or altered at particular locations in the genome, and describes CRISPR-Cas9 guide RNA directing Cas9 to cut DNA at a targeted location."
+       }
+      ]
+     },
+     {
+      "sentence": "In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence.",
+      "start": 65,
+      "end": 144,
+      "claim": "In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+        "host": "medlineplus.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme.",
+          "pages": null,
+          "context": {
+           "before": "The CRISPR arrays allow the bacteria to \"remember\" the viruses (or closely related ones). If the viruses attack again, the bacteria produce RNA segments from the CRISPR arrays that recognize and attach to specific regions of the viruses' DNA. The bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.\nResearchers adapted this immune defense system to edit DNA. ",
+           "after": " When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or"
+          }
+         },
+         {
+          "text": "When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria.",
+          "pages": null,
+          "context": {
+           "before": "bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.\nResearchers adapted this immune defense system to edit DNA. They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. ",
+           "after": " Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or to make changes to the DNA by replacing an existing segment with a customized DNA sequence.\nGenome editing is of great interest in the prevention and treatment of human"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that the guide RNA attaches to a specific target DNA sequence and also binds the Cas9 enzyme, and that the guide RNA recognizes the intended DNA sequence, which together back the claim that the guide RNA directs Cas9 to a matching DNA sequence.",
+        "page_judged": "supported",
+        "page_reason": "The page states that the guide RNA has a short guide sequence that binds a specific target sequence in the cell's DNA, that the guide RNA also attaches to the Cas9 enzyme, and that the Cas9 enzyme cuts the DNA at the targeted location, which together support the claim that a guide RNA directs Cas9 to a matching DNA sequence."
+       }
+      ]
+     },
+     {
+      "sentence": "Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)",
+      "start": 145,
+      "end": 269,
+      "claim": "Cas9 cuts the DNA.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+        "host": "medlineplus.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "The bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.",
+          "pages": null,
+          "context": {
+           "before": "bacteria capture small pieces of the viruses' DNA and insert them into their own DNA in a particular pattern to create segments known as CRISPR arrays. The CRISPR arrays allow the bacteria to \"remember\" the viruses (or closely related ones). If the viruses attack again, the bacteria produce RNA segments from the CRISPR arrays that recognize and attach to specific regions of the viruses' DNA. ",
+           "after": "\nResearchers adapted this immune defense system to edit DNA. They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the"
+          }
+         },
+         {
+          "text": "the Cas9 enzyme cuts the DNA at the targeted location",
+          "pages": null,
+          "context": {
+           "before": "virus.\nResearchers adapted this immune defense system to edit DNA. They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and ",
+           "after": ", mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or to make changes to the DNA by replacing an existing segment with a customized DNA sequence.\nGenome editing is of great interest in the"
+          }
+         }
+        ],
+        "quote_reason": "Both quotes state that the Cas9 enzyme cuts DNA, with the second specifying cutting at the targeted location, which covers the claim's only assertion.",
+        "page_judged": "supported",
+        "page_reason": "The page states that the Cas9 enzyme cuts the DNA at the targeted location when guided by the guide RNA, so the claim is supported."
+       }
+      ]
+     },
+     {
+      "sentence": "Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)",
+      "start": 145,
+      "end": 269,
+      "claim": "The cell's own repair process can be used to disable a gene or change its sequence after Cas9 cuts the DNA.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+        "host": "medlineplus.gov",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or to make changes to the DNA by replacing an existing segment with a customized DNA sequence.",
+          "pages": null,
+          "context": {
+           "before": "DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. ",
+           "after": "\nGenome editing is of great interest in the prevention and treatment of human diseases. Currently, genome editing is used in cells and animal models in research labs to understand diseases. Scientists are still working to determine whether this approach is safe and effective for use in people. It is being explored in research and clinical trials for a wide variety of diseases, including"
+          }
+         }
+        ],
+        "quote_reason": "The quote states that after the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete genetic material or replace a segment with a custom sequence, which backs the claim that the repair process can disable a gene or change its sequence after cutting.",
+        "page_judged": "supported",
+        "page_reason": "The page states that once DNA is cut by Cas9, researchers use the cell's own DNA repair machinery to add or delete genetic material or replace a segment with a customized sequence, which supports using repair to change a gene's sequence; however, it does not explicitly mention disabling a gene, though deleting pieces of genetic material is close to that idea."
+       }
+      ]
+     },
+     {
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+        "host": "gov.uk",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "MHRA authorises world-first gene therapy that aims to cure sickle-cell disease and transfusion-dependent β-thalassemia",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": "\nCasgevy (exagamglogene autotemcel) is based on the innovative gene-editing tool CRISPR, which won its inventors the Nobel Prize in 2020\nA new treatment for sickle-cell disease and transfusion-dependent β-thalassemia has been authorised by the Medicines and Healthcare products Regulatory Agency (MHRA) for patients aged 12 and over after a rigorous assessment of its safety, quality and"
+          }
+         },
+         {
+          "text": "Casgevy is the first medicine to be licensed that uses the innovative gene-editing tool CRISPR, for which its inventors were awarded the Nobel Prize in 2020.",
+          "pages": null,
+          "context": {
+           "before": "(exagamglogene autotemcel) is based on the innovative gene-editing tool CRISPR, which won its inventors the Nobel Prize in 2020\nA new treatment for sickle-cell disease and transfusion-dependent β-thalassemia has been authorised by the Medicines and Healthcare products Regulatory Agency (MHRA) for patients aged 12 and over after a rigorous assessment of its safety, quality and effectiveness.\n",
+           "after": "\nBoth sickle cell disease and β-thalassemia are genetic conditions caused by errors in the genes for haemoglobin, which is used by red blood cells to carry oxygen around the body. Sickle cell disease is particularly common in people with an African or Caribbean family background. β-thalassemia mainly affects people of Mediterranean, south Asian, southeast Asian and Middle Eastern origin.\nIn"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that Casgevy is the first medicine licensed that uses CRISPR gene editing and call it a world-first gene therapy, which together back the claim that it was the first CRISPR-based therapy approved anywhere.",
+        "page_judged": "not_supported",
+        "page_reason": "The page calls Casgevy the first medicine licensed using CRISPR and a 'world-first' in its headline, but it only refers to the MHRA authorisation in the UK and does not state it was the first CRISPR-based therapy approved anywhere in the world."
+       }
+      ]
+     },
+     {
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "The UK authorized Casgevy on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "contradicted",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+        "host": "gov.uk",
+        "title": "",
+        "kind": "html",
+        "label": "contradicted",
+        "quote_label": "contradicted",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "The new indication was granted on 15 November 2023 to Vertex Pharmaceuticals (Europe) Ltd and CRISPR Therapeutics.",
+          "pages": null,
+          "context": {
+           "before": "to spend at least a month in a hospital facility while the treated cells take up residence in the bone marrow and start to make red blood cells with the stable form of haemoglobin.\nThe decision to authorise Casgevy has been endorsed by the government’s independent scientific advisory committee, the Commission on Human Medicines, after a robust review of the available evidence.\nNotes to Editors\n- ",
+           "after": "\n- Approximately 15,000 people in the UK have sickle cell disorder.\n- More information can be found in the Summary of Product Characteristics and Patient Information leaflets which will be published on the MHRA Products website within 7 days of approval.\n- The Medicines and Healthcare products Regulatory Agency (MHRA) is responsible for regulating all medicines and medical devices in the UK by"
+          }
+         },
+         {
+          "text": "A new treatment for sickle-cell disease and transfusion-dependent β-thalassemia has been authorised by the Medicines and Healthcare products Regulatory Agency (MHRA) for patients aged 12 and over after a rigorous assessment of its safety, quality and effectiveness.",
+          "pages": null,
+          "context": {
+           "before": "MHRA authorises world-first gene therapy that aims to cure sickle-cell disease and transfusion-dependent β-thalassemia\nCasgevy (exagamglogene autotemcel) is based on the innovative gene-editing tool CRISPR, which won its inventors the Nobel Prize in 2020\n",
+           "after": "\nCasgevy is the first medicine to be licensed that uses the innovative gene-editing tool CRISPR, for which its inventors were awarded the Nobel Prize in 2020.\nBoth sickle cell disease and β-thalassemia are genetic conditions caused by errors in the genes for haemoglobin, which is used by red blood cells to carry oxygen around the body. Sickle cell disease is particularly common in people with an"
+          }
+         }
+        ],
+        "quote_reason": "The quotes say the authorization was granted on 15 November 2023, while the claim states November 16, 2023, so the date conflicts, although the quotes do back the UK MHRA authorization for sickle cell disease and transfusion-dependent beta thalassemia.",
+        "page_judged": "not_supported",
+        "page_reason": "The page says the new indication was granted on 15 November 2023, not November 16, so the claim's date is contradicted."
+       }
+      ]
+     },
+     {
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "The U.S. FDA approved Casgevy for sickle cell disease on December 8, 2023.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+        "host": "gov.uk",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": "not_supported",
+        "page_reason": "The page is an MHRA (UK) announcement and says nothing about any U.S. FDA approval or the date December 8, 2023; it only gives a UK authorisation granted 15 November 2023."
+       }
+      ]
+     },
+     {
+      "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+      "start": 270,
+      "end": 629,
+      "claim": "The U.S. FDA approved Casgevy for transfusion-dependent beta thalassemia on January 16, 2024.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+        "host": "gov.uk",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": "not_supported",
+        "page_reason": "The page is an MHRA (UK) announcement and says nothing about a U.S. FDA approval or any January 16, 2024 date for Casgevy in the United States."
+       }
+      ]
+     },
+     {
+      "sentence": "Casgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+      "start": 630,
+      "end": 821,
+      "claim": "Casgevy works by editing a patient's own blood-forming stem cells outside the body.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+        "host": "gov.uk",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "Casgevy is designed to work by editing the faulty gene in a patient’s bone marrow stem cells so that the body produces functioning haemoglobin.",
+          "pages": null,
+          "context": {
+           "before": "Middle Eastern origin.\nIn people with sickle cell disease, this genetic error can lead to attacks of very severe pain, serious and life-threatening infections, and anaemia (whereby your body has difficulty carrying oxygen).\nIn people with β-thalassaemia, it can lead to severe anaemia. Patients often need a blood transfusion every 3 to 5 weeks, and injections and medicines throughout their lives.\n",
+           "after": " To do this, stem cells are taken out of bone marrow, edited in a laboratory and then infused back into the patient after which the results have the potential to be life-long.\nJulian Beach, Interim Executive Director of Healthcare Quality and Access at the MHRA said:\nBoth sickle cell disease and β-thalassemia are painful, life-long conditions that in some cases can be fatal. To date, a bone"
+          }
+         },
+         {
+          "text": "To do this, stem cells are taken out of bone marrow, edited in a laboratory and then infused back into the patient",
+          "pages": null,
+          "context": {
+           "before": "infections, and anaemia (whereby your body has difficulty carrying oxygen).\nIn people with β-thalassaemia, it can lead to severe anaemia. Patients often need a blood transfusion every 3 to 5 weeks, and injections and medicines throughout their lives.\nCasgevy is designed to work by editing the faulty gene in a patient’s bone marrow stem cells so that the body produces functioning haemoglobin. ",
+           "after": " after which the results have the potential to be life-long.\nJulian Beach, Interim Executive Director of Healthcare Quality and Access at the MHRA said:\nBoth sickle cell disease and β-thalassemia are painful, life-long conditions that in some cases can be fatal. To date, a bone marrow transplant – which must come from a closely matched donor and carries a risk of rejection – has been the only"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that Casgevy edits the faulty gene in a patient's bone marrow stem cells, which are taken out of the body, edited in a laboratory, and infused back, matching the claim's point about editing the patient's own blood-forming stem cells outside the body.",
+        "page_judged": "supported",
+        "page_reason": "The page states that stem cells are taken out of the patient's bone marrow, edited in a laboratory, and infused back, which supports editing the patient's own cells outside the body, though it says bone marrow stem cells rather than explicitly 'blood-forming' stem cells, which is a close equivalent."
+       }
+      ]
+     },
+     {
+      "sentence": "Casgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+      "start": 630,
+      "end": 821,
+      "claim": "Casgevy returns the edited blood-forming stem cells to the patient so they can produce red blood cells with more fetal hemoglobin.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+        "host": "gov.uk",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": "not_supported",
+        "page_reason": "The page says the edited stem cells are infused back into the patient to make red blood cells with stable or healthy haemoglobin, but it never mentions fetal haemoglobin, so the claim's 'more fetal hemoglobin' detail is unsupported."
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "report": {
+  "answer_text": "CRISPR gene editing is a way to change DNA at a chosen location. In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence. Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)\nCasgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)\nCasgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+  "claims": [
+   {
+    "sentence": "CRISPR gene editing is a way to change DNA at a chosen location.",
+    "start": 0,
+    "end": 64,
+    "claim": "CRISPR gene editing is a way to change DNA at a chosen location.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "medlineplus.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "These technologies allow genetic material to be added, removed, or altered at particular locations in the genome.",
+        "pages": null,
+        "context": {
+         "before": "Genome editing (also called gene editing) is a group of technologies that give scientists the ability to change an organism's DNA. ",
+         "after": " Several approaches to genome editing have been developed. A well-known one is called CRISPR-Cas9, which is short for clustered regularly interspaced short palindromic repeats and CRISPR-associated protein 9. The CRISPR-Cas9 system has generated a lot of excitement in the scientific community because it is faster, cheaper, more accurate, and more efficient than other genome editing"
+        }
+       },
+       {
+        "text": "They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA",
+        "pages": null,
+        "context": {
+         "before": "The CRISPR arrays allow the bacteria to \"remember\" the viruses (or closely related ones). If the viruses attack again, the bacteria produce RNA segments from the CRISPR arrays that recognize and attach to specific regions of the viruses' DNA. The bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.\nResearchers adapted this immune defense system to edit DNA. ",
+         "after": ", much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used."
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that these technologies allow genetic material to be added, removed, or altered at particular locations in the genome, and that a guide RNA binds a specific target sequence in DNA, which together back the claim that CRISPR changes DNA at a chosen location.",
+      "page_judged": "supported",
+      "page_reason": "The page states that genome editing technologies allow genetic material to be added, removed, or altered at particular locations in the genome, and describes CRISPR-Cas9 guide RNA directing Cas9 to cut DNA at a targeted location."
+     }
+    ]
+   },
+   {
+    "sentence": "In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence.",
+    "start": 65,
+    "end": 144,
+    "claim": "In CRISPR-Cas9, a guide RNA directs the Cas9 enzyme to a matching DNA sequence.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "medlineplus.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme.",
+        "pages": null,
+        "context": {
+         "before": "The CRISPR arrays allow the bacteria to \"remember\" the viruses (or closely related ones). If the viruses attack again, the bacteria produce RNA segments from the CRISPR arrays that recognize and attach to specific regions of the viruses' DNA. The bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.\nResearchers adapted this immune defense system to edit DNA. ",
+         "after": " When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or"
+        }
+       },
+       {
+        "text": "When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria.",
+        "pages": null,
+        "context": {
+         "before": "bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.\nResearchers adapted this immune defense system to edit DNA. They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. ",
+         "after": " Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or to make changes to the DNA by replacing an existing segment with a customized DNA sequence.\nGenome editing is of great interest in the prevention and treatment of human"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that the guide RNA attaches to a specific target DNA sequence and also binds the Cas9 enzyme, and that the guide RNA recognizes the intended DNA sequence, which together back the claim that the guide RNA directs Cas9 to a matching DNA sequence.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the guide RNA has a short guide sequence that binds a specific target sequence in the cell's DNA, that the guide RNA also attaches to the Cas9 enzyme, and that the Cas9 enzyme cuts the DNA at the targeted location, which together support the claim that a guide RNA directs Cas9 to a matching DNA sequence."
+     }
+    ]
+   },
+   {
+    "sentence": "Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)",
+    "start": 145,
+    "end": 269,
+    "claim": "Cas9 cuts the DNA.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "medlineplus.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The bacteria then use Cas9 or a similar enzyme to cut the DNA apart, which disables the virus.",
+        "pages": null,
+        "context": {
+         "before": "bacteria capture small pieces of the viruses' DNA and insert them into their own DNA in a particular pattern to create segments known as CRISPR arrays. The CRISPR arrays allow the bacteria to \"remember\" the viruses (or closely related ones). If the viruses attack again, the bacteria produce RNA segments from the CRISPR arrays that recognize and attach to specific regions of the viruses' DNA. ",
+         "after": "\nResearchers adapted this immune defense system to edit DNA. They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the"
+        }
+       },
+       {
+        "text": "the Cas9 enzyme cuts the DNA at the targeted location",
+        "pages": null,
+        "context": {
+         "before": "virus.\nResearchers adapted this immune defense system to edit DNA. They create a small piece of RNA with a short \"guide\" sequence that attaches (binds) to a specific target sequence in a cell's DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and ",
+         "after": ", mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or to make changes to the DNA by replacing an existing segment with a customized DNA sequence.\nGenome editing is of great interest in the"
+        }
+       }
+      ],
+      "quote_reason": "Both quotes state that the Cas9 enzyme cuts DNA, with the second specifying cutting at the targeted location, which covers the claim's only assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Cas9 enzyme cuts the DNA at the targeted location when guided by the guide RNA, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Cas9 cuts the DNA, and the cell’s own repair process can be used to disable a gene or change its sequence. (medlineplus.gov)",
+    "start": 145,
+    "end": 269,
+    "claim": "The cell's own repair process can be used to disable a gene or change its sequence after Cas9 cuts the DNA.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://medlineplus.gov/genetics/understanding/genomicresearch/genomeediting/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "medlineplus.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Once the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete pieces of genetic material, or to make changes to the DNA by replacing an existing segment with a customized DNA sequence.",
+        "pages": null,
+        "context": {
+         "before": "DNA, much like the RNA segments bacteria produce from the CRISPR array. This guide RNA also attaches to the Cas9 enzyme. When introduced into cells, the guide RNA recognizes the intended DNA sequence, and the Cas9 enzyme cuts the DNA at the targeted location, mirroring the process in bacteria. Although Cas9 is the enzyme that is used most often, other enzymes (for example Cpf1) can also be used. ",
+         "after": "\nGenome editing is of great interest in the prevention and treatment of human diseases. Currently, genome editing is used in cells and animal models in research labs to understand diseases. Scientists are still working to determine whether this approach is safe and effective for use in people. It is being explored in research and clinical trials for a wide variety of diseases, including"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that after the DNA is cut, researchers use the cell's own DNA repair machinery to add or delete genetic material or replace a segment with a custom sequence, which backs the claim that the repair process can disable a gene or change its sequence after cutting.",
+      "page_judged": "supported",
+      "page_reason": "The page states that once DNA is cut by Cas9, researchers use the cell's own DNA repair machinery to add or delete genetic material or replace a segment with a customized sequence, which supports using repair to change a gene's sequence; however, it does not explicitly mention disabling a gene, though deleting pieces of genetic material is close to that idea."
+     }
+    ]
+   },
+   {
+    "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+    "start": 270,
+    "end": 629,
+    "claim": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "MHRA authorises world-first gene therapy that aims to cure sickle-cell disease and transfusion-dependent β-thalassemia",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": "\nCasgevy (exagamglogene autotemcel) is based on the innovative gene-editing tool CRISPR, which won its inventors the Nobel Prize in 2020\nA new treatment for sickle-cell disease and transfusion-dependent β-thalassemia has been authorised by the Medicines and Healthcare products Regulatory Agency (MHRA) for patients aged 12 and over after a rigorous assessment of its safety, quality and"
+        }
+       },
+       {
+        "text": "Casgevy is the first medicine to be licensed that uses the innovative gene-editing tool CRISPR, for which its inventors were awarded the Nobel Prize in 2020.",
+        "pages": null,
+        "context": {
+         "before": "(exagamglogene autotemcel) is based on the innovative gene-editing tool CRISPR, which won its inventors the Nobel Prize in 2020\nA new treatment for sickle-cell disease and transfusion-dependent β-thalassemia has been authorised by the Medicines and Healthcare products Regulatory Agency (MHRA) for patients aged 12 and over after a rigorous assessment of its safety, quality and effectiveness.\n",
+         "after": "\nBoth sickle cell disease and β-thalassemia are genetic conditions caused by errors in the genes for haemoglobin, which is used by red blood cells to carry oxygen around the body. Sickle cell disease is particularly common in people with an African or Caribbean family background. β-thalassemia mainly affects people of Mediterranean, south Asian, southeast Asian and Middle Eastern origin.\nIn"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that Casgevy is the first medicine licensed that uses CRISPR gene editing and call it a world-first gene therapy, which together back the claim that it was the first CRISPR-based therapy approved anywhere.",
+      "page_judged": "not_supported",
+      "page_reason": "The page calls Casgevy the first medicine licensed using CRISPR and a 'world-first' in its headline, but it only refers to the MHRA authorisation in the UK and does not state it was the first CRISPR-based therapy approved anywhere in the world."
+     }
+    ]
+   },
+   {
+    "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+    "start": 270,
+    "end": 629,
+    "claim": "The UK authorized Casgevy on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The new indication was granted on 15 November 2023 to Vertex Pharmaceuticals (Europe) Ltd and CRISPR Therapeutics.",
+        "pages": null,
+        "context": {
+         "before": "to spend at least a month in a hospital facility while the treated cells take up residence in the bone marrow and start to make red blood cells with the stable form of haemoglobin.\nThe decision to authorise Casgevy has been endorsed by the government’s independent scientific advisory committee, the Commission on Human Medicines, after a robust review of the available evidence.\nNotes to Editors\n- ",
+         "after": "\n- Approximately 15,000 people in the UK have sickle cell disorder.\n- More information can be found in the Summary of Product Characteristics and Patient Information leaflets which will be published on the MHRA Products website within 7 days of approval.\n- The Medicines and Healthcare products Regulatory Agency (MHRA) is responsible for regulating all medicines and medical devices in the UK by"
+        }
+       },
+       {
+        "text": "A new treatment for sickle-cell disease and transfusion-dependent β-thalassemia has been authorised by the Medicines and Healthcare products Regulatory Agency (MHRA) for patients aged 12 and over after a rigorous assessment of its safety, quality and effectiveness.",
+        "pages": null,
+        "context": {
+         "before": "MHRA authorises world-first gene therapy that aims to cure sickle-cell disease and transfusion-dependent β-thalassemia\nCasgevy (exagamglogene autotemcel) is based on the innovative gene-editing tool CRISPR, which won its inventors the Nobel Prize in 2020\n",
+         "after": "\nCasgevy is the first medicine to be licensed that uses the innovative gene-editing tool CRISPR, for which its inventors were awarded the Nobel Prize in 2020.\nBoth sickle cell disease and β-thalassemia are genetic conditions caused by errors in the genes for haemoglobin, which is used by red blood cells to carry oxygen around the body. Sickle cell disease is particularly common in people with an"
+        }
+       }
+      ],
+      "quote_reason": "The quotes say the authorization was granted on 15 November 2023, while the claim states November 16, 2023, so the date conflicts, although the quotes do back the UK MHRA authorization for sickle cell disease and transfusion-dependent beta thalassemia.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the new indication was granted on 15 November 2023, not November 16, so the claim's date is contradicted."
+     }
+    ]
+   },
+   {
+    "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+    "start": 270,
+    "end": 629,
+    "claim": "The U.S. FDA approved Casgevy for sickle cell disease on December 8, 2023.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is an MHRA (UK) announcement and says nothing about any U.S. FDA approval or the date December 8, 2023; it only gives a UK authorisation granted 15 November 2023."
+     }
+    ]
+   },
+   {
+    "sentence": "Casgevy (exagamglogene autotemcel) was the first CRISPR-based therapy approved anywhere in the world. The UK authorized it on November 16, 2023, for sickle cell disease and transfusion-dependent beta thalassemia. The U.S. FDA approved it for sickle cell disease on December 8, 2023, and for transfusion-dependent beta thalassemia on January 16, 2024. (gov.uk)",
+    "start": 270,
+    "end": 629,
+    "claim": "The U.S. FDA approved Casgevy for transfusion-dependent beta thalassemia on January 16, 2024.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is an MHRA (UK) announcement and says nothing about a U.S. FDA approval or any January 16, 2024 date for Casgevy in the United States."
+     }
+    ]
+   },
+   {
+    "sentence": "Casgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+    "start": 630,
+    "end": 821,
+    "claim": "Casgevy works by editing a patient's own blood-forming stem cells outside the body.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Casgevy is designed to work by editing the faulty gene in a patient’s bone marrow stem cells so that the body produces functioning haemoglobin.",
+        "pages": null,
+        "context": {
+         "before": "Middle Eastern origin.\nIn people with sickle cell disease, this genetic error can lead to attacks of very severe pain, serious and life-threatening infections, and anaemia (whereby your body has difficulty carrying oxygen).\nIn people with β-thalassaemia, it can lead to severe anaemia. Patients often need a blood transfusion every 3 to 5 weeks, and injections and medicines throughout their lives.\n",
+         "after": " To do this, stem cells are taken out of bone marrow, edited in a laboratory and then infused back into the patient after which the results have the potential to be life-long.\nJulian Beach, Interim Executive Director of Healthcare Quality and Access at the MHRA said:\nBoth sickle cell disease and β-thalassemia are painful, life-long conditions that in some cases can be fatal. To date, a bone"
+        }
+       },
+       {
+        "text": "To do this, stem cells are taken out of bone marrow, edited in a laboratory and then infused back into the patient",
+        "pages": null,
+        "context": {
+         "before": "infections, and anaemia (whereby your body has difficulty carrying oxygen).\nIn people with β-thalassaemia, it can lead to severe anaemia. Patients often need a blood transfusion every 3 to 5 weeks, and injections and medicines throughout their lives.\nCasgevy is designed to work by editing the faulty gene in a patient’s bone marrow stem cells so that the body produces functioning haemoglobin. ",
+         "after": " after which the results have the potential to be life-long.\nJulian Beach, Interim Executive Director of Healthcare Quality and Access at the MHRA said:\nBoth sickle cell disease and β-thalassemia are painful, life-long conditions that in some cases can be fatal. To date, a bone marrow transplant – which must come from a closely matched donor and carries a risk of rejection – has been the only"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that Casgevy edits the faulty gene in a patient's bone marrow stem cells, which are taken out of the body, edited in a laboratory, and infused back, matching the claim's point about editing the patient's own blood-forming stem cells outside the body.",
+      "page_judged": "supported",
+      "page_reason": "The page states that stem cells are taken out of the patient's bone marrow, edited in a laboratory, and infused back, which supports editing the patient's own cells outside the body, though it says bone marrow stem cells rather than explicitly 'blood-forming' stem cells, which is a close equivalent."
+     }
+    ]
+   },
+   {
+    "sentence": "Casgevy works by editing a patient’s own blood-forming stem cells outside the body, then returning them to the patient so they can produce red blood cells with more fetal hemoglobin. (gov.uk)",
+    "start": 630,
+    "end": 821,
+    "claim": "Casgevy returns the edited blood-forming stem cells to the patient so they can produce red blood cells with more fetal hemoglobin.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia?utm_source=openai",
+      "host": "gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the edited stem cells are infused back into the patient to make red blood cells with stable or healthy haemoglobin, but it never mentions fetal haemoglobin, so the claim's 'more fetal hemoglobin' detail is unsupported."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 5,
+    "partial": 0,
+    "contradicted": 1,
+    "needs_human": 1,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 9,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 0.4444,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004832,
+   "usd_per_claim": 0.000483
+  },
+  "cost": {
+   "total_usd": 0.0048,
+   "cap_usd": 0.25,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0018
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.0013
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

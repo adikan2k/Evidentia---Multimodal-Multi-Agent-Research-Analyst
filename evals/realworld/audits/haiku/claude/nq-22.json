@@ -1,0 +1,506 @@
+{
+ "id": "nq-22",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The original *Rugrats* has 9 seasons. It ran for 172 episodes across nine seasons, and the final episode aired on August 1, 2004.[1]\nThere's also a 2021 reboot on Paramount+, and sources disagree on how many seasons it has:\nSome sources list it as 2 seasons. The reboot was canceled midway through its second season in the U.S.[2]\nOthers list 3 seasons. A third season of 13 episodes was ordered before the cancellation, but the status of those episodes is unclear.[2]\nThe spin-off sequel *All Grown Up!* is a separate show. It ran for five seasons and 55 episodes.[3]",
+  "claims": [
+   {
+    "sentence": "The original *Rugrats* has 9 seasons.",
+    "start": 0,
+    "end": 37,
+    "claim": "The original Rugrats has 9 seasons.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Rugrats",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rugrats ultimately ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| No. of seasons | 9 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Rugrats ran for nine seasons, which matches the claim's only fact, the number of seasons.",
+      "page_judged": "supported",
+      "page_reason": "The page states in its infobox that Rugrats has 9 seasons and says it 'ran for 172 episodes across nine seasons', separate from the sequel All Grown Up!."
+     }
+    ]
+   },
+   {
+    "sentence": "It ran for 172 episodes across nine seasons, and the final episode aired on August 1, 2004.[1]",
+    "start": 38,
+    "end": 132,
+    "claim": "The original Rugrats ran for 172 episodes across nine seasons.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Rugrats",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rugrats ultimately ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Rugrats ran for 172 episodes across nine seasons, matching the claim's count and season total, with the original series implied by the show's main run.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Rugrats 'ultimately ran for 172 episodes across nine seasons,' and the infobox also lists 9 seasons and 172 episodes, with the reboot mentioned separately."
+     }
+    ]
+   },
+   {
+    "sentence": "It ran for 172 episodes across nine seasons, and the final episode aired on August 1, 2004.[1]",
+    "start": 38,
+    "end": 132,
+    "claim": "The final episode of the original Rugrats aired on August 1, 2004.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Rugrats",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rugrats ultimately ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Rugrats' final episode aired on August 1, 2004, which matches the claim's date and subject exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Rugrats' final episode aired on August 1, 2004, and that the series ended on that date, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "There's also a 2021 reboot on Paramount+, and sources disagree on how many seasons it has:",
+    "start": 133,
+    "end": 223,
+    "claim": "A 2021 reboot of Rugrats is on Paramount+.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "There's also a 2021 reboot on Paramount+, and sources disagree on how many seasons it has:",
+    "start": 133,
+    "end": 223,
+    "claim": "Sources disagree on how many seasons the 2021 Rugrats reboot has.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Some sources list it as 2 seasons. The reboot was canceled midway through its second season in the U.S.[2]",
+    "start": 224,
+    "end": 330,
+    "claim": "Some sources list the 2021 Rugrats reboot as having 2 seasons.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nickalive.net/2026/02/nickelodeon-international-to-premiere.html",
+      "host": "nickalive.net",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Season two of Rugrats (2021) follows the gang as they cross the frozen tundra, discover the treasures of ancient babies and go on the greatest adventure of all: meeting Tommy’s new brother.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Unfortunately, Rugrats (2021) was canceled mid-way through its season two run in the U.S. eventually being removed from Nickelodeon and Paramount+ altogether.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Rugrats (2021) has a season two, with one describing season two's storyline and the other saying the show was canceled mid-way through its season two run, which backs the claim that some sources list it as having 2 seasons.",
+      "page_judged": "not_supported",
+      "page_reason": "The page refers to season two and a third season of 13 episodes that was ordered but whose statuses are unclear, and it never states that some sources list the reboot as having only 2 seasons."
+     }
+    ]
+   },
+   {
+    "sentence": "Some sources list it as 2 seasons. The reboot was canceled midway through its second season in the U.S.[2]",
+    "start": 224,
+    "end": 330,
+    "claim": "The 2021 Rugrats reboot was canceled midway through its second season in the U.S.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nickalive.net/2026/02/nickelodeon-international-to-premiere.html",
+      "host": "nickalive.net",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Unfortunately, Rugrats (2021) was canceled mid-way through its season two run in the U.S. eventually being removed from Nickelodeon and Paramount+ altogether.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Rugrats (2021) was canceled mid-way through its season two run in the U.S., which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Rugrats (2021) was canceled mid-way through its season two run in the U.S., matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Others list 3 seasons. A third season of 13 episodes was ordered before the cancellation, but the status of those episodes is unclear.[2]",
+    "start": 331,
+    "end": 468,
+    "claim": "Other sources list the 2021 Rugrats reboot as having 3 seasons.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nickalive.net/2026/02/nickelodeon-international-to-premiere.html",
+      "host": "nickalive.net",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a third season of 13 episodes was ordered before cancellation but its status is unclear, and it describes season two as the finale, so it does not state the reboot had 3 seasons and does not mention 'other sources'."
+     }
+    ]
+   },
+   {
+    "sentence": "Others list 3 seasons. A third season of 13 episodes was ordered before the cancellation, but the status of those episodes is unclear.[2]",
+    "start": 331,
+    "end": 468,
+    "claim": "A third season of 13 episodes of the 2021 Rugrats reboot was ordered before the cancellation.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nickalive.net/2026/02/nickelodeon-international-to-premiere.html",
+      "host": "nickalive.net",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A third season of Rugrats (2021) consisting of 13 episodes was ordered before its cancelation, however, the statuses of episodes are unclear.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a third season of 13 episodes of Rugrats (2021) was ordered before its cancellation, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that a third season consisting of 13 episodes was ordered before the cancellation, though the statuses of those episodes are unclear."
+     }
+    ]
+   },
+   {
+    "sentence": "Others list 3 seasons. A third season of 13 episodes was ordered before the cancellation, but the status of those episodes is unclear.[2]",
+    "start": 331,
+    "end": 468,
+    "claim": "The status of the third-season episodes of the 2021 Rugrats reboot is unclear.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nickalive.net/2026/02/nickelodeon-international-to-premiere.html",
+      "host": "nickalive.net",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A third season of Rugrats (2021) consisting of 13 episodes was ordered before its cancelation, however, the statuses of episodes are unclear.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a third season of Rugrats (2021) was ordered and that the statuses of its episodes are unclear, which covers the claim's point about the third-season episodes being unclear.",
+      "page_judged": "supported",
+      "page_reason": "The page states that a third season of 13 episodes was ordered before cancellation but that 'the statuses of episodes are unclear', directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The spin-off sequel *All Grown Up!* is a separate show. It ran for five seasons and 55 episodes.[3]",
+    "start": 469,
+    "end": 568,
+    "claim": "All Grown Up! is a spin-off sequel to Rugrats.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://en.wikipedia.org/wiki/All_Grown_Up",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It serves as a sequel to Rugrats, and explores the daily lives of protagonist Tommy Pickles",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "All Grown Up! was intended as the first Rugrats spinoff as others were under consideration.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that All Grown Up! serves as a sequel to Rugrats and was intended as a Rugrats spinoff, which together cover the claim's 'spin-off sequel to Rugrats' wording.",
+      "page_judged": "supported",
+      "page_reason": "The page states the series 'serves as a sequel to Rugrats' and that it was intended as the first Rugrats spinoff, so both the sequel and spin-off parts of the claim are supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The spin-off sequel *All Grown Up!* is a separate show. It ran for five seasons and 55 episodes.[3]",
+    "start": 469,
+    "end": 568,
+    "claim": "All Grown Up! is a separate show from Rugrats.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://en.wikipedia.org/wiki/All_Grown_Up",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "All Grown Up! is an American animated television series developed by Kate Boutilier, Eryk Casemiro, and Monica Piper and produced by Klasky Csupo for Nickelodeon.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "All Grown Up! was intended as the first Rugrats spinoff as others were under consideration.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes describe All Grown Up! as its own American animated television series with its own developers and describe it as the first Rugrats spinoff, which together establish it as a separate show from Rugrats.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes All Grown Up! as a sequel to Rugrats and a spinoff, set ten years after Rugrats, with the same characters, so it does not state that it is a separate show from Rugrats; it presents it as a continuation derived from Rugrats."
+     }
+    ]
+   },
+   {
+    "sentence": "The spin-off sequel *All Grown Up!* is a separate show. It ran for five seasons and 55 episodes.[3]",
+    "start": 469,
+    "end": 568,
+    "claim": "All Grown Up! ran for five seasons.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://en.wikipedia.org/wiki/All_Grown_Up",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The series ran from April 12, 2003 to August 17, 2008, for a total of five seasons and 55 episodes",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the series ran for a total of five seasons, which matches the claim that All Grown Up! ran for five seasons.",
+      "page_judged": "supported",
+      "page_reason": "The page states the series ran from April 12, 2003 to August 17, 2008 for a total of five seasons and 55 episodes, which directly supports the claim that it ran for five seasons."
+     }
+    ]
+   },
+   {
+    "sentence": "The spin-off sequel *All Grown Up!* is a separate show. It ran for five seasons and 55 episodes.[3]",
+    "start": 469,
+    "end": 568,
+    "claim": "All Grown Up! ran for 55 episodes.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://en.wikipedia.org/wiki/All_Grown_Up",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The series ran from April 12, 2003 to August 17, 2008, for a total of five seasons and 55 episodes",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the series ran for a total of 55 episodes, which matches the claim's episode count exactly.",
+      "page_judged": "supported",
+      "page_reason": "The infobox lists 'No. of episodes: 55' and the body states the series ran for a total of five seasons and 55 episodes, directly supporting the claim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 9,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 2
+   },
+   "cited_claims": 12,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.1,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.75,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.01377,
+   "usd_per_claim": 0.000984
+  },
+  "cost": {
+   "total_usd": 0.0138,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 19,
+     "usd": 0.0084
+    },
+    {
+     "node": "page_check",
+     "calls": 12,
+     "usd": 0.0033
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}

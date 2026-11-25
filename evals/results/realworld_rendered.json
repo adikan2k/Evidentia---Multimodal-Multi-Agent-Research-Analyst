@@ -1,0 +1,254 @@
+{
+  "generated_at": "2026-11-25T00:44:12+00:00",
+  "page_judge": "claude-haiku-5-5",
+  "note": "Only claim-and-page pairs skipped for too little text were judged again, against the page as a headless browser rendered it. Every other label is unchanged. In the re-ask run a question's repeats are pooled.",
+  "runs": {
+    "main": {
+      "tools": {
+        "openai": {
+          "answers_with_a_thin_page": 19,
+          "claims_whose_label_changed": 15,
+          "claims_that_gained_a_verdict": 13,
+          "changes": {
+            "unchecked -> not_found": 8,
+            "unchecked -> supported": 4,
+            "unchecked -> needs_human": 2,
+            "unchecked -> partial": 1
+          },
+          "before": {
+            "headline_failed_share": {
+              "value": 0.3797,
+              "ci_low": 0.2914,
+              "ci_high": 0.4636
+            },
+            "headline_claims": 187,
+            "verified_share_of_all_claims": {
+              "value": 0.185,
+              "ci_low": 0.1351,
+              "ci_high": 0.2438
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 148,
+              "if_all_supported": 0.2119,
+              "if_none_supported": 0.6537
+            },
+            "pages_read_share": 0.5769
+          },
+          "after": {
+            "headline_failed_share": {
+              "value": 0.3909,
+              "ci_low": 0.3064,
+              "ci_high": 0.468
+            },
+            "headline_claims": 197,
+            "verified_share_of_all_claims": {
+              "value": 0.1911,
+              "ci_low": 0.1415,
+              "ci_high": 0.2485
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 136,
+              "if_all_supported": 0.2312,
+              "if_none_supported": 0.6396
+            },
+            "pages_read_share": 0.6026
+          },
+          "usd": 0.0106
+        },
+        "claude": {
+          "answers_with_a_thin_page": 24,
+          "claims_whose_label_changed": 4,
+          "claims_that_gained_a_verdict": 4,
+          "changes": {
+            "unchecked -> supported": 4
+          },
+          "before": {
+            "headline_failed_share": {
+              "value": 0.0785,
+              "ci_low": 0.0453,
+              "ci_high": 0.1195
+            },
+            "headline_claims": 382,
+            "verified_share_of_all_claims": {
+              "value": 0.2459,
+              "ci_low": 0.1899,
+              "ci_high": 0.3039
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 256,
+              "if_all_supported": 0.047,
+              "if_none_supported": 0.4483
+            },
+            "pages_read_share": 0.625
+          },
+          "after": {
+            "headline_failed_share": {
+              "value": 0.0777,
+              "ci_low": 0.0447,
+              "ci_high": 0.1191
+            },
+            "headline_claims": 386,
+            "verified_share_of_all_claims": {
+              "value": 0.2485,
+              "ci_low": 0.1926,
+              "ci_high": 0.3082
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 252,
+              "if_all_supported": 0.047,
+              "if_none_supported": 0.442
+            },
+            "pages_read_share": 0.6285
+          },
+          "usd": 0.0016
+        }
+      },
+      "pages": {
+        "tried": 62,
+        "read": 5,
+        "not_read": {
+          "still too little text after the browser ran the page": 49,
+          "no readable text": 6,
+          "not an HTML page": 1,
+          "HTTP 403": 1
+        }
+      },
+      "openai_minus_claude": {
+        "before": {
+          "value": 0.3011,
+          "ci_low": 0.2112,
+          "ci_high": 0.383,
+          "questions": 100
+        },
+        "after": {
+          "value": 0.3131,
+          "ci_low": 0.2258,
+          "ci_high": 0.392,
+          "questions": 100
+        }
+      }
+    },
+    "reask": {
+      "tools": {
+        "openai": {
+          "answers_with_a_thin_page": 11,
+          "claims_whose_label_changed": 1,
+          "claims_that_gained_a_verdict": 1,
+          "changes": {
+            "unchecked -> not_found": 1
+          },
+          "before": {
+            "headline_failed_share": {
+              "value": 0.5909,
+              "ci_low": 0.25,
+              "ci_high": 0.7778
+            },
+            "headline_claims": 88,
+            "verified_share_of_all_claims": {
+              "value": 0.1039,
+              "ci_low": 0.0383,
+              "ci_high": 0.1986
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 124,
+              "if_all_supported": 0.2453,
+              "if_none_supported": 0.8302
+            },
+            "pages_read_share": 0.4632
+          },
+          "after": {
+            "headline_failed_share": {
+              "value": 0.5955,
+              "ci_low": 0.2656,
+              "ci_high": 0.7816
+            },
+            "headline_claims": 89,
+            "verified_share_of_all_claims": {
+              "value": 0.1039,
+              "ci_low": 0.0383,
+              "ci_high": 0.1986
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 123,
+              "if_all_supported": 0.25,
+              "if_none_supported": 0.8302
+            },
+            "pages_read_share": 0.4737
+          },
+          "usd": 0.0012
+        },
+        "claude": {
+          "answers_with_a_thin_page": 12,
+          "claims_whose_label_changed": 4,
+          "claims_that_gained_a_verdict": 3,
+          "changes": {
+            "unchecked -> supported": 3,
+            "unchecked -> needs_human": 1
+          },
+          "before": {
+            "headline_failed_share": {
+              "value": 0.0471,
+              "ci_low": 0.0167,
+              "ci_high": 0.1013
+            },
+            "headline_claims": 191,
+            "verified_share_of_all_claims": {
+              "value": 0.2324,
+              "ci_low": 0.1376,
+              "ci_high": 0.3344
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 198,
+              "if_all_supported": 0.0231,
+              "if_none_supported": 0.5321
+            },
+            "pages_read_share": 0.5477
+          },
+          "after": {
+            "headline_failed_share": {
+              "value": 0.0464,
+              "ci_low": 0.0164,
+              "ci_high": 0.0995
+            },
+            "headline_claims": 194,
+            "verified_share_of_all_claims": {
+              "value": 0.2358,
+              "ci_low": 0.1417,
+              "ci_high": 0.3356
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 194,
+              "if_all_supported": 0.0232,
+              "if_none_supported": 0.5232
+            },
+            "pages_read_share": 0.5578
+          },
+          "usd": 0.0019
+        }
+      },
+      "pages": {
+        "tried": 19,
+        "read": 2,
+        "not_read": {
+          "still too little text after the browser ran the page": 14,
+          "no readable text": 2,
+          "not an HTML page": 1
+        }
+      },
+      "openai_minus_claude": {
+        "before": {
+          "value": 0.5438,
+          "ci_low": 0.2,
+          "ci_high": 0.7317,
+          "questions": 20
+        },
+        "after": {
+          "value": 0.5491,
+          "ci_low": 0.2134,
+          "ci_high": 0.7389,
+          "questions": 20
+        }
+      }
+    }
+  }
+}

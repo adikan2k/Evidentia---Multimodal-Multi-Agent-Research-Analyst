@@ -1,0 +1,371 @@
+{
+ "id": "technology-04-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "TikTok briefly went dark in the U.S. in January 2025, then stayed online while ByteDance negotiated a deal to restructure its U.S. operations. The deal was signed in December 2025, but it didn’t close until January 22, 2026. (tradingview.com)\nJanuary: On January 17, the Supreme Court upheld a 2024 law requiring ByteDance, TikTok’s China-based parent, to divest its U.S. operations or face a ban. TikTok shut off U.S. access late on January 18 and began restoring it on January 19 after President-elect Donald Trump promised to delay enforcement. Apple and Google didn’t restore the app to their U.S. stores until February 13. (supremecourt.gov)\nJanuary through September: Trump repeatedly delayed enforcement while negotiations continued. On September 25, he signed an executive order approving the proposed ownership framework and giving the parties more time to complete the deal. (whitehouse.gov)\nDecember: On December 18, TikTok and ByteDance signed binding agreements to form a majority American-owned joint venture. Oracle, Silver Lake, and Abu Dhabi-based MGX would each hold 15%, while ByteDance would retain 19.9%. The venture would oversee U.S. user data, recommendation-algorithm security, and content moderation. The deal covered TikTok’s U.S. operations, not the sale of TikTok globally. (ksl.com)",
+  "claims": [
+   {
+    "sentence": "TikTok briefly went dark in the U.S. in January 2025, then stayed online while ByteDance negotiated a deal to restructure its U.S. operations.",
+    "start": 0,
+    "end": 142,
+    "claim": "TikTok briefly went dark in the U.S. in January 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.tradingview.com/news/reuters.com%2C2025%3Anewsml_L3N3V310A%3A0-tiktok-s-journey-from-global-sensation-to-trump-target/?utm_source=openai",
+      "host": "tradingview.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "January 18, 2025 - TikTok stops working for users in the United States late on Saturday, disappears from Apple and Google app stores before the law shutting it down on national security grounds took effect on Sunday.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that TikTok stopped working for U.S. users on January 18, 2025, which backs the claim that it briefly went dark in the U.S. in January 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on January 18, 2025 TikTok stopped working for U.S. users and disappeared from app stores before the law took effect, and that service was restored on January 19, which supports the claim that it briefly went dark in the U.S. in January 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "TikTok briefly went dark in the U.S. in January 2025, then stayed online while ByteDance negotiated a deal to restructure its U.S. operations.",
+    "start": 0,
+    "end": 142,
+    "claim": "After going dark briefly, TikTok stayed online in the U.S. while ByteDance negotiated a deal to restructure its U.S. operations.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.tradingview.com/news/reuters.com%2C2025%3Anewsml_L3N3V310A%3A0-tiktok-s-journey-from-global-sensation-to-trump-target/?utm_source=openai",
+      "host": "tradingview.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "January 18, 2025 - TikTok stops working for users in the United States late on Saturday, disappears from Apple and Google app stores before the law shutting it down on national security grounds took effect on Sunday.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "January 19, 2025 - TikTok says it is restoring service after then President-elect Donald Trump said he would revive the app's access in the U.S. when he returns to power on Monday. Deadline extended to early April.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "March 21, 2025 - White House-led talks on the future of TikTok coalesce around a plan for the biggest non-Chinese investors in ByteDance to up their stakes and acquire TikTok's U.S. operations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the outage and restoration on January 18-19 and White House-led talks on investors acquiring TikTok's U.S. operations, but they do not explicitly state that TikTok stayed online continuously afterward or that ByteDance itself negotiated the deal.",
+      "page_judged": "supported",
+      "page_reason": "The page states TikTok stopped working for U.S. users on January 18, 2025 and was restored on January 19, 2025 after Trump's promise, and that ByteDance was negotiating a U.S. ownership deal with deadline extensions, so the claim is broadly supported, though the page does not explicitly say TikTok stayed online throughout the negotiations."
+     }
+    ]
+   },
+   {
+    "sentence": "The deal was signed in December 2025, but it didn’t close until January 22, 2026. (tradingview.com)",
+    "start": 143,
+    "end": 242,
+    "claim": "The deal to restructure TikTok's U.S. operations was signed in December 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.tradingview.com/news/reuters.com%2C2025%3Anewsml_L3N3V310A%3A0-tiktok-s-journey-from-global-sensation-to-trump-target/?utm_source=openai",
+      "host": "tradingview.com",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "September 15, 2025 - U.S. and Chinese officials reach a framework agreement to switch TikTok to U.S.-controlled ownership that will be confirmed in a Friday call between U.S. President Donald Trump and Chinese President Xi Jinping.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "September 16, 2025 - Trump says the U.S. and China have a deal that will keep TikTok operating and that the U.S. will announce a buyer.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Trump later on Tuesday signed an executive order delaying the enforcement of a 2024 law requiring the divestiture of Chinese ownership of TikTok until December 16.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes place the framework agreement in September 2025 and a delay of enforcement until December 16, but they do not state that the deal was signed in December 2025, and the September framework agreement is at odds with the claimed December signing date for the deal.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Trump extended the divestiture deadline to December 16 and that a framework agreement was reached in September 2025, but it does not state that the restructuring deal was signed in December 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The deal was signed in December 2025, but it didn’t close until January 22, 2026. (tradingview.com)",
+    "start": 143,
+    "end": 242,
+    "claim": "The deal to restructure TikTok's U.S. operations did not close until January 22, 2026.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.tradingview.com/news/reuters.com%2C2025%3Anewsml_L3N3V310A%3A0-tiktok-s-journey-from-global-sensation-to-trump-target/?utm_source=openai",
+      "host": "tradingview.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports a framework deal and extension of the divestiture deadline to December 16, but says nothing about the deal closing or any closing date of January 22, 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "Apple and Google didn’t restore the app to their U.S. stores until February 13. (supremecourt.gov)",
+    "start": 548,
+    "end": 646,
+    "claim": "Apple and Google did not restore the TikTok app to their U.S. app stores until February 13.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.supremecourt.gov/opinions/24pdf/604us1r07_k536.pdf?utm_source=openai",
+      "host": "supremecourt.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page excerpts describe the Act's provisions, prohibitions, and effective date but nowhere mention Apple, Google, app stores, or any restoration of the TikTok app on February 13, so the claim is not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "On September 25, he signed an executive order approving the proposed ownership framework and giving the parties more time to complete the deal. (whitehouse.gov)",
+    "start": 741,
+    "end": 901,
+    "claim": "On September 25, Trump signed an executive order approving the proposed ownership framework.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/09/saving-tiktok-while-protecting-national-security/?_bhlid=fda91d7ec34c815cadd836818ff70a8233639d59&cst=&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Executive Order 14352",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A plan has been presented to me to undergo a qualified divestiture of TikTok’s United States operations, as outlined in a framework agreement (Framework Agreement).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "I further determine that the divestiture of the applications outlined in the Framework Agreement",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "THE WHITE HOUSE,\nSeptember 25, 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show Executive Order 14352 dated September 25, 2025 from the White House, with the president determining that the divestiture outlined in the Framework Agreement proceeds, which backs the claimed signing, date and approval of the framework.",
+      "page_judged": "supported",
+      "page_reason": "The page is an executive order dated September 25, 2025, signed by Donald J. Trump, that determines the Framework Agreement's divestiture is a qualified divestiture under the Act, which supports the claim that he approved the proposed ownership framework."
+     }
+    ]
+   },
+   {
+    "sentence": "On September 25, he signed an executive order approving the proposed ownership framework and giving the parties more time to complete the deal. (whitehouse.gov)",
+    "start": 741,
+    "end": 901,
+    "claim": "The September 25 executive order gave the parties more time to complete the deal.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/09/saving-tiktok-while-protecting-national-security/?_bhlid=fda91d7ec34c815cadd836818ff70a8233639d59&cst=&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "To permit the contemplated divestiture to be completed, the Attorney General shall not take any action on behalf of the United States to enforce the Act for 120 days from the date of this order.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the order gave time for the contemplated divestiture to be completed by suspending enforcement for 120 days, but it does not state the order was dated September 25 or that it concerned 'the parties' or a 'deal' rather than a divestiture.",
+      "page_judged": "supported",
+      "page_reason": "The page says Section 3(a) bars the Attorney General from enforcing the Act for 120 days from the order's date \"to permit the contemplated divestiture to be completed,\" which supports the claim that the order gave more time to complete the deal."
+     }
+    ]
+   },
+   {
+    "sentence": "The deal covered TikTok’s U.S. operations, not the sale of TikTok globally. (ksl.com)",
+    "start": 1227,
+    "end": 1312,
+    "claim": "The deal covered TikTok's U.S. operations and not the global sale of TikTok.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.ksl.com/article/51421311/tiktok-signs-deal-to-sell-us-unit-to-american-investor-led-venture?utm_source=openai",
+      "host": "ksl.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "ByteDance, signed binding agreements with three major investors to sell just over 80% of the company's U.S. assets to American and global investors to avoid a government ban",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "amid efforts to extract TikTok's U.S. assets from the global platform",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say the binding agreements sold just over 80% of ByteDance's U.S. assets and extracted TikTok's U.S. assets from the global platform, which together back the claim that the deal covered U.S. operations and not the global sale.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says ByteDance agreed to sell just over 80% of TikTok's U.S. assets and that the deal extracts U.S. assets from the global platform, which supports the U.S.-only scope, but it does not explicitly state that the global sale is excluded, so the claim's 'not the global sale' part is only partly stated."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 1,
+    "needs_human": 3,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.6,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 4,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 8,
+   "claims_over_limit": 0,
+   "usd": 0.007903,
+   "usd_per_claim": 0.000988
+  },
+  "cost": {
+   "total_usd": 0.0079,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 9,
+     "usd": 0.0038
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.002
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

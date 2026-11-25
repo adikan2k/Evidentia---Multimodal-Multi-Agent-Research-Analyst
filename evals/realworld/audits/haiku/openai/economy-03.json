@@ -1,0 +1,399 @@
+{
+ "id": "economy-03",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Gold rose about 65% in U.S. dollar terms in 2025, its biggest annual gain since 1979. Spot gold gained 64.6%, while the London Bullion Market Association’s afternoon benchmark rose 67.4%, ending the year at $4,368 per troy ounce. (sifma.org)\nIntraday spot record: Gold reached about $4,550 per troy ounce on December 26, 2025. (sifma.org)\nLondon benchmark records: The afternoon benchmark set 53 new all-time highs in 2025, peaking at $4,449 on December 23, 2025. It also posted record averages of $3,431 for the full year and $4,135 for the fourth quarter. (gold.org)",
+  "claims": [
+   {
+    "sentence": "Gold rose about 65% in U.S. dollar terms in 2025, its biggest annual gain since 1979.",
+    "start": 0,
+    "end": 85,
+    "claim": "Gold rose about 65% in U.S. dollar terms in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-Insights-Equities-and-Options-Monthly-Metrics_December.pdf?utm_source=openai",
+      "host": "sifma.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "while spot gold prices finished up +64.6% (Chart 2)",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states spot gold finished up 64.6%, which backs the roughly 65% figure, but it does not specify the U.S. dollar terms or the year 2025 in the quoted text.",
+      "page_judged": "supported",
+      "page_reason": "The page states that spot gold finished 2025 up +64.6%, which rounds to about 65%, and the claim's 'U.S. dollar terms' qualifier is reasonably met since the page's gold prices are in $/oz."
+     }
+    ]
+   },
+   {
+    "sentence": "Gold rose about 65% in U.S. dollar terms in 2025, its biggest annual gain since 1979.",
+    "start": 0,
+    "end": 85,
+    "claim": "Gold's 2025 gain in U.S. dollar terms was its biggest annual gain since 1979.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-Insights-Equities-and-Options-Monthly-Metrics_December.pdf?utm_source=openai",
+      "host": "sifma.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports gold spot up 64.6% in 2025 and record highs, but says nothing about gold's 2025 gain being its biggest annual gain since 1979 or any comparison to 1979."
+     }
+    ]
+   },
+   {
+    "sentence": "Spot gold gained 64.6%, while the London Bullion Market Association’s afternoon benchmark rose 67.4%, ending the year at $4,368 per troy ounce. (sifma.org)",
+    "start": 86,
+    "end": 241,
+    "claim": "Spot gold gained 64.6% in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-Insights-Equities-and-Options-Monthly-Metrics_December.pdf?utm_source=openai",
+      "host": "sifma.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The SPX Index finished +16.4% on the year, while spot gold prices finished up +64.6% (Chart 2).",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that spot gold prices finished up +64.6% on the year, which matches the claim's 64.6% gain, though it does not explicitly say the period is calendar 2025, which is implied by 'the year' context only.",
+      "page_judged": "supported",
+      "page_reason": "The page states that spot gold prices finished up +64.6% over 2025 (Chart 2 discussion), directly matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Spot gold gained 64.6%, while the London Bullion Market Association’s afternoon benchmark rose 67.4%, ending the year at $4,368 per troy ounce. (sifma.org)",
+    "start": 86,
+    "end": 241,
+    "claim": "The London Bullion Market Association's afternoon benchmark rose 67.4% in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-Insights-Equities-and-Options-Monthly-Metrics_December.pdf?utm_source=openai",
+      "host": "sifma.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports gold spot prices rising 64.6% in 2025 and never mentions the London Bullion Market Association or its afternoon benchmark, so the claim's 67.4% figure is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Spot gold gained 64.6%, while the London Bullion Market Association’s afternoon benchmark rose 67.4%, ending the year at $4,368 per troy ounce. (sifma.org)",
+    "start": 86,
+    "end": 241,
+    "claim": "The London Bullion Market Association's afternoon benchmark ended 2025 at $4,368 per troy ounce.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-Insights-Equities-and-Options-Monthly-Metrics_December.pdf?utm_source=openai",
+      "host": "sifma.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports record gold and silver spot prices and the Dow Jones Precious Metals Index performance but does not mention the London Bullion Market Association's afternoon benchmark or a year-end 2025 gold price of $4,368 per troy ounce."
+     }
+    ]
+   },
+   {
+    "sentence": "Intraday spot record: Gold reached about $4,550 per troy ounce on December 26, 2025. (sifma.org)",
+    "start": 242,
+    "end": 338,
+    "claim": "Gold reached about $4,550 per troy ounce intraday on December 26, 2025, an intraday spot record.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sifma.org/wp-content/uploads/2025/12/SIFMA-Insights-Equities-and-Options-Monthly-Metrics_December.pdf?utm_source=openai",
+      "host": "sifma.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Both metals hit record prices, at $4,533.21 and $79.27 per ounce, respectively (Chart 1).",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       },
+       {
+        "text": "Gold and silver spot prices both reach record highs on December 26, 2025",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the December 26, 2025 gold record but give $4,533.21 rather than about $4,550, and they do not say the high was intraday.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says gold hit a record of $4,533.21 per ounce and that gold and silver reached record highs on December 26, 2025, but it does not mention an intraday high, and it never gives a figure of about $4,550."
+     }
+    ]
+   },
+   {
+    "sentence": "London benchmark records: The afternoon benchmark set 53 new all-time highs in 2025, peaking at $4,449 on December 23, 2025. It also posted record averages of $3,431 for the full year and $4,135 for the fourth quarter. (gold.org)",
+    "start": 339,
+    "end": 568,
+    "claim": "The London Bullion Market Association's afternoon benchmark set 53 new all-time highs in 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gold.org/goldhub/research/gold-market-commentary-december-2025?tag1=Entail&tag2=Entail&tg=SEO&utm_source=openai",
+      "host": "gold.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Gold tagged its 53rd all-time PM price high for the year, reaching US$4,449/oz on 23 December, before closing the year at US$4,368/oz (Chart 1).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Based on the LBMA Gold Price PM in USD, expressed in local currencies",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that gold reached its 53rd all-time PM price high for the year on 23 December, based on the LBMA Gold Price PM in USD, which backs the claim's main point and its count of 53 new highs in 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page says gold 'tagged its 53rd all-time PM price high for the year' and references the LBMA Gold Price PM, which supports the claim that the LBMA PM benchmark set 53 all-time highs in 2025, though it does not explicitly name the LBMA in that sentence and the Chart 1 caption cites 95 ATHs since 2024."
+     }
+    ]
+   },
+   {
+    "sentence": "London benchmark records: The afternoon benchmark set 53 new all-time highs in 2025, peaking at $4,449 on December 23, 2025. It also posted record averages of $3,431 for the full year and $4,135 for the fourth quarter. (gold.org)",
+    "start": 339,
+    "end": 568,
+    "claim": "The London Bullion Market Association's afternoon benchmark peaked at $4,449 on December 23, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gold.org/goldhub/research/gold-market-commentary-december-2025?tag1=Entail&tag2=Entail&tg=SEO&utm_source=openai",
+      "host": "gold.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Gold tagged its 53rd all-time PM price high for the year, reaching US$4,449/oz on 23 December, before closing the year at US$4,368/oz (Chart 1).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "*As of 31 December 2025. Based on the LBMA Gold Price PM in USD, expressed in local currencies",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states gold reached US$4,449/oz on 23 December as an all-time PM price high, and the second quote identifies the LBMA Gold Price PM in USD as the basis, so the price, date and benchmark are all backed.",
+      "page_judged": "supported",
+      "page_reason": "The page's Table 1 lists the record high price for USD as 4,449 with a record high date of 23 Dec 2025, and states the figures are based on the LBMA Gold Price PM in USD, supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "London benchmark records: The afternoon benchmark set 53 new all-time highs in 2025, peaking at $4,449 on December 23, 2025. It also posted record averages of $3,431 for the full year and $4,135 for the fourth quarter. (gold.org)",
+    "start": 339,
+    "end": 568,
+    "claim": "The London Bullion Market Association's afternoon benchmark posted a record average of $3,431 for the full year 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gold.org/goldhub/research/gold-market-commentary-december-2025?tag1=Entail&tag2=Entail&tg=SEO&utm_source=openai",
+      "host": "gold.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports gold's year-end price, full-year return, and all-time highs under the LBMA PM price, but never states a full-year 2025 average price of $3,431 or any record average for the year."
+     }
+    ]
+   },
+   {
+    "sentence": "London benchmark records: The afternoon benchmark set 53 new all-time highs in 2025, peaking at $4,449 on December 23, 2025. It also posted record averages of $3,431 for the full year and $4,135 for the fourth quarter. (gold.org)",
+    "start": 339,
+    "end": 568,
+    "claim": "The London Bullion Market Association's afternoon benchmark posted a record average of $4,135 for the fourth quarter of 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.gold.org/goldhub/research/gold-market-commentary-december-2025?tag1=Entail&tag2=Entail&tg=SEO&utm_source=openai",
+      "host": "gold.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports December 2025 prices and all-time highs under the LBMA Gold Price PM, but it never states a fourth-quarter 2025 average of $4,135 or any quarterly average at all."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 3,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 5,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 9,
+   "failed_citations": 5,
+   "failed_share_of_verdicts": 0.5556,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.3,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.005798,
+   "usd_per_claim": 0.00058
+  },
+  "cost": {
+   "total_usd": 0.0058,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.002
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0024
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,629 @@
+{
+ "id": "technology-02",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:52:21+00:00",
+ "report": {
+  "answer_text": "The EU AI Act started to apply in two waves in 2025: AI literacy and prohibited practices on 2 February, then general-purpose AI model obligations and governance rules on 2 August. (eur-lex.europa.eu)\n2 February 2025 — AI literacy and prohibited practices\nAI literacy (Article 4): Under the wording that applied in 2025, providers and organisations using AI systems had to take measures, to the extent possible, to ensure sufficient AI literacy among staff and others operating or using those systems on their behalf. Article 4 was amended in 2026. (eur-lex.europa.eu)\nProhibited AI practices (Article 5): The bans covered practices such as harmful manipulation or exploitation of vulnerabilities, social scoring, untargeted scraping of internet or CCTV images to build facial-recognition databases, and emotion recognition in workplaces and schools, subject to specified exceptions. The Act’s scope and definitions also began to apply. (eur-lex.europa.eu)\n2 August 2025 — General-purpose AI models and governance\nGeneral-purpose AI (GPAI) model providers had to maintain technical documentation, provide information to downstream AI system providers, adopt an EU copyright compliance policy, and publish a summary of training content. Qualifying open-source models were exempt from certain documentation duties, but not from the copyright policy or public summary. Providers of models posing systemic risk also had to notify the Commission, evaluate their models, assess and mitigate risks, report serious incidents, and maintain cybersecurity protections. Models already on the EU market before 2 August 2025 have until 2 August 2027 to comply. (digital-strategy.ec.europa.eu)\nGovernance, oversight and penalties: Rules on EU and national AI governance, bodies that assess high-risk AI systems for conformity, and confidentiality began to apply. The penalties chapter also began to apply, except Article 101, which covers Commission fines for GPAI model providers and applied from 2 August 2026. (eur-lex.europa.eu)\nThe main high-risk AI system requirements and Article 50 transparency duties were not part of either 2025 wave. (digital-strategy.ec.europa.eu)",
+  "claims": [
+   {
+    "sentence": "The EU AI Act started to apply in two waves in 2025: AI literacy and prohibited practices on 2 February, then general-purpose AI model obligations and governance rules on 2 August. (eur-lex.europa.eu)",
+    "start": 0,
+    "end": 200,
+    "claim": "The EU AI Act started to apply in two waves in 2025: AI literacy and prohibited practices on 2 February, then general-purpose AI model obligations and governance rules on 2 August.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page excerpts are recitals and the title block of Regulation 2024/1689 and do not state any application dates such as 2 February 2025 or 2 August 2025, so the claim's dates and staging are not supported by the page."
+     }
+    ]
+   },
+   {
+    "sentence": "2 February 2025 — AI literacy and prohibited practices",
+    "start": 201,
+    "end": 255,
+    "claim": "AI literacy and prohibited practices applied from 2 February 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "AI literacy (Article 4): Under the wording that applied in 2025, providers and organisations using AI systems had to take measures, to the extent possible, to ensure sufficient AI literacy among staff and others operating or using those systems on their behalf. Article 4 was amended in 2026. (eur-lex.europa.eu)",
+    "start": 256,
+    "end": 568,
+    "claim": "Under the wording that applied in 2025, providers and organisations using AI systems had to take measures, to the extent possible, to ensure sufficient AI literacy among staff and others operating or using those systems on their behalf.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page consists of recitals discussing AI literacy's purpose and deployers' competence needs, but it never states an obligation for providers and deployers to take measures 'to the extent possible' to ensure AI literacy, nor the 2025 wording the claim refers to."
+     }
+    ]
+   },
+   {
+    "sentence": "AI literacy (Article 4): Under the wording that applied in 2025, providers and organisations using AI systems had to take measures, to the extent possible, to ensure sufficient AI literacy among staff and others operating or using those systems on their behalf. Article 4 was amended in 2026. (eur-lex.europa.eu)",
+    "start": 256,
+    "end": 568,
+    "claim": "Article 4 of the EU AI Act was amended in 2026.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is the original 2024 text of Regulation (EU) 2024/1689 and says nothing about any amendment to Article 4 in 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "Prohibited AI practices (Article 5): The bans covered practices such as harmful manipulation or exploitation of vulnerabilities, social scoring, untargeted scraping of internet or CCTV images to build facial-recognition databases, and emotion recognition in workplaces and schools, subject to specified exceptions. The Act’s scope and definitions also began to apply. (eur-lex.europa.eu)",
+    "start": 569,
+    "end": 956,
+    "claim": "The Article 5 bans covered practices such as harmful manipulation or exploitation of vulnerabilities, social scoring, untargeted scraping of internet or CCTV images to build facial-recognition databases, and emotion recognition in workplaces and schools, subject to specified exceptions.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The placing on the market, the putting into service or the use of certain AI systems with the objective to or the effect of materially distorting human behaviour, whereby significant harms, in particular having sufficiently important adverse impacts on physical, psychological health or financial interests are likely to occur, are particularly dangerous and should therefore be prohibited.",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       },
+       {
+        "text": "In addition, AI systems may also otherwise exploit the vulnerabilities of a person or a specific group of persons due to their age, disability",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       },
+       {
+        "text": "AI systems providing social scoring of natural persons by public or private actors may lead to discriminatory outcomes and the exclusion of certain groups.",
+        "pages": [
+         9,
+         9
+        ],
+        "context": null
+       },
+       {
+        "text": "AI systems entailing such unacceptable scoring practices and leading to such detrimental or unfavourable outcomes should therefore be prohibited.",
+        "pages": [
+         9,
+         9
+        ],
+        "context": null
+       },
+       {
+        "text": "the use of AI systems that create or expand facial recognition databases through the untargeted scraping of facial images from the internet or CCTV footage, should be prohibited",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the bans on harmful manipulation, exploitation of vulnerabilities, social scoring and untargeted facial-image scraping, but nothing in them mentions emotion recognition in workplaces or schools or any specified exceptions.",
+      "page_judged": "supported",
+      "page_reason": "The page (recitals 29-44 of the EU AI Act) describes prohibitions on manipulative techniques and exploiting vulnerabilities, social scoring, untargeted scraping of facial images, and emotion recognition in workplaces and education, with exceptions for medical/safety reasons and lawful evaluation, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Prohibited AI practices (Article 5): The bans covered practices such as harmful manipulation or exploitation of vulnerabilities, social scoring, untargeted scraping of internet or CCTV images to build facial-recognition databases, and emotion recognition in workplaces and schools, subject to specified exceptions. The Act’s scope and definitions also began to apply. (eur-lex.europa.eu)",
+    "start": 569,
+    "end": 956,
+    "claim": "The Act's scope and definitions began to apply in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page excerpts are recitals on scope and definitions but never state when the Act's provisions begin to apply, so nothing on the page supports a 2025 start date."
+     }
+    ]
+   },
+   {
+    "sentence": "2 August 2025 — General-purpose AI models and governance",
+    "start": 957,
+    "end": 1013,
+    "claim": "General-purpose AI models and governance rules applied from 2 August 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "General-purpose AI (GPAI) model providers had to maintain technical documentation, provide information to downstream AI system providers, adopt an EU copyright compliance policy, and publish a summary of training content.",
+    "start": 1014,
+    "end": 1235,
+    "claim": "General-purpose AI model providers had to maintain technical documentation, provide information to downstream AI system providers, adopt an EU copyright compliance policy, and publish a summary of training content.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Draw up technical documentation",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Implement a copyright policy",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Publish a summary of the model's training content",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back draw up technical documentation, a copyright policy, and publishing a training content summary, but nothing in them mentions providing information to downstream AI system providers or specifies the copyright policy as EU-based.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists drawing up technical documentation, implementing a copyright policy, and publishing a training content summary as obligations for all GPAI providers, but it never mentions providing information to downstream AI system providers or specifically an EU copyright policy."
+     }
+    ]
+   },
+   {
+    "sentence": "Qualifying open-source models were exempt from certain documentation duties, but not from the copyright policy or public summary.",
+    "start": 1236,
+    "end": 1365,
+    "claim": "Qualifying open-source GPAI models were exempt from certain documentation duties.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists the obligations for all GPAI providers and says nothing about open-source models or any exemption from documentation duties, so the claim is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Qualifying open-source models were exempt from certain documentation duties, but not from the copyright policy or public summary.",
+    "start": 1236,
+    "end": 1365,
+    "claim": "Qualifying open-source GPAI models were not exempt from the copyright policy or public summary duties.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the copyright policy and training-content summary duties apply to all providers of GPAI models, but it never mentions open-source models or any open-source exemption, so the claim's specific open-source qualifier is not addressed."
+     }
+    ]
+   },
+   {
+    "sentence": "Providers of models posing systemic risk also had to notify the Commission, evaluate their models, assess and mitigate risks, report serious incidents, and maintain cybersecurity protections.",
+    "start": 1366,
+    "end": 1557,
+    "claim": "Providers of GPAI models posing systemic risk had to notify the Commission, evaluate their models, assess and mitigate risks, report serious incidents, and maintain cybersecurity protections.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Obligations for providers of GPAI models with systemic risk",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Notify the Commission",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Risk assessment and mitigation",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Cybersecurity protections",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that systemic-risk GPAI providers had obligations, including notifying the Commission, risk assessment and mitigation, and cybersecurity protections, but nothing in the quotes mentions evaluating models or reporting serious incidents.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists obligations for providers of GPAI models with systemic risk as notifying the Commission, risk assessment and mitigation, incident reporting, and cybersecurity protections, but it does not mention evaluating models as a distinct obligation, so the claim's 'evaluate their models' element is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Models already on the EU market before 2 August 2025 have until 2 August 2027 to comply. (digital-strategy.ec.europa.eu)",
+    "start": 1558,
+    "end": 1678,
+    "claim": "GPAI models already on the EU market before 2 August 2025 have until 2 August 2027 to comply.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the obligations enter into application on 2 August 2025 but says nothing about models already on the market before that date or a 2 August 2027 compliance deadline."
+     }
+    ]
+   },
+   {
+    "sentence": "Governance, oversight and penalties: Rules on EU and national AI governance, bodies that assess high-risk AI systems for conformity, and confidentiality began to apply.",
+    "start": 1679,
+    "end": 1847,
+    "claim": "Rules on EU and national AI governance, bodies that assess high-risk AI systems for conformity, and confidentiality began to apply in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page excerpts discuss market surveillance authorities, independence of national competent authorities, confidentiality, and conformity assessment bodies, but nowhere state when these rules began to apply, so the 2025 date is unsupported."
+     }
+    ]
+   },
+   {
+    "sentence": "The penalties chapter also began to apply, except Article 101, which covers Commission fines for GPAI model providers and applied from 2 August 2026. (eur-lex.europa.eu)",
+    "start": 1848,
+    "end": 2017,
+    "claim": "The penalties chapter of the EU AI Act began to apply in 2025, except Article 101.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page excerpts are recitals and introductory text and do not mention the penalties chapter, its application dates, or Article 101, so the claim cannot be verified from the page."
+     }
+    ]
+   },
+   {
+    "sentence": "The penalties chapter also began to apply, except Article 101, which covers Commission fines for GPAI model providers and applied from 2 August 2026. (eur-lex.europa.eu)",
+    "start": 1848,
+    "end": 2017,
+    "claim": "Article 101, which covers Commission fines for GPAI model providers, applied from 2 August 2026.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32024R1689&utm_source=openai",
+      "host": "eur-lex.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page excerpts are recitals on GPAI model placement, documentation, systemic risk and cybersecurity, and do not mention Article 101, Commission fines, or any application date of 2 August 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "The main high-risk AI system requirements and Article 50 transparency duties were not part of either 2025 wave. (digital-strategy.ec.europa.eu)",
+    "start": 2018,
+    "end": 2161,
+    "claim": "The main high-risk AI system requirements were not part of either 2025 application wave.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/navigating-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The rules on governance and the obligations for general purpose AI became applicable on 2 August 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The rules for high-risk AI systems will apply starting 2 December 2027.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say governance and general-purpose AI obligations applied from 2 August 2025 while high-risk AI rules apply only from 2 December 2027, so the high-risk requirements were not in either 2025 wave.",
+      "page_judged": "supported",
+      "page_reason": "The page says the governance and general-purpose AI obligations applied from 2 August 2025, while the high-risk rules apply only from 2 December 2027 (and embedded-product rules from 2 August 2028), so no high-risk requirements applied in 2025, though the page does not explicitly describe a second 2025 wave."
+     }
+    ]
+   },
+   {
+    "sentence": "The main high-risk AI system requirements and Article 50 transparency duties were not part of either 2025 wave. (digital-strategy.ec.europa.eu)",
+    "start": 2018,
+    "end": 2161,
+    "claim": "The Article 50 transparency duties were not part of either 2025 application wave.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/navigating-ai-act?utm_source=openai",
+      "host": "digital-strategy.ec.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The AI Office will issue guidelines to provide further guidance for providers and deployers on the obligations in Article 50 which will become applicable on 2 August 2026.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The prohibitions, definitions and provisions related to AI literacy apply since 2 February 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The rules on governance and the obligations for general purpose AI became applicable on 2 August 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say Article 50 obligations become applicable on 2 August 2026, and the only 2025 applicability dates given (2 February and 2 August 2025) cover prohibitions, definitions, AI literacy, governance and general purpose AI, not Article 50.",
+      "page_judged": "supported",
+      "page_reason": "The page lists the 2025 application dates (2 February 2025 for prohibitions, definitions and AI literacy, and 2 August 2025 for governance and general-purpose AI obligations) and states that Article 50 transparency obligations apply from 2 August 2026, so they are not in either 2025 wave."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 17,
+   "labels": {
+    "supported": 2,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 10,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 2
+   },
+   "cited_claims": 15,
+   "claims_with_a_verdict": 14,
+   "failed_citations": 10,
+   "failed_share_of_verdicts": 0.7143,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.1333,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.021654,
+   "usd_per_claim": 0.001274
+  },
+  "cost": {
+   "total_usd": 0.0217,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 25,
+     "usd": 0.015
+    },
+    {
+     "node": "page_check",
+     "calls": 15,
+     "usd": 0.0046
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

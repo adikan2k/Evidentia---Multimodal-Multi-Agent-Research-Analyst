@@ -1,0 +1,742 @@
+{
+ "id": "science-06",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://orbitalradar.com/deep-space/tianwen-2",
+   "read": true,
+   "chars": 1045
+  },
+  {
+   "url": "https://arxiv.org/abs/2603.28102",
+   "read": true,
+   "chars": 1937
+  }
+ ],
+ "usd": 0.001444,
+ "report": {
+  "answer_text": "Tianwen-2 is the China National Space Administration's (CNSA) first asteroid sample-return mission. It launched on a Long March 3B rocket from Xichang on 28 May 2025.[1]\nTargets\n1. Asteroid 469219 Kamoʻoalewa (2016 HO3). This is the primary sample-return target.\nIt is a quasi-moon of Earth, a rare and recently discovered category of worlds.[2] It circles the Sun in step with Earth, so from Earth it seems to loop around us all year.[1]\nIt is roughly 40–100 meters across.[3] One analysis of the first images puts it nearer 18 meters, though the size is still being refined. It rotates once every 28 minutes, which makes sampling difficult.[4]\nIts origin is debated. It may be a fragment of the Moon thrown off by an ancient impact.[1] Newer work disagrees. One astronomer, after seeing the first image, said it looks to be of asteroidal origin.[5] A separate study proposes it came from the Flora family of asteroids.[6] The returned samples should help settle this.\n2. Comet 311P/PanSTARRS. This is a comet-like body in the main asteroid belt, well beyond Mars.[5] The spacecraft is meant to visit it after the sample capsule is dropped off at Earth.\nProgress so far (as of late November 2026)\nAfter nearly 400 days and a billion kilometers, the spacecraft reached Kamoʻoalewa.[5] CNSA announced on July 6 that it had closed to within 20 km of the asteroid.[5]\nIt is mapping the asteroid in high resolution to pick a safe sampling site.[3]\nSampling will use a touch-and-go system and an anchor-and-attach mechanism with surface drills, aiming for about 100 grams of material.[3] Which technique it uses depends on what the survey shows about the surface strength.[5]\nNext steps\nThe spacecraft is expected to leave Kamoʻoalewa in April 2027. It will release its sample capsule for a landing in China's Gobi Desert that November.[5]\nAfter that, the spacecraft heads on to the comet, in an expedition that spans about a decade.",
+  "claims": [
+   {
+    "sentence": "Tianwen-2 is the China National Space Administration's (CNSA) first asteroid sample-return mission.",
+    "start": 0,
+    "end": 99,
+    "claim": "Tianwen-2 is the China National Space Administration's (CNSA) first asteroid sample-return mission.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://orbitalradar.com/deep-space/tianwen-2",
+      "host": "orbitalradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Tianwen-2's launch, its Kamo'oalewa sampling plan, and its later comet target, but never states that it is CNSA's first asteroid sample-return mission.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "It launched on a Long March 3B rocket from Xichang on 28 May 2025.[1]",
+    "start": 100,
+    "end": 169,
+    "claim": "Tianwen-2 launched on a Long March 3B rocket from Xichang on 28 May 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://orbitalradar.com/deep-space/tianwen-2",
+      "host": "orbitalradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Tianwen-2 launched on a Long March 3B rocket from Xichang on 28 May 2025 (29 May in China)",
+        "pages": null,
+        "context": {
+         "before": "A Visit to Earth's Quasi-Moon\n",
+         "after": " and reached the near-Earth asteroid Kamo‘oalewa in early July 2026. Kamo‘oalewa is a quasi-satellite of Earth: it circles the Sun in step with our planet, so seen from Earth it seems to loop around us all year. It may be a fragment of the Moon, thrown off by an ancient impact.\nCollecting a Sample\nTianwen-2 is flying alongside the asteroid and mapping it before it tries to collect at least 100"
+        }
+       }
+      ],
+      "quote_reason": "The quote states the launch vehicle (Long March 3B), site (Xichang), and date (28 May 2025), matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Tianwen-2 launched on a Long March 3B rocket from Xichang on 28 May 2025 (29 May in China), which matches every part of the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "It is a quasi-moon of Earth, a rare and recently discovered category of worlds.[2]",
+    "start": 263,
+    "end": 345,
+    "claim": "Asteroid 469219 Kamoʻoalewa (2016 HO3) is a quasi-moon of Earth, a rare and recently discovered category of worlds.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.planetary.org/articles/chinas-tianwen-2-mission-has-probably-arrived-at-a-quasi-moon-of-earth",
+      "host": "planetary.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This asteroid is known as a quasi-moon of Earth, a rare and recently discovered category of worlds.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Kamo'oalewa is one of seven known quasi-moons of Earth, so it’s in a kind of resonance orbit. These [worlds] have been discovered relatively recently.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the asteroid is a quasi-moon of Earth and that quasi-moons are a rare, recently discovered category, covering every fact in the claim (the quotes do not name the designation 2016 HO3, but the first quote identifies the asteroid being discussed and the second names Kamo'oalewa directly).",
+      "page_judged": "supported",
+      "page_reason": "The page states that Kamo'oalewa is one of seven known quasi-moons of Earth, that these worlds were discovered relatively recently, and describes the asteroid as a quasi-moon of Earth, a rare and recently discovered category, though it does not explicitly give the designation 469219 or 2016 HO3."
+     }
+    ]
+   },
+   {
+    "sentence": "It circles the Sun in step with Earth, so from Earth it seems to loop around us all year.[1]",
+    "start": 346,
+    "end": 438,
+    "claim": "Asteroid 469219 Kamoʻoalewa (2016 HO3) circles the Sun in step with Earth, so from Earth it seems to loop around us all year.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://orbitalradar.com/deep-space/tianwen-2",
+      "host": "orbitalradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Kamo‘oalewa is a quasi-satellite of Earth: it circles the Sun in step with our planet, so seen from Earth it seems to loop around us all year.",
+        "pages": null,
+        "context": {
+         "before": "A Visit to Earth's Quasi-Moon\nTianwen-2 launched on a Long March 3B rocket from Xichang on 28 May 2025 (29 May in China) and reached the near-Earth asteroid Kamo‘oalewa in early July 2026. ",
+         "after": " It may be a fragment of the Moon, thrown off by an ancient impact.\nCollecting a Sample\nTianwen-2 is flying alongside the asteroid and mapping it before it tries to collect at least 100 grams of material: by hovering, by touch-and-go, or by anchoring itself to the surface. It is due to leave in April 2027 and release a sample capsule as it passes Earth in late November 2027, then fly on to the"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that Kamo'oalewa circles the Sun in step with Earth and that from Earth it seems to loop around us all year, matching every fact in the claim, with the designation 2016 HO3 not explicitly mentioned but the name matches.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Kamoʻoalewa is a quasi-satellite of Earth that circles the Sun in step with the planet, so from Earth it seems to loop around us all year, which matches every part of the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "It is roughly 40–100 meters across.[3]",
+    "start": 439,
+    "end": 477,
+    "claim": "Asteroid 469219 Kamoʻoalewa (2016 HO3) is roughly 40–100 meters across.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://nss.org/nss-recognizes-china-for-its-successful-rendezvous-with-asteroid-kamooalewa/",
+      "host": "nss.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Kamoʻoalewa measures between 130 to 330 feet (40 to 100 meters) across",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Kamoʻoalewa measures between 40 and 100 meters across, which matches the claim's size range exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Kamoʻoalewa measures between 130 to 330 feet (40 to 100 meters) across, which matches the claim's roughly 40–100 meters, though the page does not mention the designation 2016 HO3 explicitly."
+     }
+    ]
+   },
+   {
+    "sentence": "One analysis of the first images puts it nearer 18 meters, though the size is still being refined.",
+    "start": 478,
+    "end": 576,
+    "claim": "One analysis of the first images puts Kamoʻoalewa nearer 18 meters across, though the size is still being refined.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://skyandtelescope.org/astronomy-news/tianwen-2-arrives-at-quasi-moon-kamo%CA%BBoalewa-returns-images/",
+      "host": "skyandtelescope.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It rotates once every 28 minutes, which makes sampling difficult.[4]",
+    "start": 577,
+    "end": 645,
+    "claim": "Kamoʻoalewa rotates once every 28 minutes.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://skyandtelescope.org/astronomy-news/tianwen-2-arrives-at-quasi-moon-kamo%CA%BBoalewa-returns-images/",
+      "host": "skyandtelescope.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It rotates once every 28 minutes, which makes sampling difficult.[4]",
+    "start": 577,
+    "end": 645,
+    "claim": "The 28-minute rotation period of Kamoʻoalewa makes sampling difficult.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://skyandtelescope.org/astronomy-news/tianwen-2-arrives-at-quasi-moon-kamo%CA%BBoalewa-returns-images/",
+      "host": "skyandtelescope.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It may be a fragment of the Moon thrown off by an ancient impact.[1]",
+    "start": 669,
+    "end": 737,
+    "claim": "Kamoʻoalewa may be a fragment of the Moon thrown off by an ancient impact.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://orbitalradar.com/deep-space/tianwen-2",
+      "host": "orbitalradar.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It may be a fragment of the Moon, thrown off by an ancient impact.",
+        "pages": null,
+        "context": {
+         "before": "A Visit to Earth's Quasi-Moon\nTianwen-2 launched on a Long March 3B rocket from Xichang on 28 May 2025 (29 May in China) and reached the near-Earth asteroid Kamo‘oalewa in early July 2026. Kamo‘oalewa is a quasi-satellite of Earth: it circles the Sun in step with our planet, so seen from Earth it seems to loop around us all year. ",
+         "after": "\nCollecting a Sample\nTianwen-2 is flying alongside the asteroid and mapping it before it tries to collect at least 100 grams of material: by hovering, by touch-and-go, or by anchoring itself to the surface. It is due to leave in April 2027 and release a sample capsule as it passes Earth in late November 2027, then fly on to the main-belt comet 311P/PANSTARRS, which it is due to reach in 2035.\nIts"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the object may be a fragment of the Moon thrown off by an ancient impact, which matches every element of the claim, with only the name Kamoʻoalewa not appearing explicitly in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Kamo'oalewa 'may be a fragment of the Moon, thrown off by an ancient impact,' which directly matches the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "One astronomer, after seeing the first image, said it looks to be of asteroidal origin.[5]",
+    "start": 760,
+    "end": 850,
+    "claim": "One astronomer, after seeing the first image, said Kamoʻoalewa looks to be of asteroidal origin.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "“So it seems that Kamo’oalewa is of asteroidal origin,” Mikael Granvik, an astronomer at the University of Helsinki and Luleå University of Technology, told SpaceNews after reviewing the first Tianwen-2 image.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote has astronomer Mikael Granvik saying after reviewing the first Tianwen-2 image that Kamo'oalewa 'seems...is of asteroidal origin,' which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Mikael Granvik, after reviewing the first Tianwen-2 image, saying \"So it seems that Kamo'oalewa is of asteroidal origin,\" which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "A separate study proposes it came from the Flora family of asteroids.[6]",
+    "start": 851,
+    "end": 923,
+    "claim": "A separate study proposes Kamoʻoalewa came from the Flora family of asteroids.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://arxiv.org/abs/2603.28102",
+      "host": "arxiv.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We, therefore, proposed that Kamo'oalewa probably originated from the Flora family and developed an Itokawa-compositional, highly space-weathered, fine-regolith-dominated surface.",
+        "pages": null,
+        "context": {
+         "before": "LL chondrite powder (but not slab) successfully reproduced the reflectance spectrum of Kamo'oalewa. We further traced the dynamical origin of Kamo'oalewa and found that it probably originated from the v6 secular resonance, and more specifically, the Flora family. Kamo'oalewa exhibits a similar composition to Itokawa and 7 objects in the Flora family, but with a higher degree of space weathering. ",
+         "after": "\nCurrent browse context:\nBibliographic and Citation Tools\nCode, Data and Media Associated with this Article\nDemos\nRecommenders and Search Tools\narXivLabs: experimental projects with community collaborators\narXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.\nBoth individuals and organizations that work with arXivLabs have embraced and"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the authors proposed Kamo'oalewa probably originated from the Flora family, which matches the claim's core assertion that a study proposes this origin.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the authors propose Kamo'oalewa probably originated from the Flora family, which supports the claim that a study proposes this origin, though it is the same study rather than a separate one, and the claim's 'separate' wording refers to a study distinct from the Tianwen-2 mission context rather than being contradicted here.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Comet 311P/PanSTARRS. This is a comet-like body in the main asteroid belt, well beyond Mars.[5]",
+    "start": 973,
+    "end": 1068,
+    "claim": "Comet 311P/PanSTARRS is a comet-like body in the main asteroid belt, well beyond Mars.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Tianwen-2 is also bound for 311P/PanSTARRS, a comet-like body in the main asteroid belt, well beyond Mars.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that 311P/PanSTARRS is a comet-like body in the main asteroid belt, well beyond Mars, which matches every part of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Tianwen-2 is bound for 311P/PanSTARRS, described as a comet-like body in the main asteroid belt, well beyond Mars, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The spacecraft is meant to visit it after the sample capsule is dropped off at Earth.",
+    "start": 1069,
+    "end": 1154,
+    "claim": "The spacecraft is meant to visit Comet 311P/PanSTARRS after the sample capsule is dropped off at Earth.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "After nearly 400 days and a billion kilometers, the spacecraft reached Kamoʻoalewa.[5]",
+    "start": 1198,
+    "end": 1284,
+    "claim": "After nearly 400 days and a billion kilometers, the spacecraft reached Kamoʻoalewa.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nearly 400 days and a billion kilometers after leaving Earth, China’s Tianwen-2 spacecraft has arrived at its target: the near-Earth asteroid 469219 Kamoʻoalewa, also known as 2016 HO3.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Tianwen-2 arrived at Kamoʻoalewa after nearly 400 days and a billion kilometers, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states Tianwen-2 arrived at Kamoʻoalewa after nearly 400 days and a billion kilometers after leaving Earth, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "CNSA announced on July 6 that it had closed to within 20 km of the asteroid.[5]",
+    "start": 1285,
+    "end": 1364,
+    "claim": "CNSA announced on July 6 that the spacecraft had closed to within 20 km of Kamoʻoalewa.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The China National Space Administration (CNSA) announced July 6 that Tianwen-2 had closed to within 12 miles (20 km) of the asteroid",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the CNSA July 6 announcement and the 20 km distance to 'the asteroid' for Tianwen-2, but it never names Kamoʻoalewa as that asteroid.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the CNSA announced July 6 that Tianwen-2 had closed to within 12 miles (20 km) of the asteroid, matching every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It is mapping the asteroid in high resolution to pick a safe sampling site.[3]",
+    "start": 1365,
+    "end": 1443,
+    "claim": "The spacecraft is mapping Kamoʻoalewa in high resolution to pick a safe sampling site.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://nss.org/nss-recognizes-china-for-its-successful-rendezvous-with-asteroid-kamooalewa/",
+      "host": "nss.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Over the next nine months, Tianwen-2 will map the asteroid in high resolution to identify a secure landing site.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the mapping in high resolution and the goal of finding a secure landing site, but it does not name Kamoʻoalewa explicitly or say the site is for sampling.",
+      "page_judged": "supported",
+      "page_reason": "The page states that over the next nine months Tianwen-2 will map the asteroid in high resolution to identify a secure landing site, which matches the claim that it is mapping the asteroid to pick a safe sampling site."
+     }
+    ]
+   },
+   {
+    "sentence": "Sampling will use a touch-and-go system and an anchor-and-attach mechanism with surface drills, aiming for about 100 grams of material.[3]",
+    "start": 1444,
+    "end": 1582,
+    "claim": "Sampling will use a touch-and-go system and an anchor-and-attach mechanism with surface drills, aiming for about 100 grams of material.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://nss.org/nss-recognizes-china-for-its-successful-rendezvous-with-asteroid-kamooalewa/",
+      "host": "nss.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It will then employ a touch-and-go sampling system and an advanced anchor-and-attach mechanism featuring surface drills to collect about 3.5 ounces (100 grams) of surface material.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the touch-and-go sampling system, the anchor-and-attach mechanism with surface drills, and the about 100 grams (3.5 ounces) target, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states Tianwen-2 will use a touch-and-go sampling system and an advanced anchor-and-attach mechanism featuring surface drills to collect about 100 grams (3.5 ounces) of surface material, matching every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Which technique it uses depends on what the survey shows about the surface strength.[5]",
+    "start": 1583,
+    "end": 1670,
+    "claim": "Which sampling technique is used depends on what the survey shows about the surface strength of Kamoʻoalewa.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Which technique Tianwen-2 actually uses will depend on what the ongoing survey reveals about the asteroid’s surface strength.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the technique used depends on what the ongoing survey reveals about the asteroid's surface strength, which matches the claim's main point and its specifics about the survey and surface strength.",
+      "page_judged": "supported",
+      "page_reason": "The page states that which technique Tianwen-2 actually uses will depend on what the ongoing survey reveals about the asteroid's surface strength, which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The spacecraft is expected to leave Kamoʻoalewa in April 2027.",
+    "start": 1682,
+    "end": 1744,
+    "claim": "The spacecraft is expected to leave Kamoʻoalewa in April 2027.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Mission planners expect Tianwen-2 to leave Kamoʻoalewa in April 2027, releasing its sample capsule for a landing in China’s Gobi Desert that November.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that mission planners expect Tianwen-2 to leave Kamoʻoalewa in April 2027, which matches the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that mission planners expect Tianwen-2 to leave Kamoʻoalewa in April 2027, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It will release its sample capsule for a landing in China's Gobi Desert that November.[5]",
+    "start": 1745,
+    "end": 1834,
+    "claim": "The spacecraft will release its sample capsule for a landing in China's Gobi Desert in November 2027.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.astronomy.com/space-exploration/tianwen-2-arrives-at-target-asteroid-kamo%CA%BBoalewa/",
+      "host": "astronomy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Mission planners expect Tianwen-2 to leave Kamoʻoalewa in April 2027, releasing its sample capsule for a landing in China’s Gobi Desert that November.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the spacecraft is expected to release its sample capsule for a landing in China's Gobi Desert in November, with the year implied as 2027 by the surrounding April 2027 departure date.",
+      "page_judged": "supported",
+      "page_reason": "The page says Tianwen-2 is expected to leave Kamoʻoalewa in April 2027 and release its sample capsule for a Gobi Desert landing in November, which implies November 2027 and matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "After that, the spacecraft heads on to the comet, in an expedition that spans about a decade.",
+    "start": 1835,
+    "end": 1928,
+    "claim": "After the sample capsule release, the spacecraft heads on to Comet 311P/PanSTARRS, in an expedition that spans about a decade.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 9,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 8,
+    "uncited": 2
+   },
+   "cited_claims": 19,
+   "claims_with_a_verdict": 9,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.4737,
+   "pages_cited": 6,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.005567,
+   "usd_per_claim": 0.000265
+  },
+  "cost": {
+   "total_usd": 0.0056,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 11,
+     "usd": 0.0015
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.0015
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0015
+    }
+   ]
+  }
+ }
+}

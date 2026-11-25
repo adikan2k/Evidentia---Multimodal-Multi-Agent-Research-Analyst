@@ -1,0 +1,836 @@
+{
+ "id": "science-10",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+   "read": true,
+   "chars": 748
+  },
+  {
+   "url": "https://www.newsonair.gov.in/spacex-to-launch-starship-on-one-hour-test-flight-tonight",
+   "read": true,
+   "chars": 747
+  },
+  {
+   "url": "https://www.newsonair.gov.in/spacex-conducts-10th-successful-starship-test-launch-from-texas",
+   "read": true,
+   "chars": 730
+  }
+ ],
+ "usd": 0.002644,
+ "report": {
+  "answer_text": "2025 had five Starship flights, flights 7 through 11. The first three ended in failure, and the last two succeeded.\nFlights 7, 8 and 9 (January to May): three failures in a row\nStarship suffered explosive failures in three back-to-back test flights before its successful 10th flight on August 26.[1]\nFlight 7 was in January and flight 8 in March. From my own knowledge rather than the search results, both ships were lost during ascent, and the booster was caught by the tower arms on at least one of them.\nFlight 9 launched in late May. It flew farther than the previous two attempts, which ended in explosive failure.[2] The booster made a controlled splashdown in the Gulf of Mexico and skipped the tower \"catch\" attempt.[2] The ship's payload bay door failed to open on that flight.[3]\nBefore flight 10, engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.[4]\nFlight 10 (August 26): the turnaround\nThe launch was two days late, and it appeared to be a remarkably successful test after the three back-to-back failures.[5]\nThe upper stage flew into a sub-orbital trajectory as planned, which the three previous flights had failed to do.[5]\nThis time the payload door opened.[3] The ship re-ignited an engine in space and made a soft splashdown in the Indian Ocean.[6] The Super Heavy booster made a controlled splashdown in the Gulf of Mexico.[6]\nFlight 11 (October 13): the last Version 2 flight\nStarship made it halfway around the world and released mock satellites, as it had on flight 10.[7] It carried eight mock Starlink satellites.[7]\nSpaceX ran a series of tests during the ship's entry over the Indian Ocean, as practice for future landings back at the launch site.[7]\nThe heat shield had patches of reconfigured tiles, and some tiles were deliberately left out to test how well the ship tolerates losing them.[1]\nThe booster's return burn went from 13 engines to five and then three, a rehearsal for the next-generation booster's landing maneuvers.[1]\nIt was the last flight of the current Version 2 design.[8]\nWhat came next\nThe next-generation booster and a new ship version were slated to begin test flights in 2026, both with improved Raptor engines.[1] NASA is counting on a modified Starship to land two astronauts on the Moon as early as 2027.[5]",
+  "claims": [
+   {
+    "sentence": "2025 had five Starship flights, flights 7 through 11.",
+    "start": 0,
+    "end": 53,
+    "claim": "2025 had five Starship flights, flights 7 through 11.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The first three ended in failure, and the last two succeeded.",
+    "start": 54,
+    "end": 115,
+    "claim": "The first three Starship flights of 2025 (flights 7, 8 and 9) ended in failure.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The first three ended in failure, and the last two succeeded.",
+    "start": 54,
+    "end": 115,
+    "claim": "The last two Starship flights of 2025 (flights 10 and 11) succeeded.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Starship suffered explosive failures in three back-to-back test flights before its successful 10th flight on August 26.[1]",
+    "start": 177,
+    "end": 299,
+    "claim": "Starship suffered explosive failures in three back-to-back test flights before its successful 10th flight on August 26.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.scientificamerican.com/article/spacexs-starship-succeeds-in-final-test-flight-of-2025/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Prior to its successful 10th flight on August 26, Starship had suffered explosive failures in three back-to-back test flights this year.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that before the successful 10th flight on August 26, Starship had suffered explosive failures in three back-to-back test flights, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that before its successful 10th flight on August 26, Starship had suffered explosive failures in three back-to-back test flights this year, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Flight 7 was in January and flight 8 in March.",
+    "start": 300,
+    "end": 346,
+    "claim": "Flight 7 was in January 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Flight 7 was in January and flight 8 in March.",
+    "start": 300,
+    "end": 346,
+    "claim": "Flight 8 was in March 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Flight 9 launched in late May. It flew farther than the previous two attempts, which ended in explosive failure.[2]",
+    "start": 507,
+    "end": 622,
+    "claim": "Flight 9 launched in late May 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the launch took place 'early this morning' at 5:00 am IST but gives no date or month, so it does not state a late May 2025 launch.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Flight 9 launched in late May. It flew farther than the previous two attempts, which ended in explosive failure.[2]",
+    "start": 507,
+    "end": 622,
+    "claim": "Flight 9 flew farther than flights 7 and 8, which ended in explosive failure.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The ninth uncrewed test launch flew farther than the last two attempts that ended in explosive failure.",
+        "pages": null,
+        "context": {
+         "before": "SpaceX has successfully launched its Starship Super Heavy rocket on its ninth test flight from its facility near Boca Chica Beach in South Texas, early this morning. ",
+         "after": " The much-anticipated liftoff took place at 5:00 am IST. It marks a critical milestone in SpaceX’s mission to develop a fully reusable heavy-lift rocket system with the capacity to carry humans to the Moon and Mars.\nThe booster performed a controlled splashdown in the Gulf of Mexico, foregoing the ambitious “catch” attempt by the launch tower’s robotic arms. The flight also included several"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs that flight 9 flew farther than the last two attempts, which ended in explosive failure, but it does not name those attempts as flights 7 and 8 or state the flight numbers at all.",
+      "page_judged": "supported",
+      "page_reason": "The page states the ninth flight flew farther than the last two attempts that ended in explosive failure, which matches the claim that flight 9 flew farther than flights 7 and 8 (the last two failed attempts), though the page does not name flight numbers 7 and 8 explicitly.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The booster made a controlled splashdown in the Gulf of Mexico and skipped the tower \"catch\" attempt.[2]",
+    "start": 623,
+    "end": 727,
+    "claim": "On flight 9, the booster made a controlled splashdown in the Gulf of Mexico.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The booster performed a controlled splashdown in the Gulf of Mexico, foregoing the ambitious “catch” attempt by the launch tower’s robotic arms.",
+        "pages": null,
+        "context": {
+         "before": "from its facility near Boca Chica Beach in South Texas, early this morning. The ninth uncrewed test launch flew farther than the last two attempts that ended in explosive failure. The much-anticipated liftoff took place at 5:00 am IST. It marks a critical milestone in SpaceX’s mission to develop a fully reusable heavy-lift rocket system with the capacity to carry humans to the Moon and Mars.\n",
+         "after": " The flight also included several in-flight experiments crucial for validating the system’s reusability and robustness."
+        }
+       }
+      ],
+      "quote_reason": "The quote states the booster performed a controlled splashdown in the Gulf of Mexico, which covers every fact in the claim, though it does not explicitly name flight 9 and the claim's flight reference is not confirmed by the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states the booster performed a controlled splashdown in the Gulf of Mexico during the ninth test flight, matching the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The booster made a controlled splashdown in the Gulf of Mexico and skipped the tower \"catch\" attempt.[2]",
+    "start": 623,
+    "end": 727,
+    "claim": "On flight 9, the booster skipped the tower catch attempt.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The booster performed a controlled splashdown in the Gulf of Mexico, foregoing the ambitious “catch” attempt by the launch tower’s robotic arms.",
+        "pages": null,
+        "context": {
+         "before": "from its facility near Boca Chica Beach in South Texas, early this morning. The ninth uncrewed test launch flew farther than the last two attempts that ended in explosive failure. The much-anticipated liftoff took place at 5:00 am IST. It marks a critical milestone in SpaceX’s mission to develop a fully reusable heavy-lift rocket system with the capacity to carry humans to the Moon and Mars.\n",
+         "after": " The flight also included several in-flight experiments crucial for validating the system’s reusability and robustness."
+        }
+       }
+      ],
+      "quote_reason": "The quote backs that the booster skipped the tower catch attempt by doing a controlled splashdown, but it does not name the flight as flight 9.",
+      "page_judged": "supported",
+      "page_reason": "The page states the booster performed a controlled splashdown in the Gulf of Mexico, foregoing the catch attempt by the launch tower's robotic arms, and describes this as the ninth test flight, so the claim is supported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The ship's payload bay door failed to open on that flight.[3]",
+    "start": 728,
+    "end": 789,
+    "claim": "On flight 9, the ship's payload bay door failed to open.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.npr.org/2025/08/26/g-s1-85541/starship-space-x-tenth-flight",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "But on the last test flight the ship's payload bay door failed to open.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim that the ship's payload bay door failed to open on the last test flight, but it never identifies that flight as flight 9.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on the last test flight (the ninth, prior to this tenth flight) the ship's payload bay door failed to open, so the claim is supported, though the page refers to it as 'the last test flight' rather than explicitly 'flight 9'."
+     }
+    ]
+   },
+   {
+    "sentence": "Before flight 10, engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.[4]",
+    "start": 790,
+    "end": 918,
+    "claim": "Before flight 10, engineers fixed a part called the fuel diffuser.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.newsonair.gov.in/spacex-to-launch-starship-on-one-hour-test-flight-tonight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.",
+        "pages": null,
+        "context": {
+         "before": "SpaceX plans to launch its powerful Starship rocket tonight for a test flight lasting about an hour. A live webcast is expected to begin 30 minutes before liftoff, though launch timing may change.\nThis is the fourth Starship flight of 2025. The last three tests all ended in failure. SpaceX hopes this one will succeed.\nThe rocket has been updated since its last flight in May. ",
+         "after": "\nThe uncrewed rocket will follow a similar path as before and try to complete tasks missed in earlier missions.\nNASA plans to use Starship to land astronauts on the moon in 2027. SpaceX also wants to send humans to Mars, but first it must prove the rocket works."
+        }
+       },
+       {
+        "text": "This is the fourth Starship flight of 2025.",
+        "pages": null,
+        "context": {
+         "before": "SpaceX plans to launch its powerful Starship rocket tonight for a test flight lasting about an hour. A live webcast is expected to begin 30 minutes before liftoff, though launch timing may change.\n",
+         "after": " The last three tests all ended in failure. SpaceX hopes this one will succeed.\nThe rocket has been updated since its last flight in May. Engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.\nThe uncrewed rocket will follow a similar path as before and try to complete tasks missed in earlier missions.\nNASA plans to use Starship to land"
+        }
+       },
+       {
+        "text": "The rocket has been updated since its last flight in May.",
+        "pages": null,
+        "context": {
+         "before": "SpaceX plans to launch its powerful Starship rocket tonight for a test flight lasting about an hour. A live webcast is expected to begin 30 minutes before liftoff, though launch timing may change.\nThis is the fourth Starship flight of 2025. The last three tests all ended in failure. SpaceX hopes this one will succeed.\n",
+         "after": " Engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.\nThe uncrewed rocket will follow a similar path as before and try to complete tasks missed in earlier missions.\nNASA plans to use Starship to land astronauts on the moon in 2027. SpaceX also wants to send humans to Mars, but first it must prove the rocket works."
+        }
+       }
+      ],
+      "quote_reason": "The quotes state engineers fixed the fuel diffuser, but they do not say this happened before flight 10, only that it was tied to a pressure problem and that the rocket was updated since its last flight in May.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says engineers fixed the fuel diffuser after the May flight and before this fourth 2025 Starship flight, but it never identifies this flight as flight 10 or gives any flight numbering, so the 'before flight 10' qualifier is not stated.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Before flight 10, engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.[4]",
+    "start": 790,
+    "end": 918,
+    "claim": "The fuel diffuser may have caused a pressure problem in the nose cone.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.newsonair.gov.in/spacex-to-launch-starship-on-one-hour-test-flight-tonight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.",
+        "pages": null,
+        "context": {
+         "before": "SpaceX plans to launch its powerful Starship rocket tonight for a test flight lasting about an hour. A live webcast is expected to begin 30 minutes before liftoff, though launch timing may change.\nThis is the fourth Starship flight of 2025. The last three tests all ended in failure. SpaceX hopes this one will succeed.\nThe rocket has been updated since its last flight in May. ",
+         "after": "\nThe uncrewed rocket will follow a similar path as before and try to complete tasks missed in earlier missions.\nNASA plans to use Starship to land astronauts on the moon in 2027. SpaceX also wants to send humans to Mars, but first it must prove the rocket works."
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the fuel diffuser may have caused a pressure problem in the nose cone, which matches every fact in the claim, including the hedged wording 'may have'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone, matching the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The launch was two days late, and it appeared to be a remarkably successful test after the three back-to-back failures.[5]",
+    "start": 957,
+    "end": 1079,
+    "claim": "The flight 10 launch was two days late.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://spaceflightnow.com/2025/08/27/spacex-successfully-launches-super-heavy-starship-on-critical-test-flight/",
+      "host": "spaceflightnow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The launch was two days late, and it appeared to be a remarkably successful test after the three back-to-back failures.[5]",
+    "start": 957,
+    "end": 1079,
+    "claim": "Flight 10 appeared to be a remarkably successful test after the three back-to-back failures.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://spaceflightnow.com/2025/08/27/spacex-successfully-launches-super-heavy-starship-on-critical-test-flight/",
+      "host": "spaceflightnow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The upper stage flew into a sub-orbital trajectory as planned, which the three previous flights had failed to do.[5]",
+    "start": 1080,
+    "end": 1196,
+    "claim": "On flight 10, the upper stage flew into a sub-orbital trajectory as planned.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://spaceflightnow.com/2025/08/27/spacex-successfully-launches-super-heavy-starship-on-critical-test-flight/",
+      "host": "spaceflightnow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The upper stage flew into a sub-orbital trajectory as planned, which the three previous flights had failed to do.[5]",
+    "start": 1080,
+    "end": 1196,
+    "claim": "The three previous flights had failed to reach the planned sub-orbital trajectory.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://spaceflightnow.com/2025/08/27/spacex-successfully-launches-super-heavy-starship-on-critical-test-flight/",
+      "host": "spaceflightnow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "This time the payload door opened.[3]",
+    "start": 1197,
+    "end": 1234,
+    "claim": "On flight 10, the payload door opened.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.npr.org/2025/08/26/g-s1-85541/starship-space-x-tenth-flight",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This time, the door opened and SpaceX workers on the ground could be heard cheering on a live webcast as video beamed back the view from inside Starship's upper stage.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says a door opened on Starship's upper stage, which backs the main point, but it never names flight 10 or identifies the door as the payload door.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on the 10th test flight the payload bay door opened and the video showed dummy satellites being ejected out the door, directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The ship re-ignited an engine in space and made a soft splashdown in the Indian Ocean.[6]",
+    "start": 1235,
+    "end": 1324,
+    "claim": "On flight 10, the ship re-ignited an engine in space and made a soft splashdown in the Indian Ocean.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.newsonair.gov.in/spacex-conducts-10th-successful-starship-test-launch-from-texas",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Starship upper stage completed key manoeuvres, including a successful re-ignition in space and a soft splashdown in the Indian Ocean.",
+        "pages": null,
+        "context": {
+         "before": "SpaceX successfully launched its 10th Starship flight test yesterday from Starbase, Texas, marking a significant step toward developing the world’s first fully reusable rocket. The two-stage vehicle lifted off after weather delays.\nAccording to media reports, the Super Heavy booster executed a controlled splashdown in the Gulf of Mexico, while ",
+         "after": "\nFor the first time, SpaceX demonstrated payload deployment using Starlink simulators. According to reports, the flight met all major objectives, providing vital data for future missions, including NASA’s Artemis III Moon landing planned for 2027."
+        }
+       }
+      ],
+      "quote_reason": "The quote states that the Starship upper stage achieved a successful in-space re-ignition and a soft splashdown in the Indian Ocean, which covers every fact in the claim, though it does not explicitly name flight 10.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Starship upper stage completed a successful re-ignition in space and a soft splashdown in the Indian Ocean during the 10th flight test, matching the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The Super Heavy booster made a controlled splashdown in the Gulf of Mexico.[6]",
+    "start": 1325,
+    "end": 1403,
+    "claim": "On flight 10, the Super Heavy booster made a controlled splashdown in the Gulf of Mexico.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.newsonair.gov.in/spacex-conducts-10th-successful-starship-test-launch-from-texas",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Super Heavy booster executed a controlled splashdown in the Gulf of Mexico",
+        "pages": null,
+        "context": {
+         "before": "SpaceX successfully launched its 10th Starship flight test yesterday from Starbase, Texas, marking a significant step toward developing the world’s first fully reusable rocket. The two-stage vehicle lifted off after weather delays.\nAccording to media reports, ",
+         "after": ", while the Starship upper stage completed key manoeuvres, including a successful re-ignition in space and a soft splashdown in the Indian Ocean.\nFor the first time, SpaceX demonstrated payload deployment using Starlink simulators. According to reports, the flight met all major objectives, providing vital data for future missions, including NASA’s Artemis III Moon landing planned for 2027."
+        }
+       }
+      ],
+      "quote_reason": "The quote backs the booster's controlled splashdown in the Gulf of Mexico but never mentions flight 10, which the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The page states that according to media reports the Super Heavy booster executed a controlled splashdown in the Gulf of Mexico during the 10th Starship flight test, which matches the claim.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Starship made it halfway around the world and released mock satellites, as it had on flight 10.[7]",
+    "start": 1454,
+    "end": 1552,
+    "claim": "On flight 11, Starship made it halfway around the world and released mock satellites.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.npr.org/2025/10/13/nx-s1-5573520/space-x-eleventh-test-flight-starship",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "successfully making it halfway around the world while releasing mock satellites like last time.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Like before, Starship carried up eight mock satellites mimicking SpaceX's Starlinks.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Starship successfully made it halfway around the world while releasing mock satellites, matching both facts in the claim, and the claim's flight-11 reference is consistent with the quoted context.",
+      "page_judged": "supported",
+      "page_reason": "The page states the Starship launched on its 11th test flight, successfully making it halfway around the world while releasing mock satellites like last time (eight mock satellites mimicking Starlinks)."
+     }
+    ]
+   },
+   {
+    "sentence": "It carried eight mock Starlink satellites.[7]",
+    "start": 1553,
+    "end": 1598,
+    "claim": "Flight 11 carried eight mock Starlink satellites.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.npr.org/2025/10/13/nx-s1-5573520/space-x-eleventh-test-flight-starship",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Like before, Starship carried up eight mock satellites mimicking SpaceX's Starlinks.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Starship carried eight mock satellites mimicking Starlinks, but it does not name Flight 11 or say which flight it describes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Starship carried up eight mock satellites mimicking SpaceX's Starlinks on the 11th test flight, which matches the claim that flight 11 carried eight mock Starlink satellites."
+     }
+    ]
+   },
+   {
+    "sentence": "SpaceX ran a series of tests during the ship's entry over the Indian Ocean, as practice for future landings back at the launch site.[7]",
+    "start": 1599,
+    "end": 1734,
+    "claim": "SpaceX ran a series of tests during the ship's entry over the Indian Ocean on flight 11, as practice for future landings back at the launch site.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.npr.org/2025/10/13/nx-s1-5573520/space-x-eleventh-test-flight-starship",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SpaceX conducted a series of tests during the spacecraft's entry over the Indian Ocean as practice for future landings back at the launch site.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the claim's main point that SpaceX ran tests during the spacecraft's Indian Ocean entry as practice for future launch-site landings, but they do not state that this happened on flight 11.",
+      "page_judged": "supported",
+      "page_reason": "The page states that SpaceX conducted a series of tests during the spacecraft's entry over the Indian Ocean as practice for future landings back at the launch site, and that this was the 11th test flight."
+     }
+    ]
+   },
+   {
+    "sentence": "The heat shield had patches of reconfigured tiles, and some tiles were deliberately left out to test how well the ship tolerates losing them.[1]",
+    "start": 1735,
+    "end": 1879,
+    "claim": "The flight 11 heat shield had patches of reconfigured tiles, and some tiles were deliberately left out to test how well the ship tolerates losing them.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.scientificamerican.com/article/spacexs-starship-succeeds-in-final-test-flight-of-2025/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "One important difference in this latest test was the ship’s heat shield, which featured multiple patches of subtly reconfigured protective tiles, and some that were deliberately missing, to test Starship’s tolerance to shedding tiles during flight.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the heat shield featured multiple patches of reconfigured tiles and some deliberately missing tiles to test tolerance to tile shedding, which covers every fact in the claim, though it does not explicitly name the flight as flight 11 in this excerpt.",
+      "page_judged": "supported",
+      "page_reason": "The page states the Flight 11 heat shield had multiple patches of subtly reconfigured tiles and some deliberately missing tiles to test tolerance to shedding tiles during flight, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The booster's return burn went from 13 engines to five and then three, a rehearsal for the next-generation booster's landing maneuvers.[1]",
+    "start": 1880,
+    "end": 2018,
+    "claim": "On flight 11, the booster's return burn went from 13 engines to five and then three.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.scientificamerican.com/article/spacexs-starship-succeeds-in-final-test-flight-of-2025/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This time the booster’s return began with a burn of 13 engines before dwindling to five and then three",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 13-to-five-to-three engine sequence for the booster's return burn, but it does not name flight 11, so that specific is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the booster's return began with a burn of 13 engines before dwindling to five and then three, matching the claim's sequence on Flight 11."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 5,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 12,
+    "uncited": 5
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.15,
+   "pages_cited": 7,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 3,
+   "usd": 0.004355,
+   "usd_per_claim": 0.000174
+  },
+  "cost": {
+   "total_usd": 0.0044,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.001
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

@@ -14,10 +14,12 @@ from urllib.parse import urljoin, urlsplit
 from urllib.robotparser import RobotFileParser
 
 import httpx
+import lxml.etree
+import lxml.html
 import trafilatura
 
 from evidentia.config import Settings
-from evidentia.netguard import BlockedAddress, guarded_transport
+from evidentia.netguard import BlockedAddress, Unresolvable, guarded_transport
 from evidentia.pdf import Unreadable, read_pdf
 from evidentia.schemas import SearchHit, SkippedPage, Source
 from evidentia.tracing import Tracer
@@ -33,6 +35,15 @@ class Skip(Exception):
         self.reason = reason
 
 
+NO_SUCH_NAME = "name does not resolve"
+NO_READABLE_TEXT = "no readable text"
+
+
+def does_not_resolve(err: httpx.HTTPError) -> bool:
+    """httpx wraps the connection error; ours is kept as the cause."""
+    return isinstance(err.__cause__, Unresolvable)
+
+
 def clean_text(raw: str) -> str:
     """Single spaces inside a paragraph, one newline between paragraphs.
 
@@ -45,6 +56,54 @@ def clean_text(raw: str) -> str:
 def extract_text(html: bytes) -> str:
     raw = trafilatura.extract(html, include_comments=False, favor_precision=True)
     return clean_text(raw or "")
+
+
+# The rest of the page (D-049): what a reader sees around the article. Dates in the header, image
+# captions and stat boxes live here, and `extract_text` drops them.
+NOT_SHOWN = {
+    "script", "style", "noscript", "template", "svg", "head", "iframe", "object",
+    "button", "select", "option", "input", "textarea",
+}  # fmt: skip
+BLOCKS = {
+    "p", "div", "section", "article", "aside", "header", "footer", "nav", "main", "li", "ul",
+    "ol", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "figure", "figcaption",
+    "blockquote", "dd", "dt", "dl", "time", "address", "summary", "details", "caption", "pre",
+}  # fmt: skip
+
+
+def visible_lines(html: bytes) -> list[str]:
+    """The page's text, one block per line, without what a reader is never shown."""
+    try:
+        root = lxml.html.fromstring(html)
+    except (lxml.etree.ParserError, ValueError):
+        return []
+    for el in list(root.iter()):
+        if not isinstance(el.tag, str):
+            el.drop_tree()  # comments and processing instructions
+        elif el.tag in NOT_SHOWN or el.get("hidden") is not None or el.get("aria-hidden") == "true":
+            el.drop_tree()
+    for el in root.iter():
+        if el.tag in BLOCKS:
+            el.text = "\n" + (el.text or "")
+            el.tail = "\n" + (el.tail or "")
+        elif el.tag == "br":
+            el.tail = "\n" + (el.tail or "")
+    return clean_text(root.text_content()).split("\n")
+
+
+def read_page(html: bytes) -> tuple[str, int]:
+    """The article, then the rest of the page's visible text (D-049).
+
+    Returns the text and the article's length. Every character is the page's own text, so a quote
+    from either part is still an exact span. Lines already in the article are not repeated.
+    """
+    article = extract_text(html)
+    rest = [
+        line for line in dict.fromkeys(visible_lines(html)) if len(line) > 1 and line not in article
+    ]
+    if not rest:
+        return article, len(article)
+    return (article + "\n" + "\n".join(rest)).strip("\n"), len(article)
 
 
 def is_public_host(host: str) -> bool:
@@ -135,7 +194,9 @@ class Robots:
         await self.limiter.wait(origin)
         try:
             response = await self.client.get(f"{origin}/robots.txt", follow_redirects=True)
-        except httpx.HTTPError:
+        except httpx.HTTPError as err:
+            if does_not_resolve(err):
+                raise Skip(NO_SUCH_NAME) from err
             return None
         rules = RobotFileParser()
         if response.status_code in (401, 403):
@@ -156,9 +217,12 @@ class Fetcher:
         tracer: Tracer,
         client: httpx.AsyncClient | None = None,
         limiter: HostLimiter | None = None,
+        rest_of_page: bool = False,
     ) -> None:
         self.settings = settings
         self.tracer = tracer
+        # The auditor reads the rest of the page too (D-049); the research agent does not.
+        self.rest_of_page = rest_of_page
         self.client = client or httpx.AsyncClient(
             timeout=settings.fetch_timeout_s, transport=guarded_transport(), trust_env=False
         )
@@ -186,10 +250,7 @@ class Fetcher:
                 if body.kind == "pdf":
                     source = await self.read_pdf(hit, body.data)
                 else:
-                    text = await asyncio.to_thread(extract_text, body.data)
-                    if len(text) < self.settings.min_page_chars:
-                        raise Skip("no readable text")
-                    source = Source(id="", url=hit.url, title=hit.title, text=text)
+                    source = await asyncio.to_thread(self.read_html, hit, body.data)
             except Skip as skip:
                 span.update(output={"skipped": skip.reason})
                 return skip
@@ -198,9 +259,23 @@ class Fetcher:
                 return Skip("not a public address")
             except httpx.HTTPError as err:
                 span.update(output={"skipped": type(err).__name__})
+                if does_not_resolve(err):
+                    return Skip(NO_SUCH_NAME)
                 return Skip(f"network error ({type(err).__name__})")
             span.update(output={"kind": source.kind, "chars": len(source.text)})
             return source
+
+    def read_html(self, hit: SearchHit, data: bytes) -> Source:
+        if not self.rest_of_page:
+            text = extract_text(data)
+            if len(text) < self.settings.min_page_chars:
+                raise Skip(NO_READABLE_TEXT)
+            return Source(id="", url=hit.url, title=hit.title, text=text)
+        text, article = read_page(data)
+        # Judged by the article alone, so menus and footers do not make an empty page look read.
+        if article < self.settings.min_page_chars:
+            raise Skip(NO_READABLE_TEXT)
+        return Source(id="", url=hit.url, title=hit.title, text=text, article_chars=article)
 
     async def read_pdf(self, hit: SearchHit, data: bytes) -> Source:
         s = self.settings
@@ -226,7 +301,7 @@ class Fetcher:
 
     async def fetch_body(self, url: str) -> Body:
         """Follow redirects by hand so robots.txt and the rate limit apply to every hop."""
-        for _ in range(MAX_REDIRECTS + 1):
+        for hop in range(MAX_REDIRECTS + 1):
             if urlsplit(url).scheme not in ("http", "https"):
                 raise Skip("not an http(s) address")
             if not is_public_host(urlsplit(url).hostname or ""):
@@ -239,7 +314,10 @@ class Fetcher:
                     url = urljoin(url, response.headers["location"])
                     continue
                 if response.status_code != 200:
-                    raise Skip(f"HTTP {response.status_code}")
+                    # A 404 reached through a redirect is often a site sending crawlers to a
+                    # block page, not a missing page, so only the first answer counts as dead.
+                    after = " after a redirect" if hop else ""
+                    raise Skip(f"HTTP {response.status_code}{after}")
                 return await self._read_body(response)
         raise Skip("too many redirects")
 

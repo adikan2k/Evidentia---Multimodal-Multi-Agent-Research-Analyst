@@ -1,0 +1,458 @@
+{
+ "id": "nq-12",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Tilman Fertitta, a Houston billionaire, owns the Golden Nugget Atlantic City through his company. Fertitta Entertainment, owned by Tilman Fertitta, has subsidiaries that include Landry's, Inc., the Houston Rockets and the Golden Nugget casinos.[1] Landry's, Inc. is the entity that holds the property directly. Landry's took control of the property on May 23, 2011, and renamed it the Golden Nugget Atlantic City.[2] It was previously Trump Marina.\nTwo recent developments:\nCaesars deal: Fertitta Entertainment will pay $5.7 billion to acquire Caesars Entertainment, which owns Harrah's, the Tropicana and Caesars Atlantic City.[3] Because Fertitta already owns Golden Nugget Atlantic City, the combined company will control four casino hotels at the Jersey Shore.[3] The search results don't say whether the deal has closed. A shareholder vote was scheduled, so check for the latest status.\nAmbassador role: Fertitta said he would resign as CEO if confirmed as U.S. ambassador to Italy.[4] A related headline says New Jersey casino regulators approved his ex-wife to run his company while he serves as ambassador.[4] Day-to-day leadership may therefore differ from ownership.",
+  "claims": [
+   {
+    "sentence": "Tilman Fertitta, a Houston billionaire, owns the Golden Nugget Atlantic City through his company.",
+    "start": 0,
+    "end": 97,
+    "claim": "Tilman Fertitta, a Houston billionaire, owns the Golden Nugget Atlantic City through his company.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Fertitta_Entertainment",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Within the portfolio are many luxury hotels and well known restaurant brands such as Rainforest Café, Del Frisco's, Bubba Gump Shrimp Company, Morton's The Steakhouse, among others.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Golden Nugget Atlantic City",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes name the Golden Nugget Atlantic City as part of a portfolio of luxury hotels and restaurant brands, but they never say Tilman Fertitta, Houston, billionaire, or ownership through his company.",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Golden Nugget Atlantic City among Fertitta Entertainment’s holdings and names Tilman Fertitta as the company’s owner, but it does not state that he is a Houston billionaire."
+     }
+    ]
+   },
+   {
+    "sentence": "Fertitta Entertainment, owned by Tilman Fertitta, has subsidiaries that include Landry's, Inc., the Houston Rockets and the Golden Nugget casinos.[1]",
+    "start": 98,
+    "end": 247,
+    "claim": "Fertitta Entertainment is owned by Tilman Fertitta.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Fertitta_Entertainment",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "| Owner | Tilman Fertitta |",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Fertitta Entertainment is an American conglomerate and holding company that holds companies and investments owned by Tilman Fertitta.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Fertitta Entertainment is a holding company owned by Tilman Fertitta and list Tilman Fertitta as its owner, which backs the entire claim.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Tilman Fertitta as the owner of Fertitta Entertainment."
+     }
+    ]
+   },
+   {
+    "sentence": "Fertitta Entertainment, owned by Tilman Fertitta, has subsidiaries that include Landry's, Inc., the Houston Rockets and the Golden Nugget casinos.[1]",
+    "start": 98,
+    "end": 247,
+    "claim": "Fertitta Entertainment has subsidiaries that include Landry's, Inc., the Houston Rockets and the Golden Nugget casinos.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Fertitta_Entertainment",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "These include Landry's, Inc., the Houston Rockets, and the Golden Nugget[3] casinos.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Landry's, Inc. (60%)",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Houston Rockets (100%)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states that the subsidiaries include Landry's, Inc., the Houston Rockets, and the Golden Nugget casinos, matching the claim, while the other quotes add ownership percentages not in the claim.",
+      "page_judged": "not_supported",
+      "page_reason": "The page identifies Landry’s, the Houston Rockets, and Golden Nugget casinos as companies or investments in Fertitta Entertainment’s portfolio, but does not state that they are subsidiaries."
+     }
+    ]
+   },
+   {
+    "sentence": "Landry's, Inc. is the entity that holds the property directly.",
+    "start": 248,
+    "end": 310,
+    "claim": "Landry's, Inc. is the entity that holds the Golden Nugget Atlantic City property directly.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Golden_Nugget_Atlantic_City",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Landry's, Inc. purchased the casino from Trump Entertainment Resorts in February 2011, and the sale was approved in late May.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Owner | Landry's, Inc.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show Landry's, Inc. purchased the casino and is listed as owner, which backs the main point, but they do not state that it holds the property directly rather than through a subsidiary or other entity.",
+      "page_judged": "not_supported",
+      "page_reason": "The page identifies Landry’s, Inc. as the owner and says it purchased the property, but does not state that it holds the property directly."
+     }
+    ]
+   },
+   {
+    "sentence": "Landry's took control of the property on May 23, 2011, and renamed it the Golden Nugget Atlantic City.[2]",
+    "start": 311,
+    "end": 416,
+    "claim": "Landry's took control of the Golden Nugget Atlantic City property on May 23, 2011.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Golden_Nugget_Atlantic_City",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Landry's took control of the property on May 23, 2011, and renamed it the Golden Nugget Atlantic City.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Landry's purchased the property for $38 million,[25] taking control on May 23, 2011,[26] and renamed it the Golden Nugget Atlantic City.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that Landry's took control of the property on May 23, 2011 and renamed it the Golden Nugget Atlantic City, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Landry’s took control of the property on May 23, 2011."
+     }
+    ]
+   },
+   {
+    "sentence": "Landry's took control of the property on May 23, 2011, and renamed it the Golden Nugget Atlantic City.[2]",
+    "start": 311,
+    "end": 416,
+    "claim": "Landry's renamed the property the Golden Nugget Atlantic City.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Golden_Nugget_Atlantic_City",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Landry's took control of the property on May 23, 2011, and renamed it the Golden Nugget Atlantic City.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Landry's renamed the property the Golden Nugget Atlantic City, which matches the claim in full.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Landry's took control of the property on May 23, 2011, and renamed it the Golden Nugget Atlantic City."
+     }
+    ]
+   },
+   {
+    "sentence": "It was previously Trump Marina.",
+    "start": 417,
+    "end": 448,
+    "claim": "The Golden Nugget Atlantic City property was previously called Trump Marina.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Caesars deal: Fertitta Entertainment will pay $5.7 billion to acquire Caesars Entertainment, which owns Harrah's, the Tropicana and Caesars Atlantic City.[3]",
+    "start": 474,
+    "end": 631,
+    "claim": "Fertitta Entertainment will pay $5.7 billion to acquire Caesars Entertainment.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cbsnews.com/philadelphia/news/caesars-casinos-atlantic-city-new-jersey-sale-fertitta/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Caesars deal: Fertitta Entertainment will pay $5.7 billion to acquire Caesars Entertainment, which owns Harrah's, the Tropicana and Caesars Atlantic City.[3]",
+    "start": 474,
+    "end": 631,
+    "claim": "Caesars Entertainment owns Harrah's, the Tropicana and Caesars Atlantic City.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cbsnews.com/philadelphia/news/caesars-casinos-atlantic-city-new-jersey-sale-fertitta/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Because Fertitta already owns Golden Nugget Atlantic City, the combined company will control four casino hotels at the Jersey Shore.[3]",
+    "start": 632,
+    "end": 767,
+    "claim": "Because Fertitta already owns Golden Nugget Atlantic City, the combined company will control four casino hotels at the Jersey Shore.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cbsnews.com/philadelphia/news/caesars-casinos-atlantic-city-new-jersey-sale-fertitta/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A shareholder vote was scheduled, so check for the latest status.",
+    "start": 826,
+    "end": 891,
+    "claim": "A shareholder vote on the Caesars deal was scheduled.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Ambassador role: Fertitta said he would resign as CEO if confirmed as U.S. ambassador to Italy.[4]",
+    "start": 892,
+    "end": 990,
+    "claim": "Fertitta said he would resign as CEO if confirmed as U.S. ambassador to Italy.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://pressofatlanticcity.com/news/local/casinos/article_fb60ff4c-9639-430c-9fed-444c4115ebf1.html",
+      "host": "pressofatlanticcity.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A related headline says New Jersey casino regulators approved his ex-wife to run his company while he serves as ambassador.[4]",
+    "start": 991,
+    "end": 1117,
+    "claim": "A related headline says New Jersey casino regulators approved Fertitta's ex-wife to run his company while he serves as ambassador.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://pressofatlanticcity.com/news/local/casinos/article_fb60ff4c-9639-430c-9fed-444c4115ebf1.html",
+      "host": "pressofatlanticcity.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 13,
+   "labels": {
+    "supported": 3,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 5,
+    "uncited": 2
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.2727,
+   "pages_cited": 4,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004821,
+   "usd_per_claim": 0.000371
+  },
+  "cost": {
+   "total_usd": 0.0048,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0015
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "id": "nq-10-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:06:11+00:00",
+ "report": {
+  "answer_text": "Perth is the capital of Western Australia.",
+  "claims": [
+   {
+    "sentence": "Perth is the capital of Western Australia.",
+    "start": 0,
+    "end": 42,
+    "claim": "Perth is the capital of Western Australia.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 1,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000115,
+   "usd_per_claim": 0.000115
+  },
+  "cost": {
+   "total_usd": 0.0001,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

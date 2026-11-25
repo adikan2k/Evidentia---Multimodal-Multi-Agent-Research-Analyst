@@ -1,0 +1,852 @@
+{
+ "id": "nq-49",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:43:26+00:00",
+ "report": {
+  "answer_text": "As of November 24, 2026, Israel is the main foreign country carrying out military operations in Syria, but the two aren’t fighting a full-scale war. Inside Syria, the government still faces an ISIS insurgency and localized violence. These are separate conflicts. (dppa.un.org)\nIsrael: After Bashar al-Assad’s government fell on December 8, 2024, Israel moved troops into the UN-monitored buffer zone near the Golan Heights and carried out strikes and raids in Syria. Israel says it wants to keep hostile armed groups away from its border and that some operations are meant to protect Syria’s Druze minority. Syria says the operations violate its sovereignty, and the UN says Israel’s military presence and activity in the buffer zone violate the 1974 disengagement agreement. (digitallibrary.un.org)\nISIS: The Islamic State no longer holds the territory it once controlled, but its fighters still carry out attacks and seek to undermine the new Syrian government. This is an insurgency, not a war with another country. (euaa.europa.eu)\nOther armed groups: In the south, tensions persist between Damascus and local Druze factions over security and who governs the area. In the northeast, major fighting between the government and the Kurdish-led Syrian Democratic Forces ended with a January 2026 agreement, though tensions remain. (dppa.un.org)\nThe 2011–2024 civil war was a different conflict: it began after Assad’s government cracked down on anti-government protests and ended with his overthrow. The violence today is not simply that same war continuing. (cfr.org)",
+  "claims": [
+   {
+    "sentence": "As of November 24, 2026, Israel is the main foreign country carrying out military operations in Syria, but the two aren’t fighting a full-scale war.",
+    "start": 0,
+    "end": 148,
+    "claim": "As of November 24, 2026, Israel is the main foreign country carrying out military operations in Syria.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Israeli military presence and activity in southern Syria as violations of the 1974 agreement, but it does not state anything about November 24, 2026 or characterize Israel as the main foreign country conducting military operations in Syria."
+     }
+    ]
+   },
+   {
+    "sentence": "As of November 24, 2026, Israel is the main foreign country carrying out military operations in Syria, but the two aren’t fighting a full-scale war.",
+    "start": 0,
+    "end": 148,
+    "claim": "Israel and Syria are not fighting a full-scale war.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Israeli incursions, checkpoints, artillery fire and a Netanyahu visit to Mount Hermon, plus US mediation, but never explicitly states whether a full-scale war is occurring or not, so the claim's 'not fighting a full-scale war' is not directly stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Inside Syria, the government still faces an ISIS insurgency and localized violence.",
+    "start": 149,
+    "end": 232,
+    "claim": "Inside Syria, the government still faces an ISIS insurgency.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses security challenges in Syria, including Sweida clashes, Kurdish-area abductions, and Israeli incursions, but never mentions ISIS or an ISIS insurgency."
+     }
+    ]
+   },
+   {
+    "sentence": "Inside Syria, the government still faces an ISIS insurgency and localized violence.",
+    "start": 149,
+    "end": 232,
+    "claim": "Inside Syria, the government still faces localized violence.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 1 September, renewed clashes between Internal Security Forces and the National Guard affiliated with Sheikh Hikmat al-Hijri left several casualties.",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       },
+       {
+        "text": "a standoff between General Security and some other security forces around a detention centre, which some detainees then set on fire",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes describe clashes with casualties between Internal Security Forces and a National Guard, and a standoff around a detention centre, which together back the claim of localized violence facing the government inside Syria.",
+      "page_judged": "supported",
+      "page_reason": "The page describes ongoing violence and security challenges in Syria, including clashes in Sweida, the abduction and killing of a former SDF fighter with demonstrations and a standoff at a detention centre, and protests over fuel prices, which together support the claim that the government faces localized violence."
+     }
+    ]
+   },
+   {
+    "sentence": "These are separate conflicts. (dppa.un.org)",
+    "start": 233,
+    "end": 276,
+    "claim": "The Israel–Syria situation and the ISIS insurgency inside Syria are separate conflicts.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses Israeli military presence and incursions in southern Syria and separately addresses Sweida and the Northeast, but says nothing about an ISIS insurgency inside Syria, so it cannot support a claim that the two are separate conflicts."
+     }
+    ]
+   },
+   {
+    "sentence": "After Bashar al-Assad’s government fell on December 8, 2024, Israel moved troops into the UN-monitored buffer zone near the Golan Heights and carried out strikes and raids in Syria.",
+    "start": 285,
+    "end": 466,
+    "claim": "Bashar al-Assad’s government fell on December 8, 2024.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Amnesty International, “Syria: Israel’s destruction of civilian homes in Quneitra amounts to war crimes”, 14 May 2026.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       },
+       {
+        "text": "the fall of the former Syrian Government in December 2024",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the former Syrian government fell in December 2024, but do not specify the day, so the December 8 date is not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page refers to 'the fall of the former Syrian Government in December 2024' and cites Al-Marsad's 'areas occupied after the fall of Bashar al-Assad's regime on December 8, 2024', which directly states the claimed date and event."
+     }
+    ]
+   },
+   {
+    "sentence": "After Bashar al-Assad’s government fell on December 8, 2024, Israel moved troops into the UN-monitored buffer zone near the Golan Heights and carried out strikes and raids in Syria.",
+    "start": 285,
+    "end": 466,
+    "claim": "After Assad’s government fell, Israel moved troops into the UN-monitored buffer zone near the Golan Heights.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "maintaining and formalizing the military control that it had established over the area of separation following the fall of the former Syrian Government in December 2024",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Israel established military control over the area of separation after the Syrian government fell in December 2024, but it does not explicitly say Israel moved troops into the UN-monitored buffer zone or name Assad's government.",
+      "page_judged": "supported",
+      "page_reason": "The page states that after the fall of the former Syrian Government in December 2024 Israel maintained and formalized military control over the area of separation (the UN-monitored buffer zone) and conducted incursions, which supports the claim that Israel moved troops into the buffer zone near the Golan Heights."
+     }
+    ]
+   },
+   {
+    "sentence": "After Bashar al-Assad’s government fell on December 8, 2024, Israel moved troops into the UN-monitored buffer zone near the Golan Heights and carried out strikes and raids in Syria.",
+    "start": 285,
+    "end": 466,
+    "claim": "Israel carried out strikes and raids in Syria after Assad’s government fell.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Throughout the reporting period, Israel took steps to consolidate and expand its occupation of the Syrian Golan, maintaining and formalizing the military control that it had established over the area of separation following the fall of the former Syrian Government in December 2024 and increasingly conducting incursions in the southern Syrian Arab Republic.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       },
+       {
+        "text": "Incursions by Israeli forces into villages in the Governorates of Qunaytirah, Dar‘a and Rif Dimashq have involved the establishment of temporary checkpoints, periodic searches of civilian homes and the collection of personal data.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that after the former Syrian Government fell in December 2024, Israeli forces conducted incursions into Syrian villages in Qunaytirah, Dar'a and Rif Dimashq, which the claim's general description of strikes and raids in Syria covers, though the quotes mention incursions and searches rather than explicitly 'strikes'.",
+      "page_judged": "supported",
+      "page_reason": "The page describes Israeli incursions into villages in southern Syria, detentions, home demolitions and military posts established after the fall of the Syrian government in December 2024, which supports Israeli raids in Syria after Assad's government fell, though it does not use the word 'strikes' explicitly."
+     }
+    ]
+   },
+   {
+    "sentence": "Israel says it wants to keep hostile armed groups away from its border and that some operations are meant to protect Syria’s Druze minority.",
+    "start": 467,
+    "end": 607,
+    "claim": "Israel says it wants to keep hostile armed groups away from its border.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 17 April 2026, Mr. Netanyahu declared the establishment of a “deep security buffer zone” marked by a “yellow line” encompassing “Mont Hermon, through the Golan Heights and down to Yarmouk”, and said that Israeli forces stationed there would continue to defend against threats.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       },
+       {
+        "text": "That presence will ultimately include “a security perimeter presence that will remain until Gaza is properly secure from any resurgent terror threat”.",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes describe a Netanyahu-declared buffer zone and a security perimeter presence meant to defend against threats and resurgent terror, which backs the claim that Israel wants to keep armed hostile groups away from its border.",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports Israeli leaders' intentions to transform southern Lebanon into another Gaza, Netanyahu's statements about controlling Gaza and the Golan buffer zone to 'defend against threats', and a security perimeter in Gaza until it is secure from resurgent terror, but it never states that Israel says it wants to keep hostile armed groups away from its border in those words, so the claim is only loosely reflected and not explicitly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Israel says it wants to keep hostile armed groups away from its border and that some operations are meant to protect Syria’s Druze minority.",
+    "start": 467,
+    "end": 607,
+    "claim": "Israel says some of its operations in Syria are meant to protect Syria’s Druze minority.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses Israeli military posts, incursions, a 'deep security buffer zone' and Netanyahu's statement about defending against threats, but never mentions Israel saying its operations protect Syria's Druze minority."
+     }
+    ]
+   },
+   {
+    "sentence": "Syria says the operations violate its sovereignty, and the UN says Israel’s military presence and activity in the buffer zone violate the 1974 disengagement agreement.",
+    "start": 608,
+    "end": 775,
+    "claim": "Syria says Israel’s operations violate its sovereignty.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports that the Syrian Government reported Israeli detentions, but it never states that Syria says Israel's operations violate its sovereignty; sovereignty appears only in the Special Committee's recommendations and general references to General Assembly resolutions."
+     }
+    ]
+   },
+   {
+    "sentence": "Syria says the operations violate its sovereignty, and the UN says Israel’s military presence and activity in the buffer zone violate the 1974 disengagement agreement.",
+    "start": 608,
+    "end": 775,
+    "claim": "The UN says Israel’s military presence and activity in the buffer zone violate the 1974 disengagement agreement.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://digitallibrary.un.org/record/4129331/files/A_81_354-EN.pdf?utm_source=openai",
+      "host": "digitallibrary.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The United Nations Disengagement Observer Force (UNDOF) documented numerous violations of the 1974 Agreement on Disengagement between Israeli and Syrian Forces",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       },
+       {
+        "text": "including the unauthorized presence of Iron Dome batteries, artillery and multiple rocket launcher systems belonging to Israel on the Alpha side",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the UN documenting violations of the 1974 agreement through unauthorized Israeli military presence (Iron Dome, artillery, rocket launchers) on the Alpha side, but they do not explicitly call that area the buffer zone or describe Israeli military activity beyond presence.",
+      "page_judged": "supported",
+      "page_reason": "The page says UNDOF documented numerous violations of the 1974 Agreement on Disengagement, including unauthorized Israeli military presence on the Alpha side of the area of separation (the buffer zone), and the Special Committee urges Israel to respect that agreement."
+     }
+    ]
+   },
+   {
+    "sentence": "The Islamic State no longer holds the territory it once controlled, but its fighters still carry out attacks and seek to undermine the new Syrian government.",
+    "start": 806,
+    "end": 963,
+    "claim": "The Islamic State no longer holds the territory it once controlled in Syria.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.euaa.europa.eu/syria-security-situation/1-general-description-security-situation?utm_source=openai",
+      "host": "euaa.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes ISIL attacks and government and US operations against ISIL sites, and a footnote title mentions the Syrian army completing its takeover of Raqqa and Deir Ezzor, but it never states that ISIL no longer holds territory it once controlled in Syria."
+     }
+    ]
+   },
+   {
+    "sentence": "The Islamic State no longer holds the territory it once controlled, but its fighters still carry out attacks and seek to undermine the new Syrian government.",
+    "start": 806,
+    "end": 963,
+    "claim": "Islamic State fighters still carry out attacks and seek to undermine the new Syrian government.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.euaa.europa.eu/syria-security-situation/1-general-description-security-situation?utm_source=openai",
+      "host": "euaa.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Attacks attributed to ISIL continued, with the UN Sanctions Monitoring team member reported that Member States identified at least 129 such incidents between June and November 2025 alone",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Several attacks were carried out after ISIL spokesperson Abu Hudhayfa Al-Ansari on 21 February 2026 made a call to action against the transitional government.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "At the same time, transitional government61 and US forces continued to target ISIL sites.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that ISIL attacks continued (129 incidents from June to November 2025) and that ISIL's spokesperson called for action against the transitional government, followed by several attacks, which backs both the ongoing attacks and the effort to undermine the government.",
+      "page_judged": "supported",
+      "page_reason": "The page states that attacks attributed to ISIL continued, including 129 incidents between June and November 2025, and that ISIL spokesperson made a call to action against the transitional government in February 2026, which supports the claim that ISIL still attacks and seeks to undermine the government."
+     }
+    ]
+   },
+   {
+    "sentence": "This is an insurgency, not a war with another country.",
+    "start": 964,
+    "end": 1018,
+    "claim": "The ISIS conflict is an insurgency, not a war with another country.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.euaa.europa.eu/syria-security-situation/1-general-description-security-situation?utm_source=openai",
+      "host": "euaa.europa.eu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "as well as a continuation of non-international armed conflicts that involved Assadist remnants, the Syrian Democratic Forces (SDF) and the former Syrian National Army (SNA), the Islamic State of Iraq and the Levant (ISIL), Sweida-based Druze militias, as well as activities of criminal networks.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Attacks attributed to ISIL continued, with the UN Sanctions Monitoring team member reported that Member States identified at least 129 such incidents between June and November 2025 alone, most of them attacks involving improvised explosive devices (IEDs) and vehicle-borne improvised explosive devices (VBIEDs), ambushes and assassinations, mainly occurring in Deir Ez-Zor and targeting the SDF.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes describe the ISIL conflict as a continuation of non-international armed conflicts involving various Syrian and non-state groups, with attacks such as IEDs, ambushes and assassinations, and do not mention any war with another country.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the ISIL conflict as part of the continuing non-international armed conflicts in Syria, lists ISIL under a heading of \"insurgents\", and separately identifies only the Israel-related fighting as international, so it supports the claim that the ISIL conflict is an internal insurgency rather than a war with another country."
+     }
+    ]
+   },
+   {
+    "sentence": "In the south, tensions persist between Damascus and local Druze factions over security and who governs the area.",
+    "start": 1056,
+    "end": 1168,
+    "claim": "In the south, tensions persist between Damascus and local Druze factions over security and who governs the area.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The situation in Sweida remains deeply concerning. On 1 September, renewed clashes between Internal Security Forces and the National Guard affiliated with Sheikh Hikmat al-Hijri left several casualties.",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       },
+       {
+        "text": "I also deplore the abduction and expulsion from Sweida on 4 September of Druze notable Atef Hneidi by armed men reportedly affiliated with the National Guard.",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       },
+       {
+        "text": "I look forward to renewed efforts to reinvigorate the September 2025 roadmap, promoting the restoration of state authority while addressing the real trust deficit that followed the events of July 2025 and continued grievances within the community in Sweida.",
+        "pages": [
+         4,
+         4
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes describe ongoing clashes between government Internal Security Forces and the Druze-affiliated National Guard in Sweida, a trust deficit, and a roadmap to restore state authority, which together back the persistent tension between Damascus and local Druze factions over security and governance.",
+      "page_judged": "supported",
+      "page_reason": "The page describes renewed clashes on 1 September between Internal Security Forces and the National Guard affiliated with Sheikh Hikmat al-Hijri in Sweida, a trust deficit between the state and the Druze community, and a call to restore state authority, which supports tension over security and control, though it does not explicitly say the dispute is about who governs."
+     }
+    ]
+   },
+   {
+    "sentence": "In the northeast, major fighting between the government and the Kurdish-led Syrian Democratic Forces ended with a January 2026 agreement, though tensions remain.",
+    "start": 1169,
+    "end": 1330,
+    "claim": "Major fighting between the government and the Kurdish-led Syrian Democratic Forces in the northeast ended with a January 2026 agreement.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Mazloum Abdi announced the SDF's dissolution and integration into the Syrian military, but it never mentions major fighting between the government and the SDF or any January 2026 agreement."
+     }
+    ]
+   },
+   {
+    "sentence": "In the northeast, major fighting between the government and the Kurdish-led Syrian Democratic Forces ended with a January 2026 agreement, though tensions remain.",
+    "start": 1169,
+    "end": 1330,
+    "claim": "Tensions remain between the government and the Kurdish-led Syrian Democratic Forces in the northeast.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://dppa.un.org/sites/default/files/2026-09/2026-09-17%20SECCO%20UN%20Deputy%20Special%20Envoy%20for%20Syria%20Briefing%20as%20Delivered%20-%20English.pdf?utm_source=openai",
+      "host": "dppa.un.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports the SDF's dissolution, its leader's appointment as a Presidential Adviser, and progress on integration in Hasakah, and it describes a standoff between General Security and unnamed 'other security forces' without saying it involved the SDF or that tensions between the government and SDF persist."
+     }
+    ]
+   },
+   {
+    "sentence": "The 2011–2024 civil war was a different conflict: it began after Assad’s government cracked down on anti-government protests and ended with his overthrow.",
+    "start": 1345,
+    "end": 1499,
+    "claim": "The 2011–2024 civil war began after Assad’s government cracked down on anti-government protests.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.cfr.org/global-conflict-tracker/conflict/conflict-syria?utm_source=openai",
+      "host": "cfr.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that the civil war began as protests against President Assad's regime in 2011 that quickly escalated into full-scale war, which supports the claim that it began after protests, though it does not explicitly describe a government crackdown on the protests."
+     }
+    ]
+   },
+   {
+    "sentence": "The 2011–2024 civil war was a different conflict: it began after Assad’s government cracked down on anti-government protests and ended with his overthrow.",
+    "start": 1345,
+    "end": 1499,
+    "claim": "The 2011–2024 civil war ended with Assad’s overthrow.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.cfr.org/global-conflict-tracker/conflict/conflict-syria?utm_source=openai",
+      "host": "cfr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since the ouster of the Bashar al-Assad regime in December 2024, Syria has entered a fragile transition under Ahmed al-Sharaa",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "After capturing Aleppo, rebel forces seized Hama on December 5, Daraa on December 6, and Homs on December 7, before overpowering Assad’s fleeing forces in Damascus on December 8.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Syria’s Civil War (2011-24)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Assad's regime was ousted in December 2024 and that the civil war is dated 2011-24, but they do not explicitly state that the war ended with the overthrow.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the rebel offensive overpowered Assad's forces in Damascus on December 8, 2024, and that Assad fled to Moscow, following the civil war (2011-24) narrative, so the claim that the civil war ended with Assad's overthrow is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The violence today is not simply that same war continuing.",
+    "start": 1500,
+    "end": 1558,
+    "claim": "The current violence in Syria is not simply the 2011–2024 civil war continuing.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.cfr.org/global-conflict-tracker/conflict/conflict-syria?utm_source=openai",
+      "host": "cfr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since the ouster of the Bashar al-Assad regime in December 2024, Syria has entered a fragile transition under Ahmed al-Sharaa",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Although the regime promised to avoid retribution against the Alawite minority, which Assad’s rule had favored, it struggled to contain a vigilante assault that killed an estimated 1,400 members of the community, predominantly civilians, in March 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In southern Syria, meanwhile, the Druze population accused Damascus of backing Bedouin tribes in deadly clashes over the summer of 2025, which killed at least 1,000 people.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show violence in 2025 after Assad's ouster, including a vigilante assault on Alawites and Druze-Bedouin clashes, which suggests new dynamics, but they never state that this violence is distinct from or not simply a continuation of the 2011–2024 war.",
+      "page_judged": "supported",
+      "page_reason": "The page dates the civil war to 2011-2024, ending with Assad's overthrow in December 2024, and then describes distinct post-2024 violence, including the March 2025 Alawite killings, the July 2025 Druze-Bedouin clashes, the January 2026 government offensive against the SDF, and Israeli incursions and strikes, which the page does not frame as a continuation of the civil war."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 5,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 6,
+    "not_found": 10,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 21,
+   "claims_with_a_verdict": 15,
+   "failed_citations": 10,
+   "failed_share_of_verdicts": 0.6667,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2381,
+   "pages_cited": 4,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.025867,
+   "usd_per_claim": 0.001232
+  },
+  "cost": {
+   "total_usd": 0.0259,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 31,
+     "usd": 0.0164
+    },
+    {
+     "node": "page_check",
+     "calls": 21,
+     "usd": 0.0064
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.002
+    }
+   ]
+  }
+ }
+}

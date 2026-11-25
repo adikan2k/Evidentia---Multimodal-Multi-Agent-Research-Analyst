@@ -1,0 +1,255 @@
+{
+ "id": "health-08",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "In August 2025, the FDA narrowed its approval of the updated 2025–2026 COVID-19 vaccines to two groups: everyone age 65 or older, and people under 65 with at least one underlying health condition that puts them at high risk of severe COVID-19. People under 65 without a qualifying condition were not covered by the FDA approvals. (fda.gov)\nFor people under 65 who qualified, the minimum age depended on the vaccine: 6 months for Moderna’s Spikevax, 5 years for Pfizer-BioNTech’s Comirnaty, and 12 years for Novavax’s Nuvaxovid or Moderna’s mNexspike. (fda.gov)",
+  "claims": [
+   {
+    "sentence": "People under 65 without a qualifying condition were not covered by the FDA approvals. (fda.gov)",
+    "start": 244,
+    "end": 339,
+    "claim": "People under 65 without a qualifying underlying high-risk health condition were not covered by the FDA approvals of the updated 2025–2026 COVID-19 vaccines.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/media/193284/download?attachment=",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "FDA approved the 2025-2026 formulation for individuals 65 years of age and older or 12 years through 64 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       },
+       {
+        "text": "FDA also approved supplemental applications for SPIKEVAX on July 9, 2025 and August 27, 2025 to approve the 2025-2026 formulation for individuals 65 years of age and older or 6 months through 64 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the 2025-2026 formulations were approved for people 65 and older or under-65 individuals with at least one high-risk underlying condition, which implies those under 65 without such a condition were not covered, though the quotes do not explicitly say 'not covered'.",
+      "page_judged": "supported",
+      "page_reason": "The page says the 2025–2026 vaccine approvals covered people 65 and older or younger people with qualifying underlying conditions, not people under 65 without one."
+     }
+    ]
+   },
+   {
+    "sentence": "For people under 65 who qualified, the minimum age depended on the vaccine: 6 months for Moderna’s Spikevax, 5 years for Pfizer-BioNTech’s Comirnaty, and 12 years for Novavax’s Nuvaxovid or Moderna’s mNexspike. (fda.gov)",
+    "start": 340,
+    "end": 560,
+    "claim": "For people under 65 who qualified, the minimum age for Moderna’s Spikevax was 6 months.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/media/193284/download?attachment=",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "FDA also approved supplemental applications for SPIKEVAX on July 9, 2025 and August 27, 2025 to approve the 2025-2026 formulation for individuals 65 years of age and older or 6 months through 64 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Spikevax 2025-2026 is approved for individuals 6 months through 64 years of age with at least one underlying high-risk condition, so the under-65 qualified group and the 6-month minimum age are both backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Spikevax’s 2025–2026 formulation was approved for people ages 6 months through 64 with at least one qualifying underlying condition."
+     }
+    ]
+   },
+   {
+    "sentence": "For people under 65 who qualified, the minimum age depended on the vaccine: 6 months for Moderna’s Spikevax, 5 years for Pfizer-BioNTech’s Comirnaty, and 12 years for Novavax’s Nuvaxovid or Moderna’s mNexspike. (fda.gov)",
+    "start": 340,
+    "end": 560,
+    "claim": "For people under 65 who qualified, the minimum age for Pfizer-BioNTech’s Comirnaty was 5 years.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/media/193284/download?attachment=",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Comirnaty Pfizer, Inc. August 27, 2025 FDA approved two presentations of the 2025-2026 formulation: one for individuals 65 years of age and older or 12 years through 64 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19 and another for individuals 5 years through 11 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the 2025-2026 Comirnaty presentation for under-65s covers ages 5 through 11 with at least one high-risk underlying condition, so the lowest qualifying age for that group is 5.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Pfizer’s Comirnaty formulation was approved for qualifying people ages 5–11 and 12–64, but it does not identify it as Pfizer-BioNTech’s."
+     }
+    ]
+   },
+   {
+    "sentence": "For people under 65 who qualified, the minimum age depended on the vaccine: 6 months for Moderna’s Spikevax, 5 years for Pfizer-BioNTech’s Comirnaty, and 12 years for Novavax’s Nuvaxovid or Moderna’s mNexspike. (fda.gov)",
+    "start": 340,
+    "end": 560,
+    "claim": "For people under 65 who qualified, the minimum age for Novavax’s Nuvaxovid was 12 years.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/media/193284/download?attachment=",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Nuvaxovid Novavax, Inc. May 16, 2025 FDA approved the 2025-2026 formulation for individuals 65 years of age and older or 12 years through 64 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the approval covered individuals aged 12 through 64 with at least one high-risk underlying condition, which backs the claim that the minimum age for under-65 qualifiers was 12.",
+      "page_judged": "supported",
+      "page_reason": "The page says Nuvaxovid’s 2025–2026 formulation was approved for people aged 12 through 64 with an underlying condition putting them at high risk, so the minimum qualifying age under 65 was 12."
+     }
+    ]
+   },
+   {
+    "sentence": "For people under 65 who qualified, the minimum age depended on the vaccine: 6 months for Moderna’s Spikevax, 5 years for Pfizer-BioNTech’s Comirnaty, and 12 years for Novavax’s Nuvaxovid or Moderna’s mNexspike. (fda.gov)",
+    "start": 340,
+    "end": 560,
+    "claim": "For people under 65 who qualified, the minimum age for Moderna’s mNexspike was 12 years.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/media/193284/download?attachment=",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "mNEXSPIKE and Spikevax ModernaTX, Inc. May 30, 2025 FDA approved MNEXSPIKE for individuals 65 years of age and older or 12 years through 64 years of age with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.",
+        "pages": [
+         17,
+         17
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that mNEXSPIKE was approved for people aged 12 through 64 with at least one high-risk underlying condition, so the claim's minimum age of 12 for under-65 qualifiers is backed.",
+      "page_judged": "supported",
+      "page_reason": "The page says FDA approved Moderna’s mNEXSPIKE for people 65 and older or ages 12 through 64 with at least one condition placing them at high risk for severe COVID-19 outcomes."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.8,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 1,
+   "claims_over_limit": 0,
+   "usd": 0.008863,
+   "usd_per_claim": 0.001773
+  },
+  "cost": {
+   "total_usd": 0.0089,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0061
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0014
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

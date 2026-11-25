@@ -1,0 +1,137 @@
+{
+ "id": "nq-43",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:42:02+00:00",
+ "report": {
+  "answer_text": "Spoiler: Claire McLeod gets together with Alex Ryan in Season 3 of *McLeod’s Daughters*. They never marry: Claire dies in a car accident before Alex gets the chance to propose. (youtube.com)",
+  "claims": [
+   {
+    "sentence": "Spoiler: Claire McLeod gets together with Alex Ryan in Season 3 of *McLeod’s Daughters*.",
+    "start": 0,
+    "end": 88,
+    "claim": "Claire McLeod gets together with Alex Ryan in Season 3 of McLeod’s Daughters.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=oaotBjHJaH0&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "They never marry: Claire dies in a car accident before Alex gets the chance to propose.",
+    "start": 89,
+    "end": 176,
+    "claim": "Claire McLeod and Alex Ryan never marry.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=oaotBjHJaH0&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "They never marry: Claire dies in a car accident before Alex gets the chance to propose.",
+    "start": 89,
+    "end": 176,
+    "claim": "Claire McLeod dies in a car accident before Alex Ryan gets the chance to propose to her.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=oaotBjHJaH0&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000214,
+   "usd_per_claim": 7.1e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

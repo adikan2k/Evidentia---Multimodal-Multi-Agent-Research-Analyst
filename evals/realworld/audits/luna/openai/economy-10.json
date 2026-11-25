@@ -1,0 +1,355 @@
+{
+ "id": "economy-10",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "U.S. inflation eased slightly overall in 2025, but it didn’t fall steadily. The Consumer Price Index (CPI) rose 2.7% from December 2024 to December 2025, compared with 2.9% over the previous 12 months. Prices were still rising, just a bit more slowly. (bls.gov)\nYear-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)\nCore CPI, which excludes food and energy, rose 2.6% over the year. Food prices rose 3.1%, and shelter prices rose 3.2%. (bls.gov)",
+  "claims": [
+   {
+    "sentence": "U.S. inflation eased slightly overall in 2025, but it didn’t fall steadily.",
+    "start": 0,
+    "end": 75,
+    "claim": "U.S. inflation eased slightly overall in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.bls.gov/opub/ted/2026/consumer-price-index-2025-in-review.htm?trk=article-ssr-frontend-pulse_little-text-block",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "U.S. inflation eased slightly overall in 2025, but it didn’t fall steadily.",
+    "start": 0,
+    "end": 75,
+    "claim": "U.S. inflation did not fall steadily in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.bls.gov/opub/ted/2026/consumer-price-index-2025-in-review.htm?trk=article-ssr-frontend-pulse_little-text-block",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Prices were still rising, just a bit more slowly. (bls.gov)",
+    "start": 202,
+    "end": 261,
+    "claim": "Prices in the U.S. were still rising in 2025, just more slowly. [bls.gov]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.bls.gov/opub/ted/2026/consumer-price-index-2025-in-review.htm?trk=article-ssr-frontend-pulse_little-text-block",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)",
+    "start": 262,
+    "end": 524,
+    "claim": "Year-over-year inflation started 2025 at 3.0% in January.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)",
+    "start": 262,
+    "end": 524,
+    "claim": "Year-over-year inflation fell to 2.3% in April 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)",
+    "start": 262,
+    "end": 524,
+    "claim": "Year-over-year inflation climbed back to 3.0% in September 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)",
+    "start": 262,
+    "end": 524,
+    "claim": "Year-over-year inflation ended 2025 at 2.7%.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)",
+    "start": 262,
+    "end": 524,
+    "claim": "The Bureau of Labor Statistics did not publish an October 2025 CPI reading.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-over-year inflation started at 3.0% in January, fell to 2.3% in April, climbed back to 3.0% in September, and ended the year at 2.7%. The Bureau of Labor Statistics did not publish an October CPI reading because of the federal government shutdown. (bls.gov)",
+    "start": 262,
+    "end": 524,
+    "claim": "The Bureau of Labor Statistics did not publish an October 2025 CPI reading because of the federal government shutdown.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm?utm_source=openai",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Food prices rose 3.1%, and shelter prices rose 3.2%. (bls.gov)",
+    "start": 592,
+    "end": 654,
+    "claim": "Food prices rose 3.1% over the year. [bls.gov]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Food prices rose 3.1%, and shelter prices rose 3.2%. (bls.gov)",
+    "start": 592,
+    "end": 654,
+    "claim": "Shelter prices rose 3.2% over the year. [bls.gov]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 11,
+    "uncited": 0
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 3,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 3,
+   "claims_over_limit": 0,
+   "usd": 0.000844,
+   "usd_per_claim": 7.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0008,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

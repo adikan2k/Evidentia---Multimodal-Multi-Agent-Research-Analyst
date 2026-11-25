@@ -1,0 +1,180 @@
+{
+ "id": "nq-15",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "A simple gear train is used in the reverse mechanism of many manual-transmission cars. A drive gear turns a middle gear (called an *idler*), which turns the output gear. Compared with two gears meshing directly, adding the idler makes the output turn the opposite way, allowing the car to back up. (hungrypoint.com)",
+  "claims": [
+   {
+    "sentence": "A simple gear train is used in the reverse mechanism of many manual-transmission cars.",
+    "start": 0,
+    "end": 86,
+    "claim": "A simple gear train is used in the reverse mechanism of many manual-transmission cars.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch4m.pdf?utm_source=openai",
+      "host": "hungrypoint.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes reverse idler gears and reverse mechanisms in Toyota transaxles, but does not state that they use a simple gear train or that this applies to many manual-transmission cars."
+     }
+    ]
+   },
+   {
+    "sentence": "A drive gear turns a middle gear (called an *idler*), which turns the output gear.",
+    "start": 87,
+    "end": 169,
+    "claim": "In a reverse gear arrangement, a drive gear turns a middle gear called an idler, which turns the output gear.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch4m.pdf?utm_source=openai",
+      "host": "hungrypoint.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The reverse idler gear is shifted to mesh with the reverse gear on the input shaft and the sleeve of the 1-2 synchronizer assembly on the output shaft.",
+        "pages": [
+         14,
+         14
+        ],
+        "context": null
+       },
+       {
+        "text": "A reverse idler gear is used to change the direction of the output shaft for reverse.",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that a reverse idler meshes between the input shaft's reverse gear and the output shaft, but they describe the output connection as a synchronizer sleeve rather than an output gear, and they do not say the idler is driven by the drive gear in the claimed way.",
+      "page_judged": "supported",
+      "page_reason": "The page says the reverse idler gear meshes with the reverse gear on the input shaft and the synchronizer sleeve on the output shaft, forming the described gear path."
+     }
+    ]
+   },
+   {
+    "sentence": "Compared with two gears meshing directly, adding the idler makes the output turn the opposite way, allowing the car to back up. (hungrypoint.com)",
+    "start": 170,
+    "end": 315,
+    "claim": "Compared with two gears meshing directly, adding an idler gear makes the output gear turn the opposite way, allowing the car to back up.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch4m.pdf?utm_source=openai",
+      "host": "hungrypoint.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A reverse idler gear is used to change the direction of the output shaft for reverse.",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       },
+       {
+        "text": "The reverse gears are not in constant mesh, an idler gear is used to engage reverse.",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that a reverse idler gear changes the output shaft's direction for reverse, but they do not explicitly compare against two directly meshing gears or state that the idler makes the output turn opposite to the input in general.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a reverse idler gear changes the output shaft’s direction for reverse, but does not compare this with two gears meshing directly or explicitly say the output gear turns the opposite way."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004094,
+   "usd_per_claim": 0.001365
+  },
+  "cost": {
+   "total_usd": 0.0041,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0025
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0005
+    }
+   ]
+  }
+ }
+}

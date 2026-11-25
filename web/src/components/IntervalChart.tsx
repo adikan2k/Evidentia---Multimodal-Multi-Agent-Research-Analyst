@@ -5,8 +5,9 @@ import { useState } from "react";
 export type IntervalRow = {
   label: string;
   value: number;
-  low: number;
-  high: number;
+  /** The 95% interval. Left out when the result file has none for this row. */
+  low?: number;
+  high?: number;
   /** Shown in the hover note, e.g. "282 of 305 claims". */
   detail?: string;
 };
@@ -33,24 +34,29 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
   const at = (value: number) => `${(Math.min(Math.max(value, min), max) - min) / (max - min) * 100}%`;
   const width = (from: number, to: number) => `${((to - from) / (max - min)) * 100}%`;
   const noted = hovered === null ? null : rows[hovered];
+  const intervalOf = (row: IntervalRow) =>
+    row.low === undefined || row.high === undefined
+      ? ""
+      : `, 95% interval ${format(row.low)} to ${format(row.high)}`;
 
   return (
     <figure>
-      <div className="grid grid-cols-[minmax(9rem,16rem)_1fr_4.5rem] items-center gap-x-4">
+      {/* On a phone the name sits above its track, so the track keeps the width. */}
+      <div className="grid grid-cols-[1fr_4.5rem] items-center gap-x-4 sm:grid-cols-[minmax(9rem,16rem)_1fr_4.5rem]">
         {rows.map((row, index) => (
           <div
             key={row.label}
-            className="col-span-3 grid grid-cols-subgrid items-center rounded py-2.5 transition-colors hover:bg-paper-deep"
+            className="col-span-full grid grid-cols-subgrid items-center gap-y-1 rounded py-2.5 transition-colors hover:bg-paper-deep"
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
             onFocus={() => setHovered(index)}
             onBlur={() => setHovered(null)}
             // biome-ignore lint: rows are focusable so the interval can be read without a mouse
             tabIndex={0}
-            aria-label={`${row.label}: ${format(row.value)}, 95% interval ${format(row.low)} to ${format(row.high)}`}
+            aria-label={`${row.label}: ${format(row.value)}${intervalOf(row)}`}
           >
-            <span className="pl-2 text-sm leading-snug text-ink">{row.label}</span>
-            <span className="relative block h-6">
+            <span className="col-span-full pl-2 text-[0.9375rem] leading-snug text-ink sm:col-span-1">{row.label}</span>
+            <span className="relative ml-2 block h-6 sm:ml-0">
               {ticks.map((tick) => (
                 <span
                   key={tick}
@@ -65,10 +71,12 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
                 />
               )}
               {/* The interval: a thin line from its low end to its high end. */}
-              <span
-                className={`absolute h-0.5 bg-ink-soft ${mark === "bar" ? "top-5" : "top-[0.6875rem]"}`}
-                style={{ left: at(row.low), width: width(row.low, row.high) }}
-              />
+              {row.low !== undefined && row.high !== undefined && (
+                <span
+                  className={`absolute h-0.5 bg-ink-soft ${mark === "bar" ? "top-5" : "top-[0.6875rem]"}`}
+                  style={{ left: at(row.low), width: width(row.low, row.high) }}
+                />
+              )}
               {mark === "dot" && (
                 <span
                   className="absolute top-1.5 size-3 -translate-x-1/2 rounded-full bg-ink ring-2 ring-paper"
@@ -76,17 +84,17 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
                 />
               )}
             </span>
-            <span className="pr-2 text-right font-mono text-sm tabular-nums text-ink">
+            <span className="pr-2 text-right font-mono text-[0.875rem] tabular-nums text-ink">
               {format(row.value)}
             </span>
           </div>
         ))}
-        <span />
-        <span className="relative mt-1 block h-5">
+        <span className="hidden sm:block" />
+        <span className="relative mt-1 ml-2 block h-5 sm:ml-0">
           {ticks.map((tick) => (
             <span
               key={tick}
-              className="label absolute -translate-x-1/2 text-ink-faint"
+              className="data absolute -translate-x-1/2 text-ink-faint"
               style={{ left: at(tick) }}
             >
               {format(tick)}
@@ -95,11 +103,11 @@ export function IntervalChart({ rows, mark, domain, ticks, decimals = 3, caption
         </span>
         <span />
       </div>
-      <figcaption className="mt-4 min-h-10 text-sm leading-relaxed text-ink-soft">
+      <figcaption className="label mt-4 min-h-12 max-w-[44rem] font-normal leading-relaxed text-ink-soft">
         {noted ? (
           <>
-            <span className="text-ink">{noted.label}:</span> {format(noted.value)}, 95% interval{" "}
-            {format(noted.low)} to {format(noted.high)}
+            <span className="font-medium text-ink">{noted.label}:</span> {format(noted.value)}
+            {intervalOf(noted)}
             {noted.detail ? `. ${noted.detail}.` : "."}
           </>
         ) : (

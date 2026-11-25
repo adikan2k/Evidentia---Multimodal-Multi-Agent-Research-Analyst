@@ -1,0 +1,806 @@
+{
+ "id": "science-03",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The estimated chance of 2024 YR4 hitting Earth rose to a record in early 2025, then fell to nearly zero within a few days in February.\nLate December 2024 to January 2025: The asteroid was found on 27 December 2024. Shortly after discovery, automated warning systems calculated a very small chance of an Earth impact on 22 December 2032.[1] New observations on 29 December 2024 raised the probability, and all three impact monitoring systems rated it Torino Scale level 1.[2]\n29 January 2025: ESA put the impact probability at 1.2%[1], and NASA's CNEOS and NEODyS gave consistent independent estimates.[1] The International Asteroid Warning Network (IAWN) issued its first-ever impact notification.\nRise to the peak: At first, the probability rose because a growing share of the asteroid's possible orbits led to an Earth impact.[3] As the range of possible positions narrowed, Earth made up a larger part of it, so the probability increased.[4] NASA reported a 3.1% probability on 18 February[5], while ESA's assessment peaked at 2.8%.[3] ESA said the asteroid held the record for the highest impact probability of any asteroid larger than 30 m, and for the longest time above 1%.[6] It reached a Torino scale rating of 3.[7]\n19–20 February: Observations from the European Southern Observatory's Very Large Telescope cut ESA's estimate in half the next day.[3] NASA reduced its figure from 3.1% to 1.5%.[8]\nAround 25 February: ESA lowered the probability to 0.001%[3], and the asteroid fell from Level 3 to Level 0 on the Torino scale.[3] NASA's figure was slightly different, about 0.0017%.[4]\nAfter February: The Earth impact has been ruled out, but a roughly 4% probability of a lunar impact on 22 December 2032 remains.[2] A later analysis notes that by the end of the observing period, only a possible 2047 impact remained, with a probability below 10⁻⁵.[2]\nThe rise and fall followed a pattern scientists expected. As uncertainty shrinks, the probability climbs if Earth stays inside the shrinking range of possible positions. It drops to near zero once Earth falls outside that range.",
+  "claims": [
+   {
+    "sentence": "Shortly after discovery, automated warning systems calculated a very small chance of an Earth impact on 22 December 2032.[1]",
+    "start": 215,
+    "end": 339,
+    "claim": "Shortly after discovery, automated warning systems calculated a very small chance of an Earth impact on 22 December 2032.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/ESA_actively_monitoring_near-Earth_asteroid_2024_YR4",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Shortly after its discovery, automated asteroid warning systems determined that the object had a very small chance of potentially impacting Earth on 22 December 2032.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that shortly after discovery automated asteroid warning systems determined a very small chance of Earth impact on 22 December 2032, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that shortly after its discovery, automated asteroid warning systems determined that 2024 YR4 had a very small chance of impacting Earth on 22 December 2032."
+     }
+    ]
+   },
+   {
+    "sentence": "New observations on 29 December 2024 raised the probability, and all three impact monitoring systems rated it Torino Scale level 1.[2]",
+    "start": 340,
+    "end": 474,
+    "claim": "New observations on 29 December 2024 raised the impact probability for 2024 YR4.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://link.springer.com/article/10.1007/s40295-026-00576-0",
+      "host": "link.springer.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "New observations on 29 December 2024 raised the probability, and all three impact monitoring systems rated it Torino Scale level 1.[2]",
+    "start": 340,
+    "end": 474,
+    "claim": "All three impact monitoring systems rated 2024 YR4 Torino Scale level 1 after the 29 December 2024 observations.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://link.springer.com/article/10.1007/s40295-026-00576-0",
+      "host": "link.springer.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The asteroid was found on 27 December 2024.",
+    "start": 171,
+    "end": 214,
+    "claim": "The asteroid 2024 YR4 was found on 27 December 2024.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/ESA_actively_monitoring_near-Earth_asteroid_2024_YR4",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Near-Earth asteroid 2024 YR4 was discovered on 27 December 2024 at the Asteroid Terrestrial-impact Last Alert System (ATLAS) telescope in Río Hurtado, Chile.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that asteroid 2024 YR4 was discovered on 27 December 2024, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that asteroid 2024 YR4 was discovered on 27 December 2024."
+     }
+    ]
+   },
+   {
+    "sentence": "29 January 2025: ESA put the impact probability at 1.2%[1], and NASA's CNEOS and NEODyS gave consistent independent estimates.[1]",
+    "start": 475,
+    "end": 604,
+    "claim": "On 29 January 2025, ESA put the impact probability of 2024 YR4 at 1.2%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/ESA_actively_monitoring_near-Earth_asteroid_2024_YR4",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of 29 January 2025, ESA estimates that the probability that asteroid 2024 YR4 may impact Earth on 22 December 2032 is 1.2%.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that as of 29 January 2025 ESA estimated the impact probability of asteroid 2024 YR4 at 1.2%, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that as of 29 January 2025, ESA estimated the probability of an impact on 22 December 2032 at 1.2%."
+     }
+    ]
+   },
+   {
+    "sentence": "29 January 2025: ESA put the impact probability at 1.2%[1], and NASA's CNEOS and NEODyS gave consistent independent estimates.[1]",
+    "start": 475,
+    "end": 604,
+    "claim": "On 29 January 2025, NASA's CNEOS and NEODyS gave consistent independent impact probability estimates for 2024 YR4.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/ESA_actively_monitoring_near-Earth_asteroid_2024_YR4",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of 29 January 2025, ESA estimates that the probability that asteroid 2024 YR4 may impact Earth on 22 December 2032 is 1.2%. This result is consistent with independent estimates made by NASA’s Center for Near-Earth Object Studies (CNEOS) and NEODyS.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that CNEOS and NEODyS independent estimates were consistent with ESA's 1.2% figure as of 29 January 2025, but it does not state the specific impact probability values those agencies gave, so the claim's specifics beyond consistency are unverified.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says ESA’s 29 January estimate was consistent with independent estimates from NASA’s CNEOS and NEODyS, but does not state that those organizations’ estimates were made on 29 January."
+     }
+    ]
+   },
+   {
+    "sentence": "The International Asteroid Warning Network (IAWN) issued its first-ever impact notification.",
+    "start": 605,
+    "end": 697,
+    "claim": "The International Asteroid Warning Network (IAWN) issued its first-ever impact notification for 2024 YR4.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "At first, the probability rose because a growing share of the asteroid's possible orbits led to an Earth impact.[3]",
+    "start": 716,
+    "end": 831,
+    "claim": "At first, the probability of 2024 YR4 hitting Earth rose because a growing share of its possible orbits led to an Earth impact.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Asteroid_2024_YR4_no_longer_poses_significant_impact_risk",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At first, the impact probability began to rise, as an increasing percentage of the asteroid’s possible orbits led to an Earth impact on 22 December 2032.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the impact probability initially rose because an increasing percentage of the asteroid's possible orbits led to an Earth impact, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the impact probability began to rise as an increasing percentage of the asteroid’s possible orbits led to an Earth impact."
+     }
+    ]
+   },
+   {
+    "sentence": "As the range of possible positions narrowed, Earth made up a larger part of it, so the probability increased.[4]",
+    "start": 832,
+    "end": 944,
+    "claim": "As the range of possible positions of 2024 YR4 narrowed, Earth made up a larger part of it, so the impact probability increased.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.britannica.com/place/2024-YR4",
+      "host": "britannica.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "NASA reported a 3.1% probability on 18 February[5], while ESA's assessment peaked at 2.8%.[3]",
+    "start": 945,
+    "end": 1038,
+    "claim": "NASA reported a 3.1% impact probability for 2024 YR4 on 18 February.",
+    "citation_ids": [
+     "c5",
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://blogs.nasa.gov/planetarydefense/2025/02",
+      "host": "blogs.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page does not state that NASA reported a 3.1% impact probability for 2024 YR4 on February 18."
+     },
+     {
+      "citation_id": "c3",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Asteroid_2024_YR4_no_longer_poses_significant_impact_risk",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 18 February, the impact probability reached its peak, with ESA’s assessment reaching as high as 2.8%.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says the peak impact probability on 18 February was 2.8% per ESA, which conflicts with the claim's 3.1% figure and attributes it to ESA rather than NASA.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says ESA’s assessment peaked at 2.8% on 18 February, but does not report a NASA estimate of 3.1%."
+     }
+    ]
+   },
+   {
+    "sentence": "NASA reported a 3.1% probability on 18 February[5], while ESA's assessment peaked at 2.8%.[3]",
+    "start": 945,
+    "end": 1038,
+    "claim": "ESA's impact probability assessment for 2024 YR4 peaked at 2.8%.",
+    "citation_ids": [
+     "c5",
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://blogs.nasa.gov/planetarydefense/2025/02",
+      "host": "blogs.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions NASA impact probabilities for 2024 YR4 but does not state that ESA’s assessment peaked at 2.8%."
+     },
+     {
+      "citation_id": "c3",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Asteroid_2024_YR4_no_longer_poses_significant_impact_risk",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 18 February, the impact probability reached its peak, with ESA’s assessment reaching as high as 2.8%.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that ESA's impact probability assessment for 2024 YR4 reached as high as 2.8% at its peak, which matches the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that ESA’s assessment of the impact probability reached its peak at 2.8%."
+     }
+    ]
+   },
+   {
+    "sentence": "ESA said the asteroid held the record for the highest impact probability of any asteroid larger than 30 m, and for the longest time above 1%.[6]",
+    "start": 1039,
+    "end": 1183,
+    "claim": "ESA said 2024 YR4 held the record for the highest impact probability of any asteroid larger than 30 m.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.cnn.com/2025/02/19/science/asteroid-2024-yr4-earth-collision-risk",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "ESA said the asteroid held the record for the highest impact probability of any asteroid larger than 30 m, and for the longest time above 1%.[6]",
+    "start": 1039,
+    "end": 1183,
+    "claim": "ESA said 2024 YR4 held the record for the longest time above 1% impact probability.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.cnn.com/2025/02/19/science/asteroid-2024-yr4-earth-collision-risk",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It reached a Torino scale rating of 3.[7]",
+    "start": 1184,
+    "end": 1225,
+    "claim": "2024 YR4 reached a Torino scale rating of 3.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.planetary.org/articles/should-you-be-worried-about-asteroid-2024-yr4",
+      "host": "planetary.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "To put it into context, 2024 YR4 has a Torino scale rating of as high as 3.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Asteroid 2024 YR4’s rating of 3 is the second-highest an asteroid has ever reached.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that 2024 YR4 has a Torino scale rating of 3 (as high as 3), which matches the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page says 2024 YR4 had a Torino scale rating as high as 3."
+     }
+    ]
+   },
+   {
+    "sentence": "Observations from the European Southern Observatory's Very Large Telescope cut ESA's estimate in half the next day.[3]",
+    "start": 1242,
+    "end": 1360,
+    "claim": "Observations from the European Southern Observatory's Very Large Telescope cut ESA's impact probability estimate for 2024 YR4 in half the next day.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Asteroid_2024_YR4_no_longer_poses_significant_impact_risk",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 18 February, the impact probability reached its peak, with ESA’s assessment reaching as high as 2.8%. However, just the next day, observations made using the European Southern Observatory’s Very Large Telescope cut the impact probability in half.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that observations from the European Southern Observatory's Very Large Telescope cut the impact probability in half the day after the peak, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says ESA’s impact probability peaked on 18 February and observations from the European Southern Observatory’s Very Large Telescope cut it in half the next day."
+     }
+    ]
+   },
+   {
+    "sentence": "NASA reduced its figure from 3.1% to 1.5%.[8]",
+    "start": 1361,
+    "end": 1406,
+    "claim": "NASA reduced its impact probability estimate for 2024 YR4 from 3.1% to 1.5%.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.scientificamerican.com/article/city-killer-asteroids-earth-impact-risk-rises-to-highest-ever-recorded/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NASA announced that new data collected overnight had reduced the Earth-impact probability for asteroid 2024 YR4 from a record-setting 3.1 percent to 1.5 percent.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that NASA reduced the Earth-impact probability for asteroid 2024 YR4 from 3.1 percent to 1.5 percent, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The editor’s note says NASA announced that new data reduced 2024 YR4’s Earth-impact probability from 3.1% to 1.5%."
+     }
+    ]
+   },
+   {
+    "sentence": "Around 25 February: ESA lowered the probability to 0.001%[3], and the asteroid fell from Level 3 to Level 0 on the Torino scale.[3]",
+    "start": 1407,
+    "end": 1538,
+    "claim": "Around 25 February, ESA lowered the impact probability of 2024 YR4 to 0.001%.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Asteroid_2024_YR4_no_longer_poses_significant_impact_risk",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says ESA’s latest analysis reduced the impact probability to 0.001%, but it does not date that reduction to around 25 February."
+     }
+    ]
+   },
+   {
+    "sentence": "Around 25 February: ESA lowered the probability to 0.001%[3], and the asteroid fell from Level 3 to Level 0 on the Torino scale.[3]",
+    "start": 1407,
+    "end": 1538,
+    "claim": "Around 25 February, 2024 YR4 fell from Level 3 to Level 0 on the Torino scale.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Asteroid_2024_YR4_no_longer_poses_significant_impact_risk",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says 2024 YR4 has fallen from Level 3 to Level 0 but does not say this happened around 25 February."
+     }
+    ]
+   },
+   {
+    "sentence": "NASA's figure was slightly different, about 0.0017%.[4]",
+    "start": 1539,
+    "end": 1594,
+    "claim": "NASA's impact probability figure for 2024 YR4 around 25 February was about 0.0017%.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.britannica.com/place/2024-YR4",
+      "host": "britannica.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Earth impact has been ruled out, but a roughly 4% probability of a lunar impact on 22 December 2032 remains.[2]",
+    "start": 1611,
+    "end": 1726,
+    "claim": "The Earth impact of 2024 YR4 has been ruled out.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://link.springer.com/article/10.1007/s40295-026-00576-0",
+      "host": "link.springer.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Earth impact has been ruled out, but a roughly 4% probability of a lunar impact on 22 December 2032 remains.[2]",
+    "start": 1611,
+    "end": 1726,
+    "claim": "A roughly 4% probability of a lunar impact by 2024 YR4 on 22 December 2032 remains.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://link.springer.com/article/10.1007/s40295-026-00576-0",
+      "host": "link.springer.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A later analysis notes that by the end of the observing period, only a possible 2047 impact remained, with a probability below 10⁻⁵.[2]",
+    "start": 1727,
+    "end": 1862,
+    "claim": "A later analysis notes that by the end of the observing period, only a possible 2047 impact of 2024 YR4 remained.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://link.springer.com/article/10.1007/s40295-026-00576-0",
+      "host": "link.springer.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A later analysis notes that by the end of the observing period, only a possible 2047 impact remained, with a probability below 10⁻⁵.[2]",
+    "start": 1727,
+    "end": 1862,
+    "claim": "A later analysis notes that the 2047 impact probability for 2024 YR4 was below 10⁻⁵ by the end of the observing period.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://link.springer.com/article/10.1007/s40295-026-00576-0",
+      "host": "link.springer.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The rise and fall followed a pattern scientists expected. As uncertainty shrinks, the probability climbs if Earth stays inside the shrinking range of possible positions. It drops to near zero once Earth falls outside that range.",
+    "start": 1863,
+    "end": 2091,
+    "claim": "As uncertainty shrinks, the impact probability climbs if Earth stays inside the shrinking range of possible positions.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The rise and fall followed a pattern scientists expected. As uncertainty shrinks, the probability climbs if Earth stays inside the shrinking range of possible positions. It drops to near zero once Earth falls outside that range.",
+    "start": 1863,
+    "end": 2091,
+    "claim": "The impact probability drops to near zero once Earth falls outside the range of possible positions.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 8,
+    "partial": 1,
+    "contradicted": 1,
+    "needs_human": 0,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 10,
+    "uncited": 3
+   },
+   "cited_claims": 22,
+   "claims_with_a_verdict": 12,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.3636,
+   "pages_cited": 8,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.007753,
+   "usd_per_claim": 0.00031
+  },
+  "cost": {
+   "total_usd": 0.0078,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0013
+    },
+    {
+     "node": "find",
+     "calls": 14,
+     "usd": 0.0028
+    },
+    {
+     "node": "page_check",
+     "calls": 14,
+     "usd": 0.0025
+    },
+    {
+     "node": "check",
+     "calls": 10,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

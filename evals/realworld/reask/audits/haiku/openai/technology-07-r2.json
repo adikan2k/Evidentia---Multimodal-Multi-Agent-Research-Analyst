@@ -1,0 +1,423 @@
+{
+ "id": "technology-07-r2",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "What caused it: On October 20, 2025, a bug in AWS’s automated DNS system left Amazon DynamoDB’s regional endpoint in Northern Virginia (us-east-1) with an empty DNS record. Two automated processes interfered with each other—a timing bug known as a *race condition*—so applications couldn’t find the database service. AWS fixed the DNS problem within a few hours, but the failure had already cascaded: customers couldn’t launch new EC2 virtual servers, and some AWS Network Load Balancers couldn’t reliably route traffic. (aws.amazon.com)\nWhat it disrupted: The outage started in one AWS region, but users worldwide had trouble accessing services that depended on it. Those included Snapchat, Signal, Slack, Roblox, and Fortnite, as well as Amazon’s own shopping site, Ring doorbells, and Alexa. The main AWS disruption lasted about 15 hours, with some services taking longer to clear their backlogs. (pbs.org)",
+  "claims": [
+   {
+    "sentence": "What caused it: On October 20, 2025, a bug in AWS’s automated DNS system left Amazon DynamoDB’s regional endpoint in Northern Virginia (us-east-1) with an empty DNS record.",
+    "start": 0,
+    "end": 172,
+    "claim": "On October 20, 2025, a bug in AWS’s automated DNS system left Amazon DynamoDB’s regional endpoint in Northern Virginia (us-east-1) with an empty DNS record.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Between 11:48 PM PDT on October 19 and 2:40 AM PDT on October 20, customers experienced increased Amazon DynamoDB API error rates in the N. Virginia (us-east-1) Region.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that a race condition in the DynamoDB DNS management system left the us-east-1 regional endpoint with an incorrect empty DNS record, and that the incident window began on October 19 and ran into October 20, which together back the claim's date, service, region and cause.",
+      "page_judged": "supported",
+      "page_reason": "The page states that a latent race condition in the DynamoDB DNS management system resulted in an incorrect empty DNS record for dynamodb.us-east-1.amazonaws.com, and the incident ran from 11:48 PM PDT October 19 to 2:40 AM PDT October 20, so the claim's core is supported, though the page never states the date as 'October 20, 2025' explicitly and describes the trigger as a race condition rather than generically a bug."
+     }
+    ]
+   },
+   {
+    "sentence": "Two automated processes interfered with each other—a timing bug known as a *race condition*—so applications couldn’t find the database service.",
+    "start": 173,
+    "end": 316,
+    "claim": "Two automated processes interfered with each other, a timing bug known as a race condition, so applications couldn’t find the database service.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The race condition involves an unlikely interaction between two of the DNS Enactors.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "At the same time that this clean-up process was invoked, the first Enactor (which had been unusually delayed) applied its much older plan to the regional DDB endpoint, overwriting the newer plan.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "As this plan was deleted, all IP addresses for the regional endpoint were immediately removed.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state a latent race condition between two DNS Enactor automation processes that left an empty DNS record for the DynamoDB regional endpoint, so applications could not resolve the database service, matching the claim's main point and mechanism.",
+      "page_judged": "supported",
+      "page_reason": "The page describes a latent race condition between two DNS Enactors that left the regional DynamoDB endpoint with an empty DNS record, so customers could not resolve the service endpoint, which supports the claim that two automated processes interfered in a timing bug and applications could not find the database."
+     }
+    ]
+   },
+   {
+    "sentence": "AWS fixed the DNS problem within a few hours, but the failure had already cascaded: customers couldn’t launch new EC2 virtual servers, and some AWS Network Load Balancers couldn’t reliably route traffic. (aws.amazon.com)",
+    "start": 317,
+    "end": 537,
+    "claim": "AWS fixed the DNS problem within a few hours.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "When this issue occurred at 11:48 PM PDT, all systems needing to connect to the DynamoDB service in the N. Virginia (us-east-1) Region via the public endpoint immediately began experiencing DNS failures and failed to connect to DynamoDB.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "By 2:25 AM, all DNS information was restored, and all global tables replicas were fully caught up by 2:32 AM.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Customers were able to resolve the DynamoDB endpoint and establish successful connections as cached DNS records expired between 2:25 AM and 2:40 AM.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show the DNS failures began at 11:48 PM PDT and that all DNS information was restored by 2:25 AM, about two and a half hours later, which fits 'within a few hours'.",
+      "page_judged": "supported",
+      "page_reason": "The page says the DNS incident began at 11:48 PM PDT, all DNS information was restored by 2:25 AM, and recovery from the primary disruption completed by 2:40 AM, about three hours later, though the underlying race condition was not yet fixed."
+     }
+    ]
+   },
+   {
+    "sentence": "AWS fixed the DNS problem within a few hours, but the failure had already cascaded: customers couldn’t launch new EC2 virtual servers, and some AWS Network Load Balancers couldn’t reliably route traffic. (aws.amazon.com)",
+    "start": 317,
+    "end": 537,
+    "claim": "The failure had already cascaded so that customers couldn’t launch new EC2 virtual servers.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Between 11:48 PM PDT on October 19 and 1:50 PM PDT on October 20, customers experienced increased EC2 API error rates, latencies, and instance launch failures in the N. Virginia (us-east-1) Region.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "During this period new instance launches failed with either a “request limit exceeded” or “insufficient capacity” error.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that new EC2 instance launches failed during the period in us-east-1, which backs the claim that customers couldn't launch new EC2 virtual servers, though 'had already cascaded' as a causal framing is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that between 11:48 PM PDT on October 19 and 1:50 PM PDT on October 20 new EC2 instance launches failed with 'request limit exceeded' or 'insufficient capacity' errors, and that the failure cascaded from the DynamoDB DNS issue, so the claim that customers couldn't launch new EC2 instances is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "AWS fixed the DNS problem within a few hours, but the failure had already cascaded: customers couldn’t launch new EC2 virtual servers, and some AWS Network Load Balancers couldn’t reliably route traffic. (aws.amazon.com)",
+    "start": 317,
+    "end": 537,
+    "claim": "The failure had already cascaded so that some AWS Network Load Balancers couldn’t reliably route traffic.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Second, between 5:30 AM and 2:09 PM on October 20, Network Load Balancer (NLB) experienced increased connection errors for some load balancers in the N. Virginia (us-east-1) Region. This was caused by health check failures in the NLB fleet, which resulted in increased connection errors on some NLBs.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This caused NLB nodes and backend targets to be removed from DNS, only to be returned to service when the next health check succeeded.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that some NLBs in us-east-1 had increased connection errors caused by health check failures, and that nodes were removed from DNS and only intermittently returned to service, which backs the claim that some NLBs could not reliably route traffic.",
+      "page_judged": "supported",
+      "page_reason": "The page states that between 5:30 AM and 2:09 PM PDT on October 20 some NLB customers experienced increased connection errors caused by health check failures, with health checks alternating and nodes being removed from DNS, which supports the claim that NLBs could not reliably route traffic for some customers."
+     }
+    ]
+   },
+   {
+    "sentence": "What it disrupted: The outage started in one AWS region, but users worldwide had trouble accessing services that depended on it.",
+    "start": 538,
+    "end": 666,
+    "claim": "The outage started in one AWS region, but users worldwide had trouble accessing services that depended on it.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai",
+      "host": "pbs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Those included Snapchat, Signal, Slack, Roblox, and Fortnite, as well as Amazon’s own shopping site, Ring doorbells, and Alexa.",
+    "start": 667,
+    "end": 794,
+    "claim": "Services that depended on the AWS outage included Snapchat, Signal, Slack, Roblox, and Fortnite.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai",
+      "host": "pbs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Those included Snapchat, Signal, Slack, Roblox, and Fortnite, as well as Amazon’s own shopping site, Ring doorbells, and Alexa.",
+    "start": 667,
+    "end": 794,
+    "claim": "Services that depended on the AWS outage included Amazon’s own shopping site, Ring doorbells, and Alexa.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai",
+      "host": "pbs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The main AWS disruption lasted about 15 hours, with some services taking longer to clear their backlogs. (pbs.org)",
+    "start": 795,
+    "end": 909,
+    "claim": "The main AWS disruption lasted about 15 hours.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai",
+      "host": "pbs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The main AWS disruption lasted about 15 hours, with some services taking longer to clear their backlogs. (pbs.org)",
+    "start": 795,
+    "end": 909,
+    "claim": "Some services took longer than the main disruption to clear their backlogs.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai",
+      "host": "pbs.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 5,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 5,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.006911,
+   "usd_per_claim": 0.000691
+  },
+  "cost": {
+   "total_usd": 0.0069,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0034
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

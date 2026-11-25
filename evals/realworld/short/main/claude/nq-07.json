@@ -1,0 +1,428 @@
+{
+ "id": "nq-07",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.rottentomatoes.com/tv/just-add-magic/s02/e01",
+   "read": true,
+   "chars": 471
+  },
+  {
+   "url": "https://tvseriesfinale.com/tv-show/just-add-magic-season-two-coming-amazon-january/",
+   "read": true,
+   "chars": 1379
+  },
+  {
+   "url": "https://www.rottentomatoes.com/tv/just-add-magic",
+   "read": true,
+   "chars": 371
+  }
+ ],
+ "usd": 0.002319,
+ "report": {
+  "answer_text": "Season 2 of *Just Add Magic* has already been released, and it came out in two parts on Amazon Prime Video:\nPart 1: The first episode, \"Just Add Halloween,\" aired Oct 14, 2016.[1] The rest of the first 13 episodes of the season were released on January 12, 2017[2].\nPart 2: The remaining episodes (14–26 overall) were released on January 19, 2018[2].\nOne thing may cause confusion. Some articles say season 2 premiered on January 13. That date comes from Amazon's announcement for the second half of the season. That announcement describes the plot as the girls' Last-Ditch Layer Cake breaking every spell in town, which brings back an old enemy, Chuck Hankins.[3]\nThe series ran until 2020, and a follow-up series, *Just Add Magic: Mystery City*, was released on January 17, 2020.[4] You can stream seasons 1–4 on Prime Video[5].",
+  "claims": [
+   {
+    "sentence": "Season 2 of *Just Add Magic* has already been released, and it came out in two parts on Amazon Prime Video:",
+    "start": 0,
+    "end": 107,
+    "claim": "Season 2 of Just Add Magic has already been released and came out in two parts on Amazon Prime Video.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Part 1: The first episode, \"Just Add Halloween,\" aired Oct 14, 2016.[1] The rest of the first 13 episodes of the season were released on January 12, 2017[2].",
+    "start": 108,
+    "end": 265,
+    "claim": "The first episode of season 2, \"Just Add Halloween,\" aired Oct 14, 2016.",
+    "citation_ids": [
+     "c1",
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.rottentomatoes.com/tv/just-add-magic/s02/e01",
+      "host": "rottentomatoes.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Just Add Magic – Season 2, Episode 1 Just Add Halloween",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": "\nWhere to Watch\nJust Add Magic — Season 2, Episode 1\nWatch Just Add Magic — Season 2, Episode 1 with a subscription on Prime Video.\nMore Like This\nCast & Crew\nPhotos\nJust Add Magic — Season 2, Episode 1\nEpisode Info\n- Director\nJoe Nussbaum\n- Executive Producer\nAndrew Orenstein , Joe Nussbaum\n- Network\nPrime Video\n- Rating\nTV-Y\n- Genre\nKids & Family , Fantasy\n- Original Language\nEnglish\n- Release"
+        }
+       }
+      ],
+      "quote_reason": "The quote confirms that episode 1 of season 2 is titled \"Just Add Halloween\", but it gives no air date, so the Oct 14, 2016 date is not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page lists the episode as Season 2, Episode 1 titled 'Just Add Halloween' with a release date of Oct 14, 2016, which matches the claim.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c2",
+      "url": "https://justaddmagic.fandom.com/wiki/Season_2",
+      "host": "justaddmagic.fandom.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Part 1: The first episode, \"Just Add Halloween,\" aired Oct 14, 2016.[1] The rest of the first 13 episodes of the season were released on January 12, 2017[2].",
+    "start": 108,
+    "end": 265,
+    "claim": "The rest of the first 13 episodes of season 2 were released on January 12, 2017.",
+    "citation_ids": [
+     "c1",
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.rottentomatoes.com/tv/just-add-magic/s02/e01",
+      "host": "rottentomatoes.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives only the release date of Season 2, Episode 1 (Oct 14, 2016) and says nothing about the release dates of the other episodes in season 2, so the claim about January 12, 2017 is not stated.",
+      "read_by": "fetch (short page)"
+     },
+     {
+      "citation_id": "c2",
+      "url": "https://justaddmagic.fandom.com/wiki/Season_2",
+      "host": "justaddmagic.fandom.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Part 2: The remaining episodes (14–26 overall) were released on January 19, 2018[2].",
+    "start": 266,
+    "end": 350,
+    "claim": "The remaining episodes of season 2 (episodes 14–26 overall) were released on January 19, 2018.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://justaddmagic.fandom.com/wiki/Season_2",
+      "host": "justaddmagic.fandom.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "One thing may cause confusion. Some articles say season 2 premiered on January 13. That date comes from Amazon's announcement for the second half of the season.",
+    "start": 351,
+    "end": 511,
+    "claim": "Some articles say season 2 premiered on January 13.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tvseriesfinale.com/tv-show/just-add-magic-season-two-coming-amazon-january/",
+      "host": "tvseriesfinale.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Season two of Just Add Magic debuts on January 13th on Amazon Prime.",
+        "pages": null,
+        "context": {
+         "before": "The magic has returned. Prime Video has announced season two of Just Add Magic will premiere in January.\nBased on the book by Cindy Callaghan, the live-action children’s series follows three girls who discover a magical cook book. The cast includes Olivia Sanabia, Abby Donnelly, Aubrey Miller, and Judah Bellamy.\n",
+         "after": "\nFrom Amazon:\nIn season two, the girls’ Last-Ditch Layer Cake breaks every spell in town which miraculously brings Grandma Quinn (Dee Wallace, E.T. the Extra-Terrestrial) back to her normal self, however it also brings back an old enemy…Chuck Hankins. Chuck disappeared when he was a teenager, but when he returns 50 years later, he hasn’t aged a day. When Chuck begins to meddle with the girls’"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that season two debuts on January 13th, which backs the claim that some articles report a January 13 premiere for season 2.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that season two debuts on January 13th on Amazon Prime, which supports the claim that season 2 premieres on January 13, though it says 'debuts' rather than 'premiered' and the claim's 'some articles say' framing is a meta-claim about reporting that the page does not itself confirm.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "One thing may cause confusion. Some articles say season 2 premiered on January 13. That date comes from Amazon's announcement for the second half of the season.",
+    "start": 351,
+    "end": 511,
+    "claim": "The January 13 date comes from Amazon's announcement for the second half of season 2.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tvseriesfinale.com/tv-show/just-add-magic-season-two-coming-amazon-january/",
+      "host": "tvseriesfinale.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says season two debuts on January 13th on Amazon Prime and includes a summary 'From Amazon', but it never states that the date comes from an Amazon announcement for a second half of season two, and it doesn't mention any split season.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "That announcement describes the plot as the girls' Last-Ditch Layer Cake breaking every spell in town, which brings back an old enemy, Chuck Hankins.[3]",
+    "start": 512,
+    "end": 664,
+    "claim": "Amazon's announcement describes the plot of season 2's second half as the girls' Last-Ditch Layer Cake breaking every spell in town, which brings back an old enemy, Chuck Hankins.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://tvseriesfinale.com/tv-show/just-add-magic-season-two-coming-amazon-january/",
+      "host": "tvseriesfinale.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In season two, the girls’ Last-Ditch Layer Cake breaks every spell in town which miraculously brings Grandma Quinn (Dee Wallace, E.T. the Extra-Terrestrial) back to her normal self, however it also brings back an old enemy…Chuck Hankins.",
+        "pages": null,
+        "context": {
+         "before": "The magic has returned. Prime Video has announced season two of Just Add Magic will premiere in January.\nBased on the book by Cindy Callaghan, the live-action children’s series follows three girls who discover a magical cook book. The cast includes Olivia Sanabia, Abby Donnelly, Aubrey Miller, and Judah Bellamy.\nSeason two of Just Add Magic debuts on January 13th on Amazon Prime.\nFrom Amazon:\n",
+         "after": " Chuck disappeared when he was a teenager, but when he returns 50 years later, he hasn’t aged a day. When Chuck begins to meddle with the girls’ lives, they must put aside their summer of fun in order to save the magic from falling into the wrong hands. As the girls begin to investigate, they learn that Chuck isn’t just an ordinary troublemaker. In fact, he’s capable of much more than they could"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs the core plot point that the Last-Ditch Layer Cake breaks every spell in town and brings back Chuck Hankins, but it says only 'In season two' rather than 'the second half' and does not identify its source as Amazon's announcement.",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives the season two plot from Amazon, including the Last-Ditch Layer Cake breaking spells and Chuck Hankins returning, but it never describes a 'second half' of the season, so that qualifier is unsupported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "The series ran until 2020, and a follow-up series, *Just Add Magic: Mystery City*, was released on January 17, 2020.[4]",
+    "start": 665,
+    "end": 784,
+    "claim": "The Just Add Magic series ran until 2020.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://en.wikipedia.org/wiki/Just_Add_Magic_(TV_series)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "January 15, 2015 – January 17, 2020",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives a date range of January 15, 2015 to January 17, 2020, which backs the claim that the series ran until 2020 without adding any unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page says the main series was released from January 15, 2015 to January 17, 2020, and that the spin-off Mystery City was released January 17, 2020, so the series ran until 2020."
+     }
+    ]
+   },
+   {
+    "sentence": "The series ran until 2020, and a follow-up series, *Just Add Magic: Mystery City*, was released on January 17, 2020.[4]",
+    "start": 665,
+    "end": 784,
+    "claim": "The follow-up series Just Add Magic: Mystery City was released on January 17, 2020.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://en.wikipedia.org/wiki/Just_Add_Magic_(TV_series)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A follow-up series, Just Add Magic: Mystery City, was released on January 17, 2020.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the follow-up series Just Add Magic: Mystery City was released on January 17, 2020, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the follow-up series, Just Add Magic: Mystery City, was released on January 17, 2020, matching the claim exactly."
+     }
+    ]
+   },
+   {
+    "sentence": "You can stream seasons 1–4 on Prime Video[5].",
+    "start": 785,
+    "end": 830,
+    "claim": "Seasons 1–4 of Just Add Magic can be streamed on Prime Video.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.rottentomatoes.com/tv/just-add-magic",
+      "host": "rottentomatoes.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Watch Just Add Magic with a subscription on Prime Video.",
+        "pages": null,
+        "context": {
+         "before": "Just Add Magic\nWhere to Watch\nJust Add Magic\n",
+         "after": "\nSeasons\nCast & Crew\nMore Like This\nPhotos\nJust Add Magic\nSeries Info\n- Director\nJoe Nussbaum\n- Executive Producer\nAndrew Orenstein , Joe Nussbaum\n- Network\nPrime Video\n- Rating\nTV-Y\n- Genre\nKids & Family , Fantasy\n- Original Language\nEnglish\n- Release Date\nJan 15, 2015"
+        }
+       }
+      ],
+      "quote_reason": "The quote shows the show is available on Prime Video with a subscription, but it does not state that seasons 1–4 specifically are included.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the series can be watched on Prime Video with a subscription and lists a 'Seasons' section, but it does not state which seasons (1–4) are available to stream.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 7,
+    "uncited": 1
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2222,
+   "pages_cited": 5,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.0024,
+   "usd_per_claim": 0.00024
+  },
+  "cost": {
+   "total_usd": 0.0024,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

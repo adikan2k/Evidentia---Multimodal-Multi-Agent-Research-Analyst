@@ -1,0 +1,166 @@
+{
+ "id": "health-01-r2",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:04:41+00:00",
+ "report": {
+  "answer_text": "Lenacapavir is a long-acting antiretroviral drug that blocks the HIV-1 capsid, the protein shell the virus needs to replicate. (accessdata.fda.gov)\nOn June 18, 2025, the U.S. FDA approved lenacapavir under the brand name Yeztugo as pre-exposure prophylaxis (PrEP) to reduce the risk of acquiring HIV-1 through sex. It was approved for at-risk adults and adolescents who weigh at least 35 kg (77 lb) and test negative for HIV-1 before starting. After the starting doses, it’s given as an injection every six months. (accessdata.fda.gov)\nThe 2025 approval was for prevention. The FDA had already approved lenacapavir in 2022 as Sunlenca, used with other antiretrovirals to treat certain adults with multidrug-resistant HIV-1. (accessdata.fda.gov)",
+  "claims": [
+   {
+    "sentence": "Lenacapavir is a long-acting antiretroviral drug that blocks the HIV-1 capsid, the protein shell the virus needs to replicate. (accessdata.fda.gov)",
+    "start": 0,
+    "end": 147,
+    "claim": "Lenacapavir is a long-acting antiretroviral drug that blocks the HIV-1 capsid, the protein shell the virus needs to replicate.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/220020s000lbl.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "After the starting doses, it’s given as an injection every six months. (accessdata.fda.gov)",
+    "start": 444,
+    "end": 535,
+    "claim": "After the starting doses, Yeztugo is given as an injection every six months.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220020Orig1s000Approv.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The FDA had already approved lenacapavir in 2022 as Sunlenca, used with other antiretrovirals to treat certain adults with multidrug-resistant HIV-1. (accessdata.fda.gov)",
+    "start": 574,
+    "end": 744,
+    "claim": "The FDA approved lenacapavir in 2022 as Sunlenca.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220018Orig1s000IntegratedR.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The FDA had already approved lenacapavir in 2022 as Sunlenca, used with other antiretrovirals to treat certain adults with multidrug-resistant HIV-1. (accessdata.fda.gov)",
+    "start": 574,
+    "end": 744,
+    "claim": "Sunlenca is used with other antiretrovirals to treat certain adults with multidrug-resistant HIV-1.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2025/220018Orig1s000IntegratedR.pdf?utm_source=openai",
+      "host": "accessdata.fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 404 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 3,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 4,
+   "claims_over_limit": 0,
+   "usd": 0.000582,
+   "usd_per_claim": 0.000145
+  },
+  "cost": {
+   "total_usd": 0.0006,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

@@ -26,7 +26,7 @@ QUESTION = "How fast did solar capacity grow in 2023?"
 class Harness:
     """An app wired to fakes, remembering the fake database so tests can look inside it."""
 
-    def __init__(self, settings, claims=(BACKED,)) -> None:
+    def __init__(self, settings, claims=(BACKED,), spend=None) -> None:
         self.settings = settings
         self.qdrant = MemoryQdrant()
         self.claims = list(claims)
@@ -35,6 +35,7 @@ class Harness:
             tracer=NoopTracer(),
             make_deps=self.make_deps,
             make_llm=lambda ledger: ScriptedLLM(settings, ledger, [], [], judge=judge),
+            spend=spend,
         )
         self.app = create_app(services)
         self.limits: Limits = self.app.state.limits
@@ -78,7 +79,12 @@ def events(response: httpx.Response) -> list[tuple[str, dict]]:
 def test_health_and_status(settings) -> None:
     api = Harness(settings)
     assert api.call("GET", "/health").json() == {"ok": True}
-    assert api.call("GET", "/status").json() == {"live_available": True, "run_cap_usd": 0.25}
+    assert api.call("GET", "/status").json() == {
+        "live_available": True,
+        "run_cap_usd": 0.25,
+        "audit_available": False,  # this harness has no audit services
+        "audit_cap_usd": 0.25,
+    }
 
 
 def test_a_run_streams_each_step_then_the_report(settings) -> None:

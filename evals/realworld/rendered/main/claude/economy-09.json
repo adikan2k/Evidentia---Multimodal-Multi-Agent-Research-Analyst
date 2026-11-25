@@ -1,0 +1,788 @@
+{
+ "id": "economy-09",
+ "tool": "claude",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.japantimes.co.jp/business/2025/11/21/economy/takaichi-economic-stimulus/",
+   "read": false,
+   "why_not": "still too little text after the browser ran the page"
+  },
+  {
+   "url": "https://tradingeconomics.com/japan/full-year-gdp-growth/news/500450",
+   "read": false,
+   "why_not": "still too little text after the browser ran the page"
+  },
+  {
+   "url": "https://www.bloomberg.com/news/articles/2025-11-10/japan-s-takaichi-eyes-stimulus-package-to-jump-start-growth-plan",
+   "read": false,
+   "why_not": "HTTP 403"
+  }
+ ],
+ "usd": 0,
+ "report": {
+  "answer_text": "Sanae Takaichi became prime minister in October 2025. Her main economic proposals that year were these:\nStimulus package\nHer Cabinet approved a ¥21.3 trillion ($136 billion) stimulus package on November 21.[1] It includes ¥17.7 trillion of spending, ¥2.7 trillion in tax breaks and ¥900 billion in special account spending.[1]\nIt is the largest stimulus package since the pandemic.[1]\nIt was built around three priorities. These were relief from the rising cost of living, \"strategic investments\" in sectors such as shipbuilding, AI and semiconductors, and higher defense spending.[2]\nCost-of-living relief\nThe package includes scrapping a provisional gasoline tax and expanding subsidies for electricity and gas bills.[3]\nIt also includes energy subsidies and other measures for consumers struggling with the rising cost of living.[4]\n\"Responsible proactive fiscal policy\"\nTakaichi is an advocate of big fiscal spending, and she calls her approach \"responsible proactive fiscal policy.\"[5]\nShe argued for strengthening national power through expansionary spending and avoiding harm from excessively contractionary policies.[4]\nShe has advocated continuing Abenomics, the policy of aggressive fiscal spending and monetary easing under former Prime Minister Shinzo Abe.[3]\nMonetary policy\nA draft outline of the package urged the Bank of Japan to focus on strong economic growth with stable prices. That reflects her preference for keeping interest rates low.[6]\nGrowth strategy\nA panel is due to form a new economic strategy by next summer. It recommended using the package to start building growth through \"crisis management investment and growth investment.\"[7]\nReaction\nThe package stoked fears about Japan's already large debt. Government bond yields rose to record highs and the yen fell against the dollar.[8]\nTakaichi leads a minority government, so she needs opposition cooperation to pass the supplementary budget that funds the package.[4]\nOpposition lawmakers and experts have questioned whether the package will be effective.[4]",
+  "claims": [
+   {
+    "sentence": "Sanae Takaichi became prime minister in October 2025.",
+    "start": 0,
+    "end": 53,
+    "claim": "Sanae Takaichi became prime minister in October 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Her Cabinet approved a ¥21.3 trillion ($136 billion) stimulus package on November 21.[1]",
+    "start": 121,
+    "end": 209,
+    "claim": "Her Cabinet approved a ¥21.3 trillion ($136 billion) stimulus package on November 21.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.japantimes.co.jp/business/2025/11/21/economy/takaichi-economic-stimulus/",
+      "host": "japantimes.co.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It includes ¥17.7 trillion of spending, ¥2.7 trillion in tax breaks and ¥900 billion in special account spending.[1]",
+    "start": 210,
+    "end": 326,
+    "claim": "The ¥21.3 trillion stimulus package includes ¥17.7 trillion of spending.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.japantimes.co.jp/business/2025/11/21/economy/takaichi-economic-stimulus/",
+      "host": "japantimes.co.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It includes ¥17.7 trillion of spending, ¥2.7 trillion in tax breaks and ¥900 billion in special account spending.[1]",
+    "start": 210,
+    "end": 326,
+    "claim": "The ¥21.3 trillion stimulus package includes ¥2.7 trillion in tax breaks.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.japantimes.co.jp/business/2025/11/21/economy/takaichi-economic-stimulus/",
+      "host": "japantimes.co.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It includes ¥17.7 trillion of spending, ¥2.7 trillion in tax breaks and ¥900 billion in special account spending.[1]",
+    "start": 210,
+    "end": 326,
+    "claim": "The ¥21.3 trillion stimulus package includes ¥900 billion in special account spending.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.japantimes.co.jp/business/2025/11/21/economy/takaichi-economic-stimulus/",
+      "host": "japantimes.co.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It is the largest stimulus package since the pandemic.[1]",
+    "start": 327,
+    "end": 384,
+    "claim": "The ¥21.3 trillion stimulus package is the largest stimulus package since the pandemic.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.japantimes.co.jp/business/2025/11/21/economy/takaichi-economic-stimulus/",
+      "host": "japantimes.co.jp",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was built around three priorities. These were relief from the rising cost of living, \"strategic investments\" in sectors such as shipbuilding, AI and semiconductors, and higher defense spending.[2]",
+    "start": 385,
+    "end": 584,
+    "claim": "The stimulus package was built around three priorities: relief from the rising cost of living, \"strategic investments\" in sectors such as shipbuilding, AI and semiconductors, and higher defense spending.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://asiatimes.com/2025/11/takaichi-goes-big-on-stimulus-as-japan-takes-fiscal-risk/",
+      "host": "asiatimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This stimulus package was structured around three priorities, including measures to provide relief from the rising cost of living; “strategic investments” in high-priority sectors, including shipbuilding, artificial intelligence (AI), and semiconductors; and an increase in defense spending to bring total defense expenditures for FY2025 to 2% of GDP.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the package had three priorities: cost-of-living relief, strategic investments in shipbuilding, AI and semiconductors, and increased defense spending, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the stimulus package was structured around three priorities: cost-of-living relief, 'strategic investments' in high-priority sectors including shipbuilding, AI and semiconductors, and increased defense spending, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The package includes scrapping a provisional gasoline tax and expanding subsidies for electricity and gas bills.[3]",
+    "start": 607,
+    "end": 722,
+    "claim": "The stimulus package includes scrapping a provisional gasoline tax.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://english.news.cn/20251207/7fa184aacf1e4074a3951fddc89e55c5/c.html",
+      "host": "english.news.cn",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Takaichi introduced many inflation relief measures including scrapping a provisional gasoline tax",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the relief measures included scrapping a provisional gasoline tax, which matches the claim that the stimulus package includes it, though the quote does not explicitly name the package as a 'stimulus package'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Takaichi's 21.3 trillion-yen economic stimulus package introduced inflation relief measures including scrapping a provisional gasoline tax, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The package includes scrapping a provisional gasoline tax and expanding subsidies for electricity and gas bills.[3]",
+    "start": 607,
+    "end": 722,
+    "claim": "The stimulus package includes expanding subsidies for electricity and gas bills.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://english.news.cn/20251207/7fa184aacf1e4074a3951fddc89e55c5/c.html",
+      "host": "english.news.cn",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "expanding subsidies for electricity and gas bills for the first three months of next year",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the package includes expanding subsidies for electricity and gas bills, which is everything the claim says, with the three-month timing being extra detail the claim does not contradict.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Takaichi's economic stimulus package introduced measures including expanding subsidies for electricity and gas bills for the first three months of next year, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It also includes energy subsidies and other measures for consumers struggling with the rising cost of living.[4]",
+    "start": 723,
+    "end": 835,
+    "claim": "The stimulus package includes energy subsidies and other measures for consumers struggling with the rising cost of living.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.barchart.com/story/news/36247424/japan-oks-135-billion-stimulus-package-to-help-revive-its-sluggish-economy",
+      "host": "barchart.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 202",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Takaichi is an advocate of big fiscal spending, and she calls her approach \"responsible proactive fiscal policy.\"[5]",
+    "start": 874,
+    "end": 990,
+    "claim": "Takaichi is an advocate of big fiscal spending.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.malaymail.com/news/money/2025/10/22/japans-new-pm-readies-mega-stimulus-to-fight-inflation-sources-say/195525",
+      "host": "malaymail.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Takaichi is an advocate of big fiscal spending, and she calls her approach \"responsible proactive fiscal policy.\"[5]",
+    "start": 874,
+    "end": 990,
+    "claim": "Takaichi calls her approach \"responsible proactive fiscal policy.\"",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.malaymail.com/news/money/2025/10/22/japans-new-pm-readies-mega-stimulus-to-fight-inflation-sources-say/195525",
+      "host": "malaymail.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "She argued for strengthening national power through expansionary spending and avoiding harm from excessively contractionary policies.[4]",
+    "start": 991,
+    "end": 1127,
+    "claim": "Takaichi argued for strengthening national power through expansionary spending.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.barchart.com/story/news/36247424/japan-oks-135-billion-stimulus-package-to-help-revive-its-sluggish-economy",
+      "host": "barchart.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 202",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "She argued for strengthening national power through expansionary spending and avoiding harm from excessively contractionary policies.[4]",
+    "start": 991,
+    "end": 1127,
+    "claim": "Takaichi argued for avoiding harm from excessively contractionary policies.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.barchart.com/story/news/36247424/japan-oks-135-billion-stimulus-package-to-help-revive-its-sluggish-economy",
+      "host": "barchart.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 202",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "She has advocated continuing Abenomics, the policy of aggressive fiscal spending and monetary easing under former Prime Minister Shinzo Abe.[3]",
+    "start": 1128,
+    "end": 1271,
+    "claim": "Takaichi has advocated continuing Abenomics, the policy of aggressive fiscal spending and monetary easing under former Prime Minister Shinzo Abe.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://english.news.cn/20251207/7fa184aacf1e4074a3951fddc89e55c5/c.html",
+      "host": "english.news.cn",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Takaichi advocates the continuation of the \"Abenomics\" economic policy promoted by the administration of the former Prime Minister Shinzo Abe, which advanced an aggressive fiscal policy and monetary easing.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Takaichi advocates continuing Abenomics, which it describes as Abe-administration policy of aggressive fiscal policy and monetary easing, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Takaichi advocates the continuation of the 'Abenomics' economic policy, which it describes as an aggressive fiscal policy and monetary easing promoted under former Prime Minister Shinzo Abe, so the claim is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "A draft outline of the package urged the Bank of Japan to focus on strong economic growth with stable prices. That reflects her preference for keeping interest rates low.[6]",
+    "start": 1288,
+    "end": 1461,
+    "claim": "A draft outline of the package urged the Bank of Japan to focus on strong economic growth with stable prices.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://tradingeconomics.com/japan/full-year-gdp-growth/news/500450",
+      "host": "tradingeconomics.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A draft outline of the package urged the Bank of Japan to focus on strong economic growth with stable prices. That reflects her preference for keeping interest rates low.[6]",
+    "start": 1288,
+    "end": 1461,
+    "claim": "Takaichi has a preference for keeping interest rates low.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://tradingeconomics.com/japan/full-year-gdp-growth/news/500450",
+      "host": "tradingeconomics.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A panel is due to form a new economic strategy by next summer. It recommended using the package to start building growth through \"crisis management investment and growth investment.\"[7]",
+    "start": 1478,
+    "end": 1663,
+    "claim": "A panel is due to form a new economic strategy by next summer.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.bloomberg.com/news/articles/2025-11-10/japan-s-takaichi-eyes-stimulus-package-to-jump-start-growth-plan",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A panel is due to form a new economic strategy by next summer. It recommended using the package to start building growth through \"crisis management investment and growth investment.\"[7]",
+    "start": 1478,
+    "end": 1663,
+    "claim": "The panel recommended using the package to start building growth through \"crisis management investment and growth investment.\"",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.bloomberg.com/news/articles/2025-11-10/japan-s-takaichi-eyes-stimulus-package-to-jump-start-growth-plan",
+      "host": "bloomberg.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The package stoked fears about Japan's already large debt. Government bond yields rose to record highs and the yen fell against the dollar.[8]",
+    "start": 1673,
+    "end": 1815,
+    "claim": "The package stoked fears about Japan's already large debt.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://malaymail.com/news/money/2025/11/21/tokyo-approves-rm560b-relief-package-despite-market-jitters-over-rising-debt-weak-yen/199202",
+      "host": "malaymail.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The package stoked fears about Japan's already large debt. Government bond yields rose to record highs and the yen fell against the dollar.[8]",
+    "start": 1673,
+    "end": 1815,
+    "claim": "Government bond yields rose to record highs after the package.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://malaymail.com/news/money/2025/11/21/tokyo-approves-rm560b-relief-package-despite-market-jitters-over-rising-debt-weak-yen/199202",
+      "host": "malaymail.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The package stoked fears about Japan's already large debt. Government bond yields rose to record highs and the yen fell against the dollar.[8]",
+    "start": 1673,
+    "end": 1815,
+    "claim": "The yen fell against the dollar after the package.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://malaymail.com/news/money/2025/11/21/tokyo-approves-rm560b-relief-package-despite-market-jitters-over-rising-debt-weak-yen/199202",
+      "host": "malaymail.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Takaichi leads a minority government, so she needs opposition cooperation to pass the supplementary budget that funds the package.[4]",
+    "start": 1816,
+    "end": 1949,
+    "claim": "Takaichi leads a minority government.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.barchart.com/story/news/36247424/japan-oks-135-billion-stimulus-package-to-help-revive-its-sluggish-economy",
+      "host": "barchart.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 202",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Takaichi leads a minority government, so she needs opposition cooperation to pass the supplementary budget that funds the package.[4]",
+    "start": 1816,
+    "end": 1949,
+    "claim": "Takaichi needs opposition cooperation to pass the supplementary budget that funds the package.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.barchart.com/story/news/36247424/japan-oks-135-billion-stimulus-package-to-help-revive-its-sluggish-economy",
+      "host": "barchart.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 202",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Opposition lawmakers and experts have questioned whether the package will be effective.[4]",
+    "start": 1950,
+    "end": 2040,
+    "claim": "Opposition lawmakers and experts have questioned whether the package will be effective.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.barchart.com/story/news/36247424/japan-oks-135-billion-stimulus-package-to-help-revive-its-sluggish-economy",
+      "host": "barchart.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 202",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 20,
+    "uncited": 1
+   },
+   "cited_claims": 24,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.1667,
+   "pages_cited": 8,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003265,
+   "usd_per_claim": 0.000131
+  },
+  "cost": {
+   "total_usd": 0.0033,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0005
+    }
+   ]
+  }
+ }
+}

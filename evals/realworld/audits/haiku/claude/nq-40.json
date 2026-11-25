@@ -1,0 +1,303 @@
+{
+ "id": "nq-40",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "NFL games in London are played at two stadiums:\nTottenham Hotspur Stadium is the home of the NFL in the United Kingdom[1]. It has been the main London host of NFL games since 2019[2]. The address is 746 High Road, London[3].\nWembley Stadium has been hosting NFL games since 2007[2]. The Jacksonville Jaguars have a multi-year commitment to play there.\nTwickenham has also hosted NFL games in the past.\nThe 2026 season had three games in London in October. Tottenham Hotspur Stadium hosted the first two, and the final game was played at Wembley Stadium on 18 October.[2]",
+  "claims": [
+   {
+    "sentence": "NFL games in London are played at two stadiums:",
+    "start": 0,
+    "end": 47,
+    "claim": "NFL games in London are played at two stadiums.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Tottenham Hotspur Stadium is the home of the NFL in the United Kingdom[1].",
+    "start": 48,
+    "end": 122,
+    "claim": "Tottenham Hotspur Stadium is the home of the NFL in the United Kingdom.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nfl.com/news/jaguars-commanders-to-play-in-2026-nfl-london-games",
+      "host": "nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The two games are scheduled to be played at Tottenham Hotspur Stadium -- the home of the NFL in the United Kingdom.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Tottenham Hotspur Stadium is the home of the NFL in the United Kingdom, matching the claim's wording.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the two 2026 London games will be played at Tottenham Hotspur Stadium, 'the home of the NFL in the United Kingdom.'"
+     }
+    ]
+   },
+   {
+    "sentence": "It has been the main London host of NFL games since 2019[2].",
+    "start": 123,
+    "end": 183,
+    "claim": "Tottenham Hotspur Stadium has been the main London host of NFL games since 2019.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://londonist.com/london/sport/nfl-in-london-games-what-when-matches-where-get-tickets",
+      "host": "londonist.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The address is 746 High Road, London[3].",
+    "start": 184,
+    "end": 224,
+    "claim": "The address of Tottenham Hotspur Stadium is 746 High Road, London.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nfl.com/news/2026-nfl-london-games-gameday-guide",
+      "host": "nfl.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Location: Tottenham Hotspur Stadium, 746 High Road, London",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the stadium's location as 746 High Road, London, which matches every part of the claim's address.",
+      "page_judged": "supported",
+      "page_reason": "The page states the NFL Shop Tottenham location as 'Tottenham Hotspur Stadium, 746 High Road, London', which directly gives the stadium's address as 746 High Road, London."
+     }
+    ]
+   },
+   {
+    "sentence": "Wembley Stadium has been hosting NFL games since 2007[2].",
+    "start": 225,
+    "end": 282,
+    "claim": "Wembley Stadium has been hosting NFL games since 2007.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://londonist.com/london/sport/nfl-in-london-games-what-when-matches-where-get-tickets",
+      "host": "londonist.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Jacksonville Jaguars have a multi-year commitment to play there.",
+    "start": 283,
+    "end": 351,
+    "claim": "The Jacksonville Jaguars have a multi-year commitment to play at Wembley Stadium.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Twickenham has also hosted NFL games in the past.",
+    "start": 352,
+    "end": 401,
+    "claim": "Twickenham has hosted NFL games in the past.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The 2026 season had three games in London in October.",
+    "start": 402,
+    "end": 455,
+    "claim": "The 2026 NFL season had three games in London in October.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://londonist.com/london/sport/nfl-in-london-games-what-when-matches-where-get-tickets",
+      "host": "londonist.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Tottenham Hotspur Stadium hosted the first two, and the final game was played at Wembley Stadium on 18 October.[2]",
+    "start": 456,
+    "end": 570,
+    "claim": "Tottenham Hotspur Stadium hosted the first two London games of the 2026 season in October.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://londonist.com/london/sport/nfl-in-london-games-what-when-matches-where-get-tickets",
+      "host": "londonist.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Tottenham Hotspur Stadium hosted the first two, and the final game was played at Wembley Stadium on 18 October.[2]",
+    "start": 456,
+    "end": 570,
+    "claim": "The final London game of the 2026 season was played at Wembley Stadium on 18 October.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://londonist.com/london/sport/nfl-in-london-games-what-when-matches-where-get-tickets",
+      "host": "londonist.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 5,
+    "uncited": 3
+   },
+   "cited_claims": 7,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2857,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001992,
+   "usd_per_claim": 0.000199
+  },
+  "cost": {
+   "total_usd": 0.002,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

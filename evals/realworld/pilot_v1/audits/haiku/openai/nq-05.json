@@ -1,0 +1,251 @@
+{
+ "id": "nq-05",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "A typical horizontal-jib tower crane moves a load in three ways: the hoist raises and lowers it, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower. (morrow.com)\n| Part | Function |\n|---|---|\n| Base and foundation | Support the crane and transfer its weight and lifting forces to the ground. |\n| Mast (tower) | The vertical structure, usually made of stacked steel sections, that supports the upper crane and gives it height. |\n| Slewing unit (turntable) | Uses a bearing and motor drive to rotate the upper crane around the mast. |\n| Jib (working arm) | The long arm that gives the crane its reach and serves as a track for the trolley. |\n| Trolley | Travels along the jib to position the hook closer to or farther from the mast. |\n| Hoist winch and wire rope | The powered winch winds or unwinds the rope to raise or lower the hook. |\n| Hook block | The assembly at the bottom of the hoist rope that carries the hook, where slings or other lifting gear attach. |\n| Counter-jib | The shorter arm behind the mast that supports the counterweights and often carries machinery. |\n| Counterweights | Heavy blocks that counteract the overturning effect of the working arm and its load. |\n| Operator’s cab and controls | Let the operator control the crane’s movements and monitor the lift. |\nThese are the main parts of a typical top-slewing, horizontal-jib crane. On a luffing-jib crane, the arm pivots up and down to change how far the hook reaches from the tower, rather than using a trolley for that movement. (morrow.com)",
+  "claims": [
+   {
+    "sentence": "A typical horizontal-jib tower crane moves a load in three ways: the hoist raises and lowers it, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower. (morrow.com)",
+    "start": 0,
+    "end": 210,
+    "claim": "A typical horizontal-jib tower crane moves a load in three ways: the hoist raises and lowers it, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page names the base, tower mast, and slewing unit as three major sections and mentions the jib and cab, but it does not describe the hoist, trolley, or how a load is moved, so the claim's three-way load movement is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "Base and foundation | Support the crane and transfer its weight and lifting forces to the ground.",
+    "start": 243,
+    "end": 340,
+    "claim": "The base and foundation of a tower crane support the crane and transfer its weight and lifting forces to the ground.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Mast (tower) | The vertical structure, usually made of stacked steel sections, that supports the upper crane and gives it height.",
+    "start": 345,
+    "end": 474,
+    "claim": "The mast (tower) of a tower crane is the vertical structure, usually made of stacked steel sections, that supports the upper crane and gives it height.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Slewing unit (turntable) | Uses a bearing and motor drive to rotate the upper crane around the mast.",
+    "start": 479,
+    "end": 579,
+    "claim": "The slewing unit (turntable) of a tower crane uses a bearing and motor drive to rotate the upper crane around the mast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jib (working arm) | The long arm that gives the crane its reach and serves as a track for the trolley.",
+    "start": 584,
+    "end": 686,
+    "claim": "The jib (working arm) of a tower crane is the long arm that gives the crane its reach and serves as a track for the trolley.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Trolley | Travels along the jib to position the hook closer to or farther from the mast.",
+    "start": 691,
+    "end": 779,
+    "claim": "The trolley travels along the jib to position the hook closer to or farther from the mast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Hoist winch and wire rope | The powered winch winds or unwinds the rope to raise or lower the hook.",
+    "start": 784,
+    "end": 883,
+    "claim": "The powered hoist winch winds or unwinds the wire rope to raise or lower the hook.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Hook block | The assembly at the bottom of the hoist rope that carries the hook, where slings or other lifting gear attach.",
+    "start": 888,
+    "end": 1011,
+    "claim": "The hook block is the assembly at the bottom of the hoist rope that carries the hook, where slings or other lifting gear attach.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Counter-jib | The shorter arm behind the mast that supports the counterweights and often carries machinery.",
+    "start": 1016,
+    "end": 1123,
+    "claim": "The counter-jib is the shorter arm behind the mast that supports the counterweights and often carries machinery.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Counterweights | Heavy blocks that counteract the overturning effect of the working arm and its load.",
+    "start": 1128,
+    "end": 1229,
+    "claim": "Counterweights are heavy blocks that counteract the overturning effect of the working arm and its load.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Operator’s cab and controls | Let the operator control the crane’s movements and monitor the lift.",
+    "start": 1234,
+    "end": 1332,
+    "claim": "The operator's cab and controls let the operator control the crane's movements and monitor the lift.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "These are the main parts of a typical top-slewing, horizontal-jib crane. On a luffing-jib crane, the arm pivots up and down to change how far the hook reaches from the tower, rather than using a trolley for that movement. (morrow.com)",
+    "start": 1335,
+    "end": 1569,
+    "claim": "The parts listed are the main parts of a typical top-slewing, horizontal-jib crane.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a modern tower crane consists of a base, tower mast, and slewing unit, and mentions a jib, but it never describes the crane as top-slewing or horizontal-jib, so that qualifier is unsupported."
+     }
+    ]
+   },
+   {
+    "sentence": "These are the main parts of a typical top-slewing, horizontal-jib crane. On a luffing-jib crane, the arm pivots up and down to change how far the hook reaches from the tower, rather than using a trolley for that movement. (morrow.com)",
+    "start": 1335,
+    "end": 1569,
+    "claim": "On a luffing-jib crane, the arm pivots up and down to change how far the hook reaches from the tower, rather than using a trolley for that movement.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only describes a tower crane as having a base, tower mast, and slewing unit, and mentions a jib, but says nothing about luffing jibs, arm pivoting, or trolley-based radius changes."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 13,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 10
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001515,
+   "usd_per_claim": 0.000117
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

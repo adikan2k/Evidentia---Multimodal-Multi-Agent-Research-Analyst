@@ -1,0 +1,144 @@
+{
+ "id": "nq-48-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The five compulsory daily prayers in Islam, in order, are:\n1. Fajr — at dawn, before sunrise.\n2. Dhuhr — just after midday, once the sun begins to decline.\n3. Asr — in the afternoon.\n4. Maghrib — just after sunset.\n5. Isha — at night, after twilight has faded.\nThese prayers are collectively known as salah, one of the Five Pillars of Islam.",
+  "claims": [
+   {
+    "sentence": "The five compulsory daily prayers in Islam, in order, are:",
+    "start": 0,
+    "end": 58,
+    "claim": "The five compulsory daily prayers in Islam, in order, are Fajr, Dhuhr, Asr, Maghrib and Isha.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "1. Fajr — at dawn, before sunrise.",
+    "start": 59,
+    "end": 93,
+    "claim": "Fajr is the prayer performed at dawn, before sunrise.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "2. Dhuhr — just after midday, once the sun begins to decline.",
+    "start": 94,
+    "end": 155,
+    "claim": "Dhuhr is the prayer performed just after midday, once the sun begins to decline.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "3. Asr — in the afternoon.",
+    "start": 156,
+    "end": 182,
+    "claim": "Asr is the prayer performed in the afternoon.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "4. Maghrib — just after sunset.",
+    "start": 183,
+    "end": 214,
+    "claim": "Maghrib is the prayer performed just after sunset.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "5. Isha — at night, after twilight has faded.",
+    "start": 215,
+    "end": 260,
+    "claim": "Isha is the prayer performed at night, after twilight has faded.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "These prayers are collectively known as salah, one of the Five Pillars of Islam.",
+    "start": 261,
+    "end": 341,
+    "claim": "The five daily prayers are collectively known as salah.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "These prayers are collectively known as salah, one of the Five Pillars of Islam.",
+    "start": 261,
+    "end": 341,
+    "claim": "Salah is one of the Five Pillars of Islam.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 8
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000334,
+   "usd_per_claim": 4.2e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

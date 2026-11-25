@@ -1,0 +1,252 @@
+{
+ "id": "sport_culture-09",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Hungarian novelist László Krasznahorkai won the 2025 Nobel Prize in Literature. The Swedish Academy honored him “for his compelling and visionary oeuvre that, in the midst of apocalyptic terror, reaffirms the power of art.” (nobelprize.org)\nHe’s best known for novels such as *Satantango* and *The Melancholy of Resistance*. His fiction is distinctive for its long, winding sentences, dark humor, and dreamlike scenes that often depict communities on the verge of collapse. (nobelprize.org)",
+  "claims": [
+   {
+    "sentence": "Hungarian novelist László Krasznahorkai won the 2025 Nobel Prize in Literature.",
+    "start": 0,
+    "end": 79,
+    "claim": "Hungarian novelist László Krasznahorkai won the 2025 Nobel Prize in Literature.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/Enpress25.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Swedish Academy honored him “for his compelling and visionary oeuvre that, in the midst of apocalyptic terror, reaffirms the power of art.” (nobelprize.org)",
+    "start": 80,
+    "end": 240,
+    "claim": "The Swedish Academy honored László Krasznahorkai “for his compelling and visionary oeuvre that, in the midst of apocalyptic terror, reaffirms the power of art.” (nobelprize.org)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/Enpress25.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He’s best known for novels such as *Satantango* and *The Melancholy of Resistance*.",
+    "start": 241,
+    "end": 324,
+    "claim": "László Krasznahorkai is best known for novels such as Satantango and The Melancholy of Resistance.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/uploads/2025/10/biobibliography-literatureprize2025-1.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Satantango as Krasznahorkai’s breakthrough work and discusses The Melancholy of Resistance, but does not state that these are the novels for which he is best known."
+     }
+    ]
+   },
+   {
+    "sentence": "His fiction is distinctive for its long, winding sentences, dark humor, and dreamlike scenes that often depict communities on the verge of collapse. (nobelprize.org)",
+    "start": 325,
+    "end": 490,
+    "claim": "László Krasznahorkai's fiction is distinctive for its long, winding sentences, dark humor, and dreamlike scenes (nobelprize.org).",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/uploads/2025/10/biobibliography-literatureprize2025-1.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Krasznahorkai’s prose has developed towards the flowing syntax with long, winding sentences devoid of full stops that has become his signature.",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       },
+       {
+        "text": "Employing dreamlike scenes and grotesque characterisations, László Krasznahorkai masterfully portrays the brutal struggle between order and disorder.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "László Krasznahorkai is a great epic writer in the Central European tradition that extends through Kafka to Thomas Bernhard, and is characterised by absurdism and grotesque excess.",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back long winding sentences, dreamlike scenes and grotesque excess/absurdism, but none of them mention dark humor, so that part of the claim is not backed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Krasznahorkai’s signature prose as long and winding and mentions dreamlike scenes, but it does not state that his fiction is distinctive for dark humor."
+     }
+    ]
+   },
+   {
+    "sentence": "His fiction is distinctive for its long, winding sentences, dark humor, and dreamlike scenes that often depict communities on the verge of collapse. (nobelprize.org)",
+    "start": 325,
+    "end": 490,
+    "claim": "László Krasznahorkai's dreamlike scenes often depict communities on the verge of collapse (nobelprize.org).",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/uploads/2025/10/biobibliography-literatureprize2025-1.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Employing dreamlike scenes and grotesque characterisations, László Krasznahorkai masterfully portrays the brutal struggle between order and disorder.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "Meanwhile, the inability of the military to prevent anarchy creates the possibility of a dictatorial coup.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "The novel portrays, in powerfully suggestive terms, a destitute group of residents on an abandoned collective farm in the Hungarian countryside just before the fall of communism.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the dreamlike scenes and the portrayal of a destitute group on an abandoned collective farm near the fall of communism, which fits communities on the verge of collapse, but nothing states that such depictions are typical or 'often' recurring across his work.",
+      "page_judged": "supported",
+      "page_reason": "The page describes dreamlike scenes portraying a struggle between order and disorder and repeatedly depicts communities facing anarchy, violence, or life on an abandoned collective farm."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 2,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004164,
+   "usd_per_claim": 0.000833
+  },
+  "cost": {
+   "total_usd": 0.0042,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0014
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0021
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

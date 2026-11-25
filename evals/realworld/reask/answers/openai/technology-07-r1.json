@@ -1,0 +1,30 @@
+{
+ "id": "technology-07-r1",
+ "tool": "web search",
+ "question": "What caused the Amazon Web Services outage in October 2025, and what did it disrupt?",
+ "model": "gpt-6.2-sol",
+ "made_at": "2026-11-25T00:16:57+00:00",
+ "text": "The **October 20, 2025 AWS outage** started with a software bug in the automated DNS system for **DynamoDB**, Amazon’s managed database, in its **Northern Virginia (`us-east-1`)** region. Two automated updates ran in an unexpected order—a *race condition*—leaving the database’s regional address with an empty DNS record. Applications that depended on that address could no longer connect. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\n**The failure spread beyond the database.** Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers, and faulty load-balancer health checks caused further connection failures. AWS Lambda and other cloud services were also affected. The main incident lasted about **14½ hours**. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\n**Users around the world felt the effects.** Disrupted services included Snapchat, Signal, Slack, Canva, Roblox, Fortnite, and Amazon’s own Ring and Alexa. The failure began in one AWS region, but services used worldwide depended on it. ([thousandeyes.com](https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai))",
+ "citations": 2,
+ "ended": "completed",
+ "searches": 3,
+ "raw_text": "The **October 20, 2025 AWS outage** started with a software bug in the automated DNS system for **DynamoDB**, Amazon’s managed database, in its **Northern Virginia (`us-east-1`)** region. Two automated updates ran in an unexpected order—a *race condition*—leaving the database’s regional address with an empty DNS record. Applications that depended on that address could no longer connect. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\n**The failure spread beyond the database.** Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers, and faulty load-balancer health checks caused further connection failures. AWS Lambda and other cloud services were also affected. The main incident lasted about **14½ hours**. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\n**Users around the world felt the effects.** Disrupted services included Snapchat, Signal, Slack, Canva, Roblox, Fortnite, and Amazon’s own Ring and Alexa. The failure began in one AWS region, but services used worldwide depended on it. ([thousandeyes.com](https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai))",
+ "annotations": [
+  {
+   "url": "https://aws.amazon.com/message/101925/",
+   "start": 390,
+   "end": 448
+  },
+  {
+   "url": "https://aws.amazon.com/message/101925/",
+   "start": 754,
+   "end": 812
+  },
+  {
+   "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai",
+   "start": 1051,
+   "end": 1160
+  }
+ ],
+ "usd": 0.0679
+}

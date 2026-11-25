@@ -1,0 +1,858 @@
+{
+ "id": "technology-01",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "GPT-5 is OpenAI's flagship large language model. OpenAI released it on August 7, 2025.[1] It is a multimodal model and became the default model in ChatGPT.[2]\nMain new features\nUnified system with a router. GPT-5 combines a fast, efficient model for most questions, a deeper reasoning model (\"GPT-5 thinking\") for harder problems, and a real-time router. The router chooses between them based on conversation type and complexity.[1] This removes the old split between OpenAI's flagship models and its o-series reasoning models.[3] Users no longer have to pick a model themselves.\nBetter coding and agentic abilities. OpenAI called it its strongest coding model to date.[1] It produces high-quality code and generates front-end UI with minimal prompting. OpenAI also cites improvements in personality, steerability, and running long chains of tool calls.[4]\nFewer hallucinations and more efficient reasoning.\nWith web search on, OpenAI says GPT-5's responses are about 45% less likely to contain a factual error than GPT-4o's. When thinking, they are about 80% less likely than OpenAI o3's.[1]\nGPT-5 with thinking beat o3 while using 50–80% fewer output tokens.[1]\nBroad performance gains. OpenAI claimed state-of-the-art performance across coding, math, writing, health, visual perception, and more.[1]\nNew developer/API features.\nIt comes in three API sizes (gpt-5, gpt-5-mini, and gpt-5-nano), so developers can trade off performance, cost, and latency.[5]\nThe reasoning_effort parameter adds a \"minimal\" setting, which returns answers quickly with little reasoning.[5]\nA verbosity parameter controls response length. Free-form function calling sends raw text to tools. Context-free grammars enforce specific output formats.[6]\nThe API model handles text and vision, with a 400K context window and 128K max output tokens.[4]\nInput limits. Native video and audio processing was not included in the initial release.[6] Some pre-launch speculation had predicted it.\nSince launch\nOpenAI has released several updates since then. One source says GPT-5.1 through 5.6 shipped within 11 months[7]. It also says the original GPT-5 was retired from ChatGPT on Feb 13, 2026[7]. Details on the later versions come from a single secondary source, so check OpenAI's official announcements for them.",
+  "claims": [
+   {
+    "sentence": "GPT-5 is OpenAI's flagship large language model.",
+    "start": 0,
+    "end": 48,
+    "claim": "GPT-5 is OpenAI's flagship large language model.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We are introducing GPT‑5, our best AI system yet.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that GPT-5 is OpenAI's best AI system, but it does not state that GPT-5 is a large language model or that it is the flagship model.",
+      "page_judged": "not_supported",
+      "page_reason": "The page calls GPT-5 OpenAI's 'best AI system yet' and describes it as a unified system with a default model, but it never uses the phrase 'flagship large language model' or describes it as a large language model, so the specific characterization is not stated."
+     }
+    ]
+   },
+   {
+    "sentence": "OpenAI released it on August 7, 2025.[1]",
+    "start": 49,
+    "end": 89,
+    "claim": "OpenAI released GPT-5 on August 7, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says GPT-5 is rolling out 'today' but never gives a date, so it does not state the August 7, 2025 release date in the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It is a multimodal model and became the default model in ChatGPT.[2]",
+    "start": 90,
+    "end": 158,
+    "claim": "GPT-5 is a multimodal model.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://builtin.com/artificial-intelligence/openai-gpt-5-release",
+      "host": "builtin.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT-5 is a multimodal language model developed by OpenAI, and is the default model powering the ChatGPT chatbot.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that GPT-5 is a multimodal language model developed by OpenAI, which backs the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'GPT-5 is a multimodal language model developed by OpenAI', which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It is a multimodal model and became the default model in ChatGPT.[2]",
+    "start": 90,
+    "end": 158,
+    "claim": "GPT-5 became the default model in ChatGPT.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://builtin.com/artificial-intelligence/openai-gpt-5-release",
+      "host": "builtin.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT-5 is a multimodal language model developed by OpenAI, and is the default model powering the ChatGPT chatbot.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that GPT-5 is the default model powering the ChatGPT chatbot, which matches the claim's point; it does not say when it became default, but the claim does not specify a date.",
+      "page_judged": "supported",
+      "page_reason": "The page states GPT-5 is the default model powering the ChatGPT chatbot and is the default model available to all signed-in ChatGPT users, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "GPT-5 combines a fast, efficient model for most questions, a deeper reasoning model (\"GPT-5 thinking\") for harder problems, and a real-time router.",
+    "start": 207,
+    "end": 354,
+    "claim": "GPT-5 combines a fast, efficient model for most questions, a deeper reasoning model called GPT-5 thinking for harder problems, and a real-time router.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is a unified system with a smart, efficient model that answers most questions, a deeper reasoning model (GPT‑5 thinking) for harder problems, and a real‑time router that quickly decides which to use based on conversation type, complexity, tool needs, and your explicit intent",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states GPT-5 has an efficient model for most questions, a deeper reasoning model (GPT-5 thinking) for harder problems, and a real-time router, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states GPT-5 is a unified system with a smart, efficient model for most questions, a deeper reasoning model (GPT-5 thinking) for harder problems, and a real-time router that decides which to use."
+     }
+    ]
+   },
+   {
+    "sentence": "The router chooses between them based on conversation type and complexity.[1]",
+    "start": 355,
+    "end": 432,
+    "claim": "The GPT-5 router chooses between the fast model and the reasoning model based on conversation type and complexity.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "a real‑time router that quickly decides which to use based on conversation type, complexity, tool needs, and your explicit intent",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a real-time router decides which model to use based on conversation type and complexity, which matches the claim, though it does not explicitly name the 'fast' and 'reasoning' models, a rewording that does not change the substance.",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT-5's real-time router decides which model to use based on conversation type, complexity, tool needs, and explicit user intent, which includes conversation type and complexity as claimed."
+     }
+    ]
+   },
+   {
+    "sentence": "This removes the old split between OpenAI's flagship models and its o-series reasoning models.[3]",
+    "start": 433,
+    "end": 530,
+    "claim": "GPT-5 removes the old split between OpenAI's flagship models and its o-series reasoning models.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.technologyreview.com/2025/08/07/1121308/gpt-5-is-here-now-what/",
+      "host": "technologyreview.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The new system abandons the distinction between OpenAI’s flagship models and its o series of reasoning models, automatically routing user queries to a fast nonreasoning model or a slower reasoning version.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the new system abandons the distinction between OpenAI's flagship models and its o-series reasoning models, which is the claim's full assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT-5  'abandons the distinction between OpenAI's flagship models and its o series of reasoning models,' automatically routing queries between fast nonreasoning and slower reasoning versions, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "OpenAI called it its strongest coding model to date.[1]",
+    "start": 617,
+    "end": 672,
+    "claim": "OpenAI called GPT-5 its strongest coding model to date.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is our strongest coding model to date.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that GPT-5 is OpenAI's strongest coding model to date, which matches every fact in the claim; the quote does not name the speaker explicitly, but it is presented as OpenAI's statement.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'GPT‑5 is our strongest coding model to date,' which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It produces high-quality code and generates front-end UI with minimal prompting.",
+    "start": 673,
+    "end": 753,
+    "claim": "GPT-5 produces high-quality code and generates front-end UI with minimal prompting.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://openai.com/gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "OpenAI also cites improvements in personality, steerability, and running long chains of tool calls.[4]",
+    "start": 754,
+    "end": 856,
+    "claim": "OpenAI cites improvements for GPT-5 in personality, steerability, and running long chains of tool calls.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://openai.com/gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "With web search on, OpenAI says GPT-5's responses are about 45% less likely to contain a factual error than GPT-4o's.",
+    "start": 908,
+    "end": 1025,
+    "claim": "With web search on, OpenAI says GPT-5's responses are about 45% less likely to contain a factual error than GPT-4o's.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With web search enabled on anonymized prompts representative of ChatGPT production traffic, GPT‑5’s responses are ~45% less likely to contain a factual error than GPT‑4o",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that with web search enabled, GPT-5's responses are about 45% less likely to contain a factual error than GPT-4o, matching every fact in the claim (the attribution to OpenAI is implicit in the source page).",
+      "page_judged": "supported",
+      "page_reason": "The page states that with web search enabled on anonymized production-representative prompts, GPT-5's responses are ~45% less likely to contain a factual error than GPT-4o, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "When thinking, they are about 80% less likely than OpenAI o3's.[1]",
+    "start": 1026,
+    "end": 1092,
+    "claim": "When thinking, GPT-5 responses are about 80% less likely to contain a factual error than OpenAI o3's.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "when thinking, GPT‑5’s responses are ~80% less likely to contain a factual error than OpenAI o3.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that GPT-5's thinking responses are about 80% less likely to contain a factual error than OpenAI o3, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that when thinking, GPT-5's responses are ~80% less likely to contain a factual error than OpenAI o3, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "GPT-5 with thinking beat o3 while using 50–80% fewer output tokens.[1]",
+    "start": 1093,
+    "end": 1163,
+    "claim": "GPT-5 with thinking beat o3 while using 50–80% fewer output tokens.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 gets more value out of less thinking time. In our evaluations, GPT‑5 (with thinking) performs better than OpenAI o3 with 50-80% less output tokens across capabilities",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that GPT-5 (with thinking) performs better than OpenAI o3 with 50-80% less output tokens across capabilities, covering both the win and the token range in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT-5 (with thinking) performs better than OpenAI o3 with 50-80% less output tokens across capabilities, which matches the claim's wording."
+     }
+    ]
+   },
+   {
+    "sentence": "OpenAI claimed state-of-the-art performance across coding, math, writing, health, visual perception, and more.[1]",
+    "start": 1189,
+    "end": 1302,
+    "claim": "OpenAI claimed GPT-5 has state-of-the-art performance across coding, math, writing, health, visual perception, and more.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5, our best AI system yet. GPT‑5 is a significant leap in intelligence over all our previous models, featuring state-of-the-art performance across coding, math, writing, health, visual perception, and more.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that GPT-5 features state-of-the-art performance across coding, math, writing, health, visual perception, and more, which covers every element of the claim, though the quote itself is the company's own announcement rather than an explicit 'claim' wording, which is a rewording the claim allows.",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT-5 features state-of-the-art performance across coding, math, writing, health, visual perception, and more, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It comes in three API sizes (gpt-5, gpt-5-mini, and gpt-5-nano), so developers can trade off performance, cost, and latency.[5]",
+    "start": 1331,
+    "end": 1458,
+    "claim": "GPT-5 comes in three API sizes: gpt-5, gpt-5-mini, and gpt-5-nano.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We’re releasing GPT‑5 in three sizes in the API—gpt-5, gpt-5-mini, and gpt-5-nano—to give developers more flexibility to trade off performance, cost, and latency.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states GPT-5 is released in three API sizes named gpt-5, gpt-5-mini, and gpt-5-nano, matching the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT-5 is released in three sizes in the API: gpt-5, gpt-5-mini, and gpt-5-nano."
+     }
+    ]
+   },
+   {
+    "sentence": "The reasoning_effort parameter adds a \"minimal\" setting, which returns answers quickly with little reasoning.[5]",
+    "start": 1459,
+    "end": 1571,
+    "claim": "The reasoning_effort parameter in the GPT-5 API adds a \"minimal\" setting that returns answers quickly with little reasoning.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5’s reasoning_effort parameter can now take a minimal value to get answers back faster, without extensive reasoning first.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In addition to the prior values—low, medium (default), and high—GPT‑5 also supports minimal, which minimizes GPT‑5’s reasoning to return an answer quickly.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the GPT-5 reasoning_effort parameter gained a minimal value that returns answers quickly with minimized reasoning, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that GPT-5's reasoning_effort parameter can now take a minimal value to get answers back faster without extensive reasoning first, and that minimal minimizes reasoning to return an answer quickly."
+     }
+    ]
+   },
+   {
+    "sentence": "A verbosity parameter controls response length.",
+    "start": 1572,
+    "end": 1619,
+    "claim": "GPT-5 API has a verbosity parameter that controls response length.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revolgy.com/insights/blog/gpt-5-is-finally-here-capabilities-tools-safety-overview",
+      "host": "revolgy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The verbosity parameter lets you control whether responses should be terse (low), balanced (medium), or expansive (high) without rewriting your prompt.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a verbosity parameter lets users set responses to terse, balanced, or expansive, which backs the claim that it controls response length, though it does not name the GPT-5 API explicitly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the verbosity parameter lets developers control whether responses are terse (low), balanced (medium), or expansive (high), and the FAQ confirms it controls response length."
+     }
+    ]
+   },
+   {
+    "sentence": "Free-form function calling sends raw text to tools.",
+    "start": 1620,
+    "end": 1671,
+    "claim": "GPT-5 supports free-form function calling, which sends raw text to tools.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revolgy.com/insights/blog/gpt-5-is-finally-here-capabilities-tools-safety-overview",
+      "host": "revolgy.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "You can now send raw text (like Python scripts, SQL queries, or config files) straight to a custom tool without needing a JSON wrapper.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that custom tools can receive raw text without a JSON wrapper, which matches the free-form sending part of the claim, but it never names GPT-5 as the model that supports this.",
+      "page_judged": "supported",
+      "page_reason": "The page says developers can now send raw text such as Python scripts, SQL queries, or config files straight to a custom tool without a JSON wrapper, and its FAQ names this feature 'Free-Form Function Calling for sending raw text to tools.'"
+     }
+    ]
+   },
+   {
+    "sentence": "Context-free grammars enforce specific output formats.[6]",
+    "start": 1672,
+    "end": 1729,
+    "claim": "GPT-5 supports context-free grammars that enforce specific output formats.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revolgy.com/insights/blog/gpt-5-is-finally-here-capabilities-tools-safety-overview",
+      "host": "revolgy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Developers can force the model to follow a strict output structure using Context-Free Grammars (CFG). Provide grammar rules (in Lark, Regex, or similar), and GPT-5 will only produce strings that match.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that developers can use Context-Free Grammars with GPT-5 to force a strict output structure so it only produces matching strings, which backs the claim's main point with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that developers can force GPT-5 to follow a strict output structure using Context-Free Grammars, providing grammar rules so the model only produces strings matching them."
+     }
+    ]
+   },
+   {
+    "sentence": "The API model handles text and vision, with a 400K context window and 128K max output tokens.[4]",
+    "start": 1730,
+    "end": 1826,
+    "claim": "The GPT-5 API model handles text and vision, with a 400K context window.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://openai.com/gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The API model handles text and vision, with a 400K context window and 128K max output tokens.[4]",
+    "start": 1730,
+    "end": 1826,
+    "claim": "The GPT-5 API model has 128K max output tokens.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://openai.com/gpt-5/",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Native video and audio processing was not included in the initial release.[6]",
+    "start": 1841,
+    "end": 1918,
+    "claim": "Native video and audio processing was not included in GPT-5's initial release.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revolgy.com/insights/blog/gpt-5-is-finally-here-capabilities-tools-safety-overview",
+      "host": "revolgy.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Video and audio input: Native video and audio processing capabilities weren’t included in the initial release.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that native video and audio processing capabilities weren't included in the initial release, which matches the claim's wording and scope.",
+      "page_judged": "supported",
+      "page_reason": "The page states under 'What was different or unconfirmed' that 'Native video and audio processing capabilities weren't included in the initial release,' directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "One source says GPT-5.1 through 5.6 shipped within 11 months[7].",
+    "start": 2026,
+    "end": 2090,
+    "claim": "One source says GPT-5.1 through 5.6 shipped within 11 months.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.tekrevol.com/blogs/openai-gpt-5-release-date-features/",
+      "host": "tekrevol.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "OpenAI shipped six updates in 11 months: GPT-5.1, 5.2, 5.3, 5.4, 5.5 and 5.6.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that OpenAI shipped GPT-5.1, 5.2, 5.3, 5.4, 5.5 and 5.6 in 11 months, which matches the claim's range and timeframe.",
+      "page_judged": "supported",
+      "page_reason": "The page states in its bullet list that 'OpenAI shipped six updates in 11 months: GPT-5.1, 5.2, 5.3, 5.4, 5.5 and 5.6.'"
+     }
+    ]
+   },
+   {
+    "sentence": "It also says the original GPT-5 was retired from ChatGPT on Feb 13, 2026[7].",
+    "start": 2091,
+    "end": 2167,
+    "claim": "One source says the original GPT-5 was retired from ChatGPT on Feb 13, 2026.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.tekrevol.com/blogs/openai-gpt-5-release-date-features/",
+      "host": "tekrevol.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The original GPT-5 was retired from ChatGPT on February 13, 2026.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "OpenAI retired the original GPT-5 from ChatGPT on February 13, 2026, after a run of point releases (5.1 through 5.6).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the original GPT-5 was retired from ChatGPT on February 13, 2026, matching the claim's date and event (the 'one source' framing is a attribution wrapper, not a factual addition beyond what the quotes show).",
+      "page_judged": "supported",
+      "page_reason": "The page states in multiple places that OpenAI retired the original GPT-5 from ChatGPT on February 13, 2026, including in the intro, the 'Is ChatGPT-5 Still Available?' section, and the timeline table."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 24,
+   "labels": {
+    "supported": 17,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 4,
+    "uncited": 0
+   },
+   "cited_claims": 24,
+   "claims_with_a_verdict": 19,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.0526,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.7083,
+   "pages_cited": 7,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.015663,
+   "usd_per_claim": 0.000653
+  },
+  "cost": {
+   "total_usd": 0.0157,
+   "cap_usd": 0.4,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 20,
+     "usd": 0.0063
+    },
+    {
+     "node": "page_check",
+     "calls": 20,
+     "usd": 0.0061
+    },
+    {
+     "node": "check",
+     "calls": 19,
+     "usd": 0.0022
+    }
+   ]
+  }
+ }
+}

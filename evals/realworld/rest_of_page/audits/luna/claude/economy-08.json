@@ -1,0 +1,846 @@
+{
+ "id": "economy-08",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:00:08+00:00",
+ "report": {
+  "answer_text": "Chancellor Rachel Reeves delivered the budget on 26 November 2025.\nTax rises\nThe budget set out policies to raise £26 billion in taxes, an all-time high.[1]\nThe freeze on personal tax thresholds was extended from April 2028 to April 2031.[2]\nA council tax charge, widely called a \"mansion tax\", was introduced on properties valued over £2 million.[3]\nA £2,000 cap on salary sacrifice pension contributions will start in 2029.[3]\nThe annual cash ISA limit is being cut to £12,000[4]. This figure comes from a Financial Times report that MoneyWeek cited before the speech, so check it against the final detail.\nA new 3p per mile levy on electric vehicles was announced. The electric car grant will be extended until 2030.[5]\nReeves said she would not increase National Insurance, the basic, higher or additional rates of income tax, or VAT.[4]\nSpending and household costs\nThe two-child benefit cap was scrapped, at an expected cost of around £3 billion according to the OBR.[5] The change takes effect from April 2026.[2]\nEnergy bills will fall by an average of £150 from April 2026. The saving comes from removing the previous government's \"Eco scheme\" levy.[5]\nRegulated rail fares will be frozen.[5]\nThe minimum wage for 18–20 year olds will rise 8.5% to £10.85 an hour. For apprentices aged 16–17 it will rise 6% to £8 an hour.[5]\n£300 million of new capital investment will go into NHS technology.[5]\nBusiness and investment\nThe annual limits on venture capital schemes will double.[3]\nNew listings will get a three-year exemption from stamp duty reserve tax.[3]\nFiscal position\nThe OBR said fiscal \"headroom\" against Reeves's own rules will rise to £22 billion by the end of the decade. Reeves had envisaged about £10 billion at her last budget.[3]\nThe OBR's forecast was accidentally leaked before the speech in a \"technical error\".[4]\nFor the full detail, the Which? summary and the Wikipedia article are good places to start.",
+  "claims": [
+   {
+    "sentence": "Chancellor Rachel Reeves delivered the budget on 26 November 2025.",
+    "start": 0,
+    "end": 66,
+    "claim": "Chancellor Rachel Reeves delivered the budget on 26 November 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The budget set out policies to raise £26 billion in taxes, an all-time high.[1]",
+    "start": 77,
+    "end": 156,
+    "claim": "The budget set out policies to raise £26 billion in taxes, an all-time high.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.rossmartin.co.uk/autumn-budget-2025/8727-autumn-budget-2025-at-a-glance",
+      "host": "rossmartin.co.uk",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The freeze on personal tax thresholds was extended from April 2028 to April 2031.[2]",
+    "start": 157,
+    "end": 241,
+    "claim": "The freeze on personal tax thresholds was extended from April 2028 to April 2031.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/November_2025_United_Kingdom_budget",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The budget's main announcements included extending the freeze on personal tax thresholds from April 2028 to April 2031",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the freeze on personal tax thresholds was extended from April 2028 to April 2031, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the freeze on personal tax thresholds was extended from April 2028 to April 2031."
+     }
+    ]
+   },
+   {
+    "sentence": "A council tax charge, widely called a \"mansion tax\", was introduced on properties valued over £2 million.[3]",
+    "start": 242,
+    "end": 350,
+    "claim": "A council tax charge, widely called a \"mansion tax\", was introduced on properties valued over £2 million.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/11/26/autumn-budget-2025-follow-chancellor-rachel-reeves-announcements-live.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Finance Minister Rachel Reeves also confirmed the introduction of a council tax charge on properties valued over £2 million ($6.63 million).",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "And so from 2028, I am introducing the High Value Council Tax Surcharge in England ... This will be collected alongside Council Tax, levied on owners,\" she said.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "On the proposed mansion tax, if it's scheduled for 2028, we expect the Conservatives and Reform to pledge its abolition at the next general election - making it unlikely to ever come into effect,\" Fletcher-Price added.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back a council tax surcharge on properties over £2 million, but describe it as a proposed charge to be levied from 2028, not one already introduced, and the 'mansion tax' nickname does not appear in them.",
+      "page_judged": "supported",
+      "page_reason": "The page says Reeves confirmed the introduction of a council tax charge on properties valued over £2 million, scheduled to begin in 2028."
+     }
+    ]
+   },
+   {
+    "sentence": "A £2,000 cap on salary sacrifice pension contributions will start in 2029.[3]",
+    "start": 351,
+    "end": 428,
+    "claim": "A £2,000 cap on salary sacrifice pension contributions will start in 2029.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/11/26/autumn-budget-2025-follow-chancellor-rachel-reeves-announcements-live.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Reeves confirmed a £2,000 cap on salary sacrifice pension contributions will be introduced from 2029.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states a £2,000 cap on salary sacrifice pension contributions introduced from 2029, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Reeves confirmed a £2,000 cap on salary sacrifice pension contributions will be introduced from 2029."
+     }
+    ]
+   },
+   {
+    "sentence": "The annual cash ISA limit is being cut to £12,000[4]. This figure comes from a Financial Times report that MoneyWeek cited before the speech, so check it against the final detail.",
+    "start": 429,
+    "end": 608,
+    "claim": "The annual cash ISA limit is being cut to £12,000.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://moneyweek.com/news/live/economy/autumn-budget-2025",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The chancellor cut the cash ISA limit from £20,000 to £12,000 per year for under 65s, from April 2027",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The annual cash ISA allowance will be reduced from £20,000 to £12,000 from April 2027",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "savers can put no more than £12,000 a year into a cash ISA from 6 April, 2027",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the annual cash ISA limit is being reduced from £20,000 to £12,000 from April 2027, which backs the claim's main point with its figure; the claim's lack of a date is not a contradiction.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the annual cash ISA allowance will be reduced from £20,000 to £12,000."
+     }
+    ]
+   },
+   {
+    "sentence": "A new 3p per mile levy on electric vehicles was announced.",
+    "start": 609,
+    "end": 667,
+    "claim": "A new 3p per mile levy on electric vehicles was announced.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "EV drivers will have to pay a new charge of 3p per mile driven for fully electric vehicles, and 1.5p for plug-in hybrid vehicles.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Drivers of electric vehicles (EVs) will be subject to a new tax from April 2028 onwards",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state a new 3p per mile charge for fully electric vehicles and a new tax on EV drivers, which together back the claim that a new 3p per mile levy on electric vehicles was announced.",
+      "page_judged": "supported",
+      "page_reason": "The page says EV drivers will face a new charge of 3p per mile for fully electric vehicles, announced in the Budget."
+     }
+    ]
+   },
+   {
+    "sentence": "The electric car grant will be extended until 2030.[5]",
+    "start": 668,
+    "end": 722,
+    "claim": "The electric car grant will be extended until 2030.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the UK’s electric car grant is set to be extended until 2030.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the UK electric car grant is set to be extended until 2030, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the UK’s electric car grant is set to be extended until 2030."
+     }
+    ]
+   },
+   {
+    "sentence": "Reeves said she would not increase National Insurance, the basic, higher or additional rates of income tax, or VAT.[4]",
+    "start": 723,
+    "end": 841,
+    "claim": "Reeves said she would not increase National Insurance, the basic, higher or additional rates of income tax, or VAT.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://moneyweek.com/news/live/economy/autumn-budget-2025",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "“I can confirm that I will not be increasing National Insurance, the basic higher or additional rates of income tax or VAT,” said Reeves.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Reeves will not increase National Insurance, the basic, higher or additional rates of income tax, or VAT, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Reeves saying she would not increase National Insurance, the basic, higher or additional rates of income tax, or VAT."
+     }
+    ]
+   },
+   {
+    "sentence": "The two-child benefit cap was scrapped, at an expected cost of around £3 billion according to the OBR.[5]",
+    "start": 871,
+    "end": 976,
+    "claim": "The two-child benefit cap was scrapped, at an expected cost of around £3 billion according to the OBR.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The two-child benefit cap was removed in the Budget, at an expected cost of around £3 billion, according to the OBR.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the two-child benefit cap was removed, with an expected cost of around £3 billion according to the OBR, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the two-child benefit cap was removed and that doing so was expected to cost around £3 billion according to the OBR."
+     }
+    ]
+   },
+   {
+    "sentence": "The change takes effect from April 2026.[2]",
+    "start": 977,
+    "end": 1020,
+    "claim": "The two-child benefit cap change takes effect from April 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/November_2025_United_Kingdom_budget",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "ending the two-child limit in Universal Credit from April 2026",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The two-child limit on Universal Credit would be removed from April 2026.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the two-child limit on Universal Credit is to be ended or removed from April 2026, which matches the claimed effective date of the change.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the two-child limit on Universal Credit would be removed from April 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "Energy bills will fall by an average of £150 from April 2026.",
+    "start": 1021,
+    "end": 1082,
+    "claim": "Energy bills will fall by an average of £150 from April 2026.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Energy bills will be cut by an average of £150 from April 2026 onwards, the chancellor has said.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that energy bills will be cut by an average of £150 from April 2026, matching every fact in the claim (fall, average, £150, April 2026).",
+      "page_judged": "supported",
+      "page_reason": "The page says energy bills will be cut by an average of £150 from April 2026 onwards."
+     }
+    ]
+   },
+   {
+    "sentence": "The saving comes from removing the previous government's \"Eco scheme\" levy.[5]",
+    "start": 1083,
+    "end": 1161,
+    "claim": "The energy bill saving comes from removing the previous government's \"Eco scheme\" levy.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The savings will be made by removing the previous government’s “Eco scheme”, a levy placed on energy bills to fund green initiatives.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the savings come from removing the previous government's \"Eco scheme\" levy on energy bills, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the £150 average energy-bill saving will be made by removing the previous government’s “Eco scheme,” a levy on energy bills funding green initiatives."
+     }
+    ]
+   },
+   {
+    "sentence": "Regulated rail fares will be frozen.[5]",
+    "start": 1162,
+    "end": 1201,
+    "claim": "Regulated rail fares will be frozen.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The government has confirmed all regulated rail fares, including season tickets, peak returns, and off–peak returns, will remain at their current level.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that all regulated rail fares will remain at their current level, which matches the claim that regulated rail fares will be frozen.",
+      "page_judged": "supported",
+      "page_reason": "The page states that all regulated rail fares, including season tickets and peak and off-peak returns, will remain at their current level."
+     }
+    ]
+   },
+   {
+    "sentence": "The minimum wage for 18–20 year olds will rise 8.5% to £10.85 an hour.",
+    "start": 1202,
+    "end": 1272,
+    "claim": "The minimum wage for 18–20 year olds will rise 8.5% to £10.85 an hour.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The national minimum wage will rise by 8.5% to £10.85 per hour for workers between 18 and 20, and by 6% to £8 per hour for apprentices aged between 16 and 17.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the national minimum wage for workers aged 18 to 20 will rise by 8.5% to £10.85 per hour, matching every figure in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that from April 2026 the national minimum wage for workers aged 18–20 will rise by 8.5% to £10.85 per hour."
+     }
+    ]
+   },
+   {
+    "sentence": "For apprentices aged 16–17 it will rise 6% to £8 an hour.[5]",
+    "start": 1273,
+    "end": 1333,
+    "claim": "The minimum wage for apprentices aged 16–17 will rise 6% to £8 an hour.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The national minimum wage will rise by 8.5% to £10.85 per hour for workers between 18 and 20, and by 6% to £8 per hour for apprentices aged between 16 and 17.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the minimum wage for apprentices aged 16 to 17 will rise by 6% to £8 per hour, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that from April 2026, the minimum wage for apprentices aged 16–17 will rise by 6% to £8 per hour."
+     }
+    ]
+   },
+   {
+    "sentence": "£300 million of new capital investment will go into NHS technology.[5]",
+    "start": 1334,
+    "end": 1404,
+    "claim": "£300 million of new capital investment will go into NHS technology.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://moneyweek.com/economy/budget/autumn-budget-2025-announcements",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The chancellor announced £300 million of new capital investment that will go into supporting and developing NHS technology.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that £300 million of new capital investment will go into supporting and developing NHS technology, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the chancellor announced £300 million of new capital investment to support and develop NHS technology."
+     }
+    ]
+   },
+   {
+    "sentence": "The annual limits on venture capital schemes will double.[3]",
+    "start": 1429,
+    "end": 1489,
+    "claim": "The annual limits on venture capital schemes will double.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/11/26/autumn-budget-2025-follow-chancellor-rachel-reeves-announcements-live.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Measures announced by Reeves include doubling the annual limits of venture capital schemes",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the measures include doubling the annual limits of venture capital schemes, which matches the claim's sole assertion that these limits will double.",
+      "page_judged": "supported",
+      "page_reason": "The page says measures include doubling the annual limits of venture capital schemes."
+     }
+    ]
+   },
+   {
+    "sentence": "New listings will get a three-year exemption from stamp duty reserve tax.[3]",
+    "start": 1490,
+    "end": 1566,
+    "claim": "New listings will get a three-year exemption from stamp duty reserve tax.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/11/26/autumn-budget-2025-follow-chancellor-rachel-reeves-announcements-live.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Reeves said new listings will get a three-year exemption from stamp duty reserve tax.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that new listings will get a three-year exemption from stamp duty reserve tax, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that new listings will get a three-year exemption from stamp duty reserve tax."
+     }
+    ]
+   },
+   {
+    "sentence": "The OBR said fiscal \"headroom\" against Reeves's own rules will rise to £22 billion by the end of the decade.",
+    "start": 1583,
+    "end": 1691,
+    "claim": "The OBR said fiscal headroom against Reeves's own rules will rise to £22 billion by the end of the decade.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/11/26/autumn-budget-2025-follow-chancellor-rachel-reeves-announcements-live.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The amount of fiscal \"headroom\" or wiggle-room that Reeves has to meet her own fiscal rules on spending and borrowing will rise to £22 billion by the end of the decade, the OBR said",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the OBR said fiscal headroom against Reeves's own fiscal rules will rise to £22 billion by the end of the decade, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the OBR said Reeves’s fiscal headroom to meet her own fiscal rules will rise to £22 billion by the end of the decade."
+     }
+    ]
+   },
+   {
+    "sentence": "Reeves had envisaged about £10 billion at her last budget.[3]",
+    "start": 1692,
+    "end": 1753,
+    "claim": "Reeves had envisaged about £10 billion of fiscal headroom at her last budget.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/11/26/autumn-budget-2025-follow-chancellor-rachel-reeves-announcements-live.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "far higher than the Â£10 billion or so that Reeves envisaged at her last budget",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Reeves envisaged about £10 billion at her last budget, which matches the claim's figure and context, with the 'fiscal headroom' label being the only wording not repeated verbatim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the OBR's £22 billion headroom was far higher than the roughly £10 billion Reeves had envisaged at her last budget."
+     }
+    ]
+   },
+   {
+    "sentence": "The OBR's forecast was accidentally leaked before the speech in a \"technical error\".[4]",
+    "start": 1754,
+    "end": 1841,
+    "claim": "The OBR's forecast was accidentally leaked before the speech in a \"technical error\".",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://moneyweek.com/news/live/economy/autumn-budget-2025",
+      "host": "moneyweek.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The OBR’s forecast was accidentally leaked in a “technical error” prior to the Budget’s announcement",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A link to our Economic and fiscal outlook document went live on our website too early this morning. It has been removed.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "We apologise for this technical error and have initiated an investigation into how this happened.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the OBR forecast was accidentally leaked in a \"technical error\" prior to the Budget announcement, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the OBR’s forecast went live too early due to a “technical error” and that this happened before Reeves’s Budget speech."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 22,
+   "labels": {
+    "supported": 19,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 21,
+   "claims_with_a_verdict": 19,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.9048,
+   "pages_cited": 5,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.023243,
+   "usd_per_claim": 0.001057
+  },
+  "cost": {
+   "total_usd": 0.0232,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 29,
+     "usd": 0.013
+    },
+    {
+     "node": "page_check",
+     "calls": 20,
+     "usd": 0.0067
+    },
+    {
+     "node": "check",
+     "calls": 20,
+     "usd": 0.0026
+    }
+   ]
+  }
+ }
+}

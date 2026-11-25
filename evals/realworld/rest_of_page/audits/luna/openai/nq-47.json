@@ -1,0 +1,129 @@
+{
+ "id": "nq-47",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:42:46+00:00",
+ "report": {
+  "answer_text": "The woman in Stone Sour’s “Say You’ll Haunt Me” music video is Joanna Moskwa, a Polish actress and model. (rockmetal.pl)",
+  "claims": [
+   {
+    "sentence": "The woman in Stone Sour’s “Say You’ll Haunt Me” music video is Joanna Moskwa, a Polish actress and model. (rockmetal.pl)",
+    "start": 0,
+    "end": 120,
+    "claim": "The woman in Stone Sour’s “Say You’ll Haunt Me” music video is Joanna Moskwa.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.rockmetal.pl/wiesci.html?newsstart=19336&newswhat=next&utm_source=openai",
+      "host": "rockmetal.pl",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "W poprzednim teledysku grupy Coreya Taylora - \"Say You'll Haunt Me\" - zagrała polska modelka Joanna Moskwa.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Polish model Joanna Moskwa appeared in the Stone Sour \"Say You'll Haunt Me\" music video, which backs the claim that she is the woman in it.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Polish model Joanna Moskwa appeared in Stone Sour’s previous video, “Say You’ll Haunt Me.”"
+     }
+    ]
+   },
+   {
+    "sentence": "The woman in Stone Sour’s “Say You’ll Haunt Me” music video is Joanna Moskwa, a Polish actress and model. (rockmetal.pl)",
+    "start": 0,
+    "end": 120,
+    "claim": "Joanna Moskwa is a Polish actress and model.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.rockmetal.pl/wiesci.html?newsstart=19336&newswhat=next&utm_source=openai",
+      "host": "rockmetal.pl",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page identifies Joanna Moskwa as a Polish model but does not state that she is an actress."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001681,
+   "usd_per_claim": 0.000841
+  },
+  "cost": {
+   "total_usd": 0.0017,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

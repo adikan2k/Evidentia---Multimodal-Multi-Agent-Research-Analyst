@@ -1,0 +1,249 @@
+{
+ "id": "nq-45",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:42:30+00:00",
+ "report": {
+  "answer_text": "Australia’s Sir Donald Bradman holds the record for the highest career batting average in men’s Test cricket: 99.94 (minimum 20 innings). He scored 6,996 runs in 52 Tests from 1928 to 1948. (en.wikipedia.org)",
+  "claims": [
+   {
+    "sentence": "Australia’s Sir Donald Bradman holds the record for the highest career batting average in men’s Test cricket: 99.94 (minimum 20 innings).",
+    "start": 0,
+    "end": 137,
+    "claim": "Sir Donald Bradman of Australia holds the record for the highest career batting average in men’s Test cricket.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "His most significant record is his batting average of 99.94.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Highest career batting average",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 99.94 | 80 | Donald Bradman | 6,996 | 1928–1948 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state Bradman's batting average of 99.94 as his most significant record, list it under 'Highest career batting average', and show Donald Bradman with 80 Tests, 6,996 runs and a 1928–1948 career, which together back the claim that he holds the record.",
+      "page_judged": "supported",
+      "page_reason": "The page's 'Highest career batting average' table lists Donald Bradman first with an average of 99.94 over 80 innings, and the qualification note confirms the record is with the 20-innings qualification, supporting the claim that he holds the record; the page describes him as Australian and the table as covering Test cricket."
+     }
+    ]
+   },
+   {
+    "sentence": "Australia’s Sir Donald Bradman holds the record for the highest career batting average in men’s Test cricket: 99.94 (minimum 20 innings).",
+    "start": 0,
+    "end": 137,
+    "claim": "Sir Donald Bradman's career batting average in men’s Test cricket is 99.94, with a minimum of 20 innings.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "His most significant record is his batting average of 99.94.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 99.94 | 80 | Donald Bradman | 6,996 | 1928–1948 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 99.94 batting average, and a table row shows 80 in an unlabeled column, but nothing states a 20-innings minimum qualification.",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives Bradman's Test batting average as 99.94 over 80 innings, but it never states a minimum-of-20-innings qualification for the ranking, so that part of the claim is unsupported."
+     }
+    ]
+   },
+   {
+    "sentence": "He scored 6,996 runs in 52 Tests from 1928 to 1948. (en.wikipedia.org)",
+    "start": 138,
+    "end": 208,
+    "claim": "Sir Donald Bradman scored 6,996 runs in Test cricket.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "supported",
+      "page_reason": "The page's 'Highest career batting average' table lists Donald Bradman with 6,996 runs (80 innings, 1928–1948) and a 99.94 average, and the page refers to him as Sir Donald Bradman."
+     }
+    ]
+   },
+   {
+    "sentence": "He scored 6,996 runs in 52 Tests from 1928 to 1948. (en.wikipedia.org)",
+    "start": 138,
+    "end": 208,
+    "claim": "Sir Donald Bradman played 52 Tests.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "| 2 | Donald Bradman | 52 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote pairs Donald Bradman with the number 52 in a table row, but it never says that 52 counts Tests or that he played them, so the Tests detail is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page's Most Test double centuries and Most Test triple centuries tables both list Donald Bradman with 52 matches."
+     }
+    ]
+   },
+   {
+    "sentence": "He scored 6,996 runs in 52 Tests from 1928 to 1948. (en.wikipedia.org)",
+    "start": 138,
+    "end": 208,
+    "claim": "Sir Donald Bradman's Test career ran from 1928 to 1948.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "| 99.94 | 80 | Donald Bradman | 6,996 | 1928–1948 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote's table row lists Donald Bradman with a 1928–1948 span, which backs the dates, but it does not say his Test career or identify him as Sir Donald Bradman, so the 'Sir' title and 'Test career' framing are not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Donald Bradman's career batting average row with Period 1928–1948, which matches the claim's years, though it does not explicitly state the claim as a career span in prose; the table entry 'Donald Bradman | 6,996 | 1928–1948' directly supports it."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 1,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.012936,
+   "usd_per_claim": 0.002587
+  },
+  "cost": {
+   "total_usd": 0.0129,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0096
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0023
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

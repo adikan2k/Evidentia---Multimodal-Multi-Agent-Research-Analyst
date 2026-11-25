@@ -1,11 +1,12 @@
 import asyncio
+import socket
 
 import httpcore
 import httpx
 import pytest
 
 from evidentia.fetch import Fetcher
-from evidentia.netguard import BlockedAddress, guarded_transport, is_public_address
+from evidentia.netguard import BlockedAddress, Unresolvable, guarded_transport, is_public_address
 from evidentia.schemas import SearchHit
 from evidentia.tracing import NoopTracer
 
@@ -86,6 +87,32 @@ def test_a_name_that_does_not_resolve_is_a_network_error() -> None:
 
     with pytest.raises(httpx.ConnectError):
         get("http://missing.example.org/", fails, RecordingBackend())
+
+
+def no_such_name(code: int):
+    async def resolver(host: str, port: int) -> list[str]:
+        raise socket.gaierror(code, "no such name")
+
+    return resolver
+
+
+def test_a_name_dns_says_does_not_exist_is_marked_as_such() -> None:
+    with pytest.raises(httpx.ConnectError) as caught:
+        get("http://gone.example.org/", no_such_name(socket.EAI_NONAME), RecordingBackend())
+    assert isinstance(caught.value.__cause__, Unresolvable)
+
+
+def test_a_temporary_dns_failure_is_not_called_a_missing_name() -> None:
+    with pytest.raises(httpx.ConnectError) as caught:
+        get("http://busy.example.org/", no_such_name(socket.EAI_AGAIN), RecordingBackend())
+    assert not isinstance(caught.value.__cause__, Unresolvable)
+
+
+def test_fetcher_reports_a_name_that_does_not_resolve(settings) -> None:
+    transport = guarded_transport(resolver=no_such_name(socket.EAI_NONAME))
+    fetcher = Fetcher(settings, NoopTracer(), client=httpx.AsyncClient(transport=transport))
+    _, skipped = asyncio.run(fetcher.fetch_all([SearchHit(url="https://gone.example.org/x")]))
+    assert skipped[0].reason == "name does not resolve"
 
 
 def test_fetcher_skips_a_page_whose_name_points_inside(settings) -> None:

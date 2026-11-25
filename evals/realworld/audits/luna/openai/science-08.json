@@ -1,0 +1,240 @@
+{
+ "id": "science-08",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Solar Orbiter captured the first clear images of the Sun’s south pole in March 2025. Its magnetic maps revealed patches of both north and south magnetic polarity side by side, rather than one dominant polarity. ESA released the images on June 11, 2025. (esa.int)\nThat patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+  "claims": [
+   {
+    "sentence": "Solar Orbiter captured the first clear images of the Sun’s south pole in March 2025.",
+    "start": 0,
+    "end": 84,
+    "claim": "Solar Orbiter captured the first clear images of the Sun’s south pole in March 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Thanks to its newly tilted orbit around the Sun, the European Space Agency-led Solar Orbiter spacecraft is the first to image the Sun’s poles from outside the ecliptic plane.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Today we reveal humankind’s first-ever views of the Sun’s pole",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The collage above shows the Sun’s south pole as recorded on 16–17 March 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state Solar Orbiter gave humankind's first views of the Sun's pole, that it imaged the poles from outside the ecliptic, and that the south pole images were recorded on 16–17 March 2025, so the claim's facts are all backed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Solar Orbiter recorded the first-ever views of the Sun’s south pole in March 2025, but it does not describe the images as clear."
+     }
+    ]
+   },
+   {
+    "sentence": "Its magnetic maps revealed patches of both north and south magnetic polarity side by side, rather than one dominant polarity.",
+    "start": 85,
+    "end": 210,
+    "claim": "Solar Orbiter's magnetic maps revealed patches of both north and south magnetic polarity side by side, rather than one dominant polarity.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "While a normal magnet has a clear north and south pole, the PHI instrument’s magnetic field measurements show that both north and south polarity magnetic fields are present at the Sun’s south pole.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Meanwhile, both the Sun’s south and north poles are speckled with red and blue patches.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that PHI magnetic field measurements show both north and south polarity fields present at the Sun's south pole, and that the poles are speckled with red and blue patches, which backs the claim that mixed polarity patches appear side by side rather than one dominant polarity.",
+      "page_judged": "supported",
+      "page_reason": "The page says Solar Orbiter’s magnetic measurements found both north and south polarity at the Sun’s south pole, with red and blue patches showing a complex field rather than a single polarity."
+     }
+    ]
+   },
+   {
+    "sentence": "ESA released the images on June 11, 2025. (esa.int)",
+    "start": 211,
+    "end": 262,
+    "claim": "ESA released the Solar Orbiter images of the Sun's south pole on June 11, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Solar Orbiter’s south-pole images and observation dates but does not state that ESA released them on June 11, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "That patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+    "start": 263,
+    "end": 416,
+    "claim": "The patchwork of mixed magnetic polarity seen at the Sun's south pole is characteristic of solar maximum.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "supported",
+      "page_reason": "The page says both north- and south-polarity fields are present at the Sun’s south pole and that this occurs briefly at solar maximum."
+     }
+    ]
+   },
+   {
+    "sentence": "That patchwork is characteristic of solar maximum, the active phase of the Sun’s roughly 11-year cycle when its global magnetic field reverses. (esa.int)",
+    "start": 263,
+    "end": 416,
+    "claim": "Solar maximum is the active phase of the Sun's roughly 11-year cycle when its global magnetic field reverses.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles?utm_source=openai",
+      "host": "esa.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This happens only for a short time during each solar cycle, at solar maximum, when the Sun’s magnetic field flips and is at its most active.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "why it flips roughly every 11 years, coinciding with a peak in solar activity",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that solar maximum is when the Sun's magnetic field flips and is most active, and that this flip happens roughly every 11 years at the peak of solar activity, with only the word \"global\" not appearing in them.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Sun’s magnetic field flips roughly every 11 years at solar maximum, when the Sun is at its most active."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.3333,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.4,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004032,
+   "usd_per_claim": 0.000806
+  },
+  "cost": {
+   "total_usd": 0.004,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0016
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0015
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

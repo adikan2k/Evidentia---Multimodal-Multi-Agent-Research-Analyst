@@ -1,0 +1,98 @@
+{
+ "id": "nq-14",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:28+00:00",
+ "report": {
+  "answer_text": "Season 7 of *Game of Thrones* has 7 episodes. It's shorter than the earlier seasons, which each had 10 episodes. It aired in 2017.",
+  "claims": [
+   {
+    "sentence": "Season 7 of *Game of Thrones* has 7 episodes.",
+    "start": 0,
+    "end": 45,
+    "claim": "Season 7 of Game of Thrones has 7 episodes.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It's shorter than the earlier seasons, which each had 10 episodes.",
+    "start": 46,
+    "end": 112,
+    "claim": "Season 7 of Game of Thrones is shorter than the earlier seasons.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It's shorter than the earlier seasons, which each had 10 episodes.",
+    "start": 46,
+    "end": 112,
+    "claim": "The earlier seasons of Game of Thrones each had 10 episodes.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It aired in 2017.",
+    "start": 113,
+    "end": 130,
+    "claim": "Season 7 of Game of Thrones aired in 2017.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 4
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000209,
+   "usd_per_claim": 5.2e-05
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

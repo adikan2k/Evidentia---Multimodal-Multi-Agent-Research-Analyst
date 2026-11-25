@@ -1,0 +1,223 @@
+{
+ "id": "science-04",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:44:54+00:00",
+ "report": {
+  "answer_text": "John Clarke, Michel H. Devoret, and John M. Martinis shared the 2025 Nobel Prize in Physics “for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit.” (nobelprize.org)\nTheir experiments showed that a superconducting circuit large enough to hold in your hand could tunnel through an energy barrier it couldn’t cross according to classical physics, and that it had discrete energy levels. (nobelprize.org)",
+  "claims": [
+   {
+    "sentence": "John Clarke, Michel H. Devoret, and John M. Martinis shared the 2025 Nobel Prize in Physics “for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit.” (nobelprize.org)",
+    "start": 0,
+    "end": 221,
+    "claim": "John Clarke, Michel H. Devoret, and John M. Martinis shared the 2025 Nobel Prize in Physics.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/prizes/physics/2025/summary/Quantum/?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "John Clarke, Michel H. Devoret, and John M. Martinis shared the 2025 Nobel Prize in Physics “for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit.” (nobelprize.org)",
+    "start": 0,
+    "end": 221,
+    "claim": "The 2025 Nobel Prize in Physics was awarded to John Clarke, Michel H. Devoret, and John M. Martinis for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/prizes/physics/2025/summary/Quantum/?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Their experiments showed that a superconducting circuit large enough to hold in your hand could tunnel through an energy barrier it couldn’t cross according to classical physics, and that it had discrete energy levels. (nobelprize.org)",
+    "start": 222,
+    "end": 457,
+    "claim": "Their experiments showed that a superconducting circuit large enough to hold in your hand could tunnel through an energy barrier it could not cross according to classical physics.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/uploads/2025/12/press-physicsprize2025-3.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This year’s Nobel Prize Laureates conducted experiments with an electrical circuit in which they demonstrated both quantum mechanical tunnelling and quantised energy levels in a system big enough to be held in the hand.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "In the experiment the system shows its quantum character by managing to escape the zerovoltage state through tunnelling.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "The system is trapped in this state, as if behind a barrier that it cannot cross.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the experiment used an electrical circuit big enough to hold in the hand, showed quantum tunnelling, and had the system escape through tunnelling from a state it was trapped in behind a barrier it could not cross, which covers the claim's points.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a hand-sized circuit system escaped its trapped state through quantum tunnelling, but it does not state that classical physics would prevent it from crossing the barrier."
+     }
+    ]
+   },
+   {
+    "sentence": "Their experiments showed that a superconducting circuit large enough to hold in your hand could tunnel through an energy barrier it couldn’t cross according to classical physics, and that it had discrete energy levels. (nobelprize.org)",
+    "start": 222,
+    "end": 457,
+    "claim": "Their experiments showed that the superconducting circuit had discrete energy levels.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/uploads/2025/12/press-physicsprize2025-3.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The laureates could also demonstrate that the system behaves in the manner predicted by quantum mechanics – it is quantised, meaning that it only absorbs or emits specific amounts of energy.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "they demonstrated both quantum mechanical tunnelling and quantised energy levels in a system big enough to be held in the hand.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the experiments demonstrated quantised energy levels in a macroscopic system that only absorbs or emits specific amounts of energy, which matches the claim that the superconducting circuit had discrete energy levels.",
+      "page_judged": "supported",
+      "page_reason": "The page says the laureates demonstrated that the circuit was quantised, meaning it absorbed or emitted only specific amounts of energy, which supports discrete energy levels."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001517,
+   "usd_per_claim": 0.000379
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

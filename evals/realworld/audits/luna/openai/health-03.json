@@ -1,0 +1,192 @@
+{
+ "id": "health-03",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The 2025 West Texas measles outbreak had 762 confirmed cases, including 99 hospitalizations. Two school-aged children died. The Texas Department of State Health Services declared the outbreak over on August 18, 2025. (dshs.texas.gov)",
+  "claims": [
+   {
+    "sentence": "The 2025 West Texas measles outbreak had 762 confirmed cases, including 99 hospitalizations.",
+    "start": 0,
+    "end": 92,
+    "claim": "The 2025 West Texas measles outbreak had 762 confirmed cases.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dshs.texas.gov/news-alerts/texas-announces-end-west-texas-measles-outbreak?utm_source=openai",
+      "host": "dshs.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As of Aug. 18, 762 cases of measles have been confirmed in the outbreak since late January.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 762 confirmed case count, but it does not state the outbreak's name or that it was in West Texas or in 2025, only that it began in late January.",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports 762 confirmed cases in this year’s West Texas outbreak as of Aug. 18 but does not identify the year as 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The 2025 West Texas measles outbreak had 762 confirmed cases, including 99 hospitalizations.",
+    "start": 0,
+    "end": 92,
+    "claim": "The 2025 West Texas measles outbreak included 99 hospitalizations.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dshs.texas.gov/news-alerts/texas-announces-end-west-texas-measles-outbreak?utm_source=openai",
+      "host": "dshs.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Ninety-nine people were hospitalized over the course of the outbreak",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that ninety-nine people were hospitalized over the course of an unnamed outbreak, but it does not say the outbreak was the 2025 West Texas one.",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports 99 hospitalizations in the West Texas outbreak, but it does not specify that the outbreak was in 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Two school-aged children died.",
+    "start": 93,
+    "end": 123,
+    "claim": "Two school-aged children died in the 2025 West Texas measles outbreak.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dshs.texas.gov/news-alerts/texas-announces-end-west-texas-measles-outbreak?utm_source=openai",
+      "host": "dshs.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "there were two fatalities in school-aged children.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that two school-aged children died, but it does not state that the outbreak was the 2025 West Texas measles outbreak, so that specific is not backed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that two school-aged children died in the outbreak, but it does not identify the year as 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The Texas Department of State Health Services declared the outbreak over on August 18, 2025. (dshs.texas.gov)",
+    "start": 124,
+    "end": 233,
+    "claim": "The Texas Department of State Health Services declared the 2025 West Texas measles outbreak over on August 18, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dshs.texas.gov/news-alerts/texas-announces-end-west-texas-measles-outbreak?utm_source=openai",
+      "host": "dshs.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports that the outbreak is over and gives case totals as of Aug. 18, but it does not state that the department declared it over on Aug. 18, 2025."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 3,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 3,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002092,
+   "usd_per_claim": 0.000523
+  },
+  "cost": {
+   "total_usd": 0.0021,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

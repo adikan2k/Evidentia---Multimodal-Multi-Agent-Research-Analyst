@@ -1,0 +1,551 @@
+{
+ "id": "economy-01",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "On April 2, 2025, which President Donald Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs: a 10% baseline tariff on most imports starting April 5, and higher “reciprocal” tariffs for selected trading partners scheduled to start April 9. The higher rates replaced the 10% baseline for those partners; they weren’t added on top of it, though other existing duties could still apply. (whitehouse.gov)\n| Trading partner | Tariff announced April 2 |\n|---|---:|\n| United Kingdom | 10% |\n| European Union | 20% |\n| Japan | 24% |\n| South Korea | 25% |\n| India | 26% |\n| Taiwan | 32% |\n| China | 34% |\n| Vietnam | 46% |\n| Cambodia | 49% |\n| Lesotho | 50% |\nThese are selected rates from the original announcement. Canada and Mexico were excluded from this tariff package and remained subject to separate rules. The order also exempted certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already covered by separate tariffs. (whitehouse.gov)\nThe announced rates didn’t stay in place as planned: on April 9, the administration announced a 90-day pause on most higher country-specific rates, returning them to 10% effective April 10, while raising the rate on China. (ustr.gov)",
+  "claims": [
+   {
+    "sentence": "On April 2, 2025, which President Donald Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs: a 10% baseline tariff on most imports starting April 5, and higher “reciprocal” tariffs for selected trading partners scheduled to start April 9.",
+    "start": 0,
+    "end": 269,
+    "claim": "On April 2, 2025, the U.S. announced two tiers of new import tariffs.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Except as otherwise provided in this order, all articles imported into the customs territory of the United States shall be, consistent with law, subject to an additional ad valorem rate of duty of 10 percent.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "at 12:01 a.m. eastern daylight time on April 9, 2025, all articles from trading partners enumerated in Annex I to this order imported into the customs territory of the United States shall be, consistent with law, subject to the country-specific ad valorem rates of duty specified in Annex I to this order.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the two-tier structure, a 10 percent baseline duty and country-specific rates in Annex I effective April 9, 2025, but nothing in them states that the tariffs were announced on April 2, 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page is a presidential order dated April 2, 2025, that imposes a 10 percent baseline ad valorem duty on all imports and separate country-specific duty rates from Annex I, which together amount to the two tiers the claim describes."
+     }
+    ]
+   },
+   {
+    "sentence": "On April 2, 2025, which President Donald Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs: a 10% baseline tariff on most imports starting April 5, and higher “reciprocal” tariffs for selected trading partners scheduled to start April 9.",
+    "start": 0,
+    "end": 269,
+    "claim": "April 2, 2025 was called “Liberation Day” by President Donald Trump.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is the text of the April 2, 2025 executive order on reciprocal tariffs and does not mention the nickname 'Liberation Day' or any name given to the date by Trump."
+     }
+    ]
+   },
+   {
+    "sentence": "On April 2, 2025, which President Donald Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs: a 10% baseline tariff on most imports starting April 5, and higher “reciprocal” tariffs for selected trading partners scheduled to start April 9.",
+    "start": 0,
+    "end": 269,
+    "claim": "The baseline tariff was 10% on most imports and was scheduled to start April 5.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The additional ad valorem duty on all imports from all trading partners shall start at 10 percent",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "all articles imported into the customs territory of the United States shall be, consistent with law, subject to an additional ad valorem rate of duty of 10 percent. Such rates of duty shall apply with respect to goods entered for consumption, or withdrawn from warehouse for consumption, on or after 12:01 a.m. eastern daylight time on April 5, 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 10% rate and the April 5 start date, but they say the duty applies to all imports and all articles, not to 'most imports' as the claim states.",
+      "page_judged": "supported",
+      "page_reason": "The page states the additional 10 percent ad valorem duty applies to all articles entered on or after 12:01 a.m. April 5, 2025, and that country-specific rates start April 9, which supports the 10% baseline on most imports starting April 5."
+     }
+    ]
+   },
+   {
+    "sentence": "On April 2, 2025, which President Donald Trump called “Liberation Day,” the U.S. announced two tiers of new import tariffs: a 10% baseline tariff on most imports starting April 5, and higher “reciprocal” tariffs for selected trading partners scheduled to start April 9.",
+    "start": 0,
+    "end": 269,
+    "claim": "Higher reciprocal tariffs for selected trading partners were scheduled to start April 9.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "at 12:01 a.m. eastern daylight time on April 9, 2025, all articles from trading partners enumerated in Annex I to this order imported into the customs territory of the United States shall be, consistent with law, subject to the country-specific ad valorem rates of duty specified in Annex I to this order.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that country-specific ad valorem duty rates for trading partners listed in Annex I take effect at 12:01 a.m. EDT on April 9, 2025, which backs the claim that higher reciprocal tariffs for selected partners were scheduled to start April 9.",
+      "page_judged": "supported",
+      "page_reason": "The page states that country-specific rates in Annex I apply at 12:01 a.m. EDT on April 9, 2025, for enumerated trading partners, which are the higher reciprocal tariffs beyond the 10 percent baseline, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The higher rates replaced the 10% baseline for those partners; they weren’t added on top of it, though other existing duties could still apply. (whitehouse.gov)",
+    "start": 270,
+    "end": 430,
+    "claim": "The higher reciprocal rates replaced the 10% baseline for the selected partners rather than being added on top of it.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The additional ad valorem duty on all imports from all trading partners shall start at 10 percent and shortly thereafter, the additional ad valorem duty shall increase for trading partners enumerated in Annex I to this order at the rates set forth in Annex I to this order.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Furthermore, except as otherwise provided in this order, at 12:01 a.m. eastern daylight time on April 9, 2025, all articles from trading partners enumerated in Annex I to this order imported into the customs territory of the United States shall be, consistent with law, subject to the country-specific ad valorem rates of duty specified in Annex I to this order.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say Annex I partners are subject to their country-specific rates after a 10% starting point, which suggests replacement, but they never explicitly state that the higher rates replace rather than stack on the 10% baseline.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the duty starts at 10 percent and then increases to the Annex I country rates, which suggests replacement, but it never explicitly states that the higher rates replace the 10% baseline rather than stacking on it, so the claim is not clearly established."
+     }
+    ]
+   },
+   {
+    "sentence": "The higher rates replaced the 10% baseline for those partners; they weren’t added on top of it, though other existing duties could still apply. (whitehouse.gov)",
+    "start": 270,
+    "end": 430,
+    "claim": "Other existing duties could still apply in addition to the higher reciprocal rates.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "(c) The rates of duty established by this order are in addition to any other duties, fees, taxes, exactions, or charges applicable to such imported articles, except as provided in subsections (d) and (e) of this section below.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the order's rates are in addition to any other applicable duties, fees, taxes, and charges, which backs the claim's main point, but it does not mention higher reciprocal rates by name and does not state how the exceptions in subsections (d) and (e) affect this.",
+      "page_judged": "supported",
+      "page_reason": "Section 2(c) states that the rates of duty established by the order are in addition to any other duties, fees, taxes, exactions, or charges applicable to imported articles, except as provided in subsections (d) and (e), which supports the claim that other existing duties could still apply."
+     }
+    ]
+   },
+   {
+    "sentence": "| United Kingdom | 10% |",
+    "start": 489,
+    "end": 513,
+    "claim": "The tariff announced April 2 for the United Kingdom was 10%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| European Union | 20% |",
+    "start": 514,
+    "end": 538,
+    "claim": "The tariff announced April 2 for the European Union was 20%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Japan | 24% |",
+    "start": 539,
+    "end": 554,
+    "claim": "The tariff announced April 2 for Japan was 24%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| South Korea | 25% |",
+    "start": 555,
+    "end": 576,
+    "claim": "The tariff announced April 2 for South Korea was 25%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| India | 26% |",
+    "start": 577,
+    "end": 592,
+    "claim": "The tariff announced April 2 for India was 26%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Taiwan | 32% |",
+    "start": 593,
+    "end": 609,
+    "claim": "The tariff announced April 2 for Taiwan was 32%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| China | 34% |",
+    "start": 610,
+    "end": 625,
+    "claim": "The tariff announced April 2 for China was 34%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Vietnam | 46% |",
+    "start": 626,
+    "end": 643,
+    "claim": "The tariff announced April 2 for Vietnam was 46%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Cambodia | 49% |",
+    "start": 644,
+    "end": 662,
+    "claim": "The tariff announced April 2 for Cambodia was 49%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Lesotho | 50% |",
+    "start": 663,
+    "end": 680,
+    "claim": "The tariff announced April 2 for Lesotho was 50%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The order also exempted certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already covered by separate tariffs. (whitehouse.gov)",
+    "start": 835,
+    "end": 1001,
+    "claim": "The order exempted certain goods, including pharmaceuticals and semiconductors.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2025/04/eo-14257.pdf?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "other products enumerated in Annex II to this order, including copper, pharmaceuticals, semiconductors, lumber articles, certain critical minerals, and energy and energy products",
+        "pages": [
+         6,
+         6
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the order's Annex II covers pharmaceuticals and semiconductors among other products, which backs the claim that the order exempted goods including pharmaceuticals and semiconductors.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Annex II goods, including pharmaceuticals and semiconductors, are not subject to the ad valorem rates under the order, citing 'other products enumerated in Annex II to this order, including copper, pharmaceuticals, semiconductors, lumber articles, certain critical minerals, and energy and energy products.'"
+     }
+    ]
+   },
+   {
+    "sentence": "The order also exempted certain goods, including pharmaceuticals, semiconductors, and steel, aluminum, and autos already covered by separate tariffs. (whitehouse.gov)",
+    "start": 835,
+    "end": 1001,
+    "claim": "The order exempted steel, aluminum, and autos that were already covered by separate tariffs.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2025/04/eo-14257.pdf?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "(ii) all articles and derivatives of steel and aluminum subject to the duties imposed pursuant to section 232 of the Trade Expansion Act of 1962",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       },
+       {
+        "text": "(iii) all automobiles and automotive parts subject to the additional duties imposed pursuant to section 232 of the Trade Expansion Act of 1962, as amended, and proclaimed in Proclamation 10908 of March 26, 2025",
+        "pages": [
+         6,
+         6
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show the order exempts articles and derivatives of steel and aluminum and automobiles and automotive parts subject to section 232 duties, which backs the main point, but they do not state that these were covered by separate tariffs as a stated reason or that the order exempted them in those exact terms beyond the section 232 references.",
+      "page_judged": "supported",
+      "page_reason": "The page states that articles and derivatives of steel and aluminum subject to section 232 duties (Proclamations 9704, 9705, 9980, 10895, 10896) and automobiles and automotive parts subject to section 232 duties (Proclamation 10908) shall not be subject to the order's ad valorem rates, which supports the claim that these were exempted because they were already covered by separate tariffs."
+     }
+    ]
+   },
+   {
+    "sentence": "The announced rates didn’t stay in place as planned: on April 9, the administration announced a 90-day pause on most higher country-specific rates, returning them to 10% effective April 10, while raising the rate on China. (ustr.gov)",
+    "start": 1002,
+    "end": 1235,
+    "claim": "On April 9, the administration announced a 90-day pause on most higher country-specific tariff rates.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.ustr.gov/trade-topics/presidential-tariff-actions?utm_source=openai",
+      "host": "ustr.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists an April 9, 2025 executive order titled 'Modifying Reciprocal Tariff Rates to Reflect Trading Partner Retaliation and Alignment' but never describes a 90-day pause on higher country-specific tariff rates."
+     }
+    ]
+   },
+   {
+    "sentence": "The announced rates didn’t stay in place as planned: on April 9, the administration announced a 90-day pause on most higher country-specific rates, returning them to 10% effective April 10, while raising the rate on China. (ustr.gov)",
+    "start": 1002,
+    "end": 1235,
+    "claim": "The paused higher country-specific rates were returned to 10% effective April 10.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.ustr.gov/trade-topics/presidential-tariff-actions?utm_source=openai",
+      "host": "ustr.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a list of trade agreements and executive order titles with dates but does not describe any pause of higher country-specific rates, a return to 10%, or an April 10 effective date."
+     }
+    ]
+   },
+   {
+    "sentence": "The announced rates didn’t stay in place as planned: on April 9, the administration announced a 90-day pause on most higher country-specific rates, returning them to 10% effective April 10, while raising the rate on China. (ustr.gov)",
+    "start": 1002,
+    "end": 1235,
+    "claim": "On April 9, the administration raised the tariff rate on China.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.ustr.gov/trade-topics/presidential-tariff-actions?utm_source=openai",
+      "host": "ustr.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists an April 9, 2025 executive order titled 'Modifying Reciprocal Tariff Rates to Reflect Trading Partner Retaliation and Alignment' but gives no content, does not say it raised tariffs, and does not tie it to China."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 2,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 4,
+    "not_found": 4,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 10
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 7,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 0.5714,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.1818,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.016758,
+   "usd_per_claim": 0.000798
+  },
+  "cost": {
+   "total_usd": 0.0168,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 19,
+     "usd": 0.0103
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.0039
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}

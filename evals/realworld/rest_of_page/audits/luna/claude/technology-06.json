@@ -1,0 +1,916 @@
+{
+ "id": "technology-06",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:54:56+00:00",
+ "report": {
+  "answer_text": "What ToolShell was\nOn July 19, 2025, Microsoft confirmed that a zero-day affecting on-premises SharePoint Servers was being actively exploited. Researcher Khoa Dinh named it \"ToolShell\".[1] It was assigned CVE-2025-53770, with a related bypass tracked as CVE-2025-53771.[1]\nCVE-2025-53770 is a critical remote code execution flaw with a CVSS score of 9.8[2]. It stems from a deserialization issue in a legacy SharePoint endpoint (ToolPane.aspx). Attackers can use it to execute arbitrary code without authentication.[3]\nCVE-2025-53771 is a spoofing flaw (CVSS 6.5) that allows an authentication bypass through header spoofing[4].\nThe chain is a patch bypass. CVE-2025-53770 is a direct variant of CVE-2025-49706, which Microsoft tried to fix in the July 2025 Patch Tuesday roll-up.[2]\nAttackers could deploy web shells, harvest machine keys, and maintain persistent access[5]. That is why patching alone didn't evict them. Compromised servers also needed key rotation and a hunt for leftover access.\nAffected products\nOnly on-premises SharePoint is affected. That means SharePoint Server Subscription Edition, 2019 and 2016. SharePoint 2010 and 2013 are end-of-life but are still listed by Microsoft as affected.[2]\nSharePoint Online and Microsoft 365 are not affected.[3]\nWho was hit\nSectors: Reported sectors include education, finance, government, healthcare, energy, telecom, and enterprise environments.[6] SentinelOne saw early exploitation against high-value targets, mainly technology consulting, manufacturing, critical infrastructure, and professional services tied to sensitive architecture and engineering.[1]\nU.S. federal agencies: Confirmed victims include U.S. federal agencies, universities, energy firms, and telecoms.[3]\nScale: Bloomberg reported on July 23 that there were over 400 victims.[7] Estimates varied by source and date. Bitsight cited 75-85+ servers globally[6] early on.\nAttribution and later findings: Hackers believed to be associated with China used the flaw against government agencies, universities, telecom providers, and finance organizations.[8] Symantec later reported victims including a Middle East telecom provider, government bodies in Africa, South America and the Middle East, a U.S. university, and a European finance company[8]. It said a larger set of Chinese threat actors exploited the flaw than was previously known[8]. SOCRadar also reported that Warlock ransomware was deployed via ToolShell exploits[9].\nResponse\nMicrosoft issued an emergency out-of-band security update on July 19, 2025[2]. CISA added CVE-2025-53770 to its Known Exploited Vulnerabilities catalog on July 20.[9]",
+  "claims": [
+   {
+    "sentence": "On July 19, 2025, Microsoft confirmed that a zero-day affecting on-premises SharePoint Servers was being actively exploited.",
+    "start": 19,
+    "end": 143,
+    "claim": "On July 19, 2025, Microsoft confirmed that a zero-day affecting on-premises SharePoint Servers was being actively exploited.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sentinelone.com/blog/sharepoint-toolshell-zero-day-exploited-in-the-wild-targets-enterprise-servers/",
+      "host": "sentinelone.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Researcher Khoa Dinh named it \"ToolShell\".[1]",
+    "start": 144,
+    "end": 189,
+    "claim": "Researcher Khoa Dinh named the zero-day \"ToolShell\".",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sentinelone.com/blog/sharepoint-toolshell-zero-day-exploited-in-the-wild-targets-enterprise-servers/",
+      "host": "sentinelone.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was assigned CVE-2025-53770, with a related bypass tracked as CVE-2025-53771.[1]",
+    "start": 190,
+    "end": 273,
+    "claim": "The ToolShell zero-day was assigned CVE-2025-53770.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sentinelone.com/blog/sharepoint-toolshell-zero-day-exploited-in-the-wild-targets-enterprise-servers/",
+      "host": "sentinelone.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was assigned CVE-2025-53770, with a related bypass tracked as CVE-2025-53771.[1]",
+    "start": 190,
+    "end": 273,
+    "claim": "A related bypass of ToolShell is tracked as CVE-2025-53771.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sentinelone.com/blog/sharepoint-toolshell-zero-day-exploited-in-the-wild-targets-enterprise-servers/",
+      "host": "sentinelone.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "CVE-2025-53770 is a critical remote code execution flaw with a CVSS score of 9.8[2].",
+    "start": 274,
+    "end": 358,
+    "claim": "CVE-2025-53770 is a critical remote code execution flaw.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2025/07/21/toolshell-zero-day-microsoft-rushes-emergency-patch-for-actively-exploited-sharepoint-vulnerabilities",
+      "host": "blog.qualys.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "CVE-2025-53770 is a critical remote code execution flaw with a CVSS score of 9.8[2].",
+    "start": 274,
+    "end": 358,
+    "claim": "CVE-2025-53770 has a CVSS score of 9.8.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2025/07/21/toolshell-zero-day-microsoft-rushes-emergency-patch-for-actively-exploited-sharepoint-vulnerabilities",
+      "host": "blog.qualys.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It stems from a deserialization issue in a legacy SharePoint endpoint (ToolPane.aspx).",
+    "start": 359,
+    "end": 445,
+    "claim": "CVE-2025-53770 stems from a deserialization issue in a legacy SharePoint endpoint (ToolPane.aspx).",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://abnormal.ai/blog/sharepoint-toolshell-exploit",
+      "host": "abnormal.ai",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The flaw stems from a deserialization issue in a legacy SharePoint endpoint (ToolPane.aspx)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the flaw stems from a deserialization issue in a legacy SharePoint endpoint (ToolPane.aspx), which covers every fact in the claim, though it does not explicitly name CVE-2025-53770 in the quoted text.",
+      "page_judged": "supported",
+      "page_reason": "The page says CVE-2025-53770 stems from a deserialization flaw in the legacy SharePoint endpoint ToolPane.aspx."
+     }
+    ]
+   },
+   {
+    "sentence": "Attackers can use it to execute arbitrary code without authentication.[3]",
+    "start": 446,
+    "end": 519,
+    "claim": "Attackers can use CVE-2025-53770 to execute arbitrary code without authentication.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://abnormal.ai/blog/sharepoint-toolshell-exploit",
+      "host": "abnormal.ai",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The flaw stems from a deserialization issue in a legacy SharePoint endpoint (ToolPane.aspx), allowing attackers to execute arbitrary code without authentication.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "CVE-2025-53770 enables unauthenticated remote code execution on on-prem SharePoint via a deserialization flaw in ToolPane.aspx.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that CVE-2025-53770 lets attackers execute arbitrary code without authentication via a deserialization flaw, which covers everything the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page states that CVE-2025-53770 allows attackers to execute arbitrary code without authentication on vulnerable on-premises SharePoint servers."
+     }
+    ]
+   },
+   {
+    "sentence": "CVE-2025-53771 is a spoofing flaw (CVSS 6.5) that allows an authentication bypass through header spoofing[4].",
+    "start": 520,
+    "end": 629,
+    "claim": "CVE-2025-53771 is a spoofing flaw with a CVSS score of 6.5.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.trellix.com/blogs/research/toolshell-unleashed-decoding-the-sharepoint-attack-chain/",
+      "host": "trellix.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "CVE-2025-53771 is a spoofing flaw (CVSS 6.5) that allows an authentication bypass through header spoofing[4].",
+    "start": 520,
+    "end": 629,
+    "claim": "CVE-2025-53771 allows an authentication bypass through header spoofing.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.trellix.com/blogs/research/toolshell-unleashed-decoding-the-sharepoint-attack-chain/",
+      "host": "trellix.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The chain is a patch bypass. CVE-2025-53770 is a direct variant of CVE-2025-49706, which Microsoft tried to fix in the July 2025 Patch Tuesday roll-up.[2]",
+    "start": 630,
+    "end": 784,
+    "claim": "CVE-2025-53770 is a direct variant of CVE-2025-49706.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2025/07/21/toolshell-zero-day-microsoft-rushes-emergency-patch-for-actively-exploited-sharepoint-vulnerabilities",
+      "host": "blog.qualys.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The chain is a patch bypass. CVE-2025-53770 is a direct variant of CVE-2025-49706, which Microsoft tried to fix in the July 2025 Patch Tuesday roll-up.[2]",
+    "start": 630,
+    "end": 784,
+    "claim": "Microsoft tried to fix CVE-2025-49706 in the July 2025 Patch Tuesday roll-up.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2025/07/21/toolshell-zero-day-microsoft-rushes-emergency-patch-for-actively-exploited-sharepoint-vulnerabilities",
+      "host": "blog.qualys.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Attackers could deploy web shells, harvest machine keys, and maintain persistent access[5].",
+    "start": 785,
+    "end": 876,
+    "claim": "Attackers could deploy web shells, harvest machine keys, and maintain persistent access on compromised SharePoint servers.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.fastly.com/blog/toolshell-remote-code-execution-sharepoint-cve-2025-53770-cve-2025-53771",
+      "host": "fastly.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Attackers can bypass authentication, execute code, deploy web shells, harvest machine keys, and maintain persistent access.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Full RCE achieved: attackers can upload web shells (e.g., spinstall0.aspx), steal ASP.NET machineKey (ValidationKey, DecryptionKey), forge tokens/ViewState, and maintain persistent access.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that attackers can deploy web shells, harvest machine keys, and maintain persistent access, which covers every element of the claim, though they do not explicitly say 'on SharePoint servers' beyond the context of the page's subject, the quotes themselves name no product explicitly in the excerpted text.",
+      "page_judged": "supported",
+      "page_reason": "The page says attackers can upload web shells, steal ASP.NET machine keys, and maintain persistent access on SharePoint servers."
+     }
+    ]
+   },
+   {
+    "sentence": "Only on-premises SharePoint is affected. That means SharePoint Server Subscription Edition, 2019 and 2016.",
+    "start": 1018,
+    "end": 1124,
+    "claim": "Only on-premises SharePoint is affected, meaning SharePoint Server Subscription Edition, 2019 and 2016.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2025/07/21/toolshell-zero-day-microsoft-rushes-emergency-patch-for-actively-exploited-sharepoint-vulnerabilities",
+      "host": "blog.qualys.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "SharePoint 2010 and 2013 are end-of-life but are still listed by Microsoft as affected.[2]",
+    "start": 1125,
+    "end": 1215,
+    "claim": "SharePoint 2010 and 2013 are end-of-life but are still listed by Microsoft as affected.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2025/07/21/toolshell-zero-day-microsoft-rushes-emergency-patch-for-actively-exploited-sharepoint-vulnerabilities",
+      "host": "blog.qualys.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "SharePoint Online and Microsoft 365 are not affected.[3]",
+    "start": 1216,
+    "end": 1272,
+    "claim": "SharePoint Online and Microsoft 365 are not affected by ToolShell.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://abnormal.ai/blog/sharepoint-toolshell-exploit",
+      "host": "abnormal.ai",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This vulnerability does not impact Microsoft 365 or SharePoint Online. Abnormal customers remain protected.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "While SharePoint Online (Microsoft 365) is not vulnerable, many enterprises and governments continue to operate on-prem SharePoint servers for compliance, control, or legacy integration.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "SharePoint Online and Microsoft 365 are not affected; only on-premises SharePoint deployments are vulnerable.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes explicitly state that SharePoint Online and Microsoft 365 are not vulnerable or affected, which matches the claim's sole assertion about ToolShell.",
+      "page_judged": "supported",
+      "page_reason": "The page states that SharePoint Online and Microsoft 365 are not affected by ToolShell and that the vulnerability affects only on-premises SharePoint deployments."
+     }
+    ]
+   },
+   {
+    "sentence": "Sectors: Reported sectors include education, finance, government, healthcare, energy, telecom, and enterprise environments.[6]",
+    "start": 1285,
+    "end": 1411,
+    "claim": "Reported sectors hit by ToolShell include education, finance, government, healthcare, energy, telecom, and enterprise environments.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.bitsight.com/blog/toolshell-threat-brief-sharepoint-rce-vulnerabilities-cve-2025-53770-53771-explained",
+      "host": "bitsight.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The impacted sectors are reported to be Education, Finance, Government, Healthcare, Energy, Telecom, and Enterprise Environments.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote lists the same seven sectors (Education, Finance, Government, Healthcare, Energy, Telecom, Enterprise Environments) as reported impacted sectors, matching the claim in full.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Education, Finance, Government, Healthcare, Energy, Telecom, and Enterprise Environments as impacted sectors."
+     }
+    ]
+   },
+   {
+    "sentence": "SentinelOne saw early exploitation against high-value targets, mainly technology consulting, manufacturing, critical infrastructure, and professional services tied to sensitive architecture and engineering.[1]",
+    "start": 1412,
+    "end": 1621,
+    "claim": "SentinelOne saw early exploitation against high-value targets, mainly technology consulting, manufacturing, critical infrastructure, and professional services tied to sensitive architecture and engineering.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.sentinelone.com/blog/sharepoint-toolshell-zero-day-exploited-in-the-wild-targets-enterprise-servers/",
+      "host": "sentinelone.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "U.S. federal agencies: Confirmed victims include U.S. federal agencies, universities, energy firms, and telecoms.[3]",
+    "start": 1622,
+    "end": 1738,
+    "claim": "Confirmed ToolShell victims include U.S. federal agencies, universities, energy firms, and telecoms.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://abnormal.ai/blog/sharepoint-toolshell-exploit",
+      "host": "abnormal.ai",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Confirmed intrusions span U.S. federal and state agencies, universities, energy firms, and telecommunications providers.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Confirmed victims include U.S. federal agencies, universities, energy firms, and telecoms, suggesting nation-state coordination.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that confirmed intrusions or victims include U.S. federal agencies, universities, energy firms, and telecommunications providers, matching every category in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that confirmed intrusions or victims include U.S. federal agencies, universities, energy firms, and telecommunications providers."
+     }
+    ]
+   },
+   {
+    "sentence": "Scale: Bloomberg reported on July 23 that there were over 400 victims.[7]",
+    "start": 1739,
+    "end": 1812,
+    "claim": "Bloomberg reported on July 23 that there were over 400 ToolShell victims.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.recordedfuture.com/blog/toolshell-exploit-chain-thousands-sharepoint-servers-risk",
+      "host": "recordedfuture.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Bloomberg reported on July 23 that there were over 400 victims of the exploitation campaign targeting on-premises Microsoft SharePoint servers.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the July 23 Bloomberg report of over 400 victims, but it describes the campaign only as exploitation of on-premises SharePoint servers and never names it ToolShell.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Bloomberg reported on July 23 that there were over 400 victims of the ToolShell exploitation campaign targeting on-premises SharePoint servers."
+     }
+    ]
+   },
+   {
+    "sentence": "Bitsight cited 75-85+ servers globally[6] early on.",
+    "start": 1850,
+    "end": 1901,
+    "claim": "Bitsight cited 75-85+ affected servers globally early on.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.bitsight.com/blog/toolshell-threat-brief-sharepoint-rce-vulnerabilities-cve-2025-53770-53771-explained",
+      "host": "bitsight.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Compromises associated with CVE-2025-53770 and CVE-2025-53771 have affected an estimated 75-85+ servers globally.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the figure of an estimated 75-85+ servers affected globally, but it does not name Bitsight as the source and says nothing about the claim's 'early on' timing.",
+      "page_judged": "supported",
+      "page_reason": "The Bitsight article dated July 22, 2025, says compromises had affected an estimated 75–85+ servers globally, supporting that it cited this figure early on."
+     }
+    ]
+   },
+   {
+    "sentence": "Hackers believed to be associated with China used the flaw against government agencies, universities, telecom providers, and finance organizations.[8]",
+    "start": 1934,
+    "end": 2084,
+    "claim": "Hackers believed to be associated with China used the flaw against government agencies, universities, telecom providers, and finance organizations.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.bleepingcomputer.com/news/security/sharepoint-toolshell-attacks-targeted-orgs-across-four-continents/amp/",
+      "host": "bleepingcomputer.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Hackers believed to be associated with China have leveraged the ToolShell vulnerability (CVE-2025-53770) in Microsoft SharePoint in attacks targeting government agencies, universities, telecommunication service providers, and finance organizations.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A telecommunications service provider in the Middle East",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A university in the United States",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A European finance company",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states that China-associated hackers used the SharePoint ToolShell flaw against government agencies, universities, telecom providers, and finance organizations, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that China-associated hackers used ToolShell in attacks targeting government agencies, universities, telecommunications service providers, and finance organizations."
+     }
+    ]
+   },
+   {
+    "sentence": "Symantec later reported victims including a Middle East telecom provider, government bodies in Africa, South America and the Middle East, a U.S. university, and a European finance company[8].",
+    "start": 2085,
+    "end": 2276,
+    "claim": "Symantec later reported victims including a Middle East telecom provider, government bodies in Africa, South America and the Middle East, a U.S. university, and a European finance company.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.bleepingcomputer.com/news/security/sharepoint-toolshell-attacks-targeted-orgs-across-four-continents/amp/",
+      "host": "bleepingcomputer.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A telecommunications service provider in the Middle East",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Two government departments in an African country",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Two government agencies in South America",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A university in the United States",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "A Middle Eastern government department",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the Middle East telecom provider, the African, South American and Middle Eastern government bodies, and the U.S. university, but nothing in them mentions a European finance company or names Symantec as the reporter.",
+      "page_judged": "supported",
+      "page_reason": "The page says Symantec reported victims including a Middle Eastern telecom provider, African and South American government bodies, a Middle Eastern government department, a U.S. university, and a European finance company."
+     }
+    ]
+   },
+   {
+    "sentence": "It said a larger set of Chinese threat actors exploited the flaw than was previously known[8].",
+    "start": 2277,
+    "end": 2371,
+    "claim": "Symantec said a larger set of Chinese threat actors exploited the flaw than was previously known.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.bleepingcomputer.com/news/security/sharepoint-toolshell-attacks-targeted-orgs-across-four-continents/amp/",
+      "host": "bleepingcomputer.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Symantec says that its findings indicate that the ToolShell vulnerability was exploited by a larger set of Chinese threat actors than was previously known.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Symantec says a larger set of Chinese threat actors exploited the ToolShell vulnerability than was previously known, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Symantec’s findings indicate ToolShell was exploited by a larger set of Chinese threat actors than was previously known."
+     }
+    ]
+   },
+   {
+    "sentence": "SOCRadar also reported that Warlock ransomware was deployed via ToolShell exploits[9].",
+    "start": 2372,
+    "end": 2458,
+    "claim": "SOCRadar reported that Warlock ransomware was deployed via ToolShell exploits.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://socradar.io/blog/toolshell-sharepoint-zero-day-cve-2025-53770/",
+      "host": "socradar.io",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 8,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 14,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 25,
+   "claims_with_a_verdict": 8,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.32,
+   "pages_cited": 9,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 2,
+   "usd": 0.008008,
+   "usd_per_claim": 0.00032
+  },
+  "cost": {
+   "total_usd": 0.008,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0014
+    },
+    {
+     "node": "find",
+     "calls": 11,
+     "usd": 0.0026
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.0024
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0016
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,959 @@
+{
+ "id": "economy-06",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:59:48+00:00",
+ "report": {
+  "answer_text": "The One Big Beautiful Bill Act (OBBBA, Pub. L. 119-21) is a large budget reconciliation law. Trump signed it on July 4, 2025.[1] It contains hundreds of provisions.[1] These are the main ones.\nIndividual taxes\nTCJA provisions made permanent: The Act permanently extends the temporary individual income and estate tax provisions of the 2017 Tax Cuts and Jobs Act (TCJA) and expands several of them.[2] The seven brackets stay at 10%, 12%, 22%, 24%, 32%, 35% and 37%.[3]\nNew temporary deductions: These cover tip income, overtime pay, and senior taxpayers.[2]\nChild tax credit: It becomes permanent and rises temporarily from $2,000 to $2,200. The refundable portion is capped at $1,400, indexed for inflation.[4]\nSALT cap: The state and local tax deduction cap rises to $40,400 for certain taxpayers but returns to $10,000 in 2030.[5] The higher cap applies to households earning under $500,000.[6]\n\"Trump Accounts\": These are a new savings vehicle.[3] The law also expands the use of 529 plans.[3]\nCharitable giving: Non-itemizers get a deduction for cash gifts of $1,000 (single) or $2,000 (joint). Itemizers face a 0.5% AGI floor.[5]\nEstate and gift tax: The exemption is permanently set at $15 million ($30 million per married couple) for 2026, with inflation adjustments.[7]\nBusiness taxes\n100% bonus depreciation is permanent for certain property acquired and placed in service after January 19, 2025.[7]\nThe 20% qualified business income (QBI) deduction becomes permanent.[7]\nResearch and development amortization is repealed.[8]\nThe qualified small business stock exclusion cap rises to the greater of $15 million or 10x basis for stock acquired after July 4, 2025.[4]\nSpending, health care and other policy\nMedicaid: The bill approved cuts to Medicaid.[6]\nDefense and border: Defense spending rises, including naval shipbuilding, missile defense and nuclear forces.[6] Border security spending also increases.[2]\nEnergy: Several clean energy credits are repealed or phased out faster.[7] The law also expands access to fossil fuels and lowers the cost of developing them.[6]\nRemittances: A 1% tax on remittances.[8]\nEducation: The law adds a Workforce Pell Grant program. Students enrolled less than 15 semester hours per year would be ineligible for regular Pell Grants.[9]\nDebt limit: It raises the debt limit by $5 trillion.[10]\nCost: The Brookings Institution estimates that the Act will raise federal deficits by between $3.7 and $5.1 trillion over the next decade under conventional scoring.[2]\nSome summaries describe the child tax credit differently. I used the law firm's description, which is more precise.\nFor full detail, the Proskauer, Brookings and AEI pages in the search results go through the provisions in depth. I can also go further into a particular area, such as Medicaid, energy credits or the tips and overtime deductions.",
+  "claims": [
+   {
+    "sentence": "The One Big Beautiful Bill Act (OBBBA, Pub. L. 119-21) is a large budget reconciliation law.",
+    "start": 0,
+    "end": 92,
+    "claim": "The One Big Beautiful Bill Act (OBBBA, Pub. L. 119-21) is a large budget reconciliation law.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The One Big Beautiful Bill Act (OBBBA), or the Big Beautiful Bill (P.L. 119-21), is a U.S. federal statute passed by the 119th United States Congress containing tax and spending policies that form the core of President Donald Trump's second-term agenda.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "An Act to provide for reconciliation pursuant to title II of H. Con. Res. 14.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes establish that OBBBA is P.L. 119-21 and a federal statute with tax and spending policies, and the second quote states it is an Act providing for reconciliation pursuant to H. Con. Res. 14, which backs the budget reconciliation characterization, though the quotes do not explicitly say 'large'.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies the OBBBA as Pub. L. 119-21, says it provides for budget reconciliation, and describes hundreds of provisions with major fiscal effects."
+     }
+    ]
+   },
+   {
+    "sentence": "Trump signed it on July 4, 2025.[1]",
+    "start": 93,
+    "end": 128,
+    "claim": "Trump signed the One Big Beautiful Bill Act on July 4, 2025.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The bill was signed into law by Trump on July 4, 2025.[2][3]",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "On July 4, President Trump signed the bill into law at a ceremony at the White House.[185]",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that Trump signed the bill into law on July 4, 2025, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that President Trump signed the One Big Beautiful Bill Act into law on July 4, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "It contains hundreds of provisions.[1]",
+    "start": 129,
+    "end": 167,
+    "claim": "The One Big Beautiful Bill Act contains hundreds of provisions.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The OBBBA contains hundreds of provisions.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The One Big Beautiful Bill Act[12][13] includes hundreds of provisions, and over a ten-year period is estimated to add roughly $3 trillion to the national debt[14][15] and to cut approximately $4.46 trillion in tax revenue.[16][17]",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the One Big Beautiful Bill Act (OBBBA) includes hundreds of provisions, which is the claim's only assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page explicitly says the One Big Beautiful Bill Act contains hundreds of provisions."
+     }
+    ]
+   },
+   {
+    "sentence": "The Act permanently extends the temporary individual income and estate tax provisions of the 2017 Tax Cuts and Jobs Act (TCJA) and expands several of them.[2]",
+    "start": 242,
+    "end": 400,
+    "claim": "The One Big Beautiful Bill Act permanently extends the temporary individual income and estate tax provisions of the 2017 Tax Cuts and Jobs Act and expands several of them.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.brookings.edu/articles/one-big-beautiful-bill-a-preliminary-assessment/",
+      "host": "brookings.edu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Act permanently extends the temporary individual income and estate tax provisions enacted in the Tax Cut and Jobs Act (TCJA) of 2017 and expands several of those provisions.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Act permanently extends the temporary individual income and estate tax provisions of the 2017 TCJA and expands several of them, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Act permanently extends the temporary individual income and estate tax provisions enacted in the 2017 TCJA and expands several of those provisions."
+     }
+    ]
+   },
+   {
+    "sentence": "The seven brackets stay at 10%, 12%, 22%, 24%, 32%, 35% and 37%.[3]",
+    "start": 401,
+    "end": 468,
+    "claim": "The seven individual income tax brackets stay at 10%, 12%, 22%, 24%, 32%, 35% and 37%.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hcvt.com/alertarticle-One-Big-Beautiful-Bill-Act-Summary",
+      "host": "hcvt.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Retained existing seven brackets: 10%, 12%, 22%, 24%, 32%, 35% and 37% Income thresholds indexed for inflation",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the seven existing brackets at 10%, 12%, 22%, 24%, 32%, 35% and 37% were retained, which covers every rate named in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the existing seven individual income tax brackets are retained at 10%, 12%, 22%, 24%, 32%, 35% and 37%."
+     }
+    ]
+   },
+   {
+    "sentence": "New temporary deductions: These cover tip income, overtime pay, and senior taxpayers.[2]",
+    "start": 469,
+    "end": 557,
+    "claim": "The One Big Beautiful Bill Act creates new temporary deductions covering tip income, overtime pay, and senior taxpayers.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.brookings.edu/articles/one-big-beautiful-bill-a-preliminary-assessment/",
+      "host": "brookings.edu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It also introduces new targeted temporary deductions for tip income, overtime pay, and senior taxpayers",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the act introduces new targeted temporary deductions for tip income, overtime pay, and senior taxpayers, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Act introduces new targeted temporary deductions for tip income, overtime pay, and senior taxpayers."
+     }
+    ]
+   },
+   {
+    "sentence": "Child tax credit: It becomes permanent and rises temporarily from $2,000 to $2,200.",
+    "start": 558,
+    "end": 641,
+    "claim": "The child tax credit becomes permanent under the One Big Beautiful Bill Act.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.proskauertaxtalks.com/2025/07/president-trump-signs-one-big-beautiful-bill-act-into-law/",
+      "host": "proskauertaxtalks.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Child Tax Credits Made Permanent. The Act makes the child tax credit permanent and temporarily increases the maximum credit from $2,000 to $2,200.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim that the child tax credit is made permanent by the Act, but the claim's named statute ('One Big Beautiful Bill Act') is not stated in the quote, which only says 'The Act'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Act makes the child tax credit permanent."
+     }
+    ]
+   },
+   {
+    "sentence": "Child tax credit: It becomes permanent and rises temporarily from $2,000 to $2,200.",
+    "start": 558,
+    "end": 641,
+    "claim": "The child tax credit rises temporarily from $2,000 to $2,200.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.proskauertaxtalks.com/2025/07/president-trump-signs-one-big-beautiful-bill-act-into-law/",
+      "host": "proskauertaxtalks.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Act makes the child tax credit permanent and temporarily increases the maximum credit from $2,000 to $2,200.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says the increase from $2,000 to $2,200 is temporary, but it also says the Act makes the child tax credit permanent, so the claim's core is backed while the quote's permanence is not contradicted by the claim itself—the quote actually supports the claim's temporary increase, so the claim is supported on the amounts and the temporary nature.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the child tax credit is temporarily increased from $2,000 to $2,200."
+     }
+    ]
+   },
+   {
+    "sentence": "The refundable portion is capped at $1,400, indexed for inflation.[4]",
+    "start": 642,
+    "end": 711,
+    "claim": "The refundable portion of the child tax credit is capped at $1,400, indexed for inflation.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.proskauertaxtalks.com/2025/07/president-trump-signs-one-big-beautiful-bill-act-into-law/",
+      "host": "proskauertaxtalks.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "supported",
+      "page_reason": "The page states that the child tax credit’s refundable portion is capped at $1,400, indexed for inflation."
+     }
+    ]
+   },
+   {
+    "sentence": "SALT cap: The state and local tax deduction cap rises to $40,400 for certain taxpayers but returns to $10,000 in 2030.[5]",
+    "start": 712,
+    "end": 833,
+    "claim": "The state and local tax deduction cap rises to $40,400 for certain taxpayers.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.fidelity.com/learning-center/personal-finance/one-big-beautiful-bill",
+      "host": "fidelity.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The state and local tax (SALT) deduction cap increases to $40,400 for certain taxpayers, but returns to $10,000 in 2030.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the SALT deduction cap increases to $40,400 for certain taxpayers, which is the entire claim, with the 2030 reversion being extra context the claim does not contradict.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the SALT deduction cap temporarily increases to $40,400 for tax year 2026, with the higher cap subject to income limits."
+     }
+    ]
+   },
+   {
+    "sentence": "SALT cap: The state and local tax deduction cap rises to $40,400 for certain taxpayers but returns to $10,000 in 2030.[5]",
+    "start": 712,
+    "end": 833,
+    "claim": "The state and local tax deduction cap returns to $10,000 in 2030.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.fidelity.com/learning-center/personal-finance/one-big-beautiful-bill",
+      "host": "fidelity.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The SALT deduction has temporarily increased to $40,400 for tax year 2026. The cap will revert to its former level of $10,000 in 2030.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the SALT cap will revert to its former $10,000 level in 2030, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the SALT deduction cap will revert to $10,000 in 2030."
+     }
+    ]
+   },
+   {
+    "sentence": "The higher cap applies to households earning under $500,000.[6]",
+    "start": 834,
+    "end": 897,
+    "claim": "The higher SALT deduction cap applies to households earning under $500,000.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://usafacts.org/articles/whats-in-the-one-big-beautiful-bill/",
+      "host": "usafacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The bill expands a TCJA-imposed cap on the state and local tax (SALT) deduction from $10,000 to $40,000 per taxpayer for households earning under $500,000.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the expanded SALT deduction cap of $40,000 applies to households earning under $500,000, which matches the claim's sole substantive point.",
+      "page_judged": "supported",
+      "page_reason": "The page says the bill raises the SALT deduction cap to $40,000 per taxpayer for households earning under $500,000."
+     }
+    ]
+   },
+   {
+    "sentence": "\"Trump Accounts\": These are a new savings vehicle.[3] The law also expands the use of 529 plans.[3]",
+    "start": 898,
+    "end": 997,
+    "claim": "Trump Accounts are a new savings vehicle created by the One Big Beautiful Bill Act.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hcvt.com/alertarticle-One-Big-Beautiful-Bill-Act-Summary",
+      "host": "hcvt.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "implements new savings vehicles like \"Trump Accounts.\"",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Created tax-exempt savings accounts for certain minors allowing up to $5,000",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Trump Accounts are a new savings vehicle, but they never name the One Big Beautiful Bill Act as the source that created them, so that attribution is not shown.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Act created tax-exempt savings accounts for certain minors called Trump Accounts and describes them as a new savings vehicle."
+     }
+    ]
+   },
+   {
+    "sentence": "\"Trump Accounts\": These are a new savings vehicle.[3] The law also expands the use of 529 plans.[3]",
+    "start": 898,
+    "end": 997,
+    "claim": "The One Big Beautiful Bill Act expands the use of 529 plans.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.hcvt.com/alertarticle-One-Big-Beautiful-Bill-Act-Summary",
+      "host": "hcvt.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It eliminates miscellaneous itemized deductions and expands the use of 529 plans.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the bill expands the use of 529 plans, which matches the claim's sole assertion, with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Act expands the use of 529 plans, including by adding certain elementary and secondary school expenses as qualifying expenses."
+     }
+    ]
+   },
+   {
+    "sentence": "Charitable giving: Non-itemizers get a deduction for cash gifts of $1,000 (single) or $2,000 (joint). Itemizers face a 0.5% AGI floor.[5]",
+    "start": 998,
+    "end": 1135,
+    "claim": "Non-itemizers get a charitable deduction for cash gifts of $1,000 (single) or $2,000 (joint).[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.fidelity.com/learning-center/personal-finance/one-big-beautiful-bill",
+      "host": "fidelity.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Charitable deductions for non-itemizers are permanently reinstated with a new deduction for cash contributions of $1,000 for single filers and $2,000 for joint filers.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that non-itemizers get a charitable deduction for cash contributions of $1,000 for single filers and $2,000 for joint filers, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says charitable deductions for non-itemizers are permanently reinstated for cash contributions of $1,000 for single filers and $2,000 for joint filers."
+     }
+    ]
+   },
+   {
+    "sentence": "Charitable giving: Non-itemizers get a deduction for cash gifts of $1,000 (single) or $2,000 (joint). Itemizers face a 0.5% AGI floor.[5]",
+    "start": 998,
+    "end": 1135,
+    "claim": "Itemizers face a 0.5% AGI floor for charitable giving.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.fidelity.com/learning-center/personal-finance/one-big-beautiful-bill",
+      "host": "fidelity.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The law also creates a floor of 0.5% of the taxpayer’s contribution base—generally adjusted gross income (AGI)—on the charitable deductions of individuals who itemize.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that itemizers face a floor of 0.5% of the contribution base, generally AGI, on their charitable deductions, which matches the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says charitable deductions for individuals who itemize are subject to a floor of 0.5% of their contribution base, generally adjusted gross income."
+     }
+    ]
+   },
+   {
+    "sentence": "Estate and gift tax: The exemption is permanently set at $15 million ($30 million per married couple) for 2026, with inflation adjustments.[7]",
+    "start": 1136,
+    "end": 1278,
+    "claim": "The estate and gift tax exemption is permanently set at $15 million ($30 million per married couple) for 2026, with inflation adjustments.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.gunster.com/newsroom/publications/overview-of-key-provisions-of-the-one-big-beautiful-bill-act",
+      "host": "gunster.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Act makes the estate and gift tax exemption permanent at $15 million ($30 million per married couple) for 2026 with annual inflation adjustments going forward.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the exemption is made permanent at $15 million ($30 million per married couple) for 2026 with annual inflation adjustments, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the estate and gift tax exemption is permanent at $15 million ($30 million per married couple) for 2026, with annual inflation adjustments going forward."
+     }
+    ]
+   },
+   {
+    "sentence": "100% bonus depreciation is permanent for certain property acquired and placed in service after January 19, 2025.[7]",
+    "start": 1294,
+    "end": 1409,
+    "claim": "100% bonus depreciation is permanent for certain property acquired and placed in service after January 19, 2025.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.gunster.com/newsroom/publications/overview-of-key-provisions-of-the-one-big-beautiful-bill-act",
+      "host": "gunster.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Bonus depreciation: The Act permanently allows taxpayers to immediately deduct 100% of the cost of certain depreciable property acquired and placed in service after January 19, 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Act permanently allows immediate deduction of 100% of the cost of certain depreciable property acquired and placed in service after January 19, 2025, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Act permanently allows 100% immediate deduction for certain depreciable property acquired and placed in service after January 19, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The 20% qualified business income (QBI) deduction becomes permanent.[7]",
+    "start": 1410,
+    "end": 1481,
+    "claim": "The 20% qualified business income deduction becomes permanent.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.gunster.com/newsroom/publications/overview-of-key-provisions-of-the-one-big-beautiful-bill-act",
+      "host": "gunster.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The QBI deduction is made permanent at 20% for tax years beginning after 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the QBI deduction is made permanent at 20%, which covers the claim's only assertion that the 20% deduction becomes permanent.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the QBI deduction is made permanent at 20% for tax years beginning after 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Research and development amortization is repealed.[8]",
+    "start": 1482,
+    "end": 1535,
+    "claim": "Research and development amortization is repealed.[8]",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.aei.org/economics/details-of-the-one-big-beautiful-bill-act/",
+      "host": "aei.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Repeals research and development amortization.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the page repeals research and development amortization, which matches the claim's sole point with no added specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the bill “repeals research and development amortization.”"
+     }
+    ]
+   },
+   {
+    "sentence": "The qualified small business stock exclusion cap rises to the greater of $15 million or 10x basis for stock acquired after July 4, 2025.[4]",
+    "start": 1536,
+    "end": 1675,
+    "claim": "The qualified small business stock exclusion cap rises to the greater of $15 million or 10x basis for stock acquired after July 4, 2025.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.proskauertaxtalks.com/2025/07/president-trump-signs-one-big-beautiful-bill-act-into-law/",
+      "host": "proskauertaxtalks.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Increases the qualified small business stock (“QSBS”) exclusion cap for stock acquired after July 4, 2025 to the greater of (i) $15 million (rather than $10 million) or (ii) 10x the investor’s stock basis",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The section 1202 per issuer cap for excluding gain from qualified small business stock (“QSBS”) has been increased to the greater of (i) $15 million (adjusted for inflation) or (ii) 10x the investor’s stock basis (rather than the greater of (i) $10 million or (ii) 10x the investor’s stock basis) for stock acquired after July 4, 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the QSBS exclusion cap for stock acquired after July 4, 2025 is the greater of $15 million or 10x stock basis, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that for stock acquired after July 4, 2025, the per-issuer QSBS exclusion cap increases to the greater of $15 million or 10 times the investor’s stock basis."
+     }
+    ]
+   },
+   {
+    "sentence": "Medicaid: The bill approved cuts to Medicaid.[6]",
+    "start": 1715,
+    "end": 1763,
+    "claim": "The bill approved cuts to Medicaid.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://usafacts.org/articles/whats-in-the-one-big-beautiful-bill/",
+      "host": "usafacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The bill approved cuts to Medicaid, a health program jointly run by states and the federal government to help people with limited income cover medical costs.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote directly states that the bill approved cuts to Medicaid, which is the entire claim; the added description of the program is not part of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states, “The bill approved cuts to Medicaid.”"
+     }
+    ]
+   },
+   {
+    "sentence": "Defense and border: Defense spending rises, including naval shipbuilding, missile defense and nuclear forces.[6]",
+    "start": 1764,
+    "end": 1876,
+    "claim": "Defense spending rises under the bill, including naval shipbuilding, missile defense and nuclear forces.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://usafacts.org/articles/whats-in-the-one-big-beautiful-bill/",
+      "host": "usafacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The bill increases defense spending, including funds for personnel support (housing allowances, childcare), naval shipbuilding, missile defense, weapons development, and nuclear forces.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the bill increases defense spending and explicitly includes naval shipbuilding, missile defense, and nuclear forces, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the bill increases defense spending, including funds for naval shipbuilding, missile defense, and nuclear forces."
+     }
+    ]
+   },
+   {
+    "sentence": "Border security spending also increases.[2]",
+    "start": 1877,
+    "end": 1920,
+    "claim": "Border security spending increases under the bill.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.brookings.edu/articles/one-big-beautiful-bill-a-preliminary-assessment/",
+      "host": "brookings.edu",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "and increases spending on border security and defense.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the bill increases spending on border security, which is the claim's entire point, with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Act increases spending on border security and defense."
+     }
+    ]
+   },
+   {
+    "sentence": "Energy: Several clean energy credits are repealed or phased out faster.[7]",
+    "start": 1921,
+    "end": 1995,
+    "claim": "Several clean energy credits are repealed or phased out faster.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.gunster.com/newsroom/publications/overview-of-key-provisions-of-the-one-big-beautiful-bill-act",
+      "host": "gunster.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Act repeals or accelerates the phase-out dates for several clean energy credits.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Act repeals or accelerates the phase-out dates for several clean energy credits, which matches the claim's main point with no extra specifics added.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Act repeals or accelerates the phase-out dates for several clean energy credits."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 21,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 4,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 25,
+   "claims_with_a_verdict": 21,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.84,
+   "pages_cited": 8,
+   "pages_read": 8,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 6,
+   "usd": 0.026643,
+   "usd_per_claim": 0.001066
+  },
+  "cost": {
+   "total_usd": 0.0266,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0015
+    },
+    {
+     "node": "find",
+     "calls": 35,
+     "usd": 0.015
+    },
+    {
+     "node": "page_check",
+     "calls": 25,
+     "usd": 0.0073
+    },
+    {
+     "node": "check",
+     "calls": 24,
+     "usd": 0.0029
+    }
+   ]
+  }
+ }
+}

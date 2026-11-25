@@ -1,0 +1,152 @@
+{
+ "id": "science-02",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "On March 1, 2025, NASA’s Europa Clipper flew about 550 miles (884 kilometers) above Mars, using the planet’s gravity to bend its trajectory toward Jupiter. During the flyby, it took infrared images of Mars to calibrate its thermal camera and tested its ice-penetrating radar as a complete system for the first time. (science.nasa.gov)\nEuropa Clipper is scheduled to enter orbit around Jupiter in April 2030. (science.nasa.gov)",
+  "claims": [
+   {
+    "sentence": "During the flyby, it took infrared images of Mars to calibrate its thermal camera and tested its ice-penetrating radar as a complete system for the first time. (science.nasa.gov)",
+    "start": 156,
+    "end": 334,
+    "claim": "During the Mars flyby, Europa Clipper took infrared images of Mars to calibrate its thermal camera.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://science.nasa.gov/mission/europa-clipper/mission-timeline/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states Europa Clipper streaked about 550 miles above Mars on March 1, 2025 for a gravity assist, but says nothing about taking infrared images or calibrating a thermal camera."
+     }
+    ]
+   },
+   {
+    "sentence": "During the flyby, it took infrared images of Mars to calibrate its thermal camera and tested its ice-penetrating radar as a complete system for the first time. (science.nasa.gov)",
+    "start": 156,
+    "end": 334,
+    "claim": "During the Mars flyby, Europa Clipper tested its ice-penetrating radar as a complete system for the first time.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://science.nasa.gov/mission/europa-clipper/mission-timeline/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the March 1, 2025 Mars flyby as a gravity assist maneuver at about 550 miles altitude, but says nothing about testing the ice-penetrating radar or any instrument during that flyby."
+     }
+    ]
+   },
+   {
+    "sentence": "Europa Clipper is scheduled to enter orbit around Jupiter in April 2030. (science.nasa.gov)",
+    "start": 335,
+    "end": 426,
+    "claim": "Europa Clipper is scheduled to enter orbit around Jupiter in April 2030.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://science.nasa.gov/mission/europa-clipper/mission-timeline/?utm_source=openai",
+      "host": "science.nasa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "April 2030: Jupiter Orbit Insertion Europa Clipper will use its engines as brakes to slow the spacecraft down to match Jupiter's orbit.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Jupiter Orbit Insertion for Europa Clipper is in April 2030, which backs the claim's scheduled orbit entry around Jupiter in that month.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jupiter Orbit Insertion is planned for April 2030, when Europa Clipper will use its engines to slow down and match Jupiter's orbit."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.6667,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.001362,
+   "usd_per_claim": 0.000454
+  },
+  "cost": {
+   "total_usd": 0.0014,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0004
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

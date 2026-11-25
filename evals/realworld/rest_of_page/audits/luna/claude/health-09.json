@@ -1,0 +1,822 @@
+{
+ "id": "health-09",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:53:01+00:00",
+ "report": {
+  "answer_text": "H5N1 in US dairy cattle and poultry, 2025\nPoultry\nWinter wave: The February egg price spike followed the culling of 41.4 million infected or exposed birds in December 2024 and January 2025. That was the most lethal two-month period of the outbreak.[1]\nCumulative toll: Since the virus re-emerged in February 2022, the US outbreak has caused the confirmed loss of over 175 million birds across 1,700+ flocks.[2] Table-egg-laying hens were the most affected, accounting for 75% of domestic poultry loss.[3]\nEgg prices: The national average retail price hit an all-time high of $6.23 per dozen in March 2025.[3] It fell to $5.12 in April and $4.55 in May as wholesale prices dropped.[3] Between May 2024 and April 2025, one analysis estimated Americans spent an extra $14.5 billion on eggs.[4]\nResponse: In February 2025, the Trump administration announced a $1 billion plan to fight the virus and bring down egg prices.[5]\nLater in the year: One analysis noted that egg prices were showing signs of bottoming out or rising slightly again as bird flu rebounded.[6]\nDairy cattle\nHerds affected: Between March 2024 and 1 July 2025, 1,074 dairy herds in 17 states tested positive.[7] Most of those herds were infected in 2024.\nNew spillovers: Until early 2025, all detections in cattle were genotype B3.13. A second genotype, D1.1, was then confirmed in dairy cattle in Nevada and Arizona.[8] These were two additional, separate bird-to-cow spillover events.[7]\nSlowdown: Detections in dairy herds dropped significantly after April 2025, despite a surge in Idaho that month.[7] Researchers also saw a notable decrease in interstate spread, helped by control measures.[9]\nSeverity: Mortality in infected cattle is only about 2%, but reduced and abnormal milk production can still have serious financial impacts.[1] Dairy prices have been relatively insulated from HPAI, unlike eggs.[1]\nVaccines: No vaccination programs had been approved in the US for dairy cattle.[9]\nHuman and other effects\n70 human H5 cases had been reported in the US since April 2024[10] as of March 2025. Another source reports no new human cases after March 2025.[9]\nOver 70 H5 infections were confirmed in domestic cats in the US in 2025.[7]\nIf you want more on one piece, such as vaccine policy, milk testing, or the fall 2025 poultry resurgence, I can look into it.",
+  "claims": [
+   {
+    "sentence": "Winter wave: The February egg price spike followed the culling of 41.4 million infected or exposed birds in December 2024 and January 2025.",
+    "start": 50,
+    "end": 189,
+    "claim": "The February egg price spike followed the culling of 41.4 million infected or exposed birds in December 2024 and January 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.csis.org/analysis/how-bird-flu-impacting-agriculture-and-food-security-united-states",
+      "host": "csis.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "That was the most lethal two-month period of the outbreak.[1]",
+    "start": 190,
+    "end": 251,
+    "claim": "December 2024 and January 2025 was the most lethal two-month period of the US H5N1 outbreak.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.csis.org/analysis/how-bird-flu-impacting-agriculture-and-food-security-united-states",
+      "host": "csis.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Cumulative toll: Since the virus re-emerged in February 2022, the US outbreak has caused the confirmed loss of over 175 million birds across 1,700+ flocks.[2]",
+    "start": 252,
+    "end": 410,
+    "claim": "Since the virus re-emerged in February 2022, the US outbreak has caused the confirmed loss of over 175 million birds across 1,700+ flocks.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://ew-nutrition.com/report-lessons-2025/",
+      "host": "ew-nutrition.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since its reemergence in February 2022, the US outbreak alone has resulted in the confirmed loss of over 175 million birds across 1,700+ flocks",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that since the February 2022 reemergence the US outbreak has resulted in the confirmed loss of over 175 million birds across 1,700+ flocks, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that since its February 2022 reemergence, the US outbreak caused confirmed losses of over 175 million birds across more than 1,700 flocks."
+     }
+    ]
+   },
+   {
+    "sentence": "Table-egg-laying hens were the most affected, accounting for 75% of domestic poultry loss.[3]",
+    "start": 411,
+    "end": 504,
+    "claim": "Table-egg-laying hens accounted for 75% of domestic poultry loss.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/IF/HTML/IF12949.html",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Among all U.S. poultry flocks, table-egg-laying hens are currently the most affected, accounting for 75% of domestic poultry loss.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that table-egg-laying hens account for 75% of domestic poultry loss, matching the claim's figure and subject exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that table-egg-laying hens accounted for 75% of domestic poultry loss."
+     }
+    ]
+   },
+   {
+    "sentence": "Egg prices: The national average retail price hit an all-time high of $6.23 per dozen in March 2025.[3]",
+    "start": 505,
+    "end": 608,
+    "claim": "The US national average retail egg price hit an all-time high of $6.23 per dozen in March 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/IF/HTML/IF12949.html",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the U.S. national average retail price of eggs per dozen hit an all-time high of $6.23 in March 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the U.S. national average retail price of eggs per dozen hit an all-time high of $6.23 in March 2025, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the U.S. national average retail price of eggs per dozen hit an all-time high of $6.23 in March 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "It fell to $5.12 in April and $4.55 in May as wholesale prices dropped.[3]",
+    "start": 609,
+    "end": 683,
+    "claim": "The national average retail egg price fell to $5.12 in April 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/IF/HTML/IF12949.html",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, retail egg prices, per dozen, decreased from $6.23 in March to $5.12 in April following a decrease in wholesale egg prices",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that retail egg prices per dozen decreased from $6.23 in March to $5.12 in April 2025, which backs the claimed $5.12 April price and the fall, though it does not explicitly say 'national average' (the quote says only 'retail egg prices').",
+      "page_judged": "supported",
+      "page_reason": "The page states that the national retail egg price decreased from $6.23 per dozen in March 2025 to $5.12 per dozen in April."
+     }
+    ]
+   },
+   {
+    "sentence": "It fell to $5.12 in April and $4.55 in May as wholesale prices dropped.[3]",
+    "start": 609,
+    "end": 683,
+    "claim": "The national average retail egg price fell to $4.55 in May 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/IF/HTML/IF12949.html",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In May 2025, the reported retail price of eggs decreased again to $4.55 per dozen.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the $4.55 price and the May 2025 date but says 'retail price of eggs' per dozen without the word 'national average' and does not state it 'fell' to that level in the sense of a decline from a specified prior value, though it says 'decreased again'.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the reported U.S. retail price of eggs decreased to $4.55 per dozen in May 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Between May 2024 and April 2025, one analysis estimated Americans spent an extra $14.5 billion on eggs.[4]",
+    "start": 684,
+    "end": 790,
+    "claim": "Between May 2024 and April 2025, one analysis estimated Americans spent an extra $14.5 billion on eggs.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://innovateanimalag.org/hpai-costs-2025",
+      "host": "innovateanimalag.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Between May 2024 and April 2025, Americans spent an extra $14.5 billion on eggs, bringing total expenditures to $29.9 billion—almost double the $15.3 billion average seen in non-HPAI years.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that between May 2024 and April 2025 Americans spent an extra $14.5 billion on eggs, matching the claim's period, figure, and subject, though it does not name the specific analysis, which the claim's 'one analysis' wording does not require.",
+      "page_judged": "supported",
+      "page_reason": "The page states that between May 2024 and April 2025, Americans spent an extra $14.5 billion on eggs."
+     }
+    ]
+   },
+   {
+    "sentence": "Response: In February 2025, the Trump administration announced a $1 billion plan to fight the virus and bring down egg prices.[5]",
+    "start": 791,
+    "end": 920,
+    "claim": "In February 2025, the Trump administration announced a $1 billion plan to fight the virus and bring down egg prices.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.foodfacts.org/articles/egg-prices-with-pandemics-understanding-bird-flu-crisis",
+      "host": "foodfacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Later in the year: One analysis noted that egg prices were showing signs of bottoming out or rising slightly again as bird flu rebounded.[6]",
+    "start": 921,
+    "end": 1061,
+    "claim": "One analysis noted that egg prices were showing signs of bottoming out or rising slightly again as bird flu rebounded later in 2025.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.thinkglobalhealth.org/article/bird-flu-roars-back-what-it-means-for-thanksgiving",
+      "host": "thinkglobalhealth.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Egg prices, meanwhile, are showing signs of bottoming out or slightly rising again [PDF] as bird flu rebounds.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the core claim that egg prices are showing signs of bottoming out or slightly rising again as bird flu rebounds, but it does not state the timing 'later in 2025'.",
+      "page_judged": "supported",
+      "page_reason": "The page says egg prices were showing signs of bottoming out or slightly rising again as bird flu rebounded, in an article updated November 19, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Herds affected: Between March 2024 and 1 July 2025, 1,074 dairy herds in 17 states tested positive.[7]",
+    "start": 1075,
+    "end": 1177,
+    "claim": "Between March 2024 and 1 July 2025, 1,074 dairy herds in 17 states tested positive for H5N1.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.woah.org/app/uploads/2025/07/25728-fao-woah-who-h5-assessment.pdf",
+      "host": "woah.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Between March 2024 and 1 July 2025, 1074 dairy cattle herds in 17 states of the USA have tested positive for A(H5N1).",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that between March 2024 and 1 July 2025, 1074 dairy cattle herds in 17 US states tested positive for A(H5N1), which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that between March 2024 and 1 July 2025, 1,074 dairy cattle herds in 17 U.S. states tested positive for A(H5N1)."
+     }
+    ]
+   },
+   {
+    "sentence": "Most of those herds were infected in 2024.",
+    "start": 1178,
+    "end": 1220,
+    "claim": "Most of the 1,074 dairy herds that tested positive were infected in 2024.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "New spillovers: Until early 2025, all detections in cattle were genotype B3.13.",
+    "start": 1221,
+    "end": 1300,
+    "claim": "Until early 2025, all detections in US cattle were genotype B3.13.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.avma.org/resources-tools/animal-health-and-welfare/animal-health/avian-influenza/avian-influenza-virus-type-h5n1-us-dairy-cattle",
+      "host": "avma.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A second genotype, D1.1, was then confirmed in dairy cattle in Nevada and Arizona.[8]",
+    "start": 1301,
+    "end": 1386,
+    "claim": "A second genotype, D1.1, was confirmed in dairy cattle in Nevada and Arizona.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://www.avma.org/resources-tools/animal-health-and-welfare/animal-health/avian-influenza/avian-influenza-virus-type-h5n1-us-dairy-cattle",
+      "host": "avma.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "These were two additional, separate bird-to-cow spillover events.[7]",
+    "start": 1387,
+    "end": 1455,
+    "claim": "The Nevada and Arizona D1.1 detections were two additional, separate bird-to-cow spillover events.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.woah.org/app/uploads/2025/07/25728-fao-woah-who-h5-assessment.pdf",
+      "host": "woah.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "confirmed the detection of a genotype D1.1 H5N1 clade 2.3.4.4b virus in dairy cattle in the states of Nevada and Arizona , representing two additional separate spillover events from birds to cattle.",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the D1.1 detections in Nevada and Arizona dairy cattle represent two additional separate spillover events from birds to cattle, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says D1.1 virus was detected in dairy cattle in Nevada and Arizona, representing two additional separate spillover events from birds to cattle."
+     }
+    ]
+   },
+   {
+    "sentence": "Slowdown: Detections in dairy herds dropped significantly after April 2025, despite a surge in Idaho that month.[7]",
+    "start": 1456,
+    "end": 1571,
+    "claim": "Detections in dairy herds dropped significantly after April 2025, despite a surge in Idaho that month.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.woah.org/app/uploads/2025/07/25728-fao-woah-who-h5-assessment.pdf",
+      "host": "woah.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since the last joint assessment of 17 April 2025, the number of H5N1 detections in dairy herds has significantly decreased despite a surge in the State of Idaho during the",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that H5N1 detections in dairy herds significantly decreased after the 17 April 2025 assessment despite a surge in Idaho, but it cuts off before naming the month, so the claim's specific 'that month' (April) is not confirmed by the quote.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says detections decreased significantly since the 17 April 2025 assessment despite an Idaho surge during April, but it does not state that they dropped after April."
+     }
+    ]
+   },
+   {
+    "sentence": "Researchers also saw a notable decrease in interstate spread, helped by control measures.[9]",
+    "start": 1572,
+    "end": 1664,
+    "claim": "Researchers saw a notable decrease in interstate spread of H5N1 in dairy cattle, helped by control measures.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://www.nature.com/articles/s44298-025-00138-5",
+      "host": "nature.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "With these measures in place, a notable decrease in the interstate spread of HPAI H5N1 among dairy cattle was observed, along with fewer reported outbreaks compared to earlier periods in cattle and no new reported cases in human since March 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that with measures in place a notable decrease in interstate spread of HPAI H5N1 among dairy cattle was observed, which backs the claim's decrease and the link to control measures.",
+      "page_judged": "supported",
+      "page_reason": "The page says that with interstate testing, movement restrictions, and related measures in place, a notable decrease in H5N1 spread among dairy cattle was observed."
+     }
+    ]
+   },
+   {
+    "sentence": "Severity: Mortality in infected cattle is only about 2%, but reduced and abnormal milk production can still have serious financial impacts.[1]",
+    "start": 1665,
+    "end": 1807,
+    "claim": "Mortality in infected dairy cattle is only about 2%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.csis.org/analysis/how-bird-flu-impacting-agriculture-and-food-security-united-states",
+      "host": "csis.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Dairy prices have been relatively insulated from HPAI, unlike eggs.[1]",
+    "start": 1808,
+    "end": 1878,
+    "claim": "Dairy prices have been relatively insulated from HPAI, unlike eggs.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.csis.org/analysis/how-bird-flu-impacting-agriculture-and-food-security-united-states",
+      "host": "csis.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Vaccines: No vaccination programs had been approved in the US for dairy cattle.[9]",
+    "start": 1879,
+    "end": 1961,
+    "claim": "No vaccination programs had been approved in the US for dairy cattle.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://www.nature.com/articles/s44298-025-00138-5",
+      "host": "nature.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "To date, no vaccination programs have been approved in the US for dairy cattle or high-risk dairy farm workers to control IAV infections",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that no vaccination programs have been approved in the US for dairy cattle, which matches the claim's main point without adding any extra specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that, to date, no vaccination programs had been approved in the US for dairy cattle."
+     }
+    ]
+   },
+   {
+    "sentence": "70 human H5 cases had been reported in the US since April 2024[10] as of March 2025.",
+    "start": 1986,
+    "end": 2070,
+    "claim": "As of March 2025, 70 human H5 cases had been reported in the US since April 2024.",
+    "citation_ids": [
+     "c10"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c10",
+      "url": "https://www.cdc.gov/bird-flu/spotlights/h5n1-response-03192025.html",
+      "host": "cdc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since April 2024, 70 human cases of avian influenza A(H5) virus infection have been reported in the United States.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "CDC A(H5N1) Bird Flu Response Update March 19, 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state 70 human H5 cases reported in the US since April 2024, and the second quote is a CDC update dated March 19, 2025, which backs the 'as of March 2025' timing.",
+      "page_judged": "supported",
+      "page_reason": "The page dated March 19, 2025, states that since April 2024, 70 human cases of avian influenza A(H5) infection had been reported in the United States."
+     }
+    ]
+   },
+   {
+    "sentence": "Another source reports no new human cases after March 2025.[9]",
+    "start": 2071,
+    "end": 2133,
+    "claim": "Another source reports no new human H5 cases after March 2025.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://www.nature.com/articles/s44298-025-00138-5",
+      "host": "nature.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "no new reported cases in human since March 202523",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states there have been no new reported human cases since March 2025, which matches the claim's no-new-cases-after-March-2025 point, though it does not name the H5 subtype explicitly.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that there were no new reported human cases since March 2025, but does not specify that these were H5 cases."
+     }
+    ]
+   },
+   {
+    "sentence": "Over 70 H5 infections were confirmed in domestic cats in the US in 2025.[7]",
+    "start": 2134,
+    "end": 2209,
+    "claim": "Over 70 H5 infections were confirmed in domestic cats in the US in 2025.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.woah.org/app/uploads/2025/07/25728-fao-woah-who-h5-assessment.pdf",
+      "host": "woah.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, over 70 confirmed cases of A(H5) infection were reported in domestic cats in the USA across 19 states.",
+        "pages": [
+         3,
+         3
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that over 70 confirmed A(H5) infections were reported in US domestic cats in 2025, matching every fact in the claim (H5 is the same as A(H5)).",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025 over 70 confirmed cases of A(H5) infection were reported in domestic cats in the USA."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 23,
+   "labels": {
+    "supported": 11,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 7,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 22,
+   "claims_with_a_verdict": 12,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 10,
+   "pages_read": 7,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.017941,
+   "usd_per_claim": 0.00078
+  },
+  "cost": {
+   "total_usd": 0.0179,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 23,
+     "usd": 0.0105
+    },
+    {
+     "node": "page_check",
+     "calls": 15,
+     "usd": 0.0043
+    },
+    {
+     "node": "check",
+     "calls": 15,
+     "usd": 0.0021
+    }
+   ]
+  }
+ }
+}

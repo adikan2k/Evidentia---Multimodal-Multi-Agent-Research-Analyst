@@ -1,0 +1,540 @@
+{
+ "id": "nq-05-r2",
+ "tool": "openai",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.morrow.com/learn/tower-crane-101",
+   "read": true,
+   "chars": 311
+  },
+  {
+   "url": "https://www.liebherr.com/en-us/p/82086-8471547?utm_source=openai",
+   "read": true,
+   "chars": 498
+  }
+ ],
+ "usd": 0.001577,
+ "report": {
+  "answer_text": "A typical horizontal-jib tower crane moves a load in three ways: the hoist raises and lowers it, the trolley moves it closer to or farther from the tower, and the slewing unit swings it around the tower. (highworks.co.kr)\n| Part | What it does |\n|---|---|\n| Base and foundation | Support the crane and transfer its forces into the ground. On a fixed-base crane, anchors secure the base to the foundation. (morrow.com) |\n| Mast (tower) | The vertical steel structure that gives the crane its height and supports the upper assembly. (morrow.com) |\n| Slewing unit (turntable) | Uses a large bearing and drive system to rotate the upper assembly around the mast. (morrow.com) |\n| Jib (working arm) | The long arm that provides reach and supports the trolley. (morrow.com) |\n| Trolley | Travels along the horizontal jib to position the hook closer to or farther from the mast. (highworks.co.kr) |\n| Hoist winch and rope | The winch winds or pays out the rope to raise or lower the hook and load. (morrow.com) |\n| Hook block | The hook-and-pulley assembly suspended from the hoist rope. The hook connects to the load’s lifting gear. (morrow.com) |\n| Counter-jib and counterweights | The shorter rear arm carries counterweights that help offset the overturning effect of the working jib and its load. It may also carry machinery. (morrow.com) |\n| Operator’s cab and controls | Let the operator control lifting, trolley travel, and rotation. (morrow.com) |\n| Climbing frame and tie-ins, where fitted | The climbing system lets the crane gain height as construction progresses; tie-ins brace the mast against the building. (morrow.com) |\nA luffing-jib crane changes its reach by raising or lowering the angle of the jib rather than by moving a trolley along a fixed horizontal arm. (liebherr.com)",
+  "claims": [
+   {
+    "sentence": "A typical horizontal-jib tower crane moves a load in three ways: the hoist raises and lowers it, the trolley moves it closer to or farther from the tower, and the slewing unit swings it around the tower. (highworks.co.kr)",
+    "start": 0,
+    "end": 221,
+    "claim": "A typical horizontal-jib tower crane moves a load in three ways: the hoist raises and lowers it, the trolley moves it closer to or farther from the tower, and the slewing unit swings it around the tower.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.highworks.co.kr/_lib/daumeditor/down.html?fname=20150119101030650979.pdf&orifname=312TL%2812TON+Topless+crane%29%EC%A0%9C%EC%9B%90%ED%91%9C.pdf&utm_source=openai",
+      "host": "highworks.co.kr",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "scanned PDF, no text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Base and foundation | Support the crane and transfer its forces into the ground. On a fixed-base crane, anchors secure the base to the foundation. (morrow.com) |",
+    "start": 256,
+    "end": 419,
+    "claim": "The base and foundation support the crane and transfer its forces into the ground.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page names the base as one of three major sections of a tower crane but does not state that the base or foundation supports the crane or transfers its forces into the ground.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Base and foundation | Support the crane and transfer its forces into the ground. On a fixed-base crane, anchors secure the base to the foundation. (morrow.com) |",
+    "start": 256,
+    "end": 419,
+    "claim": "On a fixed-base crane, anchors secure the base to the foundation.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions a base as one of three major sections of a tower crane but says nothing about fixed-base cranes or anchors securing the base to a foundation.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Mast (tower) | The vertical steel structure that gives the crane its height and supports the upper assembly. (morrow.com) |",
+    "start": 420,
+    "end": 545,
+    "claim": "The mast (tower) is the vertical steel structure that gives the crane its height and supports the upper assembly.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page names 'the tower mast' as one of three major sections of a tower crane and mentions a tower in the tour, but it does not describe the mast as a vertical steel structure, its role in giving height, or its support of the upper assembly.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Slewing unit (turntable) | Uses a large bearing and drive system to rotate the upper assembly around the mast. (morrow.com) |",
+    "start": 546,
+    "end": 673,
+    "claim": "The slewing unit (turntable) uses a large bearing and drive system to rotate the upper assembly around the mast.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page names the slewing unit as one of three major sections of a tower crane but does not describe it as a turntable or state that it uses a large bearing and drive system to rotate the upper assembly around the mast.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Jib (working arm) | The long arm that provides reach and supports the trolley. (morrow.com) |",
+    "start": 674,
+    "end": 769,
+    "claim": "The jib (working arm) is the long arm that provides reach and supports the trolley.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions the jib only by name as a component of a tower crane and does not describe it as the long arm providing reach or supporting the trolley.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Trolley | Travels along the horizontal jib to position the hook closer to or farther from the mast. (highworks.co.kr) |",
+    "start": 770,
+    "end": 891,
+    "claim": "The trolley travels along the horizontal jib to position the hook closer to or farther from the mast.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.highworks.co.kr/_lib/daumeditor/down.html?fname=20150119101030650979.pdf&orifname=312TL%2812TON+Topless+crane%29%EC%A0%9C%EC%9B%90%ED%91%9C.pdf&utm_source=openai",
+      "host": "highworks.co.kr",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "scanned PDF, no text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Hoist winch and rope | The winch winds or pays out the rope to raise or lower the hook and load. (morrow.com) |",
+    "start": 892,
+    "end": 1005,
+    "claim": "The hoist winch winds or pays out the rope to raise or lower the hook and load.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only lists the crane's three major sections (base, tower mast, slewing unit) and mentions a 3D tour of components, without describing the hoist winch or how its rope raises or lowers the hook and load.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Hook block | The hook-and-pulley assembly suspended from the hoist rope. The hook connects to the load’s lifting gear. (morrow.com) |",
+    "start": 1006,
+    "end": 1141,
+    "claim": "The hook block is the hook-and-pulley assembly suspended from the hoist rope.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only lists the crane's major sections (base, tower mast, slewing unit) and mentions a 3D tour of components, but never describes the hook block or its hook-and-pulley assembly suspended from the hoist rope.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Hook block | The hook-and-pulley assembly suspended from the hoist rope. The hook connects to the load’s lifting gear. (morrow.com) |",
+    "start": 1006,
+    "end": 1141,
+    "claim": "The hook of the hook block connects to the load’s lifting gear.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only describes a tower crane's three major sections (base, tower mast, slewing unit) and a 3D tour of components, with no mention of a hook, hook block, or lifting gear connection.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Counter-jib and counterweights | The shorter rear arm carries counterweights that help offset the overturning effect of the working jib and its load. It may also carry machinery. (morrow.com) |",
+    "start": 1142,
+    "end": 1337,
+    "claim": "The counter-jib is the shorter rear arm that carries counterweights helping offset the overturning effect of the working jib and its load.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only says a tower crane has a base, tower mast, and slewing unit and mentions a jib and cab; it never mentions a counter-jib, counterweights, or their role in offsetting overturning.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Counter-jib and counterweights | The shorter rear arm carries counterweights that help offset the overturning effect of the working jib and its load. It may also carry machinery. (morrow.com) |",
+    "start": 1142,
+    "end": 1337,
+    "claim": "The counter-jib may also carry machinery.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only lists three major sections (base, tower mast, slewing unit) and mentions a jib and cab, but says nothing about a counter-jib or machinery on one.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Operator’s cab and controls | Let the operator control lifting, trolley travel, and rotation. (morrow.com) |",
+    "start": 1338,
+    "end": 1448,
+    "claim": "The operator’s cab and controls let the operator control lifting, trolley travel, and rotation.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions a cab only in passing as a component of the crane shown in a 3D tour and says nothing about the operator's cab or controls handling lifting, trolley travel, or rotation.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Climbing frame and tie-ins, where fitted | The climbing system lets the crane gain height as construction progresses; tie-ins brace the mast against the building. (morrow.com) |",
+    "start": 1449,
+    "end": 1628,
+    "claim": "The climbing system lets the crane gain height as construction progresses, where fitted.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a tower crane's three major sections (base, tower mast, slewing unit) and a 3D tour of components, but never mentions a climbing system or the crane gaining height as construction progresses.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "| Climbing frame and tie-ins, where fitted | The climbing system lets the crane gain height as construction progresses; tie-ins brace the mast against the building. (morrow.com) |",
+    "start": 1449,
+    "end": 1628,
+    "claim": "Tie-ins brace the mast against the building, where fitted.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.morrow.com/learn/tower-crane-101",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a tower crane's three main sections and offers a 3D tour, but it never mentions tie-ins or bracing the mast against a building.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "A luffing-jib crane changes its reach by raising or lowering the angle of the jib rather than by moving a trolley along a fixed horizontal arm. (liebherr.com)",
+    "start": 1629,
+    "end": 1787,
+    "claim": "A luffing-jib crane changes its reach by raising or lowering the angle of the jib rather than by moving a trolley along a fixed horizontal arm.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.liebherr.com/en-us/p/82086-8471547?utm_source=openai",
+      "host": "liebherr.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says HC-L cranes are luffing jib cranes that allow level luffing and that the controller adjusts the hoist so the load moves horizontally, but it does not describe how reach is changed (jib angle versus trolley movement) and says nothing about a trolley or fixed horizontal arm.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 16,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 16,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000939,
+   "usd_per_claim": 5.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0009,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

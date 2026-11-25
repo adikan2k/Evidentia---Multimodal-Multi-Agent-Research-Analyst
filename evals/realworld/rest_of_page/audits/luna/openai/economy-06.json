@@ -1,0 +1,925 @@
+{
+ "id": "economy-06",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:58:43+00:00",
+ "report": {
+  "answer_text": "President Donald Trump signed the One Big Beautiful Bill Act (H.R. 1, Public Law 119-21) on July 4, 2025. The law made many of the 2017 tax cuts permanent, reduced projected federal spending on Medicaid and food assistance, and increased funding for immigration enforcement and defense. (govinfo.gov)\n| Area | Main provisions |\n|---|---|\n| Individual taxes | Made the 2017 individual income-tax rates and larger standard deduction permanent. Raised the maximum child tax credit to $2,200 per qualifying child for 2025 and temporarily raised the state and local tax (SALT) deduction cap to $40,000 for most filers in 2025, with a return to $10,000 in 2030. Created temporary deductions for qualifying tips, overtime premiums, certain auto-loan interest, and eligible seniors for 2025–2028. (everycrsreport.com) |\n| Business taxes and children’s accounts | Restored immediate deductions for qualifying equipment and domestic research expenses. Created tax-advantaged “Trump Accounts” for children, with a $1,000 federal contribution for eligible U.S. citizen children born from 2025 through 2028. (everycrsreport.com) |\n| Medicaid and health coverage | Added work or other qualifying-activity requirements for many adults covered through Medicaid expansion, tightened eligibility checks, and limited some ways states finance Medicaid. It also tightened eligibility for certain Affordable Care Act marketplace subsidies and created a $50 billion rural health program. (congress.gov) |\n| Food assistance (SNAP) | Expanded work requirements to more adults, narrowed noncitizen eligibility, and shifted some program costs to states, including a share of benefit costs for states with higher payment-error rates. (everycrsreport.com) |\n| Immigration and defense | Funded border barriers, immigration enforcement, and expanded detention capacity, including $45 billion for immigration detention. The defense title provided about $156 billion for priorities including shipbuilding, missile defense, and munitions. (govinfo.gov) |\n| Energy and student loans | Ended federal electric-vehicle tax credits early, accelerated the phaseout of several other clean-energy incentives, and expanded federal oil and gas leasing. It also capped federal borrowing for graduate students and parents, ended new Grad PLUS loans with transition exceptions, and restructured repayment options. (irs.gov) |\nThe law also raised the federal debt ceiling by $5 trillion. The Congressional Budget Office estimated that, relative to its January 2025 baseline, the law would increase federal deficits by $3.4 trillion over fiscal years 2025–2034, before additional interest costs: projected revenue fell by more than projected spending did. (govinfo.gov)",
+  "claims": [
+   {
+    "sentence": "The law made many of the 2017 tax cuts permanent, reduced projected federal spending on Medicaid and food assistance, and increased funding for immigration enforcement and defense. (govinfo.gov)",
+    "start": 106,
+    "end": 300,
+    "claim": "The One Big Beautiful Bill Act made many of the 2017 tax cuts permanent.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SEC. 70101. EXTENSION AND ENHANCEMENT OF REDUCED RATES.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "(1) in paragraph (1), by striking ``, and before January 1,\n2026'', and",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "SEC. 70102. EXTENSION AND ENHANCEMENT OF INCREASED STANDARD",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show sections extending reduced rates and an increased standard deduction by striking the 'before January 1, 2026' sunset, which backs the permanence point, but they never name the One Big Beautiful Bill Act or explicitly tie these provisions to the 2017 cuts.",
+      "page_judged": "not_supported",
+      "page_reason": "The page shows permanent extensions of reduced rates and the increased standard deduction, but it does not identify them as 2017 tax cuts or name the One Big Beautiful Bill Act."
+     }
+    ]
+   },
+   {
+    "sentence": "The law made many of the 2017 tax cuts permanent, reduced projected federal spending on Medicaid and food assistance, and increased funding for immigration enforcement and defense. (govinfo.gov)",
+    "start": 106,
+    "end": 300,
+    "claim": "The One Big Beautiful Bill Act reduced projected federal spending on Medicaid and food assistance.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists Medicaid provisions and changes to agricultural and nutrition programs, but it does not state that the Act reduced projected federal spending on Medicaid and food assistance."
+     }
+    ]
+   },
+   {
+    "sentence": "The law made many of the 2017 tax cuts permanent, reduced projected federal spending on Medicaid and food assistance, and increased funding for immigration enforcement and defense. (govinfo.gov)",
+    "start": 106,
+    "end": 300,
+    "claim": "The One Big Beautiful Bill Act increased funding for immigration enforcement and defense.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SEC. 100052. APPROPRIATION FOR U.S. IMMIGRATION AND CUSTOMS\nENFORCEMENT.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "there is appropriated to\nthe Secretary of Homeland Security for U.S. Immigration and Customs\nEnforcement for fiscal year 2025, out of any money in the Treasury not\notherwise appropriated, $29,850,000,000",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "SEC. 20011. IMPROVING DEPARTMENT OF DEFENSE BORDER SUPPORT AND",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show appropriations for ICE ($29.85 billion for fiscal 2025) and a Department of Defense border support section, backing the increased-funding point for immigration enforcement, but the quotes do not show a defense funding increase or state the amount for the defense provision.",
+      "page_judged": "supported",
+      "page_reason": "The page appropriates additional fiscal-year 2025 funding for immigration enforcement and for Defense Department border-support and counter-drug missions."
+     }
+    ]
+   },
+   {
+    "sentence": "Made the 2017 individual income-tax rates and larger standard deduction permanent. Raised the maximum child tax credit to $2,200 per qualifying child for 2025 and temporarily raised the state and local tax (SALT) deduction cap to $40,000 for most filers in 2025, with a return to $10,000 in 2030. Created temporary deductions for qualifying tips, overtime premiums, certain auto-loan interest, and eligible seniors for 2025–2028. (everycrsreport.com)",
+    "start": 359,
+    "end": 809,
+    "claim": "The law made the 2017 individual income-tax rates and larger standard deduction permanent.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.everycrsreport.com/files/2025-07-29_R48611_bb2f5cc1bdc7bb3e919d12ec54e7dce391eb79af.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This provision makes permanent the individual income tax rates that the TCJA instituted through 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This provision makes permanent the TCJA's increase to the standard deduction and permanently raises it further, to $15,750 for single filers, $23,625 for head of household filers, and $31,500 for married joint filers in 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the law makes permanent the individual income tax rates instituted by the TCJA and makes permanent the TCJA's increase to the standard deduction, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the law made the TCJA individual income-tax rates permanent and permanently extended and increased the TCJA’s larger standard deduction."
+     }
+    ]
+   },
+   {
+    "sentence": "Made the 2017 individual income-tax rates and larger standard deduction permanent. Raised the maximum child tax credit to $2,200 per qualifying child for 2025 and temporarily raised the state and local tax (SALT) deduction cap to $40,000 for most filers in 2025, with a return to $10,000 in 2030. Created temporary deductions for qualifying tips, overtime premiums, certain auto-loan interest, and eligible seniors for 2025–2028. (everycrsreport.com)",
+    "start": 359,
+    "end": 809,
+    "claim": "The law raised the maximum child tax credit to $2,200 per qualifying child for 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.everycrsreport.com/files/2025-07-29_R48611_bb2f5cc1bdc7bb3e919d12ec54e7dce391eb79af.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This provision makes permanent the TJCA's changes to the credit and permanently raises the maximum credit to $2,200 per child (adjusted for inflation).",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the $2,200 per child maximum credit raised by the law, but it does not state that this applies to 2025 and says the amount is adjusted for inflation.",
+      "page_judged": "supported",
+      "page_reason": "The page says the law permanently raised the maximum credit to $2,200 per child, adjusted for inflation, and that the provision generally applies from 2025 onward."
+     }
+    ]
+   },
+   {
+    "sentence": "Made the 2017 individual income-tax rates and larger standard deduction permanent. Raised the maximum child tax credit to $2,200 per qualifying child for 2025 and temporarily raised the state and local tax (SALT) deduction cap to $40,000 for most filers in 2025, with a return to $10,000 in 2030. Created temporary deductions for qualifying tips, overtime premiums, certain auto-loan interest, and eligible seniors for 2025–2028. (everycrsreport.com)",
+    "start": 359,
+    "end": 809,
+    "claim": "The law temporarily raised the state and local tax (SALT) deduction cap to $40,000 for most filers in 2025, with a return to $10,000 in 2030.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.everycrsreport.com/files/2025-07-29_R48611_bb2f5cc1bdc7bb3e919d12ec54e7dce391eb79af.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The limitation in tax year 2025 is set to $40,000 ($20,000 for married individuals filing separately); in each subsequent year through tax year 2029, the limitation increases by 1% from its value the previous year.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The limitation reverts to $10,000 ($5,000 for married individuals filing separately) in tax year 2030 and in subsequent years.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This chapter also provides for a state and local tax (SALT) deduction cap of $40,000 for most taxpayers in tax year 2025, provides for annual increases for tax years 2026 through 2029, and permanently resets the limit at $10,000 for most taxpayers beginning in tax year 2030.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the $40,000 SALT cap for most taxpayers in tax year 2025 and the reversion to $10,000 starting in tax year 2030, which together cover every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the SALT cap is $40,000 for most taxpayers in 2025 and resets to $10,000 beginning in 2030."
+     }
+    ]
+   },
+   {
+    "sentence": "Made the 2017 individual income-tax rates and larger standard deduction permanent. Raised the maximum child tax credit to $2,200 per qualifying child for 2025 and temporarily raised the state and local tax (SALT) deduction cap to $40,000 for most filers in 2025, with a return to $10,000 in 2030. Created temporary deductions for qualifying tips, overtime premiums, certain auto-loan interest, and eligible seniors for 2025–2028. (everycrsreport.com)",
+    "start": 359,
+    "end": 809,
+    "claim": "The law created temporary deductions for qualifying tips, overtime premiums, certain auto-loan interest, and eligible seniors for 2025–2028.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.everycrsreport.com/files/2025-07-29_R48611_bb2f5cc1bdc7bb3e919d12ec54e7dce391eb79af.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "the evidence finder did not answer",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives 2025–2028 periods for the overtime, auto-loan-interest, and senior deductions, but does not state that the deduction for qualified tips applies during 2025–2028."
+     }
+    ]
+   },
+   {
+    "sentence": "Restored immediate deductions for qualifying equipment and domestic research expenses. Created tax-advantaged “Trump Accounts” for children, with a $1,000 federal contribution for eligible U.S. citizen children born from 2025 through 2028. (everycrsreport.com)",
+    "start": 855,
+    "end": 1115,
+    "claim": "The law restored immediate deductions for qualifying equipment and domestic research expenses.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.everycrsreport.com/files/2025-07-29_R48611_bb2f5cc1bdc7bb3e919d12ec54e7dce391eb79af.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This provision provides for 100% bonus depreciation for property acquired and placed in service after January 19, 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This provision restores the domestic research expensing and full basis adjustment rule.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the provision provides 100% bonus depreciation for qualifying property (equipment-like assets) placed in service after January 19, 2025, and that it restores domestic research expensing, which together back the claim's restoration of immediate deductions for equipment and domestic research.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the law provides 100% bonus depreciation for qualifying property acquired and placed in service after January 19, 2025, and restores immediate expensing for domestic research expenditures."
+     }
+    ]
+   },
+   {
+    "sentence": "Restored immediate deductions for qualifying equipment and domestic research expenses. Created tax-advantaged “Trump Accounts” for children, with a $1,000 federal contribution for eligible U.S. citizen children born from 2025 through 2028. (everycrsreport.com)",
+    "start": 855,
+    "end": 1115,
+    "claim": "The law created tax-advantaged \"Trump Accounts\" for children, with a $1,000 federal contribution for eligible U.S. citizen children born from 2025 through 2028.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.everycrsreport.com/files/2025-07-29_R48611_bb2f5cc1bdc7bb3e919d12ec54e7dce391eb79af.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This provision also creates a new one-time refundable tax credit of $1,000 for each qualifying child, which will be contributed to the child's Trump account.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "To be eligible for the one-time tax credit, the child must be born between January 1, 2025, and December 31, 2028, and be a U.S. citizen.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This provision creates a new type of tax-deferred individual retirement account (IRA) for young people, called a Trump account.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back every element of the claim: a tax-deferred account called a Trump account, a $1,000 one-time credit contributed to it, and eligibility for U.S. citizen children born January 1, 2025 through December 31, 2028.",
+      "page_judged": "supported",
+      "page_reason": "The page says the provision creates tax-deferred Trump accounts for young people and a one-time $1,000 refundable tax credit contributed to each qualifying child’s account, with eligibility for U.S. citizens born from January 1, 2025, through December 31, 2028."
+     }
+    ]
+   },
+   {
+    "sentence": "Added work or other qualifying-activity requirements for many adults covered through Medicaid expansion, tightened eligibility checks, and limited some ways states finance Medicaid. It also tightened eligibility for certain Affordable Care Act marketplace subsidies and created a $50 billion rural health program. (congress.gov)",
+    "start": 1151,
+    "end": 1479,
+    "claim": "The law added work or other qualifying-activity requirements for many adults covered through Medicaid expansion.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R48633/R48633.1.pdf",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Section 71119 requires certain specified nonpregnant, nondisabled, childless adults, ages 19 through 64, who are eligible for (or are enrolled under) the ACA Medicaid expansion pathway",
+        "pages": [
+         24,
+         24
+        ],
+        "context": null
+       },
+       {
+        "text": "to complete a minimum of 80 hours of qualifying community engagement activities for one month",
+        "pages": [
+         24,
+         24
+        ],
+        "context": null
+       },
+       {
+        "text": "Qualifying community engagement activities include work, participation in a work program or community service, or enrollment in an education program.",
+        "pages": [
+         24,
+         24
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the claim's core point by showing a work or qualifying-activity requirement (80 hours of work, work program, community service, or education) for certain childless adults aged 19 through 64 eligible for or enrolled under the ACA Medicaid expansion, but they describe a narrow group rather than 'many adults' and do not state how many people are covered.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the law requires certain adults eligible for or enrolled through Medicaid expansion to complete qualifying activities, but it does not state that this group includes “many” adults."
+     }
+    ]
+   },
+   {
+    "sentence": "Added work or other qualifying-activity requirements for many adults covered through Medicaid expansion, tightened eligibility checks, and limited some ways states finance Medicaid. It also tightened eligibility for certain Affordable Care Act marketplace subsidies and created a $50 billion rural health program. (congress.gov)",
+    "start": 1151,
+    "end": 1479,
+    "claim": "The law tightened Medicaid eligibility checks and limited some ways states finance Medicaid.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R48633/R48633.1.pdf",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Beginning January 1, 2027, Section 71107 requires the 50 states and DC to increase the frequency of eligibility redeterminations from once every 12 months to once every 6 months for individuals",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       },
+       {
+        "text": "Section 71115 limits states’ use of Medicaid provider taxes to finance the state share of Medicaid expenditures for fiscal years starting on or after October 1, 2026.",
+        "pages": [
+         20,
+         20
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show more frequent eligibility redeterminations (every 6 months instead of 12), which tightens checks, and a limit on states' use of provider taxes to finance the state Medicaid share, which covers both parts of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says states must increase eligibility redeterminations from every 12 months to every 6 months for certain individuals and describes limits on states’ use of Medicaid provider taxes to finance expenditures."
+     }
+    ]
+   },
+   {
+    "sentence": "Added work or other qualifying-activity requirements for many adults covered through Medicaid expansion, tightened eligibility checks, and limited some ways states finance Medicaid. It also tightened eligibility for certain Affordable Care Act marketplace subsidies and created a $50 billion rural health program. (congress.gov)",
+    "start": 1151,
+    "end": 1479,
+    "claim": "The law tightened eligibility for certain Affordable Care Act marketplace subsidies.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R48633/R48633.1.pdf",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This provision disallows the PTC for other lawfully present individuals who are not eligible aliens.",
+        "pages": [
+         33,
+         33
+        ],
+        "context": null
+       },
+       {
+        "text": "Section 71304 disallows the PTC for individuals who enroll in an exchange plan during an SEP on the basis of expected household income that does not meet a percentage of the poverty line",
+        "pages": [
+         34,
+         34
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the law disallows the premium tax credit (PTC) for certain groups, including lawfully present non-eligible aliens and special-enrollment-period enrollees whose expected income falls below a poverty-line percentage, which backs the claim that eligibility for certain ACA marketplace subsidies was tightened.",
+      "page_judged": "supported",
+      "page_reason": "The page describes several provisions of the law that restrict or disallow premium tax credits for certain marketplace applicants and circumstances."
+     }
+    ]
+   },
+   {
+    "sentence": "Added work or other qualifying-activity requirements for many adults covered through Medicaid expansion, tightened eligibility checks, and limited some ways states finance Medicaid. It also tightened eligibility for certain Affordable Care Act marketplace subsidies and created a $50 billion rural health program. (congress.gov)",
+    "start": 1151,
+    "end": 1479,
+    "claim": "The law created a $50 billion rural health program.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R48633/R48633.1.pdf",
+      "host": "congress.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The law appropriates $50 billion for the Rural Health Transformation Program from FY2026 through FY2032.",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       },
+       {
+        "text": "establishes the Rural Health Transformation Program, which provides funding allotments to states",
+        "pages": [
+         2,
+         2
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the law appropriates $50 billion for the Rural Health Transformation Program and establishes that program, which together backs the claim that the law created a $50 billion rural health program.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the law establishes the Rural Health Transformation Program and appropriates $50 billion for it."
+     }
+    ]
+   },
+   {
+    "sentence": "Expanded work requirements to more adults, narrowed noncitizen eligibility, and shifted some program costs to states, including a share of benefit costs for states with higher payment-error rates. (everycrsreport.com)",
+    "start": 1509,
+    "end": 1726,
+    "claim": "The law expanded SNAP work requirements to more adults, narrowed noncitizen eligibility, and shifted some program costs to states, including a share of benefit costs for states with higher payment-error rates.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.everycrsreport.com/reports/R48552.html?utm_source=openai",
+      "host": "everycrsreport.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "expanding the population subject to SNAP's Able-Bodied Adults Without Dependents work requirements by including adults 55-64 years of age",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The enacted bill limits noncitizen eligibility for SNAP to the following groups: LPRs (subject to the existing five-year-bar), Cuban-Haitian Entrants, and COFA migrants lawfully residing in the United States.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Beginning in FY2028, the enacted bill requires (1) states with error rates equal to or greater than 6% but less than 8% to contribute 5% of SNAP benefit costs",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Beginning FY2027, states' costs to administer SNAP would be reimbursed 25% by the federal government.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back all three parts: expanded work requirements to adults 55-64, limited noncitizen eligibility to specific groups, and shifted costs to states including a 5% benefit share for states with 6% to under 8% error rates.",
+      "page_judged": "supported",
+      "page_reason": "The page states that SNAP work requirements expanded to more adults, noncitizen eligibility was limited, and states with higher error rates must share benefit costs."
+     }
+    ]
+   },
+   {
+    "sentence": "Funded border barriers, immigration enforcement, and expanded detention capacity, including $45 billion for immigration detention. The defense title provided about $156 billion for priorities including shipbuilding, missile defense, and munitions. (govinfo.gov)",
+    "start": 1757,
+    "end": 2018,
+    "claim": "The law included $45 billion for immigration detention.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "$45,000,000,000, for single adult alien detention capacity and family\nresidential center capacity.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states $45,000,000,000 for single adult alien detention capacity and family residential center capacity, which backs the claim's $45 billion for immigration detention.",
+      "page_judged": "supported",
+      "page_reason": "The page appropriates $45,000,000,000 for single-adult alien detention capacity and family residential center capacity."
+     }
+    ]
+   },
+   {
+    "sentence": "Funded border barriers, immigration enforcement, and expanded detention capacity, including $45 billion for immigration detention. The defense title provided about $156 billion for priorities including shipbuilding, missile defense, and munitions. (govinfo.gov)",
+    "start": 1757,
+    "end": 2018,
+    "claim": "The defense title provided about $156 billion for priorities including shipbuilding, missile defense, and munitions.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists funding for shipbuilding, missile defense, and munitions, but it does not state that the defense title provided about $156 billion in total."
+     }
+    ]
+   },
+   {
+    "sentence": "Ended federal electric-vehicle tax credits early, accelerated the phaseout of several other clean-energy incentives, and expanded federal oil and gas leasing. It also capped federal borrowing for graduate students and parents, ended new Grad PLUS loans with transition exceptions, and restructured repayment options. (irs.gov)",
+    "start": 2050,
+    "end": 2376,
+    "claim": "The law ended federal electric-vehicle tax credits early.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb?ref=themanifestarchive.com&utm_source=openai",
+      "host": "irs.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "OBBB accelerated the termination of several energy credit and deduction provisions.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The credit will not be allowed for any vehicle acquired after September 30, 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The credit will not be allowed for any property placed in service after June 30, 2026.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the law accelerated termination of energy credit provisions and that the credit is disallowed for vehicles acquired after September 30, 2025, which backs the claim that federal EV tax credits ended early.",
+      "page_judged": "supported",
+      "page_reason": "The page states that OBBB accelerated the termination of the clean-vehicle credits, including sections 25E, 30D, and 45W, with new termination dates."
+     }
+    ]
+   },
+   {
+    "sentence": "Ended federal electric-vehicle tax credits early, accelerated the phaseout of several other clean-energy incentives, and expanded federal oil and gas leasing. It also capped federal borrowing for graduate students and parents, ended new Grad PLUS loans with transition exceptions, and restructured repayment options. (irs.gov)",
+    "start": 2050,
+    "end": 2376,
+    "claim": "The law accelerated the phaseout of several other clean-energy incentives.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb?ref=themanifestarchive.com&utm_source=openai",
+      "host": "irs.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "OBBB accelerated the termination of several energy credit and deduction provisions.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The following incentives expire the soonest:",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states that OBBB accelerated the termination of several energy credit and deduction provisions, which backs the claim that the law accelerated the phaseout of several other clean-energy incentives; the second quote adds no contradiction.",
+      "page_judged": "supported",
+      "page_reason": "The page states that OBBB accelerated the termination of several energy credit and deduction provisions, listing multiple clean-energy incentives."
+     }
+    ]
+   },
+   {
+    "sentence": "Ended federal electric-vehicle tax credits early, accelerated the phaseout of several other clean-energy incentives, and expanded federal oil and gas leasing. It also capped federal borrowing for graduate students and parents, ended new Grad PLUS loans with transition exceptions, and restructured repayment options. (irs.gov)",
+    "start": 2050,
+    "end": 2376,
+    "claim": "The law expanded federal oil and gas leasing.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb?ref=themanifestarchive.com&utm_source=openai",
+      "host": "irs.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses expiration dates for energy tax credits and deductions but does not state that the law expanded federal oil and gas leasing."
+     }
+    ]
+   },
+   {
+    "sentence": "Ended federal electric-vehicle tax credits early, accelerated the phaseout of several other clean-energy incentives, and expanded federal oil and gas leasing. It also capped federal borrowing for graduate students and parents, ended new Grad PLUS loans with transition exceptions, and restructured repayment options. (irs.gov)",
+    "start": 2050,
+    "end": 2376,
+    "claim": "The law capped federal borrowing for graduate students and parents, ended new Grad PLUS loans with transition exceptions, and restructured repayment options.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb?ref=themanifestarchive.com&utm_source=openai",
+      "host": "irs.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses energy tax credits and deductions under OBBB, not federal borrowing for graduate students or parents, Grad PLUS loans, or repayment options."
+     }
+    ]
+   },
+   {
+    "sentence": "The Congressional Budget Office estimated that, relative to its January 2025 baseline, the law would increase federal deficits by $3.4 trillion over fiscal years 2025–2034, before additional interest costs: projected revenue fell by more than projected spending did. (govinfo.gov)",
+    "start": 2440,
+    "end": 2720,
+    "claim": "The Congressional Budget Office estimated that, relative to its January 2025 baseline, the law would increase federal deficits by $3.4 trillion over fiscal years 2025–2034, before additional interest costs.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists appropriations and other statutory provisions but does not state a CBO estimate of a $3.4 trillion deficit increase relative to the January 2025 baseline over fiscal years 2025–2034."
+     }
+    ]
+   },
+   {
+    "sentence": "The Congressional Budget Office estimated that, relative to its January 2025 baseline, the law would increase federal deficits by $3.4 trillion over fiscal years 2025–2034, before additional interest costs: projected revenue fell by more than projected spending did. (govinfo.gov)",
+    "start": 2440,
+    "end": 2720,
+    "claim": "The Congressional Budget Office estimated that projected revenue fell by more than projected spending did under the law.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page contains excerpts from the law but does not state a Congressional Budget Office estimate comparing projected revenue and spending."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 22,
+   "labels": {
+    "supported": 11,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 6,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 22,
+   "claims_with_a_verdict": 19,
+   "failed_citations": 6,
+   "failed_share_of_verdicts": 0.3158,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 5,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.046697,
+   "usd_per_claim": 0.002123
+  },
+  "cost": {
+   "total_usd": 0.0467,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.002
+    },
+    {
+     "node": "find",
+     "calls": 40,
+     "usd": 0.036
+    },
+    {
+     "node": "page_check",
+     "calls": 22,
+     "usd": 0.0064
+    },
+    {
+     "node": "check",
+     "calls": 15,
+     "usd": 0.0024
+    }
+   ]
+  }
+ }
+}

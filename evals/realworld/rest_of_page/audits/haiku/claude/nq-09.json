@@ -1,0 +1,122 @@
+{
+ "id": "nq-09",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:09+00:00",
+ "report": {
+  "answer_text": "Jourdan Miller won Cycle 20 of *America's Next Top Model*, which was the \"Guys & Girls\" season and aired in 2013. Chris Hernandez was the runner-up. Jourdan was known for her androgynous look and her platinum buzzcut.",
+  "claims": [
+   {
+    "sentence": "Jourdan Miller won Cycle 20 of *America's Next Top Model*, which was the \"Guys & Girls\" season and aired in 2013.",
+    "start": 0,
+    "end": 113,
+    "claim": "Jourdan Miller won Cycle 20 of America's Next Top Model.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jourdan Miller won Cycle 20 of *America's Next Top Model*, which was the \"Guys & Girls\" season and aired in 2013.",
+    "start": 0,
+    "end": 113,
+    "claim": "Cycle 20 of America's Next Top Model was the \"Guys & Girls\" season.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jourdan Miller won Cycle 20 of *America's Next Top Model*, which was the \"Guys & Girls\" season and aired in 2013.",
+    "start": 0,
+    "end": 113,
+    "claim": "Cycle 20 of America's Next Top Model aired in 2013.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Chris Hernandez was the runner-up.",
+    "start": 114,
+    "end": 148,
+    "claim": "Chris Hernandez was the runner-up of Cycle 20 of America's Next Top Model.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jourdan was known for her androgynous look and her platinum buzzcut.",
+    "start": 149,
+    "end": 217,
+    "claim": "Jourdan Miller was known for her androgynous look.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jourdan was known for her androgynous look and her platinum buzzcut.",
+    "start": 149,
+    "end": 217,
+    "claim": "Jourdan Miller was known for her platinum buzzcut.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 6
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000327,
+   "usd_per_claim": 5.4e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

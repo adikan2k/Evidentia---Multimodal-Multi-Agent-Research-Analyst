@@ -1,0 +1,426 @@
+{
+ "id": "nq-36",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:41:46+00:00",
+ "report": {
+  "answer_text": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (Season 5, Episodes 1/2).\nJim proposes at a gas station between New York City, where Pam is taking a graphic design class, and Scranton, where Jim still works at Dunder Mifflin.[1] He proposes to her outside in the pouring rain, and she accepts ecstatically.[2]\nJim had been planning it for a while. In \"Chair Model\" (Season 4), he shows off the ring he plans to propose with.[3]\nThe scene was also costly to make. Jenna Fischer said it lasts 52 seconds and cost $250,000, and the crew built a four-lane circular racetrack around the gas station set to create highway traffic.[1]",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (Season 5, Episodes 1/2).",
+    "start": 0,
+    "end": 85,
+    "claim": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (Season 5, Episodes 1/2).",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jim proposes at a gas station between New York City, where Pam is taking a graphic design class, and Scranton, where Jim still works at Dunder Mifflin.[1]",
+    "start": 86,
+    "end": 240,
+    "claim": "Jim proposes at a gas station between New York City and Scranton.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "‘Weight Loss’, the season five premiere, sees Jim (played by John Krasinski) propose to Pam at a gas station between New York City, where Pam is completing a graphic design class, and Scranton, where Jim still works at Dunder Mifflin.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Jim proposes at a gas station between New York City and Scranton, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in the season five premiere, Jim proposes to Pam at a gas station between New York City and Scranton."
+     }
+    ]
+   },
+   {
+    "sentence": "Jim proposes at a gas station between New York City, where Pam is taking a graphic design class, and Scranton, where Jim still works at Dunder Mifflin.[1]",
+    "start": 86,
+    "end": 240,
+    "claim": "Pam is taking a graphic design class in New York City.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jim (played by John Krasinski) propose to Pam at a gas station between New York City, where Pam is completing a graphic design class, and Scranton",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says Pam is completing a graphic design class and places the proposal between New York City and Scranton, but it does not explicitly state that the class is located in New York City.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Pam is completing a graphic design class in New York City."
+     }
+    ]
+   },
+   {
+    "sentence": "Jim proposes at a gas station between New York City, where Pam is taking a graphic design class, and Scranton, where Jim still works at Dunder Mifflin.[1]",
+    "start": 86,
+    "end": 240,
+    "claim": "Jim still works at Dunder Mifflin in Scranton.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "between New York City, where Pam is completing a graphic design class, and Scranton, where Jim still works at Dunder Mifflin.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Jim still works at Dunder Mifflin in Scranton, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Pam is completing a class in New York City while Jim still works at Dunder Mifflin in Scranton."
+     }
+    ]
+   },
+   {
+    "sentence": "He proposes to her outside in the pouring rain, and she accepts ecstatically.[2]",
+    "start": 241,
+    "end": 321,
+    "claim": "Jim proposes to Pam outside in the pouring rain.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_(The_Office)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proposes to her outside in the pouring rain, and she accepts ecstatically.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the proposal outside in the pouring rain, but it names no one as Jim or Pam, so those names are not supported by the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim proposes to Pam outside in the pouring rain."
+     }
+    ]
+   },
+   {
+    "sentence": "He proposes to her outside in the pouring rain, and she accepts ecstatically.[2]",
+    "start": 241,
+    "end": 321,
+    "claim": "Pam accepts Jim's proposal ecstatically.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_(The_Office)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proposes to her outside in the pouring rain, and she accepts ecstatically.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Pam accepts the proposal ecstatically, though it does not name the proposer as Jim, so the identity is not explicitly backed by the words shown (the quote says 'he', unnamed).",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim proposes to Pam and she “accepts ecstatically.”"
+     }
+    ]
+   },
+   {
+    "sentence": "Jim had been planning it for a while. In \"Chair Model\" (Season 4), he shows off the ring he plans to propose with.[3]",
+    "start": 322,
+    "end": 439,
+    "claim": "Jim had been planning the proposal for a while.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://screenrant.com/the-office-jim-pam-relationship-timeline/",
+      "host": "screenrant.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In \"Chair Model,\" Jim shows off the ring he plans to propose to Pam with.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Unfortunately, those plans are temporarily delayed in \"Goodbye Toby\" as Jim has the plan all set up, only for Andy to swoop in first and propose to Angela in front of everyone, stealing the moment from Jim",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Jim was planning to propose to Pam and had the plan all set up, but they do not say how long he had been planning, so 'for a while' is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page says Jim showed off the ring he planned to propose with in season 4 and already had the proposal plan set before it was delayed, before proposing in season 5."
+     }
+    ]
+   },
+   {
+    "sentence": "Jim had been planning it for a while. In \"Chair Model\" (Season 4), he shows off the ring he plans to propose with.[3]",
+    "start": 322,
+    "end": 439,
+    "claim": "In \"Chair Model\" (Season 4), Jim shows off the ring he plans to propose with.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://screenrant.com/the-office-jim-pam-relationship-timeline/",
+      "host": "screenrant.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In \"Chair Model,\" Jim shows off the ring he plans to propose to Pam with.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Jim shows off the ring he plans to propose with in \"Chair Model\", but it does not state the season, which the claim adds as Season 4.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in “Chair Model,” Jim shows off the ring he plans to propose to Pam with, and identifies it as Season 4, Episode 10."
+     }
+    ]
+   },
+   {
+    "sentence": "The scene was also costly to make. Jenna Fischer said it lasts 52 seconds and cost $250,000, and the crew built a four-lane circular racetrack around the gas station set to create highway traffic.[1]",
+    "start": 440,
+    "end": 639,
+    "claim": "Jenna Fischer said the proposal scene lasts 52 seconds.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Jenna Fischer saying the scene “lasts 52 seconds.”"
+     }
+    ]
+   },
+   {
+    "sentence": "The scene was also costly to make. Jenna Fischer said it lasts 52 seconds and cost $250,000, and the crew built a four-lane circular racetrack around the gas station set to create highway traffic.[1]",
+    "start": 440,
+    "end": 639,
+    "claim": "Jenna Fischer said the proposal scene cost $250,000 to make.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "“It lasts 52 seconds, and it cost $250,000 (£176,242).”",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the scene cost $250,000, but it does not name the proposal scene as the subject or attribute the statement to Jenna Fischer.",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Jenna Fischer saying the scene cost $250,000."
+     }
+    ]
+   },
+   {
+    "sentence": "The scene was also costly to make. Jenna Fischer said it lasts 52 seconds and cost $250,000, and the crew built a four-lane circular racetrack around the gas station set to create highway traffic.[1]",
+    "start": 440,
+    "end": 639,
+    "claim": "The crew built a four-lane circular racetrack around the gas station set to create highway traffic for the proposal scene.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "She added that the show’s team “built a four-lane circular racetrack around the gas station set” in order to create the illusion of highway traffic around Jim and Pam.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the crew built a four-lane circular racetrack around the gas station set to create the illusion of highway traffic around Jim and Pam, which covers every fact in the claim, though it does not explicitly name the proposal scene.",
+      "page_judged": "supported",
+      "page_reason": "The page says the crew built a four-lane circular racetrack around the gas station set to create the illusion of highway traffic around Jim and Pam."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 6,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.4,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.006814,
+   "usd_per_claim": 0.000619
+  },
+  "cost": {
+   "total_usd": 0.0068,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0023
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.0027
+    },
+    {
+     "node": "check",
+     "calls": 9,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

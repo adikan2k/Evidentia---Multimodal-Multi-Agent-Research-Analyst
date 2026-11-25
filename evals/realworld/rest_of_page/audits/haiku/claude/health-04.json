@@ -1,0 +1,368 @@
+{
+ "id": "health-04",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:49:22+00:00",
+ "report": {
+  "answer_text": "Winners: American biologists Mary E. Brunkow and Fred Ramsdell and Japanese biologist Shimon Sakaguchi[1] won the 2025 Nobel Prize in Physiology or Medicine. The Karolinska Institutet announced it on October 6, 2025.\nDiscovery: The prize was for their groundbreaking discoveries concerning peripheral immune tolerance that prevents the immune system from harming the body.[2] The laureates identified the immune system's \"security guards,\" regulatory T cells, thus laying the foundation for a new field of research.[2] These cells stop other T cells from attacking the body's own cells.[1]\nImpact: Their discoveries have spurred the development of new treatments, for example for cancer and autoimmune diseases.[2]",
+  "claims": [
+   {
+    "sentence": "Winners: American biologists Mary E. Brunkow and Fred Ramsdell and Japanese biologist Shimon Sakaguchi[1] won the 2025 Nobel Prize in Physiology or Medicine.",
+    "start": 0,
+    "end": 157,
+    "claim": "Mary E. Brunkow, Fred Ramsdell and Shimon Sakaguchi won the 2025 Nobel Prize in Physiology or Medicine.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.britannica.com/topic/2025-Nobel-Prize-Winners",
+      "host": "britannica.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Winners: American biologists Mary E. Brunkow and Fred Ramsdell and Japanese biologist Shimon Sakaguchi[1] won the 2025 Nobel Prize in Physiology or Medicine.",
+    "start": 0,
+    "end": 157,
+    "claim": "Mary E. Brunkow and Fred Ramsdell are American biologists.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.britannica.com/topic/2025-Nobel-Prize-Winners",
+      "host": "britannica.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Winners: American biologists Mary E. Brunkow and Fred Ramsdell and Japanese biologist Shimon Sakaguchi[1] won the 2025 Nobel Prize in Physiology or Medicine.",
+    "start": 0,
+    "end": 157,
+    "claim": "Shimon Sakaguchi is a Japanese biologist.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.britannica.com/topic/2025-Nobel-Prize-Winners",
+      "host": "britannica.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Karolinska Institutet announced it on October 6, 2025.",
+    "start": 158,
+    "end": 216,
+    "claim": "The Karolinska Institutet announced the 2025 Nobel Prize in Physiology or Medicine on October 6, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The prize was for their groundbreaking discoveries concerning peripheral immune tolerance that prevents the immune system from harming the body.[2]",
+    "start": 228,
+    "end": 375,
+    "claim": "The 2025 Nobel Prize in Physiology or Medicine was awarded for discoveries concerning peripheral immune tolerance that prevents the immune system from harming the body.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/prizes/medicine/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Mary E. Brunkow, Fred Ramsdell and Shimon Sakaguchi are awarded the Nobel Prize in Physiology or Medicine 2025 for their groundbreaking discoveries concerning peripheral immune tolerance that prevents the immune system from harming the body.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the 2025 Nobel Prize in Physiology or Medicine was awarded for discoveries concerning peripheral immune tolerance that prevents the immune system from harming the body, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Brunkow, Ramsdell and Sakaguchi were awarded the 2025 Nobel Prize in Physiology or Medicine for their discoveries concerning peripheral immune tolerance that prevents the immune system from harming the body."
+     }
+    ]
+   },
+   {
+    "sentence": "The laureates identified the immune system's \"security guards,\" regulatory T cells, thus laying the foundation for a new field of research.[2]",
+    "start": 376,
+    "end": 518,
+    "claim": "The laureates identified the immune system's regulatory T cells, which they called \"security guards\".",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/prizes/medicine/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Nobel Prize laureates identified the immune system’s security guards, regulatory T cells, thus laying the foundation for a new field of research.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the laureates identified regulatory T cells as the immune system's security guards, but it does not state that the laureates themselves coined or called them \"security guards\" as the claim implies.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the laureates identified the immune system's 'security guards, regulatory T cells', but it attributes the naming of regulatory T cells to Sakaguchi in 1995 and uses 'security guards' as the committee's own descriptive term, so it does not state that the laureates called them 'security guards'."
+     }
+    ]
+   },
+   {
+    "sentence": "The laureates identified the immune system's \"security guards,\" regulatory T cells, thus laying the foundation for a new field of research.[2]",
+    "start": 376,
+    "end": 518,
+    "claim": "The laureates' identification of regulatory T cells laid the foundation for a new field of research.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/prizes/medicine/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Nobel Prize laureates identified the immune system’s security guards, regulatory T cells, thus laying the foundation for a new field of research.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the laureates identified regulatory T cells and that this laid the foundation for a new field of research, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the laureates identified the immune system's security guards, regulatory T cells, 'thus laying the foundation for a new field of research.'"
+     }
+    ]
+   },
+   {
+    "sentence": "These cells stop other T cells from attacking the body's own cells.[1]",
+    "start": 519,
+    "end": 589,
+    "claim": "Regulatory T cells stop other T cells from attacking the body's own cells.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.britannica.com/topic/2025-Nobel-Prize-Winners",
+      "host": "britannica.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Their discoveries have spurred the development of new treatments, for example for cancer and autoimmune diseases.[2]",
+    "start": 598,
+    "end": 714,
+    "claim": "The laureates' discoveries have spurred the development of new treatments.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/prizes/medicine/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Their discoveries have laid the foundation for a new field of research and spurred the development of new treatments, for example for cancer and autoimmune diseases.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the laureates' discoveries spurred the development of new treatments, which is the entirety of the claim's content.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the laureates' discoveries have spurred the development of new treatments, with potential medical treatments being evaluated in clinical trials and examples given for cancer and autoimmune diseases."
+     }
+    ]
+   },
+   {
+    "sentence": "Their discoveries have spurred the development of new treatments, for example for cancer and autoimmune diseases.[2]",
+    "start": 598,
+    "end": 714,
+    "claim": "Among the new treatments spurred by these discoveries are treatments for cancer and autoimmune diseases.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nobelprize.org/prizes/medicine/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Their discoveries have laid the foundation for a new field of research and spurred the development of new treatments, for example for cancer and autoimmune diseases.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the discoveries spurred new treatments, for example for cancer and autoimmune diseases, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the discoveries spurred development of new treatments, for example for cancer and autoimmune diseases, and describes regulatory T cell-based approaches for tumours and autoimmune diseases."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 4,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.4444,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004103,
+   "usd_per_claim": 0.00041
+  },
+  "cost": {
+   "total_usd": 0.0041,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0016
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0014
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

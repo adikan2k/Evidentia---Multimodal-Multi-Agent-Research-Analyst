@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-11-25T20:08:13+00:00",
+  "seed": 20261202,
+  "questions": [
+    "economy-01",
+    "economy-09",
+    "health-01",
+    "health-06",
+    "health-10",
+    "nq-03",
+    "nq-05",
+    "nq-10",
+    "nq-20",
+    "nq-22",
+    "nq-31",
+    "nq-36",
+    "nq-42",
+    "nq-44",
+    "nq-48",
+    "sport_culture-03",
+    "sport_culture-05",
+    "sport_culture-10",
+    "technology-04",
+    "technology-07"
+  ],
+  "repeats": 3,
+  "search_cap": 5,
+  "page_judge": "claude-haiku-5-5",
+  "note": "first_ask is the main run's answer to the same questions. OpenAI had no search cap there; in the repeats both tools are capped.",
+  "tools": {
+    "openai": {
+      "runs": {
+        "first_ask": {
+          "questions": 20,
+          "claims": 139,
+          "headline_failed_share": {
+            "value": 0.5,
+            "ci_low": 0.25,
+            "ci_high": 0.6667
+          },
+          "headline_claims": 24,
+          "verified_share_of_all_claims": {
+            "value": 0.1151,
+            "ci_low": 0.0521,
+            "ci_high": 0.215
+          },
+          "claims_per_answer": 6.95,
+          "pages_cited_per_answer": 1.55,
+          "pages_read_share": 0.5484,
+          "uncited_share": 0.3741
+        },
+        "r1": {
+          "questions": 20,
+          "claims": 128,
+          "headline_failed_share": {
+            "value": 0.4643,
+            "ci_low": 0.2,
+            "ci_high": 0.6296
+          },
+          "headline_claims": 28,
+          "verified_share_of_all_claims": {
+            "value": 0.1016,
+            "ci_low": 0.0448,
+            "ci_high": 0.1881
+          },
+          "claims_per_answer": 6.4,
+          "pages_cited_per_answer": 1.6,
+          "pages_read_share": 0.5625,
+          "uncited_share": 0.3281
+        },
+        "r2": {
+          "questions": 20,
+          "claims": 131,
+          "headline_failed_share": {
+            "value": 0.5135,
+            "ci_low": 0.1364,
+            "ci_high": 0.7
+          },
+          "headline_claims": 37,
+          "verified_share_of_all_claims": {
+            "value": 0.1374,
+            "ci_low": 0.0472,
+            "ci_high": 0.2314
+          },
+          "claims_per_answer": 6.55,
+          "pages_cited_per_answer": 1.65,
+          "pages_read_share": 0.3939,
+          "uncited_share": 0.1832
+        },
+        "r3": {
+          "questions": 20,
+          "claims": 128,
+          "headline_failed_share": {
+            "value": 0.6316,
+            "ci_low": 0.2667,
+            "ci_high": 0.8571
+          },
+          "headline_claims": 19,
+          "verified_share_of_all_claims": {
+            "value": 0.0781,
+            "ci_low": 0.0204,
+            "ci_high": 0.1538
+          },
+          "claims_per_answer": 6.4,
+          "pages_cited_per_answer": 1.45,
+          "pages_read_share": 0.4483,
+          "uncited_share": 0.2734
+        }
+      },
+      "headline_across_repeats": {
+        "min": 0.4643,
+        "max": 0.6316
+      },
+      "repeats_pooled": {
+        "questions": 20,
+        "claims": 387,
+        "headline_failed_share": {
+          "value": 0.5238,
+          "ci_low": 0.2182,
+          "ci_high": 0.6863
+        },
+        "headline_claims": 84,
+        "verified_share_of_all_claims": {
+          "value": 0.1059,
+          "ci_low": 0.0476,
+          "ci_high": 0.1792
+        },
+        "claims_per_answer": 19.35,
+        "pages_cited_per_answer": 4.7,
+        "pages_read_share": 0.4681,
+        "uncited_share": 0.261
+      },
+      "within_question_range_of_failed_share": {
+        "questions": 7,
+        "median": 0.225,
+        "mean": 0.2536,
+        "max": 1.0
+      },
+      "searches": {
+        "answers": 60,
+        "mean": 1.37,
+        "max": 4,
+        "answers_at_or_over_the_cap": 0,
+        "answers_with_no_search": 9
+      },
+      "answers_cut_off": 0,
+      "usd": {
+        "answers": 1.781,
+        "audits": 0.1881
+      }
+    },
+    "claude": {
+      "runs": {
+        "first_ask": {
+          "questions": 20,
+          "claims": 304,
+          "headline_failed_share": {
+            "value": 0.0189,
+            "ci_low": 0.0,
+            "ci_high": 0.0556
+          },
+          "headline_claims": 53,
+          "verified_share_of_all_claims": {
+            "value": 0.1711,
+            "ci_low": 0.0776,
+            "ci_high": 0.2935
+          },
+          "claims_per_answer": 15.2,
+          "pages_cited_per_answer": 2.45,
+          "pages_read_share": 0.5714,
+          "uncited_share": 0.5132
+        },
+        "r1": {
+          "questions": 20,
+          "claims": 294,
+          "headline_failed_share": {
+            "value": 0.0455,
+            "ci_low": 0.0,
+            "ci_high": 0.1053
+          },
+          "headline_claims": 66,
+          "verified_share_of_all_claims": {
+            "value": 0.2585,
+            "ci_low": 0.1408,
+            "ci_high": 0.383
+          },
+          "claims_per_answer": 14.7,
+          "pages_cited_per_answer": 3.15,
+          "pages_read_share": 0.5556,
+          "uncited_share": 0.4286
+        },
+        "r2": {
+          "questions": 20,
+          "claims": 297,
+          "headline_failed_share": {
+            "value": 0.0317,
+            "ci_low": 0.0,
+            "ci_high": 0.0789
+          },
+          "headline_claims": 63,
+          "verified_share_of_all_claims": {
+            "value": 0.2357,
+            "ci_low": 0.1408,
+            "ci_high": 0.342
+          },
+          "claims_per_answer": 14.85,
+          "pages_cited_per_answer": 3.2,
+          "pages_read_share": 0.5625,
+          "uncited_share": 0.4007
+        },
+        "r3": {
+          "questions": 20,
+          "claims": 299,
+          "headline_failed_share": {
+            "value": 0.0469,
+            "ci_low": 0.0,
+            "ci_high": 0.1111
+          },
+          "headline_claims": 64,
+          "verified_share_of_all_claims": {
+            "value": 0.2375,
+            "ci_low": 0.1201,
+            "ci_high": 0.3783
+          },
+          "claims_per_answer": 14.95,
+          "pages_cited_per_answer": 3.7,
+          "pages_read_share": 0.527,
+          "uncited_share": 0.3679
+        }
+      },
+      "headline_across_repeats": {
+        "min": 0.0317,
+        "max": 0.0469
+      },
+      "repeats_pooled": {
+        "questions": 20,
+        "claims": 890,
+        "headline_failed_share": {
+          "value": 0.0415,
+          "ci_low": 0.0065,
+          "ci_high": 0.0885
+        },
+        "headline_claims": 193,
+        "verified_share_of_all_claims": {
+          "value": 0.2438,
+          "ci_low": 0.1442,
+          "ci_high": 0.3527
+        },
+        "claims_per_answer": 44.5,
+        "pages_cited_per_answer": 10.05,
+        "pages_read_share": 0.5473,
+        "uncited_share": 0.3989
+      },
+      "within_question_range_of_failed_share": {
+        "questions": 12,
+        "median": 0.0,
+        "mean": 0.0356,
+        "max": 0.25
+      },
+      "searches": {
+        "answers": 60,
+        "mean": 0.68,
+        "max": 2,
+        "answers_at_or_over_the_cap": 0,
+        "answers_with_no_search": 21
+      },
+      "answers_cut_off": 0,
+      "usd": {
+        "answers": 2.0884,
+        "audits": 0.3023
+      }
+    }
+  },
+  "openai_markers": {
+    "annotations": 121,
+    "links_the_tool_wrote_inline": 121,
+    "markers_added_by_our_code": 0,
+    "misplaced": 0,
+    "spans_over_one_sentence": 0
+  },
+  "openai_minus_claude": {
+    "first_ask": {
+      "value": 0.4811,
+      "ci_low": 0.2174,
+      "ci_high": 0.6667,
+      "questions": 20
+    },
+    "r1": {
+      "value": 0.4188,
+      "ci_low": 0.142,
+      "ci_high": 0.5942,
+      "questions": 20
+    },
+    "r2": {
+      "value": 0.4818,
+      "ci_low": 0.1116,
+      "ci_high": 0.6714,
+      "questions": 20
+    },
+    "r3": {
+      "value": 0.5847,
+      "ci_low": 0.1868,
+      "ci_high": 0.8326,
+      "questions": 20
+    },
+    "repeats_pooled": {
+      "value": 0.4824,
+      "ci_low": 0.174,
+      "ci_high": 0.6557,
+      "questions": 20
+    }
+  },
+  "openai_minus_claude_verified_share_of_all_claims": {
+    "first_ask": {
+      "value": -0.0559,
+      "ci_low": -0.1943,
+      "ci_high": 0.075,
+      "questions": 20
+    },
+    "r1": {
+      "value": -0.1569,
+      "ci_low": -0.267,
+      "ci_high": -0.0482,
+      "questions": 20
+    },
+    "r2": {
+      "value": -0.0983,
+      "ci_low": -0.1975,
+      "ci_high": -0.0027,
+      "questions": 20
+    },
+    "r3": {
+      "value": -0.1593,
+      "ci_low": -0.3218,
+      "ci_high": -0.0221,
+      "questions": 20
+    },
+    "repeats_pooled": {
+      "value": -0.1379,
+      "ci_low": -0.2332,
+      "ci_high": -0.0512,
+      "questions": 20
+    }
+  },
+  "reader": "article and rest of page (D-049)"
+}

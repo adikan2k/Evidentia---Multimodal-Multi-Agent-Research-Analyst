@@ -1,0 +1,135 @@
+{
+ "id": "health-03",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:48:49+00:00",
+ "report": {
+  "answer_text": "The 2025 West Texas measles outbreak had 762 confirmed cases, including 99 hospitalizations. Two school-aged children died. The Texas Department of State Health Services declared the outbreak over on August 18, 2025. (dshs.texas.gov)",
+  "claims": [
+   {
+    "sentence": "Two school-aged children died.",
+    "start": 93,
+    "end": 123,
+    "claim": "Two school-aged children died in the 2025 West Texas measles outbreak.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dshs.texas.gov/news-alerts/texas-announces-end-west-texas-measles-outbreak?utm_source=openai",
+      "host": "dshs.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "there were two fatalities in school-aged children.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states there were two fatalities in school-aged children, which backs the claim that two school-aged children died, though it does not explicitly name the 2025 West Texas outbreak.",
+      "page_judged": "supported",
+      "page_reason": "The page says the outbreak had two fatalities in school-aged children and identifies it as the West Texas measles outbreak that ended in an August 18, 2025 news release."
+     }
+    ]
+   },
+   {
+    "sentence": "The Texas Department of State Health Services declared the outbreak over on August 18, 2025. (dshs.texas.gov)",
+    "start": 124,
+    "end": 233,
+    "claim": "The Texas Department of State Health Services declared the 2025 West Texas measles outbreak over on August 18, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dshs.texas.gov/news-alerts/texas-announces-end-west-texas-measles-outbreak?utm_source=openai",
+      "host": "dshs.texas.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Texas Department of State Health Services is reporting the end of this year’s measles outbreak centered in West Texas.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the Texas Department of State Health Services reported the end of the West Texas measles outbreak, but it does not state the August 18, 2025 date.",
+      "page_judged": "supported",
+      "page_reason": "The page is a Texas DSHS news release dated August 18, 2025, stating that the department is reporting the end of the West Texas measles outbreak."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.001516,
+   "usd_per_claim": 0.000758
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0005
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

@@ -1,5 +1,7 @@
 """Entry point: `python -m evals <step>`. With no step, runs every step that needs no human.
 
+`python -m evals aggrefact --help` is the LLM-AggreFact run (D-037), started only by hand.
+
 Saved model outputs in `evals/runs/` are reused, so a second run only pays for what is missing.
 `--fresh` deletes them first, which makes every model call again.
 """
@@ -26,6 +28,13 @@ STEPS = {
     "judge": ("evals.judge", "run"),
     "nasty": ("evals.nasty", "run"),
     "report": ("evals.report", "run"),
+    "label-partial": ("evals.label_partial", "run"),  # Aditya's step (D-039)
+    "partial-labels": ("evals.label_partial", "score"),
+    "hand-check": ("evals.hand_check", "run"),  # Aditya's step (D-044)
+    "hand-check-score": ("evals.hand_check", "score"),
+    "hand-check-2-draw": ("evals.hand_check", "draw_second"),  # D-049, before any label
+    "hand-check-2": ("evals.hand_check", "run_second"),  # Aditya's step (D-049)
+    "hand-check-2-score": ("evals.hand_check", "score_second"),
 }
 # `label` is Aditya's step and `pairs` must not be rebuilt once labelling has started.
 AUTOMATIC = [
@@ -59,6 +68,16 @@ def main() -> None:
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
+    if args[:1] == ["realworld"]:  # D-042; has its own options, never automatic
+        from evals.realworld import main as realworld
+
+        realworld(args[1:])
+        return
+    if args[:1] == ["aggrefact"]:  # has its own options; never part of the automatic steps
+        from evals.aggrefact import main as aggrefact
+
+        aggrefact(args[1:])
+        return
     if "--fresh" in args:
         args.remove("--fresh")
         forget_saved_outputs()

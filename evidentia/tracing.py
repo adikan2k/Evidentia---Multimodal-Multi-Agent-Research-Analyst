@@ -10,13 +10,26 @@ from langfuse.span_filter import is_default_export_span
 from evidentia.config import ConfigError, Settings
 
 
+def is_langchain_plumbing(name: str) -> bool:
+    """LangChain's own wrapper steps around each model call: RunnableSequence, RunnableLambda,
+    RunnableParallel<...>, PydanticOutputParser and so on. They carry no model call of their own
+    but made up about nine of every ten observations, and the free tier counts each one."""
+    return name.startswith("Runnable") or name.endswith("OutputParser")
+
+
 def export_span(span: Any) -> bool:
     """Decide which spans go to Langfuse.
 
-    The Anthropic SDK emits its own span for every call. LangChain's callback already records
-    that same call, so sending both would count each model call, and its cost, twice.
+    Kept: every model call (generation), every tool call (fetch, search, rerank) and every graph
+    step, so rule 11 still holds. Dropped:
+    - the Anthropic SDK's own span for each call, because LangChain's callback already records
+      that call, and sending both would count each model call and its cost twice;
+    - LangChain's wrapper steps (see `is_langchain_plumbing`).
     """
-    return not span.name.startswith("anthropic.") and is_default_export_span(span)
+    name = span.name or ""
+    if name.startswith("anthropic.") or is_langchain_plumbing(name):
+        return False
+    return is_default_export_span(span)
 
 
 # Page texts run to tens of thousands of characters and sit in the graph state, which is traced

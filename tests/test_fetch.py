@@ -258,3 +258,111 @@ def test_pdf_reading_has_a_time_limit(settings, monkeypatch) -> None:
     url = "https://agency.org/report.pdf"
     _, skipped = fetch(quick, {url: pdf_response(make_pdf([LINES]))}, [url])
     assert skipped[0].reason == "PDF took too long to read"
+
+
+def test_a_404_reached_through_a_redirect_is_not_called_dead(settings) -> None:
+    import asyncio
+
+    import httpx
+
+    from evidentia.fetch import Fetcher
+    from evidentia.schemas import SearchHit
+    from evidentia.tracing import NoopTracer
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/robots.txt":
+            return httpx.Response(404)
+        if request.url.path == "/blocked":
+            return httpx.Response(302, headers={"location": "/apology"})
+        return httpx.Response(404)
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    fetcher = Fetcher(settings, NoopTracer(), client=client)
+    hits = [
+        SearchHit(url="https://site.example.org/blocked"),
+        SearchHit(url="https://site.example.org/gone"),
+    ]
+    _, skipped = asyncio.run(fetcher.fetch_all(hits))
+    assert [s.reason for s in skipped] == ["HTTP 404 after a redirect", "HTTP 404"]
+
+
+# D-049: the auditor reads the rest of the page after the article.
+
+WHOLE = f"""<html><head><title>Energy report</title><script>var SECRET_SCRIPT = 1;</script>
+<style>.x {{ color: red }}</style></head><body>
+<header><time datetime="2025-08-07">August 7, 2025</time></header>
+<!-- COMMENT_TEXT -->
+<article><h1>Energy report</h1><p>{PARAGRAPH}</p><p>{SECOND}</p>
+<figure><img src="a.png"><figcaption>Norris beat Verstappen 423 to 421</figcaption></figure>
+</article>
+<aside><div>43 days</div><div>(42 full days, CRS)</div></aside>
+<div hidden>HIDDEN_ATTRIBUTE</div><div aria-hidden="true">ARIA_HIDDEN</div>
+<form><p>Inside a form</p><input value="INPUT_VALUE"><button>BUTTON_TEXT</button></form>
+<footer>Copyright</footer></body></html>"""
+
+NEVER = (
+    "SECRET_SCRIPT",
+    "color: red",
+    "COMMENT_TEXT",
+    "HIDDEN_ATTRIBUTE",
+    "ARIA_HIDDEN",
+    "INPUT_VALUE",
+    "BUTTON_TEXT",
+)
+
+
+def serving(routes: dict[str, httpx.Response]) -> httpx.AsyncClient:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return routes.get(str(request.url)) or httpx.Response(404)
+
+    return httpx.AsyncClient(transport=httpx.MockTransport(handler))
+
+
+def test_the_rest_of_the_page_follows_the_article_and_keeps_dates_captions_and_boxes() -> None:
+    from evidentia.fetch import read_page
+
+    text, article = read_page(WHOLE.encode())
+    assert text[:article] == extract_text(WHOLE.encode())
+    for seen in ("August 7, 2025", "423 to 421", "(42 full days, CRS)", "Inside a form"):
+        assert seen in text
+    assert "(42 full days, CRS)" in text[article:]
+    for never in NEVER:
+        assert never not in text
+    assert text.count(PARAGRAPH) == 1  # lines already in the article are not repeated
+    assert "  " not in text and "\n\n" not in text
+
+
+def test_a_page_that_is_not_html_gives_no_rest() -> None:
+    from evidentia.fetch import read_page, visible_lines
+
+    assert visible_lines(b"") == []
+    assert read_page(b"") == ("", 0)
+
+
+def test_only_a_fetcher_for_the_auditor_reads_the_rest(settings) -> None:
+    routes = {"https://a.org/x": page(WHOLE)}
+    plain = fetch(settings, routes, ["https://a.org/x"])[0][0]
+    assert plain.article_chars is None and "(42 full days, CRS)" not in plain.text
+
+    fetcher = Fetcher(settings, NoopTracer(), client=serving(routes), rest_of_page=True)
+    whole = asyncio.run(fetcher.fetch_all([SearchHit(url="https://a.org/x")]))[0][0]
+    assert "(42 full days, CRS)" in whole.text
+    assert whole.article_length == whole.article_chars < len(whole.text)
+    assert whole.text[: whole.article_chars] == plain.text
+
+
+def test_menus_alone_do_not_make_an_empty_article_look_read(settings) -> None:
+    menus = "<html><body>" + "".join(f"<nav>Menu item {n}</nav>" for n in range(200))
+    routes = {"https://a.org/m": page(menus + "<p>Short.</p></body></html>")}
+    fetcher = Fetcher(settings, NoopTracer(), client=serving(routes), rest_of_page=True)
+    sources, skipped = asyncio.run(fetcher.fetch_all([SearchHit(url="https://a.org/m")]))
+    assert sources == [] and len(skipped) == 1
+
+
+def test_a_quote_from_the_rest_of_the_page_is_an_exact_span() -> None:
+    from evidentia.fetch import read_page
+    from evidentia.quote_check import find_quote
+
+    text, _ = read_page(WHOLE.encode())
+    span = find_quote("Norris beat Verstappen 423 to 421", text)
+    assert span is not None and text[span[0] : span[1]] == "Norris beat Verstappen 423 to 421"

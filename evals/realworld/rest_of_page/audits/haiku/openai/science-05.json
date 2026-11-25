@@ -1,0 +1,308 @@
+{
+ "id": "science-05",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:44:59+00:00",
+ "report": {
+  "answer_text": "Susumu Kitagawa, Richard Robson, and Omar M. Yaghi shared the 2025 Nobel Prize in Chemistry for developing metal–organic frameworks (MOFs). (nobelprize.org)\nMOFs are porous materials made by linking metal ions or clusters with organic molecules. Their tiny pores can be designed to capture specific molecules, making MOFs useful for applications such as capturing carbon dioxide and harvesting water from dry air. (nobelprize.org)",
+  "claims": [
+   {
+    "sentence": "Susumu Kitagawa, Richard Robson, and Omar M. Yaghi shared the 2025 Nobel Prize in Chemistry for developing metal–organic frameworks (MOFs). (nobelprize.org)",
+    "start": 0,
+    "end": 156,
+    "claim": "Susumu Kitagawa, Richard Robson, and Omar M. Yaghi shared the 2025 Nobel Prize in Chemistry.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-chemistryprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Royal Swedish Academy of Sciences has decided to award the Nobel Prize in Chemistry 2025 to",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "Prize amount: 11 million Swedish kronor to be shared equally between the laureates",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show the 2025 Nobel Prize in Chemistry was awarded and shared equally between the laureates, but they never name Kitagawa, Robson, or Yaghi, so the named laureates are not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Susumu Kitagawa, Richard Robson and Omar Yaghi are awarded the Nobel Prize in Chemistry 2025 and that the prize amount is shared equally between the laureates, which supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Susumu Kitagawa, Richard Robson, and Omar M. Yaghi shared the 2025 Nobel Prize in Chemistry for developing metal–organic frameworks (MOFs). (nobelprize.org)",
+    "start": 0,
+    "end": 156,
+    "claim": "Susumu Kitagawa, Richard Robson, and Omar M. Yaghi received the 2025 Nobel Prize in Chemistry for developing metal–organic frameworks (MOFs).",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-chemistryprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Royal Swedish Academy of Sciences has decided to award the Nobel Prize in Chemistry 2025 to",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "“for the development of metal–organic frameworks”",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the award of the 2025 Nobel Prize in Chemistry for the development of metal–organic frameworks, but they do not name Kitagawa, Robson, or Yaghi as the recipients.",
+      "page_judged": "supported",
+      "page_reason": "The page states the Royal Swedish Academy awarded the 2025 Nobel Prize in Chemistry to Susumu Kitagawa, Richard Robson and Omar Yaghi 'for the development of metal–organic frameworks', matching every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "MOFs are porous materials made by linking metal ions or clusters with organic molecules. Their tiny pores can be designed to capture specific molecules, making MOFs useful for applications such as capturing carbon dioxide and harvesting water from dry air. (nobelprize.org)",
+    "start": 157,
+    "end": 430,
+    "claim": "MOFs are porous materials made by linking metal ions or clusters with organic molecules.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-chemistryprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In their constructions, metal ions function as cornerstones that are linked by long organic (carbon-based) molecules.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "These porous materials are called metal–organic frameworks (MOF).",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that metal ions are linked by organic molecules and that these materials are porous metal-organic frameworks, covering every fact in the claim except the word 'clusters', which is a minor rewording of the metal-ion point rather than an added specific.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that metal ions act as cornerstones linked by long organic molecules to form crystals with large cavities, which are called porous metal–organic frameworks (MOFs), which matches the claim's description apart from the 'clusters' wording that the page does not mention."
+     }
+    ]
+   },
+   {
+    "sentence": "MOFs are porous materials made by linking metal ions or clusters with organic molecules. Their tiny pores can be designed to capture specific molecules, making MOFs useful for applications such as capturing carbon dioxide and harvesting water from dry air. (nobelprize.org)",
+    "start": 157,
+    "end": 430,
+    "claim": "The tiny pores of MOFs can be designed to capture specific molecules.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-chemistryprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "By varying the building blocks used in the MOFs, chemists can design them to capture and store specific substances.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the core claim that MOFs can be designed to capture specific substances, but it says nothing about 'tiny pores' and speaks of substances generally rather than molecules via their pores.",
+      "page_judged": "supported",
+      "page_reason": "The page states that by varying the building blocks in MOFs, chemists can design them to capture and store specific substances, and that MOFs are porous materials with cavities, which supports the claim that their pores can be designed to capture specific molecules."
+     }
+    ]
+   },
+   {
+    "sentence": "MOFs are porous materials made by linking metal ions or clusters with organic molecules. Their tiny pores can be designed to capture specific molecules, making MOFs useful for applications such as capturing carbon dioxide and harvesting water from dry air. (nobelprize.org)",
+    "start": 157,
+    "end": 430,
+    "claim": "MOFs are useful for applications such as capturing carbon dioxide.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-chemistryprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Some of these may contribute to solving some of humankind’s greatest challenges, with applications that include separating PFAS from water, breaking down traces of pharmaceuticals in the environment, capturing carbon dioxide or harvesting water from desert air.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote explicitly lists capturing carbon dioxide as one application of these materials, which backs the claim that MOFs are useful for CO2 capture.",
+      "page_judged": "supported",
+      "page_reason": "The page states that MOFs can be used to capture carbon dioxide and lists capturing carbon dioxide among potential applications, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "MOFs are porous materials made by linking metal ions or clusters with organic molecules. Their tiny pores can be designed to capture specific molecules, making MOFs useful for applications such as capturing carbon dioxide and harvesting water from dry air. (nobelprize.org)",
+    "start": 157,
+    "end": 430,
+    "claim": "MOFs are useful for applications such as harvesting water from dry air.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-chemistryprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "supported",
+      "page_reason": "The page states that MOFs can be used to harvest water from desert air and lists harvesting water from desert air among their applications, which supports the claim that they are useful for harvesting water from dry air."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 5,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.1667,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002606,
+   "usd_per_claim": 0.000434
+  },
+  "cost": {
+   "total_usd": 0.0026,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0007
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

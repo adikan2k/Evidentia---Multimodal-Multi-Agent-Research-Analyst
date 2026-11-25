@@ -1,0 +1,431 @@
+{
+ "id": "nq-36-r2",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:07:27+00:00",
+ "report": {
+  "answer_text": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (Season 5, Episodes 1/2).\nJim meets Pam for lunch at an interstate rest stop between Scranton and New York City. He proposes to her outside in the pouring rain, and she accepts ecstatically.[1] Pam was in New York at the time for a graphic design class.\nHe had tried earlier. In \"Goodbye, Toby\" (Season 4), Jim plans to propose[2], but Pam is disappointed that Jim did not propose to her.[2] The plan fell through.\nThe scene was also expensive to film. Jenna Fischer said it was the single most expensive scene in the show's run, lasting 52 seconds and costing $250,000.[3]",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (Season 5, Episodes 1/2).",
+    "start": 0,
+    "end": 85,
+    "claim": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (Season 5, Episodes 1/2).",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jim meets Pam for lunch at an interstate rest stop between Scranton and New York City.",
+    "start": 86,
+    "end": 172,
+    "claim": "Jim meets Pam for lunch at an interstate rest stop between Scranton and New York City.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_(The_Office)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Wanting to see Pam, Jim Halpert meets her for lunch at an interstate rest stop between Scranton and New York City.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Jim meets Pam for lunch at an interstate rest stop between Scranton and New York City, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim meets Pam for lunch at an interstate rest stop between Scranton and New York City, matching every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "He proposes to her outside in the pouring rain, and she accepts ecstatically.[1]",
+    "start": 173,
+    "end": 253,
+    "claim": "Jim proposes to Pam outside in the pouring rain.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_(The_Office)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proposes to her outside in the pouring rain, and she accepts ecstatically.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Jim proposed to Pam outside a truck stop in the pouring rain.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Jim proposes to Pam outside in the pouring rain, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim proposes to Pam at an interstate rest stop, and that he proposes to her outside in the pouring rain, so the claim is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "He proposes to her outside in the pouring rain, and she accepts ecstatically.[1]",
+    "start": 173,
+    "end": 253,
+    "claim": "Pam accepts Jim's proposal ecstatically.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_(The_Office)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proposes to her outside in the pouring rain, and she accepts ecstatically.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the proposal was accepted ecstatically, but it refers only to \"he\" and \"she\" and never names Pam or Jim as the people involved.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim proposes to Pam outside a rest stop in the rain and that 'she accepts ecstatically', directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Pam was in New York at the time for a graphic design class.",
+    "start": 254,
+    "end": 313,
+    "claim": "Pam was in New York at the time for a graphic design class.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "He had tried earlier.",
+    "start": 314,
+    "end": 335,
+    "claim": "Jim tried to propose to Pam earlier.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Goodbye,_Toby",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jim contributes several hundred dollars to the party-planning fund in order to buy fireworks, since he has decided to propose to Pam, going back to their \"first date\".",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "however, at the party, Andy Bernard ruins the moment by proposing to Angela, who grudgingly accepts.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show Jim decided to propose to Pam and funded fireworks for it, and that Andy's proposal to Angela ruined the moment, but they never state that Jim actually made an attempt or when it happened relative to 'earlier'.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Jim planned to propose at the party in this episode and bought fireworks for it, but Andy's proposal to Angela interrupted the moment; it does not say Jim tried to propose at any earlier time."
+     }
+    ]
+   },
+   {
+    "sentence": "In \"Goodbye, Toby\" (Season 4), Jim plans to propose[2], but Pam is disappointed that Jim did not propose to her.[2]",
+    "start": 336,
+    "end": 451,
+    "claim": "In \"Goodbye, Toby\" (Season 4), Jim plans to propose to Pam.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Goodbye,_Toby",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jim Halpert (John Krasinski) plans to propose to Pam Beesly (Jenna Fischer)",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Jim contributes several hundred dollars to the party-planning fund in order to buy fireworks, since he has decided to propose to Pam, going back to their \"first date\".",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Jim plans to propose to Pam, which is the claim's only point, and they do not add any conflicting detail about the episode.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim contributed money for fireworks because he had decided to propose to Pam, and that Andy proposed to Angela instead, so the claim that Jim plans to propose to Pam is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "In \"Goodbye, Toby\" (Season 4), Jim plans to propose[2], but Pam is disappointed that Jim did not propose to her.[2]",
+    "start": 336,
+    "end": 451,
+    "claim": "In \"Goodbye, Toby\" (Season 4), Pam is disappointed that Jim did not propose to her.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Goodbye,_Toby",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Pam is disappointed that Jim did not propose to her.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs Pam being disappointed that Jim did not propose, but it does not state the episode title \"Goodbye, Toby\" or the Season 4 placement.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim planned to propose, Andy proposed to Angela instead, and 'Pam is disappointed that Jim did not propose to her', directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The plan fell through.",
+    "start": 452,
+    "end": 474,
+    "claim": "Jim's plan to propose to Pam in \"Goodbye, Toby\" fell through.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jenna Fischer said it was the single most expensive scene in the show's run, lasting 52 seconds and costing $250,000.[3]",
+    "start": 513,
+    "end": 633,
+    "claim": "Jenna Fischer said the proposal scene was the single most expensive scene in the show's run.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "“In the end, this was the single most expensive scene ever shot during the entire run of the show,” Fischer told Kinsey.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs Fischer saying a scene was the single most expensive ever shot in the show's run, but it never names that scene as the proposal scene, since 'this' is unidentified.",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Fischer saying the gas station proposal was 'the single most expensive scene ever shot during the entire run of the show', which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Jenna Fischer said it was the single most expensive scene in the show's run, lasting 52 seconds and costing $250,000.[3]",
+    "start": 513,
+    "end": 633,
+    "claim": "The proposal scene lasts 52 seconds.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It lasts 52 seconds, and it cost $250,000 (£176,242).”",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the scene lasts 52 seconds, which matches the claim's only specific, though the quote does not explicitly name it as the proposal scene.",
+      "page_judged": "supported",
+      "page_reason": "Fischer is quoted saying the scene 'lasts 52 seconds' and cost $250,000, so the page states the claimed 52-second duration."
+     }
+    ]
+   },
+   {
+    "sentence": "Jenna Fischer said it was the single most expensive scene in the show's run, lasting 52 seconds and costing $250,000.[3]",
+    "start": 513,
+    "end": 633,
+    "claim": "The proposal scene cost $250,000 to film.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nme.com/news/tv/the-office-gas-station-proposal-was-shows-most-expensive-scene-2951008",
+      "host": "nme.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "“It lasts 52 seconds, and it cost $250,000 (£176,242).”",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the scene cost $250,000 and lasted 52 seconds, but it does not say the scene was a proposal scene, so the proposal identification is not backed by the quotes.",
+      "page_judged": "supported",
+      "page_reason": "The page quotes Fischer saying the gas station proposal scene 'cost $250,000 (£176,242)', which directly supports the claim's figure and subject."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 12,
+   "labels": {
+    "supported": 4,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 4,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 3
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.4444,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.007324,
+   "usd_per_claim": 0.00061
+  },
+  "cost": {
+   "total_usd": 0.0073,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 9,
+     "usd": 0.0028
+    },
+    {
+     "node": "page_check",
+     "calls": 9,
+     "usd": 0.0026
+    },
+    {
+     "node": "check",
+     "calls": 9,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}

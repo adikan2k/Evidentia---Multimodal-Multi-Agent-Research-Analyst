@@ -1,32 +1,39 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import { Mark, type MarkKind } from "@/components/Mark";
 import { type Claim, type Label, pageLabel } from "@/lib/replay";
 
-const LABEL_COLOUR: Record<Label, string> = {
-  supported: "text-supported border-supported",
-  partial: "text-partial border-partial",
-  unverified: "text-unverified border-unverified",
+const LABEL_TONE: Record<Label, string> = {
+  supported: "text-supported",
+  partial: "text-partial",
+  unverified: "text-unverified",
+};
+const LABEL_MARK: Record<Label, MarkKind> = {
+  supported: "tick",
+  partial: "tick-caret",
+  unverified: "cross",
+};
+const LABEL_NAME: Record<Label, string> = {
+  supported: "Supported",
+  partial: "Partly backed",
+  unverified: "Unverified",
 };
 
-/** The verdict, pressed onto the page like a rubber stamp when the checker answers. */
+/** The verdict: a proofreader's mark, drawn as the checker answers, with its name. */
 export function Stamp({ label }: { label: Label }) {
   return (
-    <motion.span
-      initial={{ opacity: 0, scale: 1.6, rotate: -8 }}
-      animate={{ opacity: 1, scale: 1, rotate: -2 }}
-      transition={{ type: "spring", stiffness: 520, damping: 22 }}
-      className={`label inline-block rounded-[3px] border px-1.5 py-0.5 ${LABEL_COLOUR[label]}`}
-    >
-      {label}
-    </motion.span>
+    <span className={`label inline-flex items-center gap-1.5 ${LABEL_TONE[label]}`}>
+      <Mark kind={LABEL_MARK[label]} draw className="text-[1.1rem]" />
+      {LABEL_NAME[label]}
+    </span>
   );
 }
 
 function status(claim: Claim): string {
   if (claim.label) return "";
-  if (claim.quote_found === null) return "written, not checked yet";
-  if (claim.quote_found) return "quote found on the page, waiting for the checker";
+  if (claim.quote_found === null) return "Written, not checked yet";
+  if (claim.quote_found) return "Quote found on the page, waiting for the checker";
   return "";
 }
 
@@ -37,9 +44,10 @@ type Props = {
   onSelect: (index: number) => void;
 };
 
+/** The claims, set on the sheet one under another, each with its mark in the margin. */
 export function ClaimList({ claims, firstDraft, selected, onSelect }: Props) {
   return (
-    <ol className="space-y-1">
+    <ol>
       <AnimatePresence initial={false}>
         {claims.map((claim, index) => {
           const active = index === selected;
@@ -47,20 +55,28 @@ export function ClaimList({ claims, firstDraft, selected, onSelect }: Props) {
           return (
             <motion.li
               key={index}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.07, ease: [0.2, 0.7, 0.2, 1] }}
+              transition={{ duration: 0.4, delay: index * 0.06, ease: [0.2, 0.7, 0.2, 1] }}
+              className="border-b border-rule last:border-b-0"
             >
               <button
                 type="button"
                 onClick={() => onSelect(index)}
                 aria-pressed={active}
-                className={`group grid w-full grid-cols-[2.25rem_1fr] gap-x-2 rounded-md border-l-2 py-4 pr-4 text-left transition-colors duration-200 ${
-                  active ? "border-ink bg-paper-deep" : "border-transparent hover:bg-paper-deep/60"
+                className={`grid w-full gap-x-6 gap-y-2 px-5 py-5 text-left transition-colors duration-200 md:grid-cols-[9.5rem_1fr] md:px-8 ${
+                  active ? "bg-paper-deep/70" : "hover:bg-paper/70"
                 }`}
               >
-                <span className="label pt-1.5 text-right text-ink-faint tabular-nums">
-                  {String(index + 1).padStart(2, "0")}
+                <span className="flex items-start gap-3 md:flex-col md:gap-1.5">
+                  <span className="data text-ink-faint">Claim {String(index + 1).padStart(2, "0")}</span>
+                  {claim.label && <Stamp key={`${claim.label}-${claim.text}`} label={claim.label} />}
+                  {!claim.label && (
+                    <span className="label flex items-center gap-1.5 font-normal text-ink-faint">
+                      <Mark kind="dots" className="animate-pulse" />
+                      Checking
+                    </span>
+                  )}
                 </span>
                 <span>
                   {/* The claim's words. If the repair round rewrote it, the new wording swaps in. */}
@@ -71,28 +87,23 @@ export function ClaimList({ claims, firstDraft, selected, onSelect }: Props) {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.25 }}
-                      className="block font-serif text-[1.375rem] leading-[1.3] text-ink"
+                      className="sheet-text block leading-[1.45] text-ink"
                     >
                       {claim.text}
                     </motion.span>
                   </AnimatePresence>
-                  <span className="mt-2.5 flex min-h-6 flex-wrap items-center gap-x-3 gap-y-1">
-                    {claim.label && <Stamp key={`${claim.label}-${claim.text}`} label={claim.label} />}
-                    {!claim.label && <span className="label text-ink-faint">{status(claim)}</span>}
-                    <span className="label text-ink-faint normal-case tracking-normal">
+                  <span className="label mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 font-normal text-ink-soft">
+                    <span>
                       {claim.host}
-                      {pageLabel(claim) && <span className="font-mono"> · PDF {pageLabel(claim)}</span>}
+                      {pageLabel(claim) && <span> · PDF {pageLabel(claim)}</span>}
                     </span>
+                    {!claim.label && <span>{status(claim)}</span>}
                     {reworded && (
-                      <span className="label text-ink-faint" title={`First draft: ${firstDraft[index]}`}>
-                        reworded to match its quote
-                      </span>
+                      <span title={`First draft: ${firstDraft[index]}`}>Reworded to match its quote</span>
                     )}
                   </span>
                   {claim.label && claim.label !== "supported" && claim.reason && (
-                    <span className="mt-2 block text-sm leading-relaxed text-ink-soft">
-                      {claim.reason}
-                    </span>
+                    <span className="label mt-2 block font-normal text-ink-soft">{claim.reason}</span>
                   )}
                 </span>
               </button>

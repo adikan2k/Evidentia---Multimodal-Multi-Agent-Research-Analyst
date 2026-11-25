@@ -1,0 +1,135 @@
+{
+ "id": "nq-21",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:39:31+00:00",
+ "report": {
+  "answer_text": "The two-part *Everybody Loves Raymond* episode “Italy” was filmed on location in Anguillara Sabazia, a town on Lake Bracciano, northwest of Rome. It was shot in July 2000 and opened the show’s fifth season. (cheatsheet.com)",
+  "claims": [
+   {
+    "sentence": "It was shot in July 2000 and opened the show’s fifth season. (cheatsheet.com)",
+    "start": 146,
+    "end": 223,
+    "claim": "The Everybody Loves Raymond episode “Italy” was shot in July 2000.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cheatsheet.com/news/cast-everybody-loves-raymond-italy.html/?utm_source=openai",
+      "host": "cheatsheet.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The two-parter called “Italy” were the premiere episodes of the show’s fifth season and were filmed in July 2000 in the town of Anguillara Sabazia outside of Rome.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the two-parter \"Italy\" was filmed in July 2000, which is the full content of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the two-parter 'Italy' premiere episodes of season five were filmed in July 2000 in Anguillara Sabazia outside Rome, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It was shot in July 2000 and opened the show’s fifth season. (cheatsheet.com)",
+    "start": 146,
+    "end": 223,
+    "claim": "The Everybody Loves Raymond episode “Italy” opened the show’s fifth season.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cheatsheet.com/news/cast-everybody-loves-raymond-italy.html/?utm_source=openai",
+      "host": "cheatsheet.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The two-parter called “Italy” were the premiere episodes of the show’s fifth season",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the two-part \"Italy\" episodes were the premiere episodes of the show's fifth season, which backs the claim that \"Italy\" opened the fifth season.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the two-parter called \"Italy\" were the premiere episodes of the show's fifth season, which directly supports the claim that it opened season five."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 1.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 1,
+   "claims_over_limit": 0,
+   "usd": 0.001171,
+   "usd_per_claim": 0.000586
+  },
+  "cost": {
+   "total_usd": 0.0012,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0003
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

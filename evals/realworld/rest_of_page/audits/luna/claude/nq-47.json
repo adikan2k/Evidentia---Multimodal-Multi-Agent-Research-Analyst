@@ -1,0 +1,170 @@
+{
+ "id": "nq-47",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:42:58+00:00",
+ "report": {
+  "answer_text": "According to the Wikipedia article on the song, the woman in the video is Joanna Moskawa[1]. In the video, she interrogates Corey Taylor after he's strapped into a chair[1]. Later, the band leaves her tied up[1].\nI only found her name on Wikipedia. I couldn't confirm it in a second source, such as the video's credits. The song is about Taylor's wife, but I found nothing saying she's the woman in the video.",
+  "claims": [
+   {
+    "sentence": "According to the Wikipedia article on the song, the woman in the video is Joanna Moskawa[1].",
+    "start": 0,
+    "end": 92,
+    "claim": "According to the Wikipedia article on the song, the woman in the video is Joanna Moskawa.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Say_You'll_Haunt_Me",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "interrogated by a woman (Joanna Moskawa)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a woman in the context is named Joanna Moskawa, but it does not say she appears in the video or that the source is the Wikipedia article on the song.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies the woman in the music video as Joanna Moskawa."
+     }
+    ]
+   },
+   {
+    "sentence": "In the video, she interrogates Corey Taylor after he's strapped into a chair[1].",
+    "start": 93,
+    "end": 173,
+    "claim": "In the video, the woman interrogates Corey Taylor after he's strapped into a chair.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Say_You'll_Haunt_Me",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He is then lead upstairs to be strapped into a chair and interrogated by a woman (Joanna Moskawa) who seems to have an aggression towards him.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Corey Taylor is strapped into a chair and then interrogated by a woman, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Corey Taylor is strapped into a chair and interrogated by a woman in the video."
+     }
+    ]
+   },
+   {
+    "sentence": "Later, the band leaves her tied up[1].",
+    "start": 174,
+    "end": 212,
+    "claim": "Later in the video, the band leaves the woman tied up.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Say_You'll_Haunt_Me",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At the end of the video the band leaves the lady tied.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at the end of the video the band leaves the lady tied, which matches the claim that later in the video the band leaves the woman tied up.",
+      "page_judged": "supported",
+      "page_reason": "The page states that at the end of the video, the band leaves the woman tied up."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6667,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002109,
+   "usd_per_claim": 0.000703
+  },
+  "cost": {
+   "total_usd": 0.0021,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0007
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,336 @@
+{
+ "id": "nq-05",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "A tower crane has three basic motions: it hoists the load up or down, slews (rotates) around the tower, and moves the load closer to or farther from the tower. Here are the main parts of a typical fixed-jib tower crane and what each does. (morrow.com)\n| Part | Function |\n|---|---|\n| Base and foundation | Anchor the crane and transfer its forces to the ground or supporting structure. |\n| Mast (tower) | The vertical steel structure that gives the crane its height and supports the rotating assembly. |\n| Slewing unit | Uses a bearing and drive to rotate the upper assembly around the mast. |\n| Jib (working arm) | The long horizontal arm that gives the crane its reach and provides a track for the trolley. |\n| Trolley | Travels along the jib to move the hook closer to or farther from the mast. |\n| Hoist winch and wire rope | The winch winds or unwinds the rope to raise or lower the hook. |\n| Hook block | The hanging assembly that contains the hook and usually one or more pulleys. The hook connects to the load’s lifting gear. |\n| Counter-jib | The shorter arm opposite the working jib. It supports the counterweights and often carries the hoist machinery. |\n| Counterweights | Offset the turning effect of the working jib and load, helping keep the crane stable. |\n| Operator’s cab and controls | Provide the operator with a station to control and monitor crane movements. |\nThese components are shown in Morrow’s illustrated tower crane guide. (morrow.com)\nKey difference: A fixed-jib crane changes its reach by moving the trolley. A luffing-jib crane changes its reach by raising or lowering the jib itself. (morrow.com)",
+  "claims": [
+   {
+    "sentence": "A tower crane has three basic motions: it hoists the load up or down, slews (rotates) around the tower, and moves the load closer to or farther from the tower.",
+    "start": 0,
+    "end": 159,
+    "claim": "A tower crane has three basic motions: hoisting the load up or down.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A tower crane has three basic motions: it hoists the load up or down, slews (rotates) around the tower, and moves the load closer to or farther from the tower.",
+    "start": 0,
+    "end": 159,
+    "claim": "A tower crane has three basic motions: slewing (rotating) around the tower.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A tower crane has three basic motions: it hoists the load up or down, slews (rotates) around the tower, and moves the load closer to or farther from the tower.",
+    "start": 0,
+    "end": 159,
+    "claim": "A tower crane has three basic motions: moving the load closer to or farther from the tower.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Base and foundation | Anchor the crane and transfer its forces to the ground or supporting structure. |",
+    "start": 282,
+    "end": 387,
+    "claim": "The base and foundation anchor the crane and transfer its forces to the ground or supporting structure.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Mast (tower) | The vertical steel structure that gives the crane its height and supports the rotating assembly. |",
+    "start": 388,
+    "end": 503,
+    "claim": "The mast (tower) is the vertical steel structure that gives the crane its height and supports the rotating assembly.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Slewing unit | Uses a bearing and drive to rotate the upper assembly around the mast. |",
+    "start": 504,
+    "end": 593,
+    "claim": "The slewing unit uses a bearing and drive to rotate the upper assembly around the mast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Jib (working arm) | The long horizontal arm that gives the crane its reach and provides a track for the trolley. |",
+    "start": 594,
+    "end": 710,
+    "claim": "The jib (working arm) is the long horizontal arm that gives the crane its reach and provides a track for the trolley.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Trolley | Travels along the jib to move the hook closer to or farther from the mast. |",
+    "start": 711,
+    "end": 799,
+    "claim": "The trolley travels along the jib to move the hook closer to or farther from the mast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Hoist winch and wire rope | The winch winds or unwinds the rope to raise or lower the hook. |",
+    "start": 800,
+    "end": 895,
+    "claim": "The hoist winch winds or unwinds the wire rope to raise or lower the hook.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Hook block | The hanging assembly that contains the hook and usually one or more pulleys. The hook connects to the load’s lifting gear. |",
+    "start": 896,
+    "end": 1035,
+    "claim": "The hook block is the hanging assembly that contains the hook and usually one or more pulleys.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Hook block | The hanging assembly that contains the hook and usually one or more pulleys. The hook connects to the load’s lifting gear. |",
+    "start": 896,
+    "end": 1035,
+    "claim": "The hook connects to the load's lifting gear.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Counter-jib | The shorter arm opposite the working jib. It supports the counterweights and often carries the hoist machinery. |",
+    "start": 1036,
+    "end": 1165,
+    "claim": "The counter-jib is the shorter arm opposite the working jib, supports the counterweights, and often carries the hoist machinery.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Counterweights | Offset the turning effect of the working jib and load, helping keep the crane stable. |",
+    "start": 1166,
+    "end": 1272,
+    "claim": "The counterweights offset the turning effect of the working jib and load, helping keep the crane stable.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Operator’s cab and controls | Provide the operator with a station to control and monitor crane movements. |",
+    "start": 1273,
+    "end": 1382,
+    "claim": "The operator's cab and controls provide the operator with a station to control and monitor crane movements.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "These components are shown in Morrow’s illustrated tower crane guide. (morrow.com)",
+    "start": 1383,
+    "end": 1465,
+    "claim": "These components are shown in Morrow's illustrated tower crane guide.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Key difference: A fixed-jib crane changes its reach by moving the trolley. A luffing-jib crane changes its reach by raising or lowering the jib itself. (morrow.com)",
+    "start": 1466,
+    "end": 1630,
+    "claim": "A fixed-jib crane changes its reach by moving the trolley.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Key difference: A fixed-jib crane changes its reach by moving the trolley. A luffing-jib crane changes its reach by raising or lowering the jib itself. (morrow.com)",
+    "start": 1466,
+    "end": 1630,
+    "claim": "A luffing-jib crane changes its reach by raising or lowering the jib itself.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 17,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 6,
+    "uncited": 11
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001129,
+   "usd_per_claim": 6.6e-05
+  },
+  "cost": {
+   "total_usd": 0.0011,
+   "cap_usd": 0.4,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "id": "sport_culture-04",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Men’s singles: Jannik Sinner defeated Carlos Alcaraz 4–6, 6–4, 6–4, 6–4. (assets.wimbledon.com)\nWomen’s singles: Iga Świątek defeated Amanda Anisimova 6–0, 6–0. (wimbledon.com)",
+  "claims": [
+   {
+    "sentence": "Men’s singles: Jannik Sinner defeated Carlos Alcaraz 4–6, 6–4, 6–4, 6–4. (assets.wimbledon.com)",
+    "start": 0,
+    "end": 95,
+    "claim": "In the men’s singles, Jannik Sinner defeated Carlos Alcaraz 4–6, 6–4, 6–4, 6–4.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://assets.wimbledon.com/archive/draws/pdfs/draws/2025_MS_A4.pdf?utm_source=openai",
+      "host": "assets.wimbledon.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Women’s singles: Iga Świątek defeated Amanda Anisimova 6–0, 6–0. (wimbledon.com)",
+    "start": 96,
+    "end": 176,
+    "claim": "In the women’s singles, Iga Świątek defeated Amanda Anisimova 6–0, 6–0.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.wimbledon.com/en_GB/scores/draws/2025_LS_draw.pdf?utm_source=openai",
+      "host": "wimbledon.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "supported",
+      "page_reason": "The page names Iga Świątek as champion with a 6–0, 6–0 score and shows Amanda Anisimova as the finalist in the draw."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002193,
+   "usd_per_claim": 0.001096
+  },
+  "cost": {
+   "total_usd": 0.0022,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "page_check",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 1,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

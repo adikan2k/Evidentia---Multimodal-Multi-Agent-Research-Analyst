@@ -1,0 +1,203 @@
+{
+ "id": "health-04",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:49:11+00:00",
+ "report": {
+  "answer_text": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine “for their discoveries concerning peripheral immune tolerance.” (nobelprize.org)\nSakaguchi discovered regulatory T cells, which help prevent the immune system from attacking the body’s own tissues. Brunkow and Ramsdell identified the FOXP3 gene and linked mutations in it to severe autoimmune disease. Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+  "claims": [
+   {
+    "sentence": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine “for their discoveries concerning peripheral immune tolerance.” (nobelprize.org)",
+    "start": 0,
+    "end": 187,
+    "claim": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Nobel Assembly at Karolinska Institutet has decided to award the Nobel Prize in Physiology or Medicine 2025 to: Mary E. Brunkow Fred Ramsdell Shimon Sakaguchi",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "Prize amount: 11 million Swedish kronor, to be shared equally between the laureates.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the Nobel Assembly awarded the 2025 Nobel Prize in Physiology or Medicine to Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page names Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi as the 2025 laureates and says the prize amount was to be shared equally between them."
+     }
+    ]
+   },
+   {
+    "sentence": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi shared the 2025 Nobel Prize in Physiology or Medicine “for their discoveries concerning peripheral immune tolerance.” (nobelprize.org)",
+    "start": 0,
+    "end": 187,
+    "claim": "The 2025 Nobel Prize in Physiology or Medicine was awarded to Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi for their discoveries concerning peripheral immune tolerance.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Nobel Assembly at Karolinska Institutet has decided to award the Nobel Prize in Physiology or Medicine 2025 to: Mary E. Brunkow Fred Ramsdell Shimon Sakaguchi",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "for their discoveries concerning peripheral immune tolerance",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes name Mary E. Brunkow, Fred Ramsdell and Shimon Sakaguchi as the 2025 Nobel Prize in Physiology or Medicine recipients and state the award is for discoveries concerning peripheral immune tolerance, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the 2025 Nobel Prize in Physiology or Medicine was awarded to Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi for their discoveries concerning peripheral immune tolerance."
+     }
+    ]
+   },
+   {
+    "sentence": "Sakaguchi then showed that the gene is essential for the development of regulatory T cells. (nobelprize.org)",
+    "start": 409,
+    "end": 517,
+    "claim": "Sakaguchi showed that the FOXP3 gene is essential for the development of regulatory T cells.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nobelprize.org/uploads/2025/10/press-medicineprize2025.pdf?utm_source=openai",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proved that the Foxp3 gene governs the development of the cells he identiﬁed in 1995.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "These cells, now known as regulatory T cells, monitor other immune cells and ensure that our immune system tolerates our own tissues.",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the Foxp3 gene governs the development of regulatory T cells, but they never name Sakaguchi as the ",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Sakaguchi proved that Foxp3 governs the development of regulatory T cells, but it does not state that the gene is essential for their development."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 2,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.6667,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 4,
+   "claims_over_limit": 0,
+   "usd": 0.00205,
+   "usd_per_claim": 0.000683
+  },
+  "cost": {
+   "total_usd": 0.002,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0005
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

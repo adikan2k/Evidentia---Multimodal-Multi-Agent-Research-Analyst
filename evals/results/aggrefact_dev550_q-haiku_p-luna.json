@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-11-24T17:35:22+00:00",
+  "sample": "dev550",
+  "split": "dev",
+  "sample_seed": 20261124,
+  "rows": 550,
+  "judges": {
+    "quote": "claude-haiku-5-5",
+    "page": "gpt-6-luna",
+    "quote_context": "False"
+  },
+  "metric": "balanced accuracy per sub-dataset, then their plain mean (95% bootstrap)",
+  "two_judges": {
+    "balanced_accuracy": {
+      "value": 0.7869,
+      "ci_low": 0.751,
+      "ci_high": 0.8212
+    },
+    "flag_precision": {
+      "value": 0.7063,
+      "ci_low": 0.6534,
+      "ci_high": 0.7549
+    },
+    "supported_precision": {
+      "value": 0.9261,
+      "ci_low": 0.8869,
+      "ci_high": 0.9627
+    },
+    "per_dataset": {
+      "AggreFact-CNN": 0.9655,
+      "AggreFact-XSum": 0.5938,
+      "ClaimVerify": 0.8899,
+      "ExpertQA": 0.6016,
+      "FactCheck-GPT": 0.6612,
+      "Lfqa": 0.8675,
+      "RAGTruth": 0.8485,
+      "Reveal": 0.9625,
+      "TofuEval-MediaS": 0.7143,
+      "TofuEval-MeetB": 0.901,
+      "Wice": 0.65
+    },
+    "coverage": {
+      "value": 0.8091,
+      "ci_low": 0.7745,
+      "ci_high": 0.8418
+    },
+    "balanced_accuracy_abstain_counted_wrong": {
+      "value": 0.6591,
+      "ci_low": 0.6181,
+      "ci_high": 0.697
+    },
+    "coverage_per_dataset": {
+      "AggreFact-CNN": 0.62,
+      "AggreFact-XSum": 0.8,
+      "ClaimVerify": 0.74,
+      "ExpertQA": 0.9,
+      "FactCheck-GPT": 0.92,
+      "Lfqa": 0.88,
+      "RAGTruth": 0.78,
+      "Reveal": 0.94,
+      "TofuEval-MediaS": 0.8,
+      "TofuEval-MeetB": 0.78,
+      "Wice": 0.74
+    },
+    "labels": {
+      "supported": 176,
+      "not_found": 142,
+      "needs_human": 105,
+      "partial": 105,
+      "contradicted": 22
+    },
+    "partial_as_its_own_verdict": {
+      "flag_precision": {
+        "value": 0.811,
+        "ci_low": 0.7515,
+        "ci_high": 0.8644
+      },
+      "supported_precision": {
+        "value": 0.9261,
+        "ci_low": 0.8869,
+        "ci_high": 0.9627
+      },
+      "coverage": {
+        "value": 0.8091,
+        "ci_low": 0.7745,
+        "ci_high": 0.8418
+      },
+      "partial_share": 0.1909,
+      "partial_people_label_supported": 0.4571,
+      "finish_line_passed": false
+    }
+  },
+  "quote_judge_alone": {
+    "balanced_accuracy": {
+      "value": 0.7198,
+      "ci_low": 0.687,
+      "ci_high": 0.7507
+    },
+    "flag_precision": {
+      "value": 0.5602,
+      "ci_low": 0.5112,
+      "ci_high": 0.6078
+    },
+    "supported_precision": {
+      "value": 0.9223,
+      "ci_low": 0.8836,
+      "ci_high": 0.9581
+    },
+    "per_dataset": {
+      "AggreFact-CNN": 0.8,
+      "AggreFact-XSum": 0.58,
+      "ClaimVerify": 0.7588,
+      "ExpertQA": 0.634,
+      "FactCheck-GPT": 0.6107,
+      "Lfqa": 0.8344,
+      "RAGTruth": 0.7841,
+      "Reveal": 0.9018,
+      "TofuEval-MediaS": 0.6627,
+      "TofuEval-MeetB": 0.8007,
+      "Wice": 0.5503
+    },
+    "labels": {
+      "supported": 193,
+      "partial": 189,
+      "not_found": 146,
+      "contradicted": 22
+    },
+    "rows_with_an_exact_quote": 412
+  },
+  "page_judge_alone": {
+    "balanced_accuracy": {
+      "value": 0.7829,
+      "ci_low": 0.7433,
+      "ci_high": 0.8208
+    },
+    "flag_precision": {
+      "value": 0.6713,
+      "ci_low": 0.6205,
+      "ci_high": 0.72
+    },
+    "supported_precision": {
+      "value": 0.9129,
+      "ci_low": 0.8776,
+      "ci_high": 0.9455
+    },
+    "per_dataset": {
+      "AggreFact-CNN": 0.6778,
+      "AggreFact-XSum": 0.7,
+      "ClaimVerify": 0.8487,
+      "ExpertQA": 0.5956,
+      "FactCheck-GPT": 0.7343,
+      "Lfqa": 0.8295,
+      "RAGTruth": 0.8636,
+      "Reveal": 0.9405,
+      "TofuEval-MediaS": 0.6905,
+      "TofuEval-MeetB": 0.8904,
+      "Wice": 0.8409
+    }
+  },
+  "finish_line": {
+    "thresholds": {
+      "flag_precision": 0.8,
+      "supported_precision": 0.93,
+      "coverage": 0.7
+    },
+    "measured": {
+      "flag_precision": 0.7063,
+      "supported_precision": 0.9261,
+      "coverage": 0.8091
+    },
+    "passed": false
+  },
+  "usd": {
+    "quote_judge": 0.2527,
+    "page_judge": 0.0957,
+    "per_claim_both": 0.000634
+  }
+}

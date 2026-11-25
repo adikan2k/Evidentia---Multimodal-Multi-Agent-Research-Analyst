@@ -1,0 +1,298 @@
+{
+ "id": "nq-05-r1",
+ "tool": "openai",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+   "read": false,
+   "why_not": "still too little text after the browser ran the page"
+  }
+ ],
+ "usd": 0,
+ "report": {
+  "answer_text": "A typical horizontal-jib tower crane uses three motions to place a load: the hoist moves it up and down, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower. (morrow.com)\n| Part | Function |\n|---|---|\n| Base and foundation | Support the crane and transfer its weight and lifting forces to the ground. A fixed-base crane is typically anchored to a concrete foundation. |\n| Mast (tower) | The vertical steel framework that gives the crane its height and supports the upper assembly. |\n| Slewing unit (turntable) | Rotates the upper assembly, including the jib and counter-jib, around the mast. |\n| Jib (working arm) | The long arm that provides horizontal reach and supports the trolley. |\n| Trolley | Travels along the jib to move the hook closer to or farther from the mast. |\n| Hoist winch and wire rope | The winch winds or unwinds the rope to raise or lower the hook. |\n| Hook block | The hook-and-pulley assembly where the load’s slings or other lifting gear attach. |\n| Counter-jib | The shorter arm opposite the working jib. It supports the counterweights and often carries the hoist machinery. |\n| Counterweights | Offset the turning effect of the working jib and suspended load, helping keep the crane stable. |\n| Operator’s cab and controls | Give the operator a place to control and monitor the crane’s movements. |\nThese are the main parts of a typical fixed-base, top-slewing crane; layouts vary by model. (morrow.com)\nA luffing-jib tower crane changes its reach by raising or lowering the angle of the jib rather than moving a trolley along a horizontal arm. (liebherr.com)",
+  "claims": [
+   {
+    "sentence": "A typical horizontal-jib tower crane uses three motions to place a load: the hoist moves it up and down, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower. (morrow.com)",
+    "start": 0,
+    "end": 218,
+    "claim": "A typical horizontal-jib tower crane uses three motions to place a load: the hoist moves it up and down, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Base and foundation | Support the crane and transfer its weight and lifting forces to the ground. A fixed-base crane is typically anchored to a concrete foundation. |",
+    "start": 249,
+    "end": 417,
+    "claim": "The base and foundation of a tower crane support the crane and transfer its weight and lifting forces to the ground.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Base and foundation | Support the crane and transfer its weight and lifting forces to the ground. A fixed-base crane is typically anchored to a concrete foundation. |",
+    "start": 249,
+    "end": 417,
+    "claim": "A fixed-base crane is typically anchored to a concrete foundation.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Mast (tower) | The vertical steel framework that gives the crane its height and supports the upper assembly. |",
+    "start": 418,
+    "end": 530,
+    "claim": "The mast (tower) is the vertical steel framework that gives the crane its height and supports the upper assembly.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Slewing unit (turntable) | Rotates the upper assembly, including the jib and counter-jib, around the mast. |",
+    "start": 531,
+    "end": 641,
+    "claim": "The slewing unit (turntable) rotates the upper assembly, including the jib and counter-jib, around the mast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Jib (working arm) | The long arm that provides horizontal reach and supports the trolley. |",
+    "start": 642,
+    "end": 735,
+    "claim": "The jib (working arm) is the long arm that provides horizontal reach and supports the trolley.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Trolley | Travels along the jib to move the hook closer to or farther from the mast. |",
+    "start": 736,
+    "end": 824,
+    "claim": "The trolley travels along the jib to move the hook closer to or farther from the mast.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Hoist winch and wire rope | The winch winds or unwinds the rope to raise or lower the hook. |",
+    "start": 825,
+    "end": 920,
+    "claim": "The hoist winch winds or unwinds the wire rope to raise or lower the hook.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Hook block | The hook-and-pulley assembly where the load’s slings or other lifting gear attach. |",
+    "start": 921,
+    "end": 1020,
+    "claim": "The hook block is the hook-and-pulley assembly where the load's slings or other lifting gear attach.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Counter-jib | The shorter arm opposite the working jib. It supports the counterweights and often carries the hoist machinery. |",
+    "start": 1021,
+    "end": 1150,
+    "claim": "The counter-jib is the shorter arm opposite the working jib.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Counter-jib | The shorter arm opposite the working jib. It supports the counterweights and often carries the hoist machinery. |",
+    "start": 1021,
+    "end": 1150,
+    "claim": "The counter-jib supports the counterweights and often carries the hoist machinery.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Counterweights | Offset the turning effect of the working jib and suspended load, helping keep the crane stable. |",
+    "start": 1151,
+    "end": 1267,
+    "claim": "Counterweights offset the turning effect of the working jib and suspended load, helping keep the crane stable.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Operator’s cab and controls | Give the operator a place to control and monitor the crane’s movements. |",
+    "start": 1268,
+    "end": 1373,
+    "claim": "The operator's cab and controls give the operator a place to control and monitor the crane's movements.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "These are the main parts of a typical fixed-base, top-slewing crane; layouts vary by model. (morrow.com)",
+    "start": 1374,
+    "end": 1478,
+    "claim": "The listed parts are the main parts of a typical fixed-base, top-slewing crane, and layouts vary by model.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A luffing-jib tower crane changes its reach by raising or lowering the angle of the jib rather than moving a trolley along a horizontal arm. (liebherr.com)",
+    "start": 1479,
+    "end": 1634,
+    "claim": "A luffing-jib tower crane changes its reach by raising or lowering the angle of the jib rather than moving a trolley along a horizontal arm.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.liebherr.com/en-int/tower-cranes/products/top-slewing-cranes/luffing-hc-l-series-7500233?utm_source=openai",
+      "host": "liebherr.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes luffing jib cranes and their adjustable jib reach and level luffing, but never explains that reach changes by raising or lowering the jib angle as opposed to trolley movement along a horizontal arm."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 15,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 12
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001341,
+   "usd_per_claim": 8.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0013,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "page_check",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

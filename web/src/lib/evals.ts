@@ -39,6 +39,18 @@ export const checkerModel = evals.checker_agreement.product_checker as "claude-s
 /** Deliberately broken claims the product's checker refused to pass. */
 export const caught = evals.checker_agreement.error_detection_on_built_pairs[checkerModel].all_built;
 
+/**
+ * How often the auditor is right, on 1,100 human-labelled LLM-AggreFact rows it was never tuned
+ * on (D-040). Partial is its own verdict, so "flags" are not-on-the-page and contradicted.
+ */
+const POOLED = evals["aggrefact_pooled-dev550b+test2_q-haiku_p-haiku"];
+export const auditorAccuracy = {
+  rows: POOLED.rows,
+  flags: POOLED.two_judges.partial_as_its_own_verdict.flag_precision,
+  supported: POOLED.two_judges.supported_precision,
+  coverage: POOLED.two_judges.coverage,
+};
+
 export function nastyTotals() {
   const cases = Object.values(evals.nasty.cases);
   return {

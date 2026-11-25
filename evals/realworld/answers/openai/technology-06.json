@@ -1,0 +1,11 @@
+{
+ "id": "technology-06",
+ "tool": "web search",
+ "question": "What was the SharePoint 'ToolShell' vulnerability exploited in 2025, and who was affected?",
+ "model": "gpt-6.2-sol",
+ "made_at": "2026-11-24T20:44:43+00:00",
+ "text": "**ToolShell** was a chain of Microsoft SharePoint Server vulnerabilities exploited in July 2025. It let attackers run code on vulnerable servers remotely **without signing in**. Attackers could steal cryptographic keys to retain access, and Microsoft observed some attackers deploying ransomware. The original chain combined **CVE-2025-49706** and **CVE-2025-49704**; the July response also addressed the critical zero-day **CVE-2025-53770** and the related **CVE-2025-53771**. ([content.govdelivery.com](https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ecbd7d?utm_source=openai))\n\n**Who was affected:** Organizations running on-premises SharePoint Server, especially servers exposed to the internet. Affected versions included SharePoint Server 2016, 2019, and Subscription Edition. **SharePoint Online in Microsoft 365 was not affected.** ([cert.europa.eu](https://cert.europa.eu/publications/security-advisories/2025-027/pdf))\n\nEye Security identified **more than 400 compromised systems worldwide**—a count of systems, not organizations. Victims spanned government, education, and private industry. The U.S. Department of Energy confirmed that it was affected, including the **National Nuclear Security Administration**, and said the impact was limited. *The Washington Post* also reported that the **National Institutes of Health** was hit. ([labs.eye.security](https://labs.eye.security/sharepoint-under-siege/?utm_source=openai))",
+ "citations": 3,
+ "ended": "completed",
+ "usd": 0.0647
+}

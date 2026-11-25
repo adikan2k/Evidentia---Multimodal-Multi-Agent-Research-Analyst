@@ -1,0 +1,695 @@
+{
+ "id": "health-02",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:48:55+00:00",
+ "report": {
+  "answer_text": "The WHO Pandemic Agreement, adopted by the World Health Assembly on May 20, 2025, sets out what countries that become parties will do to prevent pandemics, prepare for them, and respond together. A central goal is to make vaccines, tests, and treatments available according to public-health need, not just countries’ ability to pay. (apps.who.int)\nIts main commitments are to:\nStrengthen prevention and preparedness. Improve disease surveillance and early warning, maintain national preparedness plans, and build resilient health systems and a trained health workforce. The agreement calls for a *One Health* approach, which recognizes the links between human, animal, and environmental health. (apps.who.int)\nMake pandemic supplies more accessible. Cooperate on research and development, expand manufacturing across regions, promote technology transfer, and coordinate procurement and distribution through a global supply-chain network. (apps.who.int)\nShare information and the benefits it helps produce. The agreement provides for a Pathogen Access and Benefit-Sharing system that pairs rapid sharing of pathogen samples and genetic sequence data with equitable access to resulting vaccines, tests, and treatments. During a pandemic emergency, participating manufacturers would aim to make 20% of their real-time production of relevant products available to WHO for allocation based on public-health need. That target applies to participating manufacturers, not to each country’s stockpile. (apps.who.int)\nCooperate on financing and implementation. Support preparedness and response at home and internationally, including through a financing mechanism intended to help countries with fewer resources build capacity. (apps.who.int)\nAdoption did not make the agreement binding. As of November 24, 2026, the benefit-sharing annex was still under negotiation, with countries aiming to bring it to the World Health Assembly in May 2027. The agreement opens for signature after the annex is adopted and enters into force 30 days after the 60th ratification. It does not give WHO authority to impose lockdowns, vaccine mandates, or travel restrictions. (who.int)",
+  "claims": [
+   {
+    "sentence": "The WHO Pandemic Agreement, adopted by the World Health Assembly on May 20, 2025, sets out what countries that become parties will do to prevent pandemics, prepare for them, and respond together.",
+    "start": 0,
+    "end": 195,
+    "claim": "The WHO Pandemic Agreement was adopted by the World Health Assembly on May 20, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "1. ADOPTS, pursuant to Article 19 of the Constitution of the World Health Organization, the WHO Pandemic Agreement as annexed to this resolution",
+        "pages": [
+         1,
+         1
+        ],
+        "context": null
+       },
+       {
+        "text": "Third plenary meeting, 20 May 2025 A78/VR/3",
+        "pages": [
+         35,
+         35
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote shows the World Health Assembly adopting the WHO Pandemic Agreement by resolution, and the second places that session at the Third plenary meeting on 20 May 2025, so the claim's adoption body and date are both backed.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies the resolution as dated 20 May 2025 and states that the World Health Assembly adopts the WHO Pandemic Agreement."
+     }
+    ]
+   },
+   {
+    "sentence": "The WHO Pandemic Agreement, adopted by the World Health Assembly on May 20, 2025, sets out what countries that become parties will do to prevent pandemics, prepare for them, and respond together.",
+    "start": 0,
+    "end": 195,
+    "claim": "The WHO Pandemic Agreement sets out what countries that become parties will do to prevent pandemics, prepare for them, and respond together.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Chapter II. The world together equitably: Achieving equity in, for and through pandemic prevention, preparedness and response",
+        "pages": [
+         6,
+         6
+        ],
+        "context": null
+       },
+       {
+        "text": "The Parties shall take steps through international collaboration, in bilateral, regional and multilateral settings, to progressively strengthen pandemic prevention and surveillance measures and capacities",
+        "pages": [
+         11,
+         11
+        ],
+        "context": null
+       },
+       {
+        "text": "Each Party shall develop, in accordance with national and/or domestic context, comprehensive, multisectoral, and, as appropriate, regional, and national pandemic prevention, preparedness and response plan(s)",
+        "pages": [
+         26,
+         26
+        ],
+        "context": null
+       },
+       {
+        "text": "The Parties shall cooperate, directly or through relevant international organizations, subject to national and/or domestic law and available resources, to sustainably strengthen the pandemic prevention, preparedness and response capacities of all Parties",
+        "pages": [
+         26,
+         26
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show Parties must strengthen pandemic prevention and surveillance, develop prevention, preparedness and response plans, and cooperate on prevention, preparedness and response capacities, which covers the claim's prevent, prepare and respond-together points.",
+      "page_judged": "supported",
+      "page_reason": "The page describes obligations for the Parties, including pandemic prevention and preparedness plans, stronger capacities, and cooperation in pandemic prevention, preparedness and response."
+     }
+    ]
+   },
+   {
+    "sentence": "A central goal is to make vaccines, tests, and treatments available according to public-health need, not just countries’ ability to pay. (apps.who.int)",
+    "start": 196,
+    "end": 347,
+    "claim": "A central goal of the WHO Pandemic Agreement is to make vaccines, tests, and treatments available according to public-health need, not just countries' ability to pay.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The GSCL Network shall be developed, coordinated and convened by the World Health Organization in full consultation with the Parties",
+        "pages": [
+         23,
+         23
+        ],
+        "context": null
+       },
+       {
+        "text": "ensure equitable, timely, rapid, safe, and affordable access to pandemic-related health products for countries in need during public health emergencies of international concern, including pandemic emergencies",
+        "pages": [
+         23,
+         23
+        ],
+        "context": null
+       },
+       {
+        "text": "the distribution of these vaccines, therapeutics, and diagnostics shall be on the basis of public health risk and need, with particular attention to the needs of developing countries",
+        "pages": [
+         22,
+         22
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the core point that access and distribution of pandemic health products should follow public health need and equity, with attention to developing countries, but they do not explicitly state a 'central goal' framing or contrast with ability to pay.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes equitable access and allocation based on public-health risk and need, but does not call this a central goal or explicitly contrast need with countries’ ability to pay."
+     }
+    ]
+   },
+   {
+    "sentence": "Strengthen prevention and preparedness. Improve disease surveillance and early warning, maintain national preparedness plans, and build resilient health systems and a trained health workforce. The agreement calls for a *One Health* approach, which recognizes the links between human, animal, and environmental health. (apps.who.int)",
+    "start": 377,
+    "end": 709,
+    "claim": "The agreement's commitments include improving disease surveillance and early warning, maintaining national preparedness plans, and building resilient health systems and a trained health workforce.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "(c) coordinated multisectoral surveillance to detect and conduct risk assessment of emerging or re-emerging pathogens with pandemic potential",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       },
+       {
+        "text": "(d) early detection and control measures at the community level",
+        "pages": [
+         12,
+         12
+        ],
+        "context": null
+       },
+       {
+        "text": "Each Party, within the means and resources at its disposal, shall take appropriate measures to develop, strengthen and maintain a resilient health system, particularly primary health care, for pandemic prevention, preparedness and response",
+        "pages": [
+         14,
+         14
+        ],
+        "context": null
+       },
+       {
+        "text": "Each Party shall monitor its preparedness capacities, and periodically assess",
+        "pages": [
+         14,
+         14
+        ],
+        "context": null
+       },
+       {
+        "text": "Each Party, in line with its respective capacities and national circumstances, shall take the appropriate measures with the aim to develop, strengthen, protect, safeguard, retain and invest in a multidisciplinary, skilled, adequate, trained, domestic health and care workforce",
+        "pages": [
+         14,
+         14
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back surveillance and early detection, resilient health systems, and a trained health workforce, and mention monitoring preparedness capacities, but nothing explicitly says the agreement commits to maintaining national preparedness plans.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes surveillance and early detection, resilient health systems, and a skilled, trained health workforce, but does not state a commitment to maintain national preparedness plans."
+     }
+    ]
+   },
+   {
+    "sentence": "The agreement calls for a *One Health* approach, which recognizes the links between human, animal, and environmental health. (apps.who.int)",
+    "start": 570,
+    "end": 709,
+    "claim": "The agreement calls for a One Health approach, which recognizes the links between human, animal, and environmental health.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "(b) “One Health approach” for pandemic prevention, preparedness and response recognizes that the health of humans is closely linked and interdependent with the health of domestic and wild animals, as well as plants and the wider environment (including ecosystems)",
+        "pages": [
+         9,
+         9
+        ],
+        "context": null
+       },
+       {
+        "text": "The Parties shall promote a One Health approach for pandemic prevention, preparedness and response, recognizing that the health of people is interconnected with animal health and the environment",
+        "pages": [
+         13,
+         13
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the agreement's One Health approach for pandemic prevention, preparedness and response recognizes the interdependence of human health with animal (domestic and wild) and environmental health, and that the Parties shall promote it, which covers everything the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The agreement calls for promoting a One Health approach and describes human health as interconnected with animal health and the environment."
+     }
+    ]
+   },
+   {
+    "sentence": "Make pandemic supplies more accessible. Cooperate on research and development, expand manufacturing across regions, promote technology transfer, and coordinate procurement and distribution through a global supply-chain network. (apps.who.int)",
+    "start": 710,
+    "end": 952,
+    "claim": "The agreement's commitments include cooperating on research and development, expanding manufacturing across regions, promoting technology transfer, and coordinating procurement and distribution through a global supply-chain network.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Article 9 Research and development 1. The Parties shall cooperate, as appropriate, to build, strengthen and sustain geographically diverse capacities and institutions for research and development",
+        "pages": [
+         16,
+         16
+        ],
+        "context": null
+       },
+       {
+        "text": "Article 10 Sustainable and geographically diversified local production 1. The Parties shall take measures, as appropriate, to achieve more equitable geographical distribution and rapid scale-up of the global production of pandemic-related health products",
+        "pages": [
+         18,
+         18
+        ],
+        "context": null
+       },
+       {
+        "text": "Each Party shall, in order to enable the sustainable and geographically diversified production of pandemic-related health products",
+        "pages": [
+         19,
+         19
+        ],
+        "context": null
+       },
+       {
+        "text": "The “Global Supply Chain and Logistics Network” (hereinafter the “GSCL Network”) is hereby established to enhance, facilitate, and work to remove barriers and ensure equitable, timely, rapid, safe, and affordable access to pandemic-related health products",
+        "pages": [
+         23,
+         23
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back R&D cooperation (Article 9), geographically diversified production (Article 10) and a Global Supply Chain and Logistics Network, but nothing shown mentions technology transfer, and the network's procurement and distribution coordination is only loosely implied by 'enhance, facilitate' access.",
+      "page_judged": "not_supported",
+      "page_reason": "The page supports commitments on research cooperation, geographically diversified production, and technology transfer, and establishes a global supply-chain network to facilitate access, but it does not state that the network coordinates procurement and distribution."
+     }
+    ]
+   },
+   {
+    "sentence": "Share information and the benefits it helps produce. The agreement provides for a Pathogen Access and Benefit-Sharing system that pairs rapid sharing of pathogen samples and genetic sequence data with equitable access to resulting vaccines, tests, and treatments.",
+    "start": 953,
+    "end": 1216,
+    "claim": "The agreement provides for a Pathogen Access and Benefit-Sharing system that pairs rapid sharing of pathogen samples and genetic sequence data with equitable access to resulting vaccines, tests, and treatments.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the rapid and timely sharing of PABS Materials and Sequence Information and, on an equal footing, the rapid, timely, fair and equitable sharing of benefits, both monetary and non-monetary, including annual monetary contributions, vaccines, therapeutics and diagnostics",
+        "pages": [
+         21,
+         21
+        ],
+        "context": null
+       },
+       {
+        "text": "each participating manufacturer15 shall make available to the World Health Organization, pursuant to legally binding contracts signed with the World Health Organization, rapid access targeting 20% of their real time production of safe, quality and effective vaccines, therapeutics, and diagnostics",
+        "pages": [
+         22,
+         22
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states the rapid sharing of PABS Materials and Sequence Information on an equal footing with fair and equitable sharing of benefits, including vaccines, therapeutics and diagnostics, which covers each element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page establishes a PABS System for rapid sharing of pathogen materials and sequence information alongside fair and equitable sharing of benefits, including vaccines, therapeutics, and diagnostics arising from their use."
+     }
+    ]
+   },
+   {
+    "sentence": "During a pandemic emergency, participating manufacturers would aim to make 20% of their real-time production of relevant products available to WHO for allocation based on public-health need.",
+    "start": 1217,
+    "end": 1407,
+    "claim": "During a pandemic emergency, participating manufacturers would aim to make 20% of their real-time production of relevant products available to WHO for allocation based on public-health need.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "rapid access targeting 20% of their real time production of safe, quality and effective vaccines, therapeutics, and diagnostics for the pathogen causing the pandemic emergency",
+        "pages": [
+         22,
+         22
+        ],
+        "context": null
+       },
+       {
+        "text": "the distribution of these vaccines, therapeutics, and diagnostics shall be on the basis of public health risk and need",
+        "pages": [
+         22,
+         22
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that manufacturers target 20% of their real-time production of vaccines, therapeutics and diagnostics for the pandemic pathogen for rapid access, with distribution based on public health risk and need, which covers the claim's 20%, real-time production, and allocation based on public-health need.",
+      "page_judged": "supported",
+      "page_reason": "The page says participating manufacturers shall provide WHO rapid access targeting 20% of real-time production, and that distribution of those products is based on public-health risk and need."
+     }
+    ]
+   },
+   {
+    "sentence": "That target applies to participating manufacturers, not to each country’s stockpile. (apps.who.int)",
+    "start": 1408,
+    "end": 1507,
+    "claim": "The 20% production target applies to participating manufacturers, not to each country's stockpile.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf?utm_source=openai",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "each participating manufacturer15 shall make available to the World Health Organization, pursuant to legally binding contracts signed with the World Health Organization, rapid access targeting 20% of their real time production of safe, quality and effective vaccines, therapeutics, and diagnostics for the pathogen causing the pandemic emergency",
+        "pages": [
+         22,
+         22
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that each participating manufacturer must make available rapid access targeting 20% of its real-time production to the WHO, which backs the claim that the target applies to manufacturers, though it does not explicitly mention national stockpiles.",
+      "page_judged": "supported",
+      "page_reason": "The page assigns the 20% real-time production target to each participating manufacturer and discusses national stockpiles separately, without applying that target to them."
+     }
+    ]
+   },
+   {
+    "sentence": "Cooperate on financing and implementation. Support preparedness and response at home and internationally, including through a financing mechanism intended to help countries with fewer resources build capacity. (apps.who.int)",
+    "start": 1508,
+    "end": 1732,
+    "claim": "The agreement includes a financing mechanism intended to help countries with fewer resources build capacity.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://apps.who.int/gb/ebwha/pdf_files/WHA78/A78_R1-en.pdf",
+      "host": "apps.who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A “Coordinating Financial Mechanism” (hereinafter “the Mechanism”) is hereby established to promote sustainable financing for the implementation of the WHO Pandemic Agreement, to support strengthening and expanding capacities for pandemic prevention, preparedness and response, and contribute to the prompt availability of surge financing response necessary as of day zero, particularly in developing country Parties.",
+        "pages": [
+         27,
+         27
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote establishes a Coordinating Financial Mechanism to support strengthening capacities for pandemic prevention, preparedness and response, particularly in developing country Parties, which backs the claim's financing mechanism for less-resourced countries building capacity.",
+      "page_judged": "supported",
+      "page_reason": "The page establishes a Coordinating Financial Mechanism to support pandemic-prevention, preparedness, and response capacities, particularly in developing countries, and provides for assistance to Parties lacking resources."
+     }
+    ]
+   },
+   {
+    "sentence": "Adoption did not make the agreement binding.",
+    "start": 1733,
+    "end": 1777,
+    "claim": "Adoption of the WHO Pandemic Agreement did not make the agreement binding.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.who.int/news/item/13-11-2026-member-states-reiterate-commitment-to-finalize-pandemic-agreement-pabs-annex-by-may-2027?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the WHO Pandemic Agreement was adopted and discusses a legally binding framework for the PABS Annex, but it does not state whether adopting the Agreement made it binding."
+     }
+    ]
+   },
+   {
+    "sentence": "As of November 24, 2026, the benefit-sharing annex was still under negotiation, with countries aiming to bring it to the World Health Assembly in May 2027.",
+    "start": 1778,
+    "end": 1933,
+    "claim": "As of November 24, 2026, the benefit-sharing annex was still under negotiation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.who.int/news/item/13-11-2026-member-states-reiterate-commitment-to-finalize-pandemic-agreement-pabs-annex-by-may-2027?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "supported",
+      "page_reason": "The page reports ongoing PABS Annex negotiations on November 13, 2026, and says further negotiations were planned for 2027, supporting that the benefit-sharing annex remained under negotiation on November 24, 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "As of November 24, 2026, the benefit-sharing annex was still under negotiation, with countries aiming to bring it to the World Health Assembly in May 2027.",
+    "start": 1778,
+    "end": 1933,
+    "claim": "Countries aim to bring the benefit-sharing annex to the World Health Assembly in May 2027.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.who.int/news/item/13-11-2026-member-states-reiterate-commitment-to-finalize-pandemic-agreement-pabs-annex-by-may-2027?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "reaffirming their commitment to finalizing the Annex for its consideration by the World Health Assembly in May 2027",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states countries are committed to finalizing the Annex for consideration by the World Health Assembly in May 2027, which backs the claim's aim and date; the quote does not explicitly name the annex as benefit-sharing, but the Annex being referred to is the benefit-sharing annex in context.",
+      "page_judged": "supported",
+      "page_reason": "The page says Member States reaffirmed their commitment to finalize the PABS Annex for consideration by the World Health Assembly in May 2027."
+     }
+    ]
+   },
+   {
+    "sentence": "It does not give WHO authority to impose lockdowns, vaccine mandates, or travel restrictions. (who.int)",
+    "start": 2054,
+    "end": 2157,
+    "claim": "The agreement does not give WHO authority to impose lockdowns, vaccine mandates, or travel restrictions.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.who.int/news/item/13-11-2026-member-states-reiterate-commitment-to-finalize-pandemic-agreement-pabs-annex-by-may-2027?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses negotiations on the PABS Annex and pandemic cooperation but does not state whether the Agreement gives WHO authority to impose lockdowns, vaccine mandates, or travel restrictions."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 8,
+    "partial": 3,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 13,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.1538,
+   "partly_backed": 3,
+   "supported_share_of_cited": 0.5714,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.021601,
+   "usd_per_claim": 0.001543
+  },
+  "cost": {
+   "total_usd": 0.0216,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 24,
+     "usd": 0.0154
+    },
+    {
+     "node": "page_check",
+     "calls": 14,
+     "usd": 0.0034
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0018
+    }
+   ]
+  }
+ }
+}

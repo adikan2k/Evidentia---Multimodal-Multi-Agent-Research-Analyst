@@ -1,0 +1,504 @@
+{
+ "id": "nq-03-r3",
+ "tool": "claude",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+   "read": true,
+   "chars": 1323
+  }
+ ],
+ "usd": 0.001807,
+ "report": {
+  "answer_text": "Erling Haaland holds the record. He scored 36 goals in 35 appearances for Manchester City in 2022-23.[1]\nHis total beat the old record. The previous mark of 34 was shared by Alan Shearer and Andrew Cole.[1]\nThose two set their totals in 42-game seasons. That was before the league shrank from 22 teams to 20 in 1995, so today's seasons are 38 games.[1]\nIn a 38-game season, the next best is Mohamed Salah, with 32 goals for Liverpool in 2017–18.[2]\nTop single-season totals:\n| Goals | Player | Season |\n|---|---|---|\n| 36 | Erling Haaland (Man City) | 2022-23 |\n| 34 | Alan Shearer (Blackburn) | 1994-95 |\n| 34 | Andy Cole (Newcastle) | 1993-94 |\n| 32 | Mohamed Salah (Liverpool) | 2017-18 |\n| 31 | Luis Suárez (Liverpool) | 2013-14 |\nCristiano Ronaldo also scored 31 in 2007–08.[2]\nThe 2026-27 season is still in progress, so the record could change in May.",
+  "claims": [
+   {
+    "sentence": "Erling Haaland holds the record. He scored 36 goals in 35 appearances for Manchester City in 2022-23.[1]",
+    "start": 0,
+    "end": 104,
+    "claim": "Erling Haaland holds the record for most league goals in a single season.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Norwegian striker broke the league's long-standing scoring record during the 2022-23 season, netting 36 goals in 35 appearances for Manchester City.",
+        "pages": null,
+        "context": {
+         "before": "Many of the most prolific goal scorers in the history of major soccer have found success in the Premier League. One of those dominant offensive players is Erling Haaland.\n",
+         "after": " He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\nHaaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as"
+        }
+       },
+       {
+        "text": "36 - Erling Haaland (Manchester City), 2022-23",
+        "pages": null,
+        "context": {
+         "before": "years.\nHaaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as opposed to the current 38-match campaign.\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n",
+         "after": "\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n34 - Andrew Cole (Newcastle United), 1993-94*\n32 - Mohamed Salah (Liverpool), 2017-18\n31 - Luis Suárez (Liverpool), 2013-14\n31 - Cristiano Ronaldo (Manchester United), 2007-08\n31 - Alan Shearer (Blackburn Rovers), 1995-96\n31 - Alan Shearer (Blackburn Rovers), 1993-94*\nCheck out the ESPN soccer hub page for the latest news, analysis, scores,"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back that Haaland scored 36 league goals in a single season (2022-23) and broke the league's long-standing scoring record, but they do not explicitly state he currently holds the record for most league goals in a single season.",
+      "page_judged": "supported",
+      "page_reason": "The page says Haaland scored 36 goals in the 2022-23 Premier League season, breaking the previous record of 34, and lists him at the top of the most-goals-in-a-season table.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Erling Haaland holds the record. He scored 36 goals in 35 appearances for Manchester City in 2022-23.[1]",
+    "start": 0,
+    "end": 104,
+    "claim": "Erling Haaland scored 36 goals in 35 appearances for Manchester City in 2022-23.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "netting 36 goals in 35 appearances for Manchester City",
+        "pages": null,
+        "context": {
+         "before": "Many of the most prolific goal scorers in the history of major soccer have found success in the Premier League. One of those dominant offensive players is Erling Haaland.\nThe Norwegian striker broke the league's long-standing scoring record during the 2022-23 season, ",
+         "after": ". He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\nHaaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as"
+        }
+       }
+      ],
+      "quote_reason": "The quote backs the 36 goals in 35 appearances for Manchester City figures, but it does not mention Erling Haaland by name or the 2022-23 season.",
+      "page_judged": "supported",
+      "page_reason": "The page states Haaland netted 36 goals in 35 appearances for Manchester City during the 2022-23 season, matching the claim exactly.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "His total beat the old record. The previous mark of 34 was shared by Alan Shearer and Andrew Cole.[1]",
+    "start": 105,
+    "end": 206,
+    "claim": "Erling Haaland's total of 36 beat the old record.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Haaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole.",
+        "pages": null,
+        "context": {
+         "before": "success in the Premier League. One of those dominant offensive players is Erling Haaland.\nThe Norwegian striker broke the league's long-standing scoring record during the 2022-23 season, netting 36 goals in 35 appearances for Manchester City. He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\n",
+         "after": " Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as opposed to the current 38-match campaign.\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n34 -"
+        }
+       }
+      ],
+      "quote_reason": "The quote states Haaland's 36 goals surpassed the previous record of 34, which backs every fact in the claim that his total of 36 beat the old record.",
+      "page_judged": "supported",
+      "page_reason": "The page states Haaland scored 36 goals in 2022-23, surpassing the previous record of 34 held by Shearer and Cole, so the claim that his 36 beat the old record is supported.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "His total beat the old record. The previous mark of 34 was shared by Alan Shearer and Andrew Cole.[1]",
+    "start": 105,
+    "end": 206,
+    "claim": "The previous single-season record was 34 goals, shared by Alan Shearer and Andrew Cole.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Haaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole.",
+        "pages": null,
+        "context": {
+         "before": "success in the Premier League. One of those dominant offensive players is Erling Haaland.\nThe Norwegian striker broke the league's long-standing scoring record during the 2022-23 season, netting 36 goals in 35 appearances for Manchester City. He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\n",
+         "after": " Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as opposed to the current 38-match campaign.\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n34 -"
+        }
+       }
+      ],
+      "quote_reason": "The quote states the previous record was 34 goals shared by Alan Shearer and Andrew Cole, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Haaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole, and the table lists both players at 34 goals in their respective seasons.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Those two set their totals in 42-game seasons. That was before the league shrank from 22 teams to 20 in 1995, so today's seasons are 38 games.[1]",
+    "start": 207,
+    "end": 352,
+    "claim": "Alan Shearer and Andrew Cole set their totals of 34 in 42-game seasons.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Haaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as opposed to the current 38-match campaign.",
+        "pages": null,
+        "context": {
+         "before": "success in the Premier League. One of those dominant offensive players is Erling Haaland.\nThe Norwegian striker broke the league's long-standing scoring record during the 2022-23 season, netting 36 goals in 35 appearances for Manchester City. He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\n",
+         "after": "\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n34 - Andrew Cole (Newcastle United), 1993-94*\n32 - Mohamed Salah (Liverpool), 2017-18\n31 - Luis Suárez (Liverpool), 2013-14\n31 - Cristiano Ronaldo (Manchester United), 2007-08\n31 - Alan Shearer"
+        }
+       },
+       {
+        "text": "34 - Alan Shearer (Blackburn Rovers), 1994-95*",
+        "pages": null,
+        "context": {
+         "before": "record of 34 shared by Alan Shearer and Andrew Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as opposed to the current 38-match campaign.\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n",
+         "after": "\n34 - Andrew Cole (Newcastle United), 1993-94*\n32 - Mohamed Salah (Liverpool), 2017-18\n31 - Luis Suárez (Liverpool), 2013-14\n31 - Cristiano Ronaldo (Manchester United), 2007-08\n31 - Alan Shearer (Blackburn Rovers), 1995-96\n31 - Alan Shearer (Blackburn Rovers), 1993-94*\nCheck out the ESPN soccer hub page for the latest news, analysis, scores, schedules and more."
+        }
+       },
+       {
+        "text": "34 - Andrew Cole (Newcastle United), 1993-94*",
+        "pages": null,
+        "context": {
+         "before": "Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, meaning they had 42 games in their seasons as opposed to the current 38-match campaign.\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n",
+         "after": "\n32 - Mohamed Salah (Liverpool), 2017-18\n31 - Luis Suárez (Liverpool), 2013-14\n31 - Cristiano Ronaldo (Manchester United), 2007-08\n31 - Alan Shearer (Blackburn Rovers), 1995-96\n31 - Alan Shearer (Blackburn Rovers), 1993-94*\nCheck out the ESPN soccer hub page for the latest news, analysis, scores, schedules and more."
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that Shearer and Cole each set the record of 34 goals and that their seasons had 42 games, matching the claim's totals and season length.",
+      "page_judged": "supported",
+      "page_reason": "The page lists Alan Shearer (1994-95*) and Andrew Cole (1993-94*) each with 34 goals, with the asterisk denoting 42-game seasons, and states both set their records before the league was reduced to 20 teams in 1995.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Those two set their totals in 42-game seasons. That was before the league shrank from 22 teams to 20 in 1995, so today's seasons are 38 games.[1]",
+    "start": 207,
+    "end": 352,
+    "claim": "The league shrank from 22 teams to 20 in 1995.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995",
+        "pages": null,
+        "context": {
+         "before": "Norwegian striker broke the league's long-standing scoring record during the 2022-23 season, netting 36 goals in 35 appearances for Manchester City. He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\nHaaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole. ",
+         "after": ", meaning they had 42 games in their seasons as opposed to the current 38-match campaign.\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n34 - Andrew Cole (Newcastle United), 1993-94*\n32 - Mohamed Salah (Liverpool), 2017-18\n31 - Luis Suárez"
+        }
+       }
+      ],
+      "quote_reason": "The quote states the league was reduced from 22 teams to 20 in 1995, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the league 'was reduced from 22 teams to 20 in 1995', which matches the claim's year, team counts, and direction of change.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "Those two set their totals in 42-game seasons. That was before the league shrank from 22 teams to 20 in 1995, so today's seasons are 38 games.[1]",
+    "start": 207,
+    "end": 352,
+    "claim": "Today's league seasons are 38 games long.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.espn.com/soccer/story/_/id/47108090/soccer-players-most-goals-premier-league-season",
+      "host": "espn.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "meaning they had 42 games in their seasons as opposed to the current 38-match campaign.",
+        "pages": null,
+        "context": {
+         "before": "36 goals in 35 appearances for Manchester City. He also had eight assists en route to winning the Premier League Golden Boot and leading Man City to their third straight title and fifth in six years.\nHaaland's 36 goals surpassed the previous record of 34 shared by Alan Shearer and Andrew Cole. Those two both set their respective records before the league was reduced from 22 teams to 20 in 1995, ",
+         "after": "\nHere is a look at the players with the most goals in a Premier League season (* denotes 42-game season):\n36 - Erling Haaland (Manchester City), 2022-23\n34 - Alan Shearer (Blackburn Rovers), 1994-95*\n34 - Andrew Cole (Newcastle United), 1993-94*\n32 - Mohamed Salah (Liverpool), 2017-18\n31 - Luis Suárez (Liverpool), 2013-14\n31 - Cristiano Ronaldo (Manchester United), 2007-08\n31 - Alan Shearer"
+        }
+       }
+      ],
+      "quote_reason": "The quote states the current campaign is a 38-match season, which backs the claim that today's league seasons are 38 games long.",
+      "page_judged": "supported",
+      "page_reason": "The page says the current Premier League campaign is a 38-match season, contrasting it with the 42-game seasons before the 1995 reduction to 20 teams, so it supports the claim that today's seasons are 38 games.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   },
+   {
+    "sentence": "In a 38-game season, the next best is Mohamed Salah, with 32 goals for Liverpool in 2017–18.[2]",
+    "start": 353,
+    "end": 448,
+    "claim": "In a 38-game season, the next best single-season total after Haaland is Mohamed Salah's 32 goals for Liverpool in 2017–18.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.si.com/soccer/most-goals-scored-premier-league-season",
+      "host": "si.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In the 38-game era, the closest anyone has come to Haaland’s tally is Mohamed Salah, who scored 32 goals for Liverpool in 2017–18.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that in the 38-game era the closest anyone has come to Haaland's tally is Mohamed Salah with 32 goals for Liverpool in 2017–18, which matches the claim's figure, club, season and ranking.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in the 38-game era the closest anyone has come to Haaland's tally is Mohamed Salah with 32 goals for Liverpool in 2017–18, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Top single-season totals:",
+    "start": 449,
+    "end": 474,
+    "claim": "Alan Shearer scored 34 goals for Blackburn in 1994-95.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Top single-season totals:",
+    "start": 449,
+    "end": 474,
+    "claim": "Andy Cole scored 34 goals for Newcastle in 1993-94.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Top single-season totals:",
+    "start": 449,
+    "end": 474,
+    "claim": "Mohamed Salah scored 32 goals for Liverpool in 2017-18.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Top single-season totals:",
+    "start": 449,
+    "end": 474,
+    "claim": "Luis Suárez scored 31 goals for Liverpool in 2013-14.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Cristiano Ronaldo also scored 31 in 2007–08.[2]",
+    "start": 735,
+    "end": 782,
+    "claim": "Cristiano Ronaldo scored 31 goals in the 2007–08 season.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.si.com/soccer/most-goals-scored-premier-league-season",
+      "host": "si.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Cristiano Ronaldo and Luis Suárez, who scored 31 apiece in 2007–08 and 2013–14 respectively.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Cristiano Ronaldo | 31 | 34 | Manchester United | 2007–08",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that Cristiano Ronaldo scored 31 goals in the 2007–08 season, matching the claim fully.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Cristiano Ronaldo scored 31 goals in 2007–08 and his table entry lists 31 goals for Manchester United in 2007–08."
+     }
+    ]
+   },
+   {
+    "sentence": "The 2026-27 season is still in progress, so the record could change in May.",
+    "start": 783,
+    "end": 858,
+    "claim": "The 2026-27 season is still in progress.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 7,
+    "citation_unread": 0,
+    "uncited": 5
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2222,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001761,
+   "usd_per_claim": 0.000126
+  },
+  "cost": {
+   "total_usd": 0.0018,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0004
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

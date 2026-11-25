@@ -1,0 +1,570 @@
+{
+ "id": "science-04",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:45:10+00:00",
+ "report": {
+  "answer_text": "Winners: John Clarke, Michel H. Devoret and John M. Martinis shared the 2025 Nobel Prize in Physics. The prize money of SEK 11m (about $1.2m) is shared equally.[1]\nCitation: The prize was awarded \"for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit\"[1].\nThe work:\nThe laureates built an electronic circuit containing a Josephson junction. In it, Cooper pairs of electrons tunnel between two superconductors separated by an insulating barrier.[2]\nTheir superconducting system could tunnel from one state to another, as if passing straight through a wall. It also absorbed and emitted energy in doses of specific sizes, as quantum mechanics predicts.[3]\nQuantum effects like these were once thought to occur only at the atomic scale. The experiments showed they can also appear in systems large enough to see and handle.[4]\nThe Nobel committee said the work has provided opportunities for developing the next generation of quantum technology, including quantum cryptography, quantum computers, and quantum sensors.[5]\nAffiliations: Clarke is associated with UC Berkeley, Devoret with Yale and UC Santa Barbara, and Martinis with UC Santa Barbara.[4] Devoret is from France, Clarke from the UK and Martinis from the U.S.[6]",
+  "claims": [
+   {
+    "sentence": "Winners: John Clarke, Michel H. Devoret and John M. Martinis shared the 2025 Nobel Prize in Physics.",
+    "start": 0,
+    "end": 100,
+    "claim": "John Clarke, Michel H. Devoret and John M. Martinis shared the 2025 Nobel Prize in Physics.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://physicsworld.com/a/john-clarke-michel-devoret-and-john-martinis-win-the-2025-nobel-prize-for-physics/",
+      "host": "physicsworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "John Clarke, Michel Devoret and John Martinis share the 2025 Nobel Prize for Physics “for the discovery of macroscopic quantum mechanical tunnelling and energy quantization in an electric circuit”.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "John Clarke, Michel H Devoret and John M Martinis. (Courtesy: UC Berkeley; Yale University; UC Santa Barbara)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that John Clarke, Michel Devoret (Michel H Devoret) and John Martinis (John M Martinis) share the 2025 Nobel Prize for Physics, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that John Clarke, Michel Devoret and John Martinis share the 2025 Nobel Prize for Physics for discovering macroscopic quantum mechanical tunnelling and energy quantization in an electric circuit, which fully supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The prize money of SEK 11m (about $1.2m) is shared equally.[1]",
+    "start": 101,
+    "end": 163,
+    "claim": "The prize money of SEK 11m (about $1.2m) is shared equally among the laureates.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://physicsworld.com/a/john-clarke-michel-devoret-and-john-martinis-win-the-2025-nobel-prize-for-physics/",
+      "host": "physicsworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The award includes a SEK 11m prize ($1.2m), which is shared equally by the winners.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the SEK 11m prize ($1.2m) is shared equally by the winners, which covers every fact in the claim since 'laureates' and 'winners' refer to the same people.",
+      "page_judged": "supported",
+      "page_reason": "The page states the award includes a SEK 11m prize ($1.2m) which is shared equally by the winners, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Citation: The prize was awarded \"for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit\"[1].",
+    "start": 164,
+    "end": 311,
+    "claim": "The prize was awarded \"for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit\".",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://physicsworld.com/a/john-clarke-michel-devoret-and-john-martinis-win-the-2025-nobel-prize-for-physics/",
+      "host": "physicsworld.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "John Clarke, Michel Devoret and John Martinis share the 2025 Nobel Prize for Physics “for the discovery of macroscopic quantum mechanical tunnelling and energy quantization in an electric circuit”.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives the same award wording, \"for the discovery of macroscopic quantum mechanical tunnelling and energy quantization in an electric circuit\", differing from the claim only in British versus American spelling of \"quantisation\".",
+      "page_judged": "supported",
+      "page_reason": "The page quotes the Nobel citation as awarded 'for the discovery of macroscopic quantum mechanical tunnelling and energy quantization in an electric circuit', which matches the claim's wording apart from spelling variants (quantisation/quantization) and the claim's identical quoted phrase."
+     }
+    ]
+   },
+   {
+    "sentence": "The laureates built an electronic circuit containing a Josephson junction.",
+    "start": 322,
+    "end": 396,
+    "claim": "The laureates built an electronic circuit containing a Josephson junction.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aps.org/about/news/2025/10/nobel-physics-2025-winners",
+      "host": "aps.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "In it, Cooper pairs of electrons tunnel between two superconductors separated by an insulating barrier.[2]",
+    "start": 397,
+    "end": 503,
+    "claim": "In the laureates' circuit, Cooper pairs of electrons tunnel between two superconductors separated by an insulating barrier.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aps.org/about/news/2025/10/nobel-physics-2025-winners",
+      "host": "aps.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Their superconducting system could tunnel from one state to another, as if passing straight through a wall.",
+    "start": 504,
+    "end": 611,
+    "claim": "The laureates' superconducting system could tunnel from one state to another, as if passing straight through a wall.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nobelprize.org/prizes/physics/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Their superconducting electrical system could tunnel from one state to another, as if it were passing straight through a wall.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the laureates' superconducting electrical system could tunnel from one state to another as if passing straight through a wall, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the laureates' superconducting electrical system could tunnel from one state to another, as if passing straight through a wall, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "It also absorbed and emitted energy in doses of specific sizes, as quantum mechanics predicts.[3]",
+    "start": 612,
+    "end": 709,
+    "claim": "The laureates' superconducting system also absorbed and emitted energy in doses of specific sizes, as quantum mechanics predicts.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.nobelprize.org/prizes/physics/2025/popular-information/",
+      "host": "nobelprize.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "They also showed that the system absorbed and emitted energy in doses of specific sizes, just as predicted by quantum mechanics.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the system absorbed and emitted energy in doses of specific sizes as predicted by quantum mechanics, which matches the claim, though it does not explicitly name the laureates' system as superconducting in this quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the laureates showed the system absorbed and emitted energy in doses of specific sizes, just as predicted by quantum mechanics, and that the system is quantised, absorbing or emitting energy only in specific amounts."
+     }
+    ]
+   },
+   {
+    "sentence": "Quantum effects like these were once thought to occur only at the atomic scale.",
+    "start": 710,
+    "end": 789,
+    "claim": "Quantum effects like macroscopic tunnelling and energy quantisation were once thought to occur only at the atomic scale.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mdpi.com/news/13450",
+      "host": "mdpi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The experiments showed they can also appear in systems large enough to see and handle.[4]",
+    "start": 790,
+    "end": 879,
+    "claim": "The experiments showed quantum effects can also appear in systems large enough to see and handle.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mdpi.com/news/13450",
+      "host": "mdpi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Nobel committee said the work has provided opportunities for developing the next generation of quantum technology, including quantum cryptography, quantum computers, and quantum sensors.[5]",
+    "start": 880,
+    "end": 1073,
+    "claim": "The Nobel committee said the work has provided opportunities for developing the next generation of quantum technology, including quantum cryptography, quantum computers, and quantum sensors.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.thedailystar.net/news/world/news/clarke-devoret-and-martinis-win-2025-nobel-prize-physics-4003951",
+      "host": "thedailystar.net",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "\"This year's Nobel Prize in Physics has provided opportunities for developing the next generation of quantum technology, including quantum cryptography, quantum computers, and quantum sensors,\" the prize-awarding body said in a statement.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the same claim, that the work has provided opportunities for next-generation quantum technology including quantum cryptography, quantum computers, and quantum sensors, attributed to the prize-awarding body (the Nobel committee).",
+      "page_judged": "supported",
+      "page_reason": "The page quotes the prize-awarding body saying the 2025 physics prize 'has provided opportunities for developing the next generation of quantum technology, including quantum cryptography, quantum computers, and quantum sensors,' which matches the claim fully."
+     }
+    ]
+   },
+   {
+    "sentence": "Affiliations: Clarke is associated with UC Berkeley, Devoret with Yale and UC Santa Barbara, and Martinis with UC Santa Barbara.[4]",
+    "start": 1074,
+    "end": 1205,
+    "claim": "Clarke is associated with UC Berkeley.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mdpi.com/news/13450",
+      "host": "mdpi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Affiliations: Clarke is associated with UC Berkeley, Devoret with Yale and UC Santa Barbara, and Martinis with UC Santa Barbara.[4]",
+    "start": 1074,
+    "end": 1205,
+    "claim": "Devoret is associated with Yale and UC Santa Barbara.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mdpi.com/news/13450",
+      "host": "mdpi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Affiliations: Clarke is associated with UC Berkeley, Devoret with Yale and UC Santa Barbara, and Martinis with UC Santa Barbara.[4]",
+    "start": 1074,
+    "end": 1205,
+    "claim": "Martinis is associated with UC Santa Barbara.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.mdpi.com/news/13450",
+      "host": "mdpi.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Devoret is from France, Clarke from the UK and Martinis from the U.S.[6]",
+    "start": 1206,
+    "end": 1278,
+    "claim": "Devoret is from France.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.diplomatie.gouv.fr/en/french-foreign-policy/scientific-and-academic-diplomacy/events/article/nobel-prize-in-physics-2025-awarded-to-michel-devoret-and-sveriges-riksbank",
+      "host": "diplomatie.gouv.fr",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Devoret is from France, Clarke from the UK and Martinis from the U.S.[6]",
+    "start": 1206,
+    "end": 1278,
+    "claim": "Clarke is from the UK.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.diplomatie.gouv.fr/en/french-foreign-policy/scientific-and-academic-diplomacy/events/article/nobel-prize-in-physics-2025-awarded-to-michel-devoret-and-sveriges-riksbank",
+      "host": "diplomatie.gouv.fr",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Devoret is from France, Clarke from the UK and Martinis from the U.S.[6]",
+    "start": 1206,
+    "end": 1278,
+    "claim": "Martinis is from the U.S.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.diplomatie.gouv.fr/en/french-foreign-policy/scientific-and-academic-diplomacy/events/article/nobel-prize-in-physics-2025-awarded-to-michel-devoret-and-sveriges-riksbank",
+      "host": "diplomatie.gouv.fr",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 16,
+   "labels": {
+    "supported": 6,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 10,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.375,
+   "pages_cited": 6,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00538,
+   "usd_per_claim": 0.000336
+  },
+  "cost": {
+   "total_usd": 0.0054,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0019
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 6,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

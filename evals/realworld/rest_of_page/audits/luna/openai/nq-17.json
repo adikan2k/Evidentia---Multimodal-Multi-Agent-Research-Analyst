@@ -1,0 +1,274 @@
+{
+ "id": "nq-17",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:57+00:00",
+ "report": {
+  "answer_text": "In the U.S., 40 hours a week is a common full-time schedule, but it’s not a legal minimum. The Fair Labor Standards Act doesn’t define full-time employment, so employers generally set their own cutoff. (dol.gov)\nFor health coverage under the Affordable Care Act’s employer rules, full-time means averaging at least 30 hours of service per week, or 130 hours per month. (irs.gov)\nIf you’re asking about your own job, check your employee handbook or ask HR what cutoff applies to your job status and the specific benefit you’re asking about.",
+  "claims": [
+   {
+    "sentence": "In the U.S., 40 hours a week is a common full-time schedule, but it’s not a legal minimum.",
+    "start": 0,
+    "end": 90,
+    "claim": "In the U.S., 40 hours a week is a common full-time schedule.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dol.gov/agencies/whd/flsa/faq?utm_source=openai",
+      "host": "dol.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the FLSA does not define full-time employment and leaves that determination generally to the employer; it does not state that 40 hours a week is a common full-time schedule."
+     }
+    ]
+   },
+   {
+    "sentence": "In the U.S., 40 hours a week is a common full-time schedule, but it’s not a legal minimum.",
+    "start": 0,
+    "end": 90,
+    "claim": "In the U.S., 40 hours a week is not a legal minimum for full-time schedules.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dol.gov/agencies/whd/flsa/faq?utm_source=openai",
+      "host": "dol.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The FLSA does not define full-time employment or part-time employment. This is a matter generally to be determined by the employer.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The FLSA does not limit the number of hours per day or per week that employees aged 16 years and older can be required to work.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the FLSA does not define full-time employment or set an hours limit for workers 16 and older, leaving it to the employer, but they cover only the federal FLSA and say nothing about the U.S. as a whole or about a 40-hour figure specifically.",
+      "page_judged": "supported",
+      "page_reason": "The page says the FLSA does not define full-time employment and that it is generally determined by the employer, so it does not establish 40 hours per week as a federal legal minimum for full-time status."
+     }
+    ]
+   },
+   {
+    "sentence": "The Fair Labor Standards Act doesn’t define full-time employment, so employers generally set their own cutoff. (dol.gov)",
+    "start": 91,
+    "end": 211,
+    "claim": "The Fair Labor Standards Act does not define full-time employment.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dol.gov/agencies/whd/flsa/faq?utm_source=openai",
+      "host": "dol.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The FLSA does not define full-time employment or part-time employment.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the FLSA does not define full-time employment, which is exactly what the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the FLSA does not define full-time employment."
+     }
+    ]
+   },
+   {
+    "sentence": "The Fair Labor Standards Act doesn’t define full-time employment, so employers generally set their own cutoff. (dol.gov)",
+    "start": 91,
+    "end": 211,
+    "claim": "Employers generally set their own cutoff for full-time employment under the Fair Labor Standards Act.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.dol.gov/agencies/whd/flsa/faq?utm_source=openai",
+      "host": "dol.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The FLSA does not define full-time employment or part-time employment. This is a matter generally to be determined by the employer.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the FLSA does not define full-time employment and that it is generally determined by the employer, which backs the claim that employers generally set their own cutoff.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the FLSA does not define full-time employment and that this is generally determined by the employer."
+     }
+    ]
+   },
+   {
+    "sentence": "For health coverage under the Affordable Care Act’s employer rules, full-time means averaging at least 30 hours of service per week, or 130 hours per month. (irs.gov)",
+    "start": 212,
+    "end": 378,
+    "claim": "For health coverage under the Affordable Care Act’s employer rules, full-time means averaging at least 30 hours of service per week.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.irs.gov/affordable-care-act/employers/identifying-full-time-employees?utm_source=openai",
+      "host": "irs.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "For purposes of the employer shared responsibility provisions, a full-time employee is, for a calendar month, an employee employed on average at least 30 hours of service per week, or 130 hours of service per month.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that for the employer shared responsibility provisions a full-time employee averages at least 30 hours of service per week, which matches the claim's definition.",
+      "page_judged": "supported",
+      "page_reason": "The page defines a full-time employee as one employed on average at least 30 hours of service per week, or 130 hours per month, for the employer shared responsibility provisions."
+     }
+    ]
+   },
+   {
+    "sentence": "For health coverage under the Affordable Care Act’s employer rules, full-time means averaging at least 30 hours of service per week, or 130 hours per month. (irs.gov)",
+    "start": 212,
+    "end": 378,
+    "claim": "For health coverage under the Affordable Care Act’s employer rules, full-time means averaging at least 130 hours of service per month.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.irs.gov/affordable-care-act/employers/identifying-full-time-employees?utm_source=openai",
+      "host": "irs.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "For purposes of the employer shared responsibility provisions, a full-time employee is, for a calendar month, an employee employed on average at least 30 hours of service per week, or 130 hours of service per month.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that for the employer shared responsibility provisions a full-time employee is one averaging at least 30 hours per week or 130 hours of service per month, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page defines a full-time employee as someone employed for a calendar month on average at least 30 hours per week, or 130 hours of service per month."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 4,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.2,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6667,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003977,
+   "usd_per_claim": 0.000663
+  },
+  "cost": {
+   "total_usd": 0.004,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0012
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0016
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,576 @@
+{
+ "id": "health-08",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:51:10+00:00",
+ "report": {
+  "answer_text": "On August 27, 2025, the FDA approved the updated 2025–26 COVID-19 vaccines, but only for a narrower group of people than before.\nWho is eligible\nAdults 65 and older, and younger people who are at higher risk from Covid-19.[1]\nBefore this, COVID vaccines had been available to anyone 6 months and older regardless of their health.[2]\nYounger people qualify if they have at least one underlying condition that raises their risk of severe COVID-19. The CDC's list of conditions[3] is the reference for this.\nApprovals by product (all target the LP.8.1 variant)\nPfizer-BioNTech (Comirnaty): Adults 65 and older, and people ages 5 to 64 with at least one condition that raises their risk of severe COVID-19.[4]\nModerna (Spikevax): People 6 months through 64 years with at least one high-risk underlying condition, and all adults 65 and older.[4]\nModerna (mNexspike): People 12 to 64 with at least one high-risk condition, and all adults 65 and older.[4]\nNovavax: Ages 12 and older under the same high-risk framework. The FDA had already approved Novavax's vaccine only for people 65 and older and those 12 and up with at least one underlying condition that puts them at higher risk.[1]\nOther changes\nEmergency use authorizations for Covid-19 vaccines were rescinded, so Pfizer's vaccine is no longer authorized for children younger than 5.[1]\nPeople outside the approved groups can still get a shot. Health care providers can give COVID-19 vaccines \"off-label\" to people who don't meet the new criteria.[5] Insurance coverage for off-label use may be a problem. The new restrictions may affect insurance coverage for those outside the designated high-risk groups.[6]\nSome public health groups, including the National Foundation for Infectious Diseases, criticized the narrower eligibility.",
+  "claims": [
+   {
+    "sentence": "On August 27, 2025, the FDA approved the updated 2025–26 COVID-19 vaccines, but only for a narrower group of people than before.",
+    "start": 0,
+    "end": 128,
+    "claim": "On August 27, 2025, the FDA approved the updated 2025–26 COVID-19 vaccines.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "On August 27, 2025, the FDA approved the updated 2025–26 COVID-19 vaccines, but only for a narrower group of people than before.",
+    "start": 0,
+    "end": 128,
+    "claim": "The FDA approved the updated 2025–26 COVID-19 vaccines only for a narrower group of people than before.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Adults 65 and older, and younger people who are at higher risk from Covid-19.[1]",
+    "start": 145,
+    "end": 225,
+    "claim": "The approved group for the updated COVID-19 vaccines is adults 65 and older and younger people who are at higher risk from Covid-19.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnn.com/2025/08/27/health/covid-vaccines-fda",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Before this, COVID vaccines had been available to anyone 6 months and older regardless of their health.[2]",
+    "start": 226,
+    "end": 332,
+    "claim": "Before this, COVID vaccines had been available to anyone 6 months and older regardless of their health.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.npr.org/sections/shots-health-news/2025/08/27/nx-s1-5515503/fda-covid-vaccines-restricted",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Until now, COVID vaccines had been available to anyone 6 months and older regardless of their health.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that COVID vaccines had been available to anyone 6 months and older regardless of their health before this point, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'Until now, COVID vaccines had been available to anyone 6 months and older regardless of their health,' which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Younger people qualify if they have at least one underlying condition that raises their risk of severe COVID-19.",
+    "start": 333,
+    "end": 445,
+    "claim": "Younger people qualify if they have at least one underlying condition that raises their risk of severe COVID-19.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.today.com/health/coronavirus/covid-vaccine-2025-2026-rcna228529",
+      "host": "today.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In August, the FDA approved the updated COVID vaccines for adults 65 and older, and individuals 6 months to 64 years who have at least one underlying condition on the CDC’s list of conditions that increase the risk for severe COVID.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that individuals aged 6 months to 64 qualify if they have at least one underlying condition on the CDC's list that increases the risk for severe COVID, which backs the claim's full statement.",
+      "page_judged": "supported",
+      "page_reason": "The page says the FDA approved the updated vaccines for individuals 6 months to 64 years who have at least one underlying condition on the CDC's list, which supports the claim, but it also states that under the newer CDC framework anyone over 6 months can get the shot after consulting a provider, so the claim's implied limitation to eligibility is not the full picture; the page does state the FDA approval wording matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The CDC's list of conditions[3] is the reference for this.",
+    "start": 446,
+    "end": 504,
+    "claim": "The CDC's list of conditions is the reference for determining which underlying conditions qualify younger people.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.today.com/health/coronavirus/covid-vaccine-2025-2026-rcna228529",
+      "host": "today.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "individuals 6 months to 64 years who have at least one underlying condition on the CDC’s list of conditions that increase the risk for severe COVID.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that individuals aged 6 months to 64 qualify when they have at least one condition on the CDC's list of conditions that increase the risk for severe COVID, which matches the claim that the CDC list is the reference for younger people.",
+      "page_judged": "supported",
+      "page_reason": "The page states that individuals 6 months to 64 years qualify for FDA approval if they have at least one underlying condition on the CDC's list of conditions that increase the risk for severe COVID, which supports the claim that the CDC list is the reference for younger people."
+     }
+    ]
+   },
+   {
+    "sentence": "Pfizer-BioNTech (Comirnaty): Adults 65 and older, and people ages 5 to 64 with at least one condition that raises their risk of severe COVID-19.[4]",
+    "start": 558,
+    "end": 705,
+    "claim": "Pfizer-BioNTech's Comirnaty is approved for adults 65 and older, and for people ages 5 to 64 with at least one condition that raises their risk of severe COVID-19.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.epocrates.com/online/article/fda-approves-updated-covid-19-vaccines-from-pfizer-and-moderna-for-older",
+      "host": "epocrates.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Moderna (Spikevax): People 6 months through 64 years with at least one high-risk underlying condition, and all adults 65 and older.[4]",
+    "start": 706,
+    "end": 840,
+    "claim": "Moderna's Spikevax is approved for people 6 months through 64 years with at least one high-risk underlying condition, and for all adults 65 and older.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.epocrates.com/online/article/fda-approves-updated-covid-19-vaccines-from-pfizer-and-moderna-for-older",
+      "host": "epocrates.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Moderna (mNexspike): People 12 to 64 with at least one high-risk condition, and all adults 65 and older.[4]",
+    "start": 841,
+    "end": 948,
+    "claim": "Moderna's mNexspike is approved for people 12 to 64 with at least one high-risk condition, and for all adults 65 and older.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.epocrates.com/online/article/fda-approves-updated-covid-19-vaccines-from-pfizer-and-moderna-for-older",
+      "host": "epocrates.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Novavax: Ages 12 and older under the same high-risk framework.",
+    "start": 949,
+    "end": 1011,
+    "claim": "Novavax's vaccine is approved for ages 12 and older under the same high-risk framework.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnn.com/2025/08/27/health/covid-vaccines-fda",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The FDA had already approved Novavax's vaccine only for people 65 and older and those 12 and up with at least one underlying condition that puts them at higher risk.[1]",
+    "start": 1012,
+    "end": 1180,
+    "claim": "The FDA had already approved Novavax's vaccine only for people 65 and older and those 12 and up with at least one underlying condition that puts them at higher risk.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnn.com/2025/08/27/health/covid-vaccines-fda",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Emergency use authorizations for Covid-19 vaccines were rescinded, so Pfizer's vaccine is no longer authorized for children younger than 5.[1]",
+    "start": 1195,
+    "end": 1337,
+    "claim": "Emergency use authorizations for Covid-19 vaccines were rescinded.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnn.com/2025/08/27/health/covid-vaccines-fda",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Emergency use authorizations for Covid-19 vaccines were rescinded, so Pfizer's vaccine is no longer authorized for children younger than 5.[1]",
+    "start": 1195,
+    "end": 1337,
+    "claim": "Pfizer's COVID-19 vaccine is no longer authorized for children younger than 5.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cnn.com/2025/08/27/health/covid-vaccines-fda",
+      "host": "cnn.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "page is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "People outside the approved groups can still get a shot.",
+    "start": 1338,
+    "end": 1394,
+    "claim": "People outside the approved groups can still get a COVID-19 vaccine.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.ksl.com/article/51367946/these-are-the-conditions-that-make-you-eligible-for-an-updated-covid-19-vaccine",
+      "host": "ksl.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "FDA Commissioner Dr. Marty Makary said in a post on X that \"100% of adults in this country can still get the vaccine if they choose. We are not limiting availability to anyone.\"",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "These vaccines are available for all patients who choose them after consulting with their doctors,\" Health and Human Services Secretary Robert F. Kennedy Jr. said in a post on X this week.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Health care providers can provide COVID-19 vaccines \"off-label\" for those who do not meet the new eligibility criteria based on their age or overall health",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that all adults can still get the vaccine if they choose, and that providers can give it off-label to those who do not meet the new eligibility criteria, which backs the claim that people outside the approved groups can still get it.",
+      "page_judged": "supported",
+      "page_reason": "The page states that FDA Commissioner Makary said '100% of adults in this country can still get the vaccine if they choose' and that Kennedy said the vaccines are available to all patients who choose them after consulting doctors, and that providers can give them off-label to those not meeting criteria, supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Health care providers can give COVID-19 vaccines \"off-label\" to people who don't meet the new criteria.[5]",
+    "start": 1395,
+    "end": 1501,
+    "claim": "Health care providers can give COVID-19 vaccines off-label to people who don't meet the new criteria.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.ksl.com/article/51367946/these-are-the-conditions-that-make-you-eligible-for-an-updated-covid-19-vaccine",
+      "host": "ksl.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Health care providers can provide COVID-19 vaccines \"off-label\" for those who do not meet the new eligibility criteria based on their age or overall health",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that health care providers can provide COVID-19 vaccines off-label to people who do not meet the new eligibility criteria, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that health care providers can provide COVID-19 vaccines off-label for those who do not meet the new eligibility criteria, citing IDSA president Dr. Tina Tan, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Insurance coverage for off-label use may be a problem.",
+    "start": 1502,
+    "end": 1556,
+    "claim": "Insurance coverage for off-label use may be a problem.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.contagionlive.com/view/fda-approves-updated-covid-19-vaccines-for-fall-2025-restricts-eligibility-to-high-risk-groups",
+      "host": "contagionlive.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The new restrictions may affect insurance coverage for those outside the designated high-risk groups.[6]",
+    "start": 1557,
+    "end": 1661,
+    "claim": "The new restrictions may affect insurance coverage for people outside the designated high-risk groups.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.contagionlive.com/view/fda-approves-updated-covid-19-vaccines-for-fall-2025-restricts-eligibility-to-high-risk-groups",
+      "host": "contagionlive.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Some public health groups, including the National Foundation for Infectious Diseases, criticized the narrower eligibility.",
+    "start": 1662,
+    "end": 1784,
+    "claim": "Some public health groups, including the National Foundation for Infectious Diseases, criticized the narrower eligibility.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 18,
+   "labels": {
+    "supported": 5,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 10,
+    "citation_unread": 0,
+    "uncited": 3
+   },
+   "cited_claims": 15,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 6,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.005398,
+   "usd_per_claim": 0.0003
+  },
+  "cost": {
+   "total_usd": 0.0054,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0019
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

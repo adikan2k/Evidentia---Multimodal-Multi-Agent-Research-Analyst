@@ -1,0 +1,359 @@
+{
+ "id": "economy-02",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "On September 17, 2025, the Federal Reserve cut its benchmark interest rate by 0.25 percentage points, lowering the federal funds target range from 4.25%–4.50% to 4.00%–4.25%. (federalreserve.gov)\nThe main reason was a weakening labor market: hiring had slowed, unemployment had edged up (though it remained low), and economic growth had moderated in the first half of the year. Inflation was still above the Fed’s 2% goal, but officials judged that the risk of further weakening in employment had grown enough to warrant a cut. (federalreserve.gov)",
+  "claims": [
+   {
+    "sentence": "On September 17, 2025, the Federal Reserve cut its benchmark interest rate by 0.25 percentage points, lowering the federal funds target range from 4.25%–4.50% to 4.00%–4.25%. (federalreserve.gov)",
+    "start": 0,
+    "end": 195,
+    "claim": "On September 17, 2025, the Federal Reserve cut its benchmark interest rate by 0.25 percentage points.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4‑1/4 percent",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 0.25-point cut to a 4 to 4-1/4 percent target range, but it does not state the date of September 17, 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page is dated September 17, 2025 and states the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4-1/4 percent, which matches the claim's date and 0.25-point cut to the benchmark rate."
+     }
+    ]
+   },
+   {
+    "sentence": "On September 17, 2025, the Federal Reserve cut its benchmark interest rate by 0.25 percentage points, lowering the federal funds target range from 4.25%–4.50% to 4.00%–4.25%. (federalreserve.gov)",
+    "start": 0,
+    "end": 195,
+    "claim": "The Federal Reserve lowered the federal funds target range from 4.25%–4.50% to 4.00%–4.25%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4‑1/4 percent.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the cut of 1/4 percentage point to a 4 to 4-1/4 percent range, but it never states the prior 4.25%–4.50% range that the claim gives.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Committee lowered the target range by 1/4 percentage point to 4 to 4-1/4 percent, which implies the prior range was 4.25%-4.50%, though the page does not state the prior range explicitly."
+     }
+    ]
+   },
+   {
+    "sentence": "The main reason was a weakening labor market: hiring had slowed, unemployment had edged up (though it remained low), and economic growth had moderated in the first half of the year.",
+    "start": 196,
+    "end": 377,
+    "claim": "The main reason for the Federal Reserve's September 2025 rate cut was a weakening labor market.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Job gains have slowed, and the unemployment rate has edged up but remains low.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment have risen.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4‑1/4 percent.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes show slowing job gains and rising downside risks to employment as grounds for the cut, but they never say the labor market was the main reason, and they give no ranking against other factors like inflation.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the Committee judges downside risks to employment have risen and that job gains have slowed, and it cuts the rate 'in light of the shift in the balance of risks,' but it never explicitly names a weakening labor market as the main reason for the cut, so the 'main reason' qualifier is not directly stated."
+     }
+    ]
+   },
+   {
+    "sentence": "The main reason was a weakening labor market: hiring had slowed, unemployment had edged up (though it remained low), and economic growth had moderated in the first half of the year.",
+    "start": 196,
+    "end": 377,
+    "claim": "Hiring had slowed before the September 2025 rate cut.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Job gains have slowed, and the unemployment rate has edged up but remains low.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim's core point that job gains had slowed, but it does not mention a September 2025 rate cut or tie the slowdown to any timing before it.",
+      "page_judged": "supported",
+      "page_reason": "The page states that job gains had slowed in the first half of the year and that the unemployment rate had edged up, which supports hiring having slowed before the September 17, 2025 rate cut."
+     }
+    ]
+   },
+   {
+    "sentence": "The main reason was a weakening labor market: hiring had slowed, unemployment had edged up (though it remained low), and economic growth had moderated in the first half of the year.",
+    "start": 196,
+    "end": 377,
+    "claim": "Unemployment had edged up before the September 2025 rate cut, though it remained low.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Job gains have slowed, and the unemployment rate has edged up but remains low.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the unemployment rate has edged up but remains low, which backs every part of the claim except the explicit timing relative to the September 2025 rate cut, which the quote does not mention.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the unemployment rate has edged up but remains low, and that the Committee lowered the federal funds rate in this September 17, 2025 statement, so the claim's substance is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The main reason was a weakening labor market: hiring had slowed, unemployment had edged up (though it remained low), and economic growth had moderated in the first half of the year.",
+    "start": 196,
+    "end": 377,
+    "claim": "Economic growth had moderated in the first half of 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Recent indicators suggest that growth of economic activity moderated in the first half of the year.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that growth of economic activity moderated in the first half of the year, which matches the claim's sole assertion without adding any unstated specifics.",
+      "page_judged": "supported",
+      "page_reason": "The page states that recent indicators suggest growth of economic activity moderated in the first half of the year, which matches the claim's year-specific reference since the statement is dated September 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Inflation was still above the Fed’s 2% goal, but officials judged that the risk of further weakening in employment had grown enough to warrant a cut. (federalreserve.gov)",
+    "start": 378,
+    "end": 548,
+    "claim": "Inflation was still above the Federal Reserve's 2% goal when it cut rates in September 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Inflation has moved up and remains somewhat elevated.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The Committee seeks to achieve maximum employment and inflation at the rate of 2 percent over the longer run.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes say inflation remains somewhat elevated, that the Committee targets 2 percent, and that it lowered the federal funds rate by 1/4 point, but none states that inflation was above 2% or dates the cut to September 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page states that inflation 'has moved up and remains somewhat elevated' and that the Committee seeks inflation at 2 percent over the longer run, and it reports the September 2025 rate cut, so inflation being above the 2% goal is reasonably implied, though the page does not explicitly say inflation exceeded 2%."
+     }
+    ]
+   },
+   {
+    "sentence": "Inflation was still above the Fed’s 2% goal, but officials judged that the risk of further weakening in employment had grown enough to warrant a cut. (federalreserve.gov)",
+    "start": 378,
+    "end": 548,
+    "claim": "Fed officials judged that the risk of further weakening in employment had grown enough to warrant a rate cut in September 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20250917a.htm?utm_source=openai",
+      "host": "federalreserve.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment have risen.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4‑1/4 percent.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that downside risks to employment rose and the committee cut rates in light of the shift in the balance of risks, but neither quote names September 2025 as the date.",
+      "page_judged": "supported",
+      "page_reason": "The page states the Committee judges that downside risks to employment have risen and, in light of the shift in the balance of risks, lowered the federal funds target range by 1/4 point, which supports the claim that employment-risk concerns motivated the September 2025 cut."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 2,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 5,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003595,
+   "usd_per_claim": 0.000449
+  },
+  "cost": {
+   "total_usd": 0.0036,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0009
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}

@@ -45,6 +45,31 @@ def test_anthropic_sdk_spans_are_not_exported_a_second_time() -> None:
     assert export_span(SimpleNamespace(name="anthropic.messages.create")) is False
 
 
+@pytest.mark.parametrize(
+    "name",
+    [
+        "RunnableSequence",
+        "RunnableLambda",
+        "RunnableParallel<parsed,parsing_error>",
+        "RunnableAssign<parsed,parsing_error>",
+        "RunnableWithFallbacks",
+        "PydanticOutputParser",
+    ],
+)
+def test_langchain_wrapper_steps_are_not_exported(name: str) -> None:
+    from types import SimpleNamespace
+
+    assert export_span(SimpleNamespace(name=name)) is False
+
+
+@pytest.mark.parametrize("name", ["ChatAnthropic", "OpenAI-generation", "find", "fetch"])
+def test_model_tool_and_step_spans_reach_the_default_filter(name: str, monkeypatch) -> None:
+    from types import SimpleNamespace
+
+    monkeypatch.setattr("evidentia.tracing.is_default_export_span", lambda span: True)
+    assert export_span(SimpleNamespace(name=name)) is True
+
+
 def test_rejected_langfuse_keys_stop_the_run_with_a_region_hint(
     settings, monkeypatch: pytest.MonkeyPatch
 ) -> None:

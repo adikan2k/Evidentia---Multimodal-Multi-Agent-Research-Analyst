@@ -1,0 +1,146 @@
+{
+ "id": "nq-13",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:25+00:00",
+ "report": {
+  "answer_text": "The answer is total cost.\nTotal cost (TC) is the sum of fixed costs and variable costs at a given level of output:\nTC = Total Fixed Costs (TFC) + Total Variable Costs (TVC)\nFixed costs stay the same no matter how much you produce. Examples are rent, insurance, and salaried staff.\nVariable costs change with the level of output. Examples are raw materials, direct labor, and packaging.\nFor example, suppose fixed costs are $10,000 and variable costs are $5 per unit. At 2,000 units, total cost is $10,000 + (2,000 × $5) = $20,000.",
+  "claims": [
+   {
+    "sentence": "Total cost (TC) is the sum of fixed costs and variable costs at a given level of output:",
+    "start": 26,
+    "end": 114,
+    "claim": "Total cost (TC) is the sum of fixed costs and variable costs at a given level of output.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "TC = Total Fixed Costs (TFC) + Total Variable Costs (TVC)",
+    "start": 115,
+    "end": 172,
+    "claim": "Total cost (TC) equals Total Fixed Costs (TFC) plus Total Variable Costs (TVC).",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Fixed costs stay the same no matter how much you produce. Examples are rent, insurance, and salaried staff.",
+    "start": 173,
+    "end": 280,
+    "claim": "Fixed costs stay the same no matter how much you produce.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Fixed costs stay the same no matter how much you produce. Examples are rent, insurance, and salaried staff.",
+    "start": 173,
+    "end": 280,
+    "claim": "Examples of fixed costs are rent, insurance, and salaried staff.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Variable costs change with the level of output. Examples are raw materials, direct labor, and packaging.",
+    "start": 281,
+    "end": 385,
+    "claim": "Variable costs change with the level of output.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Variable costs change with the level of output. Examples are raw materials, direct labor, and packaging.",
+    "start": 281,
+    "end": 385,
+    "claim": "Examples of variable costs are raw materials, direct labor, and packaging.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "For example, suppose fixed costs are $10,000 and variable costs are $5 per unit. At 2,000 units, total cost is $10,000 + (2,000 × $5) = $20,000.",
+    "start": 386,
+    "end": 530,
+    "claim": "In the example, fixed costs are $10,000 and variable costs are $5 per unit.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "For example, suppose fixed costs are $10,000 and variable costs are $5 per unit. At 2,000 units, total cost is $10,000 + (2,000 × $5) = $20,000.",
+    "start": 386,
+    "end": 530,
+    "claim": "At 2,000 units, total cost is $20,000 in the example.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 8
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000426,
+   "usd_per_claim": 5.3e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

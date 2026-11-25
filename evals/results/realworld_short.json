@@ -1,0 +1,471 @@
+{
+  "generated_at": "2026-11-25T00:58:59+00:00",
+  "page_judge": "claude-haiku-5-5",
+  "readings": {
+    "saved": "the audits as saved: the headline",
+    "after_browser": "with pages a headless browser could read judged (D-046)",
+    "with_short_pages": "and claims on pages of 200 to 1,999 characters judged too (D-047). A check on the headline, not a new one: teasers are judged as if complete.",
+    "with_short_pages_over_1000": "the same, but pages under 1,000 characters left unjudged. Added after the trial, before the full results were seen."
+  },
+  "note": "In the re-ask run a question's repeats are pooled.",
+  "runs": {
+    "main": {
+      "tools": {
+        "openai": {
+          "saved": {
+            "headline_failed_share": {
+              "value": 0.3797,
+              "ci_low": 0.2914,
+              "ci_high": 0.4636
+            },
+            "headline_claims": 187,
+            "verified_share_of_all_claims": {
+              "value": 0.185,
+              "ci_low": 0.1351,
+              "ci_high": 0.2438
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 148,
+              "if_all_supported": 0.2119,
+              "if_none_supported": 0.6537
+            }
+          },
+          "after_browser": {
+            "headline_failed_share": {
+              "value": 0.3909,
+              "ci_low": 0.3064,
+              "ci_high": 0.468
+            },
+            "headline_claims": 197,
+            "verified_share_of_all_claims": {
+              "value": 0.1911,
+              "ci_low": 0.1415,
+              "ci_high": 0.2485
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 136,
+              "if_all_supported": 0.2312,
+              "if_none_supported": 0.6396
+            }
+          },
+          "with_short_pages": {
+            "headline_failed_share": {
+              "value": 0.4361,
+              "ci_low": 0.3494,
+              "ci_high": 0.5197
+            },
+            "headline_claims": 227,
+            "verified_share_of_all_claims": {
+              "value": 0.2034,
+              "ci_low": 0.1554,
+              "ci_high": 0.2605
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 103,
+              "if_all_supported": 0.3,
+              "if_none_supported": 0.6121
+            }
+          },
+          "with_short_pages_over_1000": {
+            "headline_failed_share": {
+              "value": 0.4171,
+              "ci_low": 0.3317,
+              "ci_high": 0.4979
+            },
+            "headline_claims": 211,
+            "verified_share_of_all_claims": {
+              "value": 0.1972,
+              "ci_low": 0.1486,
+              "ci_high": 0.2546
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 120,
+              "if_all_supported": 0.2659,
+              "if_none_supported": 0.6284
+            }
+          },
+          "claims_whose_label_changed": 55,
+          "claims_that_gained_a_verdict": 50,
+          "changes": {
+            "unchecked -> not_found": 37,
+            "unchecked -> supported": 8,
+            "unchecked -> needs_human": 5,
+            "unchecked -> partial": 5
+          },
+          "usd": 0.0156
+        },
+        "claude": {
+          "saved": {
+            "headline_failed_share": {
+              "value": 0.0785,
+              "ci_low": 0.0453,
+              "ci_high": 0.1195
+            },
+            "headline_claims": 382,
+            "verified_share_of_all_claims": {
+              "value": 0.2459,
+              "ci_low": 0.1899,
+              "ci_high": 0.3039
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 256,
+              "if_all_supported": 0.047,
+              "if_none_supported": 0.4483
+            }
+          },
+          "after_browser": {
+            "headline_failed_share": {
+              "value": 0.0777,
+              "ci_low": 0.0447,
+              "ci_high": 0.1191
+            },
+            "headline_claims": 386,
+            "verified_share_of_all_claims": {
+              "value": 0.2485,
+              "ci_low": 0.1926,
+              "ci_high": 0.3082
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 252,
+              "if_all_supported": 0.047,
+              "if_none_supported": 0.442
+            }
+          },
+          "with_short_pages": {
+            "headline_failed_share": {
+              "value": 0.1041,
+              "ci_low": 0.0628,
+              "ci_high": 0.156
+            },
+            "headline_claims": 461,
+            "verified_share_of_all_claims": {
+              "value": 0.2854,
+              "ci_low": 0.2256,
+              "ci_high": 0.347
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 165,
+              "if_all_supported": 0.0767,
+              "if_none_supported": 0.3403
+            }
+          },
+          "with_short_pages_over_1000": {
+            "headline_failed_share": {
+              "value": 0.0835,
+              "ci_low": 0.051,
+              "ci_high": 0.1232
+            },
+            "headline_claims": 431,
+            "verified_share_of_all_claims": {
+              "value": 0.2755,
+              "ci_low": 0.2145,
+              "ci_high": 0.3377
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 204,
+              "if_all_supported": 0.0567,
+              "if_none_supported": 0.378
+            }
+          },
+          "claims_whose_label_changed": 97,
+          "claims_that_gained_a_verdict": 84,
+          "changes": {
+            "unchecked -> supported": 56,
+            "unchecked -> not_found": 22,
+            "unchecked -> needs_human": 13,
+            "unchecked -> partial": 6
+          },
+          "usd": 0.0297
+        }
+      },
+      "pages": {
+        "tried": 57,
+        "read": 51,
+        "read_under_1000_chars": 24,
+        "not_read": {
+          "no readable text": 6
+        }
+      },
+      "openai_minus_claude": {
+        "saved": {
+          "value": 0.3011,
+          "ci_low": 0.2112,
+          "ci_high": 0.383,
+          "questions": 100
+        },
+        "after_browser": {
+          "value": 0.3131,
+          "ci_low": 0.2258,
+          "ci_high": 0.392,
+          "questions": 100
+        },
+        "with_short_pages": {
+          "value": 0.332,
+          "ci_low": 0.2311,
+          "ci_high": 0.4237,
+          "questions": 100
+        },
+        "with_short_pages_over_1000": {
+          "value": 0.3335,
+          "ci_low": 0.2401,
+          "ci_high": 0.4193,
+          "questions": 100
+        }
+      },
+      "openai_minus_claude_verified_share_of_all_claims": {
+        "saved": {
+          "value": -0.0609,
+          "ci_low": -0.1282,
+          "ci_high": 0.0057,
+          "questions": 100
+        },
+        "after_browser": {
+          "value": -0.0574,
+          "ci_low": -0.1238,
+          "ci_high": 0.009,
+          "questions": 100
+        },
+        "with_short_pages": {
+          "value": -0.0821,
+          "ci_low": -0.1513,
+          "ci_high": -0.012,
+          "questions": 100
+        },
+        "with_short_pages_over_1000": {
+          "value": -0.0783,
+          "ci_low": -0.1464,
+          "ci_high": -0.0101,
+          "questions": 100
+        }
+      }
+    },
+    "reask": {
+      "tools": {
+        "openai": {
+          "saved": {
+            "headline_failed_share": {
+              "value": 0.5909,
+              "ci_low": 0.25,
+              "ci_high": 0.7778
+            },
+            "headline_claims": 88,
+            "verified_share_of_all_claims": {
+              "value": 0.1039,
+              "ci_low": 0.0383,
+              "ci_high": 0.1986
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 124,
+              "if_all_supported": 0.2453,
+              "if_none_supported": 0.8302
+            }
+          },
+          "after_browser": {
+            "headline_failed_share": {
+              "value": 0.5955,
+              "ci_low": 0.2656,
+              "ci_high": 0.7816
+            },
+            "headline_claims": 89,
+            "verified_share_of_all_claims": {
+              "value": 0.1039,
+              "ci_low": 0.0383,
+              "ci_high": 0.1986
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 123,
+              "if_all_supported": 0.25,
+              "if_none_supported": 0.8302
+            }
+          },
+          "with_short_pages": {
+            "headline_failed_share": {
+              "value": 0.704,
+              "ci_low": 0.3778,
+              "ci_high": 0.8719
+            },
+            "headline_claims": 125,
+            "verified_share_of_all_claims": {
+              "value": 0.1063,
+              "ci_low": 0.0416,
+              "ci_high": 0.2032
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 85,
+              "if_all_supported": 0.419,
+              "if_none_supported": 0.8238
+            }
+          },
+          "with_short_pages_over_1000": {
+            "headline_failed_share": {
+              "value": 0.5889,
+              "ci_low": 0.2584,
+              "ci_high": 0.7738
+            },
+            "headline_claims": 90,
+            "verified_share_of_all_claims": {
+              "value": 0.1063,
+              "ci_low": 0.0416,
+              "ci_high": 0.2032
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 122,
+              "if_all_supported": 0.25,
+              "if_none_supported": 0.8255
+            }
+          },
+          "claims_whose_label_changed": 39,
+          "claims_that_gained_a_verdict": 37,
+          "changes": {
+            "unchecked -> not_found": 36,
+            "unchecked -> needs_human": 2,
+            "unchecked -> supported": 1
+          },
+          "usd": 0.0054
+        },
+        "claude": {
+          "saved": {
+            "headline_failed_share": {
+              "value": 0.0471,
+              "ci_low": 0.0167,
+              "ci_high": 0.1013
+            },
+            "headline_claims": 191,
+            "verified_share_of_all_claims": {
+              "value": 0.2324,
+              "ci_low": 0.1376,
+              "ci_high": 0.3344
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 198,
+              "if_all_supported": 0.0231,
+              "if_none_supported": 0.5321
+            }
+          },
+          "after_browser": {
+            "headline_failed_share": {
+              "value": 0.0464,
+              "ci_low": 0.0164,
+              "ci_high": 0.0995
+            },
+            "headline_claims": 194,
+            "verified_share_of_all_claims": {
+              "value": 0.2358,
+              "ci_low": 0.1417,
+              "ci_high": 0.3356
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 194,
+              "if_all_supported": 0.0232,
+              "if_none_supported": 0.5232
+            }
+          },
+          "with_short_pages": {
+            "headline_failed_share": {
+              "value": 0.0752,
+              "ci_low": 0.0325,
+              "ci_high": 0.1387
+            },
+            "headline_claims": 226,
+            "verified_share_of_all_claims": {
+              "value": 0.2653,
+              "ci_low": 0.1677,
+              "ci_high": 0.366
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 151,
+              "if_all_supported": 0.0451,
+              "if_none_supported": 0.4456
+            }
+          },
+          "with_short_pages_over_1000": {
+            "headline_failed_share": {
+              "value": 0.0571,
+              "ci_low": 0.0211,
+              "ci_high": 0.1125
+            },
+            "headline_claims": 210,
+            "verified_share_of_all_claims": {
+              "value": 0.2528,
+              "ci_low": 0.1582,
+              "ci_high": 0.3541
+            },
+            "headline_bounds_unread_pages": {
+              "undecided_claims": 170,
+              "if_all_supported": 0.0316,
+              "if_none_supported": 0.4789
+            }
+          },
+          "claims_whose_label_changed": 50,
+          "claims_that_gained_a_verdict": 37,
+          "changes": {
+            "unchecked -> supported": 26,
+            "unchecked -> needs_human": 13,
+            "unchecked -> not_found": 11
+          },
+          "usd": 0.0156
+        }
+      },
+      "pages": {
+        "tried": 17,
+        "read": 15,
+        "read_under_1000_chars": 8,
+        "not_read": {
+          "no readable text": 2
+        }
+      },
+      "openai_minus_claude": {
+        "saved": {
+          "value": 0.5438,
+          "ci_low": 0.2,
+          "ci_high": 0.7317,
+          "questions": 20
+        },
+        "after_browser": {
+          "value": 0.5491,
+          "ci_low": 0.2134,
+          "ci_high": 0.7389,
+          "questions": 20
+        },
+        "with_short_pages": {
+          "value": 0.6288,
+          "ci_low": 0.2798,
+          "ci_high": 0.8065,
+          "questions": 20
+        },
+        "with_short_pages_over_1000": {
+          "value": 0.5317,
+          "ci_low": 0.1833,
+          "ci_high": 0.7302,
+          "questions": 20
+        }
+      },
+      "openai_minus_claude_verified_share_of_all_claims": {
+        "saved": {
+          "value": -0.1286,
+          "ci_low": -0.2304,
+          "ci_high": -0.0301,
+          "questions": 20
+        },
+        "after_browser": {
+          "value": -0.132,
+          "ci_low": -0.2316,
+          "ci_high": -0.0347,
+          "questions": 20
+        },
+        "with_short_pages": {
+          "value": -0.159,
+          "ci_low": -0.2588,
+          "ci_high": -0.0524,
+          "questions": 20
+        },
+        "with_short_pages_over_1000": {
+          "value": -0.1466,
+          "ci_low": -0.2471,
+          "ci_high": -0.0464,
+          "questions": 20
+        }
+      }
+    }
+  }
+}

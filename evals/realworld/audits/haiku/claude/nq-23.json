@@ -1,0 +1,102 @@
+{
+ "id": "nq-23",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Rachel Bilson played Dr. Zoe Hart on *Hart of Dixie*. The series ran on The CW from 2011 to 2015. Zoe is a New York doctor who moves to the small town of Bluebell, Alabama, to work in a medical practice.",
+  "claims": [
+   {
+    "sentence": "Rachel Bilson played Dr. Zoe Hart on *Hart of Dixie*.",
+    "start": 0,
+    "end": 53,
+    "claim": "Rachel Bilson played Dr. Zoe Hart on Hart of Dixie.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The series ran on The CW from 2011 to 2015.",
+    "start": 54,
+    "end": 97,
+    "claim": "Hart of Dixie ran on The CW from 2011 to 2015.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Zoe is a New York doctor who moves to the small town of Bluebell, Alabama, to work in a medical practice.",
+    "start": 98,
+    "end": 203,
+    "claim": "Zoe Hart is a New York doctor.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Zoe is a New York doctor who moves to the small town of Bluebell, Alabama, to work in a medical practice.",
+    "start": 98,
+    "end": 203,
+    "claim": "Zoe Hart moves to the small town of Bluebell, Alabama.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Zoe is a New York doctor who moves to the small town of Bluebell, Alabama, to work in a medical practice.",
+    "start": 98,
+    "end": 203,
+    "claim": "Zoe Hart moves to Bluebell, Alabama, to work in a medical practice.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 5
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000281,
+   "usd_per_claim": 5.6e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

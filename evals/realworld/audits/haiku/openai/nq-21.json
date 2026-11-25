@@ -1,0 +1,130 @@
+{
+ "id": "nq-21",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The two-part *Everybody Loves Raymond* episode “Italy” was filmed on location in Anguillara Sabazia, a town on Lake Bracciano, northwest of Rome. It was shot in July 2000 and opened the show’s fifth season. (cheatsheet.com)",
+  "claims": [
+   {
+    "sentence": "It was shot in July 2000 and opened the show’s fifth season. (cheatsheet.com)",
+    "start": 146,
+    "end": 223,
+    "claim": "The Everybody Loves Raymond episode “Italy” was shot in July 2000.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cheatsheet.com/news/cast-everybody-loves-raymond-italy.html/?utm_source=openai",
+      "host": "cheatsheet.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The two-parter called “Italy” were the premiere episodes of the show’s fifth season and were filmed in July 2000 in the town of Anguillara Sabazia outside of Rome.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the two-part \"Italy\" episodes were filmed in July 2000, which matches the claim's date and episode title.",
+      "page_judged": "supported",
+      "page_reason": "The page states the two-part 'Italy' episodes, season 5 premieres, 'were filmed in July 2000 in the town of Anguillara Sabazia outside of Rome.'"
+     }
+    ]
+   },
+   {
+    "sentence": "It was shot in July 2000 and opened the show’s fifth season. (cheatsheet.com)",
+    "start": 146,
+    "end": 223,
+    "claim": "The Everybody Loves Raymond episode “Italy” opened the show’s fifth season.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cheatsheet.com/news/cast-everybody-loves-raymond-italy.html/?utm_source=openai",
+      "host": "cheatsheet.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The two-parter called “Italy” were the premiere episodes of the show’s fifth season",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the two-parter \"Italy\" were the premiere episodes of the show's fifth season, which backs the claim that it opened the fifth season.",
+      "page_judged": "supported",
+      "page_reason": "The page states the two-part \"Italy\" episodes were the premiere episodes of the show's fifth season, which directly supports the claim that it opened season five."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 1.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.001083,
+   "usd_per_claim": 0.000542
+  },
+  "cost": {
+   "total_usd": 0.0011,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0003
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,542 @@
+{
+ "id": "health-06-r1",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:05:19+00:00",
+ "report": {
+  "answer_text": "Baby KJ Muldoon received a personalised CRISPR-based base-editing therapy. It was made specifically for him and is considered the first of its kind.\nCondition: KJ was born with a rare metabolic disease known as severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.[1] The standard treatment is a liver transplant, but KJ was too young for one.[2]\nThe therapy: The team designed and manufactured a base editing therapy delivered via lipid nanoparticles to the liver, in order to correct KJ's faulty enzyme.[1] It was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter. That change allows the full CPS1 protein to be produced.[3] Base editing is a form of CRISPR that reduces the risk of unintended genetic changes.[4]\nDelivery: In February 2025, KJ got his first IV infusion. The therapy was carried in tiny fatty droplets called lipid nanoparticles, which liver cells take up.[4] After three infusions from February through April 2025, he tolerated it well with no serious side effects.[5] The CHOP team stresses that it isn't a cure.\nWho developed it: Physician-scientists at Children's Hospital of Philadelphia (CHOP) and Penn Medicine developed it, and CHOP reported in May 2025 that it had been administered safely.[5]\nRecognition: Nature listed him in its 2025 \"Nature's 10\" as the \"Trailblazing baby\".[6]",
+  "claims": [
+   {
+    "sentence": "Baby KJ Muldoon received a personalised CRISPR-based base-editing therapy.",
+    "start": 0,
+    "end": 74,
+    "claim": "Baby KJ Muldoon received a personalised CRISPR-based base-editing therapy.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was made specifically for him and is considered the first of its kind.",
+    "start": 75,
+    "end": 148,
+    "claim": "The base-editing therapy was made specifically for KJ Muldoon.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was made specifically for him and is considered the first of its kind.",
+    "start": 75,
+    "end": 148,
+    "claim": "The base-editing therapy is considered the first of its kind.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Condition: KJ was born with a rare metabolic disease known as severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.[1]",
+    "start": 149,
+    "end": 272,
+    "claim": "KJ was born with a rare metabolic disease known as severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The standard treatment is a liver transplant, but KJ was too young for one.[2]",
+    "start": 273,
+    "end": 351,
+    "claim": "The standard treatment for CPS1 deficiency is a liver transplant.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The standard treatment is a liver transplant, but KJ was too young for one.[2]",
+    "start": 273,
+    "end": 351,
+    "claim": "KJ was too young for a liver transplant.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The therapy: The team designed and manufactured a base editing therapy delivered via lipid nanoparticles to the liver, in order to correct KJ's faulty enzyme.[1]",
+    "start": 352,
+    "end": 513,
+    "claim": "The team designed and manufactured a base editing therapy delivered via lipid nanoparticles to the liver to correct KJ's faulty enzyme.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter.",
+    "start": 514,
+    "end": 643,
+    "claim": "The therapy was designed to find one of the incorrect letters in the DNA sequence of KJ's CPS1 gene and replace it with a different letter.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.scientificamerican.com/article/gene-editing-helped-one-baby-could-it-help-thousands/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The therapy KJ received was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the therapy was designed to find one incorrect letter in KJ's CPS1 gene DNA sequence and replace it with a different letter, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the therapy KJ received 'was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced,' which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "That change allows the full CPS1 protein to be produced.[3]",
+    "start": 644,
+    "end": 703,
+    "claim": "The letter change allows the full CPS1 protein to be produced.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.scientificamerican.com/article/gene-editing-helped-one-baby-could-it-help-thousands/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The therapy KJ received was designed to find one of the incorrect letters in the DNA sequence of his CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the therapy replaced an incorrect letter in the CPS1 gene with a different letter that would allow the full CPS1 protein to be produced, which matches the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the therapy was designed to find an incorrect DNA letter in KJ's CPS1 gene and replace it with a different letter that would allow the full CPS1 protein to be produced, directly supporting the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Base editing is a form of CRISPR that reduces the risk of unintended genetic changes.[4]",
+    "start": 704,
+    "end": 792,
+    "claim": "Base editing is a form of CRISPR that reduces the risk of unintended genetic changes.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://amp.cbc.ca/news/health/gene-therapy-baby-pennsylvania-1.7536105",
+      "host": "amp.cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Delivery: In February 2025, KJ got his first IV infusion.",
+    "start": 793,
+    "end": 850,
+    "claim": "In February 2025, KJ received his first IV infusion.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://amp.cbc.ca/news/health/gene-therapy-baby-pennsylvania-1.7536105",
+      "host": "amp.cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The therapy was carried in tiny fatty droplets called lipid nanoparticles, which liver cells take up.[4]",
+    "start": 851,
+    "end": 955,
+    "claim": "The therapy was carried in tiny fatty droplets called lipid nanoparticles, which liver cells take up.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://amp.cbc.ca/news/health/gene-therapy-baby-pennsylvania-1.7536105",
+      "host": "amp.cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "After three infusions from February through April 2025, he tolerated it well with no serious side effects.[5]",
+    "start": 956,
+    "end": 1065,
+    "claim": "KJ received three infusions from February through April 2025.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.chop.edu/news/one-year-anniversary-worlds-first-personalized-crispr-gene-therapy-child-rare-genetic-disease",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "After three infusions from February through April 2025, he tolerated it well with no serious side effects.[5]",
+    "start": 956,
+    "end": 1065,
+    "claim": "KJ tolerated the therapy well with no serious side effects.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.chop.edu/news/one-year-anniversary-worlds-first-personalized-crispr-gene-therapy-child-rare-genetic-disease",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The CHOP team stresses that it isn't a cure.",
+    "start": 1066,
+    "end": 1110,
+    "claim": "The CHOP team stresses that the therapy isn't a cure.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Who developed it: Physician-scientists at Children's Hospital of Philadelphia (CHOP) and Penn Medicine developed it, and CHOP reported in May 2025 that it had been administered safely.[5]",
+    "start": 1111,
+    "end": 1298,
+    "claim": "Physician-scientists at Children's Hospital of Philadelphia (CHOP) and Penn Medicine developed the therapy.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.chop.edu/news/one-year-anniversary-worlds-first-personalized-crispr-gene-therapy-child-rare-genetic-disease",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Who developed it: Physician-scientists at Children's Hospital of Philadelphia (CHOP) and Penn Medicine developed it, and CHOP reported in May 2025 that it had been administered safely.[5]",
+    "start": 1111,
+    "end": 1298,
+    "claim": "CHOP reported in May 2025 that the therapy had been administered safely.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.chop.edu/news/one-year-anniversary-worlds-first-personalized-crispr-gene-therapy-child-rare-genetic-disease",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Recognition: Nature listed him in its 2025 \"Nature's 10\" as the \"Trailblazing baby\".[6]",
+    "start": 1299,
+    "end": 1386,
+    "claim": "Nature listed KJ in its 2025 \"Nature's 10\" as the \"Trailblazing baby\".",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://en.wikipedia.org/wiki/KJ_Muldoon",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He is listed in the Nature of 2025 as the \"Trailblazing baby\" as the first person saved by personalized CRISPR gene editing.[5][6]",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "He is listed in the Nature's 10 of 2025 as the \"Trailblazing baby\" as the first person saved by personalized CRISPR gene editing.[5][6]",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that KJ is listed in Nature's 10 of 2025 as the \"Trailblazing baby\", matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that he is listed in Nature's 10 of 2025 as the \"Trailblazing baby\" as the first person saved by personalized CRISPR gene editing, citing a Nature's 10 reference."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 18,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 11,
+    "citation_unread": 0,
+    "uncited": 4
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.2143,
+   "pages_cited": 6,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003661,
+   "usd_per_claim": 0.000203
+  },
+  "cost": {
+   "total_usd": 0.0037,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 3,
+     "usd": 0.0013
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0012
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,656 @@
+{
+ "id": "economy-03",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:57:12+00:00",
+ "report": {
+  "answer_text": "Gold rose about 60–65% in 2025. Spot gold started the year near $2,600 an ounce and ended around $4,300–$4,330. Sources differ on the exact percentage.\nFox Business reports gold surged 66% in 2025, the best gain since 1979.[1] It says gold sat at $2,606 last December and settled around $4,325 at year-end.[1]\nInvesting.com says it surged more than 60%, its strongest annual performance in decades.[2]\nA late-December report put the gain at 72.8%, but that was measured at the Dec. 26 peak near $4,527, before gold slipped back by year-end.\nOne source cites 44%, which is likely a different measure, such as an average-price comparison. Another cites only 18–20%, which doesn't fit the price data, so I'd disregard it.\nRecords set:\nBest year in decades: Most sources call it gold's biggest annual gain since 1979. A few say 1980.\nDozens of all-time highs: Metals Focus counted 56 fresh record highs.[3] FXStreet says gold set over 50 record peaks.[4]\nPrice milestones:\nIn April, gold briefly broke through $3,500.[5]\nOn Sept. 30 it reached a quarterly high of $3,858.41.[5]\nIt hit an all-time high of $4,379.13 on Oct. 17.[5]\nIt reached a record $4,527 an ounce on Dec. 26.[6]\nOther records: Global gold mine production rose to a record 3,817 tonnes.[3] Silver also had a record year, with a gain of more than 142%.[1]\nDrivers: Analysts cited central bank buying, safe-haven demand amid geopolitical uncertainty, a weaker US dollar, and Federal Reserve rate cuts.",
+  "claims": [
+   {
+    "sentence": "Gold rose about 60–65% in 2025.",
+    "start": 0,
+    "end": 31,
+    "claim": "Gold rose about 60–65% in 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Spot gold started the year near $2,600 an ounce and ended around $4,300–$4,330.",
+    "start": 32,
+    "end": 111,
+    "claim": "Spot gold started 2025 near $2,600 an ounce.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Spot gold started the year near $2,600 an ounce and ended around $4,300–$4,330.",
+    "start": 32,
+    "end": 111,
+    "claim": "Spot gold ended 2025 around $4,300–$4,330 an ounce.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Sources differ on the exact percentage.",
+    "start": 112,
+    "end": 151,
+    "claim": "Sources differ on the exact percentage gain for gold in 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Fox Business reports gold surged 66% in 2025, the best gain since 1979.[1]",
+    "start": 152,
+    "end": 226,
+    "claim": "Fox Business reports gold surged 66% in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/gold-soars-66-record-year-experts-eye-ambitious-5000-per-ounce-target-2026",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "rallied over 66% in 2025, hitting a series of new highs",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says gold rallied over 66% in 2025, which backs the figure, but nothing in the quote shows it came from Fox Business.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says gold rallied over 66% in 2025, not simply that it surged 66%."
+     }
+    ]
+   },
+   {
+    "sentence": "Fox Business reports gold surged 66% in 2025, the best gain since 1979.[1]",
+    "start": 152,
+    "end": 226,
+    "claim": "Fox Business reports that the 2025 gold gain was the best since 1979.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/gold-soars-66-record-year-experts-eye-ambitious-5000-per-ounce-target-2026",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Gold’s stratospheric rise, the best percentage gain since 1979, surprised even the most bullish metal mavens as Wall Street firms chased the run-up.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that gold's rise was the best percentage gain since 1979, but it does not state the year 2025 or name Fox Business as the source.",
+      "page_judged": "supported",
+      "page_reason": "The page says gold’s 2025 rise was “the best percentage gain since 1979.”"
+     }
+    ]
+   },
+   {
+    "sentence": "It says gold sat at $2,606 last December and settled around $4,325 at year-end.[1]",
+    "start": 227,
+    "end": 309,
+    "claim": "Fox Business says gold sat at $2,606 in December 2024.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/gold-soars-66-record-year-experts-eye-ambitious-5000-per-ounce-target-2026",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The precious metal, which sat at $2,606 last December, rallied over 66% in 2025",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the $2,606 price for December (\"last December\" alongside a 2025 rally), but nothing in the quote shows that Fox Business is the source saying it.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says gold sat at $2,606 “last December,” but does not explicitly identify that month as December 2024."
+     }
+    ]
+   },
+   {
+    "sentence": "It says gold sat at $2,606 last December and settled around $4,325 at year-end.[1]",
+    "start": 227,
+    "end": 309,
+    "claim": "Fox Business says gold settled around $4,325 at year-end 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/gold-soars-66-record-year-experts-eye-ambitious-5000-per-ounce-target-2026",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "hitting a series of new highs, settling around the $4,325 level at year-end.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs gold settling around the $4,325 level at year-end, but it does not name Fox Business as the source or state the year as 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page says gold rallied over 66% in 2025, “settling around the $4,325 level at year-end.”"
+     }
+    ]
+   },
+   {
+    "sentence": "Investing.com says it surged more than 60%, its strongest annual performance in decades.[2]",
+    "start": 310,
+    "end": 401,
+    "claim": "Investing.com says gold surged more than 60% in 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.investing.com/news/commodities-news/gold-starts-2026-higher-after-60-surge-last-year-silver-platinum-follow-4427311",
+      "host": "investing.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Investing.com says it surged more than 60%, its strongest annual performance in decades.[2]",
+    "start": 310,
+    "end": 401,
+    "claim": "Investing.com says gold's 2025 performance was its strongest annual performance in decades.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.investing.com/news/commodities-news/gold-starts-2026-higher-after-60-surge-last-year-silver-platinum-follow-4427311",
+      "host": "investing.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A late-December report put the gain at 72.8%, but that was measured at the Dec. 26 peak near $4,527, before gold slipped back by year-end.",
+    "start": 402,
+    "end": 540,
+    "claim": "A late-December report put gold's gain at 72.8%, measured at the Dec. 26 peak near $4,527.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "One source cites 44%, which is likely a different measure, such as an average-price comparison.",
+    "start": 541,
+    "end": 636,
+    "claim": "One source cites a 44% gold gain in 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Another cites only 18–20%, which doesn't fit the price data, so I'd disregard it.",
+    "start": 637,
+    "end": 718,
+    "claim": "Another source cites a gold gain of only 18–20%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Best year in decades: Most sources call it gold's biggest annual gain since 1979. A few say 1980.",
+    "start": 732,
+    "end": 829,
+    "claim": "Most sources call gold's 2025 gain its biggest annual gain since 1979.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Best year in decades: Most sources call it gold's biggest annual gain since 1979. A few say 1980.",
+    "start": 732,
+    "end": 829,
+    "claim": "A few sources say gold's biggest annual gain was since 1980.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Dozens of all-time highs: Metals Focus counted 56 fresh record highs.[3]",
+    "start": 830,
+    "end": 902,
+    "claim": "Metals Focus counted 56 fresh record highs for gold in 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://oilprice.com/Metals/Gold/Central-Banks-Bought-Less-Gold-in-2025-But-It-Still-Hit-a-45-Year-High.html",
+      "host": "oilprice.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Gold prices rallied 44 per cent last year, reaching $4,550 per ounce in December and recording 56 fresh record highs according to the latest report from Metals Focus.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Metals Focus reported 56 fresh record highs for gold last year, matching the claim's count and attribution, and the year is 2025 as the quote's 'last year' context implies only if the report's date is known, so the 2025 detail is the one point the quote does not explicitly name.",
+      "page_judged": "supported",
+      "page_reason": "The page says gold recorded 56 fresh record highs in 2025 according to the latest report from Metals Focus."
+     }
+    ]
+   },
+   {
+    "sentence": "FXStreet says gold set over 50 record peaks.[4]",
+    "start": 903,
+    "end": 950,
+    "claim": "FXStreet says gold set over 50 record peaks.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.fxstreet.com/amp/analysis/gold-price-annual-forecast-2026-could-see-new-record-highs-but-a-2025-like-rally-is-unlikely-202512191055",
+      "host": "fxstreet.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "In April, gold briefly broke through $3,500.[5]",
+    "start": 969,
+    "end": 1016,
+    "claim": "In April 2025, gold briefly broke through $3,500.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nasdaq.com/articles/gold-price-2025-year-end-review",
+      "host": "nasdaq.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "On Sept. 30 it reached a quarterly high of $3,858.41.[5]",
+    "start": 1017,
+    "end": 1073,
+    "claim": "On Sept. 30, 2025, gold reached a quarterly high of $3,858.41.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nasdaq.com/articles/gold-price-2025-year-end-review",
+      "host": "nasdaq.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It hit an all-time high of $4,379.13 on Oct. 17.[5]",
+    "start": 1074,
+    "end": 1125,
+    "claim": "Gold hit an all-time high of $4,379.13 on Oct. 17, 2025.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.nasdaq.com/articles/gold-price-2025-year-end-review",
+      "host": "nasdaq.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It reached a record $4,527 an ounce on Dec. 26.[6]",
+    "start": 1126,
+    "end": 1176,
+    "claim": "Gold reached a record $4,527 an ounce on Dec. 26, 2025.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.nationalgoldgroup.com/blog/gold-price-hits-4529-as-historic-2025-rally-continues/",
+      "host": "nationalgoldgroup.com",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "within striking distance of the session’s all-time high of $4,530.60.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "All-time high: $4,530.60/oz (reached earlier in session)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes give the session's all-time high as $4,530.60 and say the price was only within striking distance of it, so a record of $4,527 cannot be right, and nothing in the quotes mentions Dec. 26, 2025.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says spot gold was $4,529 at 10:14 a.m. EST on December 26, 2025, and the session high was $4,530.60, not $4,527."
+     }
+    ]
+   },
+   {
+    "sentence": "Other records: Global gold mine production rose to a record 3,817 tonnes.[3]",
+    "start": 1177,
+    "end": 1253,
+    "claim": "Global gold mine production rose to a record 3,817 tonnes.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://oilprice.com/Metals/Gold/Central-Banks-Bought-Less-Gold-in-2025-But-It-Still-Hit-a-45-Year-High.html",
+      "host": "oilprice.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Global gold mining production increased by two per cent year on year to a record high of 3,817t, driven by a surge in new mines and project expansions.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that global gold mining production rose to a record high of 3,817 tonnes, matching the claim's figure and record claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that global gold mining production rose 2% year on year to a record high of 3,817 tonnes."
+     }
+    ]
+   },
+   {
+    "sentence": "Silver also had a record year, with a gain of more than 142%.[1]",
+    "start": 1254,
+    "end": 1318,
+    "claim": "Silver had a record year in 2025 with a gain of more than 142%.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.foxbusiness.com/markets/gold-soars-66-record-year-experts-eye-ambitious-5000-per-ounce-target-2026",
+      "host": "foxbusiness.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In addition to gold, silver saw its own record year with a gain of more than 142% while copper advanced over 41%",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the record year and the gain of more than 142% for silver, but it does not state the year 2025 that the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The page states that silver saw a record year in 2025 with a gain of more than 142%."
+     }
+    ]
+   },
+   {
+    "sentence": "Drivers: Analysts cited central bank buying, safe-haven demand amid geopolitical uncertainty, a weaker US dollar, and Federal Reserve rate cuts.",
+    "start": 1319,
+    "end": 1463,
+    "claim": "Analysts cited central bank buying as a driver of gold's 2025 rise.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Drivers: Analysts cited central bank buying, safe-haven demand amid geopolitical uncertainty, a weaker US dollar, and Federal Reserve rate cuts.",
+    "start": 1319,
+    "end": 1463,
+    "claim": "Analysts cited safe-haven demand amid geopolitical uncertainty as a driver of gold's 2025 rise.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 2,
+    "partial": 2,
+    "contradicted": 1,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 1,
+    "unchecked": 5,
+    "citation_unread": 0,
+    "uncited": 11
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.2,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.1429,
+   "pages_cited": 6,
+   "pages_read": 3,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 2,
+   "usd": 0.007486,
+   "usd_per_claim": 0.000299
+  },
+  "cost": {
+   "total_usd": 0.0075,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0022
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0026
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0015
+    }
+   ]
+  }
+ }
+}

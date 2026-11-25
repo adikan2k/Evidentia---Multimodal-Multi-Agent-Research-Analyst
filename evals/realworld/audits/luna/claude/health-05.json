@@ -1,0 +1,743 @@
+{
+ "id": "health-05",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "What it is\nSuzetrigine (Journavx) is a 50 mg oral tablet. The FDA approved it on January 30, 2025, as a first-in-class non-opioid analgesic for moderate to severe acute pain in adults.[1] The approval went to Vertex Pharmaceuticals.[1] It was previously known as VX-548.\nHow it works\nSuzetrigine blocks pain signals on their way to the brain and spinal cord. It does this by selectively inhibiting NaV1.8 voltage-gated sodium channels.[2] These channels are part of a pain-signaling pathway in the peripheral nervous system, so the drug acts before pain signals reach the brain.[1]\nWhy it was notable\nA new drug class. Vertex described it as the first new class of pain medicine approved in more than 20 years.[3]\nA non-opioid option. It offers an alternative to opioids for acute pain. The FDA's acting CDER director said a non-opioid pain reliever offers a chance to mitigate certain risks of opioid use.[4] No opioid-type dependence was seen in clinical trials.[5]\nRegulatory support. The application received Breakthrough Therapy, Fast Track and Priority Review designations.[1]\nEvidence behind it\nApproval rested on two phase 3 randomized, double-blind, placebo-controlled trials, one after abdominoplasty and one after bunionectomy.[2] Both showed a statistically significant greater reduction in pain than placebo.[1] Suzetrigine eased pain about as effectively as Vicodin (hydrocodone/acetaminophen), according to Yale Medicine.[6] One caveat is that it was compared with Vicodin rather than stronger opioids like oxycodone or morphine.[6]\nSafety notes\nCommon side effects were itching, muscle spasms, increased creatine phosphokinase, and rash.[1]\nIt is contraindicated with strong CYP3A inhibitors, and patients should avoid grapefruit.[1]\nIt is not known whether it is safe and effective in children.[3]\nIt is approved only for acute pain, not chronic pain. Real-world studies are still needed to assess its relative effectiveness and long-term safety.[7]",
+  "claims": [
+   {
+    "sentence": "Suzetrigine (Journavx) is a 50 mg oral tablet.",
+    "start": 11,
+    "end": 57,
+    "claim": "Suzetrigine (Journavx) is a 50 mg oral tablet.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the U.S. Food and Drug Administration approved Journavx (suzetrigine) 50 milligram oral tablets",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Journavx (suzetrigine) 50 milligram oral tablets, which backs every fact in the claim: the name, the 50 mg strength, and the oral tablet form.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the FDA approved Journavx (suzetrigine) 50 milligram oral tablets."
+     }
+    ]
+   },
+   {
+    "sentence": "The FDA approved it on January 30, 2025, as a first-in-class non-opioid analgesic for moderate to severe acute pain in adults.[1]",
+    "start": 58,
+    "end": 187,
+    "claim": "The FDA approved suzetrigine on January 30, 2025, as a first-in-class non-opioid analgesic for moderate to severe acute pain in adults.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that the FDA approved suzetrigine as a first-in-class non-opioid analgesic for moderate to severe acute pain in adults, but it does not give the approval date of January 30, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The approval went to Vertex Pharmaceuticals.[1]",
+    "start": 188,
+    "end": 235,
+    "claim": "The approval of suzetrigine went to Vertex Pharmaceuticals.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The FDA granted approval of Journavx to Vertex Pharmaceuticals Incorporated.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that FDA approval of Journavx went to Vertex Pharmaceuticals, but it never mentions suzetrigine, so the link between Journavx and suzetrigine is not stated in the quotes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the FDA granted approval of Journavx (suzetrigine) to Vertex Pharmaceuticals Incorporated."
+     }
+    ]
+   },
+   {
+    "sentence": "It was previously known as VX-548.",
+    "start": 236,
+    "end": 270,
+    "claim": "Suzetrigine was previously known as VX-548.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Suzetrigine blocks pain signals on their way to the brain and spinal cord.",
+    "start": 284,
+    "end": 358,
+    "claim": "Suzetrigine blocks pain signals on their way to the brain and spinal cord.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.rheumatologyadvisor.com/news/journavx-a-nonopioid-oral-pain-medication-gets-fda-approval/",
+      "host": "rheumatologyadvisor.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It does this by selectively inhibiting NaV1.8 voltage-gated sodium channels.[2]",
+    "start": 359,
+    "end": 438,
+    "claim": "Suzetrigine works by selectively inhibiting NaV1.8 voltage-gated sodium channels.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.rheumatologyadvisor.com/news/journavx-a-nonopioid-oral-pain-medication-gets-fda-approval/",
+      "host": "rheumatologyadvisor.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "These channels are part of a pain-signaling pathway in the peripheral nervous system, so the drug acts before pain signals reach the brain.[1]",
+    "start": 439,
+    "end": 581,
+    "claim": "NaV1.8 channels are part of a pain-signaling pathway in the peripheral nervous system, so suzetrigine acts before pain signals reach the brain.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Journavx reduces pain by targeting a pain-signaling pathway involving sodium channels in the peripheral nervous system, before pain signals reach the brain.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that Journavx acts on a peripheral pain-signaling pathway before signals reach the brain, but it says only 'sodium channels' and never names NaV1.8 or identifies Journavx as suzetrigine.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Journavx targets a pain-signaling pathway involving sodium channels in the peripheral nervous system before signals reach the brain, but it does not identify NaV1.8 channels."
+     }
+    ]
+   },
+   {
+    "sentence": "Vertex described it as the first new class of pain medicine approved in more than 20 years.[3]",
+    "start": 619,
+    "end": 713,
+    "claim": "Vertex described suzetrigine as the first new class of pain medicine approved in more than 20 years.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://news.vrtx.com/news-releases/news-release-details/vertex-announces-fda-approval-journavxtm-suzetrigine-first-class",
+      "host": "news.vrtx.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It offers an alternative to opioids for acute pain.",
+    "start": 735,
+    "end": 786,
+    "claim": "Suzetrigine offers an alternative to opioids for acute pain.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newscord.org/article/fda-approves-journavx-suzetrigine-first-in-class-non-opioid-pain-reliever-for-ac--Story_20250131_Newnonopioidpainkilld31a619b",
+      "host": "newscord.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "FDA approves Journavx (suzetrigine) as first-in-class non-opioid for moderate-to-severe acute pain in adults.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Jacqueline Corrigan-Curay, M.D., acting director of the FDA's Center for Drug Evaluation and Research, said a non-opioid pain reliever “offers an opportunity to mitigate certain risks associated with using an opioid for pain and provides patients with another treatment option.”",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Michael Schatman, a clinical instructor at NYU Grossman School of Medicine, said, “I think in acute pain this drug has great promise. This is something that could be opioid-sparing, and we need more tools in our armory for pain.”",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that suzetrigine (Journavx) is a first-in-class non-opioid approved for moderate-to-severe acute pain, and that it provides patients another treatment option, which together back the claim that it offers an alternative to opioids for acute pain.",
+      "page_judged": "supported",
+      "page_reason": "The page describes suzetrigine as a non-opioid pain reliever for moderate-to-severe acute pain and says it provides another treatment option and may be opioid-sparing."
+     }
+    ]
+   },
+   {
+    "sentence": "The FDA's acting CDER director said a non-opioid pain reliever offers a chance to mitigate certain risks of opioid use.[4]",
+    "start": 787,
+    "end": 909,
+    "claim": "The FDA's acting CDER director said a non-opioid pain reliever offers a chance to mitigate certain risks of opioid use.[4]",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newscord.org/article/fda-approves-journavx-suzetrigine-first-in-class-non-opioid-pain-reliever-for-ac--Story_20250131_Newnonopioidpainkilld31a619b",
+      "host": "newscord.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Jacqueline Corrigan-Curay, M.D., acting director of the FDA's Center for Drug Evaluation and Research, said a non-opioid pain reliever “offers an opportunity to mitigate certain risks associated with using an opioid for pain and provides patients with another treatment option.”",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Jacqueline Corrigan-Curay, acting director of the FDA's CDER, said a non-opioid pain reliever offers an opportunity to mitigate certain risks associated with opioid use, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says acting CDER director Jacqueline Corrigan-Curay said a non-opioid pain reliever offers an opportunity to mitigate certain risks associated with opioid use for pain."
+     }
+    ]
+   },
+   {
+    "sentence": "No opioid-type dependence was seen in clinical trials.[5]",
+    "start": 910,
+    "end": 967,
+    "claim": "No opioid-type dependence was seen in suzetrigine clinical trials.[5]",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.sermo.com/resources/fda-approves-journavx-pain-medication/",
+      "host": "sermo.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The application received Breakthrough Therapy, Fast Track and Priority Review designations.[1]",
+    "start": 988,
+    "end": 1082,
+    "claim": "The suzetrigine application received Breakthrough Therapy, Fast Track and Priority Review designations.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The application received Breakthrough Therapy, Fast Track and Priority Review designations by the FDA.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the application received Breakthrough Therapy, Fast Track and Priority Review designations from the FDA, which covers every designation named in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the application received Breakthrough Therapy, Fast Track, and Priority Review designations from the FDA."
+     }
+    ]
+   },
+   {
+    "sentence": "Approval rested on two phase 3 randomized, double-blind, placebo-controlled trials, one after abdominoplasty and one after bunionectomy.[2]",
+    "start": 1102,
+    "end": 1241,
+    "claim": "Approval of suzetrigine rested on two phase 3 randomized, double-blind, placebo-controlled trials, one after abdominoplasty and one after bunionectomy.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.rheumatologyadvisor.com/news/journavx-a-nonopioid-oral-pain-medication-gets-fda-approval/",
+      "host": "rheumatologyadvisor.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Both showed a statistically significant greater reduction in pain than placebo.[1]",
+    "start": 1242,
+    "end": 1324,
+    "claim": "Both suzetrigine phase 3 trials showed a statistically significant greater reduction in pain than placebo.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Both trials demonstrated a statistically significant superior reduction in pain with Journavx compared to placebo.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim that both trials showed a statistically significant pain reduction superior to placebo, but it does not name suzetrigine or say the trials were phase 3, and it refers only to 'Journavx' without linking it to suzetrigine.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says both trials showed a statistically significant superior reduction in pain with Journavx compared with placebo, but it does not identify them as phase 3 trials."
+     }
+    ]
+   },
+   {
+    "sentence": "Suzetrigine eased pain about as effectively as Vicodin (hydrocodone/acetaminophen), according to Yale Medicine.[6]",
+    "start": 1325,
+    "end": 1439,
+    "claim": "According to Yale Medicine, suzetrigine eased pain about as effectively as Vicodin (hydrocodone/acetaminophen).[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.yalemedicine.org/news/new-non-opioid-pain-pill",
+      "host": "yalemedicine.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Both trials showed that suzetrigine eased pain as effectively as Vicodin, and both medications provided more pain relief than the placebo.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that suzetrigine eased pain as effectively as Vicodin, but it does not show that Yale Medicine is the source making that statement.",
+      "page_judged": "supported",
+      "page_reason": "The page says both trials found suzetrigine eased pain as effectively as Vicodin, which it identifies as a combination of acetaminophen and hydrocodone."
+     }
+    ]
+   },
+   {
+    "sentence": "One caveat is that it was compared with Vicodin rather than stronger opioids like oxycodone or morphine.[6]",
+    "start": 1440,
+    "end": 1547,
+    "claim": "Suzetrigine was compared with Vicodin rather than stronger opioids like oxycodone or morphine.[6]",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.yalemedicine.org/news/new-non-opioid-pain-pill",
+      "host": "yalemedicine.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "One weakness of the study, Dr. Chow says, is that it compared suzetrigine to Vicodin instead of to other, stronger opioids like oxycodone, morphine, hydromorphone, and fentanyl.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says the study compared suzetrigine to Vicodin instead of stronger opioids like oxycodone and morphine, which matches the claim's wording, but the claim's framing 'rather than' is presented as a fact about the comparison while the quote explicitly describes it as a weakness; the quote backs the comparison itself, so the claim is supported in substance.",
+      "page_judged": "supported",
+      "page_reason": "The page says the trials compared suzetrigine with Vicodin instead of stronger opioids such as oxycodone and morphine."
+     }
+    ]
+   },
+   {
+    "sentence": "Common side effects were itching, muscle spasms, increased creatine phosphokinase, and rash.[1]",
+    "start": 1561,
+    "end": 1656,
+    "claim": "Common side effects of suzetrigine were itching, muscle spasms, increased creatine phosphokinase, and rash.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The most common adverse reactions in study participants who received Journavx were itching, muscle spasms, increased blood level of creatine phosphokinase, and rash.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the most common adverse reactions with Journavx (suzetrigine) were itching, muscle spasms, increased creatine phosphokinase blood level, and rash, matching every item in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies itching, muscle spasms, increased blood levels of creatine phosphokinase, and rash as the most common adverse reactions among participants who received Journavx (suzetrigine)."
+     }
+    ]
+   },
+   {
+    "sentence": "It is contraindicated with strong CYP3A inhibitors, and patients should avoid grapefruit.[1]",
+    "start": 1657,
+    "end": 1749,
+    "claim": "Suzetrigine is contraindicated with strong CYP3A inhibitors.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Journavx is contraindicated for concomitant use with strong CYP3A inhibitors.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Journavx (suzetrigine) is contraindicated with concomitant use of strong CYP3A inhibitors, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Journavx (suzetrigine) is contraindicated for concomitant use with strong CYP3A inhibitors."
+     }
+    ]
+   },
+   {
+    "sentence": "It is contraindicated with strong CYP3A inhibitors, and patients should avoid grapefruit.[1]",
+    "start": 1657,
+    "end": 1749,
+    "claim": "Patients taking suzetrigine should avoid grapefruit.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Additionally, patients should avoid food or drink containing grapefruit when taking Journavx.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that patients should avoid grapefruit food or drink when taking Journavx (suzetrigine), which backs the entire claim since Journavx is the brand name of suzetrigine.",
+      "page_judged": "supported",
+      "page_reason": "The page states that patients should avoid food or drink containing grapefruit when taking Journavx (suzetrigine)."
+     }
+    ]
+   },
+   {
+    "sentence": "It is not known whether it is safe and effective in children.[3]",
+    "start": 1750,
+    "end": 1814,
+    "claim": "It is not known whether suzetrigine is safe and effective in children.[3]",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://news.vrtx.com/news-releases/news-release-details/vertex-announces-fda-approval-journavxtm-suzetrigine-first-class",
+      "host": "news.vrtx.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It is approved only for acute pain, not chronic pain.",
+    "start": 1815,
+    "end": 1868,
+    "claim": "Suzetrigine is approved only for acute pain, not chronic pain.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12688889/",
+      "host": "pmc.ncbi.nlm.nih.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Real-world studies are still needed to assess its relative effectiveness and long-term safety.[7]",
+    "start": 1869,
+    "end": 1966,
+    "claim": "Real-world studies are still needed to assess suzetrigine's relative effectiveness and long-term safety.[7]",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12688889/",
+      "host": "pmc.ncbi.nlm.nih.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 22,
+   "labels": {
+    "supported": 7,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 8,
+    "uncited": 1
+   },
+   "cited_claims": 21,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.1,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 7,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.007015,
+   "usd_per_claim": 0.000319
+  },
+  "cost": {
+   "total_usd": 0.007,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 13,
+     "usd": 0.002
+    },
+    {
+     "node": "page_check",
+     "calls": 13,
+     "usd": 0.0022
+    },
+    {
+     "node": "check",
+     "calls": 12,
+     "usd": 0.0018
+    }
+   ]
+  }
+ }
+}

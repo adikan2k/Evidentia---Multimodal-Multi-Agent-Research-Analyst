@@ -1,4 +1,4 @@
-"""Command line entry: python -m evidentia "your question"."""
+"""Command line entry: python -m evidentia "your question", or python -m evidentia audit FILE."""
 
 import argparse
 import asyncio
@@ -82,7 +82,12 @@ def main() -> None:
     # Windows consoles default to a legacy code page; pages and quotes need UTF-8.
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8")
-    raise SystemExit(asyncio.run(amain(parse_args())))
+    argv = sys.argv[1:]
+    if argv[:1] == ["audit"]:  # a question that starts with the word "audit" must be quoted
+        from evidentia.audit.cli import amain as audit_main
+
+        raise SystemExit(asyncio.run(audit_main(argv[1:])))
+    raise SystemExit(asyncio.run(amain(parse_args(argv))))
 
 
 if __name__ == "__main__":

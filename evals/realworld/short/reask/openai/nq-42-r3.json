@@ -1,0 +1,96 @@
+{
+ "id": "nq-42-r3",
+ "tool": "openai",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://abcnews.com/news/story/frankie-muniz-bryan-cranston-return-malcolm-middle-revival-128754182?utm_source=openai",
+   "read": true,
+   "chars": 1485
+  }
+ ],
+ "usd": 0.000466,
+ "report": {
+  "answer_text": "Bryan Cranston plays Hal, Malcolm’s dad in *Malcolm in the Middle*. (abcnews.com)",
+  "claims": [
+   {
+    "sentence": "Bryan Cranston plays Hal, Malcolm’s dad in *Malcolm in the Middle*. (abcnews.com)",
+    "start": 0,
+    "end": 81,
+    "claim": "Bryan Cranston plays Hal, Malcolm's dad in Malcolm in the Middle.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://abcnews.com/news/story/frankie-muniz-bryan-cranston-return-malcolm-middle-revival-128754182?utm_source=openai",
+      "host": "abcnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "as well as Bryan Cranston as Malcolm's dad Hal and Jane Kaczmarek as Malcolm's mom, Lois.",
+        "pages": null,
+        "context": {
+         "before": "It's a family reunion in the new teaser for \"Malcolm in the Middle: Life's Still Unfair.\"\nIn the teaser, which arrived Monday from Hulu, Frankie Muniz reprises his role Malcolm, ",
+         "after": "\nLike the original series, the teaser is filled with the same quirky and loud family moments that made the sitcom a beloved show for many.\nAccording to a synopsis, the \"Malcolm in the Middle\" revival, which will be a limited four-episode revival series, will focus on Malcolm, who \"after shielding himself and his daughter from his family for over a decade\" is \"dragged back into their orbit when"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that Bryan Cranston plays Malcolm's dad Hal, which backs every fact in the claim, though it does not explicitly name the show 'Malcolm in the Middle' in the quoted text.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Bryan Cranston reprises his role as Hal, Malcolm's dad, in the revival teaser, which supports that he plays Hal in the show.",
+      "read_by": "fetch (short page)"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 1,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 1,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000143,
+   "usd_per_claim": 0.000143
+  },
+  "cost": {
+   "total_usd": 0.0001,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}

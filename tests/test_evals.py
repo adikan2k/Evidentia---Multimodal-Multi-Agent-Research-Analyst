@@ -28,6 +28,7 @@ from evals.pairs import BUILT, NATURAL, wrong_quote
 from evals.retrieval import relevant_ids
 from evals.retrieval import score as retrieval_score
 from evals.unanswerable import CANDIDATES, absent_from_corpus
+from evidentia.config import Settings
 from evidentia.schemas import CheckedClaim, Passage, RunState
 
 
@@ -52,6 +53,18 @@ def test_retrieval_scores_for_one_question() -> None:
     scores = retrieval_score(ranked, {"first-half", "second-half"})
     assert scores["recall_at_10"] == 0.5 and scores["mrr_at_10"] == 0.5
     assert 0 < scores["ndcg_at_10"] < 1
+
+
+def test_retrieval_scores_recall_and_precision_at_each_k() -> None:
+    ranked = [passage("first-half", "A", 0, 1), passage("x", "A", 0, 1)]
+    ranked += [passage(f"y{i}", "A", 0, 1) for i in range(2)]
+    ranked += [passage("second-half", "A", 0, 1)]
+    scores = retrieval_score(ranked, {"first-half", "second-half"})
+    assert scores["recall_at_1"] == 0.5 and scores["precision_at_1"] == 1.0
+    assert scores["recall_at_3"] == 0.5 and scores["precision_at_3"] == pytest.approx(1 / 3)
+    assert scores["recall_at_5"] == 1.0 and scores["precision_at_5"] == 0.4
+    assert scores["precision_at_10"] == 0.2
+    assert scores["hits"] == [True, False, False, False, True]
 
 
 def item(question_id: str, judge: str, label: str = "presented") -> dict:
@@ -151,11 +164,13 @@ def test_report_says_what_has_not_been_run_instead_of_inventing_numbers(
     monkeypatch.setattr(report, "RESULTS_DIR", tmp_path)
     monkeypatch.setattr(report, "REPORT", tmp_path / "REPORT.md")
     monkeypatch.setattr(report, "SITE_DATA", tmp_path / "evals.json")
+    monkeypatch.setattr(report.readme, "README", tmp_path / "README.md")
     report.run()
     text = (tmp_path / "REPORT.md").read_text(encoding="utf-8")
-    assert text.count("Not run yet") == 5
+    assert text.count("Not run yet") == 7
     assert "Nothing has been run yet." in text
     assert not (tmp_path / "evals.json").exists()  # no results, so no site data
+    assert not (tmp_path / "README.md").exists()  # nor a README block
     assert not any(ch.isdigit() for ch in text.split("## Retrieval")[1])
 
 
@@ -241,3 +256,12 @@ def test_a_question_counts_as_unanswerable_only_if_its_answer_is_nowhere_in_the_
 def test_site_data_keeps_the_numbers_and_drops_the_long_lists() -> None:
     result = {"what": "x", "per_question": [1, 2], "systems": {"a": {"runs": [1], "value": 0.9}}}
     assert report.slim(result) == {"what": "x", "systems": {"a": {"value": 0.9}}}
+    figures = {"runs": {"main": {"value": 0.38}}}
+    assert report.slim(figures) == figures  # per-run figures are kept, only long lists go
+
+
+def test_the_sites_limits_are_the_settings_defaults() -> None:
+    limits = report.auditor_limits()
+    assert set(limits) == set(report.SITE_SETTINGS)
+    assert limits["audit_max_claims"] == Settings.model_fields["audit_max_claims"].default
+    assert all(isinstance(value, int | float) for value in limits.values())

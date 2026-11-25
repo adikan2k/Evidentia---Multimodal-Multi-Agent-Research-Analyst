@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-11-24T16:52:18+00:00",
+  "split": "dev",
+  "model": "haiku",
+  "sample_seed": 20261124,
+  "rows": 55,
+  "metric": "balanced accuracy per sub-dataset, then their plain mean (95% bootstrap)",
+  "systems": {
+    "auditor": {
+      "score": {
+        "mean_bacc": 0.725,
+        "ci_low": 0.6121,
+        "ci_high": 0.7909,
+        "per_dataset": {
+          "AggreFact-CNN": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.8
+          },
+          "AggreFact-XSum": {
+            "n": 5,
+            "supported": 3,
+            "bacc": 0.5
+          },
+          "ClaimVerify": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 0.875
+          },
+          "ExpertQA": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.2
+          },
+          "FactCheck-GPT": {
+            "n": 5,
+            "supported": 2,
+            "bacc": 0.5
+          },
+          "Lfqa": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "RAGTruth": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 0.625
+          },
+          "Reveal": {
+            "n": 5,
+            "supported": 1,
+            "bacc": 1.0
+          },
+          "TofuEval-MediaS": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 0.875
+          },
+          "TofuEval-MeetB": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.6
+          },
+          "Wice": {
+            "n": 5,
+            "supported": 0,
+            "bacc": 1.0
+          }
+        }
+      },
+      "usd": 0.0252,
+      "usd_per_claim": 0.000459,
+      "pooled": {
+        "said_supported": 20,
+        "supported_and_right": 1.0,
+        "caught_supported": 0.5405,
+        "caught_unsupported": 1.0
+      },
+      "score_partial_counted_supported": {
+        "mean_bacc": 0.7773,
+        "ci_low": 0.7227,
+        "ci_high": 0.8818,
+        "per_dataset": {
+          "AggreFact-CNN": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 1.0
+          },
+          "AggreFact-XSum": {
+            "n": 5,
+            "supported": 3,
+            "bacc": 0.5
+          },
+          "ClaimVerify": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "ExpertQA": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.6
+          },
+          "FactCheck-GPT": {
+            "n": 5,
+            "supported": 2,
+            "bacc": 0.75
+          },
+          "Lfqa": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "RAGTruth": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 0.5
+          },
+          "Reveal": {
+            "n": 5,
+            "supported": 1,
+            "bacc": 1.0
+          },
+          "TofuEval-MediaS": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "TofuEval-MeetB": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 1.0
+          },
+          "Wice": {
+            "n": 5,
+            "supported": 0,
+            "bacc": 0.2
+          }
+        }
+      },
+      "labels": {
+        "partial": 21,
+        "supported": 20,
+        "not_found": 13,
+        "contradicted": 1
+      },
+      "rows_with_an_exact_quote": 42,
+      "rows_quotes_offered_none_exact": 0
+    },
+    "direct": {
+      "score": {
+        "mean_bacc": 0.7939,
+        "ci_low": 0.6977,
+        "ci_high": 0.8864,
+        "per_dataset": {
+          "AggreFact-CNN": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.8
+          },
+          "AggreFact-XSum": {
+            "n": 5,
+            "supported": 3,
+            "bacc": 0.5833
+          },
+          "ClaimVerify": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "ExpertQA": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.4
+          },
+          "FactCheck-GPT": {
+            "n": 5,
+            "supported": 2,
+            "bacc": 0.75
+          },
+          "Lfqa": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "RAGTruth": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "Reveal": {
+            "n": 5,
+            "supported": 1,
+            "bacc": 1.0
+          },
+          "TofuEval-MediaS": {
+            "n": 5,
+            "supported": 4,
+            "bacc": 1.0
+          },
+          "TofuEval-MeetB": {
+            "n": 5,
+            "supported": 5,
+            "bacc": 0.6
+          },
+          "Wice": {
+            "n": 5,
+            "supported": 0,
+            "bacc": 0.6
+          }
+        }
+      },
+      "usd": 0.0132,
+      "usd_per_claim": 0.000241,
+      "pooled": {
+        "said_supported": 32,
+        "supported_and_right": 0.9062,
+        "caught_supported": 0.7838,
+        "caught_unsupported": 0.8333
+      },
+      "unanswered": 1
+    }
+  },
+  "auditor_minus_direct": {
+    "difference": -0.0689,
+    "ci_low": -0.2098,
+    "ci_high": 0.0356
+  }
+}

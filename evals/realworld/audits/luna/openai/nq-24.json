@@ -1,0 +1,75 @@
+{
+ "id": "nq-24",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "French geographer Paul Vidal de la Blache laid the foundation of the school of possibilism in human geography. French historian Lucien Febvre later coined the term *possibilism*. (bsgi.it)",
+  "claims": [
+   {
+    "sentence": "French historian Lucien Febvre later coined the term *possibilism*. (bsgi.it)",
+    "start": 111,
+    "end": 188,
+    "claim": "French historian Lucien Febvre later coined the term possibilism.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://bsgi.it/index.php/bsgi/article/view/542?utm_source=openai",
+      "host": "bsgi.it",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 1,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "uncited": 0
+   },
+   "cited_claims": 1,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 1,
+   "claims_over_limit": 0,
+   "usd": 0.000178,
+   "usd_per_claim": 0.000178
+  },
+  "cost": {
+   "total_usd": 0.0002,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

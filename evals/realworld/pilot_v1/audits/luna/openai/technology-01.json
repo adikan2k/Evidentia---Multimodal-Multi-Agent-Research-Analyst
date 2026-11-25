@@ -1,0 +1,417 @@
+{
+ "id": "technology-01",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "GPT‑5 is an AI model family that OpenAI released on August 7, 2025. It became the default in ChatGPT at launch. Its biggest change was that ChatGPT could automatically choose between a fast model for everyday questions and a deeper reasoning model, GPT‑5 Thinking, for harder tasks. (openai.com)\nIts main improvements were:\nBetter coding and tool use. GPT‑5 was better at writing and debugging code, working with existing codebases, and using tools across multi-step tasks. (openai.com)\nStronger reasoning and image understanding. It improved on tasks involving math, science, and visual inputs such as charts and diagrams. It also improved at writing and following detailed instructions. (openai.com)\nMore reliable answers. OpenAI reported fewer factual errors and less tendency to agree with users just to please them. It could still make mistakes. (openai.com)\nMore control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, plus settings for how much reasoning the model does and how detailed its answers are. (openai.com)",
+  "claims": [
+   {
+    "sentence": "It became the default in ChatGPT at launch.",
+    "start": 68,
+    "end": 111,
+    "claim": "GPT‑5 became the default in ChatGPT at launch.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?KBOpenTab=undefined&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is the new default in ChatGPT, replacing GPT‑4o, OpenAI o3, OpenAI o4-mini, GPT‑4.1, and GPT‑4.5 for signed-in users.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 is starting to roll out today to all Plus, Pro, Team, and Free users, with access for Enterprise and Edu coming next week.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state GPT-5 is the new default in ChatGPT and that it began rolling out today to Plus, Pro, Team, and Free users, which backs the main point, but they do not explicitly say it was the default at launch for Enterprise and Edu users, who got access later.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 is the new default in ChatGPT for signed-in users and that its rollout began that day."
+     }
+    ]
+   },
+   {
+    "sentence": "Its biggest change was that ChatGPT could automatically choose between a fast model for everyday questions and a deeper reasoning model, GPT‑5 Thinking, for harder tasks. (openai.com)",
+    "start": 112,
+    "end": 295,
+    "claim": "GPT‑5's biggest change was that ChatGPT could automatically choose between a fast model for everyday questions and a deeper reasoning model, GPT‑5 Thinking, for harder tasks. (openai.com)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?KBOpenTab=undefined&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is a unified system with a smart, efficient model that answers most questions, a deeper reasoning model (GPT‑5 thinking) for harder problems, and a real‑time router that quickly decides which to use based on conversation type, complexity, tool needs, and your explicit intent",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 is the new default in ChatGPT, replacing GPT‑4o, OpenAI o3, OpenAI o4-mini, GPT‑4.1, and GPT‑4.5 for signed-in users. Just open ChatGPT and type your question; GPT‑5 handles the rest, applying reasoning automatically when the response would benefit from it.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the automatic routing between a fast model and GPT-5 Thinking for harder problems, but nothing in them says this was GPT-5's biggest change.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says GPT‑5 uses a router to choose between an efficient model for most questions and GPT‑5 Thinking for harder problems, but it does not call this GPT‑5’s biggest change."
+     }
+    ]
+   },
+   {
+    "sentence": "Better coding and tool use. GPT‑5 was better at writing and debugging code, working with existing codebases, and using tools across multi-step tasks. (openai.com)",
+    "start": 324,
+    "end": 486,
+    "claim": "GPT‑5 was better at writing and debugging code, working with existing codebases, and using tools across multi-step tasks. (openai.com)",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is state-of-the-art (SOTA) across key coding benchmarks, scoring 74.9% on SWE-bench Verified and 88% on Aider polyglot.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "It excels at producing high-quality code and handling tasks such as fixing bugs, editing code, and answering questions about complex codebases.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "We’ve also found GPT‑5 to be excellent at digging deep into codebases to answer questions about how various pieces work or interoperate.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5’s improved tool intelligence lets it reliably chain together dozens of tool calls—both in sequence and in parallel—without losing its way, making it far better at executing complex, real-world tasks end to end.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state GPT-5 excels at producing and debugging code (fixing bugs, editing code), at answering questions about complex codebases, and at chaining dozens of tool calls across multi-step, end-to-end tasks, which covers every part of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 produces high-quality code, fixes bugs, handles questions about complex codebases, and reliably chains tool calls to complete complex tasks."
+     }
+    ]
+   },
+   {
+    "sentence": "Stronger reasoning and image understanding. It improved on tasks involving math, science, and visual inputs such as charts and diagrams. It also improved at writing and following detailed instructions. (openai.com)",
+    "start": 487,
+    "end": 701,
+    "claim": "GPT‑5 improved on tasks involving math, science, and visual inputs such as charts and diagrams. (openai.com)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?KBOpenTab=undefined&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It sets a new state of the art across math (94.6% on AIME 2025 without tools)",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "including state-of-the-art performance on GPQA, which contains extremely difficult science questions.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The model excels across a range of multimodal benchmarks, spanning visual, video-based, spatial, and scientific reasoning.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Stronger multimodal performance means ChatGPT can reason more accurately over images and other non-text inputs—whether that’s interpreting a chart, summarizing a photo of a presentation, or answering questions about a diagram.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state new state-of-the-art results across math (AIME 2025), state-of-the-art on GPQA science questions, and stronger multimodal performance including interpreting charts and diagrams, which together back the claim's improvements in math, science, and visual inputs.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 made gains in math and scientific problem solving and improved multimodal reasoning over images, including charts and diagrams."
+     }
+    ]
+   },
+   {
+    "sentence": "Stronger reasoning and image understanding. It improved on tasks involving math, science, and visual inputs such as charts and diagrams. It also improved at writing and following detailed instructions. (openai.com)",
+    "start": 487,
+    "end": 701,
+    "claim": "GPT‑5 also improved at writing and following detailed instructions. (openai.com)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://openai.com/index/introducing-gpt-5/?KBOpenTab=undefined&utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5 is our most capable writing collaborator yet, able to help you steer and translate rough ideas into compelling, resonant writing with literary depth and rhythm.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 is significantly better at instruction following, and we see a corresponding improvement in its ability to follow custom instructions.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state GPT-5 is the most capable writing collaborator yet and that it is significantly better at instruction following, which together back the claim that it improved at writing and following detailed instructions.",
+      "page_judged": "supported",
+      "page_reason": "The page describes GPT‑5 as having improved writing capabilities and says it is significantly better at instruction following."
+     }
+    ]
+   },
+   {
+    "sentence": "More reliable answers. OpenAI reported fewer factual errors and less tendency to agree with users just to please them. It could still make mistakes. (openai.com)",
+    "start": 702,
+    "end": 863,
+    "claim": "OpenAI reported that GPT‑5 had fewer factual errors and less tendency to agree with users just to please them. (openai.com)",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://openai.com/index/gpt-5-system-card/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We’ve made significant advances in reducing hallucinations, improving instruction following, and minimizing sycophancy",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that OpenAI reported advances in reducing hallucinations and minimizing sycophancy, but it never names GPT-5 or says the results were fewer factual errors in that model.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 made significant advances in reducing hallucinations and minimizing sycophancy, supporting both parts of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "More reliable answers. OpenAI reported fewer factual errors and less tendency to agree with users just to please them. It could still make mistakes. (openai.com)",
+    "start": 702,
+    "end": 863,
+    "claim": "GPT‑5 could still make mistakes. (openai.com)",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://openai.com/index/gpt-5-system-card/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 has made advances in reducing hallucinations, which supports that it may still make mistakes."
+     }
+    ]
+   },
+   {
+    "sentence": "More control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, plus settings for how much reasoning the model does and how detailed its answers are. (openai.com)",
+    "start": 864,
+    "end": 1048,
+    "claim": "The GPT‑5 API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano. (openai.com)",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We’re releasing GPT‑5 in three sizes in the API—gpt-5, gpt-5-mini, and gpt-5-nano—to give developers more flexibility to trade off performance, cost, and latency.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 is available now in the API platform in three sizes: gpt-5, gpt-5-mini, and gpt-5-nano.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that GPT-5 is released in the API in three sizes, gpt-5, gpt-5-mini, and gpt-5-nano, and is available now, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5 is available in the API in three sizes: gpt-5, gpt-5-mini, and gpt-5-nano."
+     }
+    ]
+   },
+   {
+    "sentence": "More control for developers. The API launched with GPT‑5, GPT‑5 mini, and GPT‑5 nano, plus settings for how much reasoning the model does and how detailed its answers are. (openai.com)",
+    "start": 864,
+    "end": 1048,
+    "claim": "The GPT‑5 API launched with settings for how much reasoning the model does and how detailed its answers are. (openai.com)",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://openai.com/index/introducing-gpt-5-for-developers/?utm_source=openai",
+      "host": "openai.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "GPT‑5’s reasoning_effort parameter can now take a minimal value to get answers back faster, without extensive reasoning first.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "GPT‑5 supports a new verbosity parameter (values: low, medium, high) to help control whether answers are short and to the point or long and comprehensive.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that GPT-5 has a reasoning_effort parameter controlling how much reasoning occurs and a verbosity parameter controlling answer length and detail, which together cover both settings in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says GPT‑5’s API supports a reasoning_effort parameter to control thinking time and a verbosity parameter to control answer length and detail."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 9,
+   "labels": {
+    "supported": 5,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.5556,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 1,
+   "claims_over_limit": 0,
+   "usd": 0.010274,
+   "usd_per_claim": 0.001142
+  },
+  "cost": {
+   "total_usd": 0.0103,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 9,
+     "usd": 0.0037
+    },
+    {
+     "node": "page_check",
+     "calls": 9,
+     "usd": 0.0047
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

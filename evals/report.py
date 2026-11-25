@@ -7,7 +7,9 @@ does not exist yet says so instead of showing a placeholder number.
 import json
 from typing import Any
 
+from evals import readme
 from evals.common import RESULTS_DIR
+from evidentia.config import Settings
 
 REPORT = RESULTS_DIR / "REPORT.md"
 # The website's Evals page reads this one file: the result files with the long lists removed.
@@ -20,20 +22,58 @@ TOO_LONG_FOR_THE_SITE = {
     "confusion_reference_rows_checker_columns",
     "lowest_recall_questions",
 }
+# The real-world audit (D-042 to D-049), for the findings page. Absent files are left out, and the
+# page says what is missing instead of showing a number.
+REALWORLD = (
+    "realworld",
+    "realworld_reask",
+    "realworld_rendered",
+    "realworld_short",
+    "realworld_hand_check",
+    "realworld_hand_check_2",  # D-049: the check that governs the page once it exists
+    "realworld_rest_of_page",
+    "realworld_rest_of_page_reask",
+)
+
+
+def too_long(key: str, value: Any) -> bool:
+    # "runs" is a long list in the nasty test, but in the real-world results it holds the
+    # figures for each run (a dict), which the findings page shows.
+    if key == "runs":
+        return isinstance(value, list)
+    return key in TOO_LONG_FOR_THE_SITE
 
 
 def slim(value: Any) -> Any:
     """A copy without the long lists, so the site ships numbers and not megabytes."""
     if isinstance(value, dict):
-        return {k: slim(v) for k, v in value.items() if k not in TOO_LONG_FOR_THE_SITE}
+        return {k: slim(v) for k, v in value.items() if not too_long(k, v)}
     if isinstance(value, list):
         return [slim(v) for v in value]
     return value
 
 
+# The limits the site's method page states. They are read from the settings' defaults, so the
+# page cannot say one thing while the code does another.
+SITE_SETTINGS = (
+    "audit_max_claims",
+    "audit_max_pages",
+    "audit_min_page_chars",
+    "audit_page_chars",
+    "audit_cap_usd",
+    "max_audits_per_ip",
+    "per_host_interval_s",
+)
+
+
+def auditor_limits() -> dict[str, Any]:
+    return {name: Settings.model_fields[name].default for name in SITE_SETTINGS}
+
+
 def write_site_data(results: dict[str, dict | None]) -> None:
     present = {name: slim(result) for name, result in results.items() if result}
     if present:  # never replace real numbers with an empty file
+        present["auditor_limits"] = auditor_limits()
         SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
         SITE_DATA.write_text(json.dumps(present, indent=1, ensure_ascii=False), encoding="utf-8")
 
@@ -72,9 +112,31 @@ def retrieval_section(d: dict | None) -> list[str]:
         for name, m in d["retrievers"].items()
     ]
     out += table(["Retriever", "Recall@10", "MRR@10", "nDCG@10"], rows)
+    ks = [k for k in (1, 3, 5, 10) if f"precision_at_{k}" in next(iter(d["retrievers"].values()))]
+    if ks:
+        rel = d["relevant_per_question"]
+        out += [
+            "",
+            f"Recall and precision at each cut-off. A question has {rel['mean']:.1f} relevant "
+            "passages on average, so precision at 10 cannot come near 1.",
+            "",
+        ]
+        rows = [
+            [
+                name,
+                *(f"{m[f'recall_at_{k}']['mean']:.3f}" for k in ks),
+                *(f"{m[f'precision_at_{k}']['mean']:.3f}" for k in ks),
+            ]
+            for name, m in d["retrievers"].items()
+        ]
+        head = [*(f"Recall@{k}" for k in ks), *(f"Precision@{k}" for k in ks)]
+        out += table(["Retriever", *head], rows)
     out += ["", "Difference per question, second minus first:", ""]
     rows = [
-        [name.replace("_minus_", " minus "), *(signed(m[k]) for k in m)]
+        [
+            name.replace("_minus_", " minus "),
+            *(signed(m[k]) for k in ("recall_at_10", "mrr_at_10", "ndcg_at_10")),
+        ]
         for name, m in d["paired_differences"].items()
     ]
     out += table(["Comparison", "Recall@10", "MRR@10", "nDCG@10"], rows)
@@ -193,6 +255,189 @@ def nasty_section(d: dict | None) -> list[str]:
     return [*out, d["caveat"], "", *table(["Case", "Passed"], rows), ""]
 
 
+def bacc(stat: dict[str, Any]) -> str:
+    return with_ci(stat, "mean_bacc")
+
+
+def aggrefact_section(runs: dict[str, dict | None]) -> list[str]:
+    out = ["## The auditor on LLM-AggreFact", ""]
+    present = {name: d for name, d in runs.items() if d}
+    if not present:
+        return [*out, "Not run yet: no `evals/results/aggrefact_test_*.json` file exists.", ""]
+    out += [
+        "LLM-AggreFact pairs a claim with a document and a person's label: supported or not. "
+        "The sample is 50 test rows from each of its 11 sub-datasets. Balanced accuracy is "
+        "computed per sub-dataset, then averaged, with a 95% interval. The auditor finds quotes, "
+        "checks them by code, then a checker sees only the claim and the quotes; only "
+        "'supported' counts as supported. The direct baseline is the same model shown the "
+        "whole document and asked yes or no. Prompts were fixed on dev rows before this run.",
+        "",
+    ]
+    rows = []
+    for d in present.values():
+        auditor, direct = d["systems"]["auditor"], d["systems"]["direct"]
+        rows.append(
+            [
+                f"auditor, {d['model']}",
+                bacc(auditor["score"]),
+                bacc(auditor["score_partial_counted_supported"]),
+                f"${auditor['usd_per_claim']:.5f}",
+            ]
+        )
+        rows.append(
+            [f"direct, {d['model']}", bacc(direct["score"]), "", f"${direct['usd_per_claim']:.5f}"]
+        )
+    out += table(
+        ["System", "Balanced accuracy", "Partial counted as supported", "Cost per claim"], rows
+    )
+    for d in present.values():
+        diff = d["auditor_minus_direct"]
+        auditor = d["systems"]["auditor"]
+        out += [
+            "",
+            f"{d['model']}, {d['rows']} rows: auditor minus direct "
+            f"{diff['difference']:+.3f} ({diff['ci_low']:+.3f} to {diff['ci_high']:+.3f}). "
+            f"Auditor labels: {', '.join(f'{n} {k}' for k, n in auditor['labels'].items())}. "
+            f"{auditor['rows_with_an_exact_quote']} rows had at least one quote found word "
+            f"for word.",
+            "",
+        ]
+        pooled = [
+            [
+                name,
+                str(s["pooled"]["said_supported"]),
+                f"{s['pooled']['supported_and_right']:.3f}",
+                f"{s['pooled']['caught_supported']:.3f}",
+                f"{s['pooled']['caught_unsupported']:.3f}",
+            ]
+            for name, s in d["systems"].items()
+            if "pooled" in s
+        ]
+        if pooled:
+            header = ["System", "Said supported", "Of those, right", "Supported rows accepted"]
+            out += table([*header, "Unsupported rows rejected"], pooled) + [""]
+        names = list(auditor["score"]["per_dataset"])
+        per = [
+            [
+                name,
+                str(auditor["score"]["per_dataset"][name]["n"]),
+                f"{auditor['score']['per_dataset'][name]['bacc']:.3f}",
+                f"{d['systems']['direct']['score']['per_dataset'][name]['bacc']:.3f}",
+            ]
+            for name in names
+        ]
+        out += table(["Sub-dataset", "Rows", "Auditor", "Direct"], per)
+    return [*out, ""]
+
+
+def ci(stat: dict[str, Any] | None) -> str:
+    if not stat or stat["value"] is None:
+        return "none"
+    if stat["ci_low"] is None:
+        return f"{stat['value']:.3f}"
+    return f"{stat['value']:.3f} ({stat['ci_low']:.3f} to {stat['ci_high']:.3f})"
+
+
+def two_judges_section(runs: dict[str, dict]) -> list[str]:
+    out = ["## Two judges on LLM-AggreFact", ""]
+    if not runs:
+        return [*out, "Not run yet: no `evals/results/aggrefact_*_q-*_p-*.json` file exists.", ""]
+    out += [
+        "A claim gets a verdict only when the quote judge (exact quotes, then a check on the "
+        "quotes alone) and the page judge (the claim and the page) agree. Otherwise it is "
+        "'needs a human'. Flag precision: of the claims flagged, the share people label "
+        "unsupported. Supported precision: of the claims called supported, the share people "
+        "label supported. Coverage: the share that get a verdict. 95% intervals in brackets.",
+        "",
+    ]
+    for d in runs.values():
+        two, quote, page = d["two_judges"], d["quote_judge_alone"], d["page_judge_alone"]
+        judges = d["judges"]
+        context = " with quote context" if judges.get("quote_context") == "True" else ""
+        out += [
+            f"### {d['sample']}: quote judge {judges['quote']}{context}, page judge "
+            f"{judges['page']} ({d['rows']} rows)",
+            "",
+        ]
+        header = ["System", "Balanced accuracy", "Flag precision", "Supported precision"]
+        rows = [
+            [
+                "Two judges",
+                ci(two["balanced_accuracy"]),
+                ci(two["flag_precision"]),
+                ci(two["supported_precision"]),
+                ci(two["coverage"]),
+            ],
+            [
+                "Quote judge alone",
+                ci(quote["balanced_accuracy"]),
+                ci(quote["flag_precision"]),
+                ci(quote["supported_precision"]),
+                "1.000",
+            ],
+            [
+                "Page judge alone",
+                ci(page["balanced_accuracy"]),
+                ci(page["flag_precision"]),
+                ci(page["supported_precision"]),
+                "1.000",
+            ],
+        ]
+        out += table([*header, "Coverage"], rows)
+        labels = ", ".join(f"{n} {k}" for k, n in two["labels"].items())
+        finish = d["finish_line"]
+        verdict = "passed" if finish["passed"] else "not passed"
+        bars = ", ".join(f"{k} {v}" for k, v in finish["thresholds"].items())
+        out += [
+            "",
+            f"Two judges, with every 'needs a human' counted as wrong: balanced accuracy "
+            f"{ci(two['balanced_accuracy_abstain_counted_wrong'])}. Labels: {labels}. "
+            f"Cost per claim, both judges: ${d['usd']['per_claim_both']:.5f}. "
+            f"D-038 finish line ({bars}): {verdict}.",
+            "",
+        ]
+        per = [
+            [
+                ds,
+                f"{two['per_dataset'][ds]:.3f}",
+                f"{two['coverage_per_dataset'][ds]:.3f}",
+                f"{quote['per_dataset'][ds]:.3f}",
+                f"{page['per_dataset'][ds]:.3f}",
+            ]
+            for ds in two["per_dataset"]
+        ]
+        out += table(["Sub-dataset", "Two judges", "Coverage", "Quote alone", "Page alone"], per)
+        sweep = d.get("threshold_sweep")
+        if sweep:
+            out += ["", "Best thresholds on these rows (most coverage that meets the bars):", ""]
+            rows = []
+            for name, key in (
+                ("partial counted as a flag", "best_partial_as_flag"),
+                ("partial as its own verdict", "best_partial_own_verdict"),
+            ):
+                pt = sweep[key]
+                flag = (
+                    "flag_precision"
+                    if key == "best_partial_as_flag"
+                    else ("flag_precision_partial_own_verdict")
+                )
+                rows.append(
+                    [name, "none meets the bars", "", "", ""]
+                    if pt is None
+                    else [
+                        name,
+                        f"{pt['t_supported']} / {pt['t_flag']}",
+                        f"{pt[flag]:.3f}",
+                        f"{pt['supported_precision']:.3f}",
+                        f"{pt['coverage']:.3f}",
+                    ]
+                )
+            header = ["Partial", "Thresholds (supported / flag)", "Flags right"]
+            out += table([*header, "Supported right", "Coverage"], rows)
+        out += [""]
+    return out
+
+
 def failures_section(results: dict[str, dict | None]) -> list[str]:
     out = ["## What failed", ""]
     retrieval, agreement, accuracy, nasty = (
@@ -247,7 +492,13 @@ def failures_section(results: dict[str, dict | None]) -> list[str]:
 
 def run() -> None:
     names = ["retrieval", "checker_agreement", "citation_accuracy", "unanswerable", "nasty"]
+    names += ["aggrefact_test_haiku", "aggrefact_test_sonnet"]
     results = {name: load(name) for name in names}
+    aggrefact = {k: v for k, v in results.items() if k.startswith("aggrefact_")}
+    two_judges = {
+        p.stem: load(p.stem) for p in sorted(RESULTS_DIR.glob("aggrefact_*_q-*_p-*.json"))
+    }
+    results |= two_judges
     lines = [
         "# Evaluation report",
         "",
@@ -262,9 +513,13 @@ def run() -> None:
         *accuracy_section(results["citation_accuracy"]),
         *unanswerable_section(results["unanswerable"]),
         *nasty_section(results["nasty"]),
+        *aggrefact_section(aggrefact),
+        *two_judges_section(two_judges),
         *failures_section(results),
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines), encoding="utf-8", newline="\n")
-    write_site_data(results)
-    print(f"report: wrote {REPORT}")
+    write_site_data(results | {name: load(name) for name in REALWORLD})
+    if results["retrieval"]:  # only with real results, never from an empty folder
+        readme.write()
+    print(f"report: wrote {REPORT}, the site's data and the README's results block")

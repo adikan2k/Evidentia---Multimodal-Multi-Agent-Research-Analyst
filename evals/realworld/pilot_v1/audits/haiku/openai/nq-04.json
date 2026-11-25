@@ -1,0 +1,192 @@
+{
+ "id": "nq-04",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota, to more than 11 miles wide where it passes through Lake Winnibigoshish, also in Minnesota. Its widest navigable stretch is about 2 miles wide at Lake Pepin, on the Minnesota–Wisconsin border. (nps.gov)",
+  "claims": [
+   {
+    "sentence": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota, to more than 11 miles wide where it passes through Lake Winnibigoshish, also in Minnesota.",
+    "start": 0,
+    "end": 181,
+    "claim": "The Mississippi River is 20–30 feet wide at its source at Lake Itasca, Minnesota.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At Lake Itasca, the river is between 20 and 30 feet wide, the narrowest stretch for its entire length.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at Lake Itasca the river is between 20 and 30 feet wide, which matches the claim's width range and location, though it does not explicitly call Lake Itasca the source, the claim's framing is consistent with the quote's place reference.",
+      "page_judged": "supported",
+      "page_reason": "The page states that at Lake Itasca the river is between 20 and 30 feet wide, the narrowest stretch for its entire length, which matches the claim's width range at the source."
+     }
+    ]
+   },
+   {
+    "sentence": "The Mississippi River ranges from 20–30 feet wide at its source at Lake Itasca, Minnesota, to more than 11 miles wide where it passes through Lake Winnibigoshish, also in Minnesota.",
+    "start": 0,
+    "end": 181,
+    "claim": "The Mississippi River is more than 11 miles wide where it passes through Lake Winnibigoshish, Minnesota.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The widest part of the Mississippi can be found at Lake Winnibigoshish near Bena, MN, where it is wider than 11 miles.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at Lake Winnibigoshish near Bena, MN the Mississippi is wider than 11 miles, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the widest part of the Mississippi is at Lake Winnibigoshish near Bena, MN, where it is wider than 11 miles, which supports the claim's width and location."
+     }
+    ]
+   },
+   {
+    "sentence": "Its widest navigable stretch is about 2 miles wide at Lake Pepin, on the Minnesota–Wisconsin border. (nps.gov)",
+    "start": 182,
+    "end": 292,
+    "claim": "The Mississippi River's widest navigable stretch is about 2 miles wide at Lake Pepin.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The widest navigable section in the shipping channel of the Mississippi is Lake Pepin, where the channel is approximately 2 miles wide.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Lake Pepin is the widest navigable section of the Mississippi shipping channel at approximately 2 miles wide, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the widest navigable section in the shipping channel is Lake Pepin, where the channel is approximately 2 miles wide, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Its widest navigable stretch is about 2 miles wide at Lake Pepin, on the Minnesota–Wisconsin border. (nps.gov)",
+    "start": 182,
+    "end": 292,
+    "claim": "Lake Pepin lies on the Minnesota–Wisconsin border.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.nps.gov/miss/riverfacts.htm?eId=d266bc7a-c0a9-4b60-bce2-bf13bc2bcd14&eType=EmailBlastContent&utm_source=openai",
+      "host": "nps.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions Lake Pepin only as the widest navigable section of the shipping channel, about 2 miles wide, and does not state anything about its location or the Minnesota–Wisconsin border."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.75,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002034,
+   "usd_per_claim": 0.000508
+  },
+  "cost": {
+   "total_usd": 0.002,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0006
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

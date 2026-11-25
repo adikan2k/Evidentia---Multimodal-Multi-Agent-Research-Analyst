@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     qdrant_api_key: SecretStr
     langfuse_public_key: SecretStr
     langfuse_secret_key: SecretStr
+    # Only needed when a configured model is an OpenAI one, such as the page judge (D-038).
+    openai_api_key: SecretStr | None = None
     # Langfuse SDK v5 calls this LANGFUSE_BASE_URL; the plan calls it LANGFUSE_HOST. Accept both.
     langfuse_host: str = Field(
         # Langfuse keys only work in the region the project was created in. This project is in
@@ -84,6 +86,63 @@ class Settings(BaseSettings):
     min_page_chars: int = 200
     min_quote_chars: int = 20
 
+    # The auditor (D-037). Its judges are Haiku: on 550 practice rows Sonnet was no better and
+    # cost 15 times as much per claim (D-039, `aggrefact_dev550_q-sonnet_p-sonnet.json`).
+    splitter_model: str = "claude-haiku-5-5"
+    splitter_max_tokens: int = 8_000
+    finder_model: str = "claude-haiku-5-5"
+    finder_effort: str = "medium"
+    finder_max_tokens: int = 2_000
+    # About a cent per claim and page, plus room for the worst case of calls in flight, which
+    # the ledger reserves before each call. $0.25 stopped a 5-claim audit with 4 calls in flight.
+    audit_cap_usd: float = 0.25  # Haiku judges cost about a tenth of a cent per claim
+    audit_max_claims: int = 25
+    audit_max_pages: int = 10
+    # Pages with less text than this are not judged (D-042 pilot: 311 to 1,552 characters read
+    # from script-built pages). The research pipeline keeps min_page_chars.
+    audit_min_page_chars: int = 2_000
+    audit_page_chars: int = 24_000  # longer pages are cut to their best passages for each claim
+    audit_top_passages: int = 6
+    audit_max_quotes: int = 5  # 3 left multi-part claims partial on the AggreFact dev rows
+    audit_concurrency: int = 4
+    # Two judges (D-038): a claim gets a verdict only when the quote judge and the page judge
+    # agree; otherwise it is labelled "needs a human".
+    audit_two_judges: bool = True
+    page_judge_model: str = "claude-haiku-5-5"  # a "gpt-..." name sends it to OpenAI
+    page_judge_effort: str = "medium"
+    # The auditor's own checker, apart from the research pipeline's, whose numbers depend on it.
+    audit_checker_model: str = "claude-haiku-5-5"
+    page_judge_max_tokens: int = 1_500
+    # The page judge's score (D-039): the share of `page_judge_votes` answers that say supported,
+    # or, with `page_judge_probability`, an OpenAI model's probability of "true" (reasoning off).
+    page_judge_votes: int = 1
+    page_judge_probability: bool = False
+    # Supported needs a score of at least this; a flag needs at most `audit_t_flag`; anything in
+    # between needs a human. 0.5 and 0.5 with one vote is D-038's plain agreement.
+    audit_t_supported: float = 0.5
+    audit_t_flag: float = 0.5
+    # Show the checker the paragraph around each quote (D-038, practice run 3). Off until kept.
+    audit_quote_context: bool = False
+    # D-040. A page judge that says states / implies / does not support / contradicts, and three
+    # precision rules for the quote judge's checker. Both off until measured and kept.
+    page_judge_graded: bool = False
+    audit_checker_rules: bool = False
+    # A sentence with no citation of its own takes the one that closes its paragraph (D-041).
+    audit_paragraph_citations: bool = True
+    # D-046: read a page that gave too little text again, in a headless browser. Off by
+    # default: only the real-world eval turns it on, and the server has no browser installed.
+    audit_render_thin_pages: bool = False
+    # D-049: the auditor reads the rest of the page after the article (dates, captions, stat
+    # boxes). The research agent keeps the article alone.
+    audit_rest_of_page: bool = True
+    render_max_requests: int = 40  # for one page, the document included
+    render_timeout_s: float = 20.0
+    render_request_interval_s: float = 0.25  # between requests to one site inside a page load
+    # Send the page as a cached prefix, so other claims on the same page read it cheaply (D-039).
+    # Off in the benchmark, where no two rows share a document and a cache write costs 1.25x.
+    audit_prompt_cache: bool = True
+    quote_context_chars: int = 600
+
     # The public API (D-028). Dollars are list prices, the same ones the ledger uses.
     daily_budget_usd: float = 1.00  # all live runs and checks in one UTC day
     public_run_cap_usd: float = 0.25  # one live run from the website
@@ -92,6 +151,10 @@ class Settings(BaseSettings):
     max_runs_per_ip: int = 3
     max_checks_per_ip: int = 30
     max_concurrent_runs: int = 2
+    # Live audits from the website (D-041), within the same daily budget.
+    max_audits_per_ip: int = 5
+    max_concurrent_audits: int = 2
+    audit_reserve_usd: float = 0.05  # set aside when an audit starts, replaced by its real cost
     allowed_origins: str = "http://localhost:3000"  # comma-separated
 
 

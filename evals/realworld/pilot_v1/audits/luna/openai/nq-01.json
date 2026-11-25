@@ -1,0 +1,131 @@
+{
+ "id": "nq-01",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The central idea of Oliver Goldsmith’s *The Deserted Village* is that a society does not truly prosper when a few grow wealthy at the expense of ordinary people. Goldsmith contrasts Auburn’s once lively village life with its later emptiness, mourning the loss of a community whose residents were forced to leave when a wealthy landowner took control of the land. (poetryfoundation.org)",
+  "claims": [
+   {
+    "sentence": "The central idea of Oliver Goldsmith’s *The Deserted Village* is that a society does not truly prosper when a few grow wealthy at the expense of ordinary people.",
+    "start": 0,
+    "end": 161,
+    "claim": "The central idea of Oliver Goldsmith’s The Deserted Village is that a society does not truly prosper when a few grow wealthy at the expense of ordinary people.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.poetryfoundation.org/poems/44292/the-deserted-village?utm_source=openai",
+      "host": "poetryfoundation.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Goldsmith contrasts Auburn’s once lively village life with its later emptiness, mourning the loss of a community whose residents were forced to leave when a wealthy landowner took control of the land. (poetryfoundation.org)",
+    "start": 162,
+    "end": 385,
+    "claim": "Goldsmith contrasts Auburn’s once lively village life with its later emptiness.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.poetryfoundation.org/poems/44292/the-deserted-village?utm_source=openai",
+      "host": "poetryfoundation.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Goldsmith contrasts Auburn’s once lively village life with its later emptiness, mourning the loss of a community whose residents were forced to leave when a wealthy landowner took control of the land. (poetryfoundation.org)",
+    "start": 162,
+    "end": 385,
+    "claim": "Goldsmith mourns the loss of the Auburn community whose residents were forced to leave when a wealthy landowner took control of the land.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.poetryfoundation.org/poems/44292/the-deserted-village?utm_source=openai",
+      "host": "poetryfoundation.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000292,
+   "usd_per_claim": 9.7e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

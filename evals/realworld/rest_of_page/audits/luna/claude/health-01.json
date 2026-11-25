@@ -1,0 +1,727 @@
+{
+ "id": "health-01",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:48:33+00:00",
+ "report": {
+  "answer_text": "What it is: Lenacapavir is a long-acting HIV-1 capsid inhibitor made by Gilead Sciences. It was first approved in 2022 under the brand name Sunlenca, for treating HIV-1 infection.[1] Sunlenca is for people living with multi-drug resistant HIV[2].\nWhat the FDA approved in 2025: On June 18, 2025, the FDA approved lenacapavir under the name Yeztugo as pre-exposure prophylaxis (PrEP). It reduces the risk of sexually acquired HIV in adults and adolescents weighing at least 35 kg.[2] The approval covers people who are at risk of acquiring HIV.\nKey details:\nDosing: Starting takes two subcutaneous injections plus oral tablets on day 1, then tablets on day 2. After that, patients get two injections every 6 months.[3]\nEvidence: The approval was supported by the Phase 3 PURPOSE 1 and PURPOSE 2 trials. In those trials, ≥99.9% of participants stayed HIV negative on twice-yearly injectable Yeztugo.[1] One trial of about 5,300 cisgender women found zero infections, and it was stopped early.[4] The other trial found Yeztugo reduced infections by 96% compared with background rates, and by 89% compared with Truvada.[4]\nSignificance: It is billed as the first and only FDA-approved HIV prevention option offering 6 months of protection.[2]\nPrice: The list price is $28,218 per year, slightly above the $26,400 yearly cost of Descovy.[4]\nTesting: People must be tested for HIV-1 before starting Yeztugo and before each subsequent injection.[5]",
+  "claims": [
+   {
+    "sentence": "What it is: Lenacapavir is a long-acting HIV-1 capsid inhibitor made by Gilead Sciences.",
+    "start": 0,
+    "end": 88,
+    "claim": "Lenacapavir is a long-acting HIV-1 capsid inhibitor.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.drugs.com/history/yeztugo.html",
+      "host": "drugs.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "What it is: Lenacapavir is a long-acting HIV-1 capsid inhibitor made by Gilead Sciences.",
+    "start": 0,
+    "end": 88,
+    "claim": "Lenacapavir is made by Gilead Sciences.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.drugs.com/history/yeztugo.html",
+      "host": "drugs.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was first approved in 2022 under the brand name Sunlenca, for treating HIV-1 infection.[1]",
+    "start": 89,
+    "end": 182,
+    "claim": "Lenacapavir was first approved in 2022 under the brand name Sunlenca.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.drugs.com/history/yeztugo.html",
+      "host": "drugs.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It was first approved in 2022 under the brand name Sunlenca, for treating HIV-1 infection.[1]",
+    "start": 89,
+    "end": 182,
+    "claim": "Sunlenca is approved for treating HIV-1 infection.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.drugs.com/history/yeztugo.html",
+      "host": "drugs.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Sunlenca is for people living with multi-drug resistant HIV[2].",
+    "start": 183,
+    "end": 246,
+    "claim": "Sunlenca is for people living with multi-drug resistant HIV.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.hcplive.com/view/fda-approves-first-twice-yearly-hiv-prevention-option",
+      "host": "hcplive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It was previously approved as a method of antiretroviral therapy in December 2022 for patients with limited options for treatment due to treatment resistance, safety, or intolerance.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Sunlenca® (lenacapavir) Receives FDA Approval as a First-in-Class, Twice-Yearly Treatment Option for People Living With Multi-Drug Resistant HIV.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The second quote states Sunlenca is approved for people living with multi-drug resistant HIV, which is the entirety of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page cites Sunlenca (lenacapavir) as approved as a treatment option for people living with multidrug-resistant HIV."
+     }
+    ]
+   },
+   {
+    "sentence": "On June 18, 2025, the FDA approved lenacapavir under the name Yeztugo as pre-exposure prophylaxis (PrEP).",
+    "start": 278,
+    "end": 383,
+    "claim": "On June 18, 2025, the FDA approved lenacapavir under the name Yeztugo as pre-exposure prophylaxis (PrEP).",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.hcplive.com/view/fda-approves-first-twice-yearly-hiv-prevention-option",
+      "host": "hcplive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On this day, June 18, 2025, the FDA has approved lenacapavir (Gilead) under the name Yeztugo, an injectable HIV-1 capsid inhibitor, as pre-exposure prophylaxis (PrEP) to reduce the risk of sexually acquired HIV in adults and adolescents weighing at least 35kg.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that on June 18, 2025 the FDA approved lenacapavir under the name Yeztugo as pre-exposure prophylaxis (PrEP), matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on June 18, 2025, the FDA approved lenacapavir under the name Yeztugo as pre-exposure prophylaxis (PrEP)."
+     }
+    ]
+   },
+   {
+    "sentence": "It reduces the risk of sexually acquired HIV in adults and adolescents weighing at least 35 kg.[2]",
+    "start": 384,
+    "end": 482,
+    "claim": "Yeztugo reduces the risk of sexually acquired HIV in adults and adolescents weighing at least 35 kg.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.hcplive.com/view/fda-approves-first-twice-yearly-hiv-prevention-option",
+      "host": "hcplive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the FDA has approved lenacapavir (Gilead) under the name Yeztugo, an injectable HIV-1 capsid inhibitor, as pre-exposure prophylaxis (PrEP) to reduce the risk of sexually acquired HIV in adults and adolescents weighing at least 35kg.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Yeztugo is approved as PrEP to reduce the risk of sexually acquired HIV in adults and adolescents weighing at least 35kg, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Yeztugo is approved as PrEP to reduce the risk of sexually acquired HIV in adults and adolescents weighing at least 35 kg."
+     }
+    ]
+   },
+   {
+    "sentence": "The approval covers people who are at risk of acquiring HIV.",
+    "start": 483,
+    "end": 543,
+    "claim": "The FDA approval of Yeztugo covers people who are at risk of acquiring HIV.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Starting takes two subcutaneous injections plus oral tablets on day 1, then tablets on day 2.",
+    "start": 565,
+    "end": 658,
+    "claim": "Starting Yeztugo takes two subcutaneous injections plus oral tablets on day 1, then tablets on day 2.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.clinicaladvisor.com/news/twice-yearly-hiv-1-prep-yeztugo-gets-fda-approval/",
+      "host": "clinicaladvisor.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "After that, patients get two injections every 6 months.[3]",
+    "start": 659,
+    "end": 717,
+    "claim": "After starting, Yeztugo patients get two injections every 6 months.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.clinicaladvisor.com/news/twice-yearly-hiv-1-prep-yeztugo-gets-fda-approval/",
+      "host": "clinicaladvisor.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The approval was supported by the Phase 3 PURPOSE 1 and PURPOSE 2 trials.",
+    "start": 728,
+    "end": 801,
+    "claim": "The approval of Yeztugo was supported by the Phase 3 PURPOSE 1 and PURPOSE 2 trials.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.drugs.com/history/yeztugo.html",
+      "host": "drugs.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "In those trials, ≥99.9% of participants stayed HIV negative on twice-yearly injectable Yeztugo.[1]",
+    "start": 802,
+    "end": 900,
+    "claim": "In the PURPOSE trials, at least 99.9% of participants stayed HIV negative on twice-yearly injectable Yeztugo.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.drugs.com/history/yeztugo.html",
+      "host": "drugs.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "One trial of about 5,300 cisgender women found zero infections, and it was stopped early.[4]",
+    "start": 901,
+    "end": 993,
+    "claim": "One PURPOSE trial of about 5,300 cisgender women found zero infections.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.biopharmadive.com/news/gilead-fda-approves-yeztugo-lenacapavir-hiv-prep/750742/",
+      "host": "biopharmadive.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "One trial enrolling 5,300 cisgender women and comparing Yeztugo to the once-daily pill Truvada and background HIV infection rates turned up zero infections",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 5,300 cisgender women and zero infections, but it never names the trial as PURPOSE.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a trial of 5,300 cisgender women recorded zero infections, but it does not identify the trial as a PURPOSE trial."
+     }
+    ]
+   },
+   {
+    "sentence": "One trial of about 5,300 cisgender women found zero infections, and it was stopped early.[4]",
+    "start": 901,
+    "end": 993,
+    "claim": "The trial of about 5,300 cisgender women was stopped early.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.biopharmadive.com/news/gilead-fda-approves-yeztugo-lenacapavir-hiv-prep/750742/",
+      "host": "biopharmadive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "One trial enrolling 5,300 cisgender women and comparing Yeztugo to the once-daily pill Truvada and background HIV infection rates turned up zero infections — results so striking the study was stopped early.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the trial enrolled 5,300 cisgender women and was stopped early, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says the study enrolling 5,300 cisgender women was stopped early after it found zero infections."
+     }
+    ]
+   },
+   {
+    "sentence": "The other trial found Yeztugo reduced infections by 96% compared with background rates, and by 89% compared with Truvada.[4]",
+    "start": 994,
+    "end": 1118,
+    "claim": "The other PURPOSE trial found Yeztugo reduced infections by 96% compared with background rates.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.biopharmadive.com/news/gilead-fda-approves-yeztugo-lenacapavir-hiv-prep/750742/",
+      "host": "biopharmadive.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The other test, which included a broader study population, showed Yeztugo reduced infections by 96% when compared to background rates and by 89% when compared to Truvada.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 96% reduction versus background rates for \"the other test\" but never names it as the PURPOSE trial, so that identification is not stated in the quotes.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the other study showed a 96% reduction compared with background rates, but it does not identify that study as the PURPOSE trial."
+     }
+    ]
+   },
+   {
+    "sentence": "The other trial found Yeztugo reduced infections by 96% compared with background rates, and by 89% compared with Truvada.[4]",
+    "start": 994,
+    "end": 1118,
+    "claim": "The other PURPOSE trial found Yeztugo reduced infections by 89% compared with Truvada.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.biopharmadive.com/news/gilead-fda-approves-yeztugo-lenacapavir-hiv-prep/750742/",
+      "host": "biopharmadive.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The other test, which included a broader study population, showed Yeztugo reduced infections by 96% when compared to background rates and by 89% when compared to Truvada.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 89% reduction compared with Truvada for the other test with a broader population, but it never names that test as a PURPOSE trial.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the other test showed an 89% reduction compared with Truvada, but it does not identify that test as the PURPOSE trial."
+     }
+    ]
+   },
+   {
+    "sentence": "It is billed as the first and only FDA-approved HIV prevention option offering 6 months of protection.[2]",
+    "start": 1133,
+    "end": 1238,
+    "claim": "Yeztugo is billed as the first and only FDA-approved HIV prevention option offering 6 months of protection.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.hcplive.com/view/fda-approves-first-twice-yearly-hiv-prevention-option",
+      "host": "hcplive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Yeztugo® (Lenacapavir) Is Now the First and Only FDA-Approved HIV Prevention Option Offering 6 Months of Protection. News release. Gilead. June 18, 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The medication is the first twice-yearly option for preventing HIV to be approved and significantly improves the treatment burden on patients",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote's headline states Yeztugo is the first and only FDA-approved HIV prevention option offering 6 months of protection, matching the claim's wording, and the second quote reinforces it as the first twice-yearly option.",
+      "page_judged": "supported",
+      "page_reason": "The page identifies Yeztugo as the first twice-yearly FDA-approved HIV prevention option and cites a release describing it as the first and only option offering 6 months of protection."
+     }
+    ]
+   },
+   {
+    "sentence": "The list price is $28,218 per year, slightly above the $26,400 yearly cost of Descovy.[4]",
+    "start": 1246,
+    "end": 1335,
+    "claim": "The list price of Yeztugo is $28,218 per year.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.biopharmadive.com/news/gilead-fda-approves-yeztugo-lenacapavir-hiv-prep/750742/",
+      "host": "biopharmadive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Yeztugo will have a list price of $28,218 per year, slightly higher than the $26,400 yearly cost for one of its other medicines for HIV prevention, Descovy.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Yeztugo will have a list price of $28,218 per year, matching the claim's figure exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Yeztugo will have a list price of $28,218 per year."
+     }
+    ]
+   },
+   {
+    "sentence": "The list price is $28,218 per year, slightly above the $26,400 yearly cost of Descovy.[4]",
+    "start": 1246,
+    "end": 1335,
+    "claim": "The yearly cost of Descovy is $26,400.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.biopharmadive.com/news/gilead-fda-approves-yeztugo-lenacapavir-hiv-prep/750742/",
+      "host": "biopharmadive.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Yeztugo will have a list price of $28,218 per year, slightly higher than the $26,400 yearly cost for one of its other medicines for HIV prevention, Descovy.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote explicitly states that Descovy has a yearly cost of $26,400, matching the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Descovy costs $26,400 yearly."
+     }
+    ]
+   },
+   {
+    "sentence": "Testing: People must be tested for HIV-1 before starting Yeztugo and before each subsequent injection.[5]",
+    "start": 1336,
+    "end": 1441,
+    "claim": "People must be tested for HIV-1 before starting Yeztugo.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://seekingalpha.com/pr/20141436-yeztugo-lenacapavir-is-now-the-first-and-only-fda-approved-hiv-prevention-option-offering-6",
+      "host": "seekingalpha.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Testing: People must be tested for HIV-1 before starting Yeztugo and before each subsequent injection.[5]",
+    "start": 1336,
+    "end": 1441,
+    "claim": "People must be tested for HIV-1 before each subsequent Yeztugo injection.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://seekingalpha.com/pr/20141436-yeztugo-lenacapavir-is-now-the-first-and-only-fda-approved-hiv-prevention-option-offering-6",
+      "host": "seekingalpha.com",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 21,
+   "labels": {
+    "supported": 7,
+    "partial": 3,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 2,
+    "unchecked": 8,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 3,
+   "supported_share_of_cited": 0.35,
+   "pages_cited": 5,
+   "pages_read": 2,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.007749,
+   "usd_per_claim": 0.000369
+  },
+  "cost": {
+   "total_usd": 0.0077,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.001
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0021
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.0033
+    },
+    {
+     "node": "check",
+     "calls": 10,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,338 @@
+{
+ "id": "nq-30",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Hakainde Hichilema is the president of Zambia. He was first elected in August 2021.[1] He won re-election for a second five-year term[2] in the August 2026 election. Election commission results gave him roughly 61.4 percent of valid votes, against 38 percent for his main challenger, Brian Mundubile.[2] The election was marred by allegations of fraud.[2]\nHe was sworn in for his second term on 1 September 2026.[3] His running mate, Mutale Nalumango, was sworn in as vice-president at the same ceremony.[3]",
+  "claims": [
+   {
+    "sentence": "Hakainde Hichilema is the president of Zambia.",
+    "start": 0,
+    "end": 46,
+    "claim": "Hakainde Hichilema is the president of Zambia.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.theigc.org/people/hakainde-hichilema",
+      "host": "theigc.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "President Hakainde Hichilema was elected President of the Republic of Zambia in August 2021.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Hakainde Hichilema was elected President of the Republic of Zambia, which backs the claim that he is Zambia's president.",
+      "page_judged": "supported",
+      "page_reason": "The page states that President Hakainde Hichilema was elected President of the Republic of Zambia in August 2021 and repeatedly refers to him as President, so the claim that he is president is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "He was first elected in August 2021.[1]",
+    "start": 47,
+    "end": 86,
+    "claim": "Hakainde Hichilema was first elected in August 2021.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.theigc.org/people/hakainde-hichilema",
+      "host": "theigc.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "President Hakainde Hichilema was elected President of the Republic of Zambia in August 2021.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Hichilema was elected President in August 2021, which backs the claim that he was first elected then, and nothing in the quote suggests an earlier election.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Hichilema was elected President in August 2021 but never says this was his first election or that he had not been elected before, so the word 'first' is unsupported."
+     }
+    ]
+   },
+   {
+    "sentence": "He won re-election for a second five-year term[2] in the August 2026 election.",
+    "start": 87,
+    "end": 165,
+    "claim": "Hakainde Hichilema won re-election for a second five-year term in the August 2026 election.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aljazeera.com/news/2026/8/18/zambias-hichilema-wins-second-term-as-president",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Zambia’s President Hakainde Hichilema has won re-election for a second five-year term, according to the electoral authorities, after a race marred by allegations of fraud.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Results released by the election commission in the early hours of Tuesday morning showed that Hichilema received roughly 61.4 percent of valid votes",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that Hichilema won re-election for a second five-year term, but they never state that the election was held in August 2026.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Hichilema won re-election for a second five-year term according to electoral authorities, with the commission declaring him president-elect on 18 August 2026 after the August 13 vote."
+     }
+    ]
+   },
+   {
+    "sentence": "Election commission results gave him roughly 61.4 percent of valid votes, against 38 percent for his main challenger, Brian Mundubile.[2]",
+    "start": 166,
+    "end": 303,
+    "claim": "Election commission results gave Hakainde Hichilema roughly 61.4 percent of valid votes in the August 2026 election.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aljazeera.com/news/2026/8/18/zambias-hichilema-wins-second-term-as-president",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Results released by the election commission in the early hours of Tuesday morning showed that Hichilema received roughly 61.4 percent of valid votes, compared with 38 percent for his main challenger, Brian Mundubile.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim that the election commission results gave Hichilema roughly 61.4 percent of valid votes, but it does not state that the election was held in August 2026.",
+      "page_judged": "supported",
+      "page_reason": "The page states that results released by the election commission showed Hichilema received roughly 61.4 percent of valid votes, in an election held in August 2026 (declared 18 August 2026)."
+     }
+    ]
+   },
+   {
+    "sentence": "Election commission results gave him roughly 61.4 percent of valid votes, against 38 percent for his main challenger, Brian Mundubile.[2]",
+    "start": 166,
+    "end": 303,
+    "claim": "Election commission results gave Brian Mundubile, Hakainde Hichilema's main challenger, 38 percent of valid votes in the August 2026 election.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aljazeera.com/news/2026/8/18/zambias-hichilema-wins-second-term-as-president",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Results released by the election commission in the early hours of Tuesday morning showed that Hichilema received roughly 61.4 percent of valid votes, compared with 38 percent for his main challenger, Brian Mundubile.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the election commission results gave Brian Mundubile, Hichilema's main challenger, 38 percent of valid votes, though it does not explicitly name the August 2026 date, which the claim also includes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Hichilema received roughly 61.4 percent of valid votes compared with 38 percent for his main challenger Brian Mundubile, per the election commission results."
+     }
+    ]
+   },
+   {
+    "sentence": "The election was marred by allegations of fraud.[2]",
+    "start": 304,
+    "end": 355,
+    "claim": "The August 2026 Zambian election was marred by allegations of fraud.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.aljazeera.com/news/2026/8/18/zambias-hichilema-wins-second-term-as-president",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "after a race marred by allegations of fraud.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Mundubile said he had received information about the possible alteration of result forms from polling stations and called for an urgent independent investigation.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the claim's core point that the race was marred by allegations of fraud, but they do not state the election was in August 2026 or that it was Zambian, which the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The page states the race was 'marred by allegations of fraud' in its opening paragraph and reports Mundubile's concerns about altered result forms, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "He was sworn in for his second term on 1 September 2026.[3]",
+    "start": 356,
+    "end": 415,
+    "claim": "Hakainde Hichilema was sworn in for his second term on 1 September 2026.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aljazeera.com/news/2026/9/1/hakainde-hichilema-returns-as-zambias-president-following-disputed-vote",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page confirms Hichilema was sworn in for a second term on a Tuesday, about a month after the August 13 election, but it never gives the date 1 September 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "His running mate, Mutale Nalumango, was sworn in as vice-president at the same ceremony.[3]",
+    "start": 416,
+    "end": 507,
+    "claim": "Hakainde Hichilema's running mate, Mutale Nalumango, was sworn in as vice-president at the same ceremony as his second-term swearing-in.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.aljazeera.com/news/2026/9/1/hakainde-hichilema-returns-as-zambias-president-following-disputed-vote",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Hichilema’s running mate, Mutale Nalumango, was sworn in as vice-president at the same ceremony.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Nalumango was sworn in as vice-president at the same ceremony as Hichilema, but it never says that ceremony was his second-term swearing-in.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Hichilema's running mate, Mutale Nalumango, was sworn in as vice-president at the same ceremony where Hichilema was inaugurated."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 5,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 3,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.3333,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.003556,
+   "usd_per_claim": 0.000444
+  },
+  "cost": {
+   "total_usd": 0.0036,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0013
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.001
+    }
+   ]
+  }
+ }
+}

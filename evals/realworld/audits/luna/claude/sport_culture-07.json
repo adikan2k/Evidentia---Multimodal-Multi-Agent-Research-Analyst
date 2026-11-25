@@ -1,0 +1,648 @@
+{
+ "id": "sport_culture-07",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Lando Norris of McLaren won the 2025 Formula 1 World Drivers' Championship. It was very close.\nThe margin: Max Verstappen finished two points behind Norris in the final standings, 423 to 421.[1] Oscar Piastri, Norris's McLaren teammate, finished third, 13 points behind him.[2] That makes it a 2-point gap to Verstappen and 13 to Piastri.\nThe finale: The title went to the last race in Abu Dhabi with three drivers still in contention. It was the first title-deciding final round with more than two contenders since 2010.[3] Norris went in with a 12-point lead, and Verstappen was a further four points ahead of Piastri.[4] Verstappen won the race from pole, and Piastri, who passed Norris early on, finished second.[4] Norris's third place was enough. He needed only a top-three finish.[5]\nSignificance:\nNorris ended Verstappen's four-year reign as champion. Verstappen had made an extraordinary late-season comeback but fell two points short.[6]\nNorris became Britain's 11th F1 world champion and the first McLaren driver to win the title since Lewis Hamilton in 2008.[6]",
+  "claims": [
+   {
+    "sentence": "Lando Norris of McLaren won the 2025 Formula 1 World Drivers' Championship.",
+    "start": 0,
+    "end": 75,
+    "claim": "Lando Norris of McLaren won the 2025 Formula 1 World Drivers' Championship.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The margin: Max Verstappen finished two points behind Norris in the final standings, 423 to 421.[1]",
+    "start": 95,
+    "end": 194,
+    "claim": "Max Verstappen finished two points behind Norris in the final standings, 423 to 421.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.aljazeera.com/sports/2025/12/7/lando-norris-wins-first-f1-world-championship-title-at-abu-dhabi-gp",
+      "host": "aljazeera.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Norris won the title by two points but does not state that Verstappen finished second on 421 points or that Norris scored 423."
+     }
+    ]
+   },
+   {
+    "sentence": "Oscar Piastri, Norris's McLaren teammate, finished third, 13 points behind him.[2]",
+    "start": 195,
+    "end": 277,
+    "claim": "Oscar Piastri, Norris's McLaren teammate, finished third in the final standings.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.crash.net/f1/news/1088078/1/final-f1-world-championship-points-standings-after-2025-abu-dhabi-grand-prix",
+      "host": "crash.net",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Piastri has finished third in the standings, 13 points off his teammate in the end.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Piastri finished third in the standings, but it does not name Norris or McLaren, so the claim's teammate and team details are not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Oscar Piastri finished third in the standings and lists him as a McLaren driver alongside Norris."
+     }
+    ]
+   },
+   {
+    "sentence": "Oscar Piastri, Norris's McLaren teammate, finished third, 13 points behind him.[2]",
+    "start": 195,
+    "end": 277,
+    "claim": "Oscar Piastri finished 13 points behind Lando Norris in the final standings.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.crash.net/f1/news/1088078/1/final-f1-world-championship-points-standings-after-2025-abu-dhabi-grand-prix",
+      "host": "crash.net",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Piastri has finished third in the standings, 13 points off his teammate in the end.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Piastri finished 13 points off his teammate in the final standings, but it never names the teammate as Lando Norris.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Piastri finished 13 points off Norris and lists their totals as 410 and 423, respectively."
+     }
+    ]
+   },
+   {
+    "sentence": "That makes it a 2-point gap to Verstappen and 13 to Piastri.",
+    "start": 278,
+    "end": 338,
+    "claim": "The final gap between Norris and Verstappen was 2 points.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "That makes it a 2-point gap to Verstappen and 13 to Piastri.",
+    "start": 278,
+    "end": 338,
+    "claim": "The final gap between Norris and Piastri was 13 points.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The title went to the last race in Abu Dhabi with three drivers still in contention.",
+    "start": 351,
+    "end": 435,
+    "claim": "The 2025 title was decided at the last race in Abu Dhabi with three drivers still in contention.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Grand Prix was the first World Drivers' Championship–deciding final round since 2021, and the first with more than two contenders since 2010.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The three drivers entered the round with an opportunity to win the World Drivers' Championship.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Third place was enough for Norris to become World Champion",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that the title was decided at a final round with three drivers in contention, but they never name Abu Dhabi or the year 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Abu Dhabi Grand Prix was the final race and championship decider, with Norris, Verstappen, and Piastri all entering with a chance to win the title."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the first title-deciding final round with more than two contenders since 2010.[3]",
+    "start": 436,
+    "end": 524,
+    "claim": "The Abu Dhabi final round was the first title-deciding final round with more than two contenders since 2010.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Grand Prix was the first World Drivers' Championship–deciding final round since 2021, and the first with more than two contenders since 2010.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Grand Prix was the first title-deciding final round with more than two contenders since 2010, matching the claim's facts, with 'Grand Prix' identified as the Abu Dhabi final round only by context outside the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the 2025 Abu Dhabi Grand Prix was a championship-deciding final round and the first with more than two contenders since 2010."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris went in with a 12-point lead, and Verstappen was a further four points ahead of Piastri.[4]",
+    "start": 525,
+    "end": 623,
+    "claim": "Norris went into the Abu Dhabi finale with a 12-point lead.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://sports.yahoo.com/articles/won-f1-drivers-championship-final-145330488.html",
+      "host": "sports.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Lando Norris went into the race with a 12-point lead at the top",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Norris went into the race with a 12-point lead at the top, which backs the claim's 12-point lead, though it does not explicitly name the Abu Dhabi finale, so the race identification rests on the claim's context.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Norris went into the race with a 12-point lead at the top."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris went in with a 12-point lead, and Verstappen was a further four points ahead of Piastri.[4]",
+    "start": 525,
+    "end": 623,
+    "claim": "Verstappen was four points ahead of Piastri going into the Abu Dhabi finale.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://sports.yahoo.com/articles/won-f1-drivers-championship-final-145330488.html",
+      "host": "sports.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Lando Norris went into the race with a 12-point lead at the top, with Oscar Piastri just a further four points behind second-place Max Verstappen.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Piastri was four points behind second-place Verstappen going into the race, but it never mentions Abu Dhabi or a finale, so that setting is not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page says Piastri was four points behind second-place Verstappen going into the race."
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen won the race from pole, and Piastri, who passed Norris early on, finished second.[4]",
+    "start": 624,
+    "end": 719,
+    "claim": "Verstappen won the Abu Dhabi race from pole position.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://sports.yahoo.com/articles/won-f1-drivers-championship-final-145330488.html",
+      "host": "sports.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Verstappen won the race from pole position, with Piastri — who overtook Norris in the early stages — finishing second.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Verstappen won from pole position, but it never names the race as Abu Dhabi, so that location is not stated in the quotes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Verstappen won the Abu Dhabi race from pole position."
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen won the race from pole, and Piastri, who passed Norris early on, finished second.[4]",
+    "start": 624,
+    "end": 719,
+    "claim": "Piastri passed Norris early in the Abu Dhabi race.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://sports.yahoo.com/articles/won-f1-drivers-championship-final-145330488.html",
+      "host": "sports.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Verstappen won the race from pole position, with Piastri — who overtook Norris in the early stages — finishing second.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Piastri overtook Norris in the early stages of the race, which backs every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Piastri overtook Norris in the early stages of the Abu Dhabi Grand Prix."
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen won the race from pole, and Piastri, who passed Norris early on, finished second.[4]",
+    "start": 624,
+    "end": 719,
+    "claim": "Piastri finished second in the Abu Dhabi race.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://sports.yahoo.com/articles/won-f1-drivers-championship-final-145330488.html",
+      "host": "sports.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Verstappen won the race from pole position, with Piastri — who overtook Norris in the early stages — finishing second.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs Piastri finishing second but does not state the race was the Abu Dhabi race, though the quote describes a race with Verstappen winning from pole and no location is named.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Verstappen won the Abu Dhabi Grand Prix and Piastri finished second."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris's third place was enough. He needed only a top-three finish.[5]",
+    "start": 720,
+    "end": 790,
+    "claim": "Norris finished third in the Abu Dhabi race.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://speedcafe.com/f1-news-2025-abu-dhabi-grand-prix-result-outcome-lando-norris-world-champion-max-verstappen-win-oscar-piastri-result-standings/",
+      "host": "speedcafe.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "bringing home the third place that would ultimately confirm his 2025 title.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "| 3 | 4 | Lando Norris | McLaren | 58 | +16.572s | 15 |",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Norris finished third, with a results row showing position 3 for Lando Norris of McLaren, but neither quote names the Abu Dhabi race.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Norris finished third, but it does not identify the race as the Abu Dhabi race."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris's third place was enough. He needed only a top-three finish.[5]",
+    "start": 720,
+    "end": 790,
+    "claim": "Norris needed only a top-three finish in Abu Dhabi to win the title.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://speedcafe.com/f1-news-2025-abu-dhabi-grand-prix-result-outcome-lando-norris-world-champion-max-verstappen-win-oscar-piastri-result-standings/",
+      "host": "speedcafe.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Needing only a top-three finish to clinch the crown, the 26-year-old still had to work harder than expected.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the core point that Norris needed only a top-three finish to clinch the title, but it never mentions Abu Dhabi, which the claim adds as a specific.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Norris needed a top-three finish to clinch the crown, but it does not identify the race as Abu Dhabi."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris ended Verstappen's four-year reign as champion.",
+    "start": 805,
+    "end": 859,
+    "claim": "Norris ended Verstappen's four-year reign as champion.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.skysports.com/f1/news/13480428/lando-norris-wins-formula-1-world-title-for-first-time-in-abu-dhabi-gp-decider-to-pip-max-verstappen-to-crown",
+      "host": "skysports.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Norris, at the end of his seventh season at the top level, ends Verstappen's four-year reign as champion with the Red Bull driver's extraordinary late-season title comeback falling a mere two points short",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Norris ends Verstappen's four-year reign as champion, which is the claim's only assertion.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Norris ended Verstappen’s four-year reign as champion."
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen had made an extraordinary late-season comeback but fell two points short.[6]",
+    "start": 860,
+    "end": 947,
+    "claim": "Verstappen made an extraordinary late-season comeback but fell two points short of the title.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.skysports.com/f1/news/13480428/lando-norris-wins-formula-1-world-title-for-first-time-in-abu-dhabi-gp-decider-to-pip-max-verstappen-to-crown",
+      "host": "skysports.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Norris, at the end of his seventh season at the top level, ends Verstappen's four-year reign as champion with the Red Bull driver's extraordinary late-season title comeback falling a mere two points short after he dominated Sunday's season finale to win the race.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Verstappen's extraordinary late-season title comeback fell a mere two points short, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says Verstappen’s extraordinary late-season title comeback fell two points short of the championship."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris became Britain's 11th F1 world champion and the first McLaren driver to win the title since Lewis Hamilton in 2008.[6]",
+    "start": 948,
+    "end": 1073,
+    "claim": "Norris became Britain's 11th Formula 1 world champion.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.skysports.com/f1/news/13480428/lando-norris-wins-formula-1-world-title-for-first-time-in-abu-dhabi-gp-decider-to-pip-max-verstappen-to-crown",
+      "host": "skysports.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 26-year-old becomes Britain's 11th F1 world champion and is the first McLaren driver to win the title since Lewis Hamilton in 2008.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the 26-year-old (Norris, by context of the claim) becomes Britain's 11th F1 world champion, which matches the claim's full content.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Norris became Britain's 11th F1 world champion."
+     }
+    ]
+   },
+   {
+    "sentence": "Norris became Britain's 11th F1 world champion and the first McLaren driver to win the title since Lewis Hamilton in 2008.[6]",
+    "start": 948,
+    "end": 1073,
+    "claim": "Norris was the first McLaren driver to win the title since Lewis Hamilton in 2008.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.skysports.com/f1/news/13480428/lando-norris-wins-formula-1-world-title-for-first-time-in-abu-dhabi-gp-decider-to-pip-max-verstappen-to-crown",
+      "host": "skysports.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The 26-year-old becomes Britain's 11th F1 world champion and is the first McLaren driver to win the title since Lewis Hamilton in 2008.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Norris is the first McLaren driver to win the title since Lewis Hamilton in 2008, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Norris was the first McLaren driver to win the title since Lewis Hamilton in 2008."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 19,
+   "labels": {
+    "supported": 7,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 6,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 3
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.1,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.4375,
+   "pages_cited": 6,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.011512,
+   "usd_per_claim": 0.000606
+  },
+  "cost": {
+   "total_usd": 0.0115,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 16,
+     "usd": 0.0042
+    },
+    {
+     "node": "page_check",
+     "calls": 16,
+     "usd": 0.0042
+    },
+    {
+     "node": "check",
+     "calls": 15,
+     "usd": 0.0023
+    }
+   ]
+  }
+ }
+}

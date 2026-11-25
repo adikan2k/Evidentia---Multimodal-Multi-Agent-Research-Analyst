@@ -1,0 +1,718 @@
+{
+ "id": "science-10",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:48:24+00:00",
+ "report": {
+  "answer_text": "2025 had five Starship flights, flights 7 through 11. The first three ended in failure, and the last two succeeded.\nFlights 7, 8 and 9 (January to May): three failures in a row\nStarship suffered explosive failures in three back-to-back test flights before its successful 10th flight on August 26.[1]\nFlight 7 was in January and flight 8 in March. From my own knowledge rather than the search results, both ships were lost during ascent, and the booster was caught by the tower arms on at least one of them.\nFlight 9 launched in late May. It flew farther than the previous two attempts, which ended in explosive failure.[2] The booster made a controlled splashdown in the Gulf of Mexico and skipped the tower \"catch\" attempt.[2] The ship's payload bay door failed to open on that flight.[3]\nBefore flight 10, engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.[4]\nFlight 10 (August 26): the turnaround\nThe launch was two days late, and it appeared to be a remarkably successful test after the three back-to-back failures.[5]\nThe upper stage flew into a sub-orbital trajectory as planned, which the three previous flights had failed to do.[5]\nThis time the payload door opened.[3] The ship re-ignited an engine in space and made a soft splashdown in the Indian Ocean.[6] The Super Heavy booster made a controlled splashdown in the Gulf of Mexico.[6]\nFlight 11 (October 13): the last Version 2 flight\nStarship made it halfway around the world and released mock satellites, as it had on flight 10.[7] It carried eight mock Starlink satellites.[7]\nSpaceX ran a series of tests during the ship's entry over the Indian Ocean, as practice for future landings back at the launch site.[7]\nThe heat shield had patches of reconfigured tiles, and some tiles were deliberately left out to test how well the ship tolerates losing them.[1]\nThe booster's return burn went from 13 engines to five and then three, a rehearsal for the next-generation booster's landing maneuvers.[1]\nIt was the last flight of the current Version 2 design.[8]\nWhat came next\nThe next-generation booster and a new ship version were slated to begin test flights in 2026, both with improved Raptor engines.[1] NASA is counting on a modified Starship to land two astronauts on the Moon as early as 2027.[5]",
+  "claims": [
+   {
+    "sentence": "2025 had five Starship flights, flights 7 through 11.",
+    "start": 0,
+    "end": 53,
+    "claim": "2025 had five Starship flights, flights 7 through 11.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The first three ended in failure, and the last two succeeded.",
+    "start": 54,
+    "end": 115,
+    "claim": "The first three of the 2025 Starship flights (flights 7, 8 and 9) ended in failure.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The first three ended in failure, and the last two succeeded.",
+    "start": 54,
+    "end": 115,
+    "claim": "The last two of the 2025 Starship flights (flights 10 and 11) succeeded.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Starship suffered explosive failures in three back-to-back test flights before its successful 10th flight on August 26.[1]",
+    "start": 177,
+    "end": 299,
+    "claim": "Starship suffered explosive failures in three back-to-back test flights before its successful 10th flight on August 26.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.scientificamerican.com/article/spacexs-starship-succeeds-in-final-test-flight-of-2025/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Prior to its successful 10th flight on August 26, Starship had suffered explosive failures in three back-to-back test flights this year.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that before the successful 10th flight on August 26, Starship had suffered explosive failures in three back-to-back test flights, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that before its successful 10th flight on August 26, Starship had suffered explosive failures in three back-to-back test flights this year, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Flight 7 was in January and flight 8 in March.",
+    "start": 300,
+    "end": 346,
+    "claim": "Flight 7 was in January.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Flight 7 was in January and flight 8 in March.",
+    "start": 300,
+    "end": 346,
+    "claim": "Flight 8 was in March.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "From my own knowledge rather than the search results, both ships were lost during ascent, and the booster was caught by the tower arms on at least one of them.",
+    "start": 347,
+    "end": 506,
+    "claim": "Both ships on flights 7 and 8 were lost during ascent, according to the answer's own knowledge rather than its search results.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "From my own knowledge rather than the search results, both ships were lost during ascent, and the booster was caught by the tower arms on at least one of them.",
+    "start": 347,
+    "end": 506,
+    "claim": "The booster was caught by the tower arms on at least one of flights 7 and 8.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Flight 9 launched in late May.",
+    "start": 507,
+    "end": 537,
+    "claim": "Flight 9 launched in late May.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It flew farther than the previous two attempts, which ended in explosive failure.[2]",
+    "start": 538,
+    "end": 622,
+    "claim": "Flight 9 flew farther than the previous two attempts, which ended in explosive failure.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The booster made a controlled splashdown in the Gulf of Mexico and skipped the tower \"catch\" attempt.[2]",
+    "start": 623,
+    "end": 727,
+    "claim": "On flight 9, the booster made a controlled splashdown in the Gulf of Mexico.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The booster made a controlled splashdown in the Gulf of Mexico and skipped the tower \"catch\" attempt.[2]",
+    "start": 623,
+    "end": 727,
+    "claim": "On flight 9, the booster skipped the tower catch attempt.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.newsonair.gov.in/spacex-successfully-launches-starship-super-heavy-on-ninth-test-flight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The ship's payload bay door failed to open on that flight.[3]",
+    "start": 728,
+    "end": 789,
+    "claim": "On flight 9, the ship's payload bay door failed to open.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.npr.org/2025/08/26/g-s1-85541/starship-space-x-tenth-flight",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "But on the last test flight the ship's payload bay door failed to open.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the payload bay door failed to open on the last test flight, but it does not state that this was flight 9, so the flight number is not backed.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says that on the last test flight (described as the one before the 10th flight) the ship's payload bay door failed to open, but it does not name that flight as flight 9, so the claim's specific numbering is not stated on the page."
+     }
+    ]
+   },
+   {
+    "sentence": "Before flight 10, engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.[4]",
+    "start": 790,
+    "end": 918,
+    "claim": "Before flight 10, engineers fixed a part called the fuel diffuser.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.newsonair.gov.in/spacex-to-launch-starship-on-one-hour-test-flight-tonight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Before flight 10, engineers fixed a part called the fuel diffuser, which may have caused a pressure problem in the nose cone.[4]",
+    "start": 790,
+    "end": 918,
+    "claim": "The fuel diffuser may have caused a pressure problem in the nose cone.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.newsonair.gov.in/spacex-to-launch-starship-on-one-hour-test-flight-tonight",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The launch was two days late, and it appeared to be a remarkably successful test after the three back-to-back failures.[5]",
+    "start": 957,
+    "end": 1079,
+    "claim": "The flight 10 launch was two days late.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://spaceflightnow.com/2025/08/27/spacex-successfully-launches-super-heavy-starship-on-critical-test-flight/",
+      "host": "spaceflightnow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The upper stage flew into a sub-orbital trajectory as planned, which the three previous flights had failed to do.[5]",
+    "start": 1080,
+    "end": 1196,
+    "claim": "On flight 10, the upper stage flew into a sub-orbital trajectory as planned.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://spaceflightnow.com/2025/08/27/spacex-successfully-launches-super-heavy-starship-on-critical-test-flight/",
+      "host": "spaceflightnow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "This time the payload door opened.[3]",
+    "start": 1197,
+    "end": 1234,
+    "claim": "On flight 10, the payload door opened.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.npr.org/2025/08/26/g-s1-85541/starship-space-x-tenth-flight",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This time, the door opened and SpaceX workers on the ground could be heard cheering on a live webcast as video beamed back the view from inside Starship's upper stage.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says the door opened on a Starship upper-stage view, but it never names flight 10 or calls the door a payload door.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on the 10th flight the payload bay door opened, in contrast to the previous test where it failed to open, and video showed eight dummy satellites being deployed."
+     }
+    ]
+   },
+   {
+    "sentence": "The ship re-ignited an engine in space and made a soft splashdown in the Indian Ocean.[6]",
+    "start": 1235,
+    "end": 1324,
+    "claim": "On flight 10, the ship re-ignited an engine in space.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.newsonair.gov.in/spacex-conducts-10th-successful-starship-test-launch-from-texas",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The ship re-ignited an engine in space and made a soft splashdown in the Indian Ocean.[6]",
+    "start": 1235,
+    "end": 1324,
+    "claim": "On flight 10, the ship made a soft splashdown in the Indian Ocean.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.newsonair.gov.in/spacex-conducts-10th-successful-starship-test-launch-from-texas",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Super Heavy booster made a controlled splashdown in the Gulf of Mexico.[6]",
+    "start": 1325,
+    "end": 1403,
+    "claim": "On flight 10, the Super Heavy booster made a controlled splashdown in the Gulf of Mexico.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.newsonair.gov.in/spacex-conducts-10th-successful-starship-test-launch-from-texas",
+      "host": "newsonair.gov.in",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Starship made it halfway around the world and released mock satellites, as it had on flight 10.[7]",
+    "start": 1454,
+    "end": 1552,
+    "claim": "On flight 11, Starship made it halfway around the world and released mock satellites.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.npr.org/2025/10/13/nx-s1-5573520/space-x-eleventh-test-flight-starship",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "successfully making it halfway around the world while releasing mock satellites like last time.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Like before, Starship carried up eight mock satellites mimicking SpaceX's Starlinks.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the halfway-around-the-world trip and the release of mock satellites, but neither quote names flight 11 as the flight in question.",
+      "page_judged": "supported",
+      "page_reason": "The page states the 11th test flight successfully made it halfway around the world while releasing mock satellites like last time, and that Starship carried eight mock satellites."
+     }
+    ]
+   },
+   {
+    "sentence": "It carried eight mock Starlink satellites.[7]",
+    "start": 1553,
+    "end": 1598,
+    "claim": "Flight 11 carried eight mock Starlink satellites.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.npr.org/2025/10/13/nx-s1-5573520/space-x-eleventh-test-flight-starship",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Like before, Starship carried up eight mock satellites mimicking SpaceX's Starlinks.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the eight mock satellites mimicking Starlinks carried by Starship, but it never names Flight 11 as the flight that carried them.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Starship carried up eight mock satellites mimicking SpaceX's Starlinks on the flight, which matches the claim that flight 11 carried eight mock Starlink satellites."
+     }
+    ]
+   },
+   {
+    "sentence": "SpaceX ran a series of tests during the ship's entry over the Indian Ocean, as practice for future landings back at the launch site.[7]",
+    "start": 1599,
+    "end": 1734,
+    "claim": "SpaceX ran a series of tests during flight 11's ship entry over the Indian Ocean, as practice for future landings back at the launch site.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.npr.org/2025/10/13/nx-s1-5573520/space-x-eleventh-test-flight-starship",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "SpaceX conducted a series of tests during the spacecraft's entry over the Indian Ocean as practice for future landings back at the launch site.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that SpaceX conducted a series of tests during the spacecraft's entry over the Indian Ocean as practice for future landings back at the launch site, which covers every fact in the claim, though it does not explicitly name flight 11.",
+      "page_judged": "supported",
+      "page_reason": "The page states that SpaceX conducted a series of tests during the spacecraft's entry over the Indian Ocean as practice for future landings back at the launch site, matching the claim about the 11th test flight."
+     }
+    ]
+   },
+   {
+    "sentence": "The heat shield had patches of reconfigured tiles, and some tiles were deliberately left out to test how well the ship tolerates losing them.[1]",
+    "start": 1735,
+    "end": 1879,
+    "claim": "On flight 11, the heat shield had patches of reconfigured tiles, and some tiles were deliberately left out to test tolerance of losing them.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.scientificamerican.com/article/spacexs-starship-succeeds-in-final-test-flight-of-2025/",
+      "host": "scientificamerican.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "One important difference in this latest test was the ship’s heat shield, which featured multiple patches of subtly reconfigured protective tiles, and some that were deliberately missing, to test Starship’s tolerance to shedding tiles during flight.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the heat shield had multiple patches of reconfigured tiles and some deliberately missing tiles to test tolerance to shedding, matching both parts of the claim; the quote does not explicitly name the flight as flight 11, but it refers to 'this latest test' which the claim identifies as flight 11 only through the claim's own wording.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Flight 11's ship heat shield had multiple patches of subtly reconfigured tiles and some deliberately missing tiles to test tolerance to shedding tiles during flight."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 25,
+   "labels": {
+    "supported": 3,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 11,
+    "citation_unread": 0,
+    "uncited": 7
+   },
+   "cited_claims": 18,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.1667,
+   "pages_cited": 7,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 4,
+   "usd": 0.004783,
+   "usd_per_claim": 0.000191
+  },
+  "cost": {
+   "total_usd": 0.0048,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0012
+    },
+    {
+     "node": "find",
+     "calls": 7,
+     "usd": 0.0013
+    },
+    {
+     "node": "page_check",
+     "calls": 7,
+     "usd": 0.0012
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0011
+    }
+   ]
+  }
+ }
+}

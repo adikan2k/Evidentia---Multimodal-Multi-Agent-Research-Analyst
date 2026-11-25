@@ -24,24 +24,26 @@ export function BreakIt({ claimText, quote }: { claimText: string; quote: string
 
   return (
     <form onSubmit={submit} className="mt-6 border-t border-rule pt-5">
-      <p className="label text-ink-soft">Try to break it</p>
-      <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+      <label htmlFor="break-it" className="label text-ink">
+        Try to break it
+      </label>
+      <p className="label mt-1 font-normal text-ink-soft">
         Change the claim: a number, a name, a direction. The checker will judge your version
         against this quote.
       </p>
       <textarea
+        id="break-it"
         value={text}
         onChange={(e) => setText(e.target.value)}
         rows={3}
         maxLength={600}
-        aria-label="Your version of the claim"
-        className="mt-3 w-full resize-y rounded-md border border-rule bg-paper p-3 font-serif text-lg leading-snug outline-none transition-colors focus:border-ink"
+        className="sheet-text mt-3 w-full resize-y rounded-[3px] border border-rule bg-paper/40 p-3 text-[1.0625rem] leading-snug text-ink focus:border-ink focus:outline-none"
       />
-      <div className="mt-3 flex flex-wrap items-center gap-4">
+      <div className="mt-3 flex flex-wrap items-center gap-3">
         <button
           type="submit"
           disabled={busy || text.trim().length < 3}
-          className="label rounded-full bg-ink px-4 py-2 text-paper transition-opacity hover:opacity-85 disabled:opacity-40"
+          className="label min-h-10 rounded-full bg-ink px-4 text-sheet transition-opacity hover:opacity-85 disabled:opacity-40"
         >
           {busy ? "Checking…" : changed ? "Check my version" : "Check it as written"}
         </button>
@@ -52,17 +54,17 @@ export function BreakIt({ claimText, quote }: { claimText: string; quote: string
               setText(claimText);
               setResult(null);
             }}
-            className="label text-ink-soft underline-offset-4 hover:text-ink hover:underline"
+            className="label min-h-10 px-2 text-ink-soft underline underline-offset-4 hover:text-ink"
           >
             Reset
           </button>
         )}
       </div>
-      {typeof result === "string" && <p className="mt-4 text-sm text-unverified">{result}</p>}
+      {typeof result === "string" && <p className="label mt-4 font-normal text-unverified">{result}</p>}
       {result && typeof result !== "string" && (
         <div className="mt-4">
           <Stamp label={result.label} />
-          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{result.reason}</p>
+          <p className="label mt-2 font-normal text-ink-soft">{result.reason}</p>
         </div>
       )}
     </form>

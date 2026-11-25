@@ -1,0 +1,368 @@
+{
+ "id": "nq-31-r3",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:07:17+00:00",
+ "report": {
+  "answer_text": "Cigarette adverts were banned from UK television on 1 August 1965. Adverts for loose tobacco and cigars continued until 1991, when they were outlawed under the Broadcasting Act 1990.[1]\nBackground: A 1950 British Medical Journal report had suggested a link between smoking and lung cancer. By 1962 the Royal College of Physicians had enough evidence to push for an advertising ban.[2]\nLegal basis: One source says the ban came under the Television Act 1964, and an EU directive in the 1980s reinforced it.[3]\nAftermath: Tobacco companies moved heavily into sports sponsorship after the ban. They wanted to get round it and still get a free plug in front of a mass TV audience.[1]",
+  "claims": [
+   {
+    "sentence": "Cigarette adverts were banned from UK television on 1 August 1965.",
+    "start": 0,
+    "end": 66,
+    "claim": "Cigarette adverts were banned from UK television on 1 August 1965.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Regulation_of_nicotine_marketing",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "All television commercials for cigarettes were banned on 1 August 1965",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that all television commercials for cigarettes were banned on 1 August 1965, which matches the claim's ban, date and medium, with 'UK' the only detail not named in the quote.",
+      "page_judged": "supported",
+      "page_reason": "The page states that all television commercials for cigarettes were banned on 1 August 1965 in the UK, matching the claim exactly."
+     }
+    ]
+   },
+   {
+    "sentence": "Adverts for loose tobacco and cigars continued until 1991, when they were outlawed under the Broadcasting Act 1990.[1]",
+    "start": 67,
+    "end": 185,
+    "claim": "Adverts for loose tobacco and cigars on UK television continued until 1991.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Regulation_of_nicotine_marketing",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "All television commercials for cigarettes were banned on 1 August 1965, although commercials for loose tobacco and cigars continued until 1991 after being outlawed by the Broadcasting Act 1990.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that television commercials for loose tobacco and cigars continued until 1991, which is exactly what the claim says, with the UK context implied by the quote's Broadcasting Act reference.",
+      "page_judged": "supported",
+      "page_reason": "The page states that commercials for loose tobacco and cigars continued until 1991 after being outlawed by the Broadcasting Act 1990, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Adverts for loose tobacco and cigars continued until 1991, when they were outlawed under the Broadcasting Act 1990.[1]",
+    "start": 67,
+    "end": 185,
+    "claim": "Adverts for loose tobacco and cigars on UK television were outlawed in 1991 under the Broadcasting Act 1990.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Regulation_of_nicotine_marketing",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "although commercials for loose tobacco and cigars continued until 1991 after being outlawed by the Broadcasting Act 1990.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that loose tobacco and cigar commercials were outlawed by the Broadcasting Act 1990 and ran until 1991, but it does not say the outlawing itself took effect in 1991, and its wording suggests the ban came before 1991.",
+      "page_judged": "supported",
+      "page_reason": "The page states that commercials for loose tobacco and cigars continued until 1991 after being outlawed by the Broadcasting Act 1990, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Background: A 1950 British Medical Journal report had suggested a link between smoking and lung cancer.",
+    "start": 186,
+    "end": 289,
+    "claim": "A 1950 British Medical Journal report suggested a link between smoking and lung cancer.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.doctorfox.co.uk/news/the-history-of-cigarette-advertising-in-the-uk/",
+      "host": "doctorfox.co.uk",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 1950 a report in the British Medical Journal had suggested a link between smoking and lung cancer",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that a 1950 report in the British Medical Journal suggested a link between smoking and lung cancer, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'In 1950 a report in the British Medical Journal had suggested a link between smoking and lung cancer', which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "By 1962 the Royal College of Physicians had enough evidence to push for an advertising ban.[2]",
+    "start": 290,
+    "end": 384,
+    "claim": "By 1962 the Royal College of Physicians had enough evidence to push for an advertising ban.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.doctorfox.co.uk/news/the-history-of-cigarette-advertising-in-the-uk/",
+      "host": "doctorfox.co.uk",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "by 1962 the Royal College of Physicians had enough evidence to push for a ban on advertising.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that by 1962 the Royal College of Physicians had enough evidence to push for a ban on advertising, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that by 1962 the Royal College of Physicians had enough evidence to push for a ban on cigarette advertising, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "One source says the ban came under the Television Act 1964, and an EU directive in the 1980s reinforced it.[3]",
+    "start": 398,
+    "end": 508,
+    "claim": "One source says the UK tobacco advertising ban on television came under the Television Act 1964.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.politics.co.uk/reference/tobacco-advertising/",
+      "host": "politics.co.uk",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "One source says the ban came under the Television Act 1964, and an EU directive in the 1980s reinforced it.[3]",
+    "start": 398,
+    "end": 508,
+    "claim": "An EU directive in the 1980s reinforced the UK tobacco advertising ban on television.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.politics.co.uk/reference/tobacco-advertising/",
+      "host": "politics.co.uk",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Aftermath: Tobacco companies moved heavily into sports sponsorship after the ban.",
+    "start": 509,
+    "end": 590,
+    "claim": "Tobacco companies moved heavily into sports sponsorship after the UK television advertising ban.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Regulation_of_nicotine_marketing",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In the United Kingdom, tobacco companies moved into the expanding world of sports sponsorship on a major scale after television advertising of cigarettes was banned in 1965",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that UK tobacco companies moved into sports sponsorship on a major scale after the 1965 television advertising ban, which covers the claim's main point and its 'heavily' wording.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in the UK tobacco companies moved into sports sponsorship on a major scale after television advertising of cigarettes was banned in 1965, which supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "They wanted to get round it and still get a free plug in front of a mass TV audience.[1]",
+    "start": 591,
+    "end": 679,
+    "claim": "Tobacco companies moved into sports sponsorship to get round the television advertising ban and still gain exposure in front of a mass TV audience.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Regulation_of_nicotine_marketing",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In the United Kingdom, tobacco companies moved into the expanding world of sports sponsorship on a major scale after television advertising of cigarettes was banned in 1965, with the intent of getting round the ban and gaining a de facto free plug for a mass TV audience.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that tobacco companies moved into sports sponsorship after the 1965 TV advertising ban, intending to get round the ban and gain exposure to a mass TV audience, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in the UK tobacco companies moved into sports sponsorship on a major scale after the 1965 TV advertising ban, with the intent of getting round the ban and gaining a de facto free plug for a mass TV audience, which matches every part of the claim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 9,
+   "labels": {
+    "supported": 6,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 2,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6667,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.012922,
+   "usd_per_claim": 0.001436
+  },
+  "cost": {
+   "total_usd": 0.0129,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "find",
+     "calls": 12,
+     "usd": 0.0088
+    },
+    {
+     "node": "page_check",
+     "calls": 7,
+     "usd": 0.0025
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0011
+    }
+   ]
+  }
+ }
+}

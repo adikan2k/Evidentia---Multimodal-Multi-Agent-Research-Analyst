@@ -1,0 +1,241 @@
+{
+ "id": "health-05",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Suzetrigine (Journavx) is a prescription, non-opioid pain pill that the FDA approved on January 30, 2025, for moderate to severe acute (short-term) pain in adults, including pain after surgery. (fda.gov)\nIt was notable because it was the first FDA-approved painkiller to selectively block NaV1.8, a sodium channel that helps peripheral sensory nerves transmit pain signals. Unlike opioids, it doesn’t act on opioid receptors. That gave clinicians a new way to treat acute pain without exposing patients to the risks of taking an opioid, such as addiction and overdose. (fda.gov)\nIn two post-surgery trials, suzetrigine relieved pain better than placebo, but it was not shown to outperform hydrocodone plus acetaminophen. Its approval was for acute pain, not chronic pain. (fda.gov)",
+  "claims": [
+   {
+    "sentence": "Suzetrigine (Journavx) is a prescription, non-opioid pain pill that the FDA approved on January 30, 2025, for moderate to severe acute (short-term) pain in adults, including pain after surgery. (fda.gov)",
+    "start": 0,
+    "end": 203,
+    "claim": "Suzetrigine (Journavx) is a prescription, non-opioid pain pill.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the U.S. Food and Drug Administration approved Journavx (suzetrigine) 50 milligram oral tablets, a first-in-class non-opioid analgesic, to treat moderate to severe acute pain in adults.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Journavx is the first drug to be approved in this new class of pain management medicines.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the non-opioid pain-pill part (a first-in-class non-opioid analgesic tablet approved by the FDA for moderate to severe acute pain), but they never state that it is prescription-only.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Journavx (suzetrigine) as a non-opioid analgesic in oral tablet form, but does not state that it is prescription-only."
+     }
+    ]
+   },
+   {
+    "sentence": "Suzetrigine (Journavx) is a prescription, non-opioid pain pill that the FDA approved on January 30, 2025, for moderate to severe acute (short-term) pain in adults, including pain after surgery. (fda.gov)",
+    "start": 0,
+    "end": 203,
+    "claim": "The FDA approved suzetrigine (Journavx) on January 30, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states that the FDA approved Journavx (suzetrigine) but does not give the approval date of January 30, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Suzetrigine (Journavx) is a prescription, non-opioid pain pill that the FDA approved on January 30, 2025, for moderate to severe acute (short-term) pain in adults, including pain after surgery. (fda.gov)",
+    "start": 0,
+    "end": 203,
+    "claim": "The FDA approved suzetrigine for moderate to severe acute (short-term) pain in adults, including pain after surgery.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Today, the U.S. Food and Drug Administration approved Journavx (suzetrigine) 50 milligram oral tablets, a first-in-class non-opioid analgesic, to treat moderate to severe acute pain in adults.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The efficacy of Journavx was evaluated in two randomized, double-blind, placebo- and active-controlled trials of acute surgical pain, one following abdominoplasty and the other following bunionectomy.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the FDA approved suzetrigine (Journavx) to treat moderate to severe acute pain in adults, and that efficacy was evaluated in acute surgical pain trials after abdominoplasty and bunionectomy, which backs the claim's surgical pain element.",
+      "page_judged": "supported",
+      "page_reason": "The page says the FDA approved suzetrigine for moderate to severe acute pain in adults, describes acute pain as short-term, and reports trials for pain after abdominoplasty and bunionectomy."
+     }
+    ]
+   },
+   {
+    "sentence": "That gave clinicians a new way to treat acute pain without exposing patients to the risks of taking an opioid, such as addiction and overdose. (fda.gov)",
+    "start": 426,
+    "end": 578,
+    "claim": "Suzetrigine gave clinicians a new way to treat acute pain without exposing patients to the risks of taking an opioid, such as addiction and overdose.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-novel-non-opioid-treatment-moderate-severe-acute-pain?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A new non-opioid analgesic therapeutic class for acute pain offers an opportunity to mitigate certain risks associated with using an opioid for pain and provides patients with another treatment option.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Today, the U.S. Food and Drug Administration approved Journavx (suzetrigine) 50 milligram oral tablets, a first-in-class non-opioid analgesic, to treat moderate to severe acute pain in adults.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back a new non-opioid acute pain option that may mitigate certain opioid risks, but they do not say it removes all exposure to risk or name addiction and overdose.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Journavx as a non-opioid treatment option that may mitigate certain risks of opioid use, but it does not state that it avoids addiction or overdose risks specifically."
+     }
+    ]
+   },
+   {
+    "sentence": "Its approval was for acute pain, not chronic pain. (fda.gov)",
+    "start": 721,
+    "end": 781,
+    "claim": "Suzetrigine's approval was for acute pain, not chronic pain.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-journavx?utm_source=openai",
+      "host": "fda.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "JOURNAVX is a sodium channel blocker that is indicated for the treatment of moderate to severe acute pain in adults.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the approved indication is moderate to severe acute pain in adults, which backs the acute-pain part, but it says nothing about chronic pain being excluded, and it does not name suzetrigine (only the brand name JOURNAVX).",
+      "page_judged": "supported",
+      "page_reason": "The page states that JOURNAVX is indicated for moderate to severe acute pain in adults and does not list chronic pain as an approved use."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.25,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 5,
+   "claims_over_limit": 0,
+   "usd": 0.004403,
+   "usd_per_claim": 0.000881
+  },
+  "cost": {
+   "total_usd": 0.0044,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 5,
+     "usd": 0.0016
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.0015
+    },
+    {
+     "node": "check",
+     "calls": 4,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "id": "technology-07-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:09:18+00:00",
+ "report": {
+  "answer_text": "The October 20, 2025 AWS outage started with a software bug in the automated DNS system for DynamoDB, Amazon’s managed database, in its Northern Virginia (us-east-1) region. Two automated updates ran in an unexpected order—a *race condition*—leaving the database’s regional address with an empty DNS record. Applications that depended on that address could no longer connect. (aws.amazon.com)\nThe failure spread beyond the database. Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers, and faulty load-balancer health checks caused further connection failures. AWS Lambda and other cloud services were also affected. The main incident lasted about 14½ hours. (aws.amazon.com)\nUsers around the world felt the effects. Disrupted services included Snapchat, Signal, Slack, Canva, Roblox, Fortnite, and Amazon’s own Ring and Alexa. The failure began in one AWS region, but services used worldwide depended on it. (thousandeyes.com)",
+  "claims": [
+   {
+    "sentence": "Applications that depended on that address could no longer connect. (aws.amazon.com)",
+    "start": 308,
+    "end": 392,
+    "claim": "Applications that depended on DynamoDB's regional address could no longer connect. (aws.amazon.com)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "When this issue occurred at 11:48 PM PDT, all systems needing to connect to the DynamoDB service in the N. Virginia (us-east-1) Region via the public endpoint immediately began experiencing DNS failures and failed to connect to DynamoDB.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "As this plan was deleted, all IP addresses for the regional endpoint were immediately removed.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that systems connecting to DynamoDB's regional public endpoint in us-east-1 began experiencing DNS failures and failed to connect, which backs the claim that applications depending on the regional address could no longer connect.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the DynamoDB regional endpoint's DNS records were emptied and all IP addresses removed, so DNS failures prevented systems from connecting to DynamoDB via the public endpoint (dynamodb.us-east-1.amazonaws.com) until recovery, which supports the claim that applications relying on the regional address could not connect."
+     }
+    ]
+   },
+   {
+    "sentence": "The main incident lasted about 14½ hours. (aws.amazon.com)",
+    "start": 647,
+    "end": 705,
+    "claim": "The main incident of the October 2025 AWS outage lasted about 14½ hours. (aws.amazon.com)",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "While the event started at 11:48 PM PDT on October 19 and ended at 2:20 PM PDT on October 20, there were three distinct periods of impact to customer applications.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives the event's start (11:48 PM PDT, October 19) and end (2:20 PM PDT, October 20), which works out to about 14½ hours, but it describes the whole event with three distinct impact periods and never mentions a 'main incident' or states the duration.",
+      "page_judged": "supported",
+      "page_reason": "The page's summary states the service disruption started at 11:48 PM PDT on October 19 and ended at 2:20 PM PDT on October 20, a span of about 14.5 hours, although its DynamoDB section calls the earlier 2:40 AM recovery the 'primary service disruption event.'"
+     }
+    ]
+   },
+   {
+    "sentence": "The failure began in one AWS region, but services used worldwide depended on it. (thousandeyes.com)",
+    "start": 858,
+    "end": 957,
+    "claim": "The failure began in one AWS region, but services used worldwide depended on it. (thousandeyes.com)",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 6,
+   "claims_over_limit": 0,
+   "usd": 0.003643,
+   "usd_per_claim": 0.001214
+  },
+  "cost": {
+   "total_usd": 0.0036,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0015
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0011
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

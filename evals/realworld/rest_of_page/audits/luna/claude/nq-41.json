@@ -1,0 +1,122 @@
+{
+ "id": "nq-41",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:41:57+00:00",
+ "report": {
+  "answer_text": "The most likely answer is Castleford, home of the Castleford Tigers, who play in Super League. The town sits where the River Calder meets the River Aire.\nKeighley is another possibility. It's on the Aire, and the Keighley Cougars rugby league club is based there. If the clue has a different number of letters, that might be the one you want.\nIf you give me the letter count or any other clues, I can narrow it down.",
+  "claims": [
+   {
+    "sentence": "The most likely answer is Castleford, home of the Castleford Tigers, who play in Super League.",
+    "start": 0,
+    "end": 94,
+    "claim": "The most likely answer is Castleford.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The most likely answer is Castleford, home of the Castleford Tigers, who play in Super League.",
+    "start": 0,
+    "end": 94,
+    "claim": "Castleford is home of the Castleford Tigers.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The most likely answer is Castleford, home of the Castleford Tigers, who play in Super League.",
+    "start": 0,
+    "end": 94,
+    "claim": "The Castleford Tigers play in Super League.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The town sits where the River Calder meets the River Aire.",
+    "start": 95,
+    "end": 153,
+    "claim": "The town of Castleford sits where the River Calder meets the River Aire.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Keighley is another possibility. It's on the Aire, and the Keighley Cougars rugby league club is based there.",
+    "start": 154,
+    "end": 263,
+    "claim": "Keighley is on the River Aire.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Keighley is another possibility. It's on the Aire, and the Keighley Cougars rugby league club is based there.",
+    "start": 154,
+    "end": 263,
+    "claim": "The Keighley Cougars rugby league club is based in Keighley.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 6
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000287,
+   "usd_per_claim": 4.8e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

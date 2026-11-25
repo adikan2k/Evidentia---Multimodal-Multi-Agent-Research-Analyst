@@ -1,0 +1,634 @@
+{
+ "id": "economy-05",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:58:16+00:00",
+ "report": {
+  "answer_text": "Length: The shutdown ran from October 1 to November 12, 2025, which is 43 calendar days.[1] The Congressional Research Service counts 42 full days without appropriations.[1] It was the longest government-wide shutdown in U.S. history.\nHow it ended:\nThe dispute: The central dispute was whether to extend enhanced Affordable Care Act premium tax credits set to expire at the end of 2025. The Senate repeatedly fell short of the 60 votes needed to advance a stopgap bill.[1]\nThe breakthrough: On Nov. 9, a group of eight Democrats agreed to advance a funding measure as part of a broader agreement to end the shutdown.[2] The Senate passed the amended bill on November 10 by 60-40.[3] The House followed on November 12 by 222-209.[3] President Trump signed it the same day.\nWhat the law did: It provided full-year FY2026 funding for three of the twelve appropriations bills. All other agencies were funded at FY2025 levels through January 30, 2026.[4] It also required back pay for furloughed employees and rescinded shutdown-period layoff notices. It barred new layoffs while the stopgap was in effect.[4]\nHealth care: The shutdown ended without the health care extensions Democrats were fighting for.[5] Senate Democrats did get a promised vote on the issue by mid-December.[6] That proposal failed in the Senate on December 11, 2025.[3]",
+  "claims": [
+   {
+    "sentence": "The shutdown ran from October 1 to November 12, 2025, which is 43 calendar days.[1]",
+    "start": 8,
+    "end": 91,
+    "claim": "The shutdown ran from October 1 to November 12, 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://governmentshutdowntracker.com/history/2025-government-shutdown/",
+      "host": "governmentshutdowntracker.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The October 1–November 12, 2025 lapse was the longest government-wide shutdown in U.S. history.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "It ran from October 1 to November 12, 2025: 43 calendar days.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that the shutdown ran from October 1 to November 12, 2025, matching every date in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the shutdown ran from October 1 to November 12, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The shutdown ran from October 1 to November 12, 2025, which is 43 calendar days.[1]",
+    "start": 8,
+    "end": 91,
+    "claim": "The shutdown lasted 43 calendar days.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://governmentshutdowntracker.com/history/2025-government-shutdown/",
+      "host": "governmentshutdowntracker.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It ran from October 1 to November 12, 2025: 43 calendar days.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "43 daysOct. 1–Nov. 12, 2025 (42 full days, CRS)",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the shutdown ran from October 1 to November 12, 2025 and explicitly describe it as 43 calendar days, matching the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the shutdown ran from October 1 to November 12, 2025, for 43 calendar days."
+     }
+    ]
+   },
+   {
+    "sentence": "The Congressional Research Service counts 42 full days without appropriations.[1]",
+    "start": 92,
+    "end": 173,
+    "claim": "The Congressional Research Service counts 42 full days without appropriations.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://governmentshutdowntracker.com/history/2025-government-shutdown/",
+      "host": "governmentshutdowntracker.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It ran from October 1 to November 12, 2025: 43 calendar days. The Congressional Research Service counts 42 full days without appropriations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the Congressional Research Service counts 42 full days without appropriations, which matches the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Congressional Research Service counts 42 full days without appropriations."
+     }
+    ]
+   },
+   {
+    "sentence": "It was the longest government-wide shutdown in U.S. history.",
+    "start": 174,
+    "end": 234,
+    "claim": "The shutdown was the longest government-wide shutdown in U.S. history.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The central dispute was whether to extend enhanced Affordable Care Act premium tax credits set to expire at the end of 2025. The Senate repeatedly fell short of the 60 votes needed to advance a stopgap bill.[1]",
+    "start": 262,
+    "end": 472,
+    "claim": "The central dispute was whether to extend enhanced Affordable Care Act premium tax credits set to expire at the end of 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://governmentshutdowntracker.com/history/2025-government-shutdown/",
+      "host": "governmentshutdowntracker.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The main dispute was whether a stopgap should extend enhanced Affordable Care Act premium tax credits that were scheduled to expire at the end of 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The central dispute was whether to extend enhanced Affordable Care Act premium tax credits scheduled to expire at the end of 2025, and the Senate repeatedly fell short of the 60 votes needed to advance a stopgap bill.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the central dispute was whether to extend enhanced ACA premium tax credits scheduled to expire at the end of 2025, which matches the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page says the central dispute was whether to extend enhanced Affordable Care Act premium tax credits scheduled to expire at the end of 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The central dispute was whether to extend enhanced Affordable Care Act premium tax credits set to expire at the end of 2025. The Senate repeatedly fell short of the 60 votes needed to advance a stopgap bill.[1]",
+    "start": 262,
+    "end": 472,
+    "claim": "The Senate repeatedly fell short of the 60 votes needed to advance a stopgap bill.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://governmentshutdowntracker.com/history/2025-government-shutdown/",
+      "host": "governmentshutdowntracker.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Senate repeatedly fell short of the 60 votes needed to advance a House-passed continuing resolution, so funding lapsed for every agency that depends on annual appropriations.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Senate repeatedly fell short of the 60 votes needed to advance a House-passed continuing resolution, which matches the claim's main point, and rewording a continuing resolution as a stopgap bill is fine.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Senate repeatedly fell short of the 60 votes needed to advance a stopgap bill."
+     }
+    ]
+   },
+   {
+    "sentence": "On Nov. 9, a group of eight Democrats agreed to advance a funding measure as part of a broader agreement to end the shutdown.[2]",
+    "start": 491,
+    "end": 619,
+    "claim": "On Nov. 9, a group of eight Democrats agreed to advance a funding measure as part of a broader agreement to end the shutdown.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.cbsnews.com/news/how-the-longest-government-shutdown-in-history-came-to-an-end/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On Nov. 9, the deal to end the shutdown finally came together, with a group of eight Democrats agreeing to advance a funding measure as part of a broader agreement to end the shutdown.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that on Nov. 9 a group of eight Democrats agreed to advance a funding measure as part of a broader agreement to end the shutdown, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that on Nov. 9, eight Democrats agreed to advance a funding measure as part of a broader agreement to end the shutdown."
+     }
+    ]
+   },
+   {
+    "sentence": "The Senate passed the amended bill on November 10 by 60-40.[3]",
+    "start": 620,
+    "end": 682,
+    "claim": "The Senate passed the amended bill on November 10 by 60-40.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://govfacts.org/government/budget-appropriations/federal-process/why-the-government-shutdown-is-ending/",
+      "host": "govfacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Senate passed the amended bill on November 10, 2025, by 60-40.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Senate passed the amended bill on November 10 by 60-40, matching every fact in the claim (the year 2025 in the quote is additional but does not conflict with the claim).",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Senate passed the amended bill on November 10, 2025, by a 60–40 vote."
+     }
+    ]
+   },
+   {
+    "sentence": "The House followed on November 12 by 222-209.[3]",
+    "start": 683,
+    "end": 731,
+    "claim": "The House passed the bill on November 12 by 222-209.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://govfacts.org/government/budget-appropriations/federal-process/why-the-government-shutdown-is-ending/",
+      "host": "govfacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The House agreed to the Senate amendment on Nov. 12, 2025, by 222-209.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the House agreed to the Senate amendment on Nov. 12, 2025, by a 222-209 vote, which backs the claim's date, vote count, and passage; the claim's 'the bill' is a loose match for the Senate amendment but the substance is the same.",
+      "page_judged": "supported",
+      "page_reason": "The page says the House agreed to the Senate amendment on November 12, 2025, by a vote of 222–209."
+     }
+    ]
+   },
+   {
+    "sentence": "President Trump signed it the same day.",
+    "start": 732,
+    "end": 771,
+    "claim": "President Trump signed the bill on November 12, the same day the House passed it.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It provided full-year FY2026 funding for three of the twelve appropriations bills.",
+    "start": 790,
+    "end": 872,
+    "claim": "The law provided full-year FY2026 funding for three of the twelve appropriations bills.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.nado.org/longest-government-shutdown-ends/",
+      "host": "nado.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "All other agencies were funded at FY2025 levels through January 30, 2026.[4]",
+    "start": 873,
+    "end": 949,
+    "claim": "All other agencies were funded at FY2025 levels through January 30, 2026.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.nado.org/longest-government-shutdown-ends/",
+      "host": "nado.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It also required back pay for furloughed employees and rescinded shutdown-period layoff notices.",
+    "start": 950,
+    "end": 1046,
+    "claim": "The law required back pay for furloughed employees.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.nado.org/longest-government-shutdown-ends/",
+      "host": "nado.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It also required back pay for furloughed employees and rescinded shutdown-period layoff notices.",
+    "start": 950,
+    "end": 1046,
+    "claim": "The law rescinded shutdown-period layoff notices.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.nado.org/longest-government-shutdown-ends/",
+      "host": "nado.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "It barred new layoffs while the stopgap was in effect.[4]",
+    "start": 1047,
+    "end": 1104,
+    "claim": "The law barred new layoffs while the stopgap was in effect.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.nado.org/longest-government-shutdown-ends/",
+      "host": "nado.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The shutdown ended without the health care extensions Democrats were fighting for.[5]",
+    "start": 1118,
+    "end": 1203,
+    "claim": "The shutdown ended without the health care extensions Democrats were fighting for.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.npr.org/2025/11/15/nx-s1-5609367/trump-government-shutdown-what-to-know-longest",
+      "host": "npr.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It ended without the health care extensions Democrats were fighting for.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states directly that the shutdown ended without the health care extensions Democrats were fighting for, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the shutdown ended without the health care extensions Democrats were fighting for."
+     }
+    ]
+   },
+   {
+    "sentence": "Senate Democrats did get a promised vote on the issue by mid-December.[6]",
+    "start": 1204,
+    "end": 1277,
+    "claim": "Senate Democrats got a promised vote on the health care issue by mid-December.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.cbsnews.com/live-updates/government-shutdown-latest-trump-signs-funding-federal-agences-opening/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Senate Democrats secured a vote on the issue by mid-December as part of the deal that ended the shutdown.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Senate Democrats secured a vote on the issue by mid-December, which matches the claim's promised vote by mid-December; the health care topic is referenced as 'the issue' and is not contradicted.",
+      "page_judged": "supported",
+      "page_reason": "The page says Senate Democrats secured a vote on the health care tax credits by mid-December as part of the shutdown-ending deal."
+     }
+    ]
+   },
+   {
+    "sentence": "That proposal failed in the Senate on December 11, 2025.[3]",
+    "start": 1278,
+    "end": 1337,
+    "claim": "The health care proposal failed in the Senate on December 11, 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://govfacts.org/government/budget-appropriations/federal-process/why-the-government-shutdown-is-ending/",
+      "host": "govfacts.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The proposal failed in the Senate on December 11, 2025, and the extra help ran out when the year ended.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the proposal failed in the Senate on December 11, 2025, matching every fact in the claim (the health care proposal is referred to as 'the proposal' in the quote).",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Senate rejected cloture on the health care bill on December 11, 2025, and describes the proposal as having failed in the Senate."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 18,
+   "labels": {
+    "supported": 11,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 5,
+    "citation_unread": 0,
+    "uncited": 2
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 11,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6875,
+   "pages_cited": 6,
+   "pages_read": 5,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.009467,
+   "usd_per_claim": 0.000526
+  },
+  "cost": {
+   "total_usd": 0.0095,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "find",
+     "calls": 11,
+     "usd": 0.0035
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.0039
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0013
+    }
+   ]
+  }
+ }
+}

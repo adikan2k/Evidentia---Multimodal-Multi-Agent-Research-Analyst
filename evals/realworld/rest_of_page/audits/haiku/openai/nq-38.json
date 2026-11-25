@@ -1,0 +1,257 @@
+{
+ "id": "nq-38",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:41:13+00:00",
+ "report": {
+  "answer_text": "The President’s Daily Brief (PDB) goes to the U.S. president, the vice president, and a small group of senior officials chosen by the president. That list can vary by administration, but it has often included the national security adviser and the secretaries of state and defense. (cia.gov)\nMembers of Congress do not routinely receive the PDB. It is highly classified, though some historical briefs have been declassified and released to the public. (cia.gov)",
+  "claims": [
+   {
+    "sentence": "The President’s Daily Brief (PDB) goes to the U.S. president, the vice president, and a small group of senior officials chosen by the president.",
+    "start": 0,
+    "end": 144,
+    "claim": "The President’s Daily Brief (PDB) goes to the U.S. president, the vice president, and a small group of senior officials chosen by the president.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The PDB is given only to the President, the Vice President, and a select group of senior officials designated by the President.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the PDB goes only to the President, Vice President, and a select group of senior officials designated by the President, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the PDB is given only to the President, the Vice President, and a select group of senior officials designated by the President, which matches the claim's wording."
+     }
+    ]
+   },
+   {
+    "sentence": "That list can vary by administration, but it has often included the national security adviser and the secretaries of state and defense. (cia.gov)",
+    "start": 145,
+    "end": 290,
+    "claim": "The list of PDB recipients can vary by administration.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the PDB is given only to the President, the Vice President, and a select group of senior officials designated by the President, which implies the designated group is chosen by the president, but it does not say the list varies by administration."
+     }
+    ]
+   },
+   {
+    "sentence": "That list can vary by administration, but it has often included the national security adviser and the secretaries of state and defense. (cia.gov)",
+    "start": 145,
+    "end": 290,
+    "claim": "The PDB recipient list has often included the national security adviser and the secretaries of state and defense.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the PDB is given only to the President, the Vice President, and a select group of senior officials designated by the President, but does not name the national security adviser or the secretaries of state and defense or say they often receive it."
+     }
+    ]
+   },
+   {
+    "sentence": "Members of Congress do not routinely receive the PDB.",
+    "start": 291,
+    "end": 344,
+    "claim": "Members of Congress do not routinely receive the PDB.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The PDB is given only to the President, the Vice President, and a select group of senior officials designated by the President.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote says the PDB is given only to the President, Vice President, and senior officials designated by the President, which excludes members of Congress and so backs the claim that they do not routinely receive it.",
+      "page_judged": "supported",
+      "page_reason": "The page states the PDB is given only to the President, the Vice President, and a select group of senior officials designated by the President, and the WIRe (not the PDB) is aimed at Congress, so it supports that Congress members are not routinely PDB recipients, though it does not explicitly say Congress members never receive it."
+     }
+    ]
+   },
+   {
+    "sentence": "It is highly classified, though some historical briefs have been declassified and released to the public. (cia.gov)",
+    "start": 345,
+    "end": 460,
+    "claim": "The PDB is highly classified.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Because information in these two publications is extremely sensitive, they are highly classified and have restricted readership.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the publications are highly classified, which backs the claim that the PDB is highly classified, though the quote does not explicitly name the PDB.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the PDB and WIRe are highly classified because information in these publications is extremely sensitive, and specifically describes the PDB as an Intelligence Community daily product given only to the President, Vice President, and select senior officials."
+     }
+    ]
+   },
+   {
+    "sentence": "It is highly classified, though some historical briefs have been declassified and released to the public. (cia.gov)",
+    "start": 345,
+    "end": 460,
+    "claim": "Some historical PDB briefs have been declassified and released to the public.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/about/organization/directorate-of-analysis/?utm_source=openai",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the PDB as highly classified with restricted readership and says nothing about any PDB briefs being declassified or released to the public."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 3,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 6,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002375,
+   "usd_per_claim": 0.000396
+  },
+  "cost": {
+   "total_usd": 0.0024,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0009
+    },
+    {
+     "node": "page_check",
+     "calls": 6,
+     "usd": 0.0009
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

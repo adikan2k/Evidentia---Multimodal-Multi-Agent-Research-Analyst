@@ -1,0 +1,1040 @@
+{
+ "id": "coral-bleaching",
+ "question": "How does the 2024 global coral bleaching event compare with earlier mass bleaching events?",
+ "answer": {
+  "model": "gpt-6.2-sol",
+  "tool": "web search",
+  "made_at": "2026-11-24T19:41:09+00:00",
+  "text": "The global coral bleaching event confirmed on **April 15, 2024** was the **most widespread on record**. It began in early 2023 and likely ended in mid-2025. NOAA documented mass bleaching in at least **83 countries and territories** across the Atlantic, Pacific, and Indian oceans. ([coralreefwatch.noaa.gov](https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php))\n\n| Global bleaching event | Share of global reef area exposed to bleaching-level heat stress |\n|---|---:|\n| 1998 | ~21% |\n| 2010 | ~37% |\n| 2014–2017 | 68.2% |\n| **2023–2025** | **84.4%** |\n\nThat’s about **16 percentage points above the previous record** and roughly **four times the area exposed in 1998**. The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. ([icriforum.org](https://icriforum.org/4gbe-2025/?utm_source=openai))\n\n**Heat exposure isn’t the same as coral death.** Bleached corals can recover if temperatures fall soon enough. Even so, the Global Coral Reef Monitoring Network estimated that global hard coral cover fell **8.9% relative to its 2023 level** in just one year—the largest single-year drop on record. That estimate does not include the event’s full toll in 2025. The longer-term concern is that increasingly frequent marine heatwaves are giving reefs less time to recover between events. ([natureseychelles.org](https://natureseychelles.org/~documents/international-and-regional-documents/status-of-coral-reefs-of-the-world-2025/?layout=file))",
+  "usd": 0.1062
+ },
+ "recorded_at": "2026-11-24T19:43:29+00:00",
+ "duration_s": 21.05,
+ "judges": {
+  "quote": "claude-haiku-5-5",
+  "finder": "claude-haiku-5-5",
+  "page": "claude-haiku-5-5"
+ },
+ "events": [
+  {
+   "t": 0.02,
+   "node": "parse",
+   "summary": "found 3 cited addresses",
+   "cost_usd": 0,
+   "data": {
+    "answer_text": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record. It began in early 2023 and likely ended in mid-2025. NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans. (coralreefwatch.noaa.gov)\n| Global bleaching event | Share of global reef area exposed to bleaching-level heat stress |\n|---|---:|\n| 1998 | ~21% |\n| 2010 | ~37% |\n| 2014–2017 | 68.2% |\n| 2023–2025 | 84.4% |\nThat’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998. The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)\nHeat exposure isn’t the same as coral death. Bleached corals can recover if temperatures fall soon enough. Even so, the Global Coral Reef Monitoring Network estimated that global hard coral cover fell 8.9% relative to its 2023 level in just one year—the largest single-year drop on record. That estimate does not include the event’s full toll in 2025. The longer-term concern is that increasingly frequent marine heatwaves are giving reefs less time to recover between events. (natureseychelles.org)",
+    "citations": [
+     {
+      "id": "c1",
+      "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+      "host": "coralreefwatch.noaa.gov"
+     },
+     {
+      "id": "c2",
+      "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+      "host": "icriforum.org"
+     },
+     {
+      "id": "c3",
+      "url": "https://natureseychelles.org/~documents/international-and-regional-documents/status-of-coral-reefs-of-the-world-2025/?layout=file",
+      "host": "natureseychelles.org"
+     }
+    ]
+   }
+  },
+  {
+   "t": 3.5,
+   "node": "split",
+   "summary": "split the answer into 9 claims (2 dropped: sentence not in the answer)",
+   "cost_usd": 0.0006,
+   "data": {
+    "claims": [
+     {
+      "index": 0,
+      "sentence": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record.",
+      "start": 0,
+      "end": 95,
+      "claim": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 1,
+      "sentence": "It began in early 2023 and likely ended in mid-2025.",
+      "start": 96,
+      "end": 148,
+      "claim": "The global coral bleaching event began in early 2023.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 2,
+      "sentence": "It began in early 2023 and likely ended in mid-2025.",
+      "start": 96,
+      "end": 148,
+      "claim": "The global coral bleaching event likely ended in mid-2025.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 3,
+      "sentence": "NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans. (coralreefwatch.noaa.gov)",
+      "start": 149,
+      "end": 295,
+      "claim": "NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 4,
+      "sentence": "That’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998.",
+      "start": 477,
+      "end": 585,
+      "claim": "The 2023–2025 event exposed about 16 percentage points more of global reef area to bleaching-level heat stress than the previous record.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 5,
+      "sentence": "That’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998.",
+      "start": 477,
+      "end": 585,
+      "claim": "The 2023–2025 event exposed roughly four times the share of global reef area exposed in 1998 to bleaching-level heat stress.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "paragraph"
+     },
+     {
+      "index": 6,
+      "sentence": "The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)",
+      "start": 586,
+      "end": 740,
+      "claim": "The heat was unusually intense.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 7,
+      "sentence": "The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)",
+      "start": 586,
+      "end": 740,
+      "claim": "NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence"
+     },
+     {
+      "index": 8,
+      "sentence": "That estimate does not include the event’s full toll in 2025.",
+      "start": 1031,
+      "end": 1092,
+      "claim": "The Global Coral Reef Monitoring Network's estimate does not include the event's full toll in 2025.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "paragraph"
+     }
+    ],
+    "not_located": 2
+   }
+  },
+  {
+   "t": 5.92,
+   "node": "fetch",
+   "summary": "read 2 pages, not read: 1 PDF is larger than the size limit",
+   "cost_usd": 0.0006,
+   "data": {
+    "read": [
+     {
+      "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+      "host": "coralreefwatch.noaa.gov",
+      "title": "",
+      "kind": "html"
+     },
+     {
+      "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+      "host": "icriforum.org",
+      "title": "",
+      "kind": "html"
+     }
+    ],
+    "skipped": [
+     {
+      "url": "https://natureseychelles.org/~documents/international-and-regional-documents/status-of-coral-reefs-of-the-world-2025/?layout=file",
+      "host": "natureseychelles.org",
+      "reason": "PDF is larger than the size limit"
+     }
+    ]
+   }
+  },
+  {
+   "t": 11.97,
+   "node": "page_check",
+   "summary": "page judge: 4 supported, 4 not_supported",
+   "cost_usd": 0.0031,
+   "data": {
+    "judged": 8
+   }
+  },
+  {
+   "t": 15.91,
+   "node": "find",
+   "summary": "found candidate quotes for 7 of 9 claim-page pairs",
+   "cost_usd": 0.0037,
+   "data": {}
+  },
+  {
+   "t": 15.91,
+   "node": "quote_check",
+   "summary": "7 pairs have quotes that are word for word on the page",
+   "cost_usd": 0.0037,
+   "data": {}
+  },
+  {
+   "t": 20.62,
+   "node": "check",
+   "summary": "quote judge: 5 partial, 2 not on the cited page, 1 supported, 1 could not check",
+   "cost_usd": 0.0051,
+   "data": {
+    "quote_labels": [
+     {
+      "claim": 0,
+      "citation_id": "c1",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 1,
+      "citation_id": "c1",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 2,
+      "citation_id": "c1",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 3,
+      "citation_id": "c1",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 4,
+      "citation_id": "c2",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 5,
+      "citation_id": "c2",
+      "quote_label": "supported"
+     },
+     {
+      "claim": 6,
+      "citation_id": "c2",
+      "quote_label": "partial"
+     },
+     {
+      "claim": 7,
+      "citation_id": "c2",
+      "quote_label": "not_found"
+     },
+     {
+      "claim": 8,
+      "citation_id": "c3",
+      "quote_label": "unchecked"
+     }
+    ]
+   }
+  },
+  {
+   "t": 20.64,
+   "node": "combine",
+   "summary": "both judges: 3 needs a human, 2 partial, 2 not on the cited page, 1 supported, 1 could not check",
+   "cost_usd": 0.0051,
+   "data": {
+    "claims": [
+     {
+      "sentence": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record.",
+      "start": 0,
+      "end": 95,
+      "claim": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+        "host": "coralreefwatch.noaa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "The ongoing global coral bleaching event is the biggest to date.",
+          "pages": null,
+          "context": {
+           "before": "with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\n",
+           "after": " The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1. Consult the Guidance for monitoring, if possible.\n2. E-mail your data files (in Excel, Word, etc.) directly to"
+          }
+         },
+         {
+          "text": "The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress.",
+          "pages": null,
+          "context": {
+           "before": "world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. ",
+           "after": " The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1. Consult the Guidance for monitoring, if possible.\n2. E-mail your data files (in Excel, Word, etc.) directly to coralreefwatch@noaa.gov, OR\n3. Enter your data into Coral Reef Watch's Google Form, OR\n4. Download Coral Reef Watch's quantitative observations questionnaire (below), enter your data, and e-mail"
+          }
+         }
+        ],
+        "quote_reason": "The quotes back the claim that the ongoing bleaching event is the biggest on record, but they do not mention the April 15, 2024 confirmation date.",
+        "page_judged": "supported",
+        "page_reason": "The page states the ongoing 4th global bleaching event is the biggest to date, with ~84.4% of reef area affected versus 68.2% in the 3rd event, which supports the claim that it was the most widespread on record."
+       }
+      ]
+     },
+     {
+      "sentence": "It began in early 2023 and likely ended in mid-2025.",
+      "start": 96,
+      "end": 148,
+      "claim": "The global coral bleaching event began in early 2023.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph",
+      "label": "partial",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+        "host": "coralreefwatch.noaa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "partial",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area",
+          "pages": null,
+          "context": {
+           "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. ",
+           "after": " and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st"
+          }
+         }
+        ],
+        "quote_reason": "The quote gives 1 January 2023 as the start of the period of bleaching-level heat stress affecting about 84.4% of reef area, which backs the early-2023 timing, but it does not state that this was when the global bleaching event began, only the period over which heat stress was measured.",
+        "page_judged": "not_supported",
+        "page_reason": "The page says bleaching-level heat stress impacted coral reef area from 1 January 2023 to 30 September 2025 and NOAA confirmed the 4th global bleaching event on April 15, 2024, but it does not explicitly state that the global event began in early 2023."
+       }
+      ]
+     },
+     {
+      "sentence": "It began in early 2023 and likely ended in mid-2025.",
+      "start": 96,
+      "end": 148,
+      "claim": "The global coral bleaching event likely ended in mid-2025.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "paragraph",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+        "host": "coralreefwatch.noaa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "The percentage has remained the same as of the latest update.",
+          "pages": null,
+          "context": {
+           "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and mass coral bleaching has been documented in at least 83 countries and territories. ",
+           "after": "\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1. Consult the Guidance for monitoring, if possible.\n2. E-mail your"
+          }
+         },
+         {
+          "text": "From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area",
+          "pages": null,
+          "context": {
+           "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. ",
+           "after": " and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st"
+          }
+         }
+        ],
+        "quote_reason": "The quotes report that about 84.4% of reef area was hit by bleaching-level heat stress from January 2023 to 30 September 2025 and that the percentage has stayed the same, but they say nothing about the event ending or about it ending in mid-2025.",
+        "page_judged": "not_supported",
+        "page_reason": "The page says the 4th global bleaching event is ongoing and describes data through 30 September 2025 with the percentage unchanged in the latest update, so it does not state that the event ended in mid-2025."
+       }
+      ]
+     },
+     {
+      "sentence": "NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans. (coralreefwatch.noaa.gov)",
+      "start": 149,
+      "end": 295,
+      "claim": "NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans.",
+      "citation_ids": [
+       "c1"
+      ],
+      "cited_by": "sentence",
+      "label": "partial",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c1",
+        "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+        "host": "coralreefwatch.noaa.gov",
+        "title": "",
+        "kind": "html",
+        "label": "partial",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "mass coral bleaching has been documented in at least 83 countries and territories",
+          "pages": null,
+          "context": {
+           "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and ",
+           "after": ". The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1."
+          }
+         }
+        ],
+        "quote_reason": "The quote backs the core figure of mass coral bleaching documented in at least 83 countries and territories, but it does not attribute the documentation to NOAA or name the Atlantic, Pacific, and Indian oceans.",
+        "page_judged": "not_supported",
+        "page_reason": "The page says mass coral bleaching has been documented in at least 83 countries and territories, but it never mentions the Atlantic, Pacific, or Indian oceans, so that part of the claim is unsupported."
+       }
+      ]
+     },
+     {
+      "sentence": "That’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998.",
+      "start": 477,
+      "end": 585,
+      "claim": "The 2023–2025 event exposed about 16 percentage points more of global reef area to bleaching-level heat stress than the previous record.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "paragraph",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+        "host": "icriforum.org",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "From 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84%",
+          "pages": null,
+          "context": {
+           "before": "The most intense global coral bleaching event on record is still ongoing, according to scientists. One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\n",
+           "after": " of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1. Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used"
+          }
+         },
+         {
+          "text": "rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1",
+          "pages": null,
+          "context": {
+           "before": "bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, ",
+           "after": ". Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their Bleaching Alert Scale to indicate the heightened risk of mass coral mortality. The previous highest level, Level 2, indicates risk of mortality to heat sensitive corals; Level 5 indicates the risk of"
+          }
+         }
+        ],
+        "quote_reason": "The quotes give 84% for 2023–2025 and 68% for 2014–2017, which yields the 16-point gap, but they never call 2014–2017 the previous record and the first quote is cut off before stating what the 84% measures.",
+        "page_judged": "supported",
+        "page_reason": "The page states that bleaching-level heat stress hit 84% of reefs from January 2023 to March 2025, versus 68% in the third event (2014-2017), the highest of the earlier events it lists, a difference of 16 percentage points."
+       }
+      ]
+     },
+     {
+      "sentence": "That’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998.",
+      "start": 477,
+      "end": 585,
+      "claim": "The 2023–2025 event exposed roughly four times the share of global reef area exposed in 1998 to bleaching-level heat stress.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "paragraph",
+      "label": "supported",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+        "host": "icriforum.org",
+        "title": "",
+        "kind": "html",
+        "label": "supported",
+        "quote_label": "supported",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "From 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage.",
+          "pages": null,
+          "context": {
+           "before": "The most intense global coral bleaching event on record is still ongoing, according to scientists. One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\n",
+           "after": " During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1. Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their"
+          }
+         },
+         {
+          "text": "During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010",
+          "pages": null,
+          "context": {
+           "before": "is still ongoing, according to scientists. One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. ",
+           "after": " and 68% during the third event (2014-2017)1. Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their Bleaching Alert Scale to indicate the heightened risk of mass coral mortality. The previous highest level, Level 2, indicates risk of mortality to heat"
+          }
+         }
+        ],
+        "quote_reason": "The quotes state that bleaching-level heat stress hit 84% of reefs from 2023 to March 2025 and 21% of reefs in 1998, and 84 divided by 21 is about four, so the claim's comparison follows from the quoted figures.",
+        "page_judged": "supported",
+        "page_reason": "The page states that bleaching-level heat stress impacted 84% of the world's reefs from 2023 to March 2025, compared with 21% in 1998, and 84 is roughly four times 21."
+       }
+      ]
+     },
+     {
+      "sentence": "The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)",
+      "start": 586,
+      "end": 740,
+      "claim": "The heat was unusually intense.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "needs_human",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+        "host": "icriforum.org",
+        "title": "",
+        "kind": "html",
+        "label": "needs_human",
+        "quote_label": "partial",
+        "skipped": null,
+        "quotes": [
+         {
+          "text": "The most intense global coral bleaching event on record is still ongoing, according to scientists.",
+          "pages": null,
+          "context": {
+           "before": "",
+           "after": " One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching"
+          }
+         },
+         {
+          "text": "Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their Bleaching Alert Scale to indicate the heightened risk of mass coral mortality.",
+          "pages": null,
+          "context": {
+           "before": "continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1. ",
+           "after": " The previous highest level, Level 2, indicates risk of mortality to heat sensitive corals; Level 5 indicates the risk of over 80% of all corals on a reef dying due to prolonged bleaching.\n“We know coral bleaching is accelerating as our oceans warm, driven by the world’s continued reliance on fossil fuels. As an atoll nation, we see our reefs damaged and livelihoods threatened. We must urgently"
+          }
+         }
+        ],
+        "quote_reason": "The quotes describe the coral bleaching event as the most intense on record and unprecedented, but they never mention the heat itself, so the claim about heat is only indirectly backed.",
+        "page_judged": "supported",
+        "page_reason": "The page describes the fourth global coral bleaching event as the most intense on record and 'unprecedented', with new alert levels added for heightened mortality risk, which supports that the heat was unusually intense, though it does not explicitly say the heat itself was unusually intense rather than the bleaching event."
+       }
+      ]
+     },
+     {
+      "sentence": "The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)",
+      "start": 586,
+      "end": 740,
+      "claim": "NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death.",
+      "citation_ids": [
+       "c2"
+      ],
+      "cited_by": "sentence",
+      "label": "not_found",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c2",
+        "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+        "host": "icriforum.org",
+        "title": "",
+        "kind": "html",
+        "label": "not_found",
+        "quote_label": "not_found",
+        "skipped": null,
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": "not_supported",
+        "page_reason": "The page says a 'widely-used bleaching prediction platform' added three levels (3-5) to its Bleaching Alert Scale to signal risk of mass coral mortality, but it never names NOAA as the organisation responsible."
+       }
+      ]
+     },
+     {
+      "sentence": "That estimate does not include the event’s full toll in 2025.",
+      "start": 1031,
+      "end": 1092,
+      "claim": "The Global Coral Reef Monitoring Network's estimate does not include the event's full toll in 2025.",
+      "citation_ids": [
+       "c3"
+      ],
+      "cited_by": "paragraph",
+      "label": "unchecked",
+      "disputed": false,
+      "pages": [
+       {
+        "citation_id": "c3",
+        "url": "https://natureseychelles.org/~documents/international-and-regional-documents/status-of-coral-reefs-of-the-world-2025/?layout=file",
+        "host": "natureseychelles.org",
+        "title": "",
+        "kind": "html",
+        "label": "unchecked",
+        "quote_label": "unchecked",
+        "skipped": "PDF is larger than the size limit",
+        "quotes": [],
+        "quote_reason": "",
+        "page_judged": null,
+        "page_reason": ""
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "report": {
+  "answer_text": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record. It began in early 2023 and likely ended in mid-2025. NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans. (coralreefwatch.noaa.gov)\n| Global bleaching event | Share of global reef area exposed to bleaching-level heat stress |\n|---|---:|\n| 1998 | ~21% |\n| 2010 | ~37% |\n| 2014–2017 | 68.2% |\n| 2023–2025 | 84.4% |\nThat’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998. The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)\nHeat exposure isn’t the same as coral death. Bleached corals can recover if temperatures fall soon enough. Even so, the Global Coral Reef Monitoring Network estimated that global hard coral cover fell 8.9% relative to its 2023 level in just one year—the largest single-year drop on record. That estimate does not include the event’s full toll in 2025. The longer-term concern is that increasingly frequent marine heatwaves are giving reefs less time to recover between events. (natureseychelles.org)",
+  "claims": [
+   {
+    "sentence": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record.",
+    "start": 0,
+    "end": 95,
+    "claim": "The global coral bleaching event confirmed on April 15, 2024 was the most widespread on record.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+      "host": "coralreefwatch.noaa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The ongoing global coral bleaching event is the biggest to date.",
+        "pages": null,
+        "context": {
+         "before": "with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\n",
+         "after": " The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1. Consult the Guidance for monitoring, if possible.\n2. E-mail your data files (in Excel, Word, etc.) directly to"
+        }
+       },
+       {
+        "text": "The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress.",
+        "pages": null,
+        "context": {
+         "before": "world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. ",
+         "after": " The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1. Consult the Guidance for monitoring, if possible.\n2. E-mail your data files (in Excel, Word, etc.) directly to coralreefwatch@noaa.gov, OR\n3. Enter your data into Coral Reef Watch's Google Form, OR\n4. Download Coral Reef Watch's quantitative observations questionnaire (below), enter your data, and e-mail"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back the claim that the ongoing bleaching event is the biggest on record, but they do not mention the April 15, 2024 confirmation date.",
+      "page_judged": "supported",
+      "page_reason": "The page states the ongoing 4th global bleaching event is the biggest to date, with ~84.4% of reef area affected versus 68.2% in the 3rd event, which supports the claim that it was the most widespread on record."
+     }
+    ]
+   },
+   {
+    "sentence": "It began in early 2023 and likely ended in mid-2025.",
+    "start": 96,
+    "end": 148,
+    "claim": "The global coral bleaching event began in early 2023.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+      "host": "coralreefwatch.noaa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area",
+        "pages": null,
+        "context": {
+         "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. ",
+         "after": " and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st"
+        }
+       }
+      ],
+      "quote_reason": "The quote gives 1 January 2023 as the start of the period of bleaching-level heat stress affecting about 84.4% of reef area, which backs the early-2023 timing, but it does not state that this was when the global bleaching event began, only the period over which heat stress was measured.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says bleaching-level heat stress impacted coral reef area from 1 January 2023 to 30 September 2025 and NOAA confirmed the 4th global bleaching event on April 15, 2024, but it does not explicitly state that the global event began in early 2023."
+     }
+    ]
+   },
+   {
+    "sentence": "It began in early 2023 and likely ended in mid-2025.",
+    "start": 96,
+    "end": 148,
+    "claim": "The global coral bleaching event likely ended in mid-2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+      "host": "coralreefwatch.noaa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The percentage has remained the same as of the latest update.",
+        "pages": null,
+        "context": {
+         "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and mass coral bleaching has been documented in at least 83 countries and territories. ",
+         "after": "\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1. Consult the Guidance for monitoring, if possible.\n2. E-mail your"
+        }
+       },
+       {
+        "text": "From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area",
+        "pages": null,
+        "context": {
+         "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. ",
+         "after": " and mass coral bleaching has been documented in at least 83 countries and territories. The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st"
+        }
+       }
+      ],
+      "quote_reason": "The quotes report that about 84.4% of reef area was hit by bleaching-level heat stress from January 2023 to 30 September 2025 and that the percentage has stayed the same, but they say nothing about the event ending or about it ending in mid-2025.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the 4th global bleaching event is ongoing and describes data through 30 September 2025 with the percentage unchanged in the latest update, so it does not state that the event ended in mid-2025."
+     }
+    ]
+   },
+   {
+    "sentence": "NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans. (coralreefwatch.noaa.gov)",
+    "start": 149,
+    "end": 295,
+    "claim": "NOAA documented mass bleaching in at least 83 countries and territories across the Atlantic, Pacific, and Indian oceans.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php",
+      "host": "coralreefwatch.noaa.gov",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "mass coral bleaching has been documented in at least 83 countries and territories",
+        "pages": null,
+        "context": {
+         "before": "On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) confirmed the world is in the midst of its 4th global coral bleaching event. From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted ~84.4% of the world’s coral reef area and ",
+         "after": ". The percentage has remained the same as of the latest update.\nThe ongoing global coral bleaching event is the biggest to date. The previous\nrecord was during the 3rd global coral bleaching event, which occurred from\n2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat\nstress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010,\nrespectively.\n1."
+        }
+       }
+      ],
+      "quote_reason": "The quote backs the core figure of mass coral bleaching documented in at least 83 countries and territories, but it does not attribute the documentation to NOAA or name the Atlantic, Pacific, and Indian oceans.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says mass coral bleaching has been documented in at least 83 countries and territories, but it never mentions the Atlantic, Pacific, or Indian oceans, so that part of the claim is unsupported."
+     }
+    ]
+   },
+   {
+    "sentence": "That’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998.",
+    "start": 477,
+    "end": 585,
+    "claim": "The 2023–2025 event exposed about 16 percentage points more of global reef area to bleaching-level heat stress than the previous record.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+      "host": "icriforum.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "From 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84%",
+        "pages": null,
+        "context": {
+         "before": "The most intense global coral bleaching event on record is still ongoing, according to scientists. One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\n",
+         "after": " of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1. Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used"
+        }
+       },
+       {
+        "text": "rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1",
+        "pages": null,
+        "context": {
+         "before": "bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, ",
+         "after": ". Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their Bleaching Alert Scale to indicate the heightened risk of mass coral mortality. The previous highest level, Level 2, indicates risk of mortality to heat sensitive corals; Level 5 indicates the risk of"
+        }
+       }
+      ],
+      "quote_reason": "The quotes give 84% for 2023–2025 and 68% for 2014–2017, which yields the 16-point gap, but they never call 2014–2017 the previous record and the first quote is cut off before stating what the 84% measures.",
+      "page_judged": "supported",
+      "page_reason": "The page states that bleaching-level heat stress hit 84% of reefs from January 2023 to March 2025, versus 68% in the third event (2014-2017), the highest of the earlier events it lists, a difference of 16 percentage points."
+     }
+    ]
+   },
+   {
+    "sentence": "That’s about 16 percentage points above the previous record and roughly four times the area exposed in 1998.",
+    "start": 477,
+    "end": 585,
+    "claim": "The 2023–2025 event exposed roughly four times the share of global reef area exposed in 1998 to bleaching-level heat stress.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+      "host": "icriforum.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "From 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage.",
+        "pages": null,
+        "context": {
+         "before": "The most intense global coral bleaching event on record is still ongoing, according to scientists. One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\n",
+         "after": " During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1. Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their"
+        }
+       },
+       {
+        "text": "During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010",
+        "pages": null,
+        "context": {
+         "before": "is still ongoing, according to scientists. One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. ",
+         "after": " and 68% during the third event (2014-2017)1. Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their Bleaching Alert Scale to indicate the heightened risk of mass coral mortality. The previous highest level, Level 2, indicates risk of mortality to heat"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that bleaching-level heat stress hit 84% of reefs from 2023 to March 2025 and 21% of reefs in 1998, and 84 divided by 21 is about four, so the claim's comparison follows from the quoted figures.",
+      "page_judged": "supported",
+      "page_reason": "The page states that bleaching-level heat stress impacted 84% of the world's reefs from 2023 to March 2025, compared with 21% in 1998, and 84 is roughly four times 21."
+     }
+    ]
+   },
+   {
+    "sentence": "The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)",
+    "start": 586,
+    "end": 740,
+    "claim": "The heat was unusually intense.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+      "host": "icriforum.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The most intense global coral bleaching event on record is still ongoing, according to scientists.",
+        "pages": null,
+        "context": {
+         "before": "",
+         "after": " One year on from the official declaration of the fourth global coral bleaching event by the International Coral Reef Initiative (ICRI), bleaching alerts continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching"
+        }
+       },
+       {
+        "text": "Scientists called the fourth global coral bleaching event “unprecedented” as early as May 2024, and a widely-used bleaching prediction platform had to add three new levels (Levels 3-5) to their Bleaching Alert Scale to indicate the heightened risk of mass coral mortality.",
+        "pages": null,
+        "context": {
+         "before": "continue to develop across the world.\nFrom 1 January 2023 to 30 March 2025, bleaching-level heat stress impacted 84% of the world’s reefs, with 82 countries, territories and economies suffering damage. During the first global coral bleaching event in 1998, 21% of reefs experienced bleaching-level heat stress, rising to 37% in the second event in 2010 and 68% during the third event (2014-2017)1. ",
+         "after": " The previous highest level, Level 2, indicates risk of mortality to heat sensitive corals; Level 5 indicates the risk of over 80% of all corals on a reef dying due to prolonged bleaching.\n“We know coral bleaching is accelerating as our oceans warm, driven by the world’s continued reliance on fossil fuels. As an atoll nation, we see our reefs damaged and livelihoods threatened. We must urgently"
+        }
+       }
+      ],
+      "quote_reason": "The quotes describe the coral bleaching event as the most intense on record and unprecedented, but they never mention the heat itself, so the claim about heat is only indirectly backed.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the fourth global coral bleaching event as the most intense on record and 'unprecedented', with new alert levels added for heightened mortality risk, which supports that the heat was unusually intense, though it does not explicitly say the heat itself was unusually intense rather than the bleaching event."
+     }
+    ]
+   },
+   {
+    "sentence": "The heat was also unusually intense: NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death. (icriforum.org)",
+    "start": 586,
+    "end": 740,
+    "claim": "NOAA added three levels to its bleaching alert scale to distinguish higher risks of mass coral death.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://icriforum.org/4gbe-2025/?utm_source=openai",
+      "host": "icriforum.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a 'widely-used bleaching prediction platform' added three levels (3-5) to its Bleaching Alert Scale to signal risk of mass coral mortality, but it never names NOAA as the organisation responsible."
+     }
+    ]
+   },
+   {
+    "sentence": "That estimate does not include the event’s full toll in 2025.",
+    "start": 1031,
+    "end": 1092,
+    "claim": "The Global Coral Reef Monitoring Network's estimate does not include the event's full toll in 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://natureseychelles.org/~documents/international-and-regional-documents/status-of-coral-reefs-of-the-world-2025/?layout=file",
+      "host": "natureseychelles.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "PDF is larger than the size limit",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 9,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 3,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 1,
+    "uncited": 0
+   },
+   "cited_claims": 9,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.4,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.1111,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.005123,
+   "usd_per_claim": 0.000569
+  },
+  "cost": {
+   "total_usd": 0.0051,
+   "cap_usd": 0.25,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0019
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0012
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0014
+    }
+   ]
+  }
+ }
+}

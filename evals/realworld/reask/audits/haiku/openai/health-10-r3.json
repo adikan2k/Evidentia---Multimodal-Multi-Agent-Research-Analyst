@@ -1,0 +1,168 @@
+{
+ "id": "health-10-r3",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "In 2025, Pakistan reported 31 cases of wild poliovirus type 1, and Afghanistan reported 21, for a combined total of 52 cases, according to the WHO. (who.int)",
+  "claims": [
+   {
+    "sentence": "In 2025, Pakistan reported 31 cases of wild poliovirus type 1, and Afghanistan reported 21, for a combined total of 52 cases, according to the WHO. (who.int)",
+    "start": 0,
+    "end": 157,
+    "claim": "In 2025, Pakistan reported 31 cases of wild poliovirus type 1, according to the WHO.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.who.int/vanuatu/news/detail-global/13-11-2026-statement-of-the-forty-sixth-meeting-of-the-polio-ihr-emergency-committee?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that 31 WPV1 (wild poliovirus type 1) cases were reported in Pakistan in 2025, matching the claim's year, count and virus type, though it does not explicitly attribute the figure to the WHO.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025, 52 WPV1 cases were reported, of which 21 were in Afghanistan and 31 in Pakistan, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, Pakistan reported 31 cases of wild poliovirus type 1, and Afghanistan reported 21, for a combined total of 52 cases, according to the WHO. (who.int)",
+    "start": 0,
+    "end": 157,
+    "claim": "In 2025, Afghanistan reported 21 cases of wild poliovirus type 1, according to the WHO.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.who.int/vanuatu/news/detail-global/13-11-2026-statement-of-the-forty-sixth-meeting-of-the-polio-ihr-emergency-committee?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 2025 Afghanistan figure of 21 WPV1 cases, but it does not name the WHO as the source of that figure.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025, 52 WPV1 cases were reported, with 21 in Afghanistan and 31 in Pakistan, so the claim's figure of 21 cases for Afghanistan is directly supported."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, Pakistan reported 31 cases of wild poliovirus type 1, and Afghanistan reported 21, for a combined total of 52 cases, according to the WHO. (who.int)",
+    "start": 0,
+    "end": 157,
+    "claim": "In 2025, Pakistan and Afghanistan had a combined total of 52 cases of wild poliovirus type 1, according to the WHO.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.who.int/vanuatu/news/detail-global/13-11-2026-statement-of-the-forty-sixth-meeting-of-the-polio-ihr-emergency-committee?utm_source=openai",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the figures: 52 WPV1 cases in 2025, with 21 in Afghanistan and 31 in Pakistan, but it does not name the WHO as the source.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025, 52 WPV1 cases were reported, with 21 in Afghanistan and 31 in Pakistan, which matches the claimed combined total of 52."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 1,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.3333,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004054,
+   "usd_per_claim": 0.001351
+  },
+  "cost": {
+   "total_usd": 0.0041,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0024
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0008
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0006
+    }
+   ]
+  }
+ }
+}

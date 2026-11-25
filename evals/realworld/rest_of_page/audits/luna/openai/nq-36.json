@@ -1,0 +1,214 @@
+{
+ "id": "nq-36",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:41:18+00:00",
+ "report": {
+  "answer_text": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of *The Office*, which originally aired on September 25, 2008. He proposes in the rain at a gas station. If your streaming service splits the premiere into two parts, the scene is in Part 2 (Season 5, Episode 2). (en.wikipedia.org)",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of *The Office*, which originally aired on September 25, 2008.",
+    "start": 0,
+    "end": 122,
+    "claim": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of The Office.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_%28The_Office%29?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proposes to her outside in the pouring rain, and she accepts ecstatically.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "\"Weight Loss\" is the collective name for the first and second episodes of the fifth season of the American comedy television series The Office",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Jim proposed to Pam outside a truck stop in the pouring rain.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Jim proposes to Pam in the rain and that \"Weight Loss\" is the first and second episodes of season 5, but they never state that the proposal happens in that episode or that it is the premiere.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Jim proposes to Pam in “Weight Loss” and identifies it as the first episode(s) of Season 5 and the season premiere."
+     }
+    ]
+   },
+   {
+    "sentence": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of *The Office*, which originally aired on September 25, 2008.",
+    "start": 0,
+    "end": 122,
+    "claim": "“Weight Loss” originally aired on September 25, 2008.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_%28The_Office%29?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the episode first aired as a single 60 minute show in the United States on September 25, 2008, on NBC.[1]",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the episode first aired on September 25, 2008, which matches the claim's airdate for \"Weight Loss\" and the claim's wording about its original airing.",
+      "page_judged": "supported",
+      "page_reason": "The page states that “Weight Loss” first aired on September 25, 2008."
+     }
+    ]
+   },
+   {
+    "sentence": "He proposes in the rain at a gas station.",
+    "start": 123,
+    "end": 164,
+    "claim": "Jim proposes to Pam in the rain at a gas station.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_%28The_Office%29?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He proposes to her outside in the pouring rain, and she accepts ecstatically.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Greg Daniels, proposed the idea of Jim proposing to Pam in a gas station parking lot",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Jim proposes to Pam in the rain and that the idea was for a gas station parking lot, but they do not clearly state that the proposal itself happens at a gas station, as opposed to only being proposed for that setting.",
+      "page_judged": "supported",
+      "page_reason": "The page says Jim proposes to Pam outside at a rest stop in pouring rain and describes the proposal scene as a gas station parking lot."
+     }
+    ]
+   },
+   {
+    "sentence": "If your streaming service splits the premiere into two parts, the scene is in Part 2 (Season 5, Episode 2). (en.wikipedia.org)",
+    "start": 165,
+    "end": 291,
+    "claim": "If a streaming service splits the Season 5 premiere into two parts, the proposal scene is in Part 2, which is Season 5, Episode 2.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Weight_Loss_%28The_Office%29?utm_source=openai",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says “Weight Loss” comprises Season 5 Episodes 1 and 2 and describes Jim’s proposal, but it does not identify the proposal as occurring in Part 2 or Episode 2."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 1,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.25,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004151,
+   "usd_per_claim": 0.001038
+  },
+  "cost": {
+   "total_usd": 0.0042,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 4,
+     "usd": 0.0013
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0019
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

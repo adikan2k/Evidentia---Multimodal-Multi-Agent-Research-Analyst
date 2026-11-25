@@ -1,0 +1,775 @@
+{
+ "id": "economy-09-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:04:26+00:00",
+ "report": {
+  "answer_text": "In 2025, Japanese Prime Minister Sanae Takaichi proposed what she called “responsible and proactive” fiscal policy: use government spending and tax relief to ease the cost-of-living squeeze, while investing in industries that could raise wages and strengthen Japan’s economy. She argued that faster growth would help bring down the government debt-to-GDP ratio. (japan.kantei.go.jp)\nCost-of-living relief. Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)\nHigher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)\nInvestment and wage growth. She proposed public-private investment in 17 strategic sectors, including AI, semiconductors, shipbuilding, quantum technology and aerospace. The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)\nThe November package comprised ¥21.3 trillion in new fiscal measures, or ¥25.5 trillion including government investment and loan programs. The Diet passed the supplementary budget backing the package in December. (japan.kantei.go.jp)",
+  "claims": [
+   {
+    "sentence": "In 2025, Japanese Prime Minister Sanae Takaichi proposed what she called “responsible and proactive” fiscal policy: use government spending and tax relief to ease the cost-of-living squeeze, while investing in industries that could raise wages and strengthen Japan’s economy.",
+    "start": 0,
+    "end": 275,
+    "claim": "In 2025, Japanese Prime Minister Sanae Takaichi proposed what she called “responsible and proactive” fiscal policy.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "all in keeping with our approach of responsible and proactive public finances",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the phrase \"responsible and proactive\" public finances as an approach, but it does not name Sanae Takaichi as the speaker or give 2025 as the date.",
+      "page_judged": "supported",
+      "page_reason": "The page states the cabinet's approach is 'responsible and proactive public finances' in a speech dated October 24, 2025, attributed to PM Takaichi, which supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, Japanese Prime Minister Sanae Takaichi proposed what she called “responsible and proactive” fiscal policy: use government spending and tax relief to ease the cost-of-living squeeze, while investing in industries that could raise wages and strengthen Japan’s economy.",
+    "start": 0,
+    "end": 275,
+    "claim": "Takaichi's proposed fiscal policy uses government spending and tax relief to ease the cost-of-living squeeze.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We will instead take well-crafted responses to the concerns of the public regarding rising prices, meticulously addressing each one of them.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we will contend with the drop in prices by making use of subsidies until we have succeeded in abolishing these provisional tax rates",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we will provide assistance for electricity and gas bills during the winter months when the cold is most severe.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "we will raise the income limit [qualifying for dependent deductions] to 1.60 million yen during the year-end adjustment for 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the spending (utility bill assistance, subsidies) and tax relief (raising the dependent-deduction income limit) elements, but none of them names Takaichi as the author or proposer.",
+      "page_judged": "supported",
+      "page_reason": "The page describes a supplementary budget, subsidies for electricity and gas bills, abolishing the provisional gasoline and diesel tax rates, and raising the dependent-deduction income limit, all aimed at rising prices and household burdens, which together match government spending and tax relief easing the cost-of-living squeeze."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2025, Japanese Prime Minister Sanae Takaichi proposed what she called “responsible and proactive” fiscal policy: use government spending and tax relief to ease the cost-of-living squeeze, while investing in industries that could raise wages and strengthen Japan’s economy.",
+    "start": 0,
+    "end": 275,
+    "claim": "Takaichi's proposed fiscal policy invests in industries that could raise wages and strengthen Japan's economy.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In strategic fields such as AI and semiconductors, shipbuilding, quantum technology, biotechnology, aviation and space, and cyber security, we will take comprehensive support measures from a multifaceted perspective",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "We will strongly support wage increases and capital investment through means such as assistance to boost productivity",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the policy targets strategic industries such as AI, semiconductors and shipbuilding and supports wage increases, but they do not state that these industries will raise wages or strengthen Japan's economy, and they do not explicitly tie the support to fiscal policy.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes fiscal policies aimed at raising incomes and strengthening the economy, and mentions supporting wage increases and investment in strategic fields like AI, semiconductors and agriculture, but it does not explicitly tie the proposed fiscal policy to industries raising wages in a way that fully establishes the claim, and it attributes the wage increases mainly to businesses and the government's environment rather than specific fiscal investment."
+     }
+    ]
+   },
+   {
+    "sentence": "She argued that faster growth would help bring down the government debt-to-GDP ratio. (japan.kantei.go.jp)",
+    "start": 276,
+    "end": 382,
+    "claim": "Takaichi argued that faster growth would help bring down the government debt-to-GDP ratio.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Following this path, we will curb the rate of growth of Japan's outstanding debt balance so as not to exceed the rate of economic growth and lower Japan's ratio of outstanding government debt to GDP.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote links keeping debt growth from exceeding economic growth to lowering the debt-to-GDP ratio, but it does not say faster growth would help, and it does not name Takaichi as the speaker.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says curbing debt growth so it does not exceed economic growth will lower the debt-to-GDP ratio, but it never says faster growth itself would bring the ratio down."
+     }
+    ]
+   },
+   {
+    "sentence": "Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 406,
+    "end": 717,
+    "claim": "Takaichi's cabinet's November 21 package included winter electricity and gas subsidies.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we will provide assistance for electricity and natural gas bills from January through March 2026.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This will result in relief totaling roughly 7,000 yen per household over those three months.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the winter electricity and natural gas bill assistance (January to March 2026, about 7,000 yen per household), but nothing in them names Takaichi's cabinet, a November 21 package, or ties the assistance to that package.",
+      "page_judged": "supported",
+      "page_reason": "The page states the package provides assistance for electricity and natural gas bills from January through March 2026, yielding roughly 7,000 yen per household, which supports the claim that the package included winter electricity and gas subsidies."
+     }
+    ]
+   },
+   {
+    "sentence": "Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 406,
+    "end": 717,
+    "claim": "Takaichi's cabinet's November 21 package included a ¥20,000 payment per child.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we have included in our policy package child-rearing support allowances to help counter price increases. These will be provided in the amount of 20,000 yen per child, totaling some 400 billion yen.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the ¥20,000-per-child allowance in a policy package, but it does not name Takaichi's cabinet or the November 21 date.",
+      "page_judged": "supported",
+      "page_reason": "The page states that child-rearing support allowances of 20,000 yen per child, totaling about 400 billion yen, were included in the policy package, which supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 406,
+    "end": 717,
+    "claim": "Takaichi's cabinet's November 21 package included grants for local governments to tailor relief.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We will expand our provision of grants to local regions for prioritized assistance, allocating 2 trillion yen to this program.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "These grants will serve as a response to price increases that carefully targets the particular needs of each local area.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that grants to local regions target each area's particular needs, but they do not mention the November 21 date, the Takaichi cabinet, or the package that the claim attributes this to.",
+      "page_judged": "supported",
+      "page_reason": "The page states the package allocates 2 trillion yen to grants to local regions for prioritized assistance that carefully target the particular needs of each local area, which supports the claim that it included grants for local governments to tailor relief, and the page is dated November 21, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 406,
+    "end": 717,
+    "claim": "The November 21 package called for ending the provisional gasoline tax surcharge on December 31, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we will do away with the provisional tax on gasoline on December 31 and the provisional tax on the delivery of diesel oil on April 1.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs ending the provisional gasoline tax on December 31, but it does not name a November 21 package or state the year 2025.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the provisional tax on gasoline will be abolished on December 31, and the page is dated November 21, 2025, so the claim is supported, though the page says 'December 31' without explicitly stating the year 2025 in that sentence."
+     }
+    ]
+   },
+   {
+    "sentence": "Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 406,
+    "end": 717,
+    "claim": "The November 21 package called for ending the diesel surcharge on April 1, 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As for the so-called provisional tax rates, in keeping with an agreement brokered across various political parties, we will do away with the provisional tax on gasoline on December 31 and the provisional tax on the delivery of diesel oil on April 1.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back ending the diesel provisional tax on April 1, but they do not mention a November 21 package, the year 2026, or a diesel surcharge.",
+      "page_judged": "supported",
+      "page_reason": "The page says the provisional tax on the delivery of diesel oil will be abolished on April 1, which matches the claim's diesel surcharge ending on April 1, and the 2026 year is reasonably inferred from the page's January-to-March 2026 references."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 718,
+    "end": 1160,
+    "claim": "The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "所得税の課税最低限を178万円まで特例的に先取りして引き上げる。",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the income-tax minimum taxable threshold will be raised to 1.78 million yen, but it does not mention a December tax reform plan or any date for it.",
+      "page_judged": "supported",
+      "page_reason": "The page, a cabinet decision dated 26 December 2025 on the FY2026 tax reform outline, states that the income tax exemption threshold (課税最低限) will be raised to 178万円 through a special early adoption, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 718,
+    "end": 1160,
+    "claim": "The December tax reform plan proposed adjusting basic deductions for inflation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "物価上昇に連動して基礎控除等を引き上げる仕組みを創設し、これに基づき、所得税の基礎控除について、合計所得金額が2,350万円以下である個人の控除額を４万円引き上げる。",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that basic deductions would be raised in line with price increases, but it does not mention a December tax reform plan or state its date.",
+      "page_judged": "supported",
+      "page_reason": "The page states that a mechanism will be created to raise basic deductions (基礎控除等) in line with rising prices, which directly supports the claim that the December reform proposed inflation-linked adjustment of basic deductions."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 718,
+    "end": 1160,
+    "claim": "Takaichi proposed developing refundable tax credits for low- and middle-income earners.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Japan's FY2026 tax reform outline (Cabinet decision of 26 December 2025) covering the basic deduction, salary deduction, NISA, the high-income burden adjustment and similar measures, but it never mentions Takaichi, refundable tax credits, or any refundable credit for low- and middle-income earners."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 718,
+    "end": 1160,
+    "claim": "The October coalition agreement included a two-year suspension of the consumption tax on qualifying food and beverages.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes the FY2026 tax reform outline approved by Cabinet on 26 December 2025, which contains no mention of an October coalition agreement or a two-year suspension of consumption tax on food and beverages, so the claim is not supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Higher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 718,
+    "end": 1160,
+    "claim": "The two-year consumption tax suspension on qualifying food and beverages was not part of the November relief package.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is the December 26, 2025 FY2026 tax reform outline and says nothing about a two-year consumption tax suspension on food and beverages or a November relief package, so it cannot confirm the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Investment and wage growth. She proposed public-private investment in 17 strategic sectors, including AI, semiconductors, shipbuilding, quantum technology and aerospace. The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)",
+    "start": 1161,
+    "end": 1515,
+    "claim": "Takaichi proposed public-private investment in 17 strategic sectors, including AI, semiconductors, shipbuilding, quantum technology and aerospace.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "We have designated 17 strategic fields, including AI (artificial intelligence), semiconductors, shipbuilding, quantum technology, biotechnology, aerospace, and cybersecurity.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "These are strategic investments undertaken proactively through public-private collaboration",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state 17 designated strategic fields including AI, semiconductors, shipbuilding, quantum technology and aerospace, and describe them as investments made through public-private collaboration, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the Takaichi Cabinet designated 17 strategic fields including AI, semiconductors, shipbuilding, quantum technology, biotechnology, aerospace and cybersecurity, and that strategic investments are undertaken through public-private collaboration, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "Investment and wage growth. She proposed public-private investment in 17 strategic sectors, including AI, semiconductors, shipbuilding, quantum technology and aerospace. The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)",
+    "start": 1161,
+    "end": 1515,
+    "claim": "The plan aimed to secure critical supply chains.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Government of Japan will further strengthen measures to enhance the resilience of supply chains, including revitalizing shipbuilding capacity that underpins international shipping and establishing alternative supply routes for rare earths and other critical minerals.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the general aim of strengthening supply chain resilience, including critical minerals, but it does not explicitly state that the plan's purpose is to secure critical supply chains.",
+      "page_judged": "supported",
+      "page_reason": "The page states the Prime Minister said the government will strengthen supply chain resilience, including revitalizing shipbuilding and establishing alternative supply routes for rare earths and critical minerals, which supports the claim that the plan aimed to secure critical supply chains."
+     }
+    ]
+   },
+   {
+    "sentence": "Investment and wage growth. She proposed public-private investment in 17 strategic sectors, including AI, semiconductors, shipbuilding, quantum technology and aerospace. The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)",
+    "start": 1161,
+    "end": 1515,
+    "claim": "The plan aimed to help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will not simply pass the burden of wage increases exceeding inflation onto businesses but will create an environment for sustainable wage increases, and mentions wage increases pressed on the business community, but it never mentions smaller businesses or productivity improvement aimed at them as a plan goal."
+     }
+    ]
+   },
+   {
+    "sentence": "The November package comprised ¥21.3 trillion in new fiscal measures, or ¥25.5 trillion including government investment and loan programs. The Diet passed the supplementary budget backing the package in December. (japan.kantei.go.jp)",
+    "start": 1516,
+    "end": 1749,
+    "claim": "The November package comprised ¥21.3 trillion in new fiscal measures.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Adding tax cuts and Special Accounts, the national expenditure, or what we might call fresh fiscal injections, is expected to come to roughly 21.3 trillion yen in all.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "After adding fiscal investment and loan programs to this approximately 21.3 trillion yen in new fiscal injections, the Government's fiscal measures will amount to some 25.5 trillion yen.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the figure of roughly 21.3 trillion yen in new fiscal injections, but neither quote mentions a November package or ties the figure to November.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the economic package's total new fiscal injections, counting tax cuts and Special Accounts, are roughly 21.3 trillion yen, which matches the claim's figure of new fiscal measures, though it describes the package as comprising about 17.7 trillion from the General Account plus other components, and the claim's wording 'comprised' is a reasonable paraphrase of this."
+     }
+    ]
+   },
+   {
+    "sentence": "The November package comprised ¥21.3 trillion in new fiscal measures, or ¥25.5 trillion including government investment and loan programs. The Diet passed the supplementary budget backing the package in December. (japan.kantei.go.jp)",
+    "start": 1516,
+    "end": 1749,
+    "claim": "The November package comprised ¥25.5 trillion including government investment and loan programs.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After adding fiscal investment and loan programs to this approximately 21.3 trillion yen in new fiscal injections, the Government's fiscal measures will amount to some 25.5 trillion yen.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that adding fiscal investment and loan programs to the roughly 21.3 trillion yen in new fiscal injections brings the government's fiscal measures to some 25.5 trillion yen, backing the claim's figure and its inclusion of investment and loan programs, though the quote does not explicitly name the package as \"November\" in the same sentence.",
+      "page_judged": "supported",
+      "page_reason": "The page states that after adding fiscal investment and loan programs to about 21.3 trillion yen in new fiscal injections, the government's fiscal measures amount to some 25.5 trillion yen, which matches the claim's figure and its inclusion of investment and loan programs."
+     }
+    ]
+   },
+   {
+    "sentence": "The November package comprised ¥21.3 trillion in new fiscal measures, or ¥25.5 trillion including government investment and loan programs. The Diet passed the supplementary budget backing the package in December. (japan.kantei.go.jp)",
+    "start": 1516,
+    "end": 1749,
+    "claim": "The Diet passed the supplementary budget backing the November package in December.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page only says the government will compile a supplementary budget and submit it to the upcoming extraordinary Diet session for early passage; it does not state that the Diet passed it or when."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 20,
+   "labels": {
+    "supported": 2,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 11,
+    "not_found": 5,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 20,
+   "claims_with_a_verdict": 9,
+   "failed_citations": 5,
+   "failed_share_of_verdicts": 0.5556,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.1,
+   "pages_cited": 4,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.0164,
+   "usd_per_claim": 0.00082
+  },
+  "cost": {
+   "total_usd": 0.0164,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0017
+    },
+    {
+     "node": "find",
+     "calls": 24,
+     "usd": 0.0067
+    },
+    {
+     "node": "page_check",
+     "calls": 20,
+     "usd": 0.005
+    },
+    {
+     "node": "check",
+     "calls": 15,
+     "usd": 0.003
+    }
+   ]
+  }
+ }
+}

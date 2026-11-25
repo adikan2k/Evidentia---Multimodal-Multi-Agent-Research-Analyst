@@ -1,0 +1,633 @@
+{
+ "id": "economy-10",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "Inflation by the consumer price index (CPI) stayed moderate and fairly stable in 2025, ending the year a little lower than where it started.\nYear-end reading: The CPI rose at an annual rate of 2.7% in December 2025, in line with forecasts and unchanged from November.[1] That included a 0.3% rise from the previous month.[2]\nRange over the year: Inflation stayed at or below 3% throughout 2025, well below the pandemic peak of 9.1% in June 2022.[1] From memory, it fell to about 2.3% in spring, then rose to about 3% by September. Those monthly figures didn't come from my search.\nTariffs: The CPI climbed for several months in 2025 after the Trump administration's tariff announcements, though the levies didn't reignite inflation as much as some economists had predicted.[1]\nAnnual average: One source calculates that inflation ran at 2.63% in 2025, measured as the change in the annual average CPI from 2024 to 2025.[3]\nCore inflation: Core CPI, which excludes food and energy, rose 0.24% in December, and the year-over-year rate edged up to 2.64%.[4]\nCategories: In the BLS data for December, food was up 3.1% year over year, electricity 6.7% and natural gas 10.8%, while gasoline was down 3.4%.[5]\nData gap: Because of the 2025 lapse in appropriations, the BLS couldn't publish October 2025 indexes for most CPI series.[5] That makes some comparisons harder. It also meant that October rent was assumed to show no inflation, which understated shelter inflation across October and November.[4]\nDespite the cooler headline numbers, cooling inflation did not translate into price relief[1] for many households, because price levels stayed higher.",
+  "claims": [
+   {
+    "sentence": "Inflation by the consumer price index (CPI) stayed moderate and fairly stable in 2025, ending the year a little lower than where it started.",
+    "start": 0,
+    "end": 140,
+    "claim": "Inflation by the consumer price index (CPI) stayed moderate and fairly stable in 2025, ending the year a little lower than where it started.",
+    "citation_ids": [],
+    "cited_by": null,
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Year-end reading: The CPI rose at an annual rate of 2.7% in December 2025, in line with forecasts and unchanged from November.[1] That included a 0.3% rise from the previous month.[2]",
+    "start": 141,
+    "end": 324,
+    "claim": "The CPI rose at an annual rate of 2.7% in December 2025, in line with forecasts and unchanged from November.",
+    "citation_ids": [
+     "c1",
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Consumer Price Index rose at an annual rate of 2.7% in the final month of 2025, in line with economists' forecasts and unchanged from the prior month",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Inflation last month matched November's signaling that prices didn't ease further at the end of the year.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states the CPI rose 2.7% annually in the final month of 2025, in line with forecasts and unchanged from the prior month, covering every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that CPI rose 2.7% annually in the final month of 2025, in line with economists’ forecasts and unchanged from the prior month."
+     },
+     {
+      "citation_id": "c2",
+      "url": "https://www.chase.com/personal/investments/learning-and-insights/article/cpi-report-december-2025",
+      "host": "chase.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Year-end reading: The CPI rose at an annual rate of 2.7% in December 2025, in line with forecasts and unchanged from November.[1] That included a 0.3% rise from the previous month.[2]",
+    "start": 141,
+    "end": 324,
+    "claim": "The CPI rose 0.3% from the previous month in December 2025.",
+    "citation_ids": [
+     "c1",
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports a 0.2% December increase for core CPI but does not state that overall CPI rose 0.3% from the previous month."
+     },
+     {
+      "citation_id": "c2",
+      "url": "https://www.chase.com/personal/investments/learning-and-insights/article/cpi-report-december-2025",
+      "host": "chase.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Range over the year: Inflation stayed at or below 3% throughout 2025, well below the pandemic peak of 9.1% in June 2022.[1] From memory, it fell to about 2.3% in spring, then rose to about 3% by September. Those monthly figures didn't come from my search.",
+    "start": 325,
+    "end": 580,
+    "claim": "Inflation stayed at or below 3% throughout 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Inflation stayed at or below 3% throughout 2025, well below the pandemic peak of 9.1% in June 2022.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states inflation stayed at or below 3% throughout 2025, which is the entire claim; the 9.1% peak mention is extra context and does not conflict.",
+      "page_judged": "supported",
+      "page_reason": "The page explicitly states that inflation stayed at or below 3% throughout 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "Range over the year: Inflation stayed at or below 3% throughout 2025, well below the pandemic peak of 9.1% in June 2022.[1] From memory, it fell to about 2.3% in spring, then rose to about 3% by September. Those monthly figures didn't come from my search.",
+    "start": 325,
+    "end": 580,
+    "claim": "The pandemic peak of inflation was 9.1% in June 2022.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "well below the pandemic peak of 9.1% in June 2022.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the pandemic peak was 9.1% in June 2022, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that inflation stayed at or below 3% throughout 2025, well below the pandemic peak of 9.1% in June 2022."
+     }
+    ]
+   },
+   {
+    "sentence": "Tariffs: The CPI climbed for several months in 2025 after the Trump administration's tariff announcements, though the levies didn't reignite inflation as much as some economists had predicted.[1]",
+    "start": 581,
+    "end": 776,
+    "claim": "The CPI climbed for several months in 2025 after the Trump administration's tariff announcements.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Even so, the CPI climbed for several months in 2025 in the wake of the Trump administration's , although the levies didn't reignite inflation to the extent that some economists had predicted.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the CPI climbed for several months in 2025 in the wake of the Trump administration's tariffs, backing every fact in the claim.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the CPI climbed for several months in 2025 in the wake of the Trump administration’s actions and discusses tariff impacts, but it does not state that this followed tariff announcements."
+     }
+    ]
+   },
+   {
+    "sentence": "Tariffs: The CPI climbed for several months in 2025 after the Trump administration's tariff announcements, though the levies didn't reignite inflation as much as some economists had predicted.[1]",
+    "start": 581,
+    "end": 776,
+    "claim": "The tariff levies did not reignite inflation as much as some economists had predicted.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "although the levies didn't reignite inflation to the extent that some economists had predicted",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the levies did not reignite inflation to the extent some economists had predicted, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the tariff levies did not reignite inflation to the extent some economists had predicted."
+     }
+    ]
+   },
+   {
+    "sentence": "Annual average: One source calculates that inflation ran at 2.63% in 2025, measured as the change in the annual average CPI from 2024 to 2025.[3]",
+    "start": 777,
+    "end": 922,
+    "claim": "One source calculates that inflation ran at 2.63% in 2025, measured as the change in the annual average CPI from 2024 to 2025.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://cpiinflationcalculator.com/2025-cpi-and-inflation-data-for-the-united-states/",
+      "host": "cpiinflationcalculator.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Inflation in the United States ran at 2.63 percent in 2025, measured the way the Bureau of Labor Statistics measures it, as the change in the annual average Consumer Price Index from 2024 to 2025.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "2.63 percent on an annual average basis. The 2025 annual average index of 321.943 against 2024’s 313.689.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the 2.63% inflation figure for 2025, measured as the change in the annual average CPI from 2024 to 2025, matching every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that inflation was 2.63% on an annual-average basis, comparing the 2025 average CPI of 321.943 with 2024’s 313.689."
+     }
+    ]
+   },
+   {
+    "sentence": "Core inflation: Core CPI, which excludes food and energy, rose 0.24% in December, and the year-over-year rate edged up to 2.64%.[4]",
+    "start": 923,
+    "end": 1054,
+    "claim": "Core CPI, which excludes food and energy, rose 0.24% in December.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.marcus.com/us/en/resources/heard-at-gs/december-2025-cpi-update",
+      "host": "marcus.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Core inflation: Core CPI, which excludes food and energy, rose 0.24% in December, and the year-over-year rate edged up to 2.64%.[4]",
+    "start": 923,
+    "end": 1054,
+    "claim": "The year-over-year core CPI rate edged up to 2.64%.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.marcus.com/us/en/resources/heard-at-gs/december-2025-cpi-update",
+      "host": "marcus.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Categories: In the BLS data for December, food was up 3.1% year over year, electricity 6.7% and natural gas 10.8%, while gasoline was down 3.4%.[5]",
+    "start": 1055,
+    "end": 1202,
+    "claim": "In BLS data for December, food was up 3.1% year over year.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category-line-chart.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Categories: In the BLS data for December, food was up 3.1% year over year, electricity 6.7% and natural gas 10.8%, while gasoline was down 3.4%.[5]",
+    "start": 1055,
+    "end": 1202,
+    "claim": "In BLS data for December, electricity was up 6.7% year over year.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category-line-chart.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Categories: In the BLS data for December, food was up 3.1% year over year, electricity 6.7% and natural gas 10.8%, while gasoline was down 3.4%.[5]",
+    "start": 1055,
+    "end": 1202,
+    "claim": "In BLS data for December, natural gas was up 10.8% year over year.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category-line-chart.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Categories: In the BLS data for December, food was up 3.1% year over year, electricity 6.7% and natural gas 10.8%, while gasoline was down 3.4%.[5]",
+    "start": 1055,
+    "end": 1202,
+    "claim": "In BLS data for December, gasoline was down 3.4% year over year.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category-line-chart.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Data gap: Because of the 2025 lapse in appropriations, the BLS couldn't publish October 2025 indexes for most CPI series.[5] That makes some comparisons harder. It also meant that October rent was assumed to show no inflation, which understated shelter inflation across October and November.[4]",
+    "start": 1203,
+    "end": 1497,
+    "claim": "Because of the 2025 lapse in appropriations, the BLS couldn't publish October 2025 indexes for most CPI series.",
+    "citation_ids": [
+     "c5",
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category-line-chart.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.marcus.com/us/en/resources/heard-at-gs/december-2025-cpi-update",
+      "host": "marcus.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Data gap: Because of the 2025 lapse in appropriations, the BLS couldn't publish October 2025 indexes for most CPI series.[5] That makes some comparisons harder. It also meant that October rent was assumed to show no inflation, which understated shelter inflation across October and November.[4]",
+    "start": 1203,
+    "end": 1497,
+    "claim": "October rent was assumed to show no inflation, which understated shelter inflation across October and November.",
+    "citation_ids": [
+     "c5",
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category-line-chart.htm",
+      "host": "bls.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     },
+     {
+      "citation_id": "c4",
+      "url": "https://www.marcus.com/us/en/resources/heard-at-gs/december-2025-cpi-update",
+      "host": "marcus.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Despite the cooler headline numbers, cooling inflation did not translate into price relief[1] for many households, because price levels stayed higher.",
+    "start": 1498,
+    "end": 1648,
+    "claim": "Cooling inflation did not translate into price relief for many households, because price levels stayed higher.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cbsnews.com/news/cpi-report-today-inflation-december-2025-tariffs/",
+      "host": "cbsnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "However, cooling inflation did not translate into price relief. Prices continued to rise, leaving many households feeling pinched and complicating efforts to or buy a home.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that cooling inflation did not translate into price relief, that prices continued to rise, and that many households felt pinched, which covers the claim's point and its stated reason that price levels stayed higher.",
+      "page_judged": "supported",
+      "page_reason": "The page says cooling inflation did not bring price relief because prices continued to rise, leaving many households feeling pinched."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 17,
+   "labels": {
+    "supported": 6,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 9,
+    "uncited": 1
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.375,
+   "pages_cited": 5,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.0046,
+   "usd_per_claim": 0.000271
+  },
+  "cost": {
+   "total_usd": 0.0046,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0015
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0011
+    },
+    {
+     "node": "check",
+     "calls": 7,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

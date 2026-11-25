@@ -1,0 +1,311 @@
+{
+ "id": "economy-05",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:57:44+00:00",
+ "report": {
+  "answer_text": "The U.S. federal government shutdown lasted 43 calendar days, from October 1 through November 12, 2025, counting the day it ended. The Congressional Research Service counts 42 full days of lapsed funding, through November 11. (oig.dol.gov)\nIt ended on the evening of November 12, when President Donald Trump signed H.R. 5371 into law. The Senate had approved the funding package 60–40 on November 10, and the House passed it 222–209 on November 12. The law restored funding for most of the government through January 30, 2026, and provided full-year funding for three of the twelve regular appropriations bills. (clickorlando.com)",
+  "claims": [
+   {
+    "sentence": "The U.S. federal government shutdown lasted 43 calendar days, from October 1 through November 12, 2025, counting the day it ended.",
+    "start": 0,
+    "end": 130,
+    "claim": "The U.S. federal government shutdown lasted 43 calendar days, from October 1 through November 12, 2025, counting the day it ended.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://oig.dol.gov/public/oifindings/50-26-004-01-001.pdf?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "oig.dol.gov",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "During the 43-day government shutdown from October 1 through November 12, 2025, Han directed one furloughed employee to report to the office for a meeting",
+        "pages": [
+         10,
+         10
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states a 43-day shutdown running from October 1 through November 12, 2025, which matches the claim's dates and inclusive counting.",
+      "page_judged": "supported",
+      "page_reason": "The page calls the shutdown 43 days long and gives its dates as October 1 through November 12, 2025, supporting the claim’s inclusive calendar-day count."
+     }
+    ]
+   },
+   {
+    "sentence": "The Congressional Research Service counts 42 full days of lapsed funding, through November 11. (oig.dol.gov)",
+    "start": 131,
+    "end": 239,
+    "claim": "The Congressional Research Service counts 42 full days of lapsed funding for the U.S. federal government shutdown, through November 11.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://oig.dol.gov/public/oifindings/50-26-004-01-001.pdf?trk=article-ssr-frontend-pulse_little-text-block&utm_source=openai",
+      "host": "oig.dol.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a 43-day shutdown from October 1 through November 12, 2025, but does not state that the Congressional Research Service counted 42 full days through November 11."
+     }
+    ]
+   },
+   {
+    "sentence": "It ended on the evening of November 12, when President Donald Trump signed H.R. 5371 into law.",
+    "start": 240,
+    "end": 334,
+    "claim": "The U.S. federal government shutdown ended on the evening of November 12, when President Donald Trump signed H.R. 5371 into law.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.clickorlando.com/business/2025/11/12/house-returns-for-vote-to-end-the-government-shutdown-after-nearly-2-months-away/?utm_source=openai",
+      "host": "clickorlando.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "President Donald Trump signed a government funding bill Wednesday night, ending a record 43-day shutdown that caused financial stress for federal workers who went without paychecks, stranded scores of travelers at airports and generated long lines at some food banks.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "President Trump signs government funding bill, ending shutdown after a record 43-day disruption",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that Trump signed a government funding bill on a Wednesday night, ending the 43-day shutdown, but they do not state the date November 12 or the bill number H.R. 5371.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Trump signed a government funding bill on Wednesday night, November 12, ending the shutdown, but it does not identify the bill as H.R. 5371."
+     }
+    ]
+   },
+   {
+    "sentence": "The Senate had approved the funding package 60–40 on November 10, and the House passed it 222–209 on November 12.",
+    "start": 335,
+    "end": 448,
+    "claim": "The Senate approved the funding package 60–40 on November 10.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.clickorlando.com/business/2025/11/12/house-returns-for-vote-to-end-the-government-shutdown-after-nearly-2-months-away/?utm_source=openai",
+      "host": "clickorlando.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the Senate passed the measure on Monday, which was November 10 according to the article’s date, but it does not state that the vote was 60–40."
+     }
+    ]
+   },
+   {
+    "sentence": "The Senate had approved the funding package 60–40 on November 10, and the House passed it 222–209 on November 12.",
+    "start": 335,
+    "end": 448,
+    "claim": "The House passed the funding package 222–209 on November 12.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.clickorlando.com/business/2025/11/12/house-returns-for-vote-to-end-the-government-shutdown-after-nearly-2-months-away/?utm_source=openai",
+      "host": "clickorlando.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The signing ceremony came just hours after the House passed the measure on a mostly party-line vote of 222-209.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "President Donald Trump signs the funding bill to reopen the government, in the Oval Office of the White House, Wednesday, Nov. 12, 2025, in Washington.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the 222-209 House vote, but they give Nov. 12, 2025 only as the date of the signing ceremony, not as the date the House passed the measure, so the passage date is not directly stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the House passed the measure 222–209 and identifies the vote as occurring Wednesday, November 12, 2025."
+     }
+    ]
+   },
+   {
+    "sentence": "The law restored funding for most of the government through January 30, 2026, and provided full-year funding for three of the twelve regular appropriations bills. (clickorlando.com)",
+    "start": 449,
+    "end": 630,
+    "claim": "The law restored funding for most of the government through January 30, 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.clickorlando.com/business/2025/11/12/house-returns-for-vote-to-end-the-government-shutdown-after-nearly-2-months-away/?utm_source=openai",
+      "host": "clickorlando.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The compromise funds three annual spending bills and extends the rest of government funding through Jan. 30.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that the rest of government funding was extended through Jan. 30, but it says the law funds three annual spending bills and does not state that it 'restored' funding or that it covered 'most' of the government.",
+      "page_judged": "supported",
+      "page_reason": "The page says the law funded three annual spending bills and extended the rest of government funding through January 30, which in the article’s November 2025 context is January 30, 2026."
+     }
+    ]
+   },
+   {
+    "sentence": "The law restored funding for most of the government through January 30, 2026, and provided full-year funding for three of the twelve regular appropriations bills. (clickorlando.com)",
+    "start": 449,
+    "end": 630,
+    "claim": "The law provided full-year funding for three of the twelve regular appropriations bills.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.clickorlando.com/business/2025/11/12/house-returns-for-vote-to-end-the-government-shutdown-after-nearly-2-months-away/?utm_source=openai",
+      "host": "clickorlando.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The compromise funds three annual spending bills and extends the rest of government funding through Jan. 30.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that three annual spending bills were funded, but it does not say they were full-year funding or that there were twelve regular appropriations bills, and it says the rest were extended only through Jan. 30.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the compromise funds three annual spending bills but does not state that they receive full-year funding or that they are three of twelve regular appropriations bills."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 7,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 7,
+   "claims_with_a_verdict": 5,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 0.4,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.1429,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00791,
+   "usd_per_claim": 0.00113
+  },
+  "cost": {
+   "total_usd": 0.0079,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 9,
+     "usd": 0.0045
+    },
+    {
+     "node": "page_check",
+     "calls": 7,
+     "usd": 0.0021
+    },
+    {
+     "node": "check",
+     "calls": 5,
+     "usd": 0.0009
+    }
+   ]
+  }
+ }
+}

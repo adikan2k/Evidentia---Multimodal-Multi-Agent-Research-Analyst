@@ -1,0 +1,561 @@
+{
+ "id": "nq-38",
+ "tool": "claude",
+ "judge": "gpt-6-luna",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:41:58+00:00",
+ "report": {
+  "answer_text": "Access to the President's Daily Brief (PDB) is very tightly restricted.\nRegular recipients\nOnly the President, the Vice President, and a select group of senior officials designated by the President receive the briefing.[1] The president decides who is on that list. It usually includes top national security advisers, though the exact list changes from one administration to the next.\nOthers who may get access\nPresident-elect: At the president's discretion, the PDB may also be provided to the president-elect between election day and inauguration.[2] By tradition this happens. In 2020, for example, Biden got access later than usual. The delay came because Trump was contesting the election results, and Trump approved the briefings for Biden after the formal transition process was approved.[3]\nFormer presidents: They do not automatically receive it. By tradition, an outgoing president may request continued access, and the incoming administration typically grants it for a transition period.[4]\nWho produces it\nThe people who prepare it are not the same as the people who receive it. Staff from the ODNI's PDB staff work overnight to gather analysis from all 18 Intelligence Community elements.[4]\nSpecial cases\nRarely, special editions of the PDB have been \"for the president's eyes only,\" with any further sharing left to the president's discretion.[2]\nThe brief is also tailored to each president. It is shaped to the way each president likes to absorb information.[3] Some presidents prefer to read it, and others prefer oral briefings.",
+  "claims": [
+   {
+    "sentence": "Access to the President's Daily Brief (PDB) is very tightly restricted.",
+    "start": 0,
+    "end": 71,
+    "claim": "Access to the President's Daily Brief (PDB) is very tightly restricted.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Only the President, the Vice President, and a select group of senior officials designated by the President receive the briefing.[1]",
+    "start": 91,
+    "end": 222,
+    "claim": "Only the President, the Vice President, and a select group of senior officials designated by the President receive the President's Daily Brief.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.cia.gov/resources/publications/presidents-daily-brief-delivering-intelligence-to-nixon-and-ford/",
+      "host": "cia.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (a short page, a paywall, or a page built by scripts)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The president decides who is on that list.",
+    "start": 223,
+    "end": 265,
+    "claim": "The president decides who is on the list of PDB recipients.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It usually includes top national security advisers, though the exact list changes from one administration to the next.",
+    "start": 266,
+    "end": 384,
+    "claim": "The list of PDB recipients usually includes top national security advisers, though the exact list changes from one administration to the next.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "President-elect: At the president's discretion, the PDB may also be provided to the president-elect between election day and inauguration.[2]",
+    "start": 411,
+    "end": 552,
+    "claim": "At the president's discretion, the PDB may also be provided to the president-elect between election day and inauguration.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/President's_Daily_Brief",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "At the discretion of the president, the PDB may also be provided to the president-elect of the United States, between election day and inauguration, and to former presidents on request.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that at the president's discretion the PDB may be provided to the president-elect between election day and inauguration, which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that, at the president’s discretion, the PDB may be provided to the president-elect between election day and inauguration."
+     }
+    ]
+   },
+   {
+    "sentence": "By tradition this happens.",
+    "start": 553,
+    "end": 579,
+    "claim": "By tradition, the PDB is provided to the president-elect between election day and inauguration.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.federaltimes.com/management/leadership/2020/12/01/top-secret-biden-gets-access-to-presidents-daily-brief/",
+      "host": "federaltimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Biden received the PDB later than usual and would read it until Inauguration Day, but it does not state that providing it between Election Day and inauguration is a tradition."
+     }
+    ]
+   },
+   {
+    "sentence": "In 2020, for example, Biden got access later than usual.",
+    "start": 580,
+    "end": 636,
+    "claim": "In 2020, Biden got access to the PDB later than usual.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.federaltimes.com/management/leadership/2020/12/01/top-secret-biden-gets-access-to-presidents-daily-brief/",
+      "host": "federaltimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Biden is getting the PDB later than usual because of Trump’s ongoing protest of the election results.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the main point that Biden was getting the PDB later than usual, but it never states the year 2020, only a reference to Trump's protest of the election results.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Biden was getting the PDB later than usual because Trump was protesting the election results."
+     }
+    ]
+   },
+   {
+    "sentence": "The delay came because Trump was contesting the election results, and Trump approved the briefings for Biden after the formal transition process was approved.[3]",
+    "start": 637,
+    "end": 798,
+    "claim": "The delay in Biden's PDB access came because Trump was contesting the election results.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.federaltimes.com/management/leadership/2020/12/01/top-secret-biden-gets-access-to-presidents-daily-brief/",
+      "host": "federaltimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Biden is getting the PDB later than usual because of Trump’s ongoing protest of the election results.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "From now until Inauguration Day, Biden and Vice President-elect Kamala Harris will be reading the PDB crafted for Trump, who had delayed giving Biden and Harris access to it as he contests the outcome of the election.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that Biden's PDB access was delayed because Trump was contesting or protesting the election outcome, which matches the claim's cause and main point.",
+      "page_judged": "supported",
+      "page_reason": "The page says Trump delayed Biden’s access to the PDB while contesting the election outcome."
+     }
+    ]
+   },
+   {
+    "sentence": "The delay came because Trump was contesting the election results, and Trump approved the briefings for Biden after the formal transition process was approved.[3]",
+    "start": 637,
+    "end": 798,
+    "claim": "Trump approved PDB briefings for Biden after the formal transition process was approved.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.federaltimes.com/management/leadership/2020/12/01/top-secret-biden-gets-access-to-presidents-daily-brief/",
+      "host": "federaltimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Trump approved the briefings for Biden last Tuesday, a day after his administration approved the formal transition process to his successor.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Trump approved the briefings for Biden a day after his administration approved the formal transition process, which backs every fact in the claim (the quote does not name 'PDB' explicitly, but briefings for Biden in this context match the claim's subject).",
+      "page_judged": "supported",
+      "page_reason": "The page states that Trump approved Biden’s PDB briefings on a Tuesday, one day after his administration approved the formal transition process."
+     }
+    ]
+   },
+   {
+    "sentence": "Former presidents: They do not automatically receive it.",
+    "start": 799,
+    "end": 855,
+    "claim": "Former presidents do not automatically receive the President's Daily Brief.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.cuip.org/what-is-the-presidential-daily-brief",
+      "host": "cuip.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Former presidents do not automatically receive the Presidential Daily Brief.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that former presidents do not automatically receive the Presidential Daily Brief, which matches the claim's point, with only a naming variant (President's vs. Presidential) that refers to the same document.",
+      "page_judged": "supported",
+      "page_reason": "The page states, “Former presidents do not automatically receive the Presidential Daily Brief.”"
+     }
+    ]
+   },
+   {
+    "sentence": "By tradition, an outgoing president may request continued access, and the incoming administration typically grants it for a transition period.[4]",
+    "start": 856,
+    "end": 1001,
+    "claim": "By tradition, an outgoing president may request continued PDB access, and the incoming administration typically grants it for a transition period.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.cuip.org/what-is-the-presidential-daily-brief",
+      "host": "cuip.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "By tradition, an outgoing president may request continued access, and the incoming administration typically grants it for a transition period.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the tradition of an outgoing president requesting continued access and the incoming administration typically granting it for a transition period, but it never says the access is to the PDB (President's Daily Brief), which the claim specifies.",
+      "page_judged": "supported",
+      "page_reason": "The page states that an outgoing president may request continued PDB access by tradition and that the incoming administration typically grants it for a transition period."
+     }
+    ]
+   },
+   {
+    "sentence": "Staff from the ODNI's PDB staff work overnight to gather analysis from all 18 Intelligence Community elements.[4]",
+    "start": 1091,
+    "end": 1204,
+    "claim": "Staff from the ODNI's PDB staff work overnight to gather analysis from all 18 Intelligence Community elements.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.cuip.org/what-is-the-presidential-daily-brief",
+      "host": "cuip.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Staff from the ODNI’s President’s Daily Brief staff work overnight to gather analysis from all 18 Intelligence Community elements.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that ODNI President's Daily Brief staff work overnight to gather analysis from all 18 Intelligence Community elements, matching every fact in the claim (PDB is the expansion of the claim's abbreviation).",
+      "page_judged": "supported",
+      "page_reason": "The page states that ODNI’s President’s Daily Brief staff work overnight to gather analysis from all 18 Intelligence Community elements."
+     }
+    ]
+   },
+   {
+    "sentence": "Rarely, special editions of the PDB have been \"for the president's eyes only,\" with any further sharing left to the president's discretion.[2]",
+    "start": 1219,
+    "end": 1361,
+    "claim": "Rarely, special editions of the PDB have been marked \"for the president's eyes only.\"",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/President's_Daily_Brief",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rarely, special editions of the PDB have actually been \"for the president's eyes only,\" with further dissemination of the information left to the president's discretion.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that rarely, special editions of the PDB have been marked \"for the president's eyes only,\" which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that rarely, special editions of the PDB were “for the president’s eyes only.”"
+     }
+    ]
+   },
+   {
+    "sentence": "Rarely, special editions of the PDB have been \"for the president's eyes only,\" with any further sharing left to the president's discretion.[2]",
+    "start": 1219,
+    "end": 1361,
+    "claim": "For special \"for the president's eyes only\" editions of the PDB, any further sharing is left to the president's discretion.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/President's_Daily_Brief",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rarely, special editions of the PDB have actually been \"for the president's eyes only,\" with further dissemination of the information left to the president's discretion.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that special 'for the president's eyes only' PDB editions exist and that further dissemination is left to the president's discretion, which fully matches the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page says rare special editions were “for the president's eyes only,” with further dissemination left to the president’s discretion."
+     }
+    ]
+   },
+   {
+    "sentence": "The brief is also tailored to each president.",
+    "start": 1362,
+    "end": 1407,
+    "claim": "The PDB is tailored to each president.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.federaltimes.com/management/leadership/2020/12/01/top-secret-biden-gets-access-to-presidents-daily-brief/",
+      "host": "federaltimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Biden has already had eyes on different iterations of the so-called PDB, which is tailored to the way each president likes to absorb information.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the PDB is tailored to the way each president likes to absorb information, which backs the claim that it is tailored to each president.",
+      "page_judged": "supported",
+      "page_reason": "The page says the PDB is tailored to the way each president likes to absorb information and describes briefers assessing Biden’s preferences so they can tailor it to him."
+     }
+    ]
+   },
+   {
+    "sentence": "It is shaped to the way each president likes to absorb information.[3]",
+    "start": 1408,
+    "end": 1478,
+    "claim": "The PDB is shaped to the way each president likes to absorb information.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.federaltimes.com/management/leadership/2020/12/01/top-secret-biden-gets-access-to-presidents-daily-brief/",
+      "host": "federaltimes.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Biden has already had eyes on different iterations of the so-called PDB, which is tailored to the way each president likes to absorb information.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the PDB is tailored to the way each president likes to absorb information, which matches the claim's wording and meaning.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the PDB is tailored to the way each president likes to absorb information."
+     }
+    ]
+   },
+   {
+    "sentence": "Some presidents prefer to read it, and others prefer oral briefings.",
+    "start": 1479,
+    "end": 1547,
+    "claim": "Some presidents prefer to read the PDB, and others prefer oral briefings.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 17,
+   "labels": {
+    "supported": 9,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 4
+   },
+   "cited_claims": 13,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.1,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.6923,
+   "pages_cited": 4,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.009508,
+   "usd_per_claim": 0.000559
+  },
+  "cost": {
+   "total_usd": 0.0095,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 12,
+     "usd": 0.0029
+    },
+    {
+     "node": "page_check",
+     "calls": 12,
+     "usd": 0.0044
+    },
+    {
+     "node": "check",
+     "calls": 11,
+     "usd": 0.0015
+    }
+   ]
+  }
+ }
+}

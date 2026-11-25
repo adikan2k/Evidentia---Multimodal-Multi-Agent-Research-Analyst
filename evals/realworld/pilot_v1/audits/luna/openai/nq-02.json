@@ -1,0 +1,218 @@
+{
+ "id": "nq-02",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "December 25, 2021 is the most recent Christmas Day I could verify that snow or sleet fell in England. The Met Office recorded it in the Midlands and also reported snow in the Yorkshire Dales. The UK’s more recent official white Christmas, in 2023, was recorded in Scotland, not England. (metoffice.gov.uk)\nIf you mean widespread snow already on the ground, the last Christmas like that was December 25, 2010. (metoffice.gov.uk)",
+  "claims": [
+   {
+    "sentence": "December 25, 2021 is the most recent Christmas Day I could verify that snow or sleet fell in England.",
+    "start": 0,
+    "end": 101,
+    "claim": "December 25, 2021 is the most recent Christmas Day on which snow or sleet was verified to have fallen in England.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/library-and-archive/library/publications/factsheets/factsheet_5-white-christmas_2022_2023.pdf",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Met Office recorded it in the Midlands and also reported snow in the Yorkshire Dales.",
+    "start": 102,
+    "end": 191,
+    "claim": "The Met Office recorded snow or sleet on December 25, 2021 in the Midlands.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/library-and-archive/library/publications/factsheets/factsheet_5-white-christmas_2022_2023.pdf",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The Met Office recorded it in the Midlands and also reported snow in the Yorkshire Dales.",
+    "start": 102,
+    "end": 191,
+    "claim": "The Met Office reported snow on December 25, 2021 in the Yorkshire Dales.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/library-and-archive/library/publications/factsheets/factsheet_5-white-christmas_2022_2023.pdf",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The UK’s more recent official white Christmas, in 2023, was recorded in Scotland, not England. (metoffice.gov.uk)",
+    "start": 192,
+    "end": 305,
+    "claim": "The UK's more recent official white Christmas, in 2023, was recorded in Scotland.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "dead_link",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/library-and-archive/library/publications/factsheets/factsheet_5-white-christmas_2022_2023.pdf",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "dead_link",
+      "quote_label": "dead_link",
+      "skipped": "HTTP 404",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "If you mean widespread snow already on the ground, the last Christmas like that was December 25, 2010. (metoffice.gov.uk)",
+    "start": 306,
+    "end": 427,
+    "claim": "The last Christmas with widespread snow already on the ground was December 25, 2010.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2024/will-it-be-a-white-christmas?utm_source=openai",
+      "host": "metoffice.gov.uk",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The last widespread white Christmas in the UK was in 2010.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "It was extremely unusual, as not only was there snow on the ground at 83% of stations (the highest amount ever recorded) but snow or sleet also fell at 19% of stations.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "There has only been a widespread covering of snow on the ground (where more than 40% of stations in the UK reported snow on the ground at 9 am) four times since 1960 - in 1981, 1995, 2009 and 2010.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the last widespread white Christmas in the UK was in 2010 and that snow covered the ground at 83% of stations, but they never state the specific date of December 25, 2010.",
+      "page_judged": "supported",
+      "page_reason": "The page says the last widespread white Christmas in the UK was in 2010, with snow on the ground at 83% of stations, and defines the measure for Christmas Day."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 4,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 1,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001259,
+   "usd_per_claim": 0.000252
+  },
+  "cost": {
+   "total_usd": 0.0013,
+   "cap_usd": 3.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    },
+    {
+     "node": "find",
+     "calls": 1,
+     "usd": 0.0005
+    },
+    {
+     "node": "page_check",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0002
+    }
+   ]
+  }
+ }
+}

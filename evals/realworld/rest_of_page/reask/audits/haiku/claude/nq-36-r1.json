@@ -1,0 +1,122 @@
+{
+ "id": "nq-36-r1",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:07:10+00:00",
+ "report": {
+  "answer_text": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (it aired in September 2008). He had planned an elaborate proposal. Then he gives up on it and proposes on the spur of the moment at a gas station in the rain, and Pam says yes.",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (it aired in September 2008).",
+    "start": 0,
+    "end": 89,
+    "claim": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\".",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Jim proposes to Pam in the Season 5 premiere, \"Weight Loss\" (it aired in September 2008).",
+    "start": 0,
+    "end": 89,
+    "claim": "The Season 5 premiere, \"Weight Loss\", aired in September 2008.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "He had planned an elaborate proposal.",
+    "start": 90,
+    "end": 127,
+    "claim": "Jim had planned an elaborate proposal to Pam.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Then he gives up on it and proposes on the spur of the moment at a gas station in the rain, and Pam says yes.",
+    "start": 128,
+    "end": 237,
+    "claim": "Jim gives up on the elaborate proposal and proposes to Pam on the spur of the moment.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Then he gives up on it and proposes on the spur of the moment at a gas station in the rain, and Pam says yes.",
+    "start": 128,
+    "end": 237,
+    "claim": "Jim proposes to Pam at a gas station in the rain.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Then he gives up on it and proposes on the spur of the moment at a gas station in the rain, and Pam says yes.",
+    "start": 128,
+    "end": 237,
+    "claim": "Pam says yes to Jim's proposal.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 6,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 6
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.00032,
+   "usd_per_claim": 5.3e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

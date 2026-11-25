@@ -1,0 +1,178 @@
+{
+ "id": "nq-15",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T18:38:40+00:00",
+ "report": {
+  "answer_text": "A simple gear train is used in the reverse mechanism of many manual-transmission cars. A drive gear turns a middle gear (called an *idler*), which turns the output gear. Compared with two gears meshing directly, adding the idler makes the output turn the opposite way, allowing the car to back up. (hungrypoint.com)",
+  "claims": [
+   {
+    "sentence": "A simple gear train is used in the reverse mechanism of many manual-transmission cars.",
+    "start": 0,
+    "end": 86,
+    "claim": "A simple gear train is used in the reverse mechanism of many manual-transmission cars.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch4m.pdf?utm_source=openai",
+      "host": "hungrypoint.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes a reverse idler gear and pre-balk/synchromesh mechanisms for reverse in Toyota transaxles, but never states that a simple gear train is used in the reverse mechanism of many manual-transmission cars; it describes an additional idler gear arrangement instead."
+     }
+    ]
+   },
+   {
+    "sentence": "A drive gear turns a middle gear (called an *idler*), which turns the output gear.",
+    "start": 87,
+    "end": 169,
+    "claim": "In a reverse gear train, a drive gear turns a middle gear called an idler, which turns the output gear.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch4m.pdf?utm_source=openai",
+      "host": "hungrypoint.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Reverse requires an additional gear in the gear train. A reverse idler gear is used to change the direction of the output shaft for reverse.",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       },
+       {
+        "text": "The reverse idler gear is shifted to mesh with the reverse gear on the input shaft and the sleeve of the 1-2 synchronizer assembly on the output shaft.",
+        "pages": [
+         14,
+         14
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that a reverse idler meshes with the input-shaft reverse gear and transfers drive to the output shaft, but they describe the output-side engagement as a synchronizer sleeve rather than an output gear, which the claim adds.",
+      "page_judged": "supported",
+      "page_reason": "The page says the reverse idler gear meshes with the reverse gear on the input shaft and with the reverse spur teeth on the output shaft's 1-2 synchronizer sleeve, which matches the claimed drive-idler-output chain, though the page does not use the exact wording 'drive gear' or 'output gear'."
+     }
+    ]
+   },
+   {
+    "sentence": "Compared with two gears meshing directly, adding the idler makes the output turn the opposite way, allowing the car to back up. (hungrypoint.com)",
+    "start": 170,
+    "end": 315,
+    "claim": "Compared with two gears meshing directly, adding an idler makes the output gear turn the opposite way, allowing the car to back up.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch4m.pdf?utm_source=openai",
+      "host": "hungrypoint.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "A reverse idler gear is used to change the direction of the output shaft for reverse.",
+        "pages": [
+         8,
+         8
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that a reverse idler changes the output shaft direction for reverse, but it does not state the comparison with two gears meshing directly or that the idler makes the output turn opposite to the input in that comparison.",
+      "page_judged": "not_supported",
+      "page_reason": "The pages describe a reverse idler gear used to change the direction of the output shaft for reverse, but none compare it to direct meshing or state that the output gear turns the opposite way in a way that matches the claim's comparison; they only say the idler changes output shaft direction for reverse."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 3,
+   "labels": {
+    "supported": 0,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 1,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 3,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 1,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.004587,
+   "usd_per_claim": 0.001529
+  },
+  "cost": {
+   "total_usd": 0.0046,
+   "cap_usd": 3.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "find",
+     "calls": 6,
+     "usd": 0.0027
+    },
+    {
+     "node": "page_check",
+     "calls": 3,
+     "usd": 0.0013
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

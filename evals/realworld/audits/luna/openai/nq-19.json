@@ -1,0 +1,415 @@
+{
+ "id": "nq-19",
+ "tool": "openai",
+ "judge": "gpt-6-luna",
+ "report": {
+  "answer_text": "The Word of Wisdom became a formal commitment for Latter-day Saints on September 9, 1851, and a temple recommend requirement under President Heber J. Grant in the early 1920s. (churchofjesuschrist.org)\nFebruary 27, 1833: Joseph Smith received the revelation, now Doctrine and Covenants 89. It was originally given “not by commandment or constraint.” (churchofjesuschrist.org)\nSeptember 9, 1851: At general conference, members unanimously accepted Brigham Young’s proposal to covenant to keep it. In practice, expectations about strict observance still varied for decades. (churchofjesuschrist.org)\n1919–1921: Official Church sources give different dates for the temple recommend requirement. The Church History Library dates it to 1919, while the Church’s *Church History Topics* dates it to 1921. (churchhistorylibrary.churchofjesuschrist.org)",
+  "claims": [
+   {
+    "sentence": "The Word of Wisdom became a formal commitment for Latter-day Saints on September 9, 1851, and a temple recommend requirement under President Heber J. Grant in the early 1920s. (churchofjesuschrist.org)",
+    "start": 0,
+    "end": 201,
+    "claim": "The Word of Wisdom became a formal commitment for Latter-day Saints on September 9, 1851.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 9 September 1851, some eighteen years after it was given, the Patriarch to the Church, John Smith, delivered a talk in general conference on the Word of Wisdom.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The motion was accepted unanimously and became binding as a commandment for all Church members thereafter.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes give the 9 September 1851 general conference and say a motion on the Word of Wisdom was accepted unanimously and became binding, but they never explicitly tie that motion to that date, so the link to September 9, 1851 is implied rather than stated.",
+      "page_judged": "supported",
+      "page_reason": "The page says that on 9 September 1851 Brigham Young proposed that all Saints formally covenant to abstain from the listed substances, and the motion was accepted unanimously and became binding thereafter."
+     }
+    ]
+   },
+   {
+    "sentence": "The Word of Wisdom became a formal commitment for Latter-day Saints on September 9, 1851, and a temple recommend requirement under President Heber J. Grant in the early 1920s. (churchofjesuschrist.org)",
+    "start": 0,
+    "end": 201,
+    "claim": "The Word of Wisdom became a temple recommend requirement under President Heber J. Grant in the early 1920s.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says keeping the Word of Wisdom is part of worthiness for temple ordinances and quotes Heber J. Grant emphasizing it as a commandment, but it does not say it became a temple recommend requirement under him or date that change to the early 1920s."
+     }
+    ]
+   },
+   {
+    "sentence": "February 27, 1833: Joseph Smith received the revelation, now Doctrine and Covenants 89. It was originally given “not by commandment or constraint.” (churchofjesuschrist.org)",
+    "start": 202,
+    "end": 375,
+    "claim": "Joseph Smith received the Word of Wisdom revelation on February 27, 1833.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Although the Word of Wisdom was received on 27 February 1833, its acceptance by individual members of the Church was gradual.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the date of February 27, 1833 for the Word of Wisdom's reception, but it does not state that Joseph Smith personally received it, so that part of the claim is not backed.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Word of Wisdom was received on 27 February 1833 and identifies the Prophet Joseph Smith as the one who inquired and received the resulting revelation."
+     }
+    ]
+   },
+   {
+    "sentence": "February 27, 1833: Joseph Smith received the revelation, now Doctrine and Covenants 89. It was originally given “not by commandment or constraint.” (churchofjesuschrist.org)",
+    "start": 202,
+    "end": 375,
+    "claim": "The revelation received by Joseph Smith on February 27, 1833 is now Doctrine and Covenants 89.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Although the Word of Wisdom was received on 27 February 1833, its acceptance by individual members of the Church was gradual.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "“Section 89, The Word of Wisdom,” Doctrine and Covenants Student Manual (2002), 206–11",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that the Word of Wisdom was received on 27 February 1833 and that it is titled Section 89 in the Doctrine and Covenants Student Manual, which supports the main point, but they do not explicitly state that the revelation received by Joseph Smith on that date is Doctrine and Covenants 89 in the way the claim phrases it.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Word of Wisdom revelation resulted from the Prophet Joseph’s inquiry, was received on 27 February 1833, and is discussed as Section 89 of the Doctrine and Covenants."
+     }
+    ]
+   },
+   {
+    "sentence": "February 27, 1833: Joseph Smith received the revelation, now Doctrine and Covenants 89. It was originally given “not by commandment or constraint.” (churchofjesuschrist.org)",
+    "start": 202,
+    "end": 375,
+    "claim": "The Word of Wisdom revelation was originally given “not by commandment or constraint.”",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The reason undoubtedly why the Word of Wisdom was given—as not by ‘commandment or restraint’ was that at that time, at least, if it had been given as a commandment it would have brought every man, addicted to the use of these noxious things, under condemnation; so the Lord was merciful and gave them a chance to overcome, before He brought them under the law.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Word of Wisdom was given as not by 'commandment or restraint', which matches the claim's meaning apart from the minor wording difference of 'constraint' versus 'restraint'.",
+      "page_judged": "supported",
+      "page_reason": "The page says the Word of Wisdom was given “not by ‘commandment or restraint,’” supporting the claim’s meaning that it was originally not given by commandment or constraint."
+     }
+    ]
+   },
+   {
+    "sentence": "September 9, 1851: At general conference, members unanimously accepted Brigham Young’s proposal to covenant to keep it. In practice, expectations about strict observance still varied for decades. (churchofjesuschrist.org)",
+    "start": 376,
+    "end": 597,
+    "claim": "On September 9, 1851, at general conference, members unanimously accepted Brigham Young’s proposal to covenant to keep the Word of Wisdom.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "On 9 September 1851, some eighteen years after it was given, the Patriarch to the Church, John Smith, delivered a talk in general conference on the Word of Wisdom.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "During his address, President Brigham Young arose and proposed that all Saints formally covenant to abstain from tea, coffee, tobacco, whiskey, and “all things mentioned in the Word of Wisdom”",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The motion was accepted unanimously and became binding as a commandment for all Church members thereafter.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state the September 9, 1851 general conference date, Brigham Young's proposal that Saints covenant to abstain from the Word of Wisdom items, and that the motion was accepted unanimously.",
+      "page_judged": "supported",
+      "page_reason": "The page says that on 9 September 1851, at general conference, Brigham Young proposed that the Saints covenant to abstain from the substances named in the Word of Wisdom and that the motion was accepted unanimously."
+     }
+    ]
+   },
+   {
+    "sentence": "September 9, 1851: At general conference, members unanimously accepted Brigham Young’s proposal to covenant to keep it. In practice, expectations about strict observance still varied for decades. (churchofjesuschrist.org)",
+    "start": 376,
+    "end": 597,
+    "claim": "In practice, expectations about strict observance of the Word of Wisdom still varied for decades.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-89-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Although the Word of Wisdom was received on 27 February 1833, its acceptance by individual members of the Church was gradual.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Although the Lord allowed a time of adjustment for those who were already members of the Church when the Word of Wisdom was given, today it is expected that all Saints adhere to the commandment.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back that acceptance of the Word of Wisdom by members was gradual with an adjustment period, but they do not state that expectations of strict observance varied, nor that this lasted for decades.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says acceptance was gradual until a 1851 covenant made the Word of Wisdom binding, but does not state that expectations about strict observance continued to vary for decades afterward."
+     }
+    ]
+   },
+   {
+    "sentence": "1919–1921: Official Church sources give different dates for the temple recommend requirement. The Church History Library dates it to 1919, while the Church’s *Church History Topics* dates it to 1921. (churchhistorylibrary.churchofjesuschrist.org)",
+    "start": 598,
+    "end": 844,
+    "claim": "Official Church sources give different dates for the Word of Wisdom temple recommend requirement, ranging from 1919 to 1921.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://churchhistorylibrary.churchofjesuschrist.org/blog/ask-us-top-reference-questions-about-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchhistorylibrary.churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the First Presidency made observing the Word of Wisdom a temple recommend requirement in 1919 and gives no 1921 date or differing official-source dates."
+     }
+    ]
+   },
+   {
+    "sentence": "1919–1921: Official Church sources give different dates for the temple recommend requirement. The Church History Library dates it to 1919, while the Church’s *Church History Topics* dates it to 1921. (churchhistorylibrary.churchofjesuschrist.org)",
+    "start": 598,
+    "end": 844,
+    "claim": "The Church History Library dates the temple recommend requirement to 1919.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://churchhistorylibrary.churchofjesuschrist.org/blog/ask-us-top-reference-questions-about-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchhistorylibrary.churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Later, in 1919, the First Presidency under President Heber J. Grant made observing the Word of Wisdom a requirement for receiving a temple recommend.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the 1919 date for making Word of Wisdom observance a temple recommend requirement, but it does not say the Church History Library is the source that dates it.",
+      "page_judged": "supported",
+      "page_reason": "The page says that in 1919 the First Presidency made observing the Word of Wisdom a requirement for receiving a temple recommend."
+     }
+    ]
+   },
+   {
+    "sentence": "1919–1921: Official Church sources give different dates for the temple recommend requirement. The Church History Library dates it to 1919, while the Church’s *Church History Topics* dates it to 1921. (churchhistorylibrary.churchofjesuschrist.org)",
+    "start": 598,
+    "end": 844,
+    "claim": "The Church’s Church History Topics dates the temple recommend requirement to 1921.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://churchhistorylibrary.churchofjesuschrist.org/blog/ask-us-top-reference-questions-about-the-word-of-wisdom?lang=eng&utm_source=openai",
+      "host": "churchhistorylibrary.churchofjesuschrist.org",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Later, in 1919, the First Presidency under President Heber J. Grant made observing the Word of Wisdom a requirement for receiving a temple recommend.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote dates the Word of Wisdom becoming a requirement for a temple recommend to 1919, not 1921 as the claim says, and it does not mention Church History Topics by name.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the First Presidency made Word of Wisdom observance a temple-recommend requirement in 1919, and does not state that Church History Topics dates it to 1921."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 2,
+    "partial": 1,
+    "contradicted": 1,
+    "needs_human": 4,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "uncited": 0
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 6,
+   "failed_citations": 3,
+   "failed_share_of_verdicts": 0.5,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.2,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.010348,
+   "usd_per_claim": 0.001035
+  },
+  "cost": {
+   "total_usd": 0.0103,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0031
+    },
+    {
+     "node": "page_check",
+     "calls": 10,
+     "usd": 0.005
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0015
+    }
+   ]
+  }
+ }
+}

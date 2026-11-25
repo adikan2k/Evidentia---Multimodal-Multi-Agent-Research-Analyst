@@ -1,0 +1,166 @@
+{
+ "id": "nq-36-r2",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "reader": "article and rest of page",
+ "audited_at": "2026-11-25T19:07:13+00:00",
+ "report": {
+  "answer_text": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of *The Office*, which originally aired on September 25, 2008. He pops the question at a gas station in the rain. If you’re watching on Peacock, the scene is in Season 5, Episode 2 (“Weight Loss Part 2”). (youtube.com)",
+  "claims": [
+   {
+    "sentence": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of *The Office*, which originally aired on September 25, 2008.",
+    "start": 0,
+    "end": 122,
+    "claim": "Jim proposes to Pam in \"Weight Loss\", the Season 5 premiere of The Office.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Jim proposes to Pam in “Weight Loss,” the Season 5 premiere of *The Office*, which originally aired on September 25, 2008.",
+    "start": 0,
+    "end": 122,
+    "claim": "The episode \"Weight Loss\" originally aired on September 25, 2008.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He pops the question at a gas station in the rain.",
+    "start": 123,
+    "end": 173,
+    "claim": "Jim proposes to Pam at a gas station in the rain.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "If you’re watching on Peacock, the scene is in Season 5, Episode 2 (“Weight Loss Part 2”). (youtube.com)",
+    "start": 174,
+    "end": 278,
+    "claim": "On Peacock, the proposal scene is in Season 5, Episode 2, titled \"Weight Loss Part 2\".",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.youtube.com/watch?v=N56tjXt6JoY&utm_source=openai",
+      "host": "youtube.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "no readable text",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 4,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 4,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000275,
+   "usd_per_claim": 6.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 1.5,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}
