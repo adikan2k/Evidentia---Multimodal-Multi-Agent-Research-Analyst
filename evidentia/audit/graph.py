@@ -73,7 +73,8 @@ TIMEOUTS = {
 PATH = list(TIMEOUTS)
 
 OVER_LIMIT = "over the page limit for one audit"
-TOO_LITTLE_TEXT = "too little text read (the page may need a browser to show it)"
+# D-047: most such pages are short or behind a paywall, not built by scripts (D-046).
+TOO_LITTLE_TEXT = "too little text read (a short page, a paywall, or a page built by scripts)"
 NO_FINDER = "the evidence finder did not answer"
 NO_CHECKER = "the checker did not return a verdict"
 NOT_EXACT = "no quote the finder gave is word for word on the page"

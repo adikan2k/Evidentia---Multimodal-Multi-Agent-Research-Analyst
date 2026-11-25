@@ -1,7 +1,7 @@
 """The re-read eval's bookkeeping (D-046), with made-up audits. No network, no models."""
 
 from evals.realworld import counts
-from evals.reread import RETRY, gained, relabel, thin_pages, with_new_pages
+from evals.reread import OLD_TOO_LITTLE_TEXT, RETRY, gained, relabel, thin_pages, with_new_pages
 from evidentia.audit.graph import TOO_LITTLE_TEXT
 from evidentia.fetch import NO_READABLE_TEXT
 
@@ -32,7 +32,8 @@ def made_up_report() -> dict:
 
 
 def test_only_pages_that_answered_with_too_little_text_are_tried_again() -> None:
-    assert RETRY == {TOO_LITTLE_TEXT, NO_READABLE_TEXT}
+    assert RETRY == {TOO_LITTLE_TEXT, OLD_TOO_LITTLE_TEXT, NO_READABLE_TEXT}
+    assert "browser" not in TOO_LITTLE_TEXT.split("(")[1].split(",")[0]
     report = made_up_report()
     report["claims"].append(
         claim("unchecked", page("https://e.example/", "unchecked", NO_READABLE_TEXT))

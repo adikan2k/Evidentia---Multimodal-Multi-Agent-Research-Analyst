@@ -50,8 +50,10 @@ from evidentia.tracing import Tracer
 
 RENDERED = HERE / "rendered"
 JUDGE = "haiku"  # the page judge as shipped
+# The wording the saved audits carry, from before D-047 reworded it.
+OLD_TOO_LITTLE_TEXT = "too little text read (the page may need a browser to show it)"
 # A page that answered but gave too little text: under 200 characters, or under 2,000.
-RETRY = {TOO_LITTLE_TEXT, NO_READABLE_TEXT}
+RETRY = {TOO_LITTLE_TEXT, OLD_TOO_LITTLE_TEXT, NO_READABLE_TEXT}
 STILL_THIN = "still too little text after the browser ran the page"
 RUNS = ("main", "reask")
 
@@ -95,6 +97,36 @@ def with_new_pages(report: dict, judged: dict[tuple[int, str], dict], read: int)
         claim["label"] = relabel(claim)
     new["scorecard"]["pages_read"] = report["scorecard"]["pages_read"] + read
     return new
+
+
+def stranded(report: dict, sources: dict[str, Source]) -> list[tuple[int, dict]]:
+    """The claim-and-page pairs skipped as too thin whose page we now have text for."""
+    return [
+        (index, page)
+        for index, claim in enumerate(report["claims"])
+        for page in claim["pages"]
+        if page["skipped"] in RETRY and page["url"] in sources
+    ]
+
+
+async def judge_stranded(
+    deps: AuditDeps, report: dict, sources: dict[str, Source], run_id: str, read_by: str
+) -> dict[tuple[int, str], dict]:
+    """Both judges, as shipped, for each stranded pair. Returns the new page views."""
+    nodes = AuditNodes(deps)
+    todo = stranded(report, sources)
+
+    async def one(n: int) -> dict:
+        index, page = todo[n]
+        claim, source = report["claims"][index]["claim"], sources[page["url"]]
+        result = await nodes.assess(claim, source, run_id)
+        fields = await nodes.page_verdict(claim, source, run_id, None)
+        result = result.model_copy(update=fields | {"citation_id": page["citation_id"]})
+        dumped = result.model_dump() | {"label": result.label, "quote_label": result.quote_label}
+        return page_view(dumped, source) | {"read_by": read_by}
+
+    views = await page_first(list(range(len(todo))), lambda n: todo[n][1]["url"], one)
+    return {(index, page["url"]): view for (index, page), view in zip(todo, views, strict=True)}
 
 
 class Rereader:
@@ -150,7 +182,6 @@ class Rereader:
     async def judge(
         self, report: dict, sources: dict[str, Source], ledger: Ledger, run_id: str
     ) -> dict[tuple[int, str], dict]:
-        """Both judges, for each claim-and-page pair that had been skipped as too thin."""
         deps = AuditDeps(
             settings=self.s,
             ledger=ledger,
@@ -159,28 +190,7 @@ class Rereader:
             fetcher=self.fetcher,
             embedder=Embedder(self.s, ledger, self.tracer, client=self.voyage),
         )
-        nodes = AuditNodes(deps)
-        todo = [
-            (index, page)
-            for index, claim in enumerate(report["claims"])
-            for page in claim["pages"]
-            if page["skipped"] in RETRY and page["url"] in sources
-        ]
-
-        async def one(n: int) -> dict:
-            index, page = todo[n]
-            claim, source = report["claims"][index]["claim"], sources[page["url"]]
-            result = await nodes.assess(claim, source, run_id)
-            fields = await nodes.page_verdict(claim, source, run_id, None)
-            result = result.model_copy(update=fields | {"citation_id": page["citation_id"]})
-            dumped = result.model_dump() | {
-                "label": result.label,
-                "quote_label": result.quote_label,
-            }
-            return page_view(dumped, source) | {"read_by": "render"}
-
-        views = await page_first(list(range(len(todo))), lambda n: todo[n][1]["url"], one)
-        return {(index, page["url"]): view for (index, page), view in zip(todo, views, strict=True)}
+        return await judge_stranded(deps, report, sources, run_id, "render")
 
     def jobs(self) -> list[tuple[str, str, dict]]:
         """The answers that cite a thin page and have not been read again yet."""

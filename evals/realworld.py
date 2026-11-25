@@ -7,6 +7,8 @@
     uv run python -m evals realworld reask-summary                 # free
     uv run python -m evals realworld reread --cap 1                # paid; ask first (D-046)
     uv run python -m evals realworld reread-summary                # free
+    uv run python -m evals realworld short --cap 0.6               # paid; ask first (D-047)
+    uv run python -m evals realworld short-summary                 # free
 
 Every answer and every audit is saved, so a rerun only pays for what is missing. Each answer is
 audited twice: with the page judge as shipped (Haiku) and with OpenAI's gpt-6-luna as the page
@@ -580,9 +582,10 @@ def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
 def main(argv: list[str]) -> None:
     parser = argparse.ArgumentParser(prog="python -m evals realworld")
     steps = ["questions", "run", "summary", "reask", "reask-summary", "reread", "reread-summary"]
+    steps += ["short", "short-summary"]
     parser.add_argument("step", choices=steps)
     parser.add_argument(
-        "--limit", type=int, help="reask and reread: only the first N items, as a trial"
+        "--limit", type=int, help="reask, reread, short: only the first N items, as a trial"
     )
     parser.add_argument("--set", choices=["pilot", "all"], default="pilot", dest="which")
     parser.add_argument("--tools", default=",".join(TOOLS))
@@ -596,6 +599,11 @@ def main(argv: list[str]) -> None:
         path = write_result(name, summarise(args.which))
         print(f"wrote {path.name}")
         return
+    if args.step == "short-summary":
+        from evals.short import write_summary as write_short
+
+        write_short()
+        return
     if args.step == "reread-summary":
         from evals.reread import write_summary  # imported here: reread imports this module
 
@@ -608,6 +616,16 @@ def main(argv: list[str]) -> None:
     settings = load_settings(cost_cap_usd=args.cap)
     tracer = LangfuseTracer(settings)
     tools = [t for t in args.tools.split(",") if t in TOOLS]
+    if args.step == "short":
+        from evals.short import ShortReader
+
+        print(f"  judging claims on short pages, cap ${args.cap:.2f}")
+        try:
+            with tracer.span("realworld.short", "span", {}):
+                asyncio.run(ShortReader(settings, args.cap, tracer).run(args.limit))
+        finally:
+            tracer.flush()
+        return
     if args.step == "reread":
         from evals.reread import Rereader
 
