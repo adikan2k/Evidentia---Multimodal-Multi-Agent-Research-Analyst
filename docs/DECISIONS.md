@@ -2978,7 +2978,7 @@ recorded audits keep the old wording.
 
 ## D-048. The findings page (D-043, phase 1e)
 
-**Status: draft, waiting for Aditya's approval. Nothing is built.**
+**Status: approved by Aditya on 24 November 2026, built, and held locally until the hand check is in or Aditya decides to publish without it.**
 
 ### What it is for
 
@@ -3078,3 +3078,30 @@ Built and checked locally, then held. It is pushed only when one of these is tru
 - The site's data file carries the real-world figures and nothing hand-typed.
 - The hand-check line in both states: with no result file, and with one.
 - Built and measured in the browser at 390, 1280, 1440 and 1920 pixels, as for D-045.
+
+### As built (24 November 2026)
+
+- **Pages.** `/findings`, and one page for each of the 22 examples, `/findings/<tool>-<question>-<claim>`.
+  All are made ahead of time. "Findings" is in the header, and the home page has one link to it.
+- **Data.** `python -m evals report` now writes the real-world results into the site's data file.
+  The rule that drops long lists from it no longer drops "runs" when it holds figures (a dict).
+- **Examples.** `python -m evals realworld examples` chooses them by D-042's rule with seed
+  20261203, set when the page was built, and copies the 20 answers they come from to
+  `web/public/findings/`.
+- **The chart.** The bar fills were checked with the dataviz validator on white: every check
+  passes, and amber, under 3:1, gets its relief from the legend's marks and the table. Dead links
+  are hatched. Shares written on the bars are in ink.
+- **The hand-check line** reads the result file when it exists. If the result misses D-044's rule
+  (70% of flags upheld), the two readings are replaced by a statement that the comparison is
+  withheld.
+- **Two corrections made while building.**
+  - A difference is now written with the tool it favours, so "Claude's is higher by 6 points (−1
+    to 13)" and not "6 points (−13 to 1)".
+  - Percentages are rounded half up on the stored four decimals, so Claude's 0.0785 reads 7.9%,
+    as in this log, and not 7.8% as binary floating point gave.
+- **Measured** at 390, 1280, 1440 and 1920 pixels: no sideways scroll, no text under 12 pixels,
+  no text under 4.5 to 1. `npm run build` makes all 37 pages.
+- **A testing note, not a fault.** In the hidden browser pane the example pages stay on their
+  loading line until a frame is drawn, because the browser holds back drawing in a hidden tab.
+  They show at once when drawn, with the marks level with their sentences.
+

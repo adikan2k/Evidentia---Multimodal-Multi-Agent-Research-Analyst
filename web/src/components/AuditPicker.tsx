@@ -92,6 +92,11 @@ export function AuditPicker({ initial }: { initial?: string }) {
             and marks each claim like an editor would: backed, partly backed, not on the page, or
             contradicted.
           </p>
+          <p className="mt-5">
+            <Link href="/findings" className="label text-ink underline underline-offset-4">
+              What it found when two AI search tools answered the same questions
+            </Link>
+          </p>
         </div>
 
         <form

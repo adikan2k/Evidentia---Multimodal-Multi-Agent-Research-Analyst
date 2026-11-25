@@ -7,6 +7,7 @@ import { REPO, SHELL } from "@/lib/site";
 
 const LINKS = [
   { href: "/", label: "Audit" },
+  { href: "/findings", label: "Findings" },
   { href: "/research", label: "Research" },
   { href: "/evals", label: "Evals" },
   { href: "/method", label: "Method" },

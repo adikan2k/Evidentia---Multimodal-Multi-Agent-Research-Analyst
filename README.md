@@ -110,10 +110,33 @@ Full tables: `evals/results/REPORT.md`.
 
 ### The real-world audit
 
-Two AI tools were asked the same 100 questions with web search on, and every answer was audited
-(D-042). The answers, the audits and the numbers are in `evals/realworld/` and
-`evals/results/realworld.json`. The result is not summarised here yet: a sample of the flags is
-being checked by a person first, and the two tools' set-ups are being made alike (D-043).
+OpenAI's `gpt-6.2-sol` and Claude Sonnet 5.5, each with web search on, answered the same 100
+fixed questions, and every answer was audited (D-042 to D-047). The questions, answers, audits and
+every figure below are in `evals/realworld/` and `evals/results/realworld*.json`. The site's
+Findings page shows them with their intervals.
+
+| Main run, page judge as shipped | OpenAI | Claude | Gap |
+|---|---|---|---|
+| Of claims cited in their own sentence with a verdict, the share that fail | 38.0% of 187 | 7.9% of 382 | 30 points (21 to 38) |
+| Of all claims, the share verified against a page the tool cited | 18.5% | 24.6% | Claude by 6 points (−1 to 13) |
+| Claims with no citation at all | 13% | 44% | |
+
+They fail differently: OpenAI cites most of what it says, and many of those citations do not hold.
+Claude's citations hold more often, but it leaves far more of its claims uncited.
+
+What was done to try to break it:
+
+- **Another judge.** With OpenAI's `gpt-6-luna` as page judge: 45.3% against 7.8%.
+- **Asking again.** 20 questions asked three more times: OpenAI failed more often in every ask,
+  but its figure ran from 46% to 65%. Read the figures as a direction and a rough size.
+- **Unread pages.** Rendering thin pages in a browser rescued few (D-046). Judging short pages
+  anyway put the gap at 33 points (23 to 42) (D-047).
+- **Fairness.** Claude used its older search tool, the only one that returns citation data. No
+  answer in the repeats reached the 5-search cap. OpenAI's citations are the links it wrote itself.
+
+**Limits.** No flag has been checked by a person yet: a blind check of a sample is built and
+waiting for its labels (D-044). Both of the auditor's judges are Claude models. On the benchmark
+above, 81% of the auditor's flags are right.
 
 ## The research agent
 
