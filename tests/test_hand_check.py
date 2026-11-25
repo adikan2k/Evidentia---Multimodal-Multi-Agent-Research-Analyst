@@ -189,3 +189,19 @@ def test_the_second_sample_keeps_the_flags_and_mixes_in_a_few_supported_claims()
     for stop in range(len(items) + 1):
         done = Counter(it["tool"] for it in items[:stop] if it["group"] == "failed")
         assert abs(done["claude"] - done["openai"]) <= 1
+
+
+def test_a_tool_with_too_few_flags_gives_all_it_has() -> None:
+    from collections import Counter
+
+    from evals.hand_check import choose_flags_first
+
+    few = pools()
+    few[("claude", "failed")] = few[("claude", "failed")][:7]
+    items = choose_flags_first(few, 1, 10, 2)
+    counts = Counter((it["tool"], it["group"]) for it in items)
+    assert counts[("claude", "failed")] == 7 and counts[("openai", "failed")] == 10
+    assert len(items) == 21
+    flags = [it["tool"] for it in items if it["group"] == "failed"]
+    for stop in range(15):  # balanced while both tools have flags left
+        assert abs(flags[:stop].count("claude") - flags[:stop].count("openai")) <= 1

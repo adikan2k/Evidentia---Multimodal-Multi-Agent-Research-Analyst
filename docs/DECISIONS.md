@@ -3269,6 +3269,14 @@ they are kept:
   page says it". The "supported" figure rests on 4 claims and is reported, not judged. The rule is
   unchanged. About 25 minutes.
 
+**And then 21 items, because Claude has only 7 flags left to draw.** Drawing the sample showed
+that the new audits flag 14 of Claude's own-cited claims (OpenAI: 76). 7 of those 14 come from
+sentences Aditya labelled in the first check, and he has since seen the auditor's verdicts on
+several of them, so they cannot be checked blind. All 7 that remain are taken, with 10 of
+OpenAI's: 17 flags and 4 "supported" claims. The rule is unchanged; for Claude the guard now
+works on 7 flags, and trips at 2 or fewer upheld. This was the only count looked at before the
+sample was fixed. About 20 minutes.
+
 ### Tests
 
 - The reader keeps the article first and adds the rest, with no repeated lines and nothing from

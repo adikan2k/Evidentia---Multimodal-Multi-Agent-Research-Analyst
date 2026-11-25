@@ -170,18 +170,20 @@ def choose_flags_first(
 ) -> list[dict]:
     """`flags` failed and `supported` supported claims per tool (D-049's second check).
 
-    The failed claims come in pairs, one from each tool, so stopping early leaves the tools
+    A tool with fewer failed claims than `flags` gives all it has. The failed claims come in
+    pairs, one from each tool, while both have some left, so stopping early leaves the tools
     balanced. The supported claims are put in at places drawn by the seed.
     """
     rng = random.Random(seed)
 
     def draw(tool: str, group: str, n: int) -> list[dict]:
-        return rng.sample(sorted(pools[(tool, group)], key=lambda x: x["item"]), n)
+        pool = sorted(pools.get((tool, group), []), key=lambda x: x["item"])
+        return rng.sample(pool, min(n, len(pool)))
 
     failed = {tool: draw(tool, "failed", flags) for tool in sorted(TOOLS)}
     items: list[dict] = []
     for n in range(flags):
-        pair = [failed[tool][n] for tool in sorted(TOOLS)]
+        pair = [failed[tool][n] for tool in sorted(TOOLS) if n < len(failed[tool])]
         rng.shuffle(pair)
         items += pair
     for item in [x for tool in sorted(TOOLS) for x in draw(tool, "supported", supported)]:
