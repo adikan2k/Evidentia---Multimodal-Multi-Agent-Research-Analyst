@@ -1,6 +1,23 @@
 """The real-world audit's bookkeeping (D-042), with made-up audits. No network, no models."""
 
-from evals.realworld import PILOT, counts, difference, measures, ratio
+from types import SimpleNamespace
+
+from evals.realworld import (
+    PILOT,
+    REASK_PER_SOURCE,
+    REPEATS,
+    choose_reask,
+    counts,
+    difference,
+    marker_check,
+    measures,
+    pooled,
+    ratio,
+    reask_items,
+    searches_used,
+    within_question_range,
+)
+from evidentia.audit.answers import with_markers
 
 
 def report(*labels: str, cited_by: str = "sentence") -> dict:
@@ -112,3 +129,59 @@ def test_the_difference_can_be_taken_on_the_share_of_all_claims() -> None:
     a = [row("q1", "supported", "uncited")]
     b = [row("q1", "supported", "supported", "supported", "uncited")]
     assert difference(a, b, top="supported", bottom="claims")["value"] == -0.25
+
+
+def made_up_questions() -> list[dict]:
+    return [
+        {"id": f"{source[:2]}-{n:02d}", "source": source, "question": f"Q {n}?"}
+        for source in ("natural_questions", "2025_2026")
+        for n in range(1, 31)
+    ]
+
+
+def test_the_reask_takes_the_same_number_from_each_source_and_never_changes() -> None:
+    chosen = choose_reask(made_up_questions())
+    for source in ("natural_questions", "2025_2026"):
+        assert sum(q["source"] == source for q in chosen) == REASK_PER_SOURCE
+    assert chosen == choose_reask(list(reversed(made_up_questions())))  # order in, same out
+    items = reask_items(made_up_questions())
+    assert len(items) == len(chosen) * REPEATS and len({i["id"] for i in items}) == len(items)
+    assert items[0]["id"] == f"{items[0]['of']}-r1" and items[0]["question"]
+
+
+def test_a_marker_in_the_wrong_place_is_counted() -> None:
+    raw = "Solar grew 24% in 2023. Wind grew 10%. Hydro was flat."
+    a, b = "https://a.example.org/x", "https://b.example.org/y"
+    notes = [{"url": a, "start": 0, "end": 23}, {"url": b, "start": 24, "end": 38}]
+    cites = [
+        SimpleNamespace(url=n["url"], start_index=n["start"], end_index=n["end"]) for n in notes
+    ]
+    good = with_markers(raw, cites)
+    assert marker_check(raw, notes, good) == {
+        "spans": 2,
+        "misplaced": 0,
+        "spans_over_one_sentence": 0,
+    }
+    moved = good.replace("Wind grew 10%.[2] Hydro was flat.", "Wind grew 10%. Hydro was flat.[2]")
+    assert moved != good and marker_check(raw, notes, moved)["misplaced"] == 1
+    wide = [{"url": a, "start": 0, "end": 38}]
+    marked = raw[:38] + "[1]" + raw[38:] + f"\n\nSources:\n[1] {a}"
+    assert marker_check(raw, wide, marked) == {
+        "spans": 1,
+        "misplaced": 0,
+        "spans_over_one_sentence": 1,
+    }
+
+
+def test_repeats_are_pooled_by_question_and_their_range_is_reported() -> None:
+    r1 = [row("q1", "not_found", "supported"), row("q2", "supported")]
+    r2 = [row("q1", "supported", "supported"), row("q2", "supported")]
+    both = pooled(r1 + r2)
+    assert len(both) == 2 and both[0]["verdict_own"] == 4 and both[0]["failed_own"] == 1
+    spread = within_question_range({"r1": r1, "r2": r2})
+    assert spread == {"questions": 2, "median": 0.25, "mean": 0.25, "max": 0.5}
+
+
+def test_searches_are_counted_against_the_cap() -> None:
+    used = searches_used([{"searches": 2}, {"searches": 5}, {"searches": 6}, {}])
+    assert used == {"answers": 3, "mean": 4.33, "max": 6, "answers_at_or_over_the_cap": 2}

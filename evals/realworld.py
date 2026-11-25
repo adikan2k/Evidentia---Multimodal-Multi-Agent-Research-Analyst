@@ -3,6 +3,8 @@
     uv run python -m evals realworld questions                     # free, done once
     uv run python -m evals realworld run --set pilot --cap 3       # paid; ask first
     uv run python -m evals realworld summary --set pilot           # free
+    uv run python -m evals realworld reask --cap 5                 # paid; ask first (D-043, 1c)
+    uv run python -m evals realworld reask-summary                 # free
 
 Every answer and every audit is saved, so a rerun only pays for what is missing. Each answer is
 audited twice: with the page judge as shipped (Haiku) and with OpenAI's gpt-6-luna as the page
@@ -13,6 +15,8 @@ import argparse
 import asyncio
 import json
 import random
+import re
+import statistics
 from collections import Counter
 from collections.abc import Callable
 from pathlib import Path
@@ -42,6 +46,12 @@ PILOT = [f"nq-{n:02d}" for n in range(1, 6)] + [f"{t}-01" for t in TOPICS]
 CONCURRENT_QUESTIONS = 3
 FAILED = {"not_found", "contradicted"}
 VERDICT = FAILED | {"supported", "partial"}
+# The re-ask run (D-043, phase 1c). All four numbers were fixed before any repeated answer.
+REASK = HERE / "reask"
+REASK_SEED = 20261202
+REASK_PER_SOURCE = 10
+REPEATS = 3
+SEARCH_CAP = 5  # the cap Claude's search tool already ran under (`max_uses`)
 
 
 def load_questions(which: str) -> list[dict]:
@@ -51,12 +61,31 @@ def load_questions(which: str) -> list[dict]:
     return rows
 
 
-def answer_path(tool: str, qid: str) -> Path:
-    return HERE / "answers" / tool / f"{qid}.json"
+def answer_path(tool: str, qid: str, root: Path = HERE) -> Path:
+    return root / "answers" / tool / f"{qid}.json"
 
 
-def audit_path(judge: str, tool: str, qid: str) -> Path:
-    return HERE / "audits" / judge / tool / f"{qid}.json"
+def audit_path(judge: str, tool: str, qid: str, root: Path = HERE) -> Path:
+    return root / "audits" / judge / tool / f"{qid}.json"
+
+
+def choose_reask(questions: list[dict]) -> list[dict]:
+    """The questions asked again: the same number from each source, by a fixed seed."""
+    rng = random.Random(REASK_SEED)
+    chosen: list[dict] = []
+    for source in sorted({q["source"] for q in questions}):
+        group = sorted((q for q in questions if q["source"] == source), key=lambda q: q["id"])
+        chosen += rng.sample(group, min(REASK_PER_SOURCE, len(group)))
+    return sorted(chosen, key=lambda q: q["id"])
+
+
+def reask_items(questions: list[dict]) -> list[dict]:
+    """One item per repeat. `of` names the question, so repeats can be set side by side."""
+    return [
+        q | {"id": f"{q['id']}-r{n}", "of": q["id"], "repeat": n}
+        for q in choose_reask(questions)
+        for n in range(1, REPEATS + 1)
+    ]
 
 
 def save(path: Path, body: dict) -> None:
@@ -72,9 +101,20 @@ def load(path: Path) -> dict | None:
 
 
 class Runner:
-    def __init__(self, settings: Settings, cap: float, tracer: Tracer) -> None:
+    def __init__(
+        self,
+        settings: Settings,
+        cap: float,
+        tracer: Tracer,
+        root: Path = HERE,
+        judges: tuple[str, ...] = tuple(JUDGES),
+        max_searches: int | None = None,
+    ) -> None:
         self.s = settings
         self.tracer = tracer
+        self.root = root
+        self.judges = judges
+        self.max_searches = max_searches  # OpenAI only; Claude's tool carries its own cap
         self.shared = Ledger(cap)
         # One fetcher for every audit, so the wait between requests to one site holds across all.
         self.fetcher = Fetcher(settings, tracer)
@@ -82,13 +122,15 @@ class Runner:
         self.gate = asyncio.Semaphore(CONCURRENT_QUESTIONS)
 
     async def answer(self, tool: str, q: dict) -> dict:
-        path = answer_path(tool, q["id"])
+        path = answer_path(tool, q["id"], self.root)
         saved = load(path)
         if saved is not None:
             return saved
         ledger = RowLedger(self.shared)
         if tool == "openai":
-            got = await answer_with_web_search(q["question"], self.s, ledger)
+            got = await answer_with_web_search(
+                q["question"], self.s, ledger, max_searches=self.max_searches
+            )
         else:
             got = await claude_answer_with_web_search(q["question"], self.s, ledger, self.tracer)
         body = {"id": q["id"], "tool": tool} | got
@@ -96,7 +138,7 @@ class Runner:
         return body
 
     async def audit(self, tool: str, judge: str, q: dict, answer: dict) -> None:
-        path = audit_path(judge, tool, q["id"])
+        path = audit_path(judge, tool, q["id"], self.root)
         if path.exists():
             return
         settings = self.s.model_copy(update={"page_judge_model": JUDGES[judge]})
@@ -119,7 +161,7 @@ class Runner:
             for tool in tools:
                 try:
                     answer = await self.answer(tool, q)
-                    for judge in JUDGES:
+                    for judge in self.judges:
                         await self.audit(tool, judge, q, answer)
                     print(f"  {q['id']} {tool}: done")
                 except BudgetExceeded:
@@ -355,12 +397,172 @@ def summarise(which: str) -> dict[str, Any]:
     return body
 
 
+# The re-ask run: how much do the figures move when the same question is asked again?
+
+
+def marker_check(raw: str, annotations: list[dict], marked: str) -> dict[str, int]:
+    """Does every marker sit right after the span its annotation covers?
+
+    Checked without the code that placed the markers: the last words of each cited span must
+    appear in the marked answer with that page's number straight after them.
+    """
+    body, _, listing = marked.partition("\n\nSources:\n")
+    number = {url: n for n, url in re.findall(r"^\[(\d+)\] (\S+)$", listing, re.MULTILINE)}
+    spans = misplaced = long_spans = 0
+    for a in annotations:
+        span = raw[a["start"] : a["end"]]
+        if a["url"] in span:  # the link is already inside the span, so no marker was added
+            continue
+        spans += 1
+        tail = re.escape(raw[max(a["start"], a["end"] - 40) : a["end"]])
+        runs = re.findall(tail + r"((?:\[\d+\])+)", body)
+        wanted = f"[{number.get(a['url'])}]"
+        misplaced += not any(wanted in run for run in runs)
+        # A span of more than one sentence gets one marker, at its end. The sentences before
+        # the last then have no citation of their own.
+        long_spans += bool(re.search(r"[.!?][\"')\]]*\s+\S", span.strip()))
+    return {"spans": spans, "misplaced": misplaced, "spans_over_one_sentence": long_spans}
+
+
+def pooled(rows: list[dict]) -> list[dict]:
+    """One row per question: the counts of its repeats added together."""
+    by_q: dict[str, dict] = {}
+    for r in rows:
+        total = by_q.setdefault(r["id"], {"id": r["id"]})
+        for key, value in r.items():
+            if key != "id":
+                total[key] = total.get(key, 0) + value
+    return list(by_q.values())
+
+
+def within_question_range(rows_by_repeat: dict[str, list[dict]]) -> dict[str, Any]:
+    """For each question, the gap between its highest and lowest failed share across repeats."""
+    shares: dict[str, list[float]] = {}
+    for rows in rows_by_repeat.values():
+        for r in rows:
+            if r["verdict_own"]:
+                shares.setdefault(r["id"], []).append(r["failed_own"] / r["verdict_own"])
+    gaps = [max(v) - min(v) for v in shares.values() if len(v) >= 2]
+    if not gaps:
+        return {"questions": 0, "median": None, "mean": None, "max": None}
+    return {
+        "questions": len(gaps),
+        "median": round(statistics.median(gaps), 4),
+        "mean": round(statistics.mean(gaps), 4),
+        "max": round(max(gaps), 4),
+    }
+
+
+BRIEF = (
+    "questions",
+    "claims",
+    "headline_failed_share",
+    "headline_claims",
+    "verified_share_of_all_claims",
+    "claims_per_answer",
+    "pages_cited_per_answer",
+    "pages_read_share",
+)
+
+
+def brief(rows: list[dict]) -> dict[str, Any]:
+    m = measures(rows)
+    return {key: m[key] for key in BRIEF} | {"uncited_share": m["labels"]["uncited"]["share"]}
+
+
+def searches_used(answers: list[dict]) -> dict[str, Any]:
+    used = [a["searches"] for a in answers if a.get("searches") is not None]
+    if not used:
+        return {"answers": 0}
+    return {
+        "answers": len(used),
+        "mean": round(statistics.mean(used), 2),
+        "max": max(used),
+        "answers_at_or_over_the_cap": sum(n >= SEARCH_CAP for n in used),
+    }
+
+
+def reask_tool(tool: str, chosen: list[dict], judge: str) -> tuple[dict, dict, Counter]:
+    """One tool's rows for the first ask and each repeat, its summary, and its marker check."""
+    names = ["first_ask"] + [f"r{n}" for n in range(1, REPEATS + 1)]
+    rows: dict[str, list[dict]] = {name: [] for name in names}
+    answers: list[dict] = []
+    checks: Counter = Counter()
+    for q in chosen:
+        for name in names:
+            first = name == "first_ask"
+            qid, root = (q["id"], HERE) if first else (f"{q['id']}-{name}", REASK)
+            audit = load(audit_path(judge, tool, qid, root))
+            answer = load(answer_path(tool, qid, root))
+            if not (audit and answer):
+                continue
+            rows[name].append(
+                {"id": q["id"], "answer_usd": answer["usd"]} | counts(audit["report"])
+            )
+            if first:
+                continue
+            answers.append(answer)
+            if "annotations" in answer:
+                checks.update(
+                    marker_check(answer["raw_text"], answer["annotations"], answer["text"])
+                )
+    repeats = {name: rs for name, rs in rows.items() if name != "first_ask"}
+    heads = [
+        v
+        for rs in repeats.values()
+        if rs and (v := ratio(rs, "failed_own", "verdict_own")) is not None
+    ]
+    every = [r for rs in repeats.values() for r in rs]
+    summary = {
+        "runs": {name: brief(rs) for name, rs in rows.items() if rs},
+        "headline_across_repeats": {
+            "min": round(min(heads), 4) if heads else None,
+            "max": round(max(heads), 4) if heads else None,
+        },
+        "repeats_pooled": brief(pooled(every)) if every else None,
+        "within_question_range_of_failed_share": within_question_range(repeats),
+        "searches": searches_used(answers),
+        "answers_cut_off": sum(a.get("ended") in ("incomplete", "max_tokens") for a in answers),
+        "usd": {
+            "answers": round(sum(a["usd"] for a in answers), 4),
+            "audits": round(sum(r["audit_usd"] for r in every), 4),
+        },
+    }
+    return rows, summary, checks
+
+
+def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
+    chosen = choose_reask(load_questions("all"))
+    body: dict[str, Any] = {
+        "seed": REASK_SEED,
+        "questions": [q["id"] for q in chosen],
+        "repeats": REPEATS,
+        "search_cap": SEARCH_CAP,
+        "page_judge": JUDGES[judge],
+        "note": "first_ask is the main run's answer to the same questions. OpenAI had no search "
+        "cap there; in the repeats both tools are capped.",
+        "tools": {},
+    }
+    rows_by: dict[str, dict[str, list[dict]]] = {}
+    for tool in TOOLS:
+        rows_by[tool], body["tools"][tool], checks = reask_tool(tool, chosen, judge)
+        if tool == "openai":
+            body["openai_markers"] = dict(checks)
+    body["openai_minus_claude"] = {
+        name: difference(rows_by["openai"][name], rows_by["claude"][name])
+        for name in rows_by["openai"]
+        if rows_by["openai"][name] and rows_by["claude"][name]
+    }
+    return body
+
+
 # Command.
 
 
 def main(argv: list[str]) -> None:
     parser = argparse.ArgumentParser(prog="python -m evals realworld")
-    parser.add_argument("step", choices=["questions", "run", "summary"])
+    parser.add_argument("step", choices=["questions", "run", "summary", "reask", "reask-summary"])
+    parser.add_argument("--limit", type=int, help="reask: only the first N items, as a trial")
     parser.add_argument("--set", choices=["pilot", "all"], default="pilot", dest="which")
     parser.add_argument("--tools", default=",".join(TOOLS))
     parser.add_argument("--cap", type=float, default=3.0, help="US dollars for the whole command")
@@ -373,13 +575,28 @@ def main(argv: list[str]) -> None:
         path = write_result(name, summarise(args.which))
         print(f"wrote {path.name}")
         return
+    if args.step == "reask-summary":
+        path = write_result("realworld_reask", summarise_reask())
+        print(f"wrote {path.name}")
+        return
     settings = load_settings(cost_cap_usd=args.cap)
     tracer = LangfuseTracer(settings)
-    questions = load_questions(args.which)
     tools = [t for t in args.tools.split(",") if t in TOOLS]
+    if args.step == "reask":
+        # Audited with the page judge as shipped only: the question here is how much the
+        # answers move, and the second judge would double the audits' cost.
+        questions = reask_items(load_questions("all"))[: args.limit]
+        runner = Runner(
+            settings, args.cap, tracer, root=REASK, judges=("haiku",), max_searches=SEARCH_CAP
+        )
+        name = "realworld.reask"
+    else:
+        questions = load_questions(args.which)
+        runner = Runner(settings, args.cap, tracer)
+        name = f"realworld.{args.which}"
     print(f"  {len(questions)} questions x {len(tools)} tools, cap ${args.cap:.2f}")
     try:
-        with tracer.span(f"realworld.{args.which}", "span", {"questions": len(questions)}):
-            asyncio.run(Runner(settings, args.cap, tracer).run(questions, tools))
+        with tracer.span(name, "span", {"questions": len(questions)}):
+            asyncio.run(runner.run(questions, tools))
     finally:
         tracer.flush()

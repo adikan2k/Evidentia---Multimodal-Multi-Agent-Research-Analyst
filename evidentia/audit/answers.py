@@ -45,10 +45,14 @@ def with_markers(text: str, citations: list[Any]) -> str:
     return "".join(out).rstrip() + ("\n\nSources:\n" + sources if sources else "")
 
 
+def search_calls(response: Any) -> int:
+    return sum(getattr(item, "type", "") == "web_search_call" for item in response.output)
+
+
 def charge(ledger: Ledger, model: str, response: Any) -> float:
     usage = response.usage
     cached = getattr(getattr(usage, "input_tokens_details", None), "cached_tokens", 0) or 0
-    searches = sum(getattr(item, "type", "") == "web_search_call" for item in response.output)
+    searches = search_calls(response)
     usd = openai_usd(model, usage.input_tokens, usage.output_tokens, cached)
     usd += searches * WEB_SEARCH_USD_PER_CALL
     ledger.add(
@@ -109,6 +113,7 @@ async def claude_answer_with_web_search(
     messages: list[dict[str, Any]] = [{"role": "user", "content": question}]
     blocks: list[Any] = []
     usd = 0.0
+    searches = 0
     # The SDK's own spans are not exported (tracing.export_span), so this call gets its own.
     with tracer.span("answer.claude", "generation", {"question": question, "model": model}) as span:
         for _ in range(MAX_PAUSES + 1):
@@ -121,6 +126,7 @@ async def claude_answer_with_web_search(
                     tools=[CLAUDE_WEB_SEARCH],
                 )
                 usd += charge_claude(ledger, model, response.usage)
+                searches += claude_searches(response.usage)
             blocks += [b for b in response.content if getattr(b, "type", "") == "text"]
             if response.stop_reason != "pause_turn":
                 break
@@ -136,12 +142,17 @@ async def claude_answer_with_web_search(
         "text": text,
         "citations": cited,
         "ended": ended,
+        "searches": searches,
         "usd": round(usd, 4),
     }
 
 
+def claude_searches(usage: Any) -> int:
+    return getattr(getattr(usage, "server_tool_use", None), "web_search_requests", 0) or 0
+
+
 def charge_claude(ledger: Ledger, model: str, usage: Any) -> float:
-    searches = getattr(getattr(usage, "server_tool_use", None), "web_search_requests", 0) or 0
+    searches = claude_searches(usage)
     cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
     cache_write = getattr(usage, "cache_creation_input_tokens", 0) or 0
     usd = claude_usd(model, usage.input_tokens, usage.output_tokens, cache_read, cache_write)
@@ -161,10 +172,20 @@ def charge_claude(ledger: Ledger, model: str, usage: Any) -> float:
 
 
 async def answer_with_web_search(
-    question: str, settings: Settings, ledger: Ledger, client: Any = None, model: str = ANSWER_MODEL
+    question: str,
+    settings: Settings,
+    ledger: Ledger,
+    client: Any = None,
+    model: str = ANSWER_MODEL,
+    max_searches: int | None = None,
 ) -> dict[str, Any]:
-    """Ask the model with web search on; return the answer in the auditor's input shape."""
+    """Ask the model with web search on; return the answer in the auditor's input shape.
+
+    `max_searches` caps the built-in tool calls of the one response (`max_tool_calls`), so the
+    tool can be held to the same number of searches as Claude's (D-043, phase 1c).
+    """
     client = client or make_client(settings)
+    limit = {} if max_searches is None else {"max_tool_calls": max_searches}
     worst = openai_usd(model, estimate_tokens(question) + 20_000, MAX_OUTPUT_TOKENS)
     worst += WORST_CASE_SEARCHES * WEB_SEARCH_USD_PER_CALL
     with ledger.reserve("answer", worst):
@@ -174,6 +195,7 @@ async def answer_with_web_search(
             tools=[{"type": "web_search"}],
             max_output_tokens=MAX_OUTPUT_TOKENS,
             store=False,
+            **limit,
         )
         usd = charge(ledger, model, response)
     texts = [
@@ -195,5 +217,11 @@ async def answer_with_web_search(
         "text": with_markers(text, citations),
         "citations": len({c.url for c in citations}),
         "ended": getattr(response, "status", None),  # "completed", or "incomplete" if cut off
+        "searches": search_calls(response),
+        # The model's own text and offsets, kept so the markers can be checked against them.
+        "raw_text": text,
+        "annotations": [
+            {"url": c.url, "start": c.start_index, "end": c.end_index} for c in citations
+        ],
         "usd": round(usd, 4),
     }

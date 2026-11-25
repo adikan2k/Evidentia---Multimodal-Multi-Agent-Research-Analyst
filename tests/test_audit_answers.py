@@ -51,10 +51,17 @@ def test_the_answer_call_uses_web_search_and_is_charged_with_its_searches(settin
     client = SimpleNamespace(responses=SimpleNamespace(create=create))
     answer = asyncio.run(answer_with_web_search("A question?", settings, ledger, client=client))
     assert sent["tools"] == [{"type": "web_search"}] and sent["store"] is False
+    assert "max_tool_calls" not in sent and answer["searches"] == 2
+    assert answer["raw_text"] == TEXT
+    assert answer["annotations"] == [{"url": "https://a.example.org/x", "start": 0, "end": 23}]
     assert answer["citations"] == 1 and "[1]" in answer["text"]
     expected = openai_usd("gpt-6.2-sol", 5000, 400) + 2 * WEB_SEARCH_USD_PER_CALL
     assert abs(ledger.spent - expected) < 1e-9
     assert ledger.charges[0].item == "gpt-6.2-sol + 2 web searches"
+    asyncio.run(
+        answer_with_web_search("A question?", settings, Ledger(1.0), client=client, max_searches=5)
+    )
+    assert sent["max_tool_calls"] == 5
 
 
 def test_a_span_that_already_holds_its_link_gets_no_marker() -> None:
@@ -124,5 +131,6 @@ def test_claude_answers_resume_a_paused_turn_and_count_searches(settings) -> Non
     assert len(calls) == 2 and calls[0]["tools"][0]["type"] == "web_search_20250305"
     assert calls[1]["messages"][1]["role"] == "assistant"  # the paused turn is sent back
     assert answer["text"].startswith("Part one. [1]Part two.") and answer["citations"] == 1
+    assert answer["searches"] == 3
     expected = 2 * claude_usd("claude-sonnet-5-5", 4000, 300) + 3 * 0.01
     assert abs(ledger.spent - expected) < 1e-9
