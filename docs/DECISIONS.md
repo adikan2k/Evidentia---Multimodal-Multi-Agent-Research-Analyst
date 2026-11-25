@@ -2355,6 +2355,67 @@ and the pages that were not read. With the page judge as shipped (Haiku):
   - robots.txt itself unreadable: 10 and 2.
 - **No one kind of site dominates.** The most any site accounts for is 4 pages.
 
+### Phase 1c done: the same questions asked three more times (D-043)
+
+Run on 24 November 2026 with `python -m evals realworld reask`. Figures are in
+`evals/results/realworld_reask.json`; answers and audits are in `evals/realworld/reask/`.
+
+**What was run.**
+
+- **20 questions**, 10 from each source, chosen with seed 20261202 before any repeated answer.
+- **Three more asks of each tool**, 120 answers in all, every one audited.
+- **Both tools capped at 5 searches.** OpenAI through `max_tool_calls`; Claude's tool already
+  carried `max_uses: 5`.
+- **One judge, not two.** The repeats were audited with the page judge as shipped only. The GPT
+  page judge was left out to stay inside the approved cost. This is a change from the main run.
+- **Cost:** $4.31 ($3.87 of answers, $0.44 of audits), against "about $4.50" approved.
+
+**What it shows.**
+
+| On the 20 questions | OpenAI | Claude | OpenAI minus Claude |
+|---|---|---|---|
+| First ask (main run), own-cited claims that fail | 45.7% of 35 | 7.3% of 55 | 38 points (15 to 57) |
+| Repeat 1 | 51.6% of 31 | 3.3% of 60 | 48 points (22 to 64) |
+| Repeat 2 | 61.8% of 34 | 4.7% of 64 | 57 points (13 to 76) |
+| Repeat 3 | 65.2% of 23 | 6.0% of 67 | 59 points (16 to 88) |
+| Three repeats pooled | 59.1% of 88 | 4.7% of 191 | 54 points (20 to 73) |
+
+- **The direction holds every time.** In all four asks OpenAI's cited claims fail far more often
+  than Claude's, and no interval for the gap reaches zero.
+- **The size does not hold.** OpenAI's figure moved from 46% to 65% across four asks of the same
+  20 questions. Each rests on 23 to 35 claims, so one pass of 20 questions cannot give its size.
+  Claude's stayed between 3% and 7%.
+- **The other reading moved towards Claude.** Share of all claims verified against a cited page,
+  three repeats pooled: OpenAI 10.4%, Claude 23.2%, a gap of 13 points (3 to 23). On the main
+  run's 100 questions that gap was 6 points with an interval that reached zero. Twenty questions
+  are too few to settle it, but the repeats do not support "the tools are level on this reading".
+
+**The search cap never applied.** No answer reached 5 searches. OpenAI's highest was 4 and its
+mean 1.4; Claude's highest was 2 and its mean 0.7. So the cap cannot explain any difference, and
+the main run, where OpenAI had no cap, was not unfair to Claude on this count.
+
+**Many answers used no search at all.** 21 of Claude's 60 and 9 of OpenAI's 60. Those answers cite
+nothing, so all their claims are uncited and none enters the headline. The tools differ in when
+they choose to search, and that belongs in the findings.
+
+**The marker question does not arise.** The review asked whether our code puts each `[n]` marker
+after the right span. In these 60 OpenAI answers there are 121 citations, and in every one the
+tool wrote the link into its own text. Our code added no marker. The same holds for all 100
+OpenAI answers of the main run: none has a source list added by our code. The auditor reads
+OpenAI's citations where OpenAI put them. (Claude's citations do come as separate blocks, and
+there the marker goes at the end of the block Claude attached the citation to.)
+
+**Limits.**
+
+- Within one question, only 7 of OpenAI's 20 had cited claims with a verdict in two or more
+  repeats, so the question-by-question spread is thin: a mean gap of 8 points, at most 29.
+- The first ask's search counts were not saved, so the capped and uncapped runs cannot be
+  compared search for search.
+- OpenAI's higher figures in the repeats cannot be told apart from chance at this size.
+
+**What this changes.** The findings page should lead with the direction and the pooled figures
+with their intervals, and should not state OpenAI's rate as one number.
+
 ## D-044. A person checks a sample of the real-world verdicts (D-043, phase 1b)
 
 **What.** A small tool with which Aditya, by hand, checks 100 of the auditor's verdicts on real
