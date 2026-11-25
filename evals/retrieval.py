@@ -81,15 +81,28 @@ async def retrieve(deps: Deps, run_id: str, name: str, question: str, vector: li
     return await deps.embedder.rerank("eval-retrieve", question, candidates, TOP_K)
 
 
-def score(ranked: list[Passage], relevant: set[str]) -> dict[str, float]:
-    hits = [p.id in relevant for p in ranked]
-    scores = {f"recall_at_{k}": recall_at_k(hits, len(relevant), k) for k in KS}
+def score_hits(hits: list[bool], total_relevant: int) -> dict[str, float]:
+    scores = {f"recall_at_{k}": recall_at_k(hits, total_relevant, k) for k in KS}
     scores |= {f"precision_at_{k}": precision_at_k(hits, k) for k in KS}
     return scores | {
         "mrr_at_10": reciprocal_rank(hits, TOP_K),
-        "ndcg_at_10": ndcg_at_k(hits, len(relevant), TOP_K),
-        "hits": hits,  # the top 10 in order, True where relevant: every score above comes from this
+        "ndcg_at_10": ndcg_at_k(hits, total_relevant, TOP_K),
     }
+
+
+def score(ranked: list[Passage], relevant: set[str]) -> dict:
+    hits = [p.id in relevant for p in ranked]
+    # The top 10 in order, True where relevant: every score comes from this list.
+    return score_hits(hits, len(relevant)) | {"hits": hits}
+
+
+def best_possible(counts: list[int]) -> dict[str, float]:
+    """What a perfect ranking would score: every relevant passage first. A question with 3
+    relevant passages cannot have recall 1 at 1, nor one with 2 precision above 0.2 at 10."""
+    ideal = [
+        score_hits([True] * min(n, TOP_K) + [False] * (TOP_K - min(n, TOP_K)), n) for n in counts
+    ]
+    return {m: round(sum(s[m] for s in ideal) / len(ideal), 4) for m in TABLE}
 
 
 async def evaluate(deps: Deps, run_id: str, question: Question, passages: list[Passage]) -> dict:
@@ -118,12 +131,7 @@ def summarise(rows: list[dict]) -> dict:
         "retrievers": table,
         "paired_differences": steps,
         "relevant_per_question": summary(counts),
-        # The best precision any ranking could score, since a question has only a few relevant
-        # passages: a perfect top 10 for a question with 2 of them scores 0.2.
-        "best_possible_precision": {
-            f"precision_at_{k}": round(sum(min(n, k) / k for n in counts) / len(counts), 4)
-            for k in KS
-        },
+        "best_possible": best_possible(counts),
     }
 
 

@@ -141,8 +141,9 @@ export default function EvalsPage() {
     { label: "Second, after the fix", check: secondHandCheck },
   ].flatMap(({ label, check }) => (check ? [{ label, check }] : []));
   const shippedSearch = retrieval.retrievers.dense_rerank;
-  // The best precision any ranking could reach, given how few relevant passages each question has.
-  const ceiling = (k: (typeof KS)[number]) => retrieval.best_possible_precision[`precision_at_${k}`];
+  // What a perfect ranking would score, given how few relevant passages each question has.
+  const best = retrieval.best_possible;
+  const ceiling = (k: (typeof KS)[number]) => best[`precision_at_${k}`];
   const agreementModels = Object.entries(evals.checker_agreement.references.second_model.models).map(
     ([model, m]) => [model, m.all as unknown as { agreement: Stat; cohen_kappa: Stat }] as const,
   );
@@ -500,12 +501,13 @@ export default function EvalsPage() {
             rows={Object.entries(RETRIEVERS).map(([key, label]) => {
               const m = retrieval.retrievers[key as keyof typeof retrieval.retrievers];
               return [label, ...KS.map((k) => three(m[`recall_at_${k}`].mean))];
-            })}
+            }).concat([["Best possible", ...KS.map((k) => three(best[`recall_at_${k}`]))]])}
           />
           <Prose>
-            Of all the passages that hold the answer, the share found in the top k. The research
-            agent reads the top 10 after reranking, where the shipped search finds{" "}
-            {percent(shippedSearch.recall_at_10.mean)} of them.
+            Of all the passages that hold the answer, the share found in the top k. The last row
+            is what a perfect ranking would score: a question with three relevant passages cannot
+            have them all in the top one. The research agent reads the top 10 after reranking,
+            where the shipped search finds {percent(shippedSearch.recall_at_10.mean)} of them.
           </Prose>
         </Section>
 

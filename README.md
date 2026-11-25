@@ -10,12 +10,120 @@ human**. Beside every result, the site shows how often the auditor itself is rig
 claims that people labelled.
 
 - Site: https://evidentia-green.vercel.app/audit (paste an answer, or watch a recorded audit)
+- Every measurement, with intervals: https://evidentia-green.vercel.app/evals
 - Decisions behind every part: [`docs/DECISIONS.md`](docs/DECISIONS.md)
+- What goes wrong, and when: [`docs/FAILURE_MODES.md`](docs/FAILURE_MODES.md)
 - Full evaluation report: [`evals/results/REPORT.md`](evals/results/REPORT.md)
 
 Evidentia began as a research agent that backs each sentence with an exact quote. That agent is
 still here, in the second half of this page. Its own evaluation found it no more accurate than
 plain RAG, and that result is why the project turned to auditing (D-034).
+
+<!-- results:start (written by `python -m evals report`; do not edit by hand) -->
+
+## Results at a glance
+
+Every number in this section is written by code from `evals/results/`. The website's Evals page reads the same files.
+
+### The auditor, against people's labels
+
+1,100 rows of LLM-AggreFact that were never used to tune it. 0.500 balanced accuracy is a guess.
+
+| Measure | Value | 95% interval |
+|---|---|---|
+| Flags right (marked not on the page or contradicted) | 0.806 | 0.767 to 0.844 |
+| Supported marks right | 0.926 | 0.897 to 0.951 |
+| Balanced accuracy, on claims with a verdict | 0.754 | 0.725 to 0.783 |
+| Claims given a verdict (the rest go to a person) | 0.823 | 0.801 to 0.845 |
+
+Source: `evals/results/aggrefact_pooled-dev550b+test2_q-haiku_p-haiku.json`.
+
+### The auditor on real answers: blind hand checks
+
+A person checked samples of its verdicts on two AI search tools' answers against the live pages, blind to the tool and the verdict. The bar, set before any label: 70% of flags upheld. It was not met, so the tools are not compared.
+
+| Hand check | Claims | Flags upheld | 95% interval | Supported upheld | Bar met |
+|---|---|---|---|---|---|
+| First, before the fix (D-044) | 40 | 54%, 7 of 13 | 29% to 77% | 16 of 19 | no |
+| Second, after the fix (D-049) | 21 | 69%, 9 of 13 | 42% to 87% | 4 of 4 | no |
+
+Source: `evals/results/realworld_hand_check.json`, `realworld_hand_check_2.json`.
+
+### Search: recall and precision at k
+
+40 questions over 2,362 passages from 50 saved pages, mostly Wikipedia. R@k is the share of relevant passages in the top k; P@k is the share of the top k that is relevant. A question has 2.5 relevant passages on average, so no ranking can reach 1 on every measure: the last row is what a perfect ranking would score.
+
+| Retriever | R@1 | R@3 | R@5 | R@10 | P@1 | P@3 | P@5 | P@10 | MRR@10 | nDCG@10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Keyword only (BM25) | 0.192 | 0.350 | 0.442 | 0.571 | 0.400 | 0.258 | 0.200 | 0.133 | 0.533 | 0.454 |
+| Dense only | 0.283 | 0.592 | 0.775 | 0.917 | 0.575 | 0.450 | 0.370 | 0.223 | 0.739 | 0.751 |
+| Hybrid (dense + BM25) | 0.254 | 0.475 | 0.667 | 0.867 | 0.525 | 0.367 | 0.310 | 0.210 | 0.669 | 0.672 |
+| **Dense + rerank (shipped)** | 0.338 | 0.658 | 0.817 | 0.938 | 0.700 | 0.508 | 0.395 | 0.230 | 0.816 | 0.804 |
+| Hybrid + rerank | 0.338 | 0.658 | 0.817 | 0.938 | 0.700 | 0.508 | 0.395 | 0.230 | 0.817 | 0.804 |
+| Best possible | 0.454 | 1.000 | 1.000 | 1.000 | 1.000 | 0.825 | 0.495 | 0.247 | 1.000 | 1.000 |
+
+Intervals (95% bootstrap over questions, 2000 resamples) are in `evals/results/REPORT.md`. Source: `evals/results/retrieval.json`.
+
+### The research agent, against plain RAG
+
+40 questions on the same saved pages. A separate judge (claude-opus-5-5) checked whether each claim's evidence backs it.
+
+| System | Claims shown as backed that are fully backed | Characters to read | Cost per question |
+|---|---|---|---|
+| Plain RAG, Sonnet | 0.917 (0.877 to 0.953) | 1039 | $0.0141 |
+| Evidentia before tightening | 0.928 (0.895 to 0.961) | 195 | $0.0401 |
+| **Evidentia (shipped)** | 0.925 (0.901 to 0.948) | 188 | $0.0491 |
+
+| Checker model | Broken claims caught | Agreement with a second model | Cohen's kappa |
+|---|---|---|---|
+| **claude-sonnet-5-5 (shipped)** | 49 of 50 | 0.893 (0.840 to 0.940) | 0.829 (0.744 to 0.903) |
+| claude-haiku-5-5 | 48 of 50 | 0.900 (0.853 to 0.947) | 0.838 (0.753 to 0.913) |
+| claude-opus-5-5 | 50 of 50 | 0.880 (0.827 to 0.927) | 0.809 (0.723 to 0.885) |
+
+Agreement is with a stronger model from the same family, not with a person.
+
+- Hostile pages passed: hidden instructions in a page 5 of 5, a paywalled page 5 of 5, two pages that disagree 5 of 5.
+- Questions the pages cannot answer, where the system made no claim: Plain RAG, Sonnet 20 of 20, Evidentia 20 of 20, Plain RAG, Haiku 19 of 20, Evidentia, all Haiku 20 of 20.
+
+Source: `evals/results/citation_accuracy.json`, `checker_agreement.json`, `unanswerable.json`, `nasty.json`.
+
+<!-- results:end -->
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Site["Site (Next.js on Vercel)"]
+        A[Audit page] --- R[Recorded audits and runs]
+        E[Evals and findings pages]
+    end
+    subgraph API["API (FastAPI on Cloud Run, one instance)"]
+        L[Spend and rate limits]
+        AU[Auditor graph]
+        RA[Research agent graph]
+    end
+    A -- "answer, streamed back as events" --> L --> AU
+    A --> RA
+    AU --> F[Fetcher: robots.txt, rate limit, public addresses only]
+    RA --> F
+    AU --> H[Claude Haiku: split and two judges]
+    RA --> S[Claude Sonnet: plan, write, check]
+    RA --> T[Tavily search]
+    AU --> V[Voyage: embed and rerank]
+    RA --> V
+    RA --> Q[(Qdrant: passages)]
+    L --> QS[(Qdrant: the day's spend)]
+    AU -. every call .-> LF[Langfuse traces]
+    RA -. every call .-> LF
+    E -. read at build time .- J[evals/results/*.json]
+```
+
+The auditor, step by step:
+
+```
+parse (code) → split (Haiku) → fetch (code) ┬→ find quotes (Haiku) → exact-span check (code) → check the quotes (Haiku) ┬→ combine (code)
+                                             └→ page judge (Haiku) ────────────────────────────────────────────────────┘
+```
 
 ## How an audit works
 
@@ -115,12 +223,7 @@ fixed questions, and Evidentia audited every answer (D-042 to D-049). Before pub
 comparison, Aditya checked blind samples of the auditor's verdicts against the live pages. He saw
 each claim and its cited page, and not which tool wrote it or what the auditor said. The rule,
 fixed before any label: at least 70% of the flags he can settle must be upheld, or the tools are
-not compared.
-
-| Hand check | Flags upheld | 95% interval | "Supported" upheld |
-|---|---|---|---|
-| First, 40 claims (D-044) | 54%, 7 of 13 | 29% to 77% | 84%, 16 of 19 |
-| Second, 21 claims, after the fix (D-049) | 69%, 9 of 13 | 42% to 87% | 4 of 4 |
+not compared. Both checks' figures are in "Results at a glance" above.
 
 - **What the first check found.** Most of the flags he rejected had their evidence on the page,
   in a header date, a caption or a stat box, but the page reader kept only the article, so the
@@ -132,10 +235,14 @@ not compared.
 - **The second check missed the bar by one flag.** The bar is not moved after the labels, so
   neither this README nor the site compares the tools. The second check had 17 flags because
   Claude had only 7 unseen flags left to draw, and he was unsure on 4 of them.
+- **Why the second check's 4 rejected flags happened** (D-049): two were a name the answer gave
+  that the page never uses, one was a 144-page PDF whose evidence sat past the 40 pages read, and
+  one was a judge misreading the page. A fix for the PDF case was drafted (D-050) and parked: it
+  touches few flags and cannot change the result above.
 
-On the benchmark above, 81% of the auditor's flags are right. The questions, answers, both sets
-of audits, the labels and every figure are in `evals/realworld/` and
-`evals/results/realworld*.json`, including the per-tool figures that are not compared here.
+The questions, answers, both sets of audits, the labels and every figure are in
+`evals/realworld/` and `evals/results/realworld*.json`, including the per-tool figures that are
+not compared here.
 
 ## The research agent
 
@@ -173,26 +280,18 @@ Run on a frozen set of 50 openly licensed pages (mostly Wikipedia) and 40 questi
 are cleaner than the open web, so real use would likely score lower. All numbers below are
 copied from `evals/results/`, with 95% intervals.
 
-**Accuracy is not better than plain RAG.** A judge model checked whether each claim's evidence
-backs it:
+The figures are in "Results at a glance" above. What they say:
 
-| System | Claims shown as backed that are fully backed | Characters to read per claim | Cost per question |
-|---|---|---|---|
-| One-shot RAG baseline, Sonnet | 0.917 (0.877 to 0.953) | 1039 | $0.0141 |
-| Evidentia pipeline, Sonnet | 0.928 (0.895 to 0.961) | 195 | $0.0401 |
-| Evidentia pipeline, partial claims tightened (the default) | 0.925 (0.901 to 0.948) | 188 | $0.0491 |
-
-The intervals overlap. What the pipeline adds is evidence you can check quickly (a short quote
-instead of a whole passage) and a checker that catches mistakes, at a higher cost.
-
-**The checker catches broken claims.** Of 50 claims broken on purpose (wrong quote, one fact
-changed, or a detail added), the Sonnet checker passed 1 as supported, Haiku 2, Opus 0.
-
-**Keyword search did not help retrieval here.** Dense search alone beat dense plus BM25 before
-reranking (recall@10 0.917 against 0.858), and after reranking the two were equal (0.938 each).
-
-**Hand-made attacks.** Hidden instructions in a page, paywalled pages, and contradictory pages:
-5 of 5 passed in each case. That covers these cases only; it is not a security guarantee.
+- **Accuracy is not better than plain RAG.** The intervals overlap. What the pipeline adds is
+  evidence you can check quickly (a short quote instead of a whole passage) and a checker that
+  catches mistakes, at a higher cost.
+- **The checker catches broken claims.** Claims were broken on purpose (wrong quote, one fact
+  changed, or a detail added), and each checker model refused nearly all of them.
+- **Keyword search did not help retrieval here.** Dense search alone beat dense plus BM25 before
+  reranking, and after reranking the two were equal, so BM25 is off in the shipped search.
+- **The reranker earns its place.** It lifts every cut-off, most of all precision at 1.
+- **Hand-made attacks** (hidden instructions in a page, paywalled pages, contradictory pages)
+  all passed. That covers these cases only; it is not a security guarantee.
 
 **Not done.** No person has labelled the checker's verdicts, so there is no agreement-with-a-human
 figure; the only agreement figure is with a second model, which says little about correctness.
@@ -233,6 +332,14 @@ decisions file before running them. `uv run python -m evals report` rebuilds the
 saved results for free.
 
 Deployment (Cloud Run for the API, Vercel for the site) is in [`docs/DEPLOY.md`](docs/DEPLOY.md).
+
+### What keeps the public site from running up a bill
+
+- A hard cost cap on every run, audit and check, enforced in code before each model call.
+- Per-address limits on runs, audits and checks per day, held in memory.
+- A daily budget across all visitors. The day's spend is stored in Qdrant (D-051), so a restart
+  of the server does not reset it; if it cannot be read, live runs are refused.
+- One server instance, so the limits are counted in one place.
 
 ## Layout
 

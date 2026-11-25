@@ -7,6 +7,7 @@ does not exist yet says so instead of showing a placeholder number.
 import json
 from typing import Any
 
+from evals import readme
 from evals.common import RESULTS_DIR
 from evidentia.config import Settings
 
@@ -519,4 +520,6 @@ def run() -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines), encoding="utf-8", newline="\n")
     write_site_data(results | {name: load(name) for name in REALWORLD})
-    print(f"report: wrote {REPORT}")
+    if results["retrieval"]:  # only with real results, never from an empty folder
+        readme.write()
+    print(f"report: wrote {REPORT}, the site's data and the README's results block")

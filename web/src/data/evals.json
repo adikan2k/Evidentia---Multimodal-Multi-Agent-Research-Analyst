@@ -1,6 +1,6 @@
 {
  "retrieval": {
-  "generated_at": "2026-11-25T22:17:02+00:00",
+  "generated_at": "2026-11-25T22:23:50+00:00",
   "what": "Top-10 passage retrieval on the frozen corpus. The plan asked for four retrievers; dense_rerank was added to show what keyword search contributes.",
   "gold": "Gold snippets were drafted by Claude from each question's pages and checked word for word against the page text. See evals/questions.jsonl.",
   "relevance": "A passage is relevant if it overlaps a gold snippet on the same page.",
@@ -90,9 +90,9 @@
      "n": 40
     },
     "recall_at_5": {
-     "mean": 0.7833,
-     "ci_low": 0.6958,
-     "ci_high": 0.8667,
+     "mean": 0.775,
+     "ci_low": 0.6833,
+     "ci_high": 0.8583,
      "n": 40
     },
     "recall_at_10": {
@@ -114,9 +114,9 @@
      "n": 40
     },
     "precision_at_5": {
-     "mean": 0.375,
-     "ci_low": 0.325,
-     "ci_high": 0.425,
+     "mean": 0.37,
+     "ci_low": 0.32,
+     "ci_high": 0.42,
      "n": 40
     },
     "precision_at_10": {
@@ -126,15 +126,15 @@
      "n": 40
     },
     "mrr_at_10": {
-     "mean": 0.7404,
-     "ci_low": 0.6438,
-     "ci_high": 0.8333,
+     "mean": 0.7392,
+     "ci_low": 0.6413,
+     "ci_high": 0.8321,
      "n": 40
     },
     "ndcg_at_10": {
-     "mean": 0.7515,
-     "ci_low": 0.6762,
-     "ci_high": 0.8226,
+     "mean": 0.7511,
+     "ci_low": 0.6751,
+     "ci_high": 0.8225,
      "n": 40
     }
    },
@@ -152,9 +152,9 @@
      "n": 40
     },
     "recall_at_5": {
-     "mean": 0.675,
-     "ci_low": 0.575,
-     "ci_high": 0.7667,
+     "mean": 0.6667,
+     "ci_low": 0.5708,
+     "ci_high": 0.7583,
      "n": 40
     },
     "recall_at_10": {
@@ -176,9 +176,9 @@
      "n": 40
     },
     "precision_at_5": {
-     "mean": 0.315,
+     "mean": 0.31,
      "ci_low": 0.265,
-     "ci_high": 0.36,
+     "ci_high": 0.355,
      "n": 40
     },
     "precision_at_10": {
@@ -188,15 +188,15 @@
      "n": 40
     },
     "mrr_at_10": {
-     "mean": 0.6698,
-     "ci_low": 0.5613,
-     "ci_high": 0.78,
+     "mean": 0.6694,
+     "ci_low": 0.5606,
+     "ci_high": 0.7798,
      "n": 40
     },
     "ndcg_at_10": {
-     "mean": 0.6739,
-     "ci_low": 0.5901,
-     "ci_high": 0.7558,
+     "mean": 0.6716,
+     "ci_low": 0.589,
+     "ci_high": 0.752,
      "n": 40
     }
    },
@@ -334,15 +334,15 @@
      "n": 40
     },
     "mrr_at_10": {
-     "mean": 0.2078,
-     "ci_low": 0.0882,
-     "ci_high": 0.3324,
+     "mean": 0.2066,
+     "ci_low": 0.086,
+     "ci_high": 0.3311,
      "n": 40
     },
     "ndcg_at_10": {
-     "mean": 0.2979,
-     "ci_low": 0.2268,
-     "ci_high": 0.3766,
+     "mean": 0.2976,
+     "ci_low": 0.2266,
+     "ci_high": 0.3762,
      "n": 40
     }
    },
@@ -354,15 +354,15 @@
      "n": 40
     },
     "mrr_at_10": {
-     "mean": -0.0706,
-     "ci_low": -0.1433,
-     "ci_high": -0.0014,
+     "mean": -0.0698,
+     "ci_low": -0.1429,
+     "ci_high": -0.0006,
      "n": 40
     },
     "ndcg_at_10": {
-     "mean": -0.0776,
-     "ci_low": -0.1187,
-     "ci_high": -0.039,
+     "mean": -0.0795,
+     "ci_low": -0.1201,
+     "ci_high": -0.0416,
      "n": 40
     }
    },
@@ -374,15 +374,15 @@
      "n": 40
     },
     "mrr_at_10": {
-     "mean": 0.1468,
-     "ci_low": 0.0471,
-     "ci_high": 0.2506,
+     "mean": 0.1473,
+     "ci_low": 0.0479,
+     "ci_high": 0.2521,
      "n": 40
     },
     "ndcg_at_10": {
-     "mean": 0.1303,
-     "ci_low": 0.0804,
-     "ci_high": 0.1894,
+     "mean": 0.1326,
+     "ci_low": 0.0839,
+     "ci_high": 0.1908,
      "n": 40
     }
    },
@@ -394,15 +394,15 @@
      "n": 40
     },
     "mrr_at_10": {
-     "mean": 0.0762,
-     "ci_low": 0.0,
-     "ci_high": 0.1646,
+     "mean": 0.0775,
+     "ci_low": 0.0004,
+     "ci_high": 0.1658,
      "n": 40
     },
     "ndcg_at_10": {
-     "mean": 0.0527,
-     "ci_low": 0.0155,
-     "ci_high": 0.094,
+     "mean": 0.053,
+     "ci_low": 0.0156,
+     "ci_high": 0.0948,
      "n": 40
     }
    },
@@ -433,11 +433,17 @@
    "ci_high": 2.675,
    "n": 40
   },
-  "best_possible_precision": {
+  "best_possible": {
+   "recall_at_1": 0.4542,
+   "recall_at_3": 1.0,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
    "precision_at_1": 1.0,
    "precision_at_3": 0.825,
    "precision_at_5": 0.495,
-   "precision_at_10": 0.2475
+   "precision_at_10": 0.2475,
+   "mrr_at_10": 1.0,
+   "ndcg_at_10": 1.0
   },
   "cost_usd": 0.0296
  },
