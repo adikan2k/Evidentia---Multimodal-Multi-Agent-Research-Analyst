@@ -3351,7 +3351,9 @@ were committed before they were scored (`hand_check_2_labels.jsonl`).
 
 ## D-050. The auditor reads long PDFs to the end, and says when it could not (after D-049)
 
-Drafted 25 November 2026. Waiting for Aditya's approval, with the re-audit and its cost.
+Drafted 25 November 2026. **Parked by Aditya the same day, not built.** It touches 13 of
+OpenAI's 114 flags and cannot unlock the comparison (see "What it does not do"), so the project
+ships without it.
 
 **What.** Three changes, all in how the auditor reads, none in how it judges.
 
@@ -3429,3 +3431,48 @@ calls:
   that label.
 - A PDF read to its end, and every web page, are labelled as before.
 - A saved real-world audit records each page's kind and title, and its quotes' context.
+
+## D-051. The day's spend survives a restart (D-043, phase 3)
+
+Drafted 25 November 2026. Waiting for Aditya's approval.
+
+**What.** The dollars spent today by live runs, audits and checks are kept in Qdrant, in a small
+collection of their own (`evidentia_spend`), one point per UTC day. When the server starts, it
+reads today's figure. Each time a run, audit or check finishes, the new total is written back.
+
+- **Only the total is kept.** The per-address counts stay in memory. Storing them would mean
+  storing visitors' IP addresses, and the daily total already bounds what any address can spend.
+- **If Qdrant cannot be read at start, live runs are refused** until it can, with the message
+  "Live runs are paused: today's spend could not be read." Recorded runs still play. Each new
+  request tries the read again. Failing open would bring back the gap this fixes.
+- **If a write fails,** the total stays right in memory and the write is tried again at the next
+  finish. The failure is logged, with no secret in it.
+
+**Why.** The counters live in memory (D-028), and Cloud Run stops the only instance when no one is
+using it. Each fresh start begins the day at $0, so the $1 daily cap is not a real cap: a visitor
+who waits for the server to sleep gets a fresh budget. Each run is still capped at $0.25.
+
+**Considered.**
+
+- **Neon Postgres** (in the plan's stack). A new account, a new secret and a new driver for one
+  number.
+- **Firestore or a Cloud Storage file.** New Google APIs, permissions and a new library.
+- **Keeping it in memory with a minimum of one instance.** Costs money every hour, and a restart
+  still resets it.
+- **Console limits alone.** They are the real backstop and are still needed (Aditya sets them),
+  but they are monthly, so one bad day could use a month's budget.
+
+**Trade-off.**
+
+- **Qdrant becomes needed for audits too.** Before, only the research agent used it. The free
+  cluster pauses after a long idle spell; then live runs and audits are refused until it wakes.
+- **A run in flight when the server dies is not counted** (at most $0.25, the per-run cap).
+- **One instance only, as now.** Two instances would each write their own total.
+
+### Tests
+
+- A new server reads today's spend and refuses a run that would go over the cap.
+- Each finish writes the new total; a new day starts at $0.
+- A store that cannot be read at start refuses live runs; one that fails to write keeps the
+  total in memory and tries again.
+- No IP address is written to the store.

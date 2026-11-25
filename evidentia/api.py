@@ -32,6 +32,7 @@ from evidentia.graph import Deps, run_question
 from evidentia.limits import Limits, Refused
 from evidentia.llm import CHECK_SYSTEM, LLM, ModelStopped, check_prompt, new_tag, with_tag
 from evidentia.schemas import Judgement, RunState
+from evidentia.spend import QdrantSpend, SpendStore
 from evidentia.tracing import LangfuseTracer, Tracer
 
 log = logging.getLogger("evidentia.api")
@@ -61,6 +62,7 @@ class Services:
     make_deps: Callable[[Ledger], Deps]
     make_llm: Callable[[Ledger], LLM]
     make_audit_deps: Callable[[Ledger], AuditDeps] | None = None
+    spend: SpendStore | None = None  # None: the day's spend is kept in memory only
 
 
 def real_services() -> Services:
@@ -72,6 +74,7 @@ def real_services() -> Services:
         make_deps=lambda ledger: build_deps(settings, ledger, tracer),
         make_llm=lambda ledger: LLM(settings, ledger),
         make_audit_deps=lambda ledger: build_audit_deps(settings, ledger, tracer),
+        spend=QdrantSpend(settings),
     )
 
 
@@ -95,7 +98,7 @@ def sse(event: str, data: dict[str, Any]) -> str:
 def create_app(services: Services | None = None) -> FastAPI:
     svc = services or real_services()
     s = svc.settings
-    limits = Limits(s)
+    limits = Limits(s, store=svc.spend)
     app = FastAPI(title="Evidentia", docs_url=None, redoc_url=None)
     app.add_middleware(
         CORSMiddleware,
@@ -116,6 +119,7 @@ def create_app(services: Services | None = None) -> FastAPI:
     @app.get("/status")
     async def status() -> dict[str, Any]:
         """Lets the page say up front whether a live run is possible right now."""
+        await limits.load()
         return {
             "live_available": limits.live_available(),
             "run_cap_usd": s.public_run_cap_usd,
@@ -126,6 +130,7 @@ def create_app(services: Services | None = None) -> FastAPI:
     @app.post("/runs")
     async def start_run(body: RunRequest, request: Request) -> StreamingResponse:
         ip = client_ip(request)
+        await limits.load()
         limits.start_run(ip)
         return StreamingResponse(
             stream_run(body.question.strip(), ip),
@@ -172,6 +177,7 @@ def create_app(services: Services | None = None) -> FastAPI:
             )
             await asyncio.gather(deps.store.aclose(), return_exceptions=True)
             limits.finish_run(ip, ledger.spent)
+            await limits.save()
             svc.tracer.flush()
 
     @app.post("/audits")
@@ -179,6 +185,7 @@ def create_app(services: Services | None = None) -> FastAPI:
         if svc.make_audit_deps is None:
             raise Refused(503, "Live audits are not available on this server.")
         ip = client_ip(request)
+        await limits.load()
         limits.start_audit(ip)
         return StreamingResponse(
             stream_audit(body.answer, ip),
@@ -219,11 +226,13 @@ def create_app(services: Services | None = None) -> FastAPI:
             await asyncio.gather(task, return_exceptions=True)
             await asyncio.gather(deps.fetcher.aclose(), return_exceptions=True)
             limits.finish_audit(ip, ledger.spent)
+            await limits.save()
             svc.tracer.flush()
 
     @app.post("/check")
     async def check(body: CheckRequest, request: Request) -> dict[str, str]:
         """Try to break it: the checker's verdict on any claim against any quote."""
+        await limits.load()
         limits.start_check(client_ip(request))
         ledger = Ledger(s.check_cap_usd)
         tag = new_tag("quote")
@@ -243,6 +252,7 @@ def create_app(services: Services | None = None) -> FastAPI:
             raise Refused(502, "The checker did not return a verdict. Try again.") from err
         finally:
             limits.finish_check(ledger.spent)
+            await limits.save()
             svc.tracer.flush()
         label = "unverified" if judgement.label == "unsupported" else judgement.label
         return {"label": label, "verdict": judgement.label, "reason": judgement.reason}

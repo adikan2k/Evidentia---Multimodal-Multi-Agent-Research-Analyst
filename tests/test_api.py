@@ -26,7 +26,7 @@ QUESTION = "How fast did solar capacity grow in 2023?"
 class Harness:
     """An app wired to fakes, remembering the fake database so tests can look inside it."""
 
-    def __init__(self, settings, claims=(BACKED,)) -> None:
+    def __init__(self, settings, claims=(BACKED,), spend=None) -> None:
         self.settings = settings
         self.qdrant = MemoryQdrant()
         self.claims = list(claims)
@@ -35,6 +35,7 @@ class Harness:
             tracer=NoopTracer(),
             make_deps=self.make_deps,
             make_llm=lambda ledger: ScriptedLLM(settings, ledger, [], [], judge=judge),
+            spend=spend,
         )
         self.app = create_app(services)
         self.limits: Limits = self.app.state.limits

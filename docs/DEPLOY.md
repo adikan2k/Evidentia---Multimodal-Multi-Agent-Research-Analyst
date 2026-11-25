@@ -111,8 +111,13 @@ capitals:
 | `max_checks_per_ip` | 30 | "Try to break it" checks per address per day |
 | `max_concurrent_runs` | 2 | Runs at the same moment |
 
-The counters live in memory and reset if the instance restarts. Set a monthly spend limit in
-the Anthropic console as well; that is the limit that cannot be bypassed.
+The day's dollar total is also kept in Qdrant, in the `evidentia_spend` collection (D-051), so a
+restart does not reset the daily budget. If Qdrant cannot be read, live runs and audits are
+refused until it can. The per-address counts live in memory only, so no visitor address is
+stored, and they reset when the instance restarts.
+
+Set monthly spend limits in the Anthropic, OpenAI, Voyage and Tavily consoles as well; those are
+the limits that cannot be bypassed.
 
 ## Redeploying
 

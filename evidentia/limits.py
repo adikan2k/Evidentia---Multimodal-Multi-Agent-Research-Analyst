@@ -1,14 +1,21 @@
-"""What keeps a public "run" button from draining the account (D-028).
+"""What keeps a public "run" button from draining the account (D-028, D-051).
 
-Everything is counted in memory for the current UTC day. That is only correct while there is a
-single server instance, which is how the API is deployed.
+Everything is counted for the current UTC day. The per-address counts live in memory only. The
+day's spend is also kept in a store when one is given, so a restart does not reset it. That is
+only correct while there is a single server instance, which is how the API is deployed.
 """
 
+import logging
 from collections import Counter
 from collections.abc import Callable
 from datetime import UTC, date, datetime
 
 from evidentia.config import Settings
+from evidentia.spend import SpendStore
+
+log = logging.getLogger("evidentia.limits")
+
+UNREADABLE = "Live runs are paused: today's spend could not be read. The recorded runs still play."
 
 
 class Refused(Exception):
@@ -25,9 +32,13 @@ def today() -> date:
 
 
 class Limits:
-    def __init__(self, settings: Settings, clock: Callable[[], date] = today) -> None:
+    def __init__(
+        self, settings: Settings, clock: Callable[[], date] = today, store: SpendStore | None = None
+    ) -> None:
         self.s = settings
         self.clock = clock
+        self.store = store
+        self.loaded = store is None  # with a store, nothing is spent until today's figure is read
         self.day = clock()
         self.spent = 0.0  # dollars actually spent today
         self.reserved = 0.0  # set aside for runs still in flight
@@ -44,8 +55,33 @@ class Limits:
             self.runs.clear()
             self.checks.clear()
             self.audits.clear()
+            self.loaded = self.store is None
+
+    async def load(self) -> None:
+        """Read today's spend from the store, until it has been read once for this day."""
+        self._new_day()
+        if self.loaded or self.store is None:
+            return
+        try:
+            stored = await self.store.load(self.day)
+        except Exception as err:  # any failure: stay closed, try again on the next request
+            log.warning("could not read today's spend: %s", type(err).__name__)
+            return
+        self.spent = max(self.spent, stored)
+        self.loaded = True
+
+    async def save(self) -> None:
+        """Write today's spend. A failure keeps the figure in memory; the next save retries."""
+        if self.store is None or not self.loaded:
+            return
+        try:
+            await self.store.save(self.day, self.spent)
+        except Exception as err:
+            log.warning("could not save today's spend: %s", type(err).__name__)
 
     def _require_budget(self, amount: float) -> None:
+        if not self.loaded:
+            raise Refused(503, UNREADABLE)
         if self.spent + self.reserved + amount > self.s.daily_budget_usd:
             raise Refused(
                 429, "Today's budget for live runs is used up. The recorded runs still play."
@@ -53,6 +89,8 @@ class Limits:
 
     def live_available(self) -> bool:
         self._new_day()
+        if not self.loaded:
+            return False
         return self.spent + self.reserved + self.s.run_reserve_usd <= self.s.daily_budget_usd
 
     def start_run(self, ip: str) -> None:
@@ -89,6 +127,8 @@ class Limits:
 
     def audit_available(self) -> bool:
         self._new_day()
+        if not self.loaded:
+            return False
         return self.spent + self.reserved + self.s.audit_reserve_usd <= self.s.daily_budget_usd
 
     def start_audit(self, ip: str) -> None:
