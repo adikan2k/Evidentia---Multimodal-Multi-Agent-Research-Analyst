@@ -1,0 +1,248 @@
+{
+ "rule": "Every contradicted claim, then 5 'not on the cited page' claims for each tool, drawn with a fixed seed (D-042). Main run, page judge as shipped.",
+ "seed": 20261203,
+ "examples": [
+  {
+   "id": "openai-economy-07-1",
+   "tool": "openai",
+   "question": "economy-07",
+   "claim_index": 0,
+   "label": "contradicted",
+   "claim": "Bitcoin reached an all-time intraday high of $126,198.07 USD on October 6, 2025, according to CoinMarketCap.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "What all-time high did Bitcoin reach in 2025, and when?"
+  },
+  {
+   "id": "openai-nq-07-1",
+   "tool": "openai",
+   "question": "nq-07",
+   "claim_index": 0,
+   "label": "contradicted",
+   "claim": "Season 2 of Just Add Magic is already out.",
+   "cited_by": "paragraph",
+   "why": "every contradicted claim",
+   "question_text": "When does season 2 of just add magic come out?"
+  },
+  {
+   "id": "openai-nq-18-2",
+   "tool": "openai",
+   "question": "nq-18",
+   "claim_index": 1,
+   "label": "contradicted",
+   "claim": "Holding a V near the lips, especially in a selfie, may simply be a playful peace-sign pose.",
+   "cited_by": "paragraph",
+   "why": "every contradicted claim",
+   "question_text": "What does v sign in front of mouth mean?"
+  },
+  {
+   "id": "openai-nq-19-10",
+   "tool": "openai",
+   "question": "nq-19",
+   "claim_index": 9,
+   "label": "contradicted",
+   "claim": "The Church’s Church History Topics dates the temple recommend requirement to 1921.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "When did the word of wisdom become mandatory?"
+  },
+  {
+   "id": "openai-science-03-7",
+   "tool": "openai",
+   "question": "science-03",
+   "claim_index": 6,
+   "label": "contradicted",
+   "claim": "On February 18, 2025, the estimated impact chance peaked at 2.8% according to the European Space Agency (ESA).",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "How did estimates of asteroid 2024 YR4's chance of hitting Earth change during 2025?"
+  },
+  {
+   "id": "openai-economy-04-16",
+   "tool": "openai",
+   "question": "economy-04",
+   "claim_index": 15,
+   "label": "not_found",
+   "claim": "The White House said China committed to buying 25 million metric tons of U.S. soybeans annually from 2026 through 2028.",
+   "cited_by": "paragraph",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "What did the United States and China agree in their 2025 trade truce?"
+  },
+  {
+   "id": "openai-economy-03-5",
+   "tool": "openai",
+   "question": "economy-03",
+   "claim_index": 4,
+   "label": "not_found",
+   "claim": "The London Bullion Market Association's afternoon benchmark ended 2025 at $4,368 per troy ounce.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "How much did the price of gold rise in 2025, and what records did it set?"
+  },
+  {
+   "id": "openai-economy-06-19",
+   "tool": "openai",
+   "question": "economy-06",
+   "claim_index": 18,
+   "label": "not_found",
+   "claim": "The law capped federal borrowing for graduate students and parents and ended new Grad PLUS loans, with transition exceptions.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "What are the main provisions of the 'One Big Beautiful Bill Act' signed in July 2025?"
+  },
+  {
+   "id": "openai-health-07-10",
+   "tool": "openai",
+   "question": "health-07",
+   "claim_index": 9,
+   "label": "not_found",
+   "claim": "HHS announced five more ACIP appointees on September 15.",
+   "cited_by": "paragraph",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "What changes did the US make to its vaccine advisory committee, ACIP, in 2025?"
+  },
+  {
+   "id": "openai-health-02-14",
+   "tool": "openai",
+   "question": "health-02",
+   "claim_index": 13,
+   "label": "not_found",
+   "claim": "The agreement opens for signature after the benefit-sharing annex is adopted.",
+   "cited_by": "paragraph",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "What does the WHO Pandemic Agreement adopted in May 2025 commit countries to?"
+  },
+  {
+   "id": "claude-economy-03-22",
+   "tool": "claude",
+   "question": "economy-03",
+   "claim_index": 21,
+   "label": "contradicted",
+   "claim": "Gold reached a record $4,527 an ounce on Dec. 26.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "How much did the price of gold rise in 2025, and what records did it set?"
+  },
+  {
+   "id": "claude-economy-07-15",
+   "tool": "claude",
+   "question": "economy-07",
+   "claim_index": 14,
+   "label": "contradicted",
+   "claim": "As of the latest data in the cited source, BTC trades at $73,382.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "What all-time high did Bitcoin reach in 2025, and when?"
+  },
+  {
+   "id": "claude-economy-07-16",
+   "tool": "claude",
+   "question": "economy-07",
+   "claim_index": 15,
+   "label": "contradicted",
+   "claim": "BTC at $73,382 is about 41.9% below the record high.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "What all-time high did Bitcoin reach in 2025, and when?"
+  },
+  {
+   "id": "claude-health-09-13",
+   "tool": "claude",
+   "question": "health-09",
+   "claim_index": 12,
+   "label": "contradicted",
+   "claim": "Until early 2025, all detections in US cattle were genotype B3.13.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "How did H5N1 bird flu affect US dairy cattle and poultry in 2025?"
+  },
+  {
+   "id": "claude-science-01-4",
+   "tool": "claude",
+   "question": "science-01",
+   "claim_index": 3,
+   "label": "contradicted",
+   "claim": "The Virgo galaxy cluster contains about 10 million galaxies.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "What did the Vera C. Rubin Observatory show in its first images released in 2025, and what survey is it carrying out?"
+  },
+  {
+   "id": "claude-science-01-5",
+   "tool": "claude",
+   "question": "science-01",
+   "claim_index": 4,
+   "label": "contradicted",
+   "claim": "The Virgo cluster's about 10 million galaxies are roughly 0.05% of the ~20 billion galaxies Rubin will capture over ten years.",
+   "cited_by": "sentence",
+   "why": "every contradicted claim",
+   "question_text": "What did the Vera C. Rubin Observatory show in its first images released in 2025, and what survey is it carrying out?"
+  },
+  {
+   "id": "claude-science-09-9",
+   "tool": "claude",
+   "question": "science-09",
+   "claim_index": 8,
+   "label": "contradicted",
+   "claim": "The team on Schmidt Ocean Institute's Research Vessel Falkor (too) filmed the 30-centimeter squid at a depth of 600 meters (1,968 feet).[1]",
+   "cited_by": "paragraph",
+   "why": "every contradicted claim",
+   "question_text": "What was notable about the colossal squid filmed in 2025, and where was it seen?"
+  },
+  {
+   "id": "claude-science-07-6",
+   "tool": "claude",
+   "question": "science-07",
+   "claim_index": 5,
+   "label": "not_found",
+   "claim": "In Deep Field South, Euclid spotted over 11 million galaxies in one observation.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "What did the European Space Agency's Euclid telescope release in March 2025?"
+  },
+  {
+   "id": "claude-health-05-7",
+   "tool": "claude",
+   "question": "health-05",
+   "claim_index": 6,
+   "label": "not_found",
+   "claim": "NaV1.8 channels are part of a pain-signaling pathway in the peripheral nervous system.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "What is suzetrigine (Journavx), approved by the FDA in 2025, and why was it notable?"
+  },
+  {
+   "id": "claude-sport_culture-03-7",
+   "tool": "claude",
+   "question": "sport_culture-03",
+   "claim_index": 6,
+   "label": "not_found",
+   "claim": "Shai Gilgeous-Alexander averaged 30.3 points in the 2025 NBA Finals series.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "Which team won the 2025 NBA championship, and who was the Finals MVP?"
+  },
+  {
+   "id": "claude-nq-22-8",
+   "tool": "claude",
+   "question": "nq-22",
+   "claim_index": 7,
+   "label": "not_found",
+   "claim": "Other sources list the 2021 Rugrats reboot as having 3 seasons.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "How many seasons of the rugrats are there?"
+  },
+  {
+   "id": "claude-sport_culture-04-7",
+   "tool": "claude",
+   "question": "sport_culture-04",
+   "claim_index": 6,
+   "label": "not_found",
+   "claim": "Iga Swiatek became Poland's first Wimbledon singles champion.",
+   "cited_by": "sentence",
+   "why": "drawn at random from the not-on-the-page claims",
+   "question_text": "Who won the 2025 Wimbledon singles titles?"
+  }
+ ]
+}

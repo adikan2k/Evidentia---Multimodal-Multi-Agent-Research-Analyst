@@ -9,6 +9,7 @@
     uv run python -m evals realworld reread-summary                # free
     uv run python -m evals realworld short --cap 0.6               # paid; ask first (D-047)
     uv run python -m evals realworld short-summary                 # free
+    uv run python -m evals realworld examples                      # free (D-048)
 
 Every answer and every audit is saved, so a rerun only pays for what is missing. Each answer is
 audited twice: with the page judge as shipped (Haiku) and with OpenAI's gpt-6-luna as the page
@@ -582,7 +583,7 @@ def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
 def main(argv: list[str]) -> None:
     parser = argparse.ArgumentParser(prog="python -m evals realworld")
     steps = ["questions", "run", "summary", "reask", "reask-summary", "reread", "reread-summary"]
-    steps += ["short", "short-summary"]
+    steps += ["short", "short-summary", "examples"]
     parser.add_argument("step", choices=steps)
     parser.add_argument(
         "--limit", type=int, help="reask, reread, short: only the first N items, as a trial"
@@ -598,6 +599,11 @@ def main(argv: list[str]) -> None:
         name = "realworld" if args.which == "all" else f"realworld_{args.which}"
         path = write_result(name, summarise(args.which))
         print(f"wrote {path.name}")
+        return
+    if args.step == "examples":
+        from evals.findings import write_examples
+
+        write_examples()
         return
     if args.step == "short-summary":
         from evals.short import write_summary as write_short
