@@ -21,7 +21,7 @@ TOO_LONG_FOR_THE_SITE = {
     "confusion_reference_rows_checker_columns",
     "lowest_recall_questions",
 }
-# The real-world audit (D-042 to D-048), for the findings page. Absent files are left out, and the
+# The real-world audit (D-042 to D-049), for the findings page. Absent files are left out, and the
 # page says what is missing instead of showing a number.
 REALWORLD = (
     "realworld",
@@ -29,6 +29,9 @@ REALWORLD = (
     "realworld_rendered",
     "realworld_short",
     "realworld_hand_check",
+    "realworld_hand_check_2",  # D-049: the check that governs the page once it exists
+    "realworld_rest_of_page",
+    "realworld_rest_of_page_reask",
 )
 
 

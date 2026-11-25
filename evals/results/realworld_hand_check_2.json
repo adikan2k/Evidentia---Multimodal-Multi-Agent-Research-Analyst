@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-11-25T20:07:47+00:00",
+  "what": "Aditya's own check of the auditor's verdicts on real answers (D-044)",
+  "labeller": "Aditya (a person)",
+  "items_in_sample": 21,
+  "items_checked": 21,
+  "median_seconds_per_item": 125.5,
+  "flags_upheld": {
+    "both_tools": {
+      "hits": 9,
+      "n": 13,
+      "share": 0.6923,
+      "ci_low": 0.4237,
+      "ci_high": 0.8732,
+      "unsure": 4,
+      "would_not_open": 0
+    },
+    "openai": {
+      "hits": 6,
+      "n": 7,
+      "share": 0.8571,
+      "ci_low": 0.4869,
+      "ci_high": 0.9743,
+      "unsure": 3,
+      "would_not_open": 0
+    },
+    "claude": {
+      "hits": 3,
+      "n": 6,
+      "share": 0.5,
+      "ci_low": 0.1876,
+      "ci_high": 0.8124,
+      "unsure": 1,
+      "would_not_open": 0
+    }
+  },
+  "supported_upheld": {
+    "both_tools": {
+      "hits": 4,
+      "n": 4,
+      "share": 1.0,
+      "ci_low": 0.5101,
+      "ci_high": 1.0,
+      "unsure": 0,
+      "would_not_open": 0
+    },
+    "openai": {
+      "hits": 2,
+      "n": 2,
+      "share": 1.0,
+      "ci_low": 0.3424,
+      "ci_high": 1.0,
+      "unsure": 0,
+      "would_not_open": 0
+    },
+    "claude": {
+      "hits": 2,
+      "n": 2,
+      "share": 1.0,
+      "ci_low": 0.3424,
+      "ci_high": 1.0,
+      "unsure": 0,
+      "would_not_open": 0
+    }
+  },
+  "rule": {
+    "flags_upheld_needed_both_tools": 0.7,
+    "per_tool_guard": {
+      "tools_clearly_below": []
+    },
+    "met": false
+  },
+  "disagreements": [
+    {
+      "item": "claude:science-07:12",
+      "auditor": "not_found",
+      "person": "yes"
+    },
+    {
+      "item": "openai:technology-02:2",
+      "auditor": "not_found",
+      "person": "yes"
+    },
+    {
+      "item": "claude:economy-02:8",
+      "auditor": "not_found",
+      "person": "yes"
+    },
+    {
+      "item": "claude:science-07:7",
+      "auditor": "not_found",
+      "person": "yes"
+    }
+  ],
+  "audits": "D-049 re-audit, reader: article and rest of page"
+}

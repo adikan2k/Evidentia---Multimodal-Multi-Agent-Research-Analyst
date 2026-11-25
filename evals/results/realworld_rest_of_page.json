@@ -1,0 +1,1686 @@
+{
+  "generated_at": "2026-11-25T20:08:13+00:00",
+  "set": "all",
+  "questions": 100,
+  "judges": {
+    "haiku": {
+      "page_judge": "claude-haiku-5-5",
+      "tools": {
+        "openai": {
+          "verified_share_of_all_claims": {
+            "value": 0.1953,
+            "ci_low": 0.1432,
+            "ci_high": 0.2566
+          },
+          "failed_share_of_all_claims": {
+            "value": 0.1686,
+            "ci_low": 0.1153,
+            "ci_high": 0.2233
+          },
+          "labels": {
+            "supported": {
+              "claims": 132,
+              "share": 0.1953
+            },
+            "partial": {
+              "claims": 43,
+              "share": 0.0636
+            },
+            "contradicted": {
+              "claims": 4,
+              "share": 0.0059
+            },
+            "not_found": {
+              "claims": 110,
+              "share": 0.1627
+            },
+            "needs_human": {
+              "claims": 88,
+              "share": 0.1302
+            },
+            "unchecked": {
+              "claims": 208,
+              "share": 0.3077
+            },
+            "dead_link": {
+              "claims": 6,
+              "share": 0.0089
+            },
+            "citation_unread": {
+              "claims": 0,
+              "share": 0.0
+            },
+            "uncited": {
+              "claims": 85,
+              "share": 0.1257
+            }
+          },
+          "headline_bounds": {
+            "unread_pages": {
+              "undecided_claims": 136,
+              "if_all_supported": 0.2331,
+              "if_none_supported": 0.6503
+            },
+            "unread_pages_and_needs_human": {
+              "undecided_claims": 187,
+              "if_all_supported": 0.2016,
+              "if_none_supported": 0.6976
+            }
+          },
+          "questions": 100,
+          "claims": 676,
+          "with_verdict": 289,
+          "headline_failed_share": {
+            "value": 0.4,
+            "ci_low": 0.3005,
+            "ci_high": 0.4976
+          },
+          "headline_claims": 190,
+          "paragraph_cited_failed_share": {
+            "value": 0.3838,
+            "ci_low": 0.2537,
+            "ci_high": 0.4889
+          },
+          "paragraph_cited_claims": 99,
+          "failed_share_of_verdicts": {
+            "value": 0.3945,
+            "ci_low": 0.3019,
+            "ci_high": 0.4732
+          },
+          "contradicted": 4,
+          "shares_of_all_claims": {
+            "partial": 0.0636,
+            "needs_human": 0.1302,
+            "unchecked": 0.3077,
+            "dead_link": 0.0089,
+            "citation_unread": 0.0,
+            "uncited": 0.1257
+          },
+          "claims_per_answer": 6.76,
+          "pages_cited_per_answer": 1.56,
+          "pages_read_share": 0.609,
+          "by_source": {
+            "natural_questions": {
+              "verified_share_of_all_claims": {
+                "value": 0.1491,
+                "ci_low": 0.083,
+                "ci_high": 0.2244
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.1228,
+                "ci_low": 0.0463,
+                "ci_high": 0.211
+              },
+              "labels": {
+                "supported": {
+                  "claims": 34,
+                  "share": 0.1491
+                },
+                "partial": {
+                  "claims": 9,
+                  "share": 0.0395
+                },
+                "contradicted": {
+                  "claims": 2,
+                  "share": 0.0088
+                },
+                "not_found": {
+                  "claims": 26,
+                  "share": 0.114
+                },
+                "needs_human": {
+                  "claims": 17,
+                  "share": 0.0746
+                },
+                "unchecked": {
+                  "claims": 60,
+                  "share": 0.2632
+                },
+                "dead_link": {
+                  "claims": 6,
+                  "share": 0.0263
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 74,
+                  "share": 0.3246
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 42,
+                  "if_all_supported": 0.2093,
+                  "if_none_supported": 0.6977
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 51,
+                  "if_all_supported": 0.1895,
+                  "if_none_supported": 0.7263
+                }
+              },
+              "questions": 50,
+              "claims": 228,
+              "with_verdict": 71,
+              "headline_failed_share": {
+                "value": 0.4091,
+                "ci_low": 0.2258,
+                "ci_high": 0.55
+              },
+              "headline_claims": 44,
+              "paragraph_cited_failed_share": {
+                "value": 0.3704,
+                "ci_low": 0.1111,
+                "ci_high": 0.5345
+              },
+              "paragraph_cited_claims": 27,
+              "failed_share_of_verdicts": {
+                "value": 0.3944,
+                "ci_low": 0.2308,
+                "ci_high": 0.5109
+              },
+              "contradicted": 2,
+              "shares_of_all_claims": {
+                "partial": 0.0395,
+                "needs_human": 0.0746,
+                "unchecked": 0.2632,
+                "dead_link": 0.0263,
+                "citation_unread": 0.0,
+                "uncited": 0.3246
+              },
+              "claims_per_answer": 4.56,
+              "pages_cited_per_answer": 1.02,
+              "pages_read_share": 0.5098
+            },
+            "2025_2026": {
+              "verified_share_of_all_claims": {
+                "value": 0.2188,
+                "ci_low": 0.1465,
+                "ci_high": 0.2975
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.192,
+                "ci_low": 0.1222,
+                "ci_high": 0.2629
+              },
+              "labels": {
+                "supported": {
+                  "claims": 98,
+                  "share": 0.2188
+                },
+                "partial": {
+                  "claims": 34,
+                  "share": 0.0759
+                },
+                "contradicted": {
+                  "claims": 2,
+                  "share": 0.0045
+                },
+                "not_found": {
+                  "claims": 84,
+                  "share": 0.1875
+                },
+                "needs_human": {
+                  "claims": 71,
+                  "share": 0.1585
+                },
+                "unchecked": {
+                  "claims": 148,
+                  "share": 0.3304
+                },
+                "dead_link": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 11,
+                  "share": 0.0246
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 94,
+                  "if_all_supported": 0.2417,
+                  "if_none_supported": 0.6333
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 136,
+                  "if_all_supported": 0.2057,
+                  "if_none_supported": 0.6879
+                }
+              },
+              "questions": 50,
+              "claims": 448,
+              "with_verdict": 218,
+              "headline_failed_share": {
+                "value": 0.3973,
+                "ci_low": 0.2788,
+                "ci_high": 0.5149
+              },
+              "headline_claims": 146,
+              "paragraph_cited_failed_share": {
+                "value": 0.3889,
+                "ci_low": 0.2308,
+                "ci_high": 0.5181
+              },
+              "paragraph_cited_claims": 72,
+              "failed_share_of_verdicts": {
+                "value": 0.3945,
+                "ci_low": 0.2834,
+                "ci_high": 0.488
+              },
+              "contradicted": 2,
+              "shares_of_all_claims": {
+                "partial": 0.0759,
+                "needs_human": 0.1585,
+                "unchecked": 0.3304,
+                "dead_link": 0.0,
+                "citation_unread": 0.0,
+                "uncited": 0.0246
+              },
+              "claims_per_answer": 8.96,
+              "pages_cited_per_answer": 2.1,
+              "pages_read_share": 0.6571
+            }
+          },
+          "usd_per_answer": 0.0329,
+          "usd_per_audit": 0.0043,
+          "pages": {
+            "pages_cited": 156,
+            "pages_not_read": 61,
+            "by_reason": {
+              "too little text read (a short page, a paywall, or a page built by scripts)": 19,
+              "disallowed by robots.txt": 18,
+              "HTTP 403": 6,
+              "no readable text": 6,
+              "robots.txt could not be read": 5,
+              "HTTP 404 after a redirect": 3,
+              "HTTP 500": 1,
+              "PDF is larger than the size limit": 1,
+              "name does not resolve": 1,
+              "HTTP 404": 1
+            },
+            "sites_most_often_not_read": [
+              {
+                "site": "bls.gov",
+                "pages": 4,
+                "reasons": {
+                  "disallowed by robots.txt": 4
+                }
+              },
+              {
+                "site": "spacex.com",
+                "pages": 3,
+                "reasons": {
+                  "no readable text": 3
+                }
+              },
+              {
+                "site": "accessdata.fda.gov",
+                "pages": 3,
+                "reasons": {
+                  "HTTP 404 after a redirect": 3
+                }
+              },
+              {
+                "site": "sci.gov.in",
+                "pages": 2,
+                "reasons": {
+                  "disallowed by robots.txt": 2
+                }
+              },
+              {
+                "site": "science.nasa.gov",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "nobelprize.org",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "formula1.com",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "poetryfoundation.org",
+                "pages": 1,
+                "reasons": {
+                  "HTTP 403": 1
+                }
+              },
+              {
+                "site": "itv.com",
+                "pages": 1,
+                "reasons": {
+                  "robots.txt could not be read": 1
+                }
+              },
+              {
+                "site": "morrow.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "pc.gc.ca",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "cactusleague.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "paramountplus.com",
+                "pages": 1,
+                "reasons": {
+                  "HTTP 500": 1
+                }
+              },
+              {
+                "site": "bsgi.it",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "digital.library.adelaide.edu.au",
+                "pages": 1,
+                "reasons": {
+                  "PDF is larger than the size limit": 1
+                }
+              }
+            ]
+          }
+        },
+        "claude": {
+          "verified_share_of_all_claims": {
+            "value": 0.2592,
+            "ci_low": 0.2036,
+            "ci_high": 0.3165
+          },
+          "failed_share_of_all_claims": {
+            "value": 0.0125,
+            "ci_low": 0.0061,
+            "ci_high": 0.0207
+          },
+          "labels": {
+            "supported": {
+              "claims": 394,
+              "share": 0.2592
+            },
+            "partial": {
+              "claims": 19,
+              "share": 0.0125
+            },
+            "contradicted": {
+              "claims": 6,
+              "share": 0.0039
+            },
+            "not_found": {
+              "claims": 13,
+              "share": 0.0086
+            },
+            "needs_human": {
+              "claims": 104,
+              "share": 0.0684
+            },
+            "unchecked": {
+              "claims": 288,
+              "share": 0.1895
+            },
+            "dead_link": {
+              "claims": 18,
+              "share": 0.0118
+            },
+            "citation_unread": {
+              "claims": 0,
+              "share": 0.0
+            },
+            "uncited": {
+              "claims": 678,
+              "share": 0.4461
+            }
+          },
+          "headline_bounds": {
+            "unread_pages": {
+              "undecided_claims": 249,
+              "if_all_supported": 0.0224,
+              "if_none_supported": 0.4215
+            },
+            "unread_pages_and_needs_human": {
+              "undecided_claims": 339,
+              "if_all_supported": 0.0196,
+              "if_none_supported": 0.4944
+            }
+          },
+          "questions": 100,
+          "claims": 1520,
+          "with_verdict": 432,
+          "headline_failed_share": {
+            "value": 0.0373,
+            "ci_low": 0.0165,
+            "ci_high": 0.0654
+          },
+          "headline_claims": 375,
+          "paragraph_cited_failed_share": {
+            "value": 0.0877,
+            "ci_low": 0.0179,
+            "ci_high": 0.18
+          },
+          "paragraph_cited_claims": 57,
+          "failed_share_of_verdicts": {
+            "value": 0.044,
+            "ci_low": 0.0227,
+            "ci_high": 0.0706
+          },
+          "contradicted": 6,
+          "shares_of_all_claims": {
+            "partial": 0.0125,
+            "needs_human": 0.0684,
+            "unchecked": 0.1895,
+            "dead_link": 0.0118,
+            "citation_unread": 0.0,
+            "uncited": 0.4461
+          },
+          "claims_per_answer": 15.2,
+          "pages_cited_per_answer": 2.85,
+          "pages_read_share": 0.6246,
+          "by_source": {
+            "natural_questions": {
+              "verified_share_of_all_claims": {
+                "value": 0.0953,
+                "ci_low": 0.0448,
+                "ci_high": 0.1547
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.0048,
+                "ci_low": 0.0,
+                "ci_high": 0.0124
+              },
+              "labels": {
+                "supported": {
+                  "claims": 59,
+                  "share": 0.0953
+                },
+                "partial": {
+                  "claims": 3,
+                  "share": 0.0048
+                },
+                "contradicted": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "not_found": {
+                  "claims": 3,
+                  "share": 0.0048
+                },
+                "needs_human": {
+                  "claims": 20,
+                  "share": 0.0323
+                },
+                "unchecked": {
+                  "claims": 58,
+                  "share": 0.0937
+                },
+                "dead_link": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 476,
+                  "share": 0.769
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 51,
+                  "if_all_supported": 0.0098,
+                  "if_none_supported": 0.5098
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 66,
+                  "if_all_supported": 0.0085,
+                  "if_none_supported": 0.5726
+                }
+              },
+              "questions": 50,
+              "claims": 619,
+              "with_verdict": 65,
+              "headline_failed_share": {
+                "value": 0.0196,
+                "ci_low": 0.0,
+                "ci_high": 0.0533
+              },
+              "headline_claims": 51,
+              "paragraph_cited_failed_share": {
+                "value": 0.1429,
+                "ci_low": 0.0,
+                "ci_high": 0.3529
+              },
+              "paragraph_cited_claims": 14,
+              "failed_share_of_verdicts": {
+                "value": 0.0462,
+                "ci_low": 0.0,
+                "ci_high": 0.0962
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0048,
+                "needs_human": 0.0323,
+                "unchecked": 0.0937,
+                "dead_link": 0.0,
+                "citation_unread": 0.0,
+                "uncited": 0.769
+              },
+              "claims_per_answer": 12.38,
+              "pages_cited_per_answer": 0.98,
+              "pages_read_share": 0.5918
+            },
+            "2025_2026": {
+              "verified_share_of_all_claims": {
+                "value": 0.3718,
+                "ci_low": 0.2975,
+                "ci_high": 0.4433
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.0178,
+                "ci_low": 0.0084,
+                "ci_high": 0.0298
+              },
+              "labels": {
+                "supported": {
+                  "claims": 335,
+                  "share": 0.3718
+                },
+                "partial": {
+                  "claims": 16,
+                  "share": 0.0178
+                },
+                "contradicted": {
+                  "claims": 6,
+                  "share": 0.0067
+                },
+                "not_found": {
+                  "claims": 10,
+                  "share": 0.0111
+                },
+                "needs_human": {
+                  "claims": 84,
+                  "share": 0.0932
+                },
+                "unchecked": {
+                  "claims": 230,
+                  "share": 0.2553
+                },
+                "dead_link": {
+                  "claims": 18,
+                  "share": 0.02
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 202,
+                  "share": 0.2242
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 198,
+                  "if_all_supported": 0.0249,
+                  "if_none_supported": 0.4042
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 273,
+                  "if_all_supported": 0.0218,
+                  "if_none_supported": 0.4791
+                }
+              },
+              "questions": 50,
+              "claims": 901,
+              "with_verdict": 367,
+              "headline_failed_share": {
+                "value": 0.0401,
+                "ci_low": 0.0168,
+                "ci_high": 0.0729
+              },
+              "headline_claims": 324,
+              "paragraph_cited_failed_share": {
+                "value": 0.0698,
+                "ci_low": 0.0,
+                "ci_high": 0.1458
+              },
+              "paragraph_cited_claims": 43,
+              "failed_share_of_verdicts": {
+                "value": 0.0436,
+                "ci_low": 0.0206,
+                "ci_high": 0.0743
+              },
+              "contradicted": 6,
+              "shares_of_all_claims": {
+                "partial": 0.0178,
+                "needs_human": 0.0932,
+                "unchecked": 0.2553,
+                "dead_link": 0.02,
+                "citation_unread": 0.0,
+                "uncited": 0.2242
+              },
+              "claims_per_answer": 18.02,
+              "pages_cited_per_answer": 4.72,
+              "pages_read_share": 0.6314
+            }
+          },
+          "usd_per_answer": 0.0316,
+          "usd_per_audit": 0.005,
+          "pages": {
+            "pages_cited": 285,
+            "pages_not_read": 107,
+            "by_reason": {
+              "too little text read (a short page, a paywall, or a page built by scripts)": 36,
+              "HTTP 403": 28,
+              "disallowed by robots.txt": 25,
+              "HTTP 404": 4,
+              "page is larger than the size limit": 3,
+              "no readable text": 3,
+              "HTTP 403 after a redirect": 2,
+              "name does not resolve": 2,
+              "robots.txt could not be read": 1,
+              "network error (ReadTimeout)": 1,
+              "HTTP 429": 1,
+              "HTTP 202": 1
+            },
+            "sites_most_often_not_read": [
+              {
+                "site": "newsonair.gov.in",
+                "pages": 4,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 4
+                }
+              },
+              {
+                "site": "rottentomatoes.com",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "mcleods.fandom.com",
+                "pages": 2,
+                "reasons": {
+                  "disallowed by robots.txt": 2
+                }
+              },
+              {
+                "site": "britannica.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "cnn.com",
+                "pages": 2,
+                "reasons": {
+                  "page is larger than the size limit": 2
+                }
+              },
+              {
+                "site": "esa.int",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 404": 1,
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "smithsonianmag.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "medium.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "forbes.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "bloomberg.com",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "malaymail.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 1,
+                  "HTTP 403 after a redirect": 1
+                }
+              },
+              {
+                "site": "thebookerprizes.com",
+                "pages": 2,
+                "reasons": {
+                  "disallowed by robots.txt": 2
+                }
+              },
+              {
+                "site": "espn.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "justaddmagic.fandom.com",
+                "pages": 1,
+                "reasons": {
+                  "disallowed by robots.txt": 1
+                }
+              },
+              {
+                "site": "tvseriesfinale.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              }
+            ]
+          }
+        }
+      },
+      "openai_minus_claude": {
+        "value": 0.3627,
+        "ci_low": 0.2601,
+        "ci_high": 0.4571,
+        "questions": 100
+      },
+      "openai_minus_claude_verified_share_of_all_claims": {
+        "value": -0.0639,
+        "ci_low": -0.1262,
+        "ci_high": 0.0017,
+        "questions": 100
+      }
+    },
+    "luna": {
+      "page_judge": "gpt-6-luna",
+      "tools": {
+        "openai": {
+          "verified_share_of_all_claims": {
+            "value": 0.1728,
+            "ci_low": 0.1262,
+            "ci_high": 0.2273
+          },
+          "failed_share_of_all_claims": {
+            "value": 0.1859,
+            "ci_low": 0.1268,
+            "ci_high": 0.2451
+          },
+          "labels": {
+            "supported": {
+              "claims": 118,
+              "share": 0.1728
+            },
+            "partial": {
+              "claims": 54,
+              "share": 0.0791
+            },
+            "contradicted": {
+              "claims": 3,
+              "share": 0.0044
+            },
+            "not_found": {
+              "claims": 124,
+              "share": 0.1816
+            },
+            "needs_human": {
+              "claims": 88,
+              "share": 0.1288
+            },
+            "unchecked": {
+              "claims": 209,
+              "share": 0.306
+            },
+            "dead_link": {
+              "claims": 6,
+              "share": 0.0088
+            },
+            "citation_unread": {
+              "claims": 0,
+              "share": 0.0
+            },
+            "uncited": {
+              "claims": 81,
+              "share": 0.1186
+            }
+          },
+          "headline_bounds": {
+            "unread_pages": {
+              "undecided_claims": 137,
+              "if_all_supported": 0.2565,
+              "if_none_supported": 0.6513
+            },
+            "unread_pages_and_needs_human": {
+              "undecided_claims": 187,
+              "if_all_supported": 0.2242,
+              "if_none_supported": 0.6952
+            }
+          },
+          "questions": 100,
+          "claims": 683,
+          "with_verdict": 299,
+          "headline_failed_share": {
+            "value": 0.4238,
+            "ci_low": 0.325,
+            "ci_high": 0.5161
+          },
+          "headline_claims": 210,
+          "paragraph_cited_failed_share": {
+            "value": 0.427,
+            "ci_low": 0.2791,
+            "ci_high": 0.53
+          },
+          "paragraph_cited_claims": 89,
+          "failed_share_of_verdicts": {
+            "value": 0.4247,
+            "ci_low": 0.3378,
+            "ci_high": 0.5016
+          },
+          "contradicted": 3,
+          "shares_of_all_claims": {
+            "partial": 0.0791,
+            "needs_human": 0.1288,
+            "unchecked": 0.306,
+            "dead_link": 0.0088,
+            "citation_unread": 0.0,
+            "uncited": 0.1186
+          },
+          "claims_per_answer": 6.83,
+          "pages_cited_per_answer": 1.54,
+          "pages_read_share": 0.6104,
+          "by_source": {
+            "natural_questions": {
+              "verified_share_of_all_claims": {
+                "value": 0.1171,
+                "ci_low": 0.0639,
+                "ci_high": 0.1827
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.1441,
+                "ci_low": 0.0611,
+                "ci_high": 0.2381
+              },
+              "labels": {
+                "supported": {
+                  "claims": 26,
+                  "share": 0.1171
+                },
+                "partial": {
+                  "claims": 8,
+                  "share": 0.036
+                },
+                "contradicted": {
+                  "claims": 2,
+                  "share": 0.009
+                },
+                "not_found": {
+                  "claims": 30,
+                  "share": 0.1351
+                },
+                "needs_human": {
+                  "claims": 22,
+                  "share": 0.0991
+                },
+                "unchecked": {
+                  "claims": 57,
+                  "share": 0.2568
+                },
+                "dead_link": {
+                  "claims": 6,
+                  "share": 0.027
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 71,
+                  "share": 0.3198
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 44,
+                  "if_all_supported": 0.2299,
+                  "if_none_supported": 0.7356
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 55,
+                  "if_all_supported": 0.2041,
+                  "if_none_supported": 0.7653
+                }
+              },
+              "questions": 50,
+              "claims": 222,
+              "with_verdict": 66,
+              "headline_failed_share": {
+                "value": 0.4651,
+                "ci_low": 0.2778,
+                "ci_high": 0.6111
+              },
+              "headline_claims": 43,
+              "paragraph_cited_failed_share": {
+                "value": 0.5217,
+                "ci_low": 0.2,
+                "ci_high": 0.6667
+              },
+              "paragraph_cited_claims": 23,
+              "failed_share_of_verdicts": {
+                "value": 0.4848,
+                "ci_low": 0.3333,
+                "ci_high": 0.593
+              },
+              "contradicted": 2,
+              "shares_of_all_claims": {
+                "partial": 0.036,
+                "needs_human": 0.0991,
+                "unchecked": 0.2568,
+                "dead_link": 0.027,
+                "citation_unread": 0.0,
+                "uncited": 0.3198
+              },
+              "claims_per_answer": 4.44,
+              "pages_cited_per_answer": 0.98,
+              "pages_read_share": 0.5102
+            },
+            "2025_2026": {
+              "verified_share_of_all_claims": {
+                "value": 0.1996,
+                "ci_low": 0.1354,
+                "ci_high": 0.2725
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.2061,
+                "ci_low": 0.1273,
+                "ci_high": 0.286
+              },
+              "labels": {
+                "supported": {
+                  "claims": 92,
+                  "share": 0.1996
+                },
+                "partial": {
+                  "claims": 46,
+                  "share": 0.0998
+                },
+                "contradicted": {
+                  "claims": 1,
+                  "share": 0.0022
+                },
+                "not_found": {
+                  "claims": 94,
+                  "share": 0.2039
+                },
+                "needs_human": {
+                  "claims": 66,
+                  "share": 0.1432
+                },
+                "unchecked": {
+                  "claims": 152,
+                  "share": 0.3297
+                },
+                "dead_link": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 10,
+                  "share": 0.0217
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 93,
+                  "if_all_supported": 0.2654,
+                  "if_none_supported": 0.6231
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 132,
+                  "if_all_supported": 0.2308,
+                  "if_none_supported": 0.6722
+                }
+              },
+              "questions": 50,
+              "claims": 461,
+              "with_verdict": 233,
+              "headline_failed_share": {
+                "value": 0.4132,
+                "ci_low": 0.3007,
+                "ci_high": 0.5183
+              },
+              "headline_claims": 167,
+              "paragraph_cited_failed_share": {
+                "value": 0.3939,
+                "ci_low": 0.2128,
+                "ci_high": 0.5301
+              },
+              "paragraph_cited_claims": 66,
+              "failed_share_of_verdicts": {
+                "value": 0.4077,
+                "ci_low": 0.3004,
+                "ci_high": 0.4981
+              },
+              "contradicted": 1,
+              "shares_of_all_claims": {
+                "partial": 0.0998,
+                "needs_human": 0.1432,
+                "unchecked": 0.3297,
+                "dead_link": 0.0,
+                "citation_unread": 0.0,
+                "uncited": 0.0217
+              },
+              "claims_per_answer": 9.22,
+              "pages_cited_per_answer": 2.1,
+              "pages_read_share": 0.6571
+            }
+          },
+          "usd_per_answer": 0.0329,
+          "usd_per_audit": 0.0044,
+          "pages": {
+            "pages_cited": 154,
+            "pages_not_read": 60,
+            "by_reason": {
+              "too little text read (a short page, a paywall, or a page built by scripts)": 18,
+              "disallowed by robots.txt": 18,
+              "HTTP 403": 6,
+              "no readable text": 6,
+              "robots.txt could not be read": 5,
+              "HTTP 404 after a redirect": 3,
+              "HTTP 500": 1,
+              "PDF is larger than the size limit": 1,
+              "name does not resolve": 1,
+              "HTTP 404": 1
+            },
+            "sites_most_often_not_read": [
+              {
+                "site": "bls.gov",
+                "pages": 4,
+                "reasons": {
+                  "disallowed by robots.txt": 4
+                }
+              },
+              {
+                "site": "spacex.com",
+                "pages": 3,
+                "reasons": {
+                  "no readable text": 3
+                }
+              },
+              {
+                "site": "accessdata.fda.gov",
+                "pages": 3,
+                "reasons": {
+                  "HTTP 404 after a redirect": 3
+                }
+              },
+              {
+                "site": "sci.gov.in",
+                "pages": 2,
+                "reasons": {
+                  "disallowed by robots.txt": 2
+                }
+              },
+              {
+                "site": "science.nasa.gov",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "nobelprize.org",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "formula1.com",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "poetryfoundation.org",
+                "pages": 1,
+                "reasons": {
+                  "HTTP 403": 1
+                }
+              },
+              {
+                "site": "itv.com",
+                "pages": 1,
+                "reasons": {
+                  "robots.txt could not be read": 1
+                }
+              },
+              {
+                "site": "morrow.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "pc.gc.ca",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "paramountplus.com",
+                "pages": 1,
+                "reasons": {
+                  "HTTP 500": 1
+                }
+              },
+              {
+                "site": "bsgi.it",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "digital.library.adelaide.edu.au",
+                "pages": 1,
+                "reasons": {
+                  "PDF is larger than the size limit": 1
+                }
+              },
+              {
+                "site": "flickr.com",
+                "pages": 1,
+                "reasons": {
+                  "disallowed by robots.txt": 1
+                }
+              }
+            ]
+          }
+        },
+        "claude": {
+          "verified_share_of_all_claims": {
+            "value": 0.2625,
+            "ci_low": 0.2029,
+            "ci_high": 0.3244
+          },
+          "failed_share_of_all_claims": {
+            "value": 0.0099,
+            "ci_low": 0.0039,
+            "ci_high": 0.0174
+          },
+          "labels": {
+            "supported": {
+              "claims": 399,
+              "share": 0.2625
+            },
+            "partial": {
+              "claims": 16,
+              "share": 0.0105
+            },
+            "contradicted": {
+              "claims": 3,
+              "share": 0.002
+            },
+            "not_found": {
+              "claims": 12,
+              "share": 0.0079
+            },
+            "needs_human": {
+              "claims": 97,
+              "share": 0.0638
+            },
+            "unchecked": {
+              "claims": 302,
+              "share": 0.1987
+            },
+            "dead_link": {
+              "claims": 19,
+              "share": 0.0125
+            },
+            "citation_unread": {
+              "claims": 0,
+              "share": 0.0
+            },
+            "uncited": {
+              "claims": 672,
+              "share": 0.4421
+            }
+          },
+          "headline_bounds": {
+            "unread_pages": {
+              "undecided_claims": 257,
+              "if_all_supported": 0.0143,
+              "if_none_supported": 0.4236
+            },
+            "unread_pages_and_needs_human": {
+              "undecided_claims": 339,
+              "if_all_supported": 0.0127,
+              "if_none_supported": 0.4901
+            }
+          },
+          "questions": 100,
+          "claims": 1520,
+          "with_verdict": 430,
+          "headline_failed_share": {
+            "value": 0.0243,
+            "ci_low": 0.0066,
+            "ci_high": 0.0494
+          },
+          "headline_claims": 371,
+          "paragraph_cited_failed_share": {
+            "value": 0.1017,
+            "ci_low": 0.0233,
+            "ci_high": 0.1846
+          },
+          "paragraph_cited_claims": 59,
+          "failed_share_of_verdicts": {
+            "value": 0.0349,
+            "ci_low": 0.0143,
+            "ci_high": 0.0615
+          },
+          "contradicted": 3,
+          "shares_of_all_claims": {
+            "partial": 0.0105,
+            "needs_human": 0.0638,
+            "unchecked": 0.1987,
+            "dead_link": 0.0125,
+            "citation_unread": 0.0,
+            "uncited": 0.4421
+          },
+          "claims_per_answer": 15.2,
+          "pages_cited_per_answer": 2.87,
+          "pages_read_share": 0.6167,
+          "by_source": {
+            "natural_questions": {
+              "verified_share_of_all_claims": {
+                "value": 0.0959,
+                "ci_low": 0.044,
+                "ci_high": 0.1536
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.0065,
+                "ci_low": 0.0,
+                "ci_high": 0.0144
+              },
+              "labels": {
+                "supported": {
+                  "claims": 59,
+                  "share": 0.0959
+                },
+                "partial": {
+                  "claims": 2,
+                  "share": 0.0033
+                },
+                "contradicted": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "not_found": {
+                  "claims": 4,
+                  "share": 0.0065
+                },
+                "needs_human": {
+                  "claims": 21,
+                  "share": 0.0341
+                },
+                "unchecked": {
+                  "claims": 60,
+                  "share": 0.0976
+                },
+                "dead_link": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 469,
+                  "share": 0.7626
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 52,
+                  "if_all_supported": 0.0099,
+                  "if_none_supported": 0.5248
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 71,
+                  "if_all_supported": 0.0083,
+                  "if_none_supported": 0.6
+                }
+              },
+              "questions": 50,
+              "claims": 615,
+              "with_verdict": 65,
+              "headline_failed_share": {
+                "value": 0.0204,
+                "ci_low": 0.0,
+                "ci_high": 0.0556
+              },
+              "headline_claims": 49,
+              "paragraph_cited_failed_share": {
+                "value": 0.1875,
+                "ci_low": 0.0,
+                "ci_high": 0.3333
+              },
+              "paragraph_cited_claims": 16,
+              "failed_share_of_verdicts": {
+                "value": 0.0615,
+                "ci_low": 0.0,
+                "ci_high": 0.1058
+              },
+              "contradicted": 0,
+              "shares_of_all_claims": {
+                "partial": 0.0033,
+                "needs_human": 0.0341,
+                "unchecked": 0.0976,
+                "dead_link": 0.0,
+                "citation_unread": 0.0,
+                "uncited": 0.7626
+              },
+              "claims_per_answer": 12.3,
+              "pages_cited_per_answer": 0.98,
+              "pages_read_share": 0.5918
+            },
+            "2025_2026": {
+              "verified_share_of_all_claims": {
+                "value": 0.3757,
+                "ci_low": 0.2984,
+                "ci_high": 0.4527
+              },
+              "failed_share_of_all_claims": {
+                "value": 0.0122,
+                "ci_low": 0.0041,
+                "ci_high": 0.0232
+              },
+              "labels": {
+                "supported": {
+                  "claims": 340,
+                  "share": 0.3757
+                },
+                "partial": {
+                  "claims": 14,
+                  "share": 0.0155
+                },
+                "contradicted": {
+                  "claims": 3,
+                  "share": 0.0033
+                },
+                "not_found": {
+                  "claims": 8,
+                  "share": 0.0088
+                },
+                "needs_human": {
+                  "claims": 76,
+                  "share": 0.084
+                },
+                "unchecked": {
+                  "claims": 242,
+                  "share": 0.2674
+                },
+                "dead_link": {
+                  "claims": 19,
+                  "share": 0.021
+                },
+                "citation_unread": {
+                  "claims": 0,
+                  "share": 0.0
+                },
+                "uncited": {
+                  "claims": 203,
+                  "share": 0.2243
+                }
+              },
+              "headline_bounds": {
+                "unread_pages": {
+                  "undecided_claims": 205,
+                  "if_all_supported": 0.0152,
+                  "if_none_supported": 0.4042
+                },
+                "unread_pages_and_needs_human": {
+                  "undecided_claims": 268,
+                  "if_all_supported": 0.0136,
+                  "if_none_supported": 0.4678
+                }
+              },
+              "questions": 50,
+              "claims": 905,
+              "with_verdict": 365,
+              "headline_failed_share": {
+                "value": 0.0248,
+                "ci_low": 0.0055,
+                "ci_high": 0.0535
+              },
+              "headline_claims": 322,
+              "paragraph_cited_failed_share": {
+                "value": 0.0698,
+                "ci_low": 0.0,
+                "ci_high": 0.1613
+              },
+              "paragraph_cited_claims": 43,
+              "failed_share_of_verdicts": {
+                "value": 0.0301,
+                "ci_low": 0.0096,
+                "ci_high": 0.0585
+              },
+              "contradicted": 3,
+              "shares_of_all_claims": {
+                "partial": 0.0155,
+                "needs_human": 0.084,
+                "unchecked": 0.2674,
+                "dead_link": 0.021,
+                "citation_unread": 0.0,
+                "uncited": 0.2243
+              },
+              "claims_per_answer": 18.1,
+              "pages_cited_per_answer": 4.76,
+              "pages_read_share": 0.6218
+            }
+          },
+          "usd_per_answer": 0.0316,
+          "usd_per_audit": 0.0052,
+          "pages": {
+            "pages_cited": 287,
+            "pages_not_read": 110,
+            "by_reason": {
+              "too little text read (a short page, a paywall, or a page built by scripts)": 36,
+              "HTTP 403": 29,
+              "disallowed by robots.txt": 25,
+              "no readable text": 4,
+              "HTTP 404": 4,
+              "page is larger than the size limit": 3,
+              "HTTP 403 after a redirect": 2,
+              "network error (ReadTimeout)": 2,
+              "name does not resolve": 2,
+              "robots.txt could not be read": 1,
+              "HTTP 429": 1,
+              "HTTP 202": 1
+            },
+            "sites_most_often_not_read": [
+              {
+                "site": "newsonair.gov.in",
+                "pages": 4,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 4
+                }
+              },
+              {
+                "site": "rottentomatoes.com",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "mcleods.fandom.com",
+                "pages": 2,
+                "reasons": {
+                  "disallowed by robots.txt": 2
+                }
+              },
+              {
+                "site": "britannica.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "cnn.com",
+                "pages": 2,
+                "reasons": {
+                  "page is larger than the size limit": 2
+                }
+              },
+              {
+                "site": "esa.int",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 404": 1,
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "smithsonianmag.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "medium.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "forbes.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 2
+                }
+              },
+              {
+                "site": "bloomberg.com",
+                "pages": 2,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 2
+                }
+              },
+              {
+                "site": "malaymail.com",
+                "pages": 2,
+                "reasons": {
+                  "HTTP 403": 1,
+                  "HTTP 403 after a redirect": 1
+                }
+              },
+              {
+                "site": "thebookerprizes.com",
+                "pages": 2,
+                "reasons": {
+                  "disallowed by robots.txt": 2
+                }
+              },
+              {
+                "site": "espn.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              },
+              {
+                "site": "justaddmagic.fandom.com",
+                "pages": 1,
+                "reasons": {
+                  "disallowed by robots.txt": 1
+                }
+              },
+              {
+                "site": "tvseriesfinale.com",
+                "pages": 1,
+                "reasons": {
+                  "too little text read (a short page, a paywall, or a page built by scripts)": 1
+                }
+              }
+            ]
+          }
+        }
+      },
+      "openai_minus_claude": {
+        "value": 0.3996,
+        "ci_low": 0.2967,
+        "ci_high": 0.49,
+        "questions": 100
+      },
+      "openai_minus_claude_verified_share_of_all_claims": {
+        "value": -0.0897,
+        "ci_low": -0.1509,
+        "ci_high": -0.026,
+        "questions": 100
+      }
+    }
+  },
+  "reader": "article and rest of page (D-049)"
+}
