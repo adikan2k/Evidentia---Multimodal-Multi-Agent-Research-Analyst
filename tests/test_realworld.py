@@ -158,7 +158,9 @@ def test_a_marker_in_the_wrong_place_is_counted() -> None:
     ]
     good = with_markers(raw, cites)
     assert marker_check(raw, notes, good) == {
-        "spans": 2,
+        "annotations": 2,
+        "links_the_tool_wrote_inline": 0,
+        "markers_added_by_our_code": 2,
         "misplaced": 0,
         "spans_over_one_sentence": 0,
     }
@@ -166,11 +168,11 @@ def test_a_marker_in_the_wrong_place_is_counted() -> None:
     assert moved != good and marker_check(raw, notes, moved)["misplaced"] == 1
     wide = [{"url": a, "start": 0, "end": 38}]
     marked = raw[:38] + "[1]" + raw[38:] + f"\n\nSources:\n[1] {a}"
-    assert marker_check(raw, wide, marked) == {
-        "spans": 1,
-        "misplaced": 0,
-        "spans_over_one_sentence": 1,
-    }
+    check = marker_check(raw, wide, marked)
+    assert check["misplaced"] == 0 and check["spans_over_one_sentence"] == 1
+    linked = f"Solar grew. ([a]({a}))"
+    own = marker_check(linked, [{"url": a, "start": 12, "end": len(linked)}], linked)
+    assert own["links_the_tool_wrote_inline"] == 1 and own["markers_added_by_our_code"] == 0
 
 
 def test_repeats_are_pooled_by_question_and_their_range_is_reported() -> None:
@@ -184,4 +186,6 @@ def test_repeats_are_pooled_by_question_and_their_range_is_reported() -> None:
 
 def test_searches_are_counted_against_the_cap() -> None:
     used = searches_used([{"searches": 2}, {"searches": 5}, {"searches": 6}, {}])
-    assert used == {"answers": 3, "mean": 4.33, "max": 6, "answers_at_or_over_the_cap": 2}
+    assert used["answers"] == 3 and used["mean"] == 4.33 and used["max"] == 6
+    assert used["answers_at_or_over_the_cap"] == 2 and used["answers_with_no_search"] == 0
+    assert searches_used([{"searches": 0}, {"searches": 1}])["answers_with_no_search"] == 1

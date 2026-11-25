@@ -408,10 +408,11 @@ def marker_check(raw: str, annotations: list[dict], marked: str) -> dict[str, in
     """
     body, _, listing = marked.partition("\n\nSources:\n")
     number = {url: n for n, url in re.findall(r"^\[(\d+)\] (\S+)$", listing, re.MULTILINE)}
-    spans = misplaced = long_spans = 0
+    spans = misplaced = long_spans = inline = 0
     for a in annotations:
         span = raw[a["start"] : a["end"]]
         if a["url"] in span:  # the link is already inside the span, so no marker was added
+            inline += 1
             continue
         spans += 1
         tail = re.escape(raw[max(a["start"], a["end"] - 40) : a["end"]])
@@ -421,7 +422,14 @@ def marker_check(raw: str, annotations: list[dict], marked: str) -> dict[str, in
         # A span of more than one sentence gets one marker, at its end. The sentences before
         # the last then have no citation of their own.
         long_spans += bool(re.search(r"[.!?][\"')\]]*\s+\S", span.strip()))
-    return {"spans": spans, "misplaced": misplaced, "spans_over_one_sentence": long_spans}
+    return {
+        "annotations": len(annotations),
+        # The tool wrote the link into its own text, so the auditor reads the tool's placement.
+        "links_the_tool_wrote_inline": inline,
+        "markers_added_by_our_code": spans,
+        "misplaced": misplaced,
+        "spans_over_one_sentence": long_spans,
+    }
 
 
 def pooled(rows: list[dict]) -> list[dict]:
@@ -479,6 +487,8 @@ def searches_used(answers: list[dict]) -> dict[str, Any]:
         "mean": round(statistics.mean(used), 2),
         "max": max(used),
         "answers_at_or_over_the_cap": sum(n >= SEARCH_CAP for n in used),
+        # An answer written without searching cites nothing, so all its claims are uncited.
+        "answers_with_no_search": sum(n == 0 for n in used),
     }
 
 
@@ -548,10 +558,16 @@ def summarise_reask(judge: str = "haiku") -> dict[str, Any]:
         rows_by[tool], body["tools"][tool], checks = reask_tool(tool, chosen, judge)
         if tool == "openai":
             body["openai_markers"] = dict(checks)
-    body["openai_minus_claude"] = {
-        name: difference(rows_by["openai"][name], rows_by["claude"][name])
-        for name in rows_by["openai"]
-        if rows_by["openai"][name] and rows_by["claude"][name]
+    runs = {name: (rows_by["openai"][name], rows_by["claude"][name]) for name in rows_by["openai"]}
+    # All repeats together, one row per question, so the interval still resamples questions.
+    runs["repeats_pooled"] = tuple(  # type: ignore[assignment]
+        pooled([r for name, rows in rows_by[tool].items() if name != "first_ask" for r in rows])
+        for tool in TOOLS
+    )
+    runs = {name: pair for name, pair in runs.items() if pair[0] and pair[1]}
+    body["openai_minus_claude"] = {name: difference(*pair) for name, pair in runs.items()}
+    body["openai_minus_claude_verified_share_of_all_claims"] = {
+        name: difference(*pair, top="supported", bottom="claims") for name, pair in runs.items()
     }
     return body
 
