@@ -1,0 +1,318 @@
+{
+ "id": "economy-09-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "In 2025, Japanese Prime Minister Sanae Takaichi proposed what she called “responsible and proactive” fiscal policy: use government spending and tax relief to ease the cost-of-living squeeze, while investing in industries that could raise wages and strengthen Japan’s economy. She argued that faster growth would help bring down the government debt-to-GDP ratio. (japan.kantei.go.jp)\nCost-of-living relief. Her cabinet’s November 21 package included winter electricity and gas subsidies, a ¥20,000 payment per child, and grants for local governments to tailor relief. It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)\nHigher take-home pay. The December tax reform plan proposed raising the minimum income-tax threshold to ¥1.78 million and adjusting basic deductions for inflation. Takaichi also proposed developing refundable tax credits for low- and middle-income earners. A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)\nInvestment and wage growth. She proposed public-private investment in 17 strategic sectors, including AI, semiconductors, shipbuilding, quantum technology and aerospace. The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)\nThe November package comprised ¥21.3 trillion in new fiscal measures, or ¥25.5 trillion including government investment and loan programs. The Diet passed the supplementary budget backing the package in December. (japan.kantei.go.jp)",
+  "claims": [
+   {
+    "sentence": "She argued that faster growth would help bring down the government debt-to-GDP ratio. (japan.kantei.go.jp)",
+    "start": 276,
+    "end": 382,
+    "claim": "Takaichi argued that faster growth would help bring down the government debt-to-GDP ratio.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://japan.kantei.go.jp/104/statement/202510/24shoshinhyomei.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will curb debt growth so it does not exceed economic growth, which will lower the debt-to-GDP ratio, but it never says faster growth itself would bring the ratio down."
+     }
+    ]
+   },
+   {
+    "sentence": "It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 567,
+    "end": 717,
+    "claim": "The November 21 package called for ending the provisional gasoline tax surcharge on December 31, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "we will do away with the provisional tax on gasoline on December 31 and the provisional tax on the delivery of diesel oil on April 1",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs ending the provisional gasoline tax on December 31, but it gives no year and does not mention a November 21 package, so the 2025 date and the package's identity are not stated.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will abolish the provisional gasoline tax on December 31 and the diesel tax on April 1, but it never gives the package's date as November 21 and does not state the year of the December 31 abolition."
+     }
+    ]
+   },
+   {
+    "sentence": "It also called for ending the provisional gasoline tax surcharge on December 31, 2025, and the diesel surcharge on April 1, 2026. (japan.kantei.go.jp)",
+    "start": 567,
+    "end": 717,
+    "claim": "The November 21 package called for ending the diesel surcharge on April 1, 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As for the so-called provisional tax rates, in keeping with an agreement brokered across various political parties, we will do away with the provisional tax on gasoline on December 31 and the provisional tax on the delivery of diesel oil on April 1.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs ending the provisional tax on diesel oil delivery on April 1, but it does not mention a November 21 package, the year 2026, or the term 'diesel surcharge'.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the provisional tax on diesel oil delivery will be abolished on April 1, but it does not state the package date of November 21, does not state the year 2026, and does not use the term 'diesel surcharge.'"
+     }
+    ]
+   },
+   {
+    "sentence": "A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 975,
+    "end": 1160,
+    "claim": "The October coalition agreement included a two-year suspension of the consumption tax on qualifying food and beverages.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a December 26, 2025 cabinet decision on tax reform and does not mention an October coalition agreement or any suspension of consumption tax on food and beverages; it only covers consumption tax changes on e-commerce, the invoice system transition, and similar matters."
+     }
+    ]
+   },
+   {
+    "sentence": "A separate idea in the October coalition agreement—a two-year suspension of the consumption tax on qualifying food and beverages—was not part of the November relief package. (mof.go.jp)",
+    "start": 975,
+    "end": 1160,
+    "claim": "The two-year suspension of the consumption tax on qualifying food and beverages was not part of the November relief package.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_gaiyou.htm?utm_source=openai",
+      "host": "mof.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a December 26, 2025 Cabinet decision on tax reform covering income tax, corporate tax, consumption tax invoice transition, automobile taxes, and tariffs, but it does not mention any consumption tax suspension on food and beverages or any November relief package, so it neither confirms nor refutes the claim's specific assertion as written."
+     }
+    ]
+   },
+   {
+    "sentence": "The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)",
+    "start": 1331,
+    "end": 1515,
+    "claim": "The plan aimed to secure critical supply chains.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Government of Japan will further strengthen measures to enhance the resilience of supply chains, including revitalizing shipbuilding capacity that underpins international shipping and establishing alternative supply routes for rare earths and other critical minerals.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Supply chain issues are particularly critical.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote states the government will strengthen measures to enhance supply chain resilience, including alternative routes for critical minerals, which backs the claim that the plan aimed to secure critical supply chains, while the second quote only notes supply chain issues are critical.",
+      "page_judged": "supported",
+      "page_reason": "The page states the government will strengthen supply chain resilience, including revitalizing shipbuilding and establishing alternative supply routes for rare earths and critical minerals, and promote coordination with like-minded nations, which supports the claim that the plan aimed to secure critical supply chains."
+     }
+    ]
+   },
+   {
+    "sentence": "The plan also aimed to secure critical supply chains and help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation. (japan.kantei.go.jp)",
+    "start": 1331,
+    "end": 1515,
+    "claim": "The plan aimed to help smaller businesses improve productivity so they could sustain wage increases that outpaced inflation.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://japan.kantei.go.jp/104/actions/202512/01fii_priority.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page discusses government wage-increase requests, corporate governance reform, and working time regulation relaxation, but it does not mention any plan targeting smaller businesses or their productivity; it only says the government will create an environment for businesses to raise wages sustainably."
+     }
+    ]
+   },
+   {
+    "sentence": "The Diet passed the supplementary budget backing the package in December. (japan.kantei.go.jp)",
+    "start": 1655,
+    "end": 1749,
+    "claim": "The Diet passed the supplementary budget backing the November package in December.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://japan.kantei.go.jp/104/statement/202511/21kaiken.html?utm_source=openai",
+      "host": "japan.kantei.go.jp",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the government will compile a supplementary budget and submit it to the upcoming extraordinary Diet session for early passage, but it describes only intent and does not state that the Diet passed it in December."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 8,
+   "labels": {
+    "supported": 1,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 5,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 8,
+   "claims_with_a_verdict": 8,
+   "failed_citations": 5,
+   "failed_share_of_verdicts": 0.625,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.125,
+   "pages_cited": 4,
+   "pages_read": 4,
+   "dead_links": 0,
+   "sentences_not_located": 13,
+   "claims_over_limit": 0,
+   "usd": 0.007994,
+   "usd_per_claim": 0.000999
+  },
+  "cost": {
+   "total_usd": 0.008,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0013
+    },
+    {
+     "node": "find",
+     "calls": 9,
+     "usd": 0.0035
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0026
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0005
+    }
+   ]
+  }
+ }
+}

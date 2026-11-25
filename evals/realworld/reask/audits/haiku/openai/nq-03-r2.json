@@ -1,0 +1,116 @@
+{
+ "id": "nq-03-r2",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Erling Haaland holds the record for most goals in a single Premier League season. He scored 36 goals in 35 appearances for Manchester City in 2022/23. (premierleague.com)",
+  "claims": [
+   {
+    "sentence": "Erling Haaland holds the record for most goals in a single Premier League season.",
+    "start": 0,
+    "end": 81,
+    "claim": "Erling Haaland holds the record for most goals in a single Premier League season.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.premierleague.com/en/stats/records?utm_source=openai",
+      "host": "premierleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page lists the 'Most PL goals scored in a season' record as 106 by Manchester City (2017/18) and mentions no player, so it does not state that Erling Haaland holds the record."
+     }
+    ]
+   },
+   {
+    "sentence": "He scored 36 goals in 35 appearances for Manchester City in 2022/23. (premierleague.com)",
+    "start": 82,
+    "end": 170,
+    "claim": "Erling Haaland scored 36 goals in 35 appearances for Manchester City in 2022/23.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.premierleague.com/en/stats/records?utm_source=openai",
+      "host": "premierleague.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a Premier League records table covering titles, wins, goals, and other team statistics, and it does not mention Erling Haaland or his individual goal and appearance totals for 2022/23."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 2,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 2,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 2,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 2,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 1,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.001471,
+   "usd_per_claim": 0.000736
+  },
+  "cost": {
+   "total_usd": 0.0015,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0002
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0007
+    }
+   ]
+  }
+ }
+}

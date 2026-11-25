@@ -1,0 +1,238 @@
+{
+ "id": "nq-22-r1",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "There are two *Rugrats* series, so the answer depends on which one you mean:\nOriginal series (1991–2004): *Rugrats* ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.[1]\n2021 reboot (Paramount+): The sources disagree. The main Wikipedia page lists 3 seasons, released May 27, 2021 – April 14, 2023[2]. Other pages still show only 2 seasons, which is probably out of date. I'd go with 3.\nThat makes 9 seasons of the original, or 12 across both series if you count the reboot.",
+  "claims": [
+   {
+    "sentence": "Original series (1991–2004): *Rugrats* ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.[1]",
+    "start": 77,
+    "end": 209,
+    "claim": "The original Rugrats series (1991–2004) ran for 172 episodes across nine seasons.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Rugrats",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The series premiered on August 11, 1991, as one of Nickelodeon's original three animated series known as \"Nicktoons\".",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Rugrats ultimately ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The second quote states the 172 episodes, nine seasons, and final airing in 2004, and the first quote gives the 1991 premiere, so every fact in the claim is backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Rugrats ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004, and it gives the 1991 premiere date and the Nickelodeon origin, which together cover the claim's 1991–2004 span."
+     }
+    ]
+   },
+   {
+    "sentence": "Original series (1991–2004): *Rugrats* ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.[1]",
+    "start": 77,
+    "end": 209,
+    "claim": "The final episode of the original Rugrats series aired on August 1, 2004.[1]",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://en.wikipedia.org/wiki/Rugrats",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Rugrats ultimately ran for 172 episodes across nine seasons, with its final episode airing on August 1, 2004.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Rugrats' final episode aired on August 1, 2004, which matches the claim's date and subject exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the series' release ran from August 11, 1991 to August 1, 2004, and that its final episode aired on August 1, 2004, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "2021 reboot (Paramount+): The sources disagree. The main Wikipedia page lists 3 seasons, released May 27, 2021 – April 14, 2023[2].",
+    "start": 210,
+    "end": 341,
+    "claim": "The main Wikipedia page for the 2021 Rugrats reboot on Paramount+ lists 3 seasons.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Rugrats_(2021_TV_series)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "no quote the finder gave is word for word on the page",
+      "page_judged": "supported",
+      "page_reason": "The infobox on the page lists 'No. of seasons: 3' for the Rugrats reboot, which matches the claim's count of 3 seasons, though the claim's reference to 'the main Wikipedia page' is an attribution the page itself cannot confirm beyond showing the infobox."
+     }
+    ]
+   },
+   {
+    "sentence": "2021 reboot (Paramount+): The sources disagree. The main Wikipedia page lists 3 seasons, released May 27, 2021 – April 14, 2023[2].",
+    "start": 210,
+    "end": 341,
+    "claim": "The 2021 Rugrats reboot seasons were released from May 27, 2021 to April 14, 2023.[2]",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://en.wikipedia.org/wiki/Rugrats_(2021_TV_series)",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Release | May 27, 2021 – April 14, 2023",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives the release span May 27, 2021 to April 14, 2023, matching every date in the claim, though it does not explicitly name the reboot seasons, it is a release row consistent with that subject.",
+      "page_judged": "not_supported",
+      "page_reason": "The infobox gives May 27, 2021 to April 14, 2023 only as the Paramount+ release range, but the page also reports Season 1 finishing April 15, 2022, Season 2 episodes airing on Nicktoons in March 2024, and Season 3 premiering in June 2026, so the claimed span does not cover all the seasons' releases."
+     }
+    ]
+   },
+   {
+    "sentence": "Other pages still show only 2 seasons, which is probably out of date.",
+    "start": 342,
+    "end": 411,
+    "claim": "Other pages show the 2021 Rugrats reboot as having only 2 seasons.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "I'd go with 3.",
+    "start": 412,
+    "end": 426,
+    "claim": "The 2021 Rugrats reboot has 3 seasons.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "That makes 9 seasons of the original, or 12 across both series if you count the reboot.",
+    "start": 427,
+    "end": 514,
+    "claim": "Across both Rugrats series, there are 12 seasons if the reboot's 3 seasons are counted with the original's 9.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 7,
+   "labels": {
+    "supported": 2,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 3
+   },
+   "cited_claims": 4,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.5,
+   "pages_cited": 2,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.008095,
+   "usd_per_claim": 0.001156
+  },
+  "cost": {
+   "total_usd": 0.0081,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    },
+    {
+     "node": "find",
+     "calls": 8,
+     "usd": 0.0055
+    },
+    {
+     "node": "page_check",
+     "calls": 4,
+     "usd": 0.0018
+    },
+    {
+     "node": "check",
+     "calls": 3,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

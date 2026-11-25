@@ -1,0 +1,485 @@
+{
+ "id": "technology-07-r1",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "The October 20, 2025 AWS outage started with a software bug in the automated DNS system for DynamoDB, Amazon’s managed database, in its Northern Virginia (us-east-1) region. Two automated updates ran in an unexpected order—a *race condition*—leaving the database’s regional address with an empty DNS record. Applications that depended on that address could no longer connect. (aws.amazon.com)\nThe failure spread beyond the database. Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers, and faulty load-balancer health checks caused further connection failures. AWS Lambda and other cloud services were also affected. The main incident lasted about 14½ hours. (aws.amazon.com)\nUsers around the world felt the effects. Disrupted services included Snapchat, Signal, Slack, Canva, Roblox, Fortnite, and Amazon’s own Ring and Alexa. The failure began in one AWS region, but services used worldwide depended on it. (thousandeyes.com)",
+  "claims": [
+   {
+    "sentence": "The October 20, 2025 AWS outage started with a software bug in the automated DNS system for DynamoDB, Amazon’s managed database, in its Northern Virginia (us-east-1) region.",
+    "start": 0,
+    "end": 173,
+    "claim": "The October 20, 2025 AWS outage started with a software bug in the automated DNS system for DynamoDB, Amazon’s managed database, in its Northern Virginia (us-east-1) region.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The incident was triggered by a latent defect within the service’s automated DNS management system that caused endpoint resolution failures for DynamoDB.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the core claim that the incident was triggered by a latent software defect (race condition) in the automated DynamoDB DNS management system affecting the us-east-1 endpoint, but they do not state the October 20, 2025 date or the Northern Virginia location.",
+      "page_judged": "not_supported",
+      "page_reason": "The page states the DynamoDB disruption was triggered by a latent defect in the service's automated DNS management system (a latent race condition) in the N. Virginia (us-east-1) Region, and that it began at 11:48 PM PDT on October 19, so the claim's 'October 20' start date and framing as the outage start is only partly aligned, though the page explicitly says the event began October 19 at 11:48 PM PDT."
+     }
+    ]
+   },
+   {
+    "sentence": "Two automated updates ran in an unexpected order—a *race condition*—leaving the database’s regional address with an empty DNS record.",
+    "start": 174,
+    "end": 307,
+    "claim": "Two automated updates ran in an unexpected order, a race condition, which left DynamoDB's regional address with an empty DNS record.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The timing of these events triggered the latent race condition.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "At the same time that this clean-up process was invoked, the first Enactor (which had been unusually delayed) applied its much older plan to the regional DDB endpoint, overwriting the newer plan.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "As this plan was deleted, all IP addresses for the regional endpoint were immediately removed.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state a latent race condition in the DynamoDB DNS system that left the us-east-1 regional endpoint with an empty DNS record, and that a delayed first Enactor applied an older plan over a newer one, which matches the claimed out-of-order automated updates.",
+      "page_judged": "supported",
+      "page_reason": "The page states that a latent race condition between two DNS Enactors let an older plan overwrite a newer one, after which clean-up deleted it and removed all IP addresses, leaving an incorrect empty DNS record for the regional DynamoDB endpoint."
+     }
+    ]
+   },
+   {
+    "sentence": "Applications that depended on that address could no longer connect. (aws.amazon.com)",
+    "start": 308,
+    "end": 392,
+    "claim": "Applications that depended on DynamoDB's regional address could no longer connect.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "When this issue occurred at 11:48 PM PDT, all systems needing to connect to the DynamoDB service in the N. Virginia (us-east-1) Region via the public endpoint immediately began experiencing DNS failures and failed to connect to DynamoDB.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The root cause of this issue was a latent race condition in the DynamoDB DNS management system that resulted in an incorrect empty DNS record for the service’s regional endpoint (dynamodb.us-east-1.amazonaws.com) that the automation failed to repair.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "As this plan was deleted, all IP addresses for the regional endpoint were immediately removed.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that systems connecting to DynamoDB's regional public endpoint in us-east-1 immediately began experiencing DNS failures and failed to connect, because the regional endpoint's DNS record was empty and all its IP addresses were removed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the DNS failure removed all IP addresses for the regional endpoint (dynamodb.us-east-1.amazonaws.com), and that systems connecting via the public endpoint failed to connect to DynamoDB, which supports the claim that dependent applications could not connect."
+     }
+    ]
+   },
+   {
+    "sentence": "The failure spread beyond the database.",
+    "start": 393,
+    "end": 432,
+    "claim": "The failure spread beyond the database.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Other AWS services that rely on DynamoDB, new EC2 instance launches, Lambda invocations, and Fargate task launches such as Managed Workflows for Apache Airflow, and Outposts lifecycle operations were also impacted in the N. Virginia (us-east-1) Region.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Between 11:48 PM PDT on October 19 and 1:50 PM PDT on October 20, customers experienced increased EC2 API error rates, latencies, and instance launch failures in the N. Virginia (us-east-1) Region.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that other AWS services relying on DynamoDB, plus EC2 instance launches, Lambda invocations, and Fargate task launches, were also impacted, which backs the claim that the failure spread beyond the database.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the DynamoDB DNS failure causing downstream impacts on EC2 instance launches, Amazon Connect, Support Center, Lambda, and other services that depend on DynamoDB, which supports the claim that the failure spread beyond the database."
+     }
+    ]
+   },
+   {
+    "sentence": "Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers, and faulty load-balancer health checks caused further connection failures.",
+    "start": 433,
+    "end": 590,
+    "claim": "Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "After resolving the DynamoDB DNS issue at 2:25 AM PDT, customers continued to see increased errors for launches of new instances.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "During this period new instance launches failed with either a “request limit exceeded” or “insufficient capacity” error.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that customers still had trouble launching new EC2 instances after the DNS issue was resolved, but they describe the DNS problem as DynamoDB's DNS issue and do not state that AWS 'fixed DNS' in those words, and they name specific errors rather than general trouble.",
+      "page_judged": "supported",
+      "page_reason": "The page states that after resolving the DynamoDB DNS issue at 2:25 AM PDT, customers continued to see increased errors for new EC2 instance launches, with launches failing with 'request limit exceeded' or 'insufficient capacity' errors until full recovery at 1:50 PM PDT."
+     }
+    ]
+   },
+   {
+    "sentence": "Even after AWS fixed DNS, customers had trouble launching new EC2 virtual servers, and faulty load-balancer health checks caused further connection failures.",
+    "start": 433,
+    "end": 590,
+    "claim": "Faulty load-balancer health checks caused further connection failures.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "This was caused by health check failures in the NLB fleet, which resulted in increased connection errors on some NLBs.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "The alternating health check results increased the load on the health check subsystem, causing it to degrade, resulting in delays in health checks and triggering automatic AZ DNS failover to occur.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In this case, an application experienced increased connection errors if the remaining healthy capacity was insufficient to carry the application load.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that health check failures in the NLB fleet resulted in increased connection errors on some NLBs, which backs the claim's causal link between health checks and further connection failures.",
+      "page_judged": "supported",
+      "page_reason": "The page states that NLB health check failures caused nodes and backend targets to be removed from DNS and led to increased connection errors for some load balancers, which directly supports the claim that faulty load-balancer health checks caused further connection failures."
+     }
+    ]
+   },
+   {
+    "sentence": "AWS Lambda and other cloud services were also affected.",
+    "start": 591,
+    "end": 646,
+    "claim": "AWS Lambda and other cloud services were also affected.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Between October 19 at 11:51 PM PDT and October 20 at 2:15 PM PDT, customers experienced API errors and latencies for Lambda functions in the N. Virginia (us-east-1) Region.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Other AWS services that rely on DynamoDB, new EC2 instance launches, Lambda invocations, and Fargate task launches such as Managed Workflows for Apache Airflow, and Outposts lifecycle operations were also impacted in the N. Virginia (us-east-1) Region.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Lambda invocations and other AWS services, such as those relying on DynamoDB and Fargate task launches, were impacted, which backs the claim that AWS Lambda and other cloud services were also affected.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Lambda functions in us-east-1 experienced API errors and latencies and that Amazon Connect and AWS Support Console were also impacted, which supports the claim that Lambda and other AWS services were affected, though the page is about AWS services rather than cloud services generally and the claim's broad wording is satisfied by these specifics."
+     }
+    ]
+   },
+   {
+    "sentence": "The main incident lasted about 14½ hours. (aws.amazon.com)",
+    "start": 647,
+    "end": 705,
+    "claim": "The main incident lasted about 14½ hours.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://aws.amazon.com/message/101925/",
+      "host": "aws.amazon.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "While the event started at 11:48 PM PDT on October 19 and ended at 2:20 PM PDT on October 20",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote gives a start of 11:48 PM PDT on October 19 and an end of 2:20 PM PDT on October 20, which works out to about 14 hours 32 minutes, matching 'about 14½ hours'; the quote calls it 'the event' rather than 'the main incident', but the timestamps establish the duration.",
+      "page_judged": "supported",
+      "page_reason": "The page says the event started at 11:48 PM PDT on October 19 and ended at 2:20 PM PDT on October 20, which is about 14 hours 32 minutes, or roughly 14½ hours, though the page does not state the duration itself."
+     }
+    ]
+   },
+   {
+    "sentence": "Users around the world felt the effects.",
+    "start": 706,
+    "end": 746,
+    "claim": "Users around the world felt the effects of the AWS outage.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Disrupted services included Snapchat, Signal, Slack, Canva, Roblox, Fortnite, and Amazon’s own Ring and Alexa.",
+    "start": 747,
+    "end": 857,
+    "claim": "Disrupted services during the outage included Snapchat, Signal, Slack, Canva, Roblox, Fortnite, and Amazon's own Ring and Alexa.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The failure began in one AWS region, but services used worldwide depended on it. (thousandeyes.com)",
+    "start": 858,
+    "end": 957,
+    "claim": "The failure began in one AWS region, but services used worldwide depended on it.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.thousandeyes.com/blog/aws-outage-analysis-october-20-2025?utm_source=openai",
+      "host": "thousandeyes.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 11,
+   "labels": {
+    "supported": 6,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 3,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 7,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.5455,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.010755,
+   "usd_per_claim": 0.000978
+  },
+  "cost": {
+   "total_usd": 0.0108,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 16,
+     "usd": 0.0056
+    },
+    {
+     "node": "page_check",
+     "calls": 8,
+     "usd": 0.0029
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0017
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "id": "technology-07-r2",
+ "tool": "web search",
+ "question": "What caused the Amazon Web Services outage in October 2025, and what did it disrupt?",
+ "model": "gpt-6.2-sol",
+ "made_at": "2026-11-25T00:16:57+00:00",
+ "text": "**What caused it:** On October 20, 2025, a bug in AWS’s automated DNS system left Amazon DynamoDB’s regional endpoint in Northern Virginia (`us-east-1`) with an empty DNS record. Two automated processes interfered with each other—a timing bug known as a *race condition*—so applications couldn’t find the database service. AWS fixed the DNS problem within a few hours, but the failure had already cascaded: customers couldn’t launch new EC2 virtual servers, and some AWS Network Load Balancers couldn’t reliably route traffic. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\n**What it disrupted:** The outage started in one AWS region, but users worldwide had trouble accessing services that depended on it. Those included **Snapchat, Signal, Slack, Roblox, and Fortnite**, as well as Amazon’s own **shopping site, Ring doorbells, and Alexa**. The main AWS disruption lasted about 15 hours, with some services taking longer to clear their backlogs. ([pbs.org](https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai))",
+ "citations": 2,
+ "ended": "completed",
+ "searches": 2,
+ "raw_text": "**What caused it:** On October 20, 2025, a bug in AWS’s automated DNS system left Amazon DynamoDB’s regional endpoint in Northern Virginia (`us-east-1`) with an empty DNS record. Two automated processes interfered with each other—a timing bug known as a *race condition*—so applications couldn’t find the database service. AWS fixed the DNS problem within a few hours, but the failure had already cascaded: customers couldn’t launch new EC2 virtual servers, and some AWS Network Load Balancers couldn’t reliably route traffic. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\n**What it disrupted:** The outage started in one AWS region, but users worldwide had trouble accessing services that depended on it. Those included **Snapchat, Signal, Slack, Roblox, and Fortnite**, as well as Amazon’s own **shopping site, Ring doorbells, and Alexa**. The main AWS disruption lasted about 15 hours, with some services taking longer to clear their backlogs. ([pbs.org](https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai))",
+ "annotations": [
+  {
+   "url": "https://aws.amazon.com/message/101925/",
+   "start": 527,
+   "end": 585
+  },
+  {
+   "url": "https://www.pbs.org/newshour/nation/amazon-cloud-computing-outage-disrupts-snapchat-ring-and-many-other-online-services?utm_source=openai",
+   "start": 961,
+   "end": 1111
+  }
+ ],
+ "usd": 0.0496
+}

@@ -1,0 +1,442 @@
+{
+ "id": "health-10-r3",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "In 2025, the two countries reported 52 wild poliovirus type 1 (WPV1) cases in total. Afghanistan reported 21 and Pakistan reported 31.[1] These are the latest WHO figures, from the November 2026 Polio IHR Emergency Committee statement.\nEarlier reports gave lower numbers. For example, a December 2025 report put the total at 39 (9 in Afghanistan and 30 in Pakistan). The count rose later, partly because 11 of Afghanistan's 14 newly reported cases had paralysis onset in 2025[2].\nFor comparison, in 2024 Afghanistan recorded 25 cases and Pakistan 74.[3]",
+  "claims": [
+   {
+    "sentence": "In 2025, the two countries reported 52 wild poliovirus type 1 (WPV1) cases in total.",
+    "start": 0,
+    "end": 84,
+    "claim": "In 2025, Afghanistan and Pakistan together reported 52 wild poliovirus type 1 (WPV1) cases in total.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.who.int/news/item/13-11-2026-statement-of-the-forty-sixth-meeting-of-the-polio-ihr-emergency-committee",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that 52 WPV1 cases were reported in 2025, with 21 in Afghanistan and 31 in Pakistan, which together match the claim's total of 52 for those two countries.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025, 52 WPV1 cases were reported, with 21 in Afghanistan and 31 in Pakistan, which together total 52."
+     }
+    ]
+   },
+   {
+    "sentence": "Afghanistan reported 21 and Pakistan reported 31.[1]",
+    "start": 85,
+    "end": 137,
+    "claim": "Afghanistan reported 21 wild poliovirus type 1 (WPV1) cases in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.who.int/news/item/13-11-2026-statement-of-the-forty-sixth-meeting-of-the-polio-ihr-emergency-committee",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that 21 WPV1 cases were reported in Afghanistan in 2025, matching the claim exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025, 52 WPV1 cases were reported, with 21 in Afghanistan and 31 in Pakistan, which matches the claim exactly."
+     }
+    ]
+   },
+   {
+    "sentence": "Afghanistan reported 21 and Pakistan reported 31.[1]",
+    "start": 85,
+    "end": 137,
+    "claim": "Pakistan reported 31 wild poliovirus type 1 (WPV1) cases in 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.who.int/news/item/13-11-2026-statement-of-the-forty-sixth-meeting-of-the-polio-ihr-emergency-committee",
+      "host": "who.int",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that 31 WPV1 cases were reported in Pakistan in 2025, matching the claim's count, year, and country.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2025, 52 WPV1 cases were reported: 21 in Afghanistan and 31 in Pakistan, which directly supports the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "These are the latest WHO figures, from the November 2026 Polio IHR Emergency Committee statement.",
+    "start": 138,
+    "end": 235,
+    "claim": "The 52-case total (Afghanistan 21, Pakistan 31) are the latest WHO figures, from the November 2026 Polio IHR Emergency Committee statement.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Earlier reports gave lower numbers.",
+    "start": 236,
+    "end": 271,
+    "claim": "Earlier reports gave lower WPV1 case numbers for 2025 than the latest WHO figures.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://thekabultribune.com/en/0010991",
+      "host": "thekabultribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page reports 2025 WPV1 case counts (Afghanistan 21, Pakistan 31) but says nothing about earlier reports or prior figures, so it cannot support the claim that earlier reports gave lower numbers."
+     }
+    ]
+   },
+   {
+    "sentence": "For example, a December 2025 report put the total at 39 (9 in Afghanistan and 30 in Pakistan).",
+    "start": 272,
+    "end": 366,
+    "claim": "A December 2025 report put the 2025 WPV1 total for Afghanistan and Pakistan at 39.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "contradicted",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://thekabultribune.com/en/0010991",
+      "host": "thekabultribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "contradicted",
+      "quote_label": "contradicted",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2025, Afghanistan recorded 21 cases and Pakistan 31.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes give 2025 WPV1 cases of 21 for Afghanistan and 31 for Pakistan, which sum to 52 rather than the claimed total of 39, and nothing in the quotes mentions a December 2025 report.",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives 2025 WPV1 totals of 21 cases in Afghanistan and 31 in Pakistan (52 combined), not 39, and it does not mention any December 2025 report."
+     }
+    ]
+   },
+   {
+    "sentence": "For example, a December 2025 report put the total at 39 (9 in Afghanistan and 30 in Pakistan).",
+    "start": 272,
+    "end": 366,
+    "claim": "A December 2025 report put Afghanistan's 2025 WPV1 cases at 9.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://thekabultribune.com/en/0010991",
+      "host": "thekabultribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page states Afghanistan recorded 21 WPV1 cases in 2025 and was announced in August 2025-era context (announced Aug. 25 with 2026 data), with no mention of a December 2025 report or a figure of 9 cases."
+     }
+    ]
+   },
+   {
+    "sentence": "For example, a December 2025 report put the total at 39 (9 in Afghanistan and 30 in Pakistan).",
+    "start": 272,
+    "end": 366,
+    "claim": "A December 2025 report put Pakistan's 2025 WPV1 cases at 30.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://thekabultribune.com/en/0010991",
+      "host": "thekabultribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page gives Pakistan's 2025 WPV1 case count as 31, announced in August, and says nothing about a December 2025 report or a figure of 30."
+     }
+    ]
+   },
+   {
+    "sentence": "The count rose later, partly because 11 of Afghanistan's 14 newly reported cases had paralysis onset in 2025[2].",
+    "start": 367,
+    "end": 479,
+    "claim": "The 2025 WPV1 count rose later, partly because 11 of Afghanistan's 14 newly reported cases had paralysis onset in 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://thekabultribune.com/en/0010991",
+      "host": "thekabultribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Of Afghanistan’s 14 newly reported cases, 11 had paralysis onset in 2025.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the figure that 11 of Afghanistan's 14 newly reported cases had paralysis onset in 2025, but it says nothing about the 2025 count rising later or about that figure being a partial cause of the rise.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says 11 of Afghanistan's 14 newly reported cases had paralysis onset in 2025 and gives the 2025 total as 21, but it never says the 2025 count rose later or that these late reports partly caused any increase."
+     }
+    ]
+   },
+   {
+    "sentence": "The count rose later, partly because 11 of Afghanistan's 14 newly reported cases had paralysis onset in 2025[2].",
+    "start": 367,
+    "end": 479,
+    "claim": "Afghanistan had 14 newly reported WPV1 cases in the later update.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://thekabultribune.com/en/0010991",
+      "host": "thekabultribune.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Since the committee’s previous meeting in January, 16 new WPV1 cases have been reported in the two countries — 14 in Afghanistan and two in Pakistan.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the claim's main point that Afghanistan had 14 new WPV1 cases since the previous meeting, but it does not specify the 'later update' framing beyond that meeting, so the timing is only loosely matched.",
+      "page_judged": "supported",
+      "page_reason": "The page states that since the previous meeting 16 new WPV1 cases were reported, of which 14 were in Afghanistan and two in Pakistan, so Afghanistan had 14 newly reported cases in the later update."
+     }
+    ]
+   },
+   {
+    "sentence": "For comparison, in 2024 Afghanistan recorded 25 cases and Pakistan 74.[3]",
+    "start": 480,
+    "end": 553,
+    "claim": "In 2024, Afghanistan recorded 25 wild poliovirus cases.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://amu.tv/250895/",
+      "host": "amu.tv",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2024, Afghanistan recorded 25 cases and Pakistan 74, according to the WHO data.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that in 2024 Afghanistan recorded 25 cases, matching the claim's year, country, number and implied wild poliovirus context in the same sentence structure.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2024 Afghanistan recorded 25 cases and Pakistan 74, according to WHO data, which directly supports the claim that Afghanistan recorded 25 WPV1 cases in 2024."
+     }
+    ]
+   },
+   {
+    "sentence": "For comparison, in 2024 Afghanistan recorded 25 cases and Pakistan 74.[3]",
+    "start": 480,
+    "end": 553,
+    "claim": "In 2024, Pakistan recorded 74 wild poliovirus cases.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://amu.tv/250895/",
+      "host": "amu.tv",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In 2024, Afghanistan recorded 25 cases and Pakistan 74, according to the WHO data.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that in 2024 Pakistan recorded 74 cases, matching the claim's year, count, and country, though it does not explicitly say these are wild poliovirus cases, which the quote's context (WHO polio data) makes a reasonable reading but is not stated.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in 2024 Afghanistan recorded 25 cases and Pakistan recorded 74 according to WHO data, directly supporting the claim."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 12,
+   "labels": {
+    "supported": 5,
+    "partial": 1,
+    "contradicted": 1,
+    "needs_human": 1,
+    "not_found": 3,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 1
+   },
+   "cited_claims": 11,
+   "claims_with_a_verdict": 10,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 0.4,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.4545,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.008833,
+   "usd_per_claim": 0.000736
+  },
+  "cost": {
+   "total_usd": 0.0088,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 14,
+     "usd": 0.0047
+    },
+    {
+     "node": "page_check",
+     "calls": 11,
+     "usd": 0.0024
+    },
+    {
+     "node": "check",
+     "calls": 8,
+     "usd": 0.0012
+    }
+   ]
+  }
+ }
+}

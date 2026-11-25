@@ -1,0 +1,341 @@
+{
+ "id": "economy-01-r3",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "On April 2, 2025, which President Trump called “Liberation Day,” the U.S. announced two tiers of new tariffs: a 10% baseline tariff on most imported goods, effective April 5, and higher “reciprocal” tariffs for selected trading partners, scheduled to start April 9. The higher rates replaced the 10% baseline for those partners; they were not added on top of it. (whitehouse.gov)\n| Trading partner | Rate announced April 2 |\n|---|---:|\n| Lesotho | 50% |\n| Cambodia | 49% |\n| Vietnam | 46% |\n| China | 34% |\n| Taiwan | 32% |\n| India | 26% |\n| South Korea | 25% |\n| Japan | 24% |\n| European Union | 20% |\nThese are selected rates from the executive order’s original schedule. Canada and Mexico were excluded from this tariff package and remained under separate tariff rules. Some products were also exempt, including pharmaceuticals, semiconductors, and steel and aluminum already subject to separate tariffs. (whitehouse.gov)\nThe announced rates changed quickly: China’s rate was raised before the original 34% took effect, and most other higher rates were paused starting April 10, leaving the 10% baseline in place for most trading partners. (usitc.gov)",
+  "claims": [
+   {
+    "sentence": "The higher rates replaced the 10% baseline for those partners; they were not added on top of it. (whitehouse.gov)",
+    "start": 266,
+    "end": 379,
+    "claim": "The higher reciprocal tariff rates replaced the 10% baseline for the selected trading partners and were not added on top of it.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/?trk=public_post_comment-text&utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the duty starts at 10% and then 'increase[s]' for Annex I partners to the Annex rates, and that Annex I rates apply to articles 'except as otherwise provided,' but it never explicitly says the higher rates replace the 10% rather than stacking on it."
+     }
+    ]
+   },
+   {
+    "sentence": "| Lesotho | 50% |",
+    "start": 436,
+    "end": 453,
+    "claim": "Lesotho's rate announced April 2 was 50%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Cambodia | 49% |",
+    "start": 454,
+    "end": 472,
+    "claim": "Cambodia's rate announced April 2 was 49%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Vietnam | 46% |",
+    "start": 473,
+    "end": 490,
+    "claim": "Vietnam's rate announced April 2 was 46%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| China | 34% |",
+    "start": 491,
+    "end": 506,
+    "claim": "China's rate announced April 2 was 34%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Taiwan | 32% |",
+    "start": 507,
+    "end": 523,
+    "claim": "Taiwan's rate announced April 2 was 32%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| India | 26% |",
+    "start": 524,
+    "end": 539,
+    "claim": "India's rate announced April 2 was 26%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| South Korea | 25% |",
+    "start": 540,
+    "end": 561,
+    "claim": "South Korea's rate announced April 2 was 25%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| Japan | 24% |",
+    "start": 562,
+    "end": 577,
+    "claim": "Japan's rate announced April 2 was 24%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "| European Union | 20% |",
+    "start": 578,
+    "end": 602,
+    "claim": "The European Union's rate announced April 2 was 20%.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Some products were also exempt, including pharmaceuticals, semiconductors, and steel and aluminum already subject to separate tariffs. (whitehouse.gov)",
+    "start": 773,
+    "end": 924,
+    "claim": "Some products were exempt from the April 2 tariffs, including pharmaceuticals, semiconductors, and steel and aluminum already subject to separate tariffs.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2025/04/eo-14257.pdf?utm_source=openai",
+      "host": "whitehouse.gov",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "(b) The following goods as set forth in Annex II to this order, consistent with law, shall not be subject to the ad valorem rates of duty under this order:",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       },
+       {
+        "text": "(iv) other products enumerated in Annex II to this order, including copper, pharmaceuticals, semiconductors, lumber articles, certain critical minerals, and energy and energy products;",
+        "pages": [
+         6,
+         6
+        ],
+        "context": null
+       },
+       {
+        "text": "(ii) all articles and derivatives of steel and aluminum subject to the duties imposed pursuant to section 232 of the Trade Expansion Act of 1962",
+        "pages": [
+         5,
+         5
+        ],
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the main point that pharmaceuticals and semiconductors are exempt and that steel and aluminum articles under section 232 duties are listed, but none of the quotes mention April 2 or state that the steel and aluminum items are exempt from the April 2 tariffs.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Annex II exempts pharmaceuticals and semiconductors from the order's ad valorem duties, and that steel and aluminum articles subject to separate section 232 proclamations are not subject to the order's rates, so the claim is supported."
+     }
+    ]
+   },
+   {
+    "sentence": "The announced rates changed quickly: China’s rate was raised before the original 34% took effect, and most other higher rates were paused starting April 10, leaving the 10% baseline in place for most trading partners. (usitc.gov)",
+    "start": 925,
+    "end": 1154,
+    "claim": "China's rate was raised before the original 34% took effect.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.usitc.gov/publications/332/pub5818.pdf?utm_source=openai",
+      "host": "usitc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says China's IEEPA tariffs ranged from 10 to 125 percent and rose to as high as 145 percent, but it never mentions a 34 percent rate or says any increase happened before a 34 percent rate took effect."
+     }
+    ]
+   },
+   {
+    "sentence": "The announced rates changed quickly: China’s rate was raised before the original 34% took effect, and most other higher rates were paused starting April 10, leaving the 10% baseline in place for most trading partners. (usitc.gov)",
+    "start": 925,
+    "end": 1154,
+    "claim": "Most other higher reciprocal rates were paused starting April 10.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.usitc.gov/publications/332/pub5818.pdf?utm_source=openai",
+      "host": "usitc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page does not mention any pause of higher reciprocal tariff rates starting April 10; it only mentions a 10 percent duty effective April 5, the April 2 country-specific rates, and EU countermeasures on hold for 90 days."
+     }
+    ]
+   },
+   {
+    "sentence": "The announced rates changed quickly: China’s rate was raised before the original 34% took effect, and most other higher rates were paused starting April 10, leaving the 10% baseline in place for most trading partners. (usitc.gov)",
+    "start": 925,
+    "end": 1154,
+    "claim": "After the pause starting April 10, the 10% baseline remained in place for most trading partners.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.usitc.gov/publications/332/pub5818.pdf?utm_source=openai",
+      "host": "usitc.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page says a 10 percent IEEPA duty on all imports took effect April 5, 2025, but it never mentions a pause starting April 10 or whether the 10 percent baseline remained for most trading partners after any pause."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 4,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 9
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 4,
+   "failed_citations": 4,
+   "failed_share_of_verdicts": 1.0,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 3,
+   "pages_read": 3,
+   "dead_links": 0,
+   "sentences_not_located": 5,
+   "claims_over_limit": 0,
+   "usd": 0.010998,
+   "usd_per_claim": 0.000786
+  },
+  "cost": {
+   "total_usd": 0.011,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 10,
+     "usd": 0.0078
+    },
+    {
+     "node": "page_check",
+     "calls": 5,
+     "usd": 0.002
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}

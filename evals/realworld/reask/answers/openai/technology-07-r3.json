@@ -1,0 +1,25 @@
+{
+ "id": "technology-07-r3",
+ "tool": "web search",
+ "question": "What caused the Amazon Web Services outage in October 2025, and what did it disrupt?",
+ "model": "gpt-6.2-sol",
+ "made_at": "2026-11-25T00:17:05+00:00",
+ "text": "The **October 20, 2025 AWS outage** started with a software timing bug in the automated DNS system for Amazon DynamoDB in Northern Virginia (`us-east-1`). Two automated updates ran in an unexpected order, leaving the database service’s regional DNS record with no IP addresses. Customers and other AWS services could no longer connect to DynamoDB through that address. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\nThe failure cascaded: AWS customers had trouble launching new EC2 virtual servers, and some network load balancers failed health checks, causing connection errors even after DynamoDB’s DNS was restored. The disruption spread well beyond Virginia: users worldwide reported problems with **Snapchat, Signal, Slack, Roblox, Fortnite, Robinhood, and Amazon’s Ring**. AWS’s postmortem puts the overall incident at about **14½ hours**, though individual services recovered at different times. ([aws.amazon.com](https://aws.amazon.com/message/101925/))",
+ "citations": 1,
+ "ended": "completed",
+ "searches": 4,
+ "raw_text": "The **October 20, 2025 AWS outage** started with a software timing bug in the automated DNS system for Amazon DynamoDB in Northern Virginia (`us-east-1`). Two automated updates ran in an unexpected order, leaving the database service’s regional DNS record with no IP addresses. Customers and other AWS services could no longer connect to DynamoDB through that address. ([aws.amazon.com](https://aws.amazon.com/message/101925/))\n\nThe failure cascaded: AWS customers had trouble launching new EC2 virtual servers, and some network load balancers failed health checks, causing connection errors even after DynamoDB’s DNS was restored. The disruption spread well beyond Virginia: users worldwide reported problems with **Snapchat, Signal, Slack, Roblox, Fortnite, Robinhood, and Amazon’s Ring**. AWS’s postmortem puts the overall incident at about **14½ hours**, though individual services recovered at different times. ([aws.amazon.com](https://aws.amazon.com/message/101925/))",
+ "annotations": [
+  {
+   "url": "https://aws.amazon.com/message/101925/",
+   "start": 369,
+   "end": 427
+  },
+  {
+   "url": "https://aws.amazon.com/message/101925/",
+   "start": 916,
+   "end": 974
+  }
+ ],
+ "usd": 0.0788
+}

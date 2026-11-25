@@ -1,0 +1,773 @@
+{
+ "id": "technology-04-r3",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "In 2025, TikTok's US operations moved toward a sale to mostly American owners. The deal was signed in December 2025 and closed in January 2026.\nBackground\nCongress passed a law in 2024 that requires TikTok to be banned in the US if its Chinese parent, ByteDance, does not sell its US entity to Americans.[1]\nTrump delayed the ban from taking effect five times in 2025 while a deal was negotiated.[2]\nSeptember 2025\nTrump signed an executive order approving a proposed deal that would keep TikTok operating in the US.[3] The order is dated September 25, 2025[4].\nTrump said Chinese President Xi Jinping had agreed to the deal, but Chinese officials gave an ambiguous account that suggested a drawn-out process.[2]\nDecember 2025\nOn December 18, CEO Shou Zi Chew told employees the company had signed agreements with three managing investors: Oracle, Silver Lake and Abu Dhabi-based MGX.[3]\nThe new entity is called TikTok USDS Joint Venture LLC[3].\nSilver Lake, Oracle and MGX each hold 15%, and ByteDance retains 19.9%.[4]\nThe venture is majority owned by American investors and governed by a new seven-member, majority-American board.[5]\nClosing, in January 2026\nThe deal closed on January 22, 2026[6]. It was reported as a $14 billion deal establishing a US subsidiary of the platform to avoid a ban.[2]\nAdam Presser was appointed CEO of the joint venture.[4]\nHow it works\nByteDance keeps ownership of the algorithm and licenses it to the US joint venture, which retrains and runs a copy on American user data under Oracle's oversight.[6]\nThe safeguards also cover CapCut, Lemon8 and other US apps and websites.[4]\nCriticism\nSome critics questioned the deal. One said Americans deserve to know whether it was another \"backdoor deal\" for a billionaire takeover of TikTok.[7]",
+  "claims": [
+   {
+    "sentence": "In 2025, TikTok's US operations moved toward a sale to mostly American owners.",
+    "start": 0,
+    "end": 78,
+    "claim": "In 2025, TikTok's US operations moved toward a sale to mostly American owners.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The deal was signed in December 2025 and closed in January 2026.",
+    "start": 79,
+    "end": 143,
+    "claim": "The TikTok deal was signed in December 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The deal was signed in December 2025 and closed in January 2026.",
+    "start": 79,
+    "end": 143,
+    "claim": "The TikTok deal closed in January 2026.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Congress passed a law in 2024 that requires TikTok to be banned in the US if its Chinese parent, ByteDance, does not sell its US entity to Americans.[1]",
+    "start": 155,
+    "end": 307,
+    "claim": "Congress passed a law in 2024 that requires TikTok to be banned in the US if its Chinese parent, ByteDance, does not sell its US entity to Americans.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://abcnews.com/US/tiktok-signs-deal-create-new-us-joint-venture/story?id=128540504",
+      "host": "abcnews.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "It comes after Congress passed a law last year that requires TikTok to be banned in the U.S. if its Chinese parent company, ByteDance, does not sell its U.S. entity to Americans.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the law requiring a TikTok ban unless ByteDance sells its US entity, but it says only 'last year' and never states that the law was passed in 2024.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Congress passed the law 'last year' but never gives the year, so it does not state that the law was passed in 2024."
+     }
+    ]
+   },
+   {
+    "sentence": "Trump delayed the ban from taking effect five times in 2025 while a deal was negotiated.[2]",
+    "start": 308,
+    "end": 399,
+    "claim": "Trump delayed the TikTok ban from taking effect five times in 2025 while a deal was negotiated.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://finance.yahoo.com/news/deal-us-ownership-tiktok-closed-002520253.html",
+      "host": "finance.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "But Trump delayed the ban from taking effect five times last year while a deal was negotiated to divest the app to American owners.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Trump delayed the ban from taking effect five times 'last year' while a deal was negotiated, which matches the claim's 2025 timing and five delays.",
+      "page_judged": "not_supported",
+      "page_reason": "The page says Trump delayed the ban five times 'last year' while a deal was negotiated, but the article's dating (deal closed in a later year, with 'last year' referring to the delays) is not explicitly stated as 2025 on the page, so the year qualifier cannot be confirmed from the text alone."
+     }
+    ]
+   },
+   {
+    "sentence": "Trump signed an executive order approving a proposed deal that would keep TikTok operating in the US.[3]",
+    "start": 415,
+    "end": 519,
+    "claim": "Trump signed an executive order approving a proposed deal that would keep TikTok operating in the US.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/12/18/tik-tok-us-sale-china.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "In September, President Donald Trump signed an executive order approving a proposed deal that would keep TikTok operational in the U.S. by meeting the requirements of a law originally signed by former President Joe Biden.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Trump signed an executive order approving a proposed deal that would keep TikTok operational in the U.S., which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that in September President Donald Trump signed an executive order approving a proposed deal that would keep TikTok operational in the U.S., which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The order is dated September 25, 2025[4].",
+    "start": 520,
+    "end": 561,
+    "claim": "The executive order is dated September 25, 2025.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newsroom.tiktok.com/announcement-from-the-new-tiktok-usds-joint-venture-llc?lang=en",
+      "host": "newsroom.tiktok.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "the Executive Order signed by President Trump on September 25, 2025, now enabling more than 200 million Americans",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the Executive Order was signed by President Trump on September 25, 2025, which matches the claim's date exactly.",
+      "page_judged": "supported",
+      "page_reason": "The page states twice that the Executive Order was signed by President Trump on September 25, 2025, which matches the claim's date."
+     }
+    ]
+   },
+   {
+    "sentence": "Trump said Chinese President Xi Jinping had agreed to the deal, but Chinese officials gave an ambiguous account that suggested a drawn-out process.[2]",
+    "start": 562,
+    "end": 712,
+    "claim": "Trump said Chinese President Xi Jinping had agreed to the TikTok deal.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://finance.yahoo.com/news/deal-us-ownership-tiktok-closed-002520253.html",
+      "host": "finance.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Trump said in September that Chinese President Xi Jinping had agreed to the deal, but Chinese officials provided an ambiguous narrative",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states Trump said Xi Jinping had agreed to the deal, which matches the claim's main point; the claim's TikTok reference is the only detail not named in the quote, but the deal context is implied by the quote's 'the deal' and the claim's wording is otherwise fully backed.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Trump said in September that Xi Jinping had agreed to the deal, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Trump said Chinese President Xi Jinping had agreed to the deal, but Chinese officials gave an ambiguous account that suggested a drawn-out process.[2]",
+    "start": 562,
+    "end": 712,
+    "claim": "Chinese officials gave an ambiguous account of the TikTok deal that suggested a drawn-out process.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://finance.yahoo.com/news/deal-us-ownership-tiktok-closed-002520253.html",
+      "host": "finance.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Chinese officials provided an ambiguous narrative, signaling that any deal would be a drawn out process.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs the ambiguous account and the drawn-out process, but it never mentions TikTok or a deal by name, so the claim's specific subject is not stated in the quotes.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'Chinese officials provided an ambiguous narrative, signaling that any deal would be a drawn out process,' which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "On December 18, CEO Shou Zi Chew told employees the company had signed agreements with three managing investors: Oracle, Silver Lake and Abu Dhabi-based MGX.[3]",
+    "start": 727,
+    "end": 887,
+    "claim": "On December 18, TikTok CEO Shou Zi Chew told employees the company had signed agreements with three managing investors: Oracle, Silver Lake and Abu Dhabi-based MGX.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/12/18/tik-tok-us-sale-china.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "As part of the joint venture, Chew said the company has signed agreements with the three managing investors: Oracle, Silver Lake, and Abu Dhabi-based MGX.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote backs that Chew said agreements were signed with Oracle, Silver Lake and MGX, but it does not state the December 18 date or that he was speaking to employees.",
+      "page_judged": "not_supported",
+      "page_reason": "The page confirms Chew told employees about signed agreements with Oracle, Silver Lake and MGX, but it only says the memo came on \"Thursday\" and never states the date December 18."
+     }
+    ]
+   },
+   {
+    "sentence": "The new entity is called TikTok USDS Joint Venture LLC[3].",
+    "start": 888,
+    "end": 946,
+    "claim": "The new entity is called TikTok USDS Joint Venture LLC.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://www.cnbc.com/2025/12/18/tik-tok-us-sale-china.html",
+      "host": "cnbc.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The entity is named TikTok USDS Joint Venture LLC, according to a memo sent by Chew and obtained by CNBC.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the entity is named TikTok USDS Joint Venture LLC, matching the claim's name exactly and without added facts.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the entity is named TikTok USDS Joint Venture LLC according to the memo obtained by CNBC."
+     }
+    ]
+   },
+   {
+    "sentence": "Silver Lake, Oracle and MGX each hold 15%, and ByteDance retains 19.9%.[4]",
+    "start": 947,
+    "end": 1021,
+    "claim": "Silver Lake, Oracle and MGX each hold 15% of the TikTok joint venture.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newsroom.tiktok.com/announcement-from-the-new-tiktok-usds-joint-venture-llc?lang=en",
+      "host": "newsroom.tiktok.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "TikTok USDS Joint Venture has three managing investors, Silver Lake, Oracle and MGX, each holding 15%.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Silver Lake, Oracle and MGX are the three managing investors of the TikTok USDS Joint Venture, each holding 15%, which covers every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Silver Lake, Oracle and MGX are the three managing investors, each holding 15% of TikTok USDS Joint Venture LLC, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Silver Lake, Oracle and MGX each hold 15%, and ByteDance retains 19.9%.[4]",
+    "start": 947,
+    "end": 1021,
+    "claim": "ByteDance retains 19.9% of the TikTok joint venture.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newsroom.tiktok.com/announcement-from-the-new-tiktok-usds-joint-venture-llc?lang=en",
+      "host": "newsroom.tiktok.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "ByteDance retains 19.9% of the Joint Venture.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that ByteDance retains 19.9% of the Joint Venture, which matches the claim's figure and subject; the claim's reference to TikTok is implied by the context of the joint venture but not named in the quote itself.",
+      "page_judged": "supported",
+      "page_reason": "The page states that 'ByteDance retains 19.9% of the Joint Venture,' which directly matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The venture is majority owned by American investors and governed by a new seven-member, majority-American board.[5]",
+    "start": 1022,
+    "end": 1137,
+    "claim": "The TikTok joint venture is majority owned by American investors.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://au.variety.com/2025/digital/news/tiktok-us-joint-venture-deal-close-date-oracle-silver-lake-31293",
+      "host": "au.variety.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The agreements specify that the U.S. joint venture will be majority-owned by American investors",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the U.S. joint venture will be majority-owned by American investors, which matches the claim's wording; the claim adds no further specifics beyond that.",
+      "page_judged": "supported",
+      "page_reason": "The page states the U.S. joint venture will be majority owned by American investors and that 50% is held by a consortium of new investors (Oracle, Silver Lake, MGX at 15% each) plus 30.1% held by affiliates of existing ByteDance investors, though it also says ByteDance retains 19.9%, so the claim that it is majority owned by American investors is stated directly in the agreement terms."
+     }
+    ]
+   },
+   {
+    "sentence": "The venture is majority owned by American investors and governed by a new seven-member, majority-American board.[5]",
+    "start": 1022,
+    "end": 1137,
+    "claim": "The TikTok joint venture is governed by a new seven-member, majority-American board.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://au.variety.com/2025/digital/news/tiktok-us-joint-venture-deal-close-date-oracle-silver-lake-31293",
+      "host": "au.variety.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "governed by a new seven-member majority-American board of directors",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the venture is governed by a new seven-member, majority-American board, which matches every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states the U.S. joint venture will be governed by a new seven-member majority-American board of directors, which matches the claim fully."
+     }
+    ]
+   },
+   {
+    "sentence": "The deal closed on January 22, 2026[6].",
+    "start": 1163,
+    "end": 1202,
+    "claim": "The TikTok deal closed on January 22, 2026.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revenuememo.com/p/who-owns-tiktok",
+      "host": "revenuememo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The biggest change to TikTok's ownership came on January 22, 2026, when a new company, TikTok U.S. Data Security Joint Venture LLC (TikTok USDS), took control of the app's U.S. business.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that on January 22, 2026 a new company, TikTok USDS, took control of TikTok's U.S. business, which backs the claim that the deal closed on that date.",
+      "page_judged": "supported",
+      "page_reason": "The page states that TikTok U.S. Data Security Joint Venture LLC took control of the app's U.S. business on January 22, 2026, and that the deal closed in January 2026, so the claim's date and event are supported."
+     }
+    ]
+   },
+   {
+    "sentence": "It was reported as a $14 billion deal establishing a US subsidiary of the platform to avoid a ban.[2]",
+    "start": 1203,
+    "end": 1304,
+    "claim": "The TikTok deal was reported as a $14 billion deal establishing a US subsidiary of the platform to avoid a ban.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://finance.yahoo.com/news/deal-us-ownership-tiktok-closed-002520253.html",
+      "host": "finance.yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "TikTok has closed a $14 billion deal establishing a U.S. subsidiary of the platform to avoid a ban, the company said Thursday.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states the $14 billion deal establishing a U.S. subsidiary to avoid a ban, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states TikTok closed a $14 billion deal establishing a U.S. subsidiary of the platform to avoid a ban, which matches every part of the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Adam Presser was appointed CEO of the joint venture.[4]",
+    "start": 1305,
+    "end": 1360,
+    "claim": "Adam Presser was appointed CEO of the TikTok joint venture.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newsroom.tiktok.com/announcement-from-the-new-tiktok-usds-joint-venture-llc?lang=en",
+      "host": "newsroom.tiktok.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The Joint Venture will be led by Adam Presser, who was appointed today as CEO by the Board as one of its first actions.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Adam Presser serves as CEO of TikTok USDS Joint Venture.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that Adam Presser was appointed CEO by the Board of the Joint Venture and that he serves as CEO of TikTok USDS Joint Venture, which covers the claim's full content.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Adam Presser was appointed as CEO of the TikTok USDS Joint Venture by the Board as one of its first actions, which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "ByteDance keeps ownership of the algorithm and licenses it to the US joint venture, which retrains and runs a copy on American user data under Oracle's oversight.[6]",
+    "start": 1374,
+    "end": 1539,
+    "claim": "ByteDance keeps ownership of the TikTok algorithm and licenses it to the US joint venture.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revenuememo.com/p/who-owns-tiktok",
+      "host": "revenuememo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "ByteDance does not hand over the technology that makes TikTok work. Instead it keeps ownership of the recommendation algorithm and licenses it to the joint venture, which retrains and runs a copy on U.S. user data.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "In the final deal, the two sides settled on licensing rather than an outright sale. ByteDance keeps ownership of the algorithm and licenses it to the U.S. joint venture, which retrains and runs a copy on American user data under Oracle's oversight.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "Both quotes state that ByteDance keeps ownership of the recommendation algorithm and licenses it to the US joint venture, which is exactly what the claim says.",
+      "page_judged": "supported",
+      "page_reason": "The page states that ByteDance keeps ownership of the recommendation algorithm and licenses it to the U.S. joint venture, which retrains and runs a copy on U.S. data."
+     }
+    ]
+   },
+   {
+    "sentence": "ByteDance keeps ownership of the algorithm and licenses it to the US joint venture, which retrains and runs a copy on American user data under Oracle's oversight.[6]",
+    "start": 1374,
+    "end": 1539,
+    "claim": "The US joint venture retrains and runs a copy of the algorithm on American user data under Oracle's oversight.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.revenuememo.com/p/who-owns-tiktok",
+      "host": "revenuememo.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "ByteDance keeps ownership of the algorithm and licenses it to the U.S. joint venture, which retrains and runs a copy on American user data under Oracle's oversight.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Instead it keeps ownership of the recommendation algorithm and licenses it to the joint venture, which retrains and runs a copy on U.S. user data. Oracle hosts that data and oversees the app's code, extending the earlier \"Project Texas\" arrangement.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes state that the U.S. joint venture retrains and runs a copy of the algorithm on American/U.S. user data under Oracle's oversight, matching every fact in the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that ByteDance licenses the algorithm to the U.S. joint venture, which retrains and runs a copy on U.S. user data, with Oracle hosting the data and overseeing the app's code, matching the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "The safeguards also cover CapCut, Lemon8 and other US apps and websites.[4]",
+    "start": 1540,
+    "end": 1615,
+    "claim": "The safeguards also cover CapCut, Lemon8 and other US apps and websites.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://newsroom.tiktok.com/announcement-from-the-new-tiktok-usds-joint-venture-llc?lang=en",
+      "host": "newsroom.tiktok.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "The safeguards provided by the Joint Venture will also cover CapCut, and Lemon8, and a portfolio of other apps and websites in the U.S.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that the safeguards will cover CapCut, Lemon8, and other apps and websites in the U.S., which matches every element of the claim.",
+      "page_judged": "supported",
+      "page_reason": "The page states that the safeguards provided by the Joint Venture will also cover CapCut, Lemon8, and a portfolio of other apps and websites in the U.S., which matches the claim."
+     }
+    ]
+   },
+   {
+    "sentence": "Some critics questioned the deal. One said Americans deserve to know whether it was another \"backdoor deal\" for a billionaire takeover of TikTok.[7]",
+    "start": 1626,
+    "end": 1774,
+    "claim": "One critic said Americans deserve to know whether the TikTok deal was another \"backdoor deal\" for a billionaire takeover of TikTok.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://malaymail.com/news/money/2025/12/19/bytedance-signs-deal-to-save-tiktok-in-the-us/202496",
+      "host": "malaymail.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403 after a redirect",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 22,
+   "labels": {
+    "supported": 14,
+    "partial": 2,
+    "contradicted": 0,
+    "needs_human": 2,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 1,
+    "citation_unread": 0,
+    "uncited": 3
+   },
+   "cited_claims": 19,
+   "claims_with_a_verdict": 16,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 2,
+   "supported_share_of_cited": 0.7368,
+   "pages_cited": 7,
+   "pages_read": 6,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.009875,
+   "usd_per_claim": 0.000449
+  },
+  "cost": {
+   "total_usd": 0.0099,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0011
+    },
+    {
+     "node": "find",
+     "calls": 18,
+     "usd": 0.0037
+    },
+    {
+     "node": "page_check",
+     "calls": 18,
+     "usd": 0.003
+    },
+    {
+     "node": "check",
+     "calls": 18,
+     "usd": 0.0022
+    }
+   ]
+  }
+ }
+}

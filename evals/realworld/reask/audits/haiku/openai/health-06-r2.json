@@ -1,0 +1,251 @@
+{
+ "id": "health-06-r2",
+ "tool": "openai",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Baby KJ Muldoon received a custom CRISPR base-editing therapy designed to correct a specific mutation in his *CPS1* gene. The treatment used lipid nanoparticles to deliver the editor to his liver cells. KJ was born with severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that prevents the body from clearing toxic ammonia. (beta.nih.gov)\nHe received his first dose on February 25, 2025, at Children’s Hospital of Philadelphia, becoming the first person to receive a CRISPR therapy tailored to their individual mutation. (chop.edu)",
+  "claims": [
+   {
+    "sentence": "Baby KJ Muldoon received a custom CRISPR base-editing therapy designed to correct a specific mutation in his *CPS1* gene.",
+    "start": 0,
+    "end": 121,
+    "claim": "Baby KJ Muldoon received a custom CRISPR base-editing therapy designed to correct a specific mutation in his CPS1 gene.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://beta.nih.gov/news-events/nih-research-matters/infant-rare-disease-receives-customized-gene-therapy?utm_source=openai",
+      "host": "beta.nih.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The treatment used lipid nanoparticles to deliver the editor to his liver cells.",
+    "start": 122,
+    "end": 202,
+    "claim": "The treatment used lipid nanoparticles to deliver the editor to KJ Muldoon's liver cells.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://beta.nih.gov/news-events/nih-research-matters/infant-rare-disease-receives-customized-gene-therapy?utm_source=openai",
+      "host": "beta.nih.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "KJ was born with severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that prevents the body from clearing toxic ammonia. (beta.nih.gov)",
+    "start": 203,
+    "end": 361,
+    "claim": "KJ was born with severe carbamoyl phosphate synthetase 1 (CPS1) deficiency.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://beta.nih.gov/news-events/nih-research-matters/infant-rare-disease-receives-customized-gene-therapy?utm_source=openai",
+      "host": "beta.nih.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "KJ was born with severe carbamoyl phosphate synthetase 1 (CPS1) deficiency, a rare disorder that prevents the body from clearing toxic ammonia. (beta.nih.gov)",
+    "start": 203,
+    "end": 361,
+    "claim": "Carbamoyl phosphate synthetase 1 (CPS1) deficiency is a rare disorder that prevents the body from clearing toxic ammonia.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://beta.nih.gov/news-events/nih-research-matters/infant-rare-disease-receives-customized-gene-therapy?utm_source=openai",
+      "host": "beta.nih.gov",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He received his first dose on February 25, 2025, at Children’s Hospital of Philadelphia, becoming the first person to receive a CRISPR therapy tailored to their individual mutation. (chop.edu)",
+    "start": 362,
+    "end": 554,
+    "claim": "KJ Muldoon received his first dose of the therapy on February 25, 2025.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital?utm_source=openai",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He received his first dose on February 25, 2025, at Children’s Hospital of Philadelphia, becoming the first person to receive a CRISPR therapy tailored to their individual mutation. (chop.edu)",
+    "start": 362,
+    "end": 554,
+    "claim": "KJ Muldoon received his first dose at Children’s Hospital of Philadelphia.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital?utm_source=openai",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He received his first dose on February 25, 2025, at Children’s Hospital of Philadelphia, becoming the first person to receive a CRISPR therapy tailored to their individual mutation. (chop.edu)",
+    "start": 362,
+    "end": 554,
+    "claim": "KJ Muldoon became the first person to receive a CRISPR therapy tailored to his individual mutation.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital?utm_source=openai",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 7,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 7,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 7,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000504,
+   "usd_per_claim": 7.2e-05
+  },
+  "cost": {
+   "total_usd": 0.0005,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0005
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "id": "sport_culture-10-r1",
+ "tool": "claude",
+ "judge": "claude-haiku-5-5",
+ "report": {
+  "answer_text": "Cardinal Robert Francis Prevost was elected pope on May 8, 2025, and took the name Pope Leo XIV. He is the first pope from the United States. He succeeded Pope Francis, who died in April 2025. Before his election, Prevost had served as a missionary in Peru and led the Dicastery for Bishops in the Vatican.",
+  "claims": [
+   {
+    "sentence": "Cardinal Robert Francis Prevost was elected pope on May 8, 2025, and took the name Pope Leo XIV.",
+    "start": 0,
+    "end": 96,
+    "claim": "Cardinal Robert Francis Prevost was elected pope on May 8, 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Cardinal Robert Francis Prevost was elected pope on May 8, 2025, and took the name Pope Leo XIV.",
+    "start": 0,
+    "end": 96,
+    "claim": "Cardinal Robert Francis Prevost took the name Pope Leo XIV.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "He is the first pope from the United States.",
+    "start": 97,
+    "end": 141,
+    "claim": "Robert Francis Prevost (Pope Leo XIV) is the first pope from the United States.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "He succeeded Pope Francis, who died in April 2025.",
+    "start": 142,
+    "end": 192,
+    "claim": "Robert Francis Prevost succeeded Pope Francis.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "He succeeded Pope Francis, who died in April 2025.",
+    "start": 142,
+    "end": 192,
+    "claim": "Pope Francis died in April 2025.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Before his election, Prevost had served as a missionary in Peru and led the Dicastery for Bishops in the Vatican.",
+    "start": 193,
+    "end": 306,
+    "claim": "Before his election, Prevost had served as a missionary in Peru.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "Before his election, Prevost had served as a missionary in Peru and led the Dicastery for Bishops in the Vatican.",
+    "start": 193,
+    "end": 306,
+    "claim": "Before his election, Prevost led the Dicastery for Bishops in the Vatican.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   }
+  ],
+  "scorecard": {
+   "claims": 7,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 0,
+    "citation_unread": 0,
+    "uncited": 7
+   },
+   "cited_claims": 0,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": null,
+   "pages_cited": 0,
+   "pages_read": 0,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000346,
+   "usd_per_claim": 4.9e-05
+  },
+  "cost": {
+   "total_usd": 0.0003,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0003
+    }
+   ]
+  }
+ }
+}
