@@ -1,0 +1,297 @@
+{
+ "id": "sport_culture-07",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.formula1.com/en/results/2025/drivers?utm_source=openai",
+   "read": false,
+   "why_not": "still too little text after the browser ran the page"
+  },
+  {
+   "url": "https://www.formula1.com/en/latest/article/highlights-relive-the-action-as-norris-is-crowned-champion-while-verstappen.2Z4Gu6PS7j4lOOQ7Wkct6I.2Z4Gu6PS7j4lOOQ7Wkct6I?utm_source=openai",
+   "read": true,
+   "chars": 2051
+  }
+ ],
+ "usd": 0.001476,
+ "report": {
+  "answer_text": "McLaren’s Lando Norris won his first Formula 1 World Drivers’ Championship in 2025, beating Max Verstappen by just 2 points: 423 to 421. Norris’s teammate Oscar Piastri finished third with 410 points. (formula1.com)\nThe title went down to the final race in Abu Dhabi. Verstappen won the race, but Norris finished third—just enough to clinch the championship. (formula1.com)",
+  "claims": [
+   {
+    "sentence": "Norris’s teammate Oscar Piastri finished third with 410 points. (formula1.com)",
+    "start": 137,
+    "end": 215,
+    "claim": "Oscar Piastri, Lando Norris’s teammate, finished third in the 2025 World Drivers’ Championship with 410 points.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.formula1.com/en/results/2025/drivers?utm_source=openai",
+      "host": "formula1.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The title went down to the final race in Abu Dhabi.",
+    "start": 216,
+    "end": 267,
+    "claim": "The 2025 title went down to the final race in Abu Dhabi.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "paragraph",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.formula1.com/en/latest/article/highlights-relive-the-action-as-norris-is-crowned-champion-while-verstappen.2Z4Gu6PS7j4lOOQ7Wkct6I.2Z4Gu6PS7j4lOOQ7Wkct6I?utm_source=openai",
+      "host": "formula1.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Watch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.",
+        "pages": null,
+        "context": {
+         "before": "HIGHLIGHTS: Relive the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\n",
+         "after": "\nWhile Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix, it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion as he secured third place behind Oscar Piastri.\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on"
+        }
+       },
+       {
+        "text": "it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion as he secured third place behind Oscar Piastri.",
+        "pages": null,
+        "context": {
+         "before": "HIGHLIGHTS: Relive the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\nWatch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.\nWhile Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix, ",
+         "after": "\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him come out into a DRS train after his first pit stop, but he was able to clear those ahead in quick succession, including an"
+        }
+       },
+       {
+        "text": "he was able to clear those ahead in quick succession",
+        "pages": null,
+        "context": {
+         "before": "the 2025 World Champion as he secured third place behind Oscar Piastri.\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him come out into a DRS train after his first pit stop, but ",
+         "after": ", including an impressive double pass on Lance Stroll and Liam Lawson.\nHe gradually made his way back into the top three, which was all that was needed for him to win the championship by just two points over Verstappen, who beat Piastri to the chequered flag by 12 seconds.\nFurther back, Charles Leclerc placed early pressure on Norris but ultimately settled for fourth, with Mercedes’ George"
+        }
+       },
+       {
+        "text": "which was all that was needed for him to win the championship by just two points over Verstappen",
+        "pages": null,
+        "context": {
+         "before": "a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him come out into a DRS train after his first pit stop, but he was able to clear those ahead in quick succession, including an impressive double pass on Lance Stroll and Liam Lawson.\nHe gradually made his way back into the top three, ",
+         "after": ", who beat Piastri to the chequered flag by 12 seconds.\nFurther back, Charles Leclerc placed early pressure on Norris but ultimately settled for fourth, with Mercedes’ George Russell finishing fifth, over 22 seconds behind the Ferrari driver. Fernando Alonso was sixth, heading a mighty performance from Esteban Ocon while Lewis Hamilton slotted into eighth and Nico Hulkenberg was ninth. Lance"
+        }
+       },
+       {
+        "text": "To watch the best bits from the last race of 2025",
+        "pages": null,
+        "context": {
+         "before": "back, Charles Leclerc placed early pressure on Norris but ultimately settled for fourth, with Mercedes’ George Russell finishing fifth, over 22 seconds behind the Ferrari driver. Fernando Alonso was sixth, heading a mighty performance from Esteban Ocon while Lewis Hamilton slotted into eighth and Nico Hulkenberg was ninth. Lance Stroll rounded out the top 10 in the season finale.\n",
+         "after": ", click go on the video player above.\nNext Up\nRelated Articles\n- Betting5 betting lessons after Verstappen wins in Las VegasNovember 22, 2026\n- What time is the 2026 Qatar GP and how can I watch it?8 hours ago\n- Hadjar 'clueless' on reason for front wing failure in VegasNovember 22, 2026\n- BettingBattle for second place tightens as finish line nearsNovember 22, 2026\n- BettingThe 5 drivers most"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state the 2025 title was decided at the Abu Dhabi Grand Prix, which is described as the last race of 2025, with Norris winning the championship by two points over Verstappen, so the claim that it went to the final race in Abu Dhabi is backed.",
+      "page_judged": "supported",
+      "page_reason": "The page describes the Abu Dhabi season finale where Norris clinched the 2025 championship by two points over Verstappen, which implies the title was decided in the final race in Abu Dhabi, though it does not explicitly say the title went down to the final race.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen won the race, but Norris finished third—just enough to clinch the championship. (formula1.com)",
+    "start": 268,
+    "end": 373,
+    "claim": "Max Verstappen won the final race in Abu Dhabi.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.formula1.com/en/latest/article/highlights-relive-the-action-as-norris-is-crowned-champion-while-verstappen.2Z4Gu6PS7j4lOOQ7Wkct6I.2Z4Gu6PS7j4lOOQ7Wkct6I?utm_source=openai",
+      "host": "formula1.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Watch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.",
+        "pages": null,
+        "context": {
+         "before": "HIGHLIGHTS: Relive the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\n",
+         "after": "\nWhile Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix, it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion as he secured third place behind Oscar Piastri.\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on"
+        }
+       },
+       {
+        "text": "While Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix",
+        "pages": null,
+        "context": {
+         "before": "HIGHLIGHTS: Relive the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\nWatch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.\n",
+         "after": ", it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion as he secured third place behind Oscar Piastri.\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state that Max Verstappen was the race winner at the Abu Dhabi Grand Prix, which backs the claim that he won the final race there, though they do not explicitly say it was the final race of the season.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Max Verstappen was the race winner of the Abu Dhabi Grand Prix, the season finale, which matches the claim that he won the final race in Abu Dhabi.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen won the race, but Norris finished third—just enough to clinch the championship. (formula1.com)",
+    "start": 268,
+    "end": 373,
+    "claim": "Lando Norris finished third in the final race in Abu Dhabi.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.formula1.com/en/latest/article/highlights-relive-the-action-as-norris-is-crowned-champion-while-verstappen.2Z4Gu6PS7j4lOOQ7Wkct6I.2Z4Gu6PS7j4lOOQ7Wkct6I?utm_source=openai",
+      "host": "formula1.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "as he secured third place behind Oscar Piastri.",
+        "pages": null,
+        "context": {
+         "before": "the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\nWatch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.\nWhile Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix, it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion ",
+         "after": "\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him come out into a DRS train after his first pit stop, but he was able to clear those ahead in quick succession, including an"
+        }
+       },
+       {
+        "text": "Watch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.",
+        "pages": null,
+        "context": {
+         "before": "HIGHLIGHTS: Relive the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\n",
+         "after": "\nWhile Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix, it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion as he secured third place behind Oscar Piastri.\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on"
+        }
+       }
+      ],
+      "quote_reason": "The quotes state Lando Norris finished third behind Oscar Piastri and Max Verstappen at the Abu Dhabi Grand Prix, which backs the claim that he finished third in the final race in Abu Dhabi.",
+      "page_judged": "supported",
+      "page_reason": "The page states that Norris finished third behind race winner Verstappen and Piastri in the Abu Dhabi Grand Prix, which is the season finale, so the claim that he finished third in the final race in Abu Dhabi is supported.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "Verstappen won the race, but Norris finished third—just enough to clinch the championship. (formula1.com)",
+    "start": 268,
+    "end": 373,
+    "claim": "Lando Norris finishing third in the Abu Dhabi final race was enough to clinch the 2025 championship.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.formula1.com/en/latest/article/highlights-relive-the-action-as-norris-is-crowned-champion-while-verstappen.2Z4Gu6PS7j4lOOQ7Wkct6I.2Z4Gu6PS7j4lOOQ7Wkct6I?utm_source=openai",
+      "host": "formula1.com",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "it wasn’t enough to prevent Lando Norris from becoming the 2025 World Champion as he secured third place behind Oscar Piastri.",
+        "pages": null,
+        "context": {
+         "before": "HIGHLIGHTS: Relive the action as Norris is crowned champion while Verstappen wins in Abu Dhabi\nWatch the highlights from the Abu Dhabi Grand Prix as Lando Norris became the world champion, finishing third behind race winner Max Verstappen and Oscar Piastri.\nWhile Max Verstappen masterfully drove to victory in the Abu Dhabi Grand Prix, ",
+         "after": "\nThe Red Bull driver maintained the lead from pole position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him come out into a DRS train after his first pit stop, but he was able to clear those ahead in quick succession, including an"
+        }
+       },
+       {
+        "text": "He gradually made his way back into the top three, which was all that was needed for him to win the championship by just two points over Verstappen",
+        "pages": null,
+        "context": {
+         "before": "position on the opening lap while Piastri executed a superb overtake on his McLaren team mate to improve to P2, kicking off a 41-lap stint on hard tyres for the Australian.\nNorris’ alternative strategy of choice saw him come out into a DRS train after his first pit stop, but he was able to clear those ahead in quick succession, including an impressive double pass on Lance Stroll and Liam Lawson.\n",
+         "after": ", who beat Piastri to the chequered flag by 12 seconds.\nFurther back, Charles Leclerc placed early pressure on Norris but ultimately settled for fourth, with Mercedes’ George Russell finishing fifth, over 22 seconds behind the Ferrari driver. Fernando Alonso was sixth, heading a mighty performance from Esteban Ocon while Lewis Hamilton slotted into eighth and Nico Hulkenberg was ninth. Lance"
+        }
+       }
+      ],
+      "quote_reason": "The quotes back the core point that a third-place finish (top three) was enough for Norris to win the 2025 championship, but neither quote names the Abu Dhabi final race as the race in question.",
+      "page_judged": "supported",
+      "page_reason": "The page states Norris finished third behind Verstappen and Piastri and that this was all he needed to win the championship by two points over Verstappen, so the claim is fully supported.",
+      "read_by": "render"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 5,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 5,
+    "uncited": 0
+   },
+   "cited_claims": 5,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 2,
+   "claims_over_limit": 0,
+   "usd": 0.000413,
+   "usd_per_claim": 8.3e-05
+  },
+  "cost": {
+   "total_usd": 0.0004,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

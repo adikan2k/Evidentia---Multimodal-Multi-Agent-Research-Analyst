@@ -1,0 +1,375 @@
+{
+ "id": "technology-08",
+ "tool": "openai",
+ "run": "main",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.nvidia.com/en-us/on-demand/session/gtc25-s72484/?utm_source=openai",
+   "read": true,
+   "chars": 2768
+  }
+ ],
+ "usd": 0.000424,
+ "report": {
+  "answer_text": "At GTC on March 18, 2025, Nvidia unveiled Blackwell Ultra as its near-term AI chip upgrade and laid out the roadmap for Rubin, its next generation. (investor.nvidia.com)\nBlackwell Ultra: Nvidia said partner systems such as the GB300 NVL72 would be available in the second half of 2025. The upgrade offered more computing power and up to 288 GB of high-bandwidth memory per GPU, aimed at speeding up AI training and running reasoning models. (investor.nvidia.com)\nVera Rubin: Nvidia said systems pairing the new Rubin GPU with the Vera CPU were planned for the second half of 2026, with Rubin Ultra to follow in the second half of 2027. (nvidia.com)\nLater, on September 9, 2025, Nvidia also announced Rubin CPX, a specialized GPU for processing very long inputs in workloads like coding and video generation. It was expected at the end of 2026. (nvidianews.nvidia.com)",
+  "claims": [
+   {
+    "sentence": "At GTC on March 18, 2025, Nvidia unveiled Blackwell Ultra as its near-term AI chip upgrade and laid out the roadmap for Rubin, its next generation. (investor.nvidia.com)",
+    "start": 0,
+    "end": 169,
+    "claim": "Nvidia unveiled Blackwell Ultra at GTC on March 18, 2025, as its near-term AI chip upgrade.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-AI-Factory-Platform-Paves-Way-for-Age-of-AI-Reasoning/default.aspx?utm_source=openai",
+      "host": "investor.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "At GTC on March 18, 2025, Nvidia unveiled Blackwell Ultra as its near-term AI chip upgrade and laid out the roadmap for Rubin, its next generation. (investor.nvidia.com)",
+    "start": 0,
+    "end": 169,
+    "claim": "At GTC on March 18, 2025, Nvidia laid out the roadmap for Rubin, its next generation of AI chips.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-AI-Factory-Platform-Paves-Way-for-Age-of-AI-Reasoning/default.aspx?utm_source=openai",
+      "host": "investor.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Blackwell Ultra: Nvidia said partner systems such as the GB300 NVL72 would be available in the second half of 2025. The upgrade offered more computing power and up to 288 GB of high-bandwidth memory per GPU, aimed at speeding up AI training and running reasoning models. (investor.nvidia.com)",
+    "start": 170,
+    "end": 462,
+    "claim": "Nvidia said partner systems such as the GB300 NVL72 would be available in the second half of 2025.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-AI-Factory-Platform-Paves-Way-for-Age-of-AI-Reasoning/default.aspx?utm_source=openai",
+      "host": "investor.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Blackwell Ultra: Nvidia said partner systems such as the GB300 NVL72 would be available in the second half of 2025. The upgrade offered more computing power and up to 288 GB of high-bandwidth memory per GPU, aimed at speeding up AI training and running reasoning models. (investor.nvidia.com)",
+    "start": 170,
+    "end": 462,
+    "claim": "Blackwell Ultra offered more computing power than its predecessor.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-AI-Factory-Platform-Paves-Way-for-Age-of-AI-Reasoning/default.aspx?utm_source=openai",
+      "host": "investor.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Blackwell Ultra: Nvidia said partner systems such as the GB300 NVL72 would be available in the second half of 2025. The upgrade offered more computing power and up to 288 GB of high-bandwidth memory per GPU, aimed at speeding up AI training and running reasoning models. (investor.nvidia.com)",
+    "start": 170,
+    "end": 462,
+    "claim": "Blackwell Ultra offers up to 288 GB of high-bandwidth memory per GPU.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-AI-Factory-Platform-Paves-Way-for-Age-of-AI-Reasoning/default.aspx?utm_source=openai",
+      "host": "investor.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Blackwell Ultra: Nvidia said partner systems such as the GB300 NVL72 would be available in the second half of 2025. The upgrade offered more computing power and up to 288 GB of high-bandwidth memory per GPU, aimed at speeding up AI training and running reasoning models. (investor.nvidia.com)",
+    "start": 170,
+    "end": 462,
+    "claim": "Blackwell Ultra is aimed at speeding up AI training and running reasoning models.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Blackwell-Ultra-AI-Factory-Platform-Paves-Way-for-Age-of-AI-Reasoning/default.aspx?utm_source=openai",
+      "host": "investor.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Vera Rubin: Nvidia said systems pairing the new Rubin GPU with the Vera CPU were planned for the second half of 2026, with Rubin Ultra to follow in the second half of 2027. (nvidia.com)",
+    "start": 463,
+    "end": 648,
+    "claim": "Nvidia said systems pairing the Rubin GPU with the Vera CPU were planned for the second half of 2026.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nvidia.com/en-us/on-demand/session/gtc25-s72484/?utm_source=openai",
+      "host": "nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a cookie consent notice with no mention of Rubin GPU, Vera CPU, or any 2026 product timeline, so the claim is not supported.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "Vera Rubin: Nvidia said systems pairing the new Rubin GPU with the Vera CPU were planned for the second half of 2026, with Rubin Ultra to follow in the second half of 2027. (nvidia.com)",
+    "start": 463,
+    "end": 648,
+    "claim": "Nvidia said Rubin Ultra would follow in the second half of 2027.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.nvidia.com/en-us/on-demand/session/gtc25-s72484/?utm_source=openai",
+      "host": "nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page is a cookie consent notice with no mention of Rubin Ultra, Nvidia product timelines, or a 2027 release.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "Later, on September 9, 2025, Nvidia also announced Rubin CPX, a specialized GPU for processing very long inputs in workloads like coding and video generation. It was expected at the end of 2026. (nvidianews.nvidia.com)",
+    "start": 649,
+    "end": 867,
+    "claim": "On September 9, 2025, Nvidia announced Rubin CPX, a specialized GPU for processing very long inputs in workloads like coding and video generation.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "partial",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-unveils-rubin-cpx-a-new-class-of-gpu-designed-for-massive-context-inference?trk=public_post_comment-text&utm_source=openai",
+      "host": "nvidianews.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "partial",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "AI Infra Summit—NVIDIA® today announced NVIDIA Rubin CPX, a new class of GPU purpose-built for massive-context processing.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "This enables AI systems to handle million-token software coding and generative video with groundbreaking speed and efficiency.",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "Learn more by watching NVIDIA Vice President of Hyperscale and High-Performance Computing Ian Buck’s keynote at AI Infra Summit on Sept. 9 at 10am PT.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quotes back the Rubin CPX announcement as a GPU for massive-context, million-token coding and generative video, but they only say \"today\" without naming Sept 9 as the announcement date, which is inferred from the keynote date.",
+      "page_judged": "not_supported",
+      "page_reason": "The page describes Rubin CPX as a GPU for massive-context workloads like coding and video, but it never states that the announcement was made on September 9, 2025; it only says 'today' at the AI Infra Summit and mentions a September 9 keynote without a year."
+     }
+    ]
+   },
+   {
+    "sentence": "Later, on September 9, 2025, Nvidia also announced Rubin CPX, a specialized GPU for processing very long inputs in workloads like coding and video generation. It was expected at the end of 2026. (nvidianews.nvidia.com)",
+    "start": 649,
+    "end": 867,
+    "claim": "Rubin CPX was expected at the end of 2026.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "label": "supported",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-unveils-rubin-cpx-a-new-class-of-gpu-designed-for-massive-context-inference?trk=public_post_comment-text&utm_source=openai",
+      "host": "nvidianews.nvidia.com",
+      "title": "",
+      "kind": "html",
+      "label": "supported",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "NVIDIA Rubin CPX is expected to be available at the end of 2026.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The quote states that Rubin CPX is expected to be available at the end of 2026, which matches the claim's timing and subject in substance.",
+      "page_judged": "supported",
+      "page_reason": "The page states that NVIDIA Rubin CPX is expected to be available at the end of 2026, which directly supports the claim that it was expected at the end of 2026."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 10,
+   "labels": {
+    "supported": 1,
+    "partial": 1,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 8,
+    "uncited": 0
+   },
+   "cited_claims": 10,
+   "claims_with_a_verdict": 2,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": 0.0,
+   "partly_backed": 1,
+   "supported_share_of_cited": 0.1,
+   "pages_cited": 3,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002492,
+   "usd_per_claim": 0.000249
+  },
+  "cost": {
+   "total_usd": 0.0025,
+   "cap_usd": 12.0,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "page_check",
+     "calls": 2,
+     "usd": 0.0006
+    },
+    {
+     "node": "find",
+     "calls": 2,
+     "usd": 0.0007
+    },
+    {
+     "node": "check",
+     "calls": 2,
+     "usd": 0.0004
+    }
+   ]
+  }
+ }
+}

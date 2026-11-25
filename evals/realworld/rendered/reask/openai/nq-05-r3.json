@@ -1,0 +1,469 @@
+{
+ "id": "nq-05-r3",
+ "tool": "openai",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+   "read": false,
+   "why_not": "still too little text after the browser ran the page"
+  },
+  {
+   "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title29-vol8/xhtml/CFR-2024-title29-vol8-part1926-subpartCC.html?utm_source=openai",
+   "read": true,
+   "chars": 14966
+  }
+ ],
+ "usd": 0.001232,
+ "report": {
+  "answer_text": "On a typical horizontal-jib tower crane, the hoist moves the load up and down, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower. (morrow.com)\n| Part | What it does |\n|---|---|\n| Base and foundation | Support the crane and transfer its weight and overturning forces to the ground. (morrow.com) |\n| Mast (tower) | The vertical steel structure that supports the upper assembly and gives the crane its height. (morrow.com) |\n| Slewing unit (turntable) | Uses a large bearing and drive motors to rotate the upper assembly around the mast. (morrow.com) |\n| Jib (working arm) | The long horizontal arm that supports the trolley and gives the crane its reach. (morrow.com) |\n| Trolley | Travels along the jib, moving the suspended load closer to or farther from the mast. (morrow.com) |\n| Hoist motor, drum, and wire rope | The motor turns the drum to wind or unwind the rope, raising or lowering the hook. (morrow.com) |\n| Hook block | The hook-and-pulley assembly suspended from the hoist rope. The load attaches to the hook, usually through slings or other rigging. (morrow.com) |\n| Counter-jib | The shorter arm opposite the working jib. It carries the counterweights and often the hoist machinery. (morrow.com) |\n| Counterweights | Offset part of the overturning effect of the working jib and its load. (morrow.com) |\n| Operator’s cab and controls | Let the operator control lifting, trolley travel, and rotation. Safety devices limit motions such as trolley travel and help prevent overloads. (morrow.com) |\nA luffing-jib crane changes its reach by pivoting the jib up or down rather than moving a trolley along a horizontal arm. (govinfo.gov)",
+  "claims": [
+   {
+    "sentence": "On a typical horizontal-jib tower crane, the hoist moves the load up and down, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower. (morrow.com)",
+    "start": 0,
+    "end": 192,
+    "claim": "On a typical horizontal-jib tower crane, the hoist moves the load up and down, the trolley moves it toward or away from the tower, and the slewing unit swings it around the tower.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Base and foundation | Support the crane and transfer its weight and overturning forces to the ground. (morrow.com) |",
+    "start": 227,
+    "end": 345,
+    "claim": "The base and foundation of a tower crane support the crane and transfer its weight and overturning forces to the ground.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Mast (tower) | The vertical steel structure that supports the upper assembly and gives the crane its height. (morrow.com) |",
+    "start": 346,
+    "end": 471,
+    "claim": "The mast (tower) is the vertical steel structure that supports the upper assembly of a tower crane and gives the crane its height.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Slewing unit (turntable) | Uses a large bearing and drive motors to rotate the upper assembly around the mast. (morrow.com) |",
+    "start": 472,
+    "end": 599,
+    "claim": "The slewing unit (turntable) uses a large bearing and drive motors to rotate the upper assembly around the mast.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Jib (working arm) | The long horizontal arm that supports the trolley and gives the crane its reach. (morrow.com) |",
+    "start": 600,
+    "end": 717,
+    "claim": "The jib (working arm) is the long horizontal arm that supports the trolley and gives the crane its reach.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Trolley | Travels along the jib, moving the suspended load closer to or farther from the mast. (morrow.com) |",
+    "start": 718,
+    "end": 829,
+    "claim": "The trolley travels along the jib, moving the suspended load closer to or farther from the mast.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Hoist motor, drum, and wire rope | The motor turns the drum to wind or unwind the rope, raising or lowering the hook. (morrow.com) |",
+    "start": 830,
+    "end": 964,
+    "claim": "The hoist motor turns the drum to wind or unwind the wire rope, raising or lowering the hook.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Hook block | The hook-and-pulley assembly suspended from the hoist rope. The load attaches to the hook, usually through slings or other rigging. (morrow.com) |",
+    "start": 965,
+    "end": 1126,
+    "claim": "The hook block is a hook-and-pulley assembly suspended from the hoist rope.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Hook block | The hook-and-pulley assembly suspended from the hoist rope. The load attaches to the hook, usually through slings or other rigging. (morrow.com) |",
+    "start": 965,
+    "end": 1126,
+    "claim": "The load attaches to the hook of the hook block, usually through slings or other rigging.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Counter-jib | The shorter arm opposite the working jib. It carries the counterweights and often the hoist machinery. (morrow.com) |",
+    "start": 1127,
+    "end": 1260,
+    "claim": "The counter-jib is the shorter arm opposite the working jib and carries the counterweights and often the hoist machinery.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Counterweights | Offset part of the overturning effect of the working jib and its load. (morrow.com) |",
+    "start": 1261,
+    "end": 1365,
+    "claim": "Counterweights offset part of the overturning effect of the working jib and its load.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Operator’s cab and controls | Let the operator control lifting, trolley travel, and rotation. Safety devices limit motions such as trolley travel and help prevent overloads. (morrow.com) |",
+    "start": 1366,
+    "end": 1556,
+    "claim": "The operator's cab and controls let the operator control lifting, trolley travel, and rotation.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "| Operator’s cab and controls | Let the operator control lifting, trolley travel, and rotation. Safety devices limit motions such as trolley travel and help prevent overloads. (morrow.com) |",
+    "start": 1366,
+    "end": 1556,
+    "claim": "Safety devices on a tower crane limit motions such as trolley travel and help prevent overloads.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.morrow.com/learn/tower-crane-101?utm_source=openai",
+      "host": "morrow.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "too little text read (the page may need a browser to show it)",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "A luffing-jib crane changes its reach by pivoting the jib up or down rather than moving a trolley along a horizontal arm. (govinfo.gov)",
+    "start": 1557,
+    "end": 1692,
+    "claim": "A luffing-jib crane changes its reach by pivoting the jib up or down rather than moving a trolley along a horizontal arm.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "not_found",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title29-vol8/xhtml/CFR-2024-title29-vol8-part1926-subpartCC.html?utm_source=openai",
+      "host": "govinfo.gov",
+      "title": "",
+      "kind": "html",
+      "label": "not_found",
+      "quote_label": "not_found",
+      "skipped": null,
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": "not_supported",
+      "page_reason": "The page mentions luffing jibs only in the prohibition on directly attaching a personnel platform to a luffing jib, and never describes how a luffing jib changes reach or contrasts it with trolley-based horizontal arms.",
+      "read_by": "render"
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 14,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 0,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 14,
+    "citation_unread": 0,
+    "uncited": 0
+   },
+   "cited_claims": 14,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 2,
+   "pages_read": 1,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.000848,
+   "usd_per_claim": 6.1e-05
+  },
+  "cost": {
+   "total_usd": 0.0008,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0008
+    }
+   ]
+  }
+ }
+}

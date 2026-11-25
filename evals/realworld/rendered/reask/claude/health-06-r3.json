@@ -1,0 +1,581 @@
+{
+ "id": "health-06-r3",
+ "tool": "claude",
+ "run": "reask",
+ "judge": "claude-haiku-5-5",
+ "pages": [
+  {
+   "url": "https://cen.acs.org/biological-chemistry/gene-editing/baby-world39s-first-personalized-CRISPR/103/web/2025/05",
+   "read": true,
+   "chars": 4522
+  }
+ ],
+ "usd": 0.000781,
+ "report": {
+  "answer_text": "KJ Muldoon received the first bespoke, personalised CRISPR gene-editing therapy. It was a customised base-editing treatment for his rare metabolic disease, severe CPS1 (carbamoyl phosphate synthetase 1) deficiency.\nThe condition: KJ lacked CPS1, an enzyme that removes ammonia, a waste product of protein metabolism, from the body.[1] Researchers found two truncating variants of his *CPS1* gene.[2] The usual treatment is a liver transplant, but KJ was too young for one.[2]\nThe therapy: KJ received a customised, bespoke base-editing therapy delivered by lipid nanoparticles (LNPs), given by intravenous infusion.[3] The lipid nanoparticles carry the editor to the liver. The CHOP/Penn Medicine team and collaborators developed a base editor to correct one of KJ's broken copies of the *CPS1* gene in just 6 months.[4]\nTimeline and results:\nHe had his first infusion in February 2025.[5]\nHe had received three infusions by April 2025.[6]\nAfter three doses, KJ could consume more protein and needed less medication to control his blood ammonia levels.[4]\nHe is not cured, though.[4] The team didn't feel it could ethically do a risky liver biopsy to prove the base editor repaired his cells, so the evidence of success is indirect.[4]\nWho was involved: Kiran Musunuru and Rebecca Ahrens-Nicklas led the researchers from CHOP and Penn who developed the treatment.[7] Partners included the Innovative Genomics Institute at UC Berkeley, Mass General Brigham, Danaher and Acuitas Therapeutics.[3] The details were published on May 15, 2025, in the *New England Journal of Medicine*.[8]\nKJ went home after 307 days in the hospital.[2] *Nature* named him a \"Trailblazing baby\" in its Nature's 10 of 2025.[9]",
+  "claims": [
+   {
+    "sentence": "KJ Muldoon received the first bespoke, personalised CRISPR gene-editing therapy.",
+    "start": 0,
+    "end": 80,
+    "claim": "KJ Muldoon received the first bespoke, personalised CRISPR gene-editing therapy.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "It was a customised base-editing treatment for his rare metabolic disease, severe CPS1 (carbamoyl phosphate synthetase 1) deficiency.",
+    "start": 81,
+    "end": 214,
+    "claim": "The treatment KJ Muldoon received was a customised base-editing treatment for severe CPS1 (carbamoyl phosphate synthetase 1) deficiency, a rare metabolic disease.",
+    "citation_ids": [],
+    "cited_by": null,
+    "unread_markers": [],
+    "label": "uncited",
+    "disputed": false,
+    "pages": []
+   },
+   {
+    "sentence": "The condition: KJ lacked CPS1, an enzyme that removes ammonia, a waste product of protein metabolism, from the body.[1]",
+    "start": 215,
+    "end": 334,
+    "claim": "KJ lacked CPS1, an enzyme that removes ammonia, a waste product of protein metabolism, from the body.",
+    "citation_ids": [
+     "c1"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c1",
+      "url": "https://www.rarediseaseadvisor.com/features/personalized-gene-editing-rare-diseases/",
+      "host": "rarediseaseadvisor.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Researchers found two truncating variants of his *CPS1* gene.[2]",
+    "start": 335,
+    "end": 399,
+    "claim": "Researchers found two truncating variants of KJ's CPS1 gene.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The usual treatment is a liver transplant, but KJ was too young for one.[2]",
+    "start": 400,
+    "end": 475,
+    "claim": "The usual treatment for CPS1 deficiency is a liver transplant, but KJ was too young for one.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "KJ received a customised, bespoke base-editing therapy delivered by lipid nanoparticles (LNPs), given by intravenous infusion.[3]",
+    "start": 489,
+    "end": 618,
+    "claim": "KJ received a customised, bespoke base-editing therapy delivered by lipid nanoparticles, given by intravenous infusion.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://journals.sagepub.com/doi/full/10.1089/hum.2025.124",
+      "host": "journals.sagepub.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The lipid nanoparticles carry the editor to the liver.",
+    "start": 619,
+    "end": 673,
+    "claim": "The lipid nanoparticles carry the base editor to the liver.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "paragraph",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.science.org/content/article/gene-editing-therapy-made-just-6-months-helps-baby-life-threatening-disease",
+      "host": "science.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The CHOP/Penn Medicine team and collaborators developed a base editor to correct one of KJ's broken copies of the *CPS1* gene in just 6 months.[4]",
+    "start": 674,
+    "end": 820,
+    "claim": "The CHOP/Penn Medicine team and collaborators developed a base editor to correct one of KJ's broken copies of the CPS1 gene in just 6 months.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.science.org/content/article/gene-editing-therapy-made-just-6-months-helps-baby-life-threatening-disease",
+      "host": "science.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He had his first infusion in February 2025.[5]",
+    "start": 843,
+    "end": 889,
+    "claim": "KJ Muldoon had his first infusion in February 2025.",
+    "citation_ids": [
+     "c5"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c5",
+      "url": "https://amp.cbc.ca/news/health/gene-therapy-baby-pennsylvania-1.7536105",
+      "host": "amp.cbc.ca",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "robots.txt could not be read",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He had received three infusions by April 2025.[6]",
+    "start": 890,
+    "end": 939,
+    "claim": "KJ Muldoon had received three infusions by April 2025.",
+    "citation_ids": [
+     "c6"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c6",
+      "url": "https://www.yahoo.com/news/personalized-crispr-treatment-used-baby-193146299.html",
+      "host": "yahoo.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 429",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "After three doses, KJ could consume more protein and needed less medication to control his blood ammonia levels.[4]",
+    "start": 940,
+    "end": 1055,
+    "claim": "After three doses, KJ could consume more protein and needed less medication to control his blood ammonia levels.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.science.org/content/article/gene-editing-therapy-made-just-6-months-helps-baby-life-threatening-disease",
+      "host": "science.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "He is not cured, though.[4]",
+    "start": 1056,
+    "end": 1083,
+    "claim": "KJ Muldoon is not cured.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.science.org/content/article/gene-editing-therapy-made-just-6-months-helps-baby-life-threatening-disease",
+      "host": "science.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The team didn't feel it could ethically do a risky liver biopsy to prove the base editor repaired his cells, so the evidence of success is indirect.[4]",
+    "start": 1084,
+    "end": 1235,
+    "claim": "The team did not feel it could ethically do a risky liver biopsy to prove the base editor repaired KJ's cells, so the evidence of success is indirect.",
+    "citation_ids": [
+     "c4"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c4",
+      "url": "https://www.science.org/content/article/gene-editing-therapy-made-just-6-months-helps-baby-life-threatening-disease",
+      "host": "science.org",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Who was involved: Kiran Musunuru and Rebecca Ahrens-Nicklas led the researchers from CHOP and Penn who developed the treatment.[7]",
+    "start": 1236,
+    "end": 1366,
+    "claim": "Kiran Musunuru and Rebecca Ahrens-Nicklas led the researchers from CHOP and Penn who developed the treatment.",
+    "citation_ids": [
+     "c7"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c7",
+      "url": "https://www.chop.edu/news/worlds-first-patient-treated-personalized-crispr-gene-editing-therapy-childrens-hospital",
+      "host": "chop.edu",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "Partners included the Innovative Genomics Institute at UC Berkeley, Mass General Brigham, Danaher and Acuitas Therapeutics.[3]",
+    "start": 1367,
+    "end": 1493,
+    "claim": "Partners in the treatment included the Innovative Genomics Institute at UC Berkeley, Mass General Brigham, Danaher and Acuitas Therapeutics.",
+    "citation_ids": [
+     "c3"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c3",
+      "url": "https://journals.sagepub.com/doi/full/10.1089/hum.2025.124",
+      "host": "journals.sagepub.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "disallowed by robots.txt",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "The details were published on May 15, 2025, in the *New England Journal of Medicine*.[8]",
+    "start": 1494,
+    "end": 1582,
+    "claim": "The details of KJ's treatment were published on May 15, 2025, in the New England Journal of Medicine.",
+    "citation_ids": [
+     "c8"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c8",
+      "url": "https://cen.acs.org/biological-chemistry/gene-editing/baby-world39s-first-personalized-CRISPR/103/web/2025/05",
+      "host": "cen.acs.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "supported",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "Musunuru and his colleagues published details about K. J.’s treatment in a study published May 15 in the New England Journal of Medicine (DOI: 10.1056/NEJMoa2504747).",
+        "pages": null,
+        "context": {
+         "before": "don’t think I’m exaggerating when I say that this is the future of medicine,” Kiran Musunuru, a cardiologist and geneticist at the University of Pennsylvania who helped develop the therapy for K. J., said at a press briefing on May 12. “My hope is that someday no rare disease patient will die prematurely from misspellings in their genes, because we’ll be able to correct them,” he later added.\n",
+         "after": " They report that since K. J. received the first dose of his customized therapy in February, he has been able to eat more protein and has needed less ammonia-lowering medication. Rebecca Ahrens-Nicklas, a metabolic physician at Children’s Hospital of Philadelphia and a coauthor of the study, thinks that the gene-editing therapy will turn K. J.’s severe disorder into a milder form. But how long"
+        }
+       }
+      ],
+      "quote_reason": "The quote states that details of K. J.'s treatment were published in a study on May 15 in the New England Journal of Medicine, backing every fact in the claim (the year 2025 is implied by the DOI context only loosely, but the quote itself gives May 15 and the journal).",
+      "page_judged": "not_supported",
+      "page_reason": "The page says the study was published May 15 in the New England Journal of Medicine, but it never states the year 2025, which the claim includes.",
+      "read_by": "render"
+     }
+    ]
+   },
+   {
+    "sentence": "KJ went home after 307 days in the hospital.[2]",
+    "start": 1583,
+    "end": 1630,
+    "claim": "KJ went home after 307 days in the hospital.",
+    "citation_ids": [
+     "c2"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "unchecked",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c2",
+      "url": "https://www.insideprecisionmedicine.com/topics/precision-medicine/first-personalized-crispr-gene-editing-therapy-patient-baby-kj-discharged/",
+      "host": "insideprecisionmedicine.com",
+      "title": "",
+      "kind": "html",
+      "label": "unchecked",
+      "quote_label": "unchecked",
+      "skipped": "HTTP 403",
+      "quotes": [],
+      "quote_reason": "",
+      "page_judged": null,
+      "page_reason": ""
+     }
+    ]
+   },
+   {
+    "sentence": "*Nature* named him a \"Trailblazing baby\" in its Nature's 10 of 2025.[9]",
+    "start": 1631,
+    "end": 1702,
+    "claim": "Nature named KJ Muldoon a \"Trailblazing baby\" in its Nature's 10 of 2025.",
+    "citation_ids": [
+     "c9"
+    ],
+    "cited_by": "sentence",
+    "unread_markers": [],
+    "label": "needs_human",
+    "disputed": false,
+    "pages": [
+     {
+      "citation_id": "c9",
+      "url": "https://en.wikipedia.org/wiki/KJ_Muldoon",
+      "host": "en.wikipedia.org",
+      "title": "",
+      "kind": "html",
+      "label": "needs_human",
+      "quote_label": "partial",
+      "skipped": null,
+      "quotes": [
+       {
+        "text": "He is listed in the Nature of 2025 as the \"Trailblazing baby\" as the first person saved by personalized CRISPR gene editing.[5][6]",
+        "pages": null,
+        "context": null
+       },
+       {
+        "text": "\"Nature's 10: Ten people who shaped science in 2025\". www.nature.com. Retrieved 2025-12-25.",
+        "pages": null,
+        "context": null
+       }
+      ],
+      "quote_reason": "The first quote backs that Nature listed KJ Muldoon as the \"Trailblazing baby\" in 2025, and the second names the 'Nature's 10: Ten people who shaped science in 2025' article, but neither quote explicitly states that this listing was part of Nature's 10 feature.",
+      "page_judged": "supported",
+      "page_reason": "The page says Muldoon is listed in Nature of 2025 as the \"Trailblazing baby\", citing a Nature's 10 article titled \"Ten people who shaped science in 2025\", which supports the claim when the two parts are combined."
+     }
+    ]
+   }
+  ],
+  "scorecard": {
+   "claims": 18,
+   "labels": {
+    "supported": 0,
+    "partial": 0,
+    "contradicted": 0,
+    "needs_human": 1,
+    "not_found": 0,
+    "dead_link": 0,
+    "unchecked": 15,
+    "citation_unread": 0,
+    "uncited": 2
+   },
+   "cited_claims": 16,
+   "claims_with_a_verdict": 0,
+   "failed_citations": 0,
+   "failed_share_of_verdicts": null,
+   "partly_backed": 0,
+   "supported_share_of_cited": 0.0,
+   "pages_cited": 9,
+   "pages_read": 2,
+   "dead_links": 0,
+   "sentences_not_located": 0,
+   "claims_over_limit": 0,
+   "usd": 0.002564,
+   "usd_per_claim": 0.000142
+  },
+  "cost": {
+   "total_usd": 0.0026,
+   "cap_usd": 4.35,
+   "by_node": [
+    {
+     "node": "split",
+     "calls": 1,
+     "usd": 0.0009
+    },
+    {
+     "node": "find",
+     "calls": 1,
+     "usd": 0.0008
+    },
+    {
+     "node": "page_check",
+     "calls": 1,
+     "usd": 0.0007
+    },
+    {
+     "node": "check",
+     "calls": 1,
+     "usd": 0.0001
+    }
+   ]
+  }
+ }
+}
