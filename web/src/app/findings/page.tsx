@@ -8,6 +8,7 @@ import { auditorAccuracy } from "@/lib/evals";
 import {
   askedAgainRange,
   clearOfZero,
+  type HandCheck,
   handCheck,
   higher,
   type Interval,
@@ -24,6 +25,7 @@ import {
   TOOL_MODEL,
   TOOL_NAME,
   TOOLS,
+  withheld,
 } from "@/lib/findings";
 import { exampleIndex } from "@/lib/findingsFiles";
 import { REPO, SHELL } from "@/lib/site";
@@ -31,7 +33,7 @@ import { REPO, SHELL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Findings",
   description:
-    "Two AI search tools answered the same 100 questions. Evidentia read every page they cited and marked each claim.",
+    `Two AI search tools answered the same ${realworld.questions} questions. Evidentia read every page they cited and marked each claim.`,
 };
 
 const DATA = `${REPO}/tree/rebuild/evals/realworld`;
@@ -93,9 +95,161 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
   );
 }
 
+type Upheld = HandCheck["flags_upheld"]["both_tools"];
+
+function Figure({ title, share, note }: { title: string; share: Upheld; note: string }) {
+  return (
+    <div>
+      <dt className="data text-ink-faint">{title}</dt>
+      <dd className="mt-1 text-6xl leading-none font-semibold tracking-tight tabular-nums">{pct(share.share, 0)}</dd>
+      <dd className="mt-3 text-ink">
+        {share.hits} of {share.n} the person could settle
+      </dd>
+      <dd className="data mt-1 text-ink-faint normal-case">
+        95% interval {pct(share.ci_low, 0)} to {pct(share.ci_high, 0)}
+      </dd>
+      <dd className="label mt-3 font-normal text-ink-soft">{note}</dd>
+    </div>
+  );
+}
+
+/**
+ * The page when the hand check misses D-044's rule. It compares the tools nowhere: not in the
+ * figures, the chart, the checks or the examples. The figures stay in the published data.
+ */
+function Withheld({ check }: { check: HandCheck }) {
+  const flags = check.flags_upheld.both_tools;
+  const supported = check.supported_upheld.both_tools;
+  const looked = (x: Upheld) => x.n + x.unsure + x.would_not_open;
+  const unopened = flags.would_not_open + supported.would_not_open;
+  const needed = pct(check.rule.flags_upheld_needed_both_tools, 0);
+  const whenWritten = new Date(realworld.generated_at).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+
+  return (
+    <div className={SHELL}>
+      <header className="grid items-end gap-x-16 gap-y-8 pt-10 pb-4 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:pt-16">
+        <div>
+          <p className="label text-ink-soft">Findings · {whenWritten}</p>
+          <h1 className="display-1 mt-4 max-w-[60rem]">
+            Our auditor did not pass its own hand check, so we do not compare the tools.
+          </h1>
+          <p className="lead mt-6 max-w-[44rem]">
+            {TOOLS.map((t) => TOOL_MODEL[t]).join(", and ")}, each answered the same{" "}
+            {realworld.questions} fixed questions, and Evidentia audited every answer. Before
+            anything was published, a person checked a blind sample of its verdicts against the
+            cited pages. Too few of its flags held up.
+          </p>
+        </div>
+        <PageIndex
+          items={[
+            { href: "#check", text: "The hand check" },
+            { href: "#means", text: "What it means" },
+            { href: "#data", text: "The data" },
+          ]}
+        />
+      </header>
+
+      <section id="check" aria-labelledby="check-title" className="mt-16 scroll-mt-8 border-t border-ink pt-8">
+        <h2 id="check-title" className="sr-only">
+          The hand check
+        </h2>
+        <div className="grid gap-x-16 gap-y-12 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <dl className="sheet grid gap-10 p-5 sm:grid-cols-2 md:p-8">
+            <Figure title="Flags upheld" share={flags} note={`The rule, fixed before any label: at least ${needed}.`} />
+            <Figure title="“Supported” upheld" share={supported} note="No rule was set for these." />
+          </dl>
+          <div className="space-y-4 leading-relaxed text-ink-soft">
+            <p>
+              <span className="font-medium text-ink">The comparison is withheld.</span> A flag is the
+              auditor saying a claim is not on the page it cites, or that the page says otherwise. A
+              person agreed with {pct(flags.share, 0)} of the flags they could settle, under the{" "}
+              {needed} set in advance.
+            </p>
+            <p>
+              The check was blind. For each of {check.items_checked} claims the person saw the claim
+              and the cited page, and not which tool wrote it or what the auditor said.
+            </p>
+            <p>
+              They were unsure on {flags.unsure} of {looked(flags)} flags and on {supported.unsure} of{" "}
+              {looked(supported)} supported claims.{" "}
+              {unopened === 0 ? "Every page opened." : `${unopened} pages would not open.`}
+              {check.median_seconds_per_item !== null &&
+                ` An item took ${Math.round(check.median_seconds_per_item)} seconds at the median.`}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="means" aria-labelledby="means-title" className="mt-24 scroll-mt-8 border-t border-ink pt-8">
+        <h2 id="means-title" className="display-2">
+          What it means
+        </h2>
+        <div className="mt-10 space-y-10">
+          <Block title="The flags">
+            <p>
+              On the benchmark, with {auditorAccuracy.rows.toLocaleString("en")} claims labelled by
+              people, the auditor is right on {pct(auditorAccuracy.flags.value, 0)} of its flags. On
+              these real answers and live pages a person upheld {pct(flags.share, 0)}. The sample is
+              small, so the true share could be anywhere from {pct(flags.ci_low, 0)} to{" "}
+              {pct(flags.ci_high, 0)}. Why the flags fall short here is not yet known.
+            </p>
+          </Block>
+          <Block title="The “supported” marks">
+            <p>
+              These held up better: a person agreed with {pct(supported.share, 0)} of them,{" "}
+              {pct(supported.ci_low, 0)} to {pct(supported.ci_high, 0)}. When the auditor says a page
+              backs a claim, it mostly does.
+            </p>
+          </Block>
+          <Block title="What is not shown">
+            <p>
+              How often each tool&apos;s citations fail rests on the flags. That is not reliable
+              enough to set the tools side by side, so this page does not. The rule that decided this
+              was fixed before the first label. The figures stay in the published data, with every
+              item where the person and the auditor disagree listed by its id.
+            </p>
+          </Block>
+        </div>
+      </section>
+
+      <section id="data" aria-labelledby="data-title" className="mt-24 scroll-mt-8 border-t border-ink pt-8">
+        <div className="grid gap-x-16 gap-y-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.4fr)]">
+          <h2 id="data-title" className="display-2">
+            The data
+          </h2>
+          <ul className="max-w-[46rem] space-y-3 leading-relaxed text-ink-soft">
+            <li>
+              <a href={DATA} target="_blank" rel="noreferrer" className="text-ink underline underline-offset-4">
+                The questions, every answer, every audit and the hand check&apos;s labels
+              </a>
+              .
+            </li>
+            <li>
+              <a href={RESULTS} target="_blank" rel="noreferrer" className="text-ink underline underline-offset-4">
+                The result files
+              </a>
+              , which hold the figures this page does not compare.
+            </li>
+            <li>
+              <a href={DECISIONS} target="_blank" rel="noreferrer" className="text-ink underline underline-offset-4">
+                The decision log
+              </a>
+              , D-042 to D-048: the plan, the hand check and its rule (D-044), and each check that was run.
+            </li>
+            <li>
+              ${studyCost().toFixed(2)} in model and search calls for the whole study. The hand check
+              cost nothing.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export default async function FindingsPage() {
+  if (withheld && handCheck) return <Withheld check={handCheck} />;
   const index = await exampleIndex();
-  const withheld = handCheck !== undefined && !handCheck.rule.met;
   const uncited = (tool: (typeof TOOLS)[number]) => shipped.tools[tool].labels.uncited.share;
   const repeats = Object.entries(reask.openai_minus_claude).filter(([name]) => name.startsWith("r"));
   const heldEveryTime = [["first_ask", reask.openai_minus_claude.first_ask], ...repeats].every(
@@ -151,31 +305,18 @@ export default async function FindingsPage() {
           </div>
 
           <div className="space-y-10">
-            {withheld ? (
-              <div className="border-t border-ink pt-4">
-                <h3 className="font-medium text-ink">The comparison is withheld.</h3>
-                <p className="mt-2 leading-relaxed text-ink-soft">
-                  A person upheld fewer of the auditor&apos;s flags than the rule set in advance
-                  needs ({pct(handCheck?.rule.flags_upheld_needed_both_tools ?? null, 0)}), so these marks
-                  are not reliable enough to compare the two tools.
-                </p>
-              </div>
-            ) : (
-              <>
-                <Reading
-                  title="Citations that fail"
-                  note="Of the claims cited in their own sentence that got a verdict, the share whose page does not say it, or says the opposite."
-                  values={TOOLS.map((t) => shipped.tools[t].headline_failed_share)}
-                  gap={shipped.openai_minus_claude}
-                />
-                <Reading
-                  title="Claims verified"
-                  note="Of everything each tool said, the share that a page it cited was found to back."
-                  values={TOOLS.map((t) => shipped.tools[t].verified_share_of_all_claims)}
-                  gap={shipped.openai_minus_claude_verified_share_of_all_claims}
-                />
-              </>
-            )}
+            <Reading
+              title="Citations that fail"
+              note="Of the claims cited in their own sentence that got a verdict, the share whose page does not say it, or says the opposite."
+              values={TOOLS.map((t) => shipped.tools[t].headline_failed_share)}
+              gap={shipped.openai_minus_claude}
+            />
+            <Reading
+              title="Claims verified"
+              note="Of everything each tool said, the share that a page it cited was found to back."
+              values={TOOLS.map((t) => shipped.tools[t].verified_share_of_all_claims)}
+              gap={shipped.openai_minus_claude_verified_share_of_all_claims}
+            />
           </div>
         </div>
 

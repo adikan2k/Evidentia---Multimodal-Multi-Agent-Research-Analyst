@@ -2506,6 +2506,65 @@ That is about 45 minutes of his time.
   such as "(openai.com)" inside a claim, numbered markers, and `utm_` tracking parameters.
 - **Intervals** are Wilson intervals, which behave well for samples this small.
 
+### D-044 result (25 November 2026): the rule is missed, and the comparison is withheld
+
+Aditya labelled all 40 items between 17:26 and 18:12 UTC, with the blind command. The labels were
+committed before they were scored again (`evals/realworld/hand_check_labels.jsonl`).
+
+| | Upheld | 95% interval | Unsure |
+|---|---|---|---|
+| Flags, both tools | 7 of 13 settled, 54% | 29% to 77% | 7 of 20 |
+| "Supported", both tools | 16 of 19 settled, 84% | 62% to 94% | 1 of 20 |
+
+No page failed to open. The median item took 61 seconds.
+
+- **The rule is missed.** 54% is under 70%, so the findings page and the README make no
+  comparison between the tools. The per-tool figures stay in `realworld_hand_check.json` and are
+  not compared, as decided above.
+- **The amendment below was not adopted.** It was drafted before the labels but not approved
+  before they were scored. It would have given the same result, since it only adds a way to
+  withhold.
+- **What changed in D-048's page.** As built, a missed rule replaced only the two readings, which
+  left the bar chart, "they fail differently", the checks and the example lists comparing the
+  tools. D-044 says no comparison, so the page now shows the hand check instead: its figures, the
+  rule, what it means and the data. The example pages stay, each with a note to read its mark
+  with care.
+- **Not yet known.** Why a person upheld fewer flags on real answers than the 81% on the
+  benchmark. Every disagreement is listed by its id in the result file.
+
+### D-044 amendment, not adopted: a guard for each tool (drafted 2026-11-25, before any label)
+
+**What.** Keep the rule above, and add one more way to withhold the comparison. The findings
+page makes no comparison between the tools if either of these is true:
+
+- fewer than 70% of the checked flags are upheld, both tools together (unchanged);
+- **new:** for either tool, the top of its 95% interval for flags upheld is below 70%. With 10
+  decided flags, that means 4 or fewer upheld.
+
+**Why.** The pooled rule can hide one tool's flags being bad, which is the bias a reader worries
+about. OpenAI 4 of 10 and Claude 10 of 10 is 70% together, so the pooled rule is met, yet most of
+OpenAI's checked flags would be wrong. The guard withholds only when one tool's share is clearly
+below 70%, not when a count of 10 dips by chance.
+
+**What the numbers say** (binomial, worked out before any label):
+
+- If 81% of flags are right for both tools, as on the benchmark, the pooled rule trips by chance
+  7% of the time and the guard adds under 1%.
+- If one tool's flags are right half the time and the other's 95%, the pooled rule catches it 28%
+  of the time and the two rules together 40%.
+
+**Considered.**
+
+- **Only an interval rule, pooled** (withhold when the top of the interval is below 70%). It would
+  withhold only at 10 or fewer of 20 upheld, letting through samples that look poor.
+- **More items.** Back to 25 per group (100 items) would make one tool's interval about ±18
+  points, not about ±22. About an hour more of Aditya's time.
+- **Comparing the two tools' upheld shares.** With 10 each, only a very large difference shows.
+
+**Trade-off.** With 10 flags per tool, no rule can find a moderate difference between the tools'
+flags. The guard catches only a gross one, and the result file still reports each tool's share
+with its interval so a reader can judge the rest.
+
 ## D-045. The site's look: an editor's desk, at the full width of the screen (D-043, phase 2)
 
 **What.** A redesign of the whole site, asked for by Aditya on 2026-11-24. Two things drive it.

@@ -73,11 +73,20 @@ type Short = {
   >;
 };
 
-type Share = { hits: number; n: number; share: number | null; ci_low: number | null; ci_high: number | null };
+type Share = {
+  hits: number;
+  n: number;
+  share: number | null;
+  ci_low: number | null;
+  ci_high: number | null;
+  unsure: number;
+  would_not_open: number;
+};
 
 export type HandCheck = {
   items_in_sample: number;
   items_checked: number;
+  median_seconds_per_item: number | null;
   flags_upheld: Record<"both_tools" | Tool, Share>;
   supported_upheld: Record<"both_tools" | Tool, Share>;
   rule: { flags_upheld_needed_both_tools: number; met: boolean };
@@ -89,6 +98,8 @@ export const reread = data.realworld_rendered as Reread;
 export const short = data.realworld_short as Short;
 /** Absent until Aditya's labels are scored (`python -m evals hand-check-score`). */
 export const handCheck = data.realworld_hand_check as HandCheck | undefined;
+/** D-044: when the hand check misses its rule, the site makes no comparison between the tools. */
+export const withheld = handCheck !== undefined && !handCheck.rule.met;
 
 export const shipped = realworld.judges.haiku;
 export const otherJudge = realworld.judges.luna;

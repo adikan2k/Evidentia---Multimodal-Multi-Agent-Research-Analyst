@@ -94,7 +94,7 @@ export function AuditPicker({ initial }: { initial?: string }) {
           </p>
           <p className="mt-5">
             <Link href="/findings" className="label text-ink underline underline-offset-4">
-              What it found when two AI search tools answered the same questions
+              Two AI search tools audited on the same questions, and a hand check of the auditor
             </Link>
           </p>
         </div>

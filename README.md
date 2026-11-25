@@ -108,35 +108,26 @@ Cost: $0.00069 per claim for both judges together.
 
 Full tables: `evals/results/REPORT.md`.
 
-### The real-world audit
+### The real-world audit, and a hand check it did not pass
 
 OpenAI's `gpt-6.2-sol` and Claude Sonnet 5.5, each with web search on, answered the same 100
-fixed questions, and every answer was audited (D-042 to D-047). The questions, answers, audits and
-every figure below are in `evals/realworld/` and `evals/results/realworld*.json`. The site's
-Findings page shows them with their intervals.
+fixed questions, and Evidentia audited every answer (D-042 to D-047). Before publishing a
+comparison, Aditya checked a blind sample of the auditor's verdicts against the live pages
+(D-044). He saw each claim and its cited page, and not which tool wrote it or what the auditor
+said.
 
-| Main run, page judge as shipped | OpenAI | Claude | Gap |
-|---|---|---|---|
-| Of claims cited in their own sentence with a verdict, the share that fail | 38.0% of 187 | 7.9% of 382 | 30 points (21 to 38) |
-| Of all claims, the share verified against a page the tool cited | 18.5% | 24.6% | Claude by 6 points (−1 to 13) |
-| Claims with no citation at all | 13% | 44% | |
+| Hand check, 40 claims | Upheld | 95% interval |
+|---|---|---|
+| Flags (not on the cited page, or contradicted) | 54%, 7 of the 13 he could settle | 29% to 77% |
+| "Supported" | 84%, 16 of 19 | 62% to 94% |
 
-They fail differently: OpenAI cites most of what it says, and many of those citations do not hold.
-Claude's citations hold more often, but it leaves far more of its claims uncited.
+He was unsure on 7 of the 20 flags. The rule, fixed before the first label, was that at least
+70% of flags must be upheld for the two tools to be compared. They were not, so neither this
+README nor the site compares them. On the benchmark above, 81% of the auditor's flags are right;
+on real answers and live pages, fewer are, and why is not yet known.
 
-What was done to try to break it:
-
-- **Another judge.** With OpenAI's `gpt-6-luna` as page judge: 45.3% against 7.8%.
-- **Asking again.** 20 questions asked three more times: OpenAI failed more often in every ask,
-  but its figure ran from 46% to 65%. Read the figures as a direction and a rough size.
-- **Unread pages.** Rendering thin pages in a browser rescued few (D-046). Judging short pages
-  anyway put the gap at 33 points (23 to 42) (D-047).
-- **Fairness.** Claude used its older search tool, the only one that returns citation data. No
-  answer in the repeats reached the 5-search cap. OpenAI's citations are the links it wrote itself.
-
-**Limits.** No flag has been checked by a person yet: a blind check of a sample is built and
-waiting for its labels (D-044). Both of the auditor's judges are Claude models. On the benchmark
-above, 81% of the auditor's flags are right.
+The questions, answers, audits, labels and every figure are in `evals/realworld/` and
+`evals/results/realworld*.json`, including the per-tool figures that are not compared here.
 
 ## The research agent
 
