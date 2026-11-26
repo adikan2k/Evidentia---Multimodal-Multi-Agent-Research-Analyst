@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Mark } from "@/components/Mark";
 import { REPO, SHELL } from "@/lib/site";
-
 
 const LINKS = [
   { href: "/", label: "Audit" },
@@ -20,7 +20,9 @@ export function SiteHeader() {
   return (
     <header className="border-b border-rule">
       <div className={`${SHELL} flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-2`}>
-        <Link href="/" className="flex min-h-10 items-center text-xl font-semibold tracking-tight">
+        {/* The mark is the margin's own tick: the brand is the thing the product does (D-053). */}
+        <Link href="/" className="flex min-h-10 items-center gap-1.5 text-xl font-semibold tracking-tight">
+          <Mark kind="tick" className="text-supported" />
           Evidentia
         </Link>
         <nav aria-label="Main" className="label -mx-2 flex flex-wrap items-center">

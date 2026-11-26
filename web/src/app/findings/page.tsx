@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { IntervalChart } from "@/components/IntervalChart";
 import { LabelBars } from "@/components/LabelBars";
 import { Mark } from "@/components/Mark";
 import { PageIndex } from "@/components/PageIndex";
@@ -200,6 +201,39 @@ function Withheld({ check }: { check: HandCheck }) {
             </p>
           </div>
         </div>
+        {first && (
+          <div className="mt-16 max-w-[64rem]">
+            <h3 className="display-3">Both checks, against the bar</h3>
+            <div className="mt-6">
+              <IntervalChart
+                mark="dot"
+                domain={[0, 1]}
+                ticks={[0, 0.25, 0.5, 0.75, 1]}
+                decimals={2}
+                threshold={{
+                  value: check.rule.flags_upheld_needed_both_tools,
+                  label: `The bar, ${needed}, set before any label`,
+                }}
+                rows={[first, check].map((c, i) => {
+                  const f = c.flags_upheld.both_tools;
+                  const short = flagsShort(c);
+                  return {
+                    label: i === 0 ? "First check, before the fix" : "Second check, after the fix",
+                    value: f.share ?? 0,
+                    low: f.ci_low ?? undefined,
+                    high: f.ci_high ?? undefined,
+                    detail: `${f.hits} of ${f.n} flags upheld`,
+                    note:
+                      short === 0
+                        ? "Met the bar"
+                        : `${short === 1 ? "One flag" : `${short} flags`} short of the bar`,
+                  };
+                })}
+                caption="The share of flags a person upheld, among those they could settle. Lines are 95% intervals."
+              />
+            </div>
+          </div>
+        )}
       </section>
 
       <section id="means" aria-labelledby="means-title" className="mt-24 scroll-mt-8 border-t border-ink pt-8">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LiveAuditScreen, RecordedAuditScreen } from "@/components/AuditScreen";
+import { HeroSheet } from "@/components/HeroSheet";
 import { Mark } from "@/components/Mark";
 import { SHELL } from "@/lib/site";
 import { auditAvailable } from "@/lib/api";
@@ -29,11 +30,18 @@ const STEPS = [
   },
 ];
 
-/** The home page: paste an answer for a live audit, or look at a recorded one. */
-export function AuditPicker({ initial }: { initial?: string }) {
+const HERO = "crispr"; // It has a little of everything: backed, partly backed and flagged claims.
+
+/**
+ * The home page: a recorded audit replaying on the first screen, a tab to paste your own, the
+ * auditor's own record on an ink band (passed in from the server), then every recorded audit
+ * with its evidence (D-053).
+ */
+export function AuditPicker({ initial, band }: { initial?: string; band?: React.ReactNode }) {
   const [entries, setEntries] = useState<Entry[]>([]);
   const [chosen, setChosen] = useState<string | null>(initial ?? null);
   const [audit, setAudit] = useState<RecordedAudit | null>(null);
+  const [hero, setHero] = useState<RecordedAudit | null>(null);
   const [available, setAvailable] = useState<boolean | null>(null);
   const [answer, setAnswer] = useState("");
   const { live, start, stop } = useLiveAudit();
@@ -47,10 +55,15 @@ export function AuditPicker({ initial }: { initial?: string }) {
       .then((r) => r.json())
       .then((list: Entry[]) => {
         setEntries(list);
-        // The CRISPR audit has a little of everything, so it opens first when present.
-        setChosen((c) => c ?? list.find((e) => e.id === "crispr")?.id ?? list[0]?.id ?? null);
+        setChosen((c) => c ?? list.find((e) => e.id === HERO)?.id ?? list[0]?.id ?? null);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`/audits/${initial ?? HERO}.json`)
+      .then((r) => r.ok ? r.json() : null)
+      .then(setHero);
+  }, [initial]);
 
   useEffect(() => {
     if (!chosen) return;
@@ -78,66 +91,74 @@ export function AuditPicker({ initial }: { initial?: string }) {
     );
   }
 
-  return (
-    <div className={SHELL}>
-      <section className="grid items-end gap-x-16 gap-y-8 pt-10 pb-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:pt-16 lg:pb-16">
-        <div>
-          <p className="label flex items-center gap-2 text-ink-soft">
-            <Mark kind="tick" className="text-supported" />
-            An auditor for AI answers
-          </p>
-          <h1 className="display-1 mt-4">Do the citations say what the answer says?</h1>
-          <p className="lead mt-6 max-w-[38rem]">
-            Paste an answer from an AI tool, with its sources. Evidentia reads every cited page
-            and marks each claim like an editor would: backed, partly backed, not on the page, or
-            contradicted.
-          </p>
-          <p className="mt-5">
-            <Link href="/findings" className="label text-ink underline underline-offset-4">
-              Two AI search tools audited on the same questions, and a hand check of the auditor
-            </Link>
-          </p>
-        </div>
-
-        <form
-          className="sheet p-4 md:p-5"
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (ready) start(answer);
-          }}
+  const form = (
+    <form
+      className="sheet rounded-tl-none p-4 md:p-5"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (ready) start(answer);
+      }}
+    >
+      <label htmlFor="answer" className="label text-ink">
+        The answer to audit
+      </label>
+      <textarea
+        id="answer"
+        value={answer}
+        onChange={(e) => setAnswer(e.target.value)}
+        rows={9}
+        maxLength={MAX}
+        placeholder="Paste the answer here, with its links or its numbered sources…"
+        className="sheet-text mt-2 w-full resize-y rounded-[3px] border border-rule bg-paper/40 p-3 text-[1.0625rem] leading-relaxed text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+      />
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+        <p className="label font-normal text-ink-soft">
+          {available === false
+            ? "Live audits are paused right now. The recorded ones still open."
+            : `${length.toLocaleString()} of ${MAX.toLocaleString()} characters. An audit costs this site about a cent.`}
+        </p>
+        <button
+          type="submit"
+          disabled={!ready}
+          className="label min-h-11 rounded-full bg-ink px-6 text-sheet transition-opacity hover:opacity-85 disabled:opacity-35"
         >
-          <label htmlFor="answer" className="label text-ink">
-            The answer to audit
-          </label>
-          <textarea
-            id="answer"
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
-            rows={6}
-            maxLength={MAX}
-            placeholder="Paste the answer here, with its links or its numbered sources…"
-            className="sheet-text mt-2 w-full resize-y rounded-[3px] border border-rule bg-paper/40 p-3 text-[1.0625rem] leading-relaxed text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
-          />
-          <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-            <p className="label font-normal text-ink-soft">
-              {available === false
-                ? "Live audits are paused right now. The recorded ones below still open."
-                : `${length.toLocaleString()} of ${MAX.toLocaleString()} characters. An audit costs this site about a cent.`}
-            </p>
-            <button
-              type="submit"
-              disabled={!ready}
-              className="label min-h-11 rounded-full bg-ink px-6 text-sheet transition-opacity hover:opacity-85 disabled:opacity-35"
-            >
-              Audit it
-            </button>
-          </div>
-        </form>
-      </section>
+          Audit it
+        </button>
+      </div>
+    </form>
+  );
 
-      <section aria-labelledby="recorded" className="border-t border-ink pt-8">
+  return (
+    <>
+      <div className={SHELL}>
+        <section className="grid items-start gap-x-14 gap-y-10 pt-10 pb-16 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:pt-16 lg:pb-24">
+          <div className="lg:pt-12">
+            <p className="label flex items-center gap-2 text-ink-soft">
+              <Mark kind="tick" className="text-supported" />
+              An auditor for AI answers
+            </p>
+            <h1 className="display-1 mt-5">Do the citations say what the answer says?</h1>
+            <p className="lead mt-7 max-w-[34rem]">
+              Paste an answer from an AI tool, with its sources. Evidentia reads every cited page
+              and marks each claim like an editor would: backed, partly backed, not on the page, or
+              contradicted.
+            </p>
+            <p className="mt-6">
+              <Link href="/findings" className="label text-ink underline underline-offset-4">
+                Two AI search tools audited on the same questions, and a hand check of the auditor
+              </Link>
+            </p>
+          </div>
+          <HeroSheet audit={hero} paste={form} fullAuditId="recorded" />
+        </section>
+      </div>
+
+      {band}
+
+      <div className={SHELL}>
+      <section id="recorded" aria-labelledby="recorded-title" className="scroll-mt-6 pt-16">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
-          <h2 id="recorded" className="label text-ink">
+          <h2 id="recorded-title" className="display-2">
             Recorded audits of real answers
           </h2>
           <nav aria-label="Recorded audits" className="flex flex-wrap gap-2">
@@ -195,6 +216,7 @@ export function AuditPicker({ initial }: { initial?: string }) {
           , including what the auditor gets wrong.
         </p>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

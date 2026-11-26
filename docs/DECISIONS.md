@@ -3560,3 +3560,108 @@ All figures are in `evals/results/open_web.json`. The run cost $3.78, under the 
 - **What changed on the site.** The evals page shows the run beside the clean-corpus result. The
   "not measured on the open web" item is replaced by the run's own limits: 20 questions, once,
   not repeatable.
+
+## D-053. The design, finished against five award galleries (after D-045)
+
+Approved by Aditya on 26 November 2026.
+
+**What.** Aditya asked for the design to be checked against five references before it is called
+final: Awwwards (and its Site of the Day), the 2026 Webby winners for websites, Web Design Awards'
+winners, Site of Sites, and Tabnav's 60 best website designs of 2026. D-045's idea stays: the
+answer is a sheet on an editor's desk, marked in the margin. This entry changes how the site
+shows it, in five places.
+
+### What the references do, and what Evidentia lacks
+
+- **One signature moment on the first screen.** Awwwards' Site of the Day (Polpharma Biologics)
+  and the Webby best home pages lead with one large statement and one visual that is the brand.
+  Evidentia's first screen is a headline and an empty paste box. Its best visual, an answer being
+  marked up, sits below the fold.
+- **A change of pace as you scroll.** The award winners move between full-bleed fields of colour,
+  so each section reads as a new scene. Every Evidentia section is the same warm grey at the same
+  weight.
+- **Charts that carry notes.** The Webby data-visualisation winners (WWF's Blue Corridors, Visual
+  Cinnamon's Searching for Birds) write the point onto the chart. Evidentia's evals page is mostly
+  tables, and its charts carry no notes.
+- **Statement type.** Headlines on the winning sites run larger and tighter than Evidentia's.
+- **What to stay away from.** Web Design Awards' own pages and its AI and SaaS winners share one
+  recipe: a serif headline with an italic accent word, small uppercase mono labels, a framed
+  product screenshot and a row of big stats. D-045 left that look on purpose, and this keeps out
+  of it.
+
+### The changes
+
+1. **The first screen shows the product working.** On the home page, the sheet sits beside the
+   headline, with a recorded audit of a real answer on it. Its marks are drawn into the margin
+   one by one, in the order the server recorded them, then it rests on the finished result. A
+   tab on the sheet switches to "Paste your own". The headline grows by about a third. With
+   reduced motion, the sheet opens finished.
+2. **One ink band.** A single full-bleed section in near-black ink, on the home page, holds the
+   auditor's own record: flags right and supported right on the benchmark, and both hand checks
+   with the bar they missed. Every figure is read from `evals/results/`. It is the one place the
+   page changes colour, so the measurement reads as the centre of the site. This is a band, not a
+   dark theme (D-024 still holds).
+3. **Charts with notes on them.**
+   - Findings: the two hand checks as dots with their intervals against a drawn line at 70%,
+     labelled on the chart ("the bar, fixed before any label"; "one flag short").
+   - Evals: recall at 1, 3, 5 and 10 as lines for each search, with the best-possible line drawn
+     dashed and labelled, so precision and recall are read against their ceiling, not against 1.
+   - The tables stay below each chart, for exact figures and screen readers.
+4. **A mark of its own.** A small logo: the tick from the margin, beside the word "Evidentia". It
+   is the same stroke as the verdict marks, so the brand is the thing the product does.
+5. **Type.** Display sizes about a third larger and set tighter on the home, findings and evals
+   headlines. Body sizes do not change.
+
+### Motion, still only for real events
+
+The new motion is the marks being drawn as a recorded audit replays, and the lines of a chart
+drawing in once when it scrolls into view. Nothing moves on a timer for its own sake; there is no
+headline reveal, parallax or cursor effect. All of it is off for reduced motion.
+
+### Considered
+
+- **A WebGL or 3D hero.** Common among Site of the Day winners, but it would show nothing real, and
+  it costs load time on the page whose job is to be trusted.
+- **Scroll-pinned storytelling on the findings page.** The Webby data winners use it. It is a good
+  fit, but large, and the findings page already tells its story in order. Left for later.
+- **A dark theme.** Still ruled out (D-024). One band of ink is enough contrast.
+- **Copying a winner's palette.** Evidentia's colours carry meaning (verdicts, highlighted
+  quotes), so they stay.
+
+### Trade-off
+
+- The home page's first screen gets busier. The paste box moves one click away, behind a tab on
+  the sheet.
+- Charts take more code than tables, and each one needs its own check at phone width.
+- **A limit of my own checking.** The browser pane I work in is small and scales pages down, so
+  fine visual detail is hard to judge there. Aditya looks at each page on his own screen before
+  it is pushed.
+
+### How it is checked
+
+- `npm run build`, lint and types.
+- At 390, 1024, 1440 and 1920 pixels: no sideways scroll, no text under 12 pixels, contrast at
+  least 4.5 to 1 (including on the ink band), and the reduced-motion version of each animation.
+- Every number on the new band and charts comes from the site's data file, never typed in.
+
+### As built (26 November 2026)
+
+- **The first screen.** The sheet beside the headline replays the recorded CRISPR audit at three
+  times its real timings, and says so under the sheet. **One correction to the plan:** the marks
+  do not arrive one by one. In every recording the verdicts arrive together, when the two judges'
+  results are combined, so the sheet shows what happened: sentences underlined with "checking"
+  marks when the splitter returns, then every mark drawn at once. "Paste your own" is the second
+  tab. Clicking a sentence, or "See the evidence", goes to the full recorded audit below.
+- **The ink band** (`RecordBand`) is rendered on the server, so the eval data never ships to the
+  browser. It shows flags right and supported right on the benchmark, and both hand checks on one
+  track with the 70% bar drawn and named where it sits.
+- **Charts with notes.** The findings page has both checks against the bar, each row saying how
+  many flags short it fell. The evals page has recall at 1, 3, 5 and 10 as an emphasis chart: the
+  shipped search in ink, the others in grey with their own dash, the best possible dashed. Its
+  greys are 3.2 to 1 against the desk. On a phone it keeps its drawn size and scrolls in its own
+  box, so its text stays at 12 pixels.
+- **The logo** is the margin's tick. **Headlines** are about a third larger (110 pixels at 1,920).
+- **Measured** at 375, 1,024, 1,440 and 1,920 pixels on the home, findings and evals pages: no
+  sideways scroll, no text under 12 pixels. Text on the ink band is at least 8 to 1.
+- **Not judged here.** The browser pane I work in is hidden and small, which slows the replay and
+  scales pages down. Aditya looks at the pages on his own screen before anything is pushed.
