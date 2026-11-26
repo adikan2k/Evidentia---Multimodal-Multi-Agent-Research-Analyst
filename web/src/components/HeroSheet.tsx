@@ -93,34 +93,40 @@ function Replayed({ audit, fullAuditId }: { audit: RecordedAudit; fullAuditId: s
           judged={view.judged || done}
           selected={null}
           onSelect={() => document.getElementById(fullAuditId)?.scrollIntoView({ behavior: "smooth" })}
-          caption={`${audit.answer.model} with ${audit.answer.tool}: “${audit.question}”`}
+          caption={
+            // In the sheet's own header, so the note that this is a sped-up recording is always
+            // on the first screen, above the text it describes.
+            <span className="block">
+              <span className="block text-ink">
+                {audit.answer.model} with {audit.answer.tool}: “{audit.question}”
+              </span>
+              <span className="mt-1 block font-normal" aria-live="polite">
+                {status} A recording, replayed at {SPEED}× its real timings.
+                {done && (
+                  <>
+                    {" "}
+                    <button
+                      type="button"
+                      onClick={playback.restart}
+                      className="text-ink underline underline-offset-4 hover:text-ink-soft"
+                    >
+                      Replay
+                    </button>
+                  </>
+                )}
+              </span>
+            </span>
+          }
         />
       </div>
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <p className="label font-normal text-ink-soft" aria-live="polite">
-          {status}{" "}
-          <span className="text-ink-faint">
-            {done ? "A recording, on its real timings" : `Replayed at ${SPEED}× its real timings`}.
-          </span>
-        </p>
-        <div className="flex items-center gap-2">
-          {done && (
-            <button
-              type="button"
-              onClick={playback.restart}
-              className="label min-h-10 rounded-full border border-rule px-4 text-ink-soft transition-colors hover:border-ink hover:text-ink"
-            >
-              Replay
-            </button>
-          )}
-          <a
-            href={`#${fullAuditId}`}
-            className="label flex min-h-10 items-center rounded-full bg-ink px-4 text-sheet transition-opacity hover:opacity-85"
-          >
-            See the evidence ↓
-          </a>
-        </div>
-      </div>
+      <p className="mt-3 text-right">
+        <a
+          href={`#${fullAuditId}`}
+          className="label inline-flex min-h-10 items-center rounded-full bg-ink px-4 text-sheet transition-opacity hover:opacity-85"
+        >
+          See the evidence for each claim ↓
+        </a>
+      </p>
     </div>
   );
 }

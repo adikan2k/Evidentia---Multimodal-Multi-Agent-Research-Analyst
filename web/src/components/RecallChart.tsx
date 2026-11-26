@@ -130,7 +130,8 @@ export function RecallChart({ ks, series, ceiling, caption }: Props) {
               />
             )}
             {s.values.map((v, i) => (
-              <circle
+              // The points arrive once their line has been drawn through them.
+              <motion.circle
                 key={ks[i]}
                 cx={x(ks[i])}
                 cy={y(v)}
@@ -138,6 +139,10 @@ export function RecallChart({ ks, series, ceiling, caption }: Props) {
                 fill={s.emphasis ? "var(--ink)" : GREY}
                 stroke="var(--paper)"
                 strokeWidth={2}
+                initial={still ? false : { opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.2, delay: s.dash ? 0 : 0.9 * (i / (ks.length - 1)) }}
               />
             ))}
           </g>

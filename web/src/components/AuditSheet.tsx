@@ -18,7 +18,7 @@ type Props = {
   judged: boolean;
   selected: number | null;
   onSelect: (index: number) => void;
-  caption?: string;
+  caption?: React.ReactNode;
   children?: React.ReactNode;
 };
 
